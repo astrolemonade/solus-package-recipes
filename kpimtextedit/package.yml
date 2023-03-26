@@ -1,0 +1,29 @@
+name       : kpimtextedit
+version    : 22.12.1
+release    : 64
+source     :
+    - https://cdn.download.kde.org/stable/release-service/22.12.1/src/kpimtextedit-22.12.1.tar.xz : 4ed51bbbff4186c6df94003b31de376b5ccf7fe316f4d181136d0987757d2183
+homepage   : https://kde.org/
+license    : LGPL-2.1-or-later
+component  : desktop.library
+summary    : KPIMTextedit is a library that provides an enchanced text edit class, see TextEdit
+description: |
+    KPIMTextedit is a library that provides an enchanced text edit class, see TextEdit.
+builddeps  :
+    - pkgconfig(Qt5TextToSpeech)
+    - grantlee-devel
+    - kdesignerplugin-devel
+    - kemoticons-devel
+    - kiconthemes-devel
+    - kio-devel
+    - ktextwidgets-devel
+    - syntax-highlighting-devel
+rundeps    :
+    - devel :
+        - ktextwidgets-devel
+setup      : |
+    %cmake_ninja -DBUILD_TESTING=OFF
+build      : |
+    %ninja_build
+install    : |
+    %ninja_install

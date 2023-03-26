@@ -1,0 +1,19 @@
+name       : liblangtag
+version    : 0.6.3
+release    : 2
+source     :
+    - https://bitbucket.org/tagoh/liblangtag/downloads/liblangtag-0.6.3.tar.bz2 : 1f12a20a02ec3a8d22e54dedb8b683a43c9c160bda1ba337bf1060607ae733bd
+homepage   : https://bitbucket.org/tagoh/liblangtag/wiki/Home
+license    :
+    - LGPL-3.0-or-later
+    - MPL-2.0
+component  : programming
+summary    : An interface library to access tags for identifying languages
+description: |
+    An interface library to access tags for identifying languages.
+setup      : |
+    %configure --disable-static
+build      : |
+    %make
+install    : |
+    %make_install

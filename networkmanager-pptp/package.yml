@@ -1,0 +1,26 @@
+name       : networkmanager-pptp
+version    : 1.2.8
+release    : 19
+source     :
+    - git|https://gitlab.gnome.org/GNOME/NetworkManager-pptp.git : 507cac516f9ca5e58855c596f7ec79385a96c2b7
+license    : GPL-2.0-or-later
+component  : network.base
+summary    : PPTP support for NetworkManager
+description: |
+    PPTP support for NetworkManager
+builddeps  :
+    - pkgconfig(dbus-glib-1)
+    - pkgconfig(gtk+-3.0)
+    - pkgconfig(libnma)
+    - pkgconfig(libsecret-1)
+    - pkgconfig(mm-glib)
+    - ppp-devel
+rundeps    :
+    - pptp
+    - ppp
+setup      : |
+    %autogen --disable-static --with-pppd-plugin-dir=/usr/lib/pppd/2.4.8
+build      : |
+    %make
+install    : |
+    %make_install

@@ -1,0 +1,51 @@
+name       : gimp
+version    : 2.10.32
+release    : 75
+source     :
+    - https://download.gimp.org/pub/gimp/v2.10/gimp-2.10.32.tar.bz2 : 3f15c70554af5dcc1b46e6dc68f3d8f0a6cc9fe56b6d78ac08c0fd859ab89a25
+license    : GPL-3.0-or-later
+component  : multimedia.graphics
+homepage   : https://www.gimp.org/
+summary    : GNU Image Manipulation Program
+description: |
+    GIMP is a mature image editor with many advanced features and plugin support.
+builddeps  :
+    - pkgconfig(alsa)
+    - pkgconfig(dbus-glib-1)
+    - pkgconfig(gegl-0.4)
+    - pkgconfig(gexiv2)
+    - pkgconfig(gtk+-2.0)
+    - pkgconfig(gtk+-3.0)
+    - pkgconfig(lcms2)
+    - pkgconfig(libcurl)
+    - pkgconfig(libexif)
+    - pkgconfig(libheif)
+    - pkgconfig(libmypaint)
+    - pkgconfig(libopenjp2)
+    - pkgconfig(librsvg-2.0)
+    - pkgconfig(libtiff-4)
+    - pkgconfig(libturbojpeg)
+    - pkgconfig(libwebp)
+    - pkgconfig(mypaint-brushes-1.0)
+    - pkgconfig(OpenEXR)
+    - pkgconfig(poppler)
+    - pkgconfig(pycairo)
+    - pkgconfig(pygtk-2.0)
+    - pkgconfig(xmu)
+    - pkgconfig(xpm)
+    - aalib-devel
+    - bzip2-devel
+    - ghostscript-devel
+    - glib-networking
+    - poppler-utils
+rundeps    :
+    - mypaint-brushes1
+    - python-gobject2
+    - python-gtk2
+setup      : |
+    %patch -p1 < $pkgfiles/0001-Customise-theme-and-icons.patch
+    %configure --disable-check-update --with-bug-report-url=https://dev.getsol.us/
+build      : |
+    %make
+install    : |
+    %make_install

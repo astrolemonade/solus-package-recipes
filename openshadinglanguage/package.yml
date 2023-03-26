@@ -1,0 +1,32 @@
+name       : openshadinglanguage
+version    : 1.11.17.0
+release    : 15
+source     :
+    - https://github.com/AcademySoftwareFoundation/OpenShadingLanguage/archive/refs/tags/v1.11.17.0.tar.gz : ab7e17fde3f759b94efcc159d8f4ccc6cc92f40cba76e4f88a8133a00587738f
+homepage   : https://opensource.imageworks.com/osl.html
+license    : BSD-3-Clause
+component  : multimedia.graphics
+summary    : Advanced shading language for production GI renderers
+description: |
+    Open Shading Language (OSL) is a small but rich language for programmable shading in advanced renderers and other applications, ideal for describing materials, lights, displacement, and pattern generation.
+clang      : yes
+builddeps  :
+    - pkgconfig(OpenEXR)
+    - pkgconfig(OpenImageIO)
+    - pkgconfig(Qt5Core)
+    - pkgconfig(pugixml)
+    - pkgconfig(python3)
+    - libboost-devel
+    - numpy
+    - partio-devel
+    - pybind11
+rundeps    :
+    - numpy
+setup      : |
+    %patch -p1 < $pkgfiles/llvm14.patch
+    %cmake_ninja -DCMAKE_CXX_STANDARD=14
+build      : |
+    %ninja_build
+install    : |
+    %ninja_install
+    rm -rf $installdir/usr/share/doc

@@ -1,0 +1,30 @@
+name       : ksystemstats
+version    : 5.26.5
+release    : 20
+source     :
+    - https://cdn.download.kde.org/stable/plasma/5.26.5/ksystemstats-5.26.5.tar.xz : 71e5ec962256e84f7e1933c97ad64c9d008a555e78979739e215afb70d174aa3
+license    :
+    - GPL-2.0-only
+    - GPL-2.0-or-later
+    - GPL-3.0-only
+    - LGPL-2.1-only
+component  : programming.library
+summary    : A plugin based system monitoring daemon
+description: |
+    A plugin based system monitoring daemon
+builddeps  :
+    - pkgconfig(libnl-3.0)
+    - kdbusaddons-devel
+    - kiconthemes-devel
+    - kio-devel
+    - libksysguard-devel
+    - lm_sensors-devel
+    - networkmanager-qt-devel
+rundeps    :
+    - libksysguard
+setup      : |
+    %cmake_ninja -DBUILD_TESTING=OFF
+build      : |
+    %ninja_build
+install    : |
+    %ninja_install

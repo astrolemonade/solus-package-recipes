@@ -1,0 +1,26 @@
+name       : libkcddb
+version    : 22.12.1
+release    : 64
+source     :
+    - https://cdn.download.kde.org/stable/release-service/22.12.1/src/libkcddb-22.12.1.tar.xz : 0e28457c990a9a786ed012f35de35e053f9adef87fc13924e6beff4e2c16cd70
+homepage   : https://kde.org/
+license    :
+    - GFDL-1.2-or-later
+    - GPL-2.0-or-later
+component  : programming
+summary    : KDE CDDB library
+description: |
+    KDE CDDB library.
+builddeps  :
+    - pkgconfig(libmusicbrainz5)
+    - kdoctools-devel
+    - kio-devel
+setup      : |
+    %cmake_ninja -DBUILD_TESTING=OFF
+build      : |
+    %ninja_build
+install    : |
+    %ninja_install
+
+    # remove docs
+    rm -rf $installdir/usr/share/doc

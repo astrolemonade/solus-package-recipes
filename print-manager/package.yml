@@ -1,0 +1,29 @@
+name       : print-manager
+version    : 22.12.1
+release    : 65
+source     :
+    - https://cdn.download.kde.org/stable/release-service/22.12.1/src/print-manager-22.12.1.tar.xz : 2b28b8cea34a8eb00093d0ec706af5df5e97bba32aad04bb59bab3e0a2e9c127
+homepage   : https://kde.org/
+license    : GPL-2.0-or-later
+component  : desktop.kde.core
+summary    : Tool for managing print jobs and printers
+description: |
+    Tool for managing print jobs and printers on the KDE Plasma desktop.
+optimize   : lto
+libsplit   : no
+builddeps  :
+    - pkgconfig(Qt5Quick)
+    - cups-devel
+    - kcmutils-devel
+    - kdbusaddons-devel
+    - kiconthemes-devel
+    - kio-devel
+    - knotifications-devel
+    - plasma-framework-devel
+setup      : |
+    %cmake_ninja
+build      : |
+    %ninja_build
+install    : |
+    %ninja_install
+    %qml_cache

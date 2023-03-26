@@ -1,0 +1,22 @@
+name       : libfilezilla
+version    : 0.38.1
+release    : 44
+source     :
+    - https://download.filezilla-project.org/libfilezilla/libfilezilla-0.38.1.tar.bz2 : d401a8b5a80a7c17b1a360dd9cccb6dc56fd8d394413a9fb2b6bb1bc5d98fd4c
+license    : GPL-2.0-or-later
+component  : programming
+summary    : libfilezilla
+description: |
+    libfilezilla is a small and modern C++ library, offering some basic functionality to build high-performing, platform-independent programs
+builddeps  :
+    - pkgconfig(cppunit) # check
+    - pkgconfig(gnutls)
+    - pkgconfig(libxcrypt)
+setup      : |
+    %configure --disable-static
+build      : |
+    %make
+install    : |
+    %make_install
+check      : |
+    %make check

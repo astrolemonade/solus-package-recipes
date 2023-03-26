@@ -1,0 +1,31 @@
+name       : kgpg
+version    : 22.12.1
+release    : 47
+source     :
+    - https://cdn.download.kde.org/stable/release-service/22.12.1/src/kgpg-22.12.1.tar.xz : 1504b30c7c3b600afb7162b2b1470eaaf4f05362414ebacff33f3506561c2f20
+homepage   : https://kde.org/applications/utilities/org.kde.kgpg
+license    : GPL-2.0-or-later
+component  : desktop.kde
+summary    : Graphical interface for GnuPG
+description: |
+    KGpg is a GUI frontend for GnuPG based on the KDE stack.
+builddeps  :
+    - akonadi-contacts-devel
+    - gpgme-devel
+    - karchive-devel
+    - kcontacts-devel
+    - kcrash-devel
+    - kdbusaddons-devel
+    - kdoctools-devel
+    - kio-devel
+    - knotifications-devel
+    - ktextwidgets-devel
+setup      : |
+    %cmake_ninja
+build      : |
+    %ninja_build
+install    : |
+    %ninja_install
+
+    # remove doc
+    rm -rf $installdir/usr/share/doc

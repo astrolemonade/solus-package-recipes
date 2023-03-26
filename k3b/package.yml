@@ -1,0 +1,47 @@
+name       : k3b
+version    : 22.12.1
+release    : 70
+source     :
+    - https://cdn.download.kde.org/stable/release-service/22.12.1/src/k3b-22.12.1.tar.xz : 147e1ecbe3297b55789b15bdc24a1514255eeb5bd43c00ba5b458ea39f93e851
+homepage   : https://kde.org/applications/multimedia/org.kde.k3b
+license    :
+    - GFDL-1.2-or-later
+    - GPL-2.0-or-later
+component  : desktop.multimedia
+summary    : K3b - The CD Kreator
+description: |
+    Full-featured CD/DVD/Blu-ray burning and ripping application.
+builddeps  :
+    - pkgconfig(dvdread)
+    - pkgconfig(flac)
+    - pkgconfig(libmusicbrainz5)
+    - pkgconfig(Qt5WebKitWidgets)
+    - pkgconfig(samplerate)
+    - pkgconfig(sndfile)
+    - pkgconfig(taglib)
+    - pkgconfig(vorbis)
+    - karchive-devel
+    - kcmutils-devel
+    - kdoctools-devel
+    - kfilemetadata-devel
+    - kiconthemes-devel
+    - kio-devel
+    - knewstuff-devel
+    - knotifyconfig-devel
+    - lame-devel
+    - libkcddb-devel
+    - libmad-devel
+rundeps    :
+    - cdrdao
+    - cdrtools
+    - dvd_rw-tools
+    - sox
+setup      : |
+    %cmake_ninja -DBUILD_TESTING=OFF
+build      : |
+    %ninja_build
+install    : |
+    %ninja_install
+
+    # remove doc
+    rm -rf $installdir/usr/share/doc

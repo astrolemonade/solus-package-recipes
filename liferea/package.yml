@@ -1,0 +1,27 @@
+name       : liferea
+version    : 1.13.9
+release    : 27
+source     :
+    - https://github.com/lwindolf/liferea/archive/refs/tags/v1.13.9.tar.gz : 79c1cb50aa9d91136cab35e4be025809fb549feeaf95b270d86158c40170ee8f
+license    : GPL-2.0-only
+homepage   : https://lzone.de/liferea
+component  : network.news
+summary    : A desktop feed reader and news aggregator
+description: |
+    A desktop feed reader and news aggregator
+builddeps  :
+    - pkgconfig(gsettings-desktop-schemas)
+    - pkgconfig(json-glib-1.0)
+    - pkgconfig(libpeas-1.0)
+    - pkgconfig(libxslt)
+    - pkgconfig(webkit2gtk-4.0)
+rundeps    :
+    - python3-cairo # tray icon plugin
+environment: |
+    export WEBKIT_DISABLE_COMPOSITING_MODE=1 # temp workaround: https://github.com/lwindolf/liferea/issues/767
+setup      : |
+    %autogen --disable-static --disable-schemas-compile
+build      : |
+    %make
+install    : |
+    %make_install

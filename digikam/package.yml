@@ -1,0 +1,66 @@
+name       : digikam
+version    : 7.9.0
+release    : 38
+source     :
+    - https://download.kde.org/stable/digikam/7.9.0/digiKam-7.9.0.tar.xz : c3b80abc090da3cbbc42e67a403080d7f5fe0a7c98698735bda556c60314bab4
+homepage   : https://www.digikam.org/
+license    :
+    - GPL-2.0-or-later
+    - LGPL-2.1-or-later
+component  : multimedia.graphics
+libsplit   : no
+summary    : Advanced digital photo management application
+description: |
+    digiKam is an advanced digital photo management application for KDE, which makes importing and organizing digital photos a 'snap'.
+builddeps  :
+    - pkgconfig(ImageMagick)
+    - pkgconfig(Qt5Svg)
+    - pkgconfig(Qt5WebEngine)
+    - pkgconfig(Qt5X11Extras)
+    - pkgconfig(Qt5XmlPatterns)
+    - pkgconfig(eigen3)
+    - pkgconfig(exiv2)
+    - pkgconfig(glu)
+    - pkgconfig(jasper)
+    - pkgconfig(lcms2)
+    - pkgconfig(lensfun)
+    - pkgconfig(libavformat)
+    - pkgconfig(libheif)
+    - pkgconfig(libgphoto2)
+    - pkgconfig(libpng)
+    - pkgconfig(libtiff-4)
+    - pkgconfig(libturbojpeg)
+    - pkgconfig(libxslt)
+    - pkgconfig(opencv4)
+    - pkgconfig(x11)
+    - akonadi-contacts-devel
+    - breeze-devel
+    - breeze-icons
+    - kcalendarcore-devel
+    - kcontacts-devel
+    - kfilemetadata-devel
+    - kiconthemes-devel
+    - kio-devel
+    - knotifyconfig-devel
+    - libboost-devel
+    - libksane-devel
+    - marble-devel
+    - threadweaver-devel
+rundeps    :
+    - breeze
+    - breeze-icons
+setup      : |
+    %cmake_ninja \
+        -DBUILD_TESTING=OFF \
+        -DENABLE_KFILEMETADATASUPPORT=ON \
+        -DENABLE_AKONADICONTACTSUPPORT=ON \
+        -DENABLE_APPSTYLES=ON \
+        -DENABLE_QWEBENGINE=ON \
+        -DOpenGL_GL_PREFERENCE=GLVND
+build      : |
+    %ninja_build
+install    : |
+    %ninja_install
+
+    # Due to SC limitation
+    rm -v $installdir/usr/share/metainfo/org.kde.showfoto.appdata.xml

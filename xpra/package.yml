@@ -1,0 +1,35 @@
+name       : xpra
+version    : 4.4.1
+release    : 5
+source     :
+    - https://github.com/Xpra-org/xpra/archive/refs/tags/v4.4.1.tar.gz : 8d03fec4e22e1946e798ed2dbfaaf87fa50f385a35024ab66e615974b884402b
+homepage   : https://xpra.org
+license    : GPL-2.0-or-later
+component  : desktop
+summary    : multi-platform screen and application forwarding system
+description: |
+    Xpra is a multi platform persistent remote display server and client for forwarding applications and desktop screens. Also known as 'screen for X11'.
+builddeps  :
+    - pkgconfig(gtk+-3.0)
+    - pkgconfig(liblz4)
+    - pkgconfig(py3cairo)
+    - pkgconfig(pygobject-3.0)
+    - pkgconfig(xkbfile)
+    - pkgconfig(xrandr)
+    - pkgconfig(xres)
+    - cython
+    - pandoc
+rundeps    :
+    - python-evdev
+    - python-netifaces
+    - python-paramiko
+    - python-pillow
+    - qrencode
+    - xorg-server-xvfb
+setup      : |
+    mv -v $workdir/fs/etc/sysconfig/xpra $workdir/fs/etc/sysconfig/xpra.env
+    %apply_patches
+build      : |
+    %python3_setup --without-Xdummy --without-Xdummy_wrapper
+install    : |
+    %python3_install

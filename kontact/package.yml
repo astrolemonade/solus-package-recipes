@@ -1,0 +1,43 @@
+name       : kontact
+version    : 22.12.1
+release    : 64
+source     :
+    - https://cdn.download.kde.org/stable/release-service/22.12.1/src/kontact-22.12.1.tar.xz : 932472e884962f4d622e27b748771f53b891d981c7df541ddb5233f2581f24d5
+homepage   : https://kde.org/applications/office/org.kde.kontact
+license    :
+    - GFDL-1.2-or-later
+    - GPL-2.0-or-later
+component  : office
+summary    : Container application to unify several major PIM applications within one application
+description: |
+    Kontact is the integrated solution to your personal information management (PIM) needs. It combines well-known KDE applications like KMail, KOrganizer and KAddressBook into a single interface to provide easy access to mail, scheduling, address book and other PIM functionality.
+builddeps  :
+    - pkgconfig(Qt5WebEngine)
+    - kcmutils-devel
+    - kcrash-devel
+    - kdbusaddons-devel
+    - kcontacts-devel
+    - kdoctools-devel
+    - kguiaddons-devel
+    - kiconthemes-devel
+    - kmime-devel
+    - kontactinterface-devel
+    - kparts-devel
+    - kpimtextedit-devel
+    - libkdepim-devel
+    - pimcommon-devel
+rundeps    :
+    - akregator
+    - kaddressbook
+    - kmail
+    - knotes
+    - korganizer
+setup      : |
+    %cmake_ninja
+build      : |
+    %ninja_build
+install    : |
+    %ninja_install
+
+    # remove doc
+    rm -rf $installdir/usr/share/doc

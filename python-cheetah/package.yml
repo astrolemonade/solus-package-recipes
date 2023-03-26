@@ -1,0 +1,16 @@
+name       : python-cheetah
+version    : 3.2.6.2
+release    : 7
+source     :
+    - https://pypi.io/packages/source/C/Cheetah3/Cheetah3-3.2.6.post2.tar.gz : 63157d7a00a273b59676b5be5aa817c75c37efc88478231f1a160f4cfb7f7878
+license    : MIT
+component  : programming.python
+summary    : Template engine and code generation tool
+description: |
+    Cheetah is an open source template engine and code generation tool. It can be used standalone or combined with other tools and frameworks. Web development is its principle use, but Cheetah is very flexible and is also being used to generate C++ game code, Java, sql, form emails and even Python code.
+builddeps  :
+    - python3-devel
+setup      : |
+    %python3_setup
+install    : |
+    %python3_install

@@ -1,0 +1,24 @@
+name       : msgpack
+version    : 4.0.0
+release    : 5
+source     :
+    - https://github.com/msgpack/msgpack-c/archive/refs/tags/c-4.0.0.tar.gz : 656ebe4566845e7bda9c097b625ba59ac72ddfd45df6017172d46d9ac7365aa3
+license    : BSL-1.0
+component  : programming
+summary    : An efficient object serialization library
+description: |
+    MessagePack is an efficient binary serialization format. It lets you exchange data among multiple languages like JSON. But it's faster and smaller. Small integers are encoded into a single byte, and typical short strings require only one extra byte in addition to the strings themselves.
+builddeps  :
+    - gtest-devel
+setup      : |
+    %cmake . \
+        -DCMAKE_INSTALL_LIBDIR=%libdir% \
+        -DMSGPACK_CXX11=ON \
+        -DMSGPACK_BUILD_TESTS=ON
+build      : |
+    %make
+install    : |
+    %make_install
+    rm $installdir/%libdir%/*.a
+check      : |
+    %make test

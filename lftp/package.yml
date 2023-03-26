@@ -1,0 +1,19 @@
+name       : lftp
+version    : 4.9.1
+release    : 19
+source     :
+    - https://lftp.yar.ru/ftp/lftp-4.9.1.tar.xz : 5969fcaefd102955dd882f3bcd8962198bc537224749ed92f206f415207a024b
+license    : GPL-3.0-or-later
+component  : network.clients
+summary    : Terminal based FTP Client
+description: |
+    LFTP is a sophisticated ftp/http client, and a file transfer program supporting a number of network protocols.
+builddeps  :
+    - pkgconfig(gnutls)
+setup      : |
+    %configure --disable-static --with-openssl=/usr/bin/openssl
+build      : |
+    %make
+install    : |
+    %make_install
+    rm $installdir/%libdir%/*.a

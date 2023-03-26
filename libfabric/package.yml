@@ -1,0 +1,22 @@
+name       : libfabric
+version    : 1.17.0
+release    : 3
+source     :
+    - https://github.com/ofiwg/libfabric/releases/download/v1.17.0/libfabric-1.17.0.tar.bz2 : 579c0f5ef636c0c72f4d3d6bd4da91a5aed9ac3ac4ea387404c45dbbdee4745d
+homepage   : https://ofiwg.github.io/libfabric/
+license    :
+    - BSD-2-Clause
+    - GPL-2.0-only
+component  : programming.library
+summary    : Open Fabric Interfaces
+description: |
+    The Open Fabrics Interfaces (OFI) is a framework focused on exporting fabric communication services to applications.
+patterns   :
+    - devel : /usr/share/man/man3
+setup      : |
+    %reconfigure
+build      : |
+    %make
+install    : |
+    %make_install
+    rm -f $installdir/usr/lib*/*.a

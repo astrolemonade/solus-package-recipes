@@ -1,0 +1,24 @@
+name       : kpmcore
+version    : 22.12.1
+release    : 31
+source     :
+    - https://cdn.download.kde.org/stable/release-service/22.12.1/src/kpmcore-22.12.1.tar.xz : 649d7bf631c22c40749053167c27be53a73b93bc99dcccedc2a01c51ddb9b78d
+license    : GPL-3.0-or-later
+component  : programming.library
+summary    : Library for managing partitions
+description: |
+    Common code for KDE Partition Manager and other projects. Library for managing partitions.
+builddeps  :
+    - pkgconfig(blkid)
+    - pkgconfig(polkit-qt5-1)
+    - pkgconfig(qca2-qt5)
+    - kauth-devel
+    - kcoreaddons-devel
+    - ki18n-devel
+    - kwidgetsaddons-devel
+setup      : |
+    %cmake_ninja
+build      : |
+    %ninja_build
+install    : |
+    %ninja_install

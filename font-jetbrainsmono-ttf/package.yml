@@ -1,0 +1,13 @@
+name       : font-jetbrainsmono-ttf
+version    : '2.242'
+release    : 10
+source     :
+    - https://github.com/JetBrains/JetBrainsMono/releases/download/v2.242/JetBrainsMono-2.242.zip : 4e315b4ef176ce7ffc971b14997bdc8f646e3d1e5b913d1ecba3a3b10b4a1a9f
+license    : OFL-1.1
+component  : desktop.font
+homepage   : https://www.jetbrains.com/lp/mono/
+summary    : A free and open-source typeface for developers
+description: |
+    JetBrains Mono is a free and open-source monospace font from JetBrains, designed for developers. Like Fira Code, it features over a hundred code-specific ligatures, with support for over 140 languages.
+install    : |
+    install -Dm00644 fonts/ttf/*.ttf -t $installdir/usr/share/fonts/truetype/jetbrainsmono/

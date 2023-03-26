@@ -1,0 +1,48 @@
+name       : tracker-miners
+version    : 3.4.2
+release    : 48
+source     :
+    - https://download.gnome.org/sources/tracker-miners/3.4/tracker-miners-3.4.2.tar.xz : 101e3608f1c28bfed8ae25522f7a720b559f889a76e280afbe50a4d8b064f92c
+license    :
+    - BSD-3-Clause
+    - GPL-2.0-only
+    - LGPL-2.1-only
+component  : desktop.gnome.core
+summary    : Collection of data extractors for Tracker
+description: |
+    Collection of data extractors for Tracker
+builddeps  :
+    - pkgconfig(dbus-glib-1)
+    - pkgconfig(exempi-2.0)
+    - pkgconfig(flac)
+    - pkgconfig(gexiv2)
+    - pkgconfig(gstreamer-tag-1.0)
+    - pkgconfig(gupnp-dlna-gst-2.0)
+    - pkgconfig(icu-io)
+    - pkgconfig(libavcodec)
+    - pkgconfig(libcue)
+    - pkgconfig(libexif)
+    - pkgconfig(libgsf-1)
+    - pkgconfig(libgxps)
+    - pkgconfig(libiptcdata)
+    - pkgconfig(libosinfo-1.0)
+    - pkgconfig(libseccomp)
+    - pkgconfig(libturbojpeg)
+    - pkgconfig(poppler)
+    - pkgconfig(libtiff-4)
+    - pkgconfig(taglib)
+    - pkgconfig(totem-plparser)
+    - pkgconfig(tracker-sparql-3.0)
+    - pkgconfig(upower-glib)
+    - pkgconfig(vorbisfile)
+    - asciidoc
+    - giflib-devel
+    - vala
+setup      : |
+    %meson_configure -Dminer_rss=false
+build      : |
+    %ninja_build
+install    : |
+    %ninja_install
+    mv $installdir/etc/xdg $installdir/usr/share/.
+    rmdir $installdir/etc

@@ -1,0 +1,24 @@
+name       : haskell-base64-bytestring
+version    : 1.0.0.3
+release    : 6
+source     :
+    - https://hackage.haskell.org/package/base64-bytestring-1.0.0.3/base64-bytestring-1.0.0.3.tar.gz : ef159d60ec14c0a3f3e26bab5c9fd7634d5e1b983c6a64f0b0c3261efe008fc7
+license    : BSD-3-Clause
+component  : programming.haskell
+summary    : Fast base64 encoding and decoding for ByteStrings
+description: |
+    Fast base64 encoding and decoding for ByteStrings
+builddeps  :
+    - ghc-devel
+    - haskell-cabal-install
+rundeps    :
+    - devel:
+        - ghc-devel
+networking : yes
+setup      : |
+    %cabal_configure
+build      : |
+    %cabal_build
+install    : |
+    %cabal_install
+    %cabal_register

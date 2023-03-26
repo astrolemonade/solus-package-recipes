@@ -1,0 +1,37 @@
+name       : python-lxml
+version    : 4.9.1
+release    : 16
+source     :
+    - https://github.com/lxml/lxml/archive/refs/tags/lxml-4.9.1.tar.gz : e46a74cef580e069586b7a98e9a74b49e56b849822130654d28e00826db75095
+homepage   : https://lxml.de/
+license    :
+    - BSD-3-Clause
+    - MIT
+    - GPL-2.0-or-later
+    - ZPL-2.0
+component  : programming.python
+summary    : Python 2 & 3 lxml Module
+description: |
+    lxml is the most feature-rich and easy-to-use library for processing XML and HTML in the Python language. It's also very fast and memory friendly, just so you know.
+builddeps  :
+    - pkgconfig(libxml-2.0)
+    - pkgconfig(libxslt)
+    - pkgconfig(python3)
+    - python-setuptools
+    - cython
+build      : |
+    %python_setup
+    %python3_setup
+install    : |
+    %python_install
+    %python3_install
+check      : |
+    export LC_ALL=en_US.utf8
+
+    pushd $PKG_BUILD_DIR/py2build
+        python setup.py test
+    popd
+
+    pushd $PKG_BUILD_DIR/py3build
+        python3 setup.py test
+    popd

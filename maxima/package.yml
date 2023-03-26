@@ -1,0 +1,21 @@
+name       : maxima
+version    : '5.44'
+release    : 9
+source     :
+    - https://sourceforge.net/projects/maxima/files/Maxima-source/5.44.0-source/maxima-5.44.0.tar.gz : d93f5e48c4daf8f085d609cb3c7b0bdf342c667fd04cf750c846426874c9d2ec
+license    : GPL-2.0-or-later
+component  : office.maths
+summary    : A Computer Algebra System
+description: |
+    Maxima is a system for the manipulation of symbolic and numerical expressions, including differentiation, integration, Taylor series, Laplace transforms, ordinary differential equations, systems of linear equations, polynomials, sets, lists, vectors, matrices and tensors. Maxima yields high precision numerical results by using exact fractions, arbitrary-precision integers and variable-precision floating-point numbers. Maxima can plot functions and data in two and three dimensions.
+builddeps  :
+    - sbcl
+rundeps    :
+    - gnuplot
+    - sbcl
+setup      : |
+    %configure --enable-sbcl
+build      : |
+    %make
+install    : |
+    %make_install

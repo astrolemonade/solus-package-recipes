@@ -1,0 +1,40 @@
+name       : kinfocenter
+version    : 5.26.5
+release    : 87
+source     :
+    - https://cdn.download.kde.org/stable/plasma/5.26.5/kinfocenter-5.26.5.tar.xz : 9d786692be2bcdcbdf6db438428b76e6b2c7751a383446c79ef18b7caa136a66
+homepage   : https://www.kde.org/workspaces/plasmadesktop/
+license    :
+    - GFDL-1.2-only
+    - GPL-2.0-or-later
+    - LGPL-2.1-or-later
+component  : desktop.kde.core
+summary    : KDE Info Center
+description: |
+    KInfoCenter is a utility that provides information about a computer system.
+optimize   : lto
+builddeps  :
+    - pkgconfig(libusb-1.0)
+    - kcmutils-devel
+    - kcrash-devel
+    - kdbusaddons-devel
+    - kdeclarative-devel
+    - kdoctools-devel
+    - kiconthemes-devel
+    - kio-devel
+    - kirigami2-devel
+rundeps    :
+    - kirigami2
+    - plasma-disks
+setup      : |
+    %patch -p1 < $pkgfiles/0001-Use-stateless-directory-for-menu.patch
+    %cmake_ninja
+build      : |
+    %ninja_build
+install    : |
+    %ninja_install
+    %qml_cache
+    rm -rf $installdir/usr/share/doc
+patterns   :
+    - main :
+        - /usr/lib64/libKInfoCenterInternal.so

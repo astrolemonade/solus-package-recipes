@@ -1,0 +1,44 @@
+name       : streamlink
+version    : 5.1.2
+release    : 46
+source     :
+    - https://github.com/streamlink/streamlink/releases/download/5.1.2/streamlink-5.1.2.tar.gz : 501f604d3dbfad05d5d50ed4432c041e51810890cc0e65eea43f27608238767a
+license    : BSD-2-Clause
+component  : network.clients
+summary    : Extracts streams from various services and pipes them into a video player of choice
+description: |
+    Streamlink is a CLI utility that pipes flash videos from online streaming services to a variety of video players such as VLC, or alternatively, a browser
+networking : yes
+replaces   :
+    - livestreamer
+builddeps  :
+    - python3-pycryptodome
+    - python-isodate
+    - python-lxml
+    - python-mock
+    - python-pycountry
+    - python-pysocks
+    - python-pytest
+    - python-requests-mock
+    - python-recommonmark
+    - python-sphinx
+    - python-tomli
+    - python-websocket-client
+rundeps    :
+    - ffmpeg
+    - python3-pycryptodome
+    - python-isodate
+    - python-lxml
+    - python-pycountry
+    - python-pysocks
+    - python-websocket-client
+build      : |
+    # We don't have versioningit in the repo so build like this for now
+    # loving all these new pep517/518 build systems
+    export PYTHONUSERBASE=$workdir
+    export PATH=$PATH:$workdir/bin/
+    python3 -m pip install --user versioningit
+    python3 -m pip wheel --no-deps .
+install    : |
+    unset PYTHONUSERBASE
+    python3 -m pip install --root=%installroot% --no-deps *.whl

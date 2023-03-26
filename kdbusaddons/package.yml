@@ -1,0 +1,31 @@
+name       : kdbusaddons
+version    : 5.101.0
+release    : 67
+source     :
+    - https://cdn.download.kde.org/stable/frameworks/5.101/kdbusaddons-5.101.0.tar.xz : 1f2912211b39fe3f757b7a869f7861398d48485a7521e4b4f7de29daceb31a4c
+homepage   : https://community.kde.org/Frameworks
+license    :
+    - LGPL-2.0-only
+    - LGPL-2.0-or-later
+    - LGPL-2.1-only
+component  : programming.library
+summary    : Convenience classes for DBus.
+description: |
+    Convenience classes for DBus.
+optimize   : lto
+builddeps  :
+    - pkgconfig(Qt5Designer)
+    - pkgconfig(Qt5X11Extras)
+    - pkgconfig(xcb)
+    - extra-cmake-modules
+rundeps    :
+    - devel :
+        - extra-cmake-modules
+        - qt5-tools-devel
+setup      : |
+    %cmake_ninja -DBUILD_QCH=ON \
+                -DBUILD_TESTING=OFF
+build      : |
+    %ninja_build
+install    : |
+    %ninja_install

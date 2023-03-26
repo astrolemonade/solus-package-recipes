@@ -1,0 +1,87 @@
+<PISI>
+    <Source>
+        <Name>python-qdarkstyle</Name>
+        <Homepage>https://github.com/ColinDuquesnoy/QDarkStyleSheet</Homepage>
+        <Packager>
+            <Name>Algent Albrahimi</Name>
+            <Email>algent@protonmail.com</Email>
+        </Packager>
+        <License>MIT</License>
+        <PartOf>programming.python</PartOf>
+        <Summary xml:lang="en">A dark style sheet for QtWidgets application</Summary>
+        <Description xml:lang="en">QDarkStyle is a dark stylesheet for Python and Qt applications. This module provides a function to transparently load the stylesheets with the correct rc file.
+</Description>
+        <Archive type="binary" sha1sum="79eb0752a961b8e0d15c77d298c97498fbc89c5a">https://getsol.us/sources/README.Solus</Archive>
+    </Source>
+    <Package>
+        <Name>python-qdarkstyle</Name>
+        <Summary xml:lang="en">A dark style sheet for QtWidgets application</Summary>
+        <Description xml:lang="en">QDarkStyle is a dark stylesheet for Python and Qt applications. This module provides a function to transparently load the stylesheets with the correct rc file.
+</Description>
+        <PartOf>programming.python</PartOf>
+        <Files>
+            <Path fileType="executable">/usr/bin/qdarkstyle</Path>
+            <Path fileType="executable">/usr/bin/qdarkstyle.example</Path>
+            <Path fileType="executable">/usr/bin/qdarkstyle.utils</Path>
+            <Path fileType="library">/usr/lib/python3.10/site-packages/QDarkStyle-3.0.3-py3.10.egg-info/PKG-INFO</Path>
+            <Path fileType="library">/usr/lib/python3.10/site-packages/QDarkStyle-3.0.3-py3.10.egg-info/SOURCES.txt</Path>
+            <Path fileType="library">/usr/lib/python3.10/site-packages/QDarkStyle-3.0.3-py3.10.egg-info/dependency_links.txt</Path>
+            <Path fileType="library">/usr/lib/python3.10/site-packages/QDarkStyle-3.0.3-py3.10.egg-info/entry_points.txt</Path>
+            <Path fileType="library">/usr/lib/python3.10/site-packages/QDarkStyle-3.0.3-py3.10.egg-info/not-zip-safe</Path>
+            <Path fileType="library">/usr/lib/python3.10/site-packages/QDarkStyle-3.0.3-py3.10.egg-info/requires.txt</Path>
+            <Path fileType="library">/usr/lib/python3.10/site-packages/QDarkStyle-3.0.3-py3.10.egg-info/top_level.txt</Path>
+            <Path fileType="library">/usr/lib/python3.10/site-packages/qdarkstyle/__init__.py</Path>
+            <Path fileType="library">/usr/lib/python3.10/site-packages/qdarkstyle/__main__.py</Path>
+            <Path fileType="library">/usr/lib/python3.10/site-packages/qdarkstyle/__pycache__/__init__.cpython-310.pyc</Path>
+            <Path fileType="library">/usr/lib/python3.10/site-packages/qdarkstyle/__pycache__/__main__.cpython-310.pyc</Path>
+            <Path fileType="library">/usr/lib/python3.10/site-packages/qdarkstyle/__pycache__/colorsystem.cpython-310.pyc</Path>
+            <Path fileType="library">/usr/lib/python3.10/site-packages/qdarkstyle/__pycache__/palette.cpython-310.pyc</Path>
+            <Path fileType="library">/usr/lib/python3.10/site-packages/qdarkstyle/colorsystem.py</Path>
+            <Path fileType="library">/usr/lib/python3.10/site-packages/qdarkstyle/dark/__init__.py</Path>
+            <Path fileType="library">/usr/lib/python3.10/site-packages/qdarkstyle/dark/__pycache__/__init__.cpython-310.pyc</Path>
+            <Path fileType="library">/usr/lib/python3.10/site-packages/qdarkstyle/dark/__pycache__/palette.cpython-310.pyc</Path>
+            <Path fileType="library">/usr/lib/python3.10/site-packages/qdarkstyle/dark/__pycache__/style_rc.cpython-310.pyc</Path>
+            <Path fileType="library">/usr/lib/python3.10/site-packages/qdarkstyle/dark/palette.py</Path>
+            <Path fileType="library">/usr/lib/python3.10/site-packages/qdarkstyle/dark/style_rc.py</Path>
+            <Path fileType="library">/usr/lib/python3.10/site-packages/qdarkstyle/example/__init__.py</Path>
+            <Path fileType="library">/usr/lib/python3.10/site-packages/qdarkstyle/example/__main__.py</Path>
+            <Path fileType="library">/usr/lib/python3.10/site-packages/qdarkstyle/example/__pycache__/__init__.cpython-310.pyc</Path>
+            <Path fileType="library">/usr/lib/python3.10/site-packages/qdarkstyle/example/__pycache__/__main__.cpython-310.pyc</Path>
+            <Path fileType="library">/usr/lib/python3.10/site-packages/qdarkstyle/example/ui/__init__.py</Path>
+            <Path fileType="library">/usr/lib/python3.10/site-packages/qdarkstyle/example/ui/__pycache__/__init__.cpython-310.pyc</Path>
+            <Path fileType="library">/usr/lib/python3.10/site-packages/qdarkstyle/example/ui/dw_buttons.ui</Path>
+            <Path fileType="library">/usr/lib/python3.10/site-packages/qdarkstyle/example/ui/dw_containers_no_tabs.ui</Path>
+            <Path fileType="library">/usr/lib/python3.10/site-packages/qdarkstyle/example/ui/dw_containers_tabs.ui</Path>
+            <Path fileType="library">/usr/lib/python3.10/site-packages/qdarkstyle/example/ui/dw_displays.ui</Path>
+            <Path fileType="library">/usr/lib/python3.10/site-packages/qdarkstyle/example/ui/dw_inputs_fields.ui</Path>
+            <Path fileType="library">/usr/lib/python3.10/site-packages/qdarkstyle/example/ui/dw_inputs_no_fields.ui</Path>
+            <Path fileType="library">/usr/lib/python3.10/site-packages/qdarkstyle/example/ui/dw_views.ui</Path>
+            <Path fileType="library">/usr/lib/python3.10/site-packages/qdarkstyle/example/ui/dw_widgets.ui</Path>
+            <Path fileType="library">/usr/lib/python3.10/site-packages/qdarkstyle/example/ui/mw_menus.ui</Path>
+            <Path fileType="library">/usr/lib/python3.10/site-packages/qdarkstyle/light/__init__.py</Path>
+            <Path fileType="library">/usr/lib/python3.10/site-packages/qdarkstyle/light/__pycache__/__init__.cpython-310.pyc</Path>
+            <Path fileType="library">/usr/lib/python3.10/site-packages/qdarkstyle/light/__pycache__/palette.cpython-310.pyc</Path>
+            <Path fileType="library">/usr/lib/python3.10/site-packages/qdarkstyle/light/__pycache__/style_rc.cpython-310.pyc</Path>
+            <Path fileType="library">/usr/lib/python3.10/site-packages/qdarkstyle/light/palette.py</Path>
+            <Path fileType="library">/usr/lib/python3.10/site-packages/qdarkstyle/light/style_rc.py</Path>
+            <Path fileType="library">/usr/lib/python3.10/site-packages/qdarkstyle/palette.py</Path>
+            <Path fileType="library">/usr/lib/python3.10/site-packages/qdarkstyle/utils/__init__.py</Path>
+            <Path fileType="library">/usr/lib/python3.10/site-packages/qdarkstyle/utils/__main__.py</Path>
+            <Path fileType="library">/usr/lib/python3.10/site-packages/qdarkstyle/utils/__pycache__/__init__.cpython-310.pyc</Path>
+            <Path fileType="library">/usr/lib/python3.10/site-packages/qdarkstyle/utils/__pycache__/__main__.cpython-310.pyc</Path>
+            <Path fileType="library">/usr/lib/python3.10/site-packages/qdarkstyle/utils/__pycache__/images.cpython-310.pyc</Path>
+            <Path fileType="library">/usr/lib/python3.10/site-packages/qdarkstyle/utils/__pycache__/scss.cpython-310.pyc</Path>
+            <Path fileType="library">/usr/lib/python3.10/site-packages/qdarkstyle/utils/images.py</Path>
+            <Path fileType="library">/usr/lib/python3.10/site-packages/qdarkstyle/utils/scss.py</Path>
+        </Files>
+    </Package>
+    <History>
+        <Update release="8">
+            <Date>2022-05-25</Date>
+            <Version>3.0.3</Version>
+            <Comment>Packaging update</Comment>
+            <Name>Algent Albrahimi</Name>
+            <Email>algent@protonmail.com</Email>
+        </Update>
+    </History>
+</PISI>

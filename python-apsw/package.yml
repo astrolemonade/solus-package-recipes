@@ -1,0 +1,20 @@
+name       : python-apsw
+version    : 3.34.0
+release    : 15
+source     :
+    - https://github.com/rogerbinns/apsw/archive/refs/tags/3.34.0-r1.tar.gz : 02f4de8fa304c0234db918e78a75ec81bf6052b02c5e03ca88d23ff10dc282dd
+homepage   : https://github.com/rogerbinns/apsw
+license    : Zlib
+component  : programming.python
+summary    : Another Python SQLite Wrapper
+description: |
+    APSW is a Python wrapper for the SQLite embedded relational database engine. In contrast to other wrappers such as pysqlite it focuses on being a minimal layer over SQLite attempting just to translate the complete SQLite API into Python.
+builddeps  :
+    - pkgconfig(python3)
+    - pkgconfig(sqlite3)
+build      : |
+    %python3_setup --enable=load_extension
+install    : |
+    %python3_install
+check      : |
+    %python3_test

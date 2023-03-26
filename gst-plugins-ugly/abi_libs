@@ -1,0 +1,12 @@
+libgstasf.so
+libgstcdio.so
+libgstdvdlpcmdec.so
+libgstdvdsub.so
+libgstiec958.so
+libgstlame.so
+libgstmad.so
+libgstmpeg2dec.so
+libgstmpegaudioparse.so
+libgstmpegstream.so
+libgstrmdemux.so
+libgstx264.so

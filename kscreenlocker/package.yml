@@ -1,0 +1,43 @@
+name       : kscreenlocker
+version    : 5.26.5
+release    : 87
+source     :
+    - https://cdn.download.kde.org/stable/plasma/5.26.5/kscreenlocker-5.26.5.tar.xz : 4f70a3647fbc68240ac104ee1f596eca2558ba98d38e4a4e42a784b9561f9653
+homepage   : https://www.kde.org/workspaces/plasmadesktop/
+license    : GPL-2.0-or-later
+component  : desktop.kde.core
+summary    : Library and components for secure lock screen architecture
+description: |
+    Library and components for secure lock screen architecture.
+optimize   : lto
+builddeps  :
+    - pkgconfig(libseccomp)
+    - pkgconfig(Qt5X11Extras)
+    - pkgconfig(wayland-scanner)
+    - pkgconfig(xcb-keysyms)
+    - pkgconfig(xcursor)
+    - pkgconfig(xi)
+    - kcmutils-devel
+    - kcrash-devel
+    - kdeclarative-devel
+    - kglobalaccel-devel
+    - ki18n-devel
+    - kidletime-devel
+    - kio-devel
+    - knotifications-devel
+    - kpackage-devel
+    - kwayland-devel
+    - kwindowsystem-devel
+    - kxmlgui-devel
+    - pam-devel
+    - layer-shell-qt-devel
+    - solid-devel
+setup      : |
+    %cmake_ninja -DHAVE_PAM=YES \
+                -DBUILD_TESTING=OFF
+build      : |
+    %ninja_build
+install    : |
+    %ninja_install
+    install -Dm00644 $pkgfiles/kde $installdir/usr/share/defaults/etc/pam.d/kde
+    %qml_cache

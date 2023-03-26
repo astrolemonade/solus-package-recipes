@@ -1,0 +1,24 @@
+name       : yubikey-manager-qt
+version    : 1.2.4
+release    : 18
+source     :
+    - https://github.com/Yubico/yubikey-manager-qt/archive/refs/tags/yubikey-manager-qt-1.2.4.tar.gz : ab634dbd487f30b1081cff42f6ed0a4a5385088ecfc5a8621ac418ac5ee5a63c
+license    : BSD-2-Clause
+component  : security
+summary    : Cross-platform application for configuring any YubiKey over all USB transports.
+description: |
+    Cross-platform application for configuring any YubiKey over all USB transports.
+builddeps  :
+    - pkgconfig(Qt5QuickControls2)
+rundeps    :
+    - python-pyotherside
+    - qt5-quickcontrols
+    - yubikey-manager
+setup      : |
+    %qmake
+build      : |
+    %make
+install    : |
+    %make_install INSTALL_ROOT=$installdir
+    install -Dm00644 $workdir/resources/ykman-gui.desktop $installdir/usr/share/applications/ykman-gui.desktop
+    install -Dm00644 $workdir/resources/icons/ykman.png $installdir/usr/share/pixmaps/ykman.png

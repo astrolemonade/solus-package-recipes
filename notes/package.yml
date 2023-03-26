@@ -1,0 +1,26 @@
+name       : notes
+version    : 1.5.0
+release    : 3
+source     :
+    - git|https://github.com/nuttyartist/notes.git : v1.5.0
+license    :
+    - MPL-2.0
+component  : office.notes
+summary    : Note-taking application, write down your thoughts.
+description : |
+    Note taking application, write down your thoughts. Notes is a tool for the things you need to write down off your brain. It is your place of expressing yourself. Notes is an open source and cross-platform project, and you're welcome to be part of it and contribute. We hope you will love it as much as we do.
+builddeps  :
+    - pkgconfig(Qt5Core)
+    - pkgconfig(x11-xcb)
+setup      : |
+    %apply_patches
+    %qmake src/Notes.pro
+build      : |
+    %make
+install    : |
+    install -Dm00755 notes $installdir/usr/bin/notes
+    for i in 16 22 24 32 48 64 128 256 512; do
+        install -Dm00644 packaging/linux/common/icons/${i}x${i}/notes.png $installdir/usr/share/icons/hicolor/${i}x${i}/apps/notes.png
+    done
+    install -Dm00644 packaging/linux/common/icons/scalable/notes.svg $installdir/usr/share/icons/hicolor/scalable/apps/notes.svg
+    install -Dm00644 packaging/linux/common/notes.desktop $installdir/usr/share/applications/notes.desktop

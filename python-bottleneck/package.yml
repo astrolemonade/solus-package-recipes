@@ -1,0 +1,23 @@
+name       : python-bottleneck
+version    : 1.3.5
+release    : 9
+source     :
+    - https://files.pythonhosted.org/packages/source/B/Bottleneck/Bottleneck-1.3.5.tar.gz : 2c0d27afe45351f6f421893362621804fa7dea14fe29a78eaa52d4323f646de7
+homepage   : https://github.com/pydata/bottleneck
+license    : BSD-2-Clause
+component  : programming.python
+summary    : Fast NumPy array functions written in C
+description: |
+    Bottleneck is a collection of fast, NaN-aware NumPy array functions written in C.
+builddeps  :
+    - pkgconfig(python3)
+    - numpy
+    - python-pytest     # check
+rundeps    :
+    - numpy
+build      : |
+    %python3_setup
+install    : |
+    %python3_install
+check      : |
+    %python3_test pytest3 -vv --color=yes --pyargs bottleneck

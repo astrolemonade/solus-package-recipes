@@ -1,0 +1,18 @@
+name       : perl-date-simple
+version    : 3.03
+release    : 8
+source     :
+    - http://search.cpan.org/CPAN/authors/id/I/IZ/IZUT/Date-Simple-3.03.tar.gz : 29a1926314ce1681a312d6155c29590c771ddacf91b7485873ce449ef209dd04
+license    : GPL-2.0
+component  : programming.perl
+summary    : Date::Simple - a simple date object
+description: |
+    Date::Simple - a simple date object
+rundeps    :
+    - perl-scalar-list-utils
+setup      : |
+    %perl_setup
+build      : |
+    %perl_build
+install    : |
+    %perl_install

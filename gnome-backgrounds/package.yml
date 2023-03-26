@@ -1,0 +1,20 @@
+name       : gnome-backgrounds
+version    : '43.0'
+release    : 16
+source     :
+    - https://gitlab.gnome.org/GNOME/gnome-backgrounds/-/archive/43/gnome-backgrounds-43.tar.gz : 8a8161f8149b7fc21e402ad4ca242f9daed13eef699061b6489dabf5adac8a3b
+homepage   : https://gitlab.gnome.org/GNOME/gnome-backgrounds
+license    :
+    - CC-BY-SA-3.0
+    - GPL-2.0-or-later
+component  : desktop.gnome
+summary    : Default GNOME artwork
+description: |
+    Default GNOME artwork
+setup      : |
+    %meson_configure
+build      : |
+    %ninja_build
+install    : |
+    %ninja_install
+    install -m00644 $pkgfiles/*.jpg -t $installdir/usr/share/backgrounds/gnome/

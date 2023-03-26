@@ -1,0 +1,21 @@
+name       : python-pytaglib
+version    : 1.5.0
+release    : 4
+source     :
+    - https://files.pythonhosted.org/packages/ea/bb/bdd8aa96668820731f8eb871a938efbf535cf70a3fbe2939d3323dfb0228/pytaglib-1.5.0.tar.gz : 8f7603dffdb1930428b305e79b8ca127e9cffc4ce4d2f7440a5f5226a82e6e5f
+license    : GPL-3.0-or-later
+component  : programming.python
+summary    : Audio tagging library
+description: |
+    pytaglib is a tiny wrapper around the taglib library.
+builddeps  :
+    - pkgconfig(python3)
+    - pkgconfig(taglib)
+    - python-pytest
+build      : |
+    %python3_setup
+install    : |
+    %python3_install
+check      : |
+    export PYTHONPATH=$installdir/usr/lib/python%python3_version%/site-packages
+    python3 -m pytest

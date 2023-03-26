@@ -1,0 +1,31 @@
+name       : kparts
+version    : 5.101.0
+release    : 66
+source     :
+    - https://cdn.download.kde.org/stable/frameworks/5.101/kparts-5.101.0.tar.xz : daae37f79c13276376f269f341121414779cbbec214956997c393b4c32435697
+homepage   : https://community.kde.org/Frameworks
+license    :
+    - LGPL-2.0-only
+    - LGPL-2.0-or-later
+    - LGPL-2.1-or-later
+component  : programming.library
+summary    : Plugin framework for user interface components
+description: |
+    Plugin framework for user interface components.
+optimize   : lto
+builddeps  :
+    - kiconthemes-devel
+    - kio-devel
+    - ktextwidgets-devel
+    - sonnet-devel
+rundeps    :
+    - devel :
+        - kio-devel
+        - ktextwidgets-devel
+setup      : |
+    %cmake_ninja -DBUILD_QCH=ON \
+                -DBUILD_TESTING=OFF
+build      : |
+    %ninja_build
+install    : |
+    %ninja_install

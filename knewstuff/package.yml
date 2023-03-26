@@ -1,0 +1,39 @@
+name       : knewstuff
+version    : 5.101.0
+release    : 75
+source     :
+    - https://cdn.download.kde.org/stable/frameworks/5.101/knewstuff-5.101.0.tar.xz : e7112b0b8b766f3300e93fb35bad830510fd16fc86770c3a4833f509ceffcff5
+homepage   : https://community.kde.org/Frameworks
+license    :
+    - LGPL-2.0-or-later
+    - LGPL-2.1-only
+    - LGPL-2.1-or-later
+component  : programming.library
+summary    : Framework for downloading and sharing additional application data.
+description: |
+    Framework for downloading and sharing additional application data.
+optimize   : lto
+builddeps  :
+    - pkgconfig(Qt5Quick)
+    - attica-devel
+    - karchive-devel
+    - kiconthemes-devel
+    - kio-devel
+    - kirigami2-devel
+    - kpackage-devel
+    - ktextwidgets-devel
+    - sonnet-devel
+    - syndication-devel
+rundeps    :
+    - devel :
+        - attica-devel
+        - kservice-devel
+        - kxmlgui-devel
+setup      : |
+    %cmake_ninja -DBUILD_QCH=ON \
+                -DBUILD_TESTING=OFF
+build      : |
+    %ninja_build
+install    : |
+    %ninja_install
+    %qml_cache

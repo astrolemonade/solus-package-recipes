@@ -1,0 +1,111 @@
+name       : docker
+version    : 20.10.22
+release    : 42
+source     :
+    - https://github.com/moby/moby/archive/v20.10.22.tar.gz : ee0e2168e27ec87f1b0650e86af5d3e167a07fd2ff8c1ce3bb588f0b4f9a4658
+    - git|https://github.com/docker/cli.git : v20.10.22
+    - git|https://github.com/moby/libnetwork.git : dcdf8f176d1e13ad719e913e796fb698d846de98
+    - git|https://github.com/krallin/tini.git : v0.19.0
+license    : Apache-2.0
+component  : virt
+summary    : Open source application container engine
+description: |
+    Docker is an open source project to pack, ship and run any application as a lightweight container.
+
+    Docker containers are both hardware-agnostic and platform-agnostic. This means they can run anywhere, from your laptop to the largest cloud compute instance and everything in between - and they don't require you to use a particular language, framework or packaging system. That makes them great building blocks for deploying and scaling web apps, databases, and backend services without depending on a particular stack or provider.
+strip      : no
+builddeps  :
+    - pkgconfig(devmapper)
+    - btrfs-progs-devel
+    - go-md2man
+    - golang
+rundeps    :
+    - btrfs-progs
+    - containerd
+    - dnsmasq
+    - docker-buildx
+environment: |
+    export PLATFORM="Docker Engine - Community"
+    export AUTO_GOPATH=1
+    export DISABLE_WARN_OUTSIDE_CONTAINER=1
+    export GITCOMMIT="42c8b314993e5eb3cc2776da0bbe41d5eb4b707b"
+    export DOCKER_GITCOMMIT=$GITCOMMIT
+    export GO111MODULE=auto
+    export GOPATH="${workdir}"
+    unset LDFLAGS
+build      : |
+    mkdir -p src/github.com/docker
+
+    # Build proxy
+    ln -sv $sources/libnetwork.git src/github.com/docker/libnetwork
+    go build -o $workdir/docker-proxy github.com/docker/libnetwork/cmd/proxy
+    rm -v src/github.com/docker/libnetwork
+
+    # Build daemon
+    export VERSION=${version}
+    ./hack/make.sh dynbinary
+
+    # Build docker-init
+    mkdir -p src/github.com/krallin/tini
+    cp -r $sources/tini.git/. src/github.com/krallin/tini/
+    pushd src/github.com/krallin/tini
+    %cmake .
+    %make tini-static
+    popd
+
+    # Build CLI
+    mkdir -p src/github.com/docker/cli
+    cp -R $sources/cli.git/* src/github.com/docker/cli/
+    pushd src/github.com/docker/cli/
+    %make dynbinary
+    popd
+
+    # Build manpages
+    pushd src/github.com/docker/cli
+    ./man/md2man-all.sh
+    popd
+install    : |
+    # Required directories
+    install -Ddm00755 $installdir/usr/bin
+    install -Ddm00755 $installdir/%libdir%/systemd/system
+
+    # Install docker client
+    install -m00755 src/github.com/docker/cli/build/docker-linux-amd64 $installdir/usr/bin/docker
+
+    # Main docker daemon
+    install -m00755 bundles/dynbinary-daemon/dockerd-${version} $installdir/usr/bin/dockerd
+
+    # Now install docker-init
+    install -m00755 $workdir/src/github.com/krallin/tini/tini-static $installdir/usr/bin/docker-init
+
+    # Now install proxy service
+    install -m00755 $workdir/docker-proxy $installdir/usr/bin/docker-proxy
+
+    # Now install systemd units
+    install -m00644 contrib/init/systemd/docker.service $installdir/%libdir%/systemd/system/.
+    install -m00644 contrib/init/systemd/docker.socket $installdir/%libdir%/systemd/system/.
+
+    # Enable socket activation by default
+    install -Ddm00755 $installdir/%libdir%/systemd/system/sockets.target.wants
+    ln -sv ../docker.socket $installdir/%libdir%/systemd/system/sockets.target.wants/docker.socket
+
+    # Add the docker group
+    install -Dm00644 $pkgfiles/docker.sysusers $installdir/%libdir%/sysusers.d/docker.conf
+
+    # containerd integration
+    ln -s containerd $installdir/usr/bin/docker-containerd
+    ln -s containerd-shim $installdir/usr/bin/docker-containerd-shim
+    ln -s ctr $installdir/usr/bin/docker-containerd-ctr
+    ln -s runc $installdir/usr/bin/docker-runc
+
+    # Install completions
+    pushd src/github.com/docker/cli
+    install -Dm00644 contrib/completion/bash/docker $installdir/usr/share/bash-completion/completions/docker
+    install -Dm00644 contrib/completion/zsh/_docker $installdir/usr/share/zsh/site-functions/_docker
+    install -Dm00644 contrib/completion/fish/docker.fish $installdir/usr/share/fish/vendor_completions.d/docker.fish
+
+    # Install manpages
+    for i in 1 5 8; do
+      install -Dm00644 man/man$i/*.$i -t $installdir/usr/share/man/man$i
+    done
+    popd

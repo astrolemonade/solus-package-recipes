@@ -1,0 +1,24 @@
+name       : libgravatar
+version    : 22.12.1
+release    : 62
+source     :
+    - https://cdn.download.kde.org/stable/release-service/22.12.1/src/libgravatar-22.12.1.tar.xz : 464453a10760a57f0ebe7dac0b10c28ba490a7b0dcee3f44aeda8d740a67fb36
+homepage   : https://kde.org/
+license    :
+    - GPL-2.0-only
+    - LGPL-2.1-or-later
+component  : desktop.library
+summary    : KDE PIM library providing Gravatar support
+description: |
+    KDE PIM library providing Gravatar support.
+builddeps  :
+    - kimap-devel
+    - kio-devel
+    - kpimtextedit-devel
+    - pimcommon-devel
+setup      : |
+    %cmake_ninja -DBUILD_TESTING=OFF
+build      : |
+    %ninja_build
+install    : |
+    %ninja_install

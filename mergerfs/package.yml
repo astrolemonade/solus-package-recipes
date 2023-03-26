@@ -1,0 +1,14 @@
+name       : mergerfs
+version    : 2.27.0
+release    : 3
+source     :
+    - https://github.com/trapexit/mergerfs/archive/2.27.0.tar.gz : bda8b6eb45bf54f590f7890945f9a3b50f9a708cebd0648e145e015a32fd37eb
+license    : ISC
+component  : system.utils
+summary    : A featureful union filesystem
+description: |
+    Mergerfs is a union filesystem geared towards simplifying storage and management of files across numerous commodity storage devices
+build      : |
+    %make
+install    : |
+    %make_install PREFIX=/usr

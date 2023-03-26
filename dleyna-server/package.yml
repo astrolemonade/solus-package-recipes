@@ -1,0 +1,20 @@
+name       : dleyna-server
+version    : 0.6.0
+release    : 10
+source     :
+    - git|https://github.com/intel/dleyna-server.git : 96c01c88363d6e5e9b7519bc4e8b5d86cf783e1f
+license    : LGPL-2.1-only
+component  : programming.library
+summary    : Library to discover, browse and manipulate Digital Media Servers
+description: |
+    Library to discover, browse and manipulate Digital Media Servers
+builddeps  :
+    - pkgconfig(dleyna-core-1.0)
+    - pkgconfig(gupnp-av-1.0)
+    - pkgconfig(gupnp-dlna-2.0)
+setup      : |
+    %autogen --disable-static --sysconfdir=/usr/share/dleyna-server/
+build      : |
+    %make
+install    : |
+    %make_install

@@ -1,0 +1,20 @@
+name       : mate-common
+version    : 1.26.0
+release    : 7
+source     :
+    - https://github.com/mate-desktop/mate-common/releases/download/v1.26.0/mate-common-1.26.0.tar.xz : f2afd28ef2e1dfd6b9e4094c1ff482830fb4139d116fd48cb92e0451cf64236f
+license    : GPL-3.0-or-later
+component  : programming.tools
+summary    : Tools to build MATE from git
+description: |
+    Common scripts and macros to develop with MATE
+patterns   :
+    - /*
+rundeps    :
+    - autoconf-archive
+setup      : |
+    %configure
+build      : |
+    %make
+install    : |
+    %make_install

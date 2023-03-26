@@ -1,0 +1,43 @@
+name       : kicad
+version    : 5.1.10
+release    : 25
+source     :
+    - https://github.com/KiCad/kicad-source-mirror/archive/refs/tags/5.1.10.tar.gz : 79b452eb6c555df21d5fbb4ac2fe0bc020edf1f170609dfb0b5d8ee565530116
+homepage   : https://www.kicad.org/
+license    : GPL-3.0-or-later
+component  : office.scientific
+summary    : KiCad is an open source software suite for Electronic Design Automation
+description: |
+    KiCad is an open source software suite for Electronic Design Automation (EDA).
+libsplit   : no
+builddeps  :
+    - pkgconfig(cairo)
+    - pkgconfig(glm)
+    - pkgconfig(glew)
+    - pkgconfig(glut)
+    - pkgconfig(libcurl)
+    - pkgconfig(x11)
+    - libboost-devel
+    - ngspice-devel
+    - opencascade-devel
+    - swig
+    - wxwidgets-devel
+rundeps    :
+    - kicad-footprints
+    - kicad-i18n
+    - kicad-packages3d
+    - kicad-symbols
+    - kicad-templates
+    - ngspice-devel
+clang      : yes
+setup      : |
+    %patch -p1 < $pkgfiles/OCE-3D-plugin-to-occt-7_6_0.patch
+    %cmake \
+        -DKICAD_SCRIPTING_WXPYTHON=OFF \
+        -DKICAD_USE_OCE=OFF \
+        -DKICAD_USE_OCC=ON .
+build      : |
+    %make
+install    : |
+    %make_install
+    rm -rf $installdir/usr/share/mimelnk

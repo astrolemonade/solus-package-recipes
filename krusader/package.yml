@@ -1,0 +1,41 @@
+name       : krusader
+version    : 2.7.2
+release    : 9
+source     :
+    - https://download.kde.org/stable/krusader/2.7.2/krusader-2.7.2.tar.xz : 41a39a43b3c42dd1d1ecaea86df30caff6a061fecc1d66f60859b2a3ca976109
+license    : GPL-2.0-or-later
+component  : desktop
+summary    : Twin panel file manager for KDE
+description: |
+    Krusader is an advanced twin panel (commander style) file manager for KDE and other desktops in the *nix world, similar to Midnight or Total Commander.
+builddeps  :
+    - pkgconfig(Qt5Core)
+    - acl-devel
+    - attr-devel
+    - extra-cmake-modules
+    - karchive-devel
+    - kbookmarks-devel
+    - kcodecs-devel
+    - kcompletion-devel
+    - kconfig-devel
+    - kcoreaddons-devel
+    - kdoctools-devel
+    - kguiaddons-devel
+    - ki18n-devel
+    - kiconthemes-devel
+    - kio-devel
+    - kitemviews-devel
+    - knotifications-devel
+    - kparts-devel
+    - ktextwidgets-devel
+    - kwallet-devel
+    - kwidgetsaddons-devel
+    - kwindowsystem-devel
+    - kxmlgui-devel
+    - solid-devel
+setup      : |
+    %cmake_ninja
+build      : |
+    %ninja_build
+install    : |
+    %ninja_install

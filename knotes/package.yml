@@ -1,0 +1,48 @@
+name       : knotes
+version    : 22.12.1
+release    : 63
+source     :
+    - https://cdn.download.kde.org/stable/release-service/22.12.1/src/knotes-22.12.1.tar.xz : 95f53488ed0bfe2f255957ec31b88cfb863f665c90075331a93d42e882040fa0
+homepage   : https://kde.org/applications/utilities/org.kde.knotes
+license    :
+    - GFDL-1.2-or-later
+    - GPL-2.0-or-later
+component  : office.notes
+summary    : Full featured note application
+description: |
+    KNotes aims to be a useful and full featured notes application for the KDE project. It tries to be as fast and lightweight as possible although including some advanced features.
+builddeps  :
+    - pkgconfig(Qt5X11Extras)
+    - pkgconfig(x11)
+    - akonadi-contacts-devel
+    - akonadi-mime-devel
+    - akonadi-notes-devel
+    - akonadi-search-devel
+    - kcalendarcore-devel
+    - kcalutils-devel
+    - kcmutils-devel
+    - kcontacts-devel
+    - kcrash-devel
+    - kdnssd-devel
+    - kdoctools-devel
+    - kglobalaccel-devel
+    - kiconthemes-devel
+    - kimap-devel
+    - knewstuff-devel
+    - knotifyconfig-devel
+    - kontactinterface-devel
+    - kparts-devel
+    - kpimtextedit-devel
+    - libkdepim-devel
+    - pimcommon-devel
+rundeps    :
+    - kdepim-runtime
+setup      : |
+    %cmake_ninja -DBUILD_TESTING=OFF
+build      : |
+    %ninja_build
+install    : |
+    %ninja_install
+
+    # remove docs
+    rm -rf $installdir/usr/share/doc

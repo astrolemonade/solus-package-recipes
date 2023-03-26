@@ -1,0 +1,156 @@
+<PISI>
+    <Source>
+        <Name>rust</Name>
+        <Packager>
+            <Name>Thomas Staudinger</Name>
+            <Email>Staudi.Kaos@gmail.com</Email>
+        </Packager>
+        <License>Apache-2.0</License>
+        <License>MIT</License>
+        <PartOf>programming</PartOf>
+        <Summary xml:lang="en">A fast and secure system programming language</Summary>
+        <Description xml:lang="en">Rust is a systems programming language that runs blazingly fast, prevents nearly all segfaults, and guarantees thread safety.</Description>
+        <Archive type="binary" sha1sum="79eb0752a961b8e0d15c77d298c97498fbc89c5a">https://getsol.us/sources/README.Solus</Archive>
+    </Source>
+    <Package>
+        <Name>rust</Name>
+        <Summary xml:lang="en">A fast and secure system programming language</Summary>
+        <Description xml:lang="en">Rust is a systems programming language that runs blazingly fast, prevents nearly all segfaults, and guarantees thread safety.</Description>
+        <PartOf>programming</PartOf>
+        <Files>
+            <Path fileType="executable">/usr/bin/rust-gdb</Path>
+            <Path fileType="executable">/usr/bin/rust-gdbgui</Path>
+            <Path fileType="executable">/usr/bin/rust-lldb</Path>
+            <Path fileType="executable">/usr/bin/rustc</Path>
+            <Path fileType="executable">/usr/bin/rustdoc</Path>
+            <Path fileType="library">/usr/lib64/librustc_driver-0b75ba01aeee6012.so</Path>
+            <Path fileType="library">/usr/lib64/libstd-51741c2ffe6c7053.so</Path>
+            <Path fileType="library">/usr/lib64/libtest-b40d24f118cf5614.so</Path>
+            <Path fileType="library">/usr/lib64/rustlib/etc/gdb_load_rust_pretty_printers.py</Path>
+            <Path fileType="library">/usr/lib64/rustlib/etc/gdb_lookup.py</Path>
+            <Path fileType="library">/usr/lib64/rustlib/etc/gdb_providers.py</Path>
+            <Path fileType="library">/usr/lib64/rustlib/etc/lldb_commands</Path>
+            <Path fileType="library">/usr/lib64/rustlib/etc/lldb_lookup.py</Path>
+            <Path fileType="library">/usr/lib64/rustlib/etc/lldb_providers.py</Path>
+            <Path fileType="library">/usr/lib64/rustlib/etc/rust_types.py</Path>
+            <Path fileType="library">/usr/lib64/rustlib/i686-unknown-linux-gnu/lib/libaddr2line-4f2fbfba277bbcf3.rlib</Path>
+            <Path fileType="library">/usr/lib64/rustlib/i686-unknown-linux-gnu/lib/libadler-2881798ec0bbf542.rlib</Path>
+            <Path fileType="library">/usr/lib64/rustlib/i686-unknown-linux-gnu/lib/liballoc-cd05b0b7c478b797.rlib</Path>
+            <Path fileType="library">/usr/lib64/rustlib/i686-unknown-linux-gnu/lib/libcfg_if-1edbddb02c15ddbd.rlib</Path>
+            <Path fileType="library">/usr/lib64/rustlib/i686-unknown-linux-gnu/lib/libcompiler_builtins-8cc0a7a256cd6ec8.rlib</Path>
+            <Path fileType="library">/usr/lib64/rustlib/i686-unknown-linux-gnu/lib/libcore-64fcb2c23167e31a.rlib</Path>
+            <Path fileType="library">/usr/lib64/rustlib/i686-unknown-linux-gnu/lib/libgetopts-d73a9daab4c26e24.rlib</Path>
+            <Path fileType="library">/usr/lib64/rustlib/i686-unknown-linux-gnu/lib/libgimli-90c09e263e288db4.rlib</Path>
+            <Path fileType="library">/usr/lib64/rustlib/i686-unknown-linux-gnu/lib/libhashbrown-62825fb0bad942e1.rlib</Path>
+            <Path fileType="library">/usr/lib64/rustlib/i686-unknown-linux-gnu/lib/liblibc-01ed63938d9c4d18.rlib</Path>
+            <Path fileType="library">/usr/lib64/rustlib/i686-unknown-linux-gnu/lib/libmemchr-47613b3c68c0449a.rlib</Path>
+            <Path fileType="library">/usr/lib64/rustlib/i686-unknown-linux-gnu/lib/libminiz_oxide-5bb0d2f6aeb77f84.rlib</Path>
+            <Path fileType="library">/usr/lib64/rustlib/i686-unknown-linux-gnu/lib/libobject-320bada9e0a1bb83.rlib</Path>
+            <Path fileType="library">/usr/lib64/rustlib/i686-unknown-linux-gnu/lib/libpanic_abort-56570c158a8b8255.rlib</Path>
+            <Path fileType="library">/usr/lib64/rustlib/i686-unknown-linux-gnu/lib/libpanic_unwind-f80a2a655867b0c2.rlib</Path>
+            <Path fileType="library">/usr/lib64/rustlib/i686-unknown-linux-gnu/lib/libproc_macro-0bb4cdecf93f1093.rlib</Path>
+            <Path fileType="library">/usr/lib64/rustlib/i686-unknown-linux-gnu/lib/libprofiler_builtins-f86d8b16a53c4eef.rlib</Path>
+            <Path fileType="library">/usr/lib64/rustlib/i686-unknown-linux-gnu/lib/librustc_demangle-8ac260e35229f51f.rlib</Path>
+            <Path fileType="library">/usr/lib64/rustlib/i686-unknown-linux-gnu/lib/librustc_std_workspace_alloc-2affc4e00241a490.rlib</Path>
+            <Path fileType="library">/usr/lib64/rustlib/i686-unknown-linux-gnu/lib/librustc_std_workspace_core-7b134726c234153d.rlib</Path>
+            <Path fileType="library">/usr/lib64/rustlib/i686-unknown-linux-gnu/lib/librustc_std_workspace_std-8b411801f2d6d4f5.rlib</Path>
+            <Path fileType="library">/usr/lib64/rustlib/i686-unknown-linux-gnu/lib/libstd-4e66027e5c9dd3e7.rlib</Path>
+            <Path fileType="library">/usr/lib64/rustlib/i686-unknown-linux-gnu/lib/libstd-4e66027e5c9dd3e7.so</Path>
+            <Path fileType="library">/usr/lib64/rustlib/i686-unknown-linux-gnu/lib/libstd_detect-b17d47c31b71892b.rlib</Path>
+            <Path fileType="library">/usr/lib64/rustlib/i686-unknown-linux-gnu/lib/libtest-3b98d10432540e4e.rlib</Path>
+            <Path fileType="library">/usr/lib64/rustlib/i686-unknown-linux-gnu/lib/libtest-3b98d10432540e4e.so</Path>
+            <Path fileType="library">/usr/lib64/rustlib/i686-unknown-linux-gnu/lib/libunicode_width-82350e6a655bdfd9.rlib</Path>
+            <Path fileType="library">/usr/lib64/rustlib/i686-unknown-linux-gnu/lib/libunwind-51ac9fe6d656c8fa.rlib</Path>
+            <Path fileType="library">/usr/lib64/rustlib/x86_64-unknown-linux-gnu/lib/libaddr2line-4c9b60cffc642cd4.rlib</Path>
+            <Path fileType="library">/usr/lib64/rustlib/x86_64-unknown-linux-gnu/lib/libadler-c9a0ef659157e2c5.rlib</Path>
+            <Path fileType="library">/usr/lib64/rustlib/x86_64-unknown-linux-gnu/lib/liballoc-c34793ecdbf8e4f1.rlib</Path>
+            <Path fileType="library">/usr/lib64/rustlib/x86_64-unknown-linux-gnu/lib/libcfg_if-7d35db85cc13fe13.rlib</Path>
+            <Path fileType="library">/usr/lib64/rustlib/x86_64-unknown-linux-gnu/lib/libcompiler_builtins-ab4881468ee410bd.rlib</Path>
+            <Path fileType="library">/usr/lib64/rustlib/x86_64-unknown-linux-gnu/lib/libcore-9494973969c475bf.rlib</Path>
+            <Path fileType="library">/usr/lib64/rustlib/x86_64-unknown-linux-gnu/lib/libgetopts-c03042e7a44d4621.rlib</Path>
+            <Path fileType="library">/usr/lib64/rustlib/x86_64-unknown-linux-gnu/lib/libgimli-3069b0e1aeab03bf.rlib</Path>
+            <Path fileType="library">/usr/lib64/rustlib/x86_64-unknown-linux-gnu/lib/libhashbrown-15a9e0e9d677cdcb.rlib</Path>
+            <Path fileType="library">/usr/lib64/rustlib/x86_64-unknown-linux-gnu/lib/liblibc-f9282048e57e0c63.rlib</Path>
+            <Path fileType="library">/usr/lib64/rustlib/x86_64-unknown-linux-gnu/lib/libmemchr-a98edfa03c7a99e6.rlib</Path>
+            <Path fileType="library">/usr/lib64/rustlib/x86_64-unknown-linux-gnu/lib/libminiz_oxide-3d8dfa70ea0e5e2d.rlib</Path>
+            <Path fileType="library">/usr/lib64/rustlib/x86_64-unknown-linux-gnu/lib/libobject-d59276913149ca21.rlib</Path>
+            <Path fileType="library">/usr/lib64/rustlib/x86_64-unknown-linux-gnu/lib/libpanic_abort-de8486a6999450a8.rlib</Path>
+            <Path fileType="library">/usr/lib64/rustlib/x86_64-unknown-linux-gnu/lib/libpanic_unwind-d36d0e30a90b9979.rlib</Path>
+            <Path fileType="library">/usr/lib64/rustlib/x86_64-unknown-linux-gnu/lib/libproc_macro-08bed8e94b4b665a.rlib</Path>
+            <Path fileType="library">/usr/lib64/rustlib/x86_64-unknown-linux-gnu/lib/libprofiler_builtins-3a12877839926a06.rlib</Path>
+            <Path fileType="library">/usr/lib64/rustlib/x86_64-unknown-linux-gnu/lib/librustc_demangle-bfedee8d2cdde531.rlib</Path>
+            <Path fileType="library">/usr/lib64/rustlib/x86_64-unknown-linux-gnu/lib/librustc_std_workspace_alloc-a514d930cad7bd8b.rlib</Path>
+            <Path fileType="library">/usr/lib64/rustlib/x86_64-unknown-linux-gnu/lib/librustc_std_workspace_core-c2246dc6fe7781c2.rlib</Path>
+            <Path fileType="library">/usr/lib64/rustlib/x86_64-unknown-linux-gnu/lib/librustc_std_workspace_std-6b8f7cd6f3c24c6f.rlib</Path>
+            <Path fileType="library">/usr/lib64/rustlib/x86_64-unknown-linux-gnu/lib/libstd-51741c2ffe6c7053.rlib</Path>
+            <Path fileType="library">/usr/lib64/rustlib/x86_64-unknown-linux-gnu/lib/libstd-51741c2ffe6c7053.so</Path>
+            <Path fileType="library">/usr/lib64/rustlib/x86_64-unknown-linux-gnu/lib/libstd_detect-62872ea506cb1fcc.rlib</Path>
+            <Path fileType="library">/usr/lib64/rustlib/x86_64-unknown-linux-gnu/lib/libtest-b40d24f118cf5614.rlib</Path>
+            <Path fileType="library">/usr/lib64/rustlib/x86_64-unknown-linux-gnu/lib/libtest-b40d24f118cf5614.so</Path>
+            <Path fileType="library">/usr/lib64/rustlib/x86_64-unknown-linux-gnu/lib/libunicode_width-19b8970f5035e7a2.rlib</Path>
+            <Path fileType="library">/usr/lib64/rustlib/x86_64-unknown-linux-gnu/lib/libunwind-d048e14c3e2a1a71.rlib</Path>
+            <Path fileType="executable">/usr/libexec/rust-analyzer-proc-macro-srv</Path>
+            <Path fileType="man">/usr/share/man/man1/rustc.1</Path>
+            <Path fileType="man">/usr/share/man/man1/rustdoc.1</Path>
+        </Files>
+    </Package>
+    <Package>
+        <Name>cargo</Name>
+        <Summary xml:lang="en">The Rust build system</Summary>
+        <Description xml:lang="en">The Rust build system.</Description>
+        <PartOf>programming.tools</PartOf>
+        <RuntimeDependencies>
+            <Dependency releaseFrom="103">rust</Dependency>
+        </RuntimeDependencies>
+        <Files>
+            <Path fileType="executable">/usr/bin/cargo</Path>
+            <Path fileType="executable">/usr/libexec/cargo-credential-1password</Path>
+            <Path fileType="data">/usr/share/bash-completion/completions/cargo</Path>
+            <Path fileType="man">/usr/share/man/man1/cargo-add.1</Path>
+            <Path fileType="man">/usr/share/man/man1/cargo-bench.1</Path>
+            <Path fileType="man">/usr/share/man/man1/cargo-build.1</Path>
+            <Path fileType="man">/usr/share/man/man1/cargo-check.1</Path>
+            <Path fileType="man">/usr/share/man/man1/cargo-clean.1</Path>
+            <Path fileType="man">/usr/share/man/man1/cargo-doc.1</Path>
+            <Path fileType="man">/usr/share/man/man1/cargo-fetch.1</Path>
+            <Path fileType="man">/usr/share/man/man1/cargo-fix.1</Path>
+            <Path fileType="man">/usr/share/man/man1/cargo-generate-lockfile.1</Path>
+            <Path fileType="man">/usr/share/man/man1/cargo-help.1</Path>
+            <Path fileType="man">/usr/share/man/man1/cargo-init.1</Path>
+            <Path fileType="man">/usr/share/man/man1/cargo-install.1</Path>
+            <Path fileType="man">/usr/share/man/man1/cargo-locate-project.1</Path>
+            <Path fileType="man">/usr/share/man/man1/cargo-login.1</Path>
+            <Path fileType="man">/usr/share/man/man1/cargo-metadata.1</Path>
+            <Path fileType="man">/usr/share/man/man1/cargo-new.1</Path>
+            <Path fileType="man">/usr/share/man/man1/cargo-owner.1</Path>
+            <Path fileType="man">/usr/share/man/man1/cargo-package.1</Path>
+            <Path fileType="man">/usr/share/man/man1/cargo-pkgid.1</Path>
+            <Path fileType="man">/usr/share/man/man1/cargo-publish.1</Path>
+            <Path fileType="man">/usr/share/man/man1/cargo-remove.1</Path>
+            <Path fileType="man">/usr/share/man/man1/cargo-report.1</Path>
+            <Path fileType="man">/usr/share/man/man1/cargo-run.1</Path>
+            <Path fileType="man">/usr/share/man/man1/cargo-rustc.1</Path>
+            <Path fileType="man">/usr/share/man/man1/cargo-rustdoc.1</Path>
+            <Path fileType="man">/usr/share/man/man1/cargo-search.1</Path>
+            <Path fileType="man">/usr/share/man/man1/cargo-test.1</Path>
+            <Path fileType="man">/usr/share/man/man1/cargo-tree.1</Path>
+            <Path fileType="man">/usr/share/man/man1/cargo-uninstall.1</Path>
+            <Path fileType="man">/usr/share/man/man1/cargo-update.1</Path>
+            <Path fileType="man">/usr/share/man/man1/cargo-vendor.1</Path>
+            <Path fileType="man">/usr/share/man/man1/cargo-verify-project.1</Path>
+            <Path fileType="man">/usr/share/man/man1/cargo-version.1</Path>
+            <Path fileType="man">/usr/share/man/man1/cargo-yank.1</Path>
+            <Path fileType="man">/usr/share/man/man1/cargo.1</Path>
+            <Path fileType="data">/usr/share/zsh/site-functions/_cargo</Path>
+        </Files>
+    </Package>
+    <History>
+        <Update release="103">
+            <Date>2023-03-23</Date>
+            <Version>1.68.1</Version>
+            <Comment>Packaging update</Comment>
+            <Name>Thomas Staudinger</Name>
+            <Email>Staudi.Kaos@gmail.com</Email>
+        </Update>
+    </History>
+</PISI>

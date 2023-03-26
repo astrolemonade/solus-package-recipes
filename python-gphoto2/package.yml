@@ -1,0 +1,20 @@
+name       : python-gphoto2
+version    : 2.3.4
+release    : 15
+source     :
+    - https://github.com/jim-easterbrook/python-gphoto2/archive/refs/tags/v2.3.4.tar.gz : 80dd2bc08de4e883e2513835ebba8b8587ad21e70cb828f1374d161c171665c3
+homepage   : https://github.com/jim-easterbrook/python-gphoto2
+license    : GPL-3.0-or-later
+component  : programming.python
+summary    : Python interface to libgphoto2
+description: |
+    python-gphoto2 is a comprehensive Python interface (or binding) to libgphoto2. It is built using SWIG to automatically generate the interface code. This gives direct access to nearly all the libgphoto2 functions, but sometimes in a rather un-Pythonic manner.
+builddeps  :
+    - pkgconfig(libgphoto2)
+    - pkgconfig(python3)
+    - swig
+build      : |
+    python3 developer/build_swig.py system
+    %python3_setup
+install    : |
+    %python3_install

@@ -1,0 +1,22 @@
+name       : kxmlrpcclient
+version    : 5.101.0
+release    : 63
+source     :
+    - https://cdn.download.kde.org/stable/frameworks/5.101/portingAids/kxmlrpcclient-5.101.0.tar.xz : a2414cfc1438eb60301aa847b0242c9b50fa49714091bcbd2d0582c39479e88a
+homepage   : https://community.kde.org/Frameworks
+license    :
+    - LGPL-2.0-or-later
+    - BSD-2-Clause
+component  : programming.library
+summary    : XML-RPC client
+description: |
+    This library contains simple XML-RPC Client support. It is a complete client and is quite easy to use. Only one interface is exposed to the world, kxmlrpcclient/client.h and of that interface, you only need to use 3 methods: setUrl, setUserAgent and call.
+builddeps  :
+    - kio-devel
+setup      : |
+    %cmake_ninja -DBUILD_QCH=ON \
+                -DBUILD_TESTING=OFF
+build      : |
+    %ninja_build
+install    : |
+    %ninja_install

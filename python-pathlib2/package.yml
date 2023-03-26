@@ -1,0 +1,19 @@
+name       : python-pathlib2
+version    : 2.3.6
+release    : 3
+source     :
+    - https://github.com/mcmtroffaes/pathlib2/archive/refs/tags/2.3.6.tar.gz : e2eacafc574540716a22636b301799d81f87a107bba81757fd99c32777dffafd
+license    : MIT
+component  : programming.python
+summary    : Fork of pathlib aiming to support the full stdlib Python API.
+description: |
+    Fork of pathlib aiming to support the full stdlib Python API.
+builddeps  :
+    - python-setuptools
+rundeps    :
+    - python-scandir
+    - python-six
+setup      : |
+    %python_setup
+install    : |
+    %python_install

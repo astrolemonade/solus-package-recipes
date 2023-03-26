@@ -1,0 +1,26 @@
+name       : kjobwidgets
+version    : 5.101.0
+release    : 66
+source     :
+    - https://cdn.download.kde.org/stable/frameworks/5.101/kjobwidgets-5.101.0.tar.xz : e1a975b8beb24086dea1fcf1657ff9e672734f80244483c920e960d258cb9a26
+homepage   : https://community.kde.org/Frameworks
+license    :
+    - LGPL-2.0-only
+    - LGPL-2.0-or-later
+component  : desktop.library
+summary    : Widgets for showing progress of asynchronous jobs.
+description: |
+    Widgets for showing progress of asynchronous jobs.
+optimize   : lto
+builddeps  :
+    - pkgconfig(Qt5X11Extras)
+    - pkgconfig(x11)
+    - kcoreaddons-devel
+    - kwidgetsaddons-devel
+setup      : |
+    %cmake_ninja -DBUILD_QCH=ON \
+                -DBUILD_TESTING=OFF
+build      : |
+    %ninja_build
+install    : |
+    %ninja_install

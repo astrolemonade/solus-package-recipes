@@ -1,0 +1,15 @@
+name       : efivar
+version    : '37'
+release    : 3
+source     :
+    - https://github.com/rhboot/efivar/archive/37.tar.gz : 74c52b4f479120fb6639e753e71163ba3f557a7a67c0be225593f9f05b253f36
+license    : LGPL-2.1-or-later
+component  : programming.library
+summary    : Tools and libraries to manipulate EFI variables
+description: |
+    Tools and libraries to manipulate EFI variables
+build      : |
+    %make efivar efivar-static static -j1
+install    : |
+    %make_install efivar-static static -j1
+    install -m 00644 src/libefi{boot,var}.a $installdir/%libdir%/.

@@ -1,0 +1,43 @@
+name       : gnome-boxes
+version    : '43.4'
+release    : 53
+source     :
+    - https://download.gnome.org/sources/gnome-boxes/43/gnome-boxes-43.4.tar.xz : 90b50035d093fc8dbd0f2439890f12808dd713a250563fe3539459a0f776118d
+homepage   : https://apps.gnome.org/app/org.gnome.Boxes/
+license    : GPL-2.0-only
+component  : desktop.gnome
+summary    : A simple GNOME 3 application to access remote or virtual systems.
+description: |
+    A simple GNOME 3 application to access remote or virtual systems
+builddeps  :
+    - pkgconfig(gtksourceview-4)
+    - pkgconfig(gtk-vnc-2.0)
+    - pkgconfig(libarchive)
+    - pkgconfig(libhandy-1)
+    - pkgconfig(libosinfo-1.0)
+    - pkgconfig(libsecret-1)
+    - pkgconfig(libusb-1.0)
+    - pkgconfig(libvirt-glib-1.0)
+    - pkgconfig(spice-client-gtk-3.0)
+    - pkgconfig(spice-protocol)
+    - pkgconfig(tracker-sparql-3.0)
+    - pkgconfig(webkit2gtk-4.1)
+    - pkgconfig(winpr2)
+    - pkgconfig(vte-2.91)
+    - desktop-file-utils
+    - git
+    - itstool
+    - intltool
+    - vala
+patterns   :
+    - /usr/share/man
+rundeps    :
+    - qemu
+    - spice
+    - virglrenderer
+setup      : |
+    %meson_configure -Ddistributor_name=Solus
+build      : |
+    %ninja_build
+install    : |
+    %ninja_install

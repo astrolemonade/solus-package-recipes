@@ -1,0 +1,32 @@
+name       : openssl-11
+version    : 1.1.1t
+release    : 17
+source     :
+    - https://www.openssl.org/source/openssl-1.1.1t.tar.gz : 8dee9b24bdb1dcbf0c3d1e9b02fb8f6bf22165e807f45adeb7c9677536859d3b
+license    : OpenSSL
+summary    : Cryptographic tools required by many packages
+description: |
+    The OpenSSL package contains management tools and libraries relating to cryptography. These are useful for providing cryptography functions to other packages, such as OpenSSH, email applications and web browsers (for accessing HTTPS sites).
+component  :
+    - system.base
+    - devel : system.devel
+emul32     : yes
+mancompress: yes
+patterns   :
+    - devel : /usr/share/man/man3
+builddeps  :
+    - pkgconfig32(zlib)
+    - glibc-32bit-devel
+    - libgcc-32bit
+setup      : |
+    if [[ -z "${EMUL32BUILD}" ]]; then
+        ./config --prefix=/usr --openssldir=/etc/ssl --libdir=lib64 no-ssl3-method enable-weak-ssl-ciphers shared zlib-dynamic "-Wa,--noexecstack ${CPPFLAGS} ${CFLAGS} ${LDFLAGS}"
+    else
+        ./Configure --prefix=/usr --openssldir=/etc/ssl --libdir=lib32 no-ssl3-method enable-weak-ssl-ciphers shared linux-elf zlib-dynamic "-Wa,--noexecstack ${CPPFLAGS} ${CFLAGS} ${LDFLAGS}"
+    fi
+build      : |
+    make
+install    : |
+    %make_install INSTALL_PREFIX="$installdir" MANDIR=/usr/share/man -j1
+    mv $installdir/usr/share/man/man1/passwd.1 $installdir/usr/share/man/man1/passwd.openssl.1
+    rm -rf $installdir/usr/share/doc

@@ -1,0 +1,21 @@
+name       : xapian-core
+version    : 1.4.20
+release    : 9
+source     :
+    - https://oligarchy.co.uk/xapian/1.4.20/xapian-core-1.4.20.tar.xz : ce2be5eff72075c8106c0340e70b1093dbcebe2ab42dc1c1be08dd3ad419442d
+homepage   : https://xapian.org/
+license    : GPL-2.0-or-later
+component  : programming
+summary    : Open Source Search Engine Library
+description: |
+    Xapian is an Open Source Search Engine Library. It's written in C++, with bindings to allow use from Perl, Python 2, Python 3, PHP 5, PHP 7, Java, Tcl, C#, Ruby, Lua, Erlang, Node.js and R. Xapian is a highly adaptable toolkit which allows developers to easily add advanced indexing and search facilities to their own applications. It has built-in support for several families of weighting models and also supports a rich set of boolean query operators.
+builddeps  :
+    - pkgconfig(uuid)
+setup      : |
+    %configure --disable-static
+build      : |
+    %make
+install    : |
+    %make_install
+check      : |
+    %make check

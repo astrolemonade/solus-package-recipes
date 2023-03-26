@@ -1,0 +1,17 @@
+name       : flightgear-data
+version    : 2020.3.17
+release    : 10
+source     :
+    - https://sourceforge.net/projects/flightgear/files/release-2020.3/FlightGear-2020.3.17-data.txz : 2a5eba2b9ae67a3691285833a6ce3f6bbdf3f20229f5871d7c940e151d54d8e8
+homepage   : https://www.flightgear.org/
+license    : GPL-2.0-or-later
+component  : games
+summary    : FlightGear data and assets
+description: |
+    FlightGear is an open-source flight simulator. This package contains data and assets necessary to run the simulator.
+extract    : no
+install    : |
+    install -dm00644 $installdir/usr/share/flightgear
+    tar -xvf $sources/FlightGear-$version-data.txz --strip-components=1 -C $installdir/usr/share/flightgear
+    chmod -R 00644 $installdir/usr/share/flightgear
+    rm -rf $installdir/usr/share/flightgear/{AUTHORS,ChangeLog,COPYING,NEWS,Readme*,Thanks}

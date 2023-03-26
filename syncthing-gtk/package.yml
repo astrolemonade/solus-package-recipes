@@ -1,0 +1,27 @@
+name       : syncthing-gtk
+version    : 0.9.4.4
+release    : 21
+source     :
+    - https://salsa.debian.org/debian/syncthing-gtk/-/archive/debian/0.9.4.4+ds+git20201209+c46fbd8-1/syncthing-gtk-debian-0.9.4.4+ds+git20201209+c46fbd8-1.tar.gz : dd0787b9aab697387a37cc11995b168e97719f4179406e4c4ed3db10006ee577
+license    : GPL-2.0-or-later
+component  : network.download
+summary    : GTK3 & Python based GUI and notification area icon for Syncthing
+description: |
+    GTK3 & Python based GUI and notification area icon for Syncthing
+builddeps  :
+    - pkgconfig(gtk+-3.0)
+    - pkgconfig(pygobject-3.0)
+    - pkgconfig(python3)
+    - python-dateutil
+rundeps    :
+    - libayatana-appindicator
+    - libnotify
+    - python-bcrypt
+    - python-dateutil
+    - python-gobject
+    - python-inotify
+    - syncthing
+build      : |
+    %python3_setup
+install    : |
+    %python3_install

@@ -1,0 +1,28 @@
+name       : ldb
+version    : 2.5.2
+release    : 24
+source     :
+    - https://www.samba.org/ftp/ldb/ldb-2.5.2.tar.gz : 6fada72274b648799d33f851d9edbbb1b31389910c207e111b597f97bf83a0e4
+license    : LGPL-3.0-or-later
+component  : programming
+summary    : ldb is a LDAP-like embedded database
+description: |
+    ldb is a LDAP-like embedded database
+builddeps  :
+    - pkgconfig(cmocka)
+    - pkgconfig(popt)
+    - pkgconfig(tdb)
+    - pkgconfig(tevent)
+setup      : |
+    %configure \
+      --with-modulesdir=%libdir%/ldb/modules \
+      --with-privatelibdir=%libdir%/ldb \
+      --without-ldb-lmdb \
+      --bundled-libraries=NONE \
+      --builtin-libraries=replace \
+      --disable-rpath-install \
+      --disable-python
+build      : |
+    %make
+install    : |
+    %make_install

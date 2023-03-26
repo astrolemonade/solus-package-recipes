@@ -1,0 +1,23 @@
+name       : alacarte
+version    : 3.44.2
+release    : 9
+source     :
+    - https://download.gnome.org/sources/alacarte/3.44/alacarte-3.44.2.tar.xz : a5b3a82296e7ea702968482361daf180634b89ecf10fe5ca4b8ed212489e1172
+license    : GPL-2.0-or-later
+component  : desktop.gnome.core
+summary    : GNOME Menu Editor
+description: |
+    GNOME Graphical Menu Editor
+builddeps  :
+    - pkgconfig(libgnome-menu-3.0)
+    - pkgconfig(gtk+-3.0)
+    - pkgconfig(pygobject-3.0)
+rundeps    :
+    - libgnome-menus
+    - python-gobject
+setup      : |
+    %configure --disable-documentation
+build      : |
+    %make
+install    : |
+    %make_install

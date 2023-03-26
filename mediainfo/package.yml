@@ -1,0 +1,28 @@
+name       : mediainfo
+version    : '21.03'
+release    : 23
+source     :
+    - https://mediaarea.net/download/source/mediainfo/21.03/mediainfo_21.03.tar.bz2 : e5d1a62766f674b5eb224cea40283973f4d2cda9cf8a51a39ad364ea9d95e212
+license    : BSD-2-Clause
+component  : multimedia.video
+homepage   : https://mediaarea.net/en/MediaInfo
+summary    : MediaInfo is a convenient unified display of the most relevant technical and tag data for video and audio files
+description: |
+    MediaInfo is a convenient unified display of the most relevant technical and tag data for video and audio files.
+builddeps  :
+    - pkgconfig(libmediainfo)
+    - desktop-file-utils
+    - wxwidgets-devel
+setup      : |
+    pushd Project/GNU/CLI
+        %autogen
+    popd
+    pushd Project/GNU/GUI
+        %autogen
+    popd
+build      : |
+    %make -C Project/GNU/CLI
+    %make -C Project/GNU/GUI
+install    : |
+    %make_install -C Project/GNU/CLI
+    %make_install -C Project/GNU/GUI

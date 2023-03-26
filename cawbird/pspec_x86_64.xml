@@ -1,0 +1,86 @@
+<PISI>
+    <Source>
+        <Name>cawbird</Name>
+        <Homepage>https://ibboard.co.uk/cawbird/</Homepage>
+        <Packager>
+            <Name>Zach Bacon</Name>
+            <Email>zachbacon@vba-m.com</Email>
+        </Packager>
+        <License>GPL-3.0-or-later</License>
+        <PartOf>network.clients</PartOf>
+        <Summary xml:lang="en">GTK Twitter client</Summary>
+        <Description xml:lang="en">A fork of the Corebird GTK Twitter client that continues to work with Twitter.
+</Description>
+        <Archive type="binary" sha1sum="79eb0752a961b8e0d15c77d298c97498fbc89c5a">https://getsol.us/sources/README.Solus</Archive>
+    </Source>
+    <Package>
+        <Name>cawbird</Name>
+        <Summary xml:lang="en">GTK Twitter client</Summary>
+        <Description xml:lang="en">A fork of the Corebird GTK Twitter client that continues to work with Twitter.
+</Description>
+        <PartOf>network.clients</PartOf>
+        <Files>
+            <Path fileType="executable">/usr/bin/cawbird</Path>
+            <Path fileType="data">/usr/share/applications/uk.co.ibboard.cawbird.desktop</Path>
+            <Path fileType="data">/usr/share/dbus-1/services/uk.co.ibboard.cawbird.service</Path>
+            <Path fileType="data">/usr/share/glib-2.0/schemas/uk.co.ibboard.cawbird.gschema.xml</Path>
+            <Path fileType="data">/usr/share/icons/hicolor/16x16/apps/uk.co.ibboard.cawbird.png</Path>
+            <Path fileType="data">/usr/share/icons/hicolor/24x24/apps/uk.co.ibboard.cawbird.png</Path>
+            <Path fileType="data">/usr/share/icons/hicolor/32x32/apps/uk.co.ibboard.cawbird.png</Path>
+            <Path fileType="data">/usr/share/icons/hicolor/48x48/apps/uk.co.ibboard.cawbird.png</Path>
+            <Path fileType="data">/usr/share/icons/hicolor/64x64/apps/uk.co.ibboard.cawbird.png</Path>
+            <Path fileType="data">/usr/share/icons/hicolor/96x96/apps/uk.co.ibboard.cawbird.png</Path>
+            <Path fileType="data">/usr/share/icons/hicolor/scalable/apps/uk.co.ibboard.cawbird.svg</Path>
+            <Path fileType="localedata">/usr/share/locale/ar/LC_MESSAGES/cawbird.mo</Path>
+            <Path fileType="localedata">/usr/share/locale/ast/LC_MESSAGES/cawbird.mo</Path>
+            <Path fileType="localedata">/usr/share/locale/ca/LC_MESSAGES/cawbird.mo</Path>
+            <Path fileType="localedata">/usr/share/locale/ca@valencia/LC_MESSAGES/cawbird.mo</Path>
+            <Path fileType="localedata">/usr/share/locale/da/LC_MESSAGES/cawbird.mo</Path>
+            <Path fileType="localedata">/usr/share/locale/de/LC_MESSAGES/cawbird.mo</Path>
+            <Path fileType="localedata">/usr/share/locale/de_DE/LC_MESSAGES/cawbird.mo</Path>
+            <Path fileType="localedata">/usr/share/locale/en_GB/LC_MESSAGES/cawbird.mo</Path>
+            <Path fileType="localedata">/usr/share/locale/eo/LC_MESSAGES/cawbird.mo</Path>
+            <Path fileType="localedata">/usr/share/locale/es/LC_MESSAGES/cawbird.mo</Path>
+            <Path fileType="localedata">/usr/share/locale/es_419/LC_MESSAGES/cawbird.mo</Path>
+            <Path fileType="localedata">/usr/share/locale/es_MX/LC_MESSAGES/cawbird.mo</Path>
+            <Path fileType="localedata">/usr/share/locale/es_VE/LC_MESSAGES/cawbird.mo</Path>
+            <Path fileType="localedata">/usr/share/locale/fa/LC_MESSAGES/cawbird.mo</Path>
+            <Path fileType="localedata">/usr/share/locale/fi/LC_MESSAGES/cawbird.mo</Path>
+            <Path fileType="localedata">/usr/share/locale/fr/LC_MESSAGES/cawbird.mo</Path>
+            <Path fileType="localedata">/usr/share/locale/ga/LC_MESSAGES/cawbird.mo</Path>
+            <Path fileType="localedata">/usr/share/locale/gd/LC_MESSAGES/cawbird.mo</Path>
+            <Path fileType="localedata">/usr/share/locale/gl/LC_MESSAGES/cawbird.mo</Path>
+            <Path fileType="localedata">/usr/share/locale/hi/LC_MESSAGES/cawbird.mo</Path>
+            <Path fileType="localedata">/usr/share/locale/hu/LC_MESSAGES/cawbird.mo</Path>
+            <Path fileType="localedata">/usr/share/locale/id/LC_MESSAGES/cawbird.mo</Path>
+            <Path fileType="localedata">/usr/share/locale/it/LC_MESSAGES/cawbird.mo</Path>
+            <Path fileType="localedata">/usr/share/locale/ja/LC_MESSAGES/cawbird.mo</Path>
+            <Path fileType="localedata">/usr/share/locale/ko/LC_MESSAGES/cawbird.mo</Path>
+            <Path fileType="localedata">/usr/share/locale/lt/LC_MESSAGES/cawbird.mo</Path>
+            <Path fileType="localedata">/usr/share/locale/nb/LC_MESSAGES/cawbird.mo</Path>
+            <Path fileType="localedata">/usr/share/locale/nl/LC_MESSAGES/cawbird.mo</Path>
+            <Path fileType="localedata">/usr/share/locale/pl/LC_MESSAGES/cawbird.mo</Path>
+            <Path fileType="localedata">/usr/share/locale/pt/LC_MESSAGES/cawbird.mo</Path>
+            <Path fileType="localedata">/usr/share/locale/pt_BR/LC_MESSAGES/cawbird.mo</Path>
+            <Path fileType="localedata">/usr/share/locale/ro/LC_MESSAGES/cawbird.mo</Path>
+            <Path fileType="localedata">/usr/share/locale/ru/LC_MESSAGES/cawbird.mo</Path>
+            <Path fileType="localedata">/usr/share/locale/sr/LC_MESSAGES/cawbird.mo</Path>
+            <Path fileType="localedata">/usr/share/locale/sr_BA@latin/LC_MESSAGES/cawbird.mo</Path>
+            <Path fileType="localedata">/usr/share/locale/tr/LC_MESSAGES/cawbird.mo</Path>
+            <Path fileType="localedata">/usr/share/locale/uk_UA/LC_MESSAGES/cawbird.mo</Path>
+            <Path fileType="localedata">/usr/share/locale/zh_CN/LC_MESSAGES/cawbird.mo</Path>
+            <Path fileType="localedata">/usr/share/locale/zh_TW/LC_MESSAGES/cawbird.mo</Path>
+            <Path fileType="man">/usr/share/man/man1/cawbird.1</Path>
+            <Path fileType="data">/usr/share/metainfo/uk.co.ibboard.cawbird.appdata.xml</Path>
+        </Files>
+    </Package>
+    <History>
+        <Update release="15">
+            <Date>2022-07-20</Date>
+            <Version>1.5</Version>
+            <Comment>Packaging update</Comment>
+            <Name>Zach Bacon</Name>
+            <Email>zachbacon@vba-m.com</Email>
+        </Update>
+    </History>
+</PISI>

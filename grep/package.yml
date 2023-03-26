@@ -1,0 +1,25 @@
+name       : grep
+version    : '3.8'
+release    : 16
+source     :
+    - https://ftp.gnu.org/gnu/grep/grep-3.8.tar.xz : 498d7cc1b4fb081904d87343febb73475cf771e424fb7e6141aff66013abc382
+license    : GPL-3.0-or-later
+component  : system.base
+summary    : grep (pattern searching tool)
+description: |
+    grep stands for global / regular expression / print, and is used to search for patterns and strings within text files.
+builddeps  :
+    - pkgconfig(libpcre2-posix)
+setup      : |
+    %configure --bindir=/bin
+build      : |
+    %make
+install    : |
+    %make_install
+    install -d -m00755 ${installdir}/usr/bin
+
+    for i in egrep fgrep grep; do
+        ln -sv /bin/$i ${installdir}/usr/bin/$i
+    done
+check      : |
+    %make check

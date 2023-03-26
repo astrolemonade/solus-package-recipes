@@ -1,0 +1,26 @@
+name       : ksystemlog
+version    : 22.12.1
+release    : 32
+source     :
+    - https://cdn.download.kde.org/stable/release-service/22.12.1/src/ksystemlog-22.12.1.tar.xz : 19e613cc07605826d6d5d0576357dce4485882c4b9b17cb61fcf57f49193fd78
+homepage   : https://kde.org/applications/system/ksystemlog/
+license    : GPL-2.0-only
+component  : system.utils
+summary    : System log viewer tool
+description: |
+    System log viewer tool
+builddeps  :
+    - karchive-devel
+    - kdoctools-devel
+    - kiconthemes-devel
+    - kio-devel
+    - ktextwidgets-devel
+setup      : |
+    %cmake_ninja
+build      : |
+    %ninja_build
+install    : |
+    %ninja_install
+
+    # remove docs
+    rm -rf $installdir/usr/share/doc

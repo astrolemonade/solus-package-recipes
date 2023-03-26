@@ -1,0 +1,20 @@
+name       : consul
+version    : 1.11.1
+release    : 6
+source     :
+    - https://github.com/hashicorp/consul/archive/refs/tags/v1.11.1.tar.gz : e548902d6a9c92bcc07fc1af33049078fb34a371e9853be6b0d6a69cf2a2c208
+license    : MPL-2.0
+component  : virt
+summary    : Consul is a distributed, highly available, and data center aware solution to connect and configure applications across dynamic, distributed infrastructure
+description: |
+    Consul is a distributed, highly available, and data center aware solution to connect and configure applications across dynamic, distributed infrastructure.
+networking : yes
+builddeps  :
+    - git
+    - golang
+setup      : |
+    %make tools
+build      : |
+    %make dev
+install    : |
+    install -Dm00755 bin/consul $installdir/usr/bin/consul

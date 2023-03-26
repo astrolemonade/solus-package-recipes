@@ -1,0 +1,25 @@
+name       : gajim
+version    : 1.5.3
+release    : 21
+source     :
+    - https://gajim.org/downloads/1.5/gajim-1.5.3.tar.gz : 252578e7ddacee8289cf106086d96bbd7a82a0eea2091a1836efde6aa3dfb8b0
+homepage   : https://gajim.org
+license    : GPL-3.0-or-later
+component  : network.im
+summary    : Full featured and easy to use Jabber/XMPP client
+description: |
+    The goal of Gajim is to provide a full featured and easy to use Jabber/XMPP client.
+rundeps    :
+    - farstream                  # Audio/Video.
+    - gstreamer-1.0-libav        # Audio/Video.
+    - gstreamer-1.0-plugins-ugly # Audio/Video.
+    - libgtk-3
+    - python-css-parser
+    - python-gssapi
+    - python-keyring
+    - python-nbxmpp
+    - python-openssl
+build      : |
+    %python3_setup
+install    : |
+    %python3_install

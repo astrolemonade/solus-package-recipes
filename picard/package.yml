@@ -1,0 +1,32 @@
+name       : picard
+version    : 2.8.1
+release    : 28
+source     :
+    - https://github.com/metabrainz/picard/archive/refs/tags/release-2.8.1.tar.gz : 4ed401201878a6bf8757ec7fef6b75411b525d3818eb46308491e63eac7c62b7
+license    : GPL-2.0-or-later
+component  : multimedia.audio
+summary    : Cross-platform music tagger written in Python
+description: |
+    Cross-platform music tagger written in Python.
+    Picard supports the majority of audio file formats, is capable of using audio fingerprints (AcoustIDs), performing CD lookups and disc ID submissions, and it has excellent Unicode support.
+    Additionally, there are several plugins available that extend Picard's features.
+builddeps  :
+    - pkgconfig(python3)
+    - mutagen
+    - python-dateutil
+    - python-fasteners
+    - python3-qt5
+rundeps    :
+    - chromaprint
+    - mutagen
+    - python-dateutil
+    - python-discid
+    - python-fasteners
+    - python3-qt5
+    - pyyaml
+setup      : |
+    %patch -p1 < $pkgfiles/Use-system-theme.patch
+install    : |
+    %python3_install --disable-autoupdate
+check      : |
+    %python3_test

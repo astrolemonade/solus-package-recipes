@@ -1,0 +1,45 @@
+<PISI>
+    <Source>
+        <Name>python-enum34</Name>
+        <Homepage>https://pypi.org/project/enum34/</Homepage>
+        <Packager>
+            <Name>Algent Albrahimi</Name>
+            <Email>algent@protonmail.com</Email>
+        </Packager>
+        <License>BSD-3-Clause</License>
+        <PartOf>programming.python</PartOf>
+        <Summary xml:lang="en">Python 3.4 Enum backport</Summary>
+        <Description xml:lang="en">An enumeration is a set of symbolic names (members) bound to unique, constant values. Within an enumeration, the members can be compared by identity, and the enumeration itself can be iterated over.
+</Description>
+        <Archive type="binary" sha1sum="79eb0752a961b8e0d15c77d298c97498fbc89c5a">https://getsol.us/sources/README.Solus</Archive>
+    </Source>
+    <Package>
+        <Name>python-enum34</Name>
+        <Summary xml:lang="en">Python 3.4 Enum backport</Summary>
+        <Description xml:lang="en">An enumeration is a set of symbolic names (members) bound to unique, constant values. Within an enumeration, the members can be compared by identity, and the enumeration itself can be iterated over.
+</Description>
+        <PartOf>programming.python</PartOf>
+        <Files>
+            <Path fileType="library">/usr/lib/python2.7/site-packages/enum/LICENSE</Path>
+            <Path fileType="library">/usr/lib/python2.7/site-packages/enum/README</Path>
+            <Path fileType="library">/usr/lib/python2.7/site-packages/enum/__init__.py</Path>
+            <Path fileType="library">/usr/lib/python2.7/site-packages/enum/__init__.pyc</Path>
+            <Path fileType="library">/usr/lib/python2.7/site-packages/enum/doc/enum.rst</Path>
+            <Path fileType="library">/usr/lib/python2.7/site-packages/enum/test.py</Path>
+            <Path fileType="library">/usr/lib/python2.7/site-packages/enum/test.pyc</Path>
+            <Path fileType="library">/usr/lib/python2.7/site-packages/enum34-1.1.10-py2.7.egg-info/PKG-INFO</Path>
+            <Path fileType="library">/usr/lib/python2.7/site-packages/enum34-1.1.10-py2.7.egg-info/SOURCES.txt</Path>
+            <Path fileType="library">/usr/lib/python2.7/site-packages/enum34-1.1.10-py2.7.egg-info/dependency_links.txt</Path>
+            <Path fileType="library">/usr/lib/python2.7/site-packages/enum34-1.1.10-py2.7.egg-info/top_level.txt</Path>
+        </Files>
+    </Package>
+    <History>
+        <Update release="4">
+            <Date>2022-11-19</Date>
+            <Version>1.1.10</Version>
+            <Comment>Packaging update</Comment>
+            <Name>Algent Albrahimi</Name>
+            <Email>algent@protonmail.com</Email>
+        </Update>
+    </History>
+</PISI>

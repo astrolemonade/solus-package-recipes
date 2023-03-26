@@ -1,0 +1,35 @@
+name       : kwayland
+version    : 5.101.0
+release    : 65
+source     :
+    - https://cdn.download.kde.org/stable/frameworks/5.101/kwayland-5.101.0.tar.xz : 39c1866ed2a15235bf9df02881ed2e8cd805d50d696bcdc9fe157e54b52def63
+homepage   : https://community.kde.org/Frameworks
+license    :
+    - BSD-3-Clause
+    - LGPL-2.1-only
+component  : programming.library
+summary    : Qt-style API to interact with wayland
+description: |
+    KWayland is a Qt-style API to interact with the wayland-client and wayland-server API.
+optimize   : lto
+builddeps  :
+    - pkgconfig(xkbcommon)
+    - pkgconfig(Qt5Designer)
+    - pkgconfig(Qt5WaylandClient)
+    - pkgconfig(wayland-protocols)
+    - pkgconfig(wayland-server)
+    - pkgconfig(x11)
+    - extra-cmake-modules
+    - plasma-wayland-protocols-devel
+rundeps    :
+    - devel :
+        - extra-cmake-modules
+        - qt5-tools-devel
+        - wayland-devel
+setup      : |
+    %cmake_ninja -DBUILD_QCH=ON \
+                -DBUILD_TESTING=OFF
+build      : |
+    %ninja_build
+install    : |
+    %ninja_install

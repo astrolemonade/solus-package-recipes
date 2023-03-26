@@ -1,0 +1,18 @@
+name       : perl-test-distmanifest
+version    : 1.014
+release    : 5
+source     :
+    - https://cpan.metacpan.org/authors/id/E/ET/ETHER/Test-DistManifest-1.014.tar.gz : 3d26c20df42628981cbfcfa5b1ca028c6ceadb344c1dcf97a25ad6a88b73d7c5
+license    : Artistic-1.0-Perl
+component  : programming.perl
+summary    : Test::DistManifest - Author test that validates a package MANIFEST
+description: |
+    Test::DistManifest - Author test that validates a package MANIFEST
+builddeps  :
+    - perl-module-build
+setup      : |
+    %perl_setup
+build      : |
+    %perl_build
+install    : |
+    %perl_install

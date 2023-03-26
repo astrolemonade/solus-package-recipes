@@ -1,0 +1,24 @@
+name       : libopenmpt
+version    : 0.6.6
+release    : 10
+source     :
+    - https://lib.openmpt.org/files/libopenmpt/src/libopenmpt-0.6.6+release.autotools.tar.gz : 6ddb9e26a430620944891796fefb1bbb38bd9148f6cfc558810c0d3f269876c7
+license    : BSD-3-Clause
+component  : multimedia.library
+homepage   : https://lib.openmpt.org/libopenmpt/
+summary    : OpenMPT-based module player library
+description: |
+    libopenmpt is a cross-platform C++ and C library to decode tracked music files into a raw PCM audio stream.
+builddeps  :
+    - pkgconfig(libmpg123)
+    - pkgconfig(vorbisfile)
+setup      : |
+    %configure \
+        --disable-examples \
+        --disable-openmpt123 \
+        --disable-static
+build      : |
+    %make
+install    : |
+    %make_install
+    rm -rfv $installdir/usr/share/

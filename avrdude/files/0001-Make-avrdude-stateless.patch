@@ -1,0 +1,51 @@
+Make avrdude stateless
+
+---
+diff --git a/src/config.c b/src/config.c
+index 3d8a760..54a2f65 100644
+--- a/config.c
++++ b/config.c
+@@ -330,8 +330,6 @@ int read_config(const char * file)
+ 
+   f = fopen(file, "r");
+   if (f == NULL) {
+-    avrdude_message(MSG_INFO, "%s: can't open config file \"%s\": %s\n",
+-            progname, file, strerror(errno));
+     return -1;
+   }
+ 
+diff --git a/src/main.c b/src/main.c
+index 253c6e5..8c36919 100644
+--- a/main.c
++++ b/main.c
+@@ -775,14 +775,22 @@ int main(int argc, char * argv [])
+                     "%sCopyright (c) Brian Dean, http://www.bdmicro.com/\n"
+                     "%sCopyright (c) Joerg Wunsch\n\n",
+                     progname, version, progbuf, progbuf);
+-  avrdude_message(MSG_NOTICE, "%sSystem wide configuration file is \"%s\"\n",
+-            progbuf, sys_config);
+ 
+   rc = read_config(sys_config);
+   if (rc) {
+-    avrdude_message(MSG_INFO, "%s: error reading system wide configuration file \"%s\"\n",
+-                    progname, sys_config);
+-    exit(1);
++    rc = read_config("/usr/share/defaults/avrdude/avrdude.conf");
++
++    if (rc) {
++      avrdude_message(MSG_INFO, "%s: error reading vendor configuration file \"%s\"\n",
++                      progname, "/usr/share/defaults/avrdude/avrdude.conf");
++      exit(1);
++    } else {
++      avrdude_message(MSG_NOTICE, "%sUsing vendor provided configuration file in \"%s\"\n",
++                progbuf, "/usr/share/defaults/avrdude/avrdude.conf");
++    }
++  } else {
++    avrdude_message(MSG_NOTICE, "%sSystem wide configuration file is \"%s\"\n",
++              progbuf, sys_config);
+   }
+ 
+   if (usr_config[0] != 0) {
+--
+
+

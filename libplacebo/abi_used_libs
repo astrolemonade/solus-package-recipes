@@ -1,0 +1,6 @@
+libc.so.6
+liblcms2.so.2
+libm.so.6
+libshaderc_shared.so.1
+libunwind.so.8
+libvulkan.so.1

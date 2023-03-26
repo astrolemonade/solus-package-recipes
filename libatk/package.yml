@@ -1,0 +1,27 @@
+name       : libatk
+version    : 2.38.0
+release    : 26
+source     :
+    - https://download.gnome.org/sources/atk/2.38/atk-2.38.0.tar.xz : ac4de2a4ef4bd5665052952fe169657e65e895c5057dffb3c2a810f6191a0c36
+license    : GPL-3.0-or-later
+component  : desktop.gtk
+summary    : Accessibility toolkit
+description: |
+    ATK provides the set of accessibility interfaces that are implemented by other toolkits and applications. Using the ATK interfaces, accessibility tools have full access to view and control running applications.
+builddeps  :
+    - pkgconfig32(gobject-2.0)
+emul32     : yes
+replaces   :
+    - atk
+    - devel : atk-devel
+setup      : |
+    if [[ ! -z "${EMUL32BUILD}" ]]; then
+        build_gobject=false
+    else
+        build_gobject=true
+    fi
+    %meson_configure -Dintrospection=$build_gobject
+build      : |
+    %ninja_build
+install    : |
+    %ninja_install

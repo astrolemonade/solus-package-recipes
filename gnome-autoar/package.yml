@@ -1,0 +1,19 @@
+name       : gnome-autoar
+version    : 0.4.3
+release    : 16
+source     :
+    - https://download.gnome.org/sources/gnome-autoar/0.4/gnome-autoar-0.4.3.tar.xz : 7bdf0789553496abddc3c963b0ce7363805c0c02c025feddebcaacc787249e88
+license    : LGPL-2.1-or-later
+component  : desktop.gnome.core
+summary    : Automatic archive library
+description: |
+    Automatic archives creating and extracting library
+builddeps  :
+    - pkgconfig(gtk+-3.0)
+    - pkgconfig(libarchive)
+setup      : |
+    %meson_configure
+build      : |
+    %ninja_build
+install    : |
+    %ninja_install

@@ -1,0 +1,28 @@
+name       : yacreader
+version    : 9.10.0
+release    : 12
+source     :
+    - https://github.com/YACReader/yacreader/archive/refs/tags/9.10.0.tar.gz : 60ebfa2c3f0269608f7f45d745bbb2041503c4c07329780a9101b0cdd4e771ba
+homepage   : https://www.yacreader.com/
+license    : GPL-3.0-or-later
+component  : office.viewers
+summary    : Yet another comic reader
+description: |
+    A comic reader for cross-platform reading and managing your digital comic collection.
+builddeps  :
+    - pkgconfig(Qt5Help)
+    - pkgconfig(Qt5Multimedia)
+    - pkgconfig(Qt5Svg)
+    - pkgconfig(Qt5QuickControls2)
+    - pkgconfig(libunarr)
+    - pkgconfig(poppler-qt5)
+rundeps    :
+    - qt5-quickcontrols2
+setup      : |
+    %patch -p1 < $pkgfiles/0001-removing-yacreader-library-server.patch
+    %patch -p1 < $pkgfiles/Fix-regression-in-translation-install-target.patch
+    %qmake PREFIX=$installdir/usr
+build      : |
+    %make
+install    : |
+    %make_install

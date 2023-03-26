@@ -1,0 +1,24 @@
+name       : python-pytest-httpserver
+version    : 1.0.6
+release    : 7
+source     :
+    - https://files.pythonhosted.org/packages/source/p/pytest_httpserver/pytest_httpserver-1.0.6.tar.gz : 9040d07bf59ac45d8de3db1d4468fd2d1d607975e4da4c872ecc0402cdbf7b3e
+homepage   : https://github.com/csernazs/pytest-httpserver
+license    : MIT
+component  : programming.python
+summary    : pytest-httpserver is a httpserver for pytest
+description: |
+    This library is designed to help to test http clients without contacting the real http server. In other words, it is a fake http server which is accessible via localhost can be started with the pre-defined expected http requests and their responses.
+builddeps  :
+    - python-pytest   # check
+    - python-requests # check
+    - python-toml     # check
+    - python-werkzeug # check
+rundeps    :
+    - python-werkzeug
+build      : |
+    %python3_setup
+install    : |
+    %python3_install
+check      : |
+    %python3_test pytest3 -v

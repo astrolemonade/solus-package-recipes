@@ -1,0 +1,48 @@
+name       : budgie-desktop
+version    : 10.7.1
+release    : 254
+source     :
+    - https://github.com/BuddiesOfBudgie/budgie-desktop/releases/download/v10.7.1/budgie-desktop-v10.7.1.tar.xz : f8b277fb674f4c9e9d1dac9e45a7f93a1364d2f25cb1b3b513ec8154cfd7d6bd
+homepage   : https://blog.buddiesofbudgie.org
+license    :
+    - GPL-2.0-only
+    - LGPL-2.1-only
+summary    : Budgie Desktop is the flagship desktop experience developed by the Solus team.
+description: |
+    Budgie Desktop is the flagship desktop experience developed by the Solus team.
+component  : desktop.budgie
+builddeps  :
+    - pkgconfig(accountsservice)
+    - pkgconfig(alsa)
+    - pkgconfig(gee-0.8)
+    - pkgconfig(gnome-bluetooth-1.0)
+    - pkgconfig(gnome-desktop-3.0)
+    - pkgconfig(gnome-settings-daemon)
+    - pkgconfig(gstreamer-1.0)
+    - pkgconfig(gtk-doc)
+    - pkgconfig(ibus-1.0)
+    - pkgconfig(json-glib-1.0)
+    - pkgconfig(libcanberra)
+    - pkgconfig(libmutter-11)
+    - pkgconfig(libnotify)
+    - pkgconfig(libpeas-1.0)
+    - pkgconfig(libpulse-mainloop-glib)
+    - pkgconfig(libwnck-3.0)
+    - pkgconfig(upower-glib)
+    - budgie-screensaver # Required at configure time to ensure we have a proper configuration of budgie-desktop
+    - vala
+    - sassc
+rundeps    :
+    - budgie-control-center
+    - budgie-screensaver
+    - gnome-bluetooth-1-common
+    - gnome-session
+    - gnome-settings-daemon
+    - network-manager-applet
+    - xdotool
+setup      : |
+    %meson_configure -Dwith-stateless=true
+build      : |
+    %ninja_build
+install    : |
+    %ninja_install

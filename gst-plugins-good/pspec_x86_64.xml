@@ -1,0 +1,99 @@
+<PISI>
+    <Source>
+        <Name>gst-plugins-good</Name>
+        <Packager>
+            <Name>Pierre-Yves</Name>
+            <Email>pyu@riseup.net</Email>
+        </Packager>
+        <License>GPL-2.0</License>
+        <License>LGPL-2.0</License>
+        <PartOf>multimedia.gstreamer</PartOf>
+        <Summary xml:lang="en">Streaming media framework</Summary>
+        <Description xml:lang="en">GStreamer is a streaming media framework that enables applications to share a common set of plugins for things like video encoding and decoding, audio encoding and decoding, audio and video filters, audio visualisation, web streaming and anything else that streams in real-time or otherwise. This package only provides base functionality and libraries.
+</Description>
+        <Archive type="binary" sha1sum="79eb0752a961b8e0d15c77d298c97498fbc89c5a">https://solus-project.com/sources/README.Solus</Archive>
+    </Source>
+    <Package>
+        <Name>gst-plugins-good</Name>
+        <Summary xml:lang="en">Streaming media framework</Summary>
+        <Description xml:lang="en">GStreamer is a streaming media framework that enables applications to share a common set of plugins for things like video encoding and decoding, audio encoding and decoding, audio and video filters, audio visualisation, web streaming and anything else that streams in real-time or otherwise. This package only provides base functionality and libraries.
+</Description>
+        <PartOf>multimedia.gstreamer</PartOf>
+        <Files>
+            <Path fileType="config">/etc/gconf/schemas/gstreamer-0.10.schemas</Path>
+            <Path fileType="library">/usr/lib64/gstreamer-0.10/libgstalaw.so</Path>
+            <Path fileType="library">/usr/lib64/gstreamer-0.10/libgstalpha.so</Path>
+            <Path fileType="library">/usr/lib64/gstreamer-0.10/libgstalphacolor.so</Path>
+            <Path fileType="library">/usr/lib64/gstreamer-0.10/libgstannodex.so</Path>
+            <Path fileType="library">/usr/lib64/gstreamer-0.10/libgstapetag.so</Path>
+            <Path fileType="library">/usr/lib64/gstreamer-0.10/libgstaudiofx.so</Path>
+            <Path fileType="library">/usr/lib64/gstreamer-0.10/libgstaudioparsers.so</Path>
+            <Path fileType="library">/usr/lib64/gstreamer-0.10/libgstauparse.so</Path>
+            <Path fileType="library">/usr/lib64/gstreamer-0.10/libgstautodetect.so</Path>
+            <Path fileType="library">/usr/lib64/gstreamer-0.10/libgstavi.so</Path>
+            <Path fileType="library">/usr/lib64/gstreamer-0.10/libgstcairo.so</Path>
+            <Path fileType="library">/usr/lib64/gstreamer-0.10/libgstcutter.so</Path>
+            <Path fileType="library">/usr/lib64/gstreamer-0.10/libgstdebug.so</Path>
+            <Path fileType="library">/usr/lib64/gstreamer-0.10/libgstdeinterlace.so</Path>
+            <Path fileType="library">/usr/lib64/gstreamer-0.10/libgstdv.so</Path>
+            <Path fileType="library">/usr/lib64/gstreamer-0.10/libgstefence.so</Path>
+            <Path fileType="library">/usr/lib64/gstreamer-0.10/libgsteffectv.so</Path>
+            <Path fileType="library">/usr/lib64/gstreamer-0.10/libgstequalizer.so</Path>
+            <Path fileType="library">/usr/lib64/gstreamer-0.10/libgstflac.so</Path>
+            <Path fileType="library">/usr/lib64/gstreamer-0.10/libgstflv.so</Path>
+            <Path fileType="library">/usr/lib64/gstreamer-0.10/libgstflxdec.so</Path>
+            <Path fileType="library">/usr/lib64/gstreamer-0.10/libgstgconfelements.so</Path>
+            <Path fileType="library">/usr/lib64/gstreamer-0.10/libgstgdkpixbuf.so</Path>
+            <Path fileType="library">/usr/lib64/gstreamer-0.10/libgstgoom.so</Path>
+            <Path fileType="library">/usr/lib64/gstreamer-0.10/libgstgoom2k1.so</Path>
+            <Path fileType="library">/usr/lib64/gstreamer-0.10/libgsticydemux.so</Path>
+            <Path fileType="library">/usr/lib64/gstreamer-0.10/libgstid3demux.so</Path>
+            <Path fileType="library">/usr/lib64/gstreamer-0.10/libgstimagefreeze.so</Path>
+            <Path fileType="library">/usr/lib64/gstreamer-0.10/libgstinterleave.so</Path>
+            <Path fileType="library">/usr/lib64/gstreamer-0.10/libgstisomp4.so</Path>
+            <Path fileType="library">/usr/lib64/gstreamer-0.10/libgstlevel.so</Path>
+            <Path fileType="library">/usr/lib64/gstreamer-0.10/libgstmatroska.so</Path>
+            <Path fileType="library">/usr/lib64/gstreamer-0.10/libgstmulaw.so</Path>
+            <Path fileType="library">/usr/lib64/gstreamer-0.10/libgstmultifile.so</Path>
+            <Path fileType="library">/usr/lib64/gstreamer-0.10/libgstmultipart.so</Path>
+            <Path fileType="library">/usr/lib64/gstreamer-0.10/libgstnavigationtest.so</Path>
+            <Path fileType="library">/usr/lib64/gstreamer-0.10/libgstoss4audio.so</Path>
+            <Path fileType="library">/usr/lib64/gstreamer-0.10/libgstossaudio.so</Path>
+            <Path fileType="library">/usr/lib64/gstreamer-0.10/libgstpng.so</Path>
+            <Path fileType="library">/usr/lib64/gstreamer-0.10/libgstpulse.so</Path>
+            <Path fileType="library">/usr/lib64/gstreamer-0.10/libgstreplaygain.so</Path>
+            <Path fileType="library">/usr/lib64/gstreamer-0.10/libgstrtp.so</Path>
+            <Path fileType="library">/usr/lib64/gstreamer-0.10/libgstrtpmanager.so</Path>
+            <Path fileType="library">/usr/lib64/gstreamer-0.10/libgstrtsp.so</Path>
+            <Path fileType="library">/usr/lib64/gstreamer-0.10/libgstshapewipe.so</Path>
+            <Path fileType="library">/usr/lib64/gstreamer-0.10/libgstshout2.so</Path>
+            <Path fileType="library">/usr/lib64/gstreamer-0.10/libgstsmpte.so</Path>
+            <Path fileType="library">/usr/lib64/gstreamer-0.10/libgstsouphttpsrc.so</Path>
+            <Path fileType="library">/usr/lib64/gstreamer-0.10/libgstspectrum.so</Path>
+            <Path fileType="library">/usr/lib64/gstreamer-0.10/libgstspeex.so</Path>
+            <Path fileType="library">/usr/lib64/gstreamer-0.10/libgsttaglib.so</Path>
+            <Path fileType="library">/usr/lib64/gstreamer-0.10/libgstudp.so</Path>
+            <Path fileType="library">/usr/lib64/gstreamer-0.10/libgstvideobox.so</Path>
+            <Path fileType="library">/usr/lib64/gstreamer-0.10/libgstvideocrop.so</Path>
+            <Path fileType="library">/usr/lib64/gstreamer-0.10/libgstvideofilter.so</Path>
+            <Path fileType="library">/usr/lib64/gstreamer-0.10/libgstvideomixer.so</Path>
+            <Path fileType="library">/usr/lib64/gstreamer-0.10/libgstwavenc.so</Path>
+            <Path fileType="library">/usr/lib64/gstreamer-0.10/libgstwavpack.so</Path>
+            <Path fileType="library">/usr/lib64/gstreamer-0.10/libgstwavparse.so</Path>
+            <Path fileType="library">/usr/lib64/gstreamer-0.10/libgstximagesrc.so</Path>
+            <Path fileType="library">/usr/lib64/gstreamer-0.10/libgsty4menc.so</Path>
+            <Path fileType="data">/usr/share/gstreamer-0.10/presets/GstIirEqualizer10Bands.prs</Path>
+            <Path fileType="data">/usr/share/gstreamer-0.10/presets/GstIirEqualizer3Bands.prs</Path>
+            <Path fileType="localedata">/usr/share/locale</Path>
+        </Files>
+    </Package>
+    <History>
+        <Update release="3">
+            <Date>2018-04-30</Date>
+            <Version>0.10.31</Version>
+            <Comment>Packaging update</Comment>
+            <Name>Pierre-Yves</Name>
+            <Email>pyu@riseup.net</Email>
+        </Update>
+    </History>
+</PISI>

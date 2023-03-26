@@ -1,0 +1,33 @@
+name       : inetutils
+version    : '2.2'
+release    : 10
+source     :
+    - https://ftp.gnu.org/gnu/inetutils/inetutils-2.2.tar.xz : d547f69172df73afef691a0f7886280fd781acea28def4ff4b4b212086a89d80
+homepage   : https://www.gnu.org/software/inetutils
+license    :
+    - GPL-3.0-or-later
+summary    :
+    - A collection of common network programs
+    - ^ifconfig : The deprecated ifconfig command
+description:
+    - A collection of common network programs
+    - ^ifconfig : The deprecated ifconfig command.
+component  :
+    - system.base
+    - ^ifconfig : network.util
+patterns   :
+    - ^ifconfig :
+        - /usr/bin/ifconfig
+        - /usr/share/man/man1/ifconfig.1
+optimize   :
+    - lto
+setup      : |
+    %patch -p1 < $pkgfiles/0001-ifconfig-Force-use-of-proc-net-dev.patch
+    %configure --disable-logger \
+               --disable-whois \
+               --disable-servers
+build      : |
+    %make
+install    : |
+    %make_install
+    rmdir $installdir/%libdir%/${package}

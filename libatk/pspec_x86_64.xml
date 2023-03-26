@@ -1,0 +1,221 @@
+<PISI>
+    <Source>
+        <Name>libatk</Name>
+        <Packager>
+            <Name>Zach Bacon</Name>
+            <Email>zachbacon@vba-m.com</Email>
+        </Packager>
+        <License>GPL-3.0-or-later</License>
+        <PartOf>desktop.gtk</PartOf>
+        <Summary xml:lang="en">Accessibility toolkit</Summary>
+        <Description xml:lang="en">ATK provides the set of accessibility interfaces that are implemented by other toolkits and applications. Using the ATK interfaces, accessibility tools have full access to view and control running applications.
+</Description>
+        <Archive type="binary" sha1sum="79eb0752a961b8e0d15c77d298c97498fbc89c5a">https://getsol.us/sources/README.Solus</Archive>
+    </Source>
+    <Package>
+        <Name>libatk</Name>
+        <Summary xml:lang="en">Accessibility toolkit</Summary>
+        <Description xml:lang="en">ATK provides the set of accessibility interfaces that are implemented by other toolkits and applications. Using the ATK interfaces, accessibility tools have full access to view and control running applications.
+</Description>
+        <PartOf>desktop.gtk</PartOf>
+        <Files>
+            <Path fileType="library">/usr/lib64/girepository-1.0/Atk-1.0.typelib</Path>
+            <Path fileType="library">/usr/lib64/libatk-1.0.so.0</Path>
+            <Path fileType="library">/usr/lib64/libatk-1.0.so.0.23809.1</Path>
+            <Path fileType="data">/usr/share/gir-1.0/Atk-1.0.gir</Path>
+            <Path fileType="localedata">/usr/share/locale/af/LC_MESSAGES/atk10.mo</Path>
+            <Path fileType="localedata">/usr/share/locale/am/LC_MESSAGES/atk10.mo</Path>
+            <Path fileType="localedata">/usr/share/locale/an/LC_MESSAGES/atk10.mo</Path>
+            <Path fileType="localedata">/usr/share/locale/ar/LC_MESSAGES/atk10.mo</Path>
+            <Path fileType="localedata">/usr/share/locale/as/LC_MESSAGES/atk10.mo</Path>
+            <Path fileType="localedata">/usr/share/locale/ast/LC_MESSAGES/atk10.mo</Path>
+            <Path fileType="localedata">/usr/share/locale/az/LC_MESSAGES/atk10.mo</Path>
+            <Path fileType="localedata">/usr/share/locale/be/LC_MESSAGES/atk10.mo</Path>
+            <Path fileType="localedata">/usr/share/locale/be@latin/LC_MESSAGES/atk10.mo</Path>
+            <Path fileType="localedata">/usr/share/locale/bg/LC_MESSAGES/atk10.mo</Path>
+            <Path fileType="localedata">/usr/share/locale/bn/LC_MESSAGES/atk10.mo</Path>
+            <Path fileType="localedata">/usr/share/locale/bn_IN/LC_MESSAGES/atk10.mo</Path>
+            <Path fileType="localedata">/usr/share/locale/bs/LC_MESSAGES/atk10.mo</Path>
+            <Path fileType="localedata">/usr/share/locale/ca/LC_MESSAGES/atk10.mo</Path>
+            <Path fileType="localedata">/usr/share/locale/ca@valencia/LC_MESSAGES/atk10.mo</Path>
+            <Path fileType="localedata">/usr/share/locale/ckb/LC_MESSAGES/atk10.mo</Path>
+            <Path fileType="localedata">/usr/share/locale/cs/LC_MESSAGES/atk10.mo</Path>
+            <Path fileType="localedata">/usr/share/locale/cy/LC_MESSAGES/atk10.mo</Path>
+            <Path fileType="localedata">/usr/share/locale/da/LC_MESSAGES/atk10.mo</Path>
+            <Path fileType="localedata">/usr/share/locale/de/LC_MESSAGES/atk10.mo</Path>
+            <Path fileType="localedata">/usr/share/locale/dz/LC_MESSAGES/atk10.mo</Path>
+            <Path fileType="localedata">/usr/share/locale/el/LC_MESSAGES/atk10.mo</Path>
+            <Path fileType="localedata">/usr/share/locale/en@shaw/LC_MESSAGES/atk10.mo</Path>
+            <Path fileType="localedata">/usr/share/locale/en_CA/LC_MESSAGES/atk10.mo</Path>
+            <Path fileType="localedata">/usr/share/locale/en_GB/LC_MESSAGES/atk10.mo</Path>
+            <Path fileType="localedata">/usr/share/locale/eo/LC_MESSAGES/atk10.mo</Path>
+            <Path fileType="localedata">/usr/share/locale/es/LC_MESSAGES/atk10.mo</Path>
+            <Path fileType="localedata">/usr/share/locale/et/LC_MESSAGES/atk10.mo</Path>
+            <Path fileType="localedata">/usr/share/locale/eu/LC_MESSAGES/atk10.mo</Path>
+            <Path fileType="localedata">/usr/share/locale/fa/LC_MESSAGES/atk10.mo</Path>
+            <Path fileType="localedata">/usr/share/locale/fi/LC_MESSAGES/atk10.mo</Path>
+            <Path fileType="localedata">/usr/share/locale/fr/LC_MESSAGES/atk10.mo</Path>
+            <Path fileType="localedata">/usr/share/locale/fur/LC_MESSAGES/atk10.mo</Path>
+            <Path fileType="localedata">/usr/share/locale/ga/LC_MESSAGES/atk10.mo</Path>
+            <Path fileType="localedata">/usr/share/locale/gd/LC_MESSAGES/atk10.mo</Path>
+            <Path fileType="localedata">/usr/share/locale/gl/LC_MESSAGES/atk10.mo</Path>
+            <Path fileType="localedata">/usr/share/locale/gu/LC_MESSAGES/atk10.mo</Path>
+            <Path fileType="localedata">/usr/share/locale/he/LC_MESSAGES/atk10.mo</Path>
+            <Path fileType="localedata">/usr/share/locale/hi/LC_MESSAGES/atk10.mo</Path>
+            <Path fileType="localedata">/usr/share/locale/hr/LC_MESSAGES/atk10.mo</Path>
+            <Path fileType="localedata">/usr/share/locale/hu/LC_MESSAGES/atk10.mo</Path>
+            <Path fileType="localedata">/usr/share/locale/hy/LC_MESSAGES/atk10.mo</Path>
+            <Path fileType="localedata">/usr/share/locale/id/LC_MESSAGES/atk10.mo</Path>
+            <Path fileType="localedata">/usr/share/locale/is/LC_MESSAGES/atk10.mo</Path>
+            <Path fileType="localedata">/usr/share/locale/it/LC_MESSAGES/atk10.mo</Path>
+            <Path fileType="localedata">/usr/share/locale/ja/LC_MESSAGES/atk10.mo</Path>
+            <Path fileType="localedata">/usr/share/locale/ka/LC_MESSAGES/atk10.mo</Path>
+            <Path fileType="localedata">/usr/share/locale/kk/LC_MESSAGES/atk10.mo</Path>
+            <Path fileType="localedata">/usr/share/locale/km/LC_MESSAGES/atk10.mo</Path>
+            <Path fileType="localedata">/usr/share/locale/kn/LC_MESSAGES/atk10.mo</Path>
+            <Path fileType="localedata">/usr/share/locale/ko/LC_MESSAGES/atk10.mo</Path>
+            <Path fileType="localedata">/usr/share/locale/ku/LC_MESSAGES/atk10.mo</Path>
+            <Path fileType="localedata">/usr/share/locale/li/LC_MESSAGES/atk10.mo</Path>
+            <Path fileType="localedata">/usr/share/locale/lt/LC_MESSAGES/atk10.mo</Path>
+            <Path fileType="localedata">/usr/share/locale/lv/LC_MESSAGES/atk10.mo</Path>
+            <Path fileType="localedata">/usr/share/locale/mai/LC_MESSAGES/atk10.mo</Path>
+            <Path fileType="localedata">/usr/share/locale/mk/LC_MESSAGES/atk10.mo</Path>
+            <Path fileType="localedata">/usr/share/locale/ml/LC_MESSAGES/atk10.mo</Path>
+            <Path fileType="localedata">/usr/share/locale/mn/LC_MESSAGES/atk10.mo</Path>
+            <Path fileType="localedata">/usr/share/locale/mr/LC_MESSAGES/atk10.mo</Path>
+            <Path fileType="localedata">/usr/share/locale/ms/LC_MESSAGES/atk10.mo</Path>
+            <Path fileType="localedata">/usr/share/locale/nb/LC_MESSAGES/atk10.mo</Path>
+            <Path fileType="localedata">/usr/share/locale/ne/LC_MESSAGES/atk10.mo</Path>
+            <Path fileType="localedata">/usr/share/locale/nl/LC_MESSAGES/atk10.mo</Path>
+            <Path fileType="localedata">/usr/share/locale/nn/LC_MESSAGES/atk10.mo</Path>
+            <Path fileType="localedata">/usr/share/locale/oc/LC_MESSAGES/atk10.mo</Path>
+            <Path fileType="localedata">/usr/share/locale/or/LC_MESSAGES/atk10.mo</Path>
+            <Path fileType="localedata">/usr/share/locale/pa/LC_MESSAGES/atk10.mo</Path>
+            <Path fileType="localedata">/usr/share/locale/pl/LC_MESSAGES/atk10.mo</Path>
+            <Path fileType="localedata">/usr/share/locale/ps/LC_MESSAGES/atk10.mo</Path>
+            <Path fileType="localedata">/usr/share/locale/pt/LC_MESSAGES/atk10.mo</Path>
+            <Path fileType="localedata">/usr/share/locale/pt_BR/LC_MESSAGES/atk10.mo</Path>
+            <Path fileType="localedata">/usr/share/locale/ro/LC_MESSAGES/atk10.mo</Path>
+            <Path fileType="localedata">/usr/share/locale/ru/LC_MESSAGES/atk10.mo</Path>
+            <Path fileType="localedata">/usr/share/locale/rw/LC_MESSAGES/atk10.mo</Path>
+            <Path fileType="localedata">/usr/share/locale/si/LC_MESSAGES/atk10.mo</Path>
+            <Path fileType="localedata">/usr/share/locale/sk/LC_MESSAGES/atk10.mo</Path>
+            <Path fileType="localedata">/usr/share/locale/sl/LC_MESSAGES/atk10.mo</Path>
+            <Path fileType="localedata">/usr/share/locale/sq/LC_MESSAGES/atk10.mo</Path>
+            <Path fileType="localedata">/usr/share/locale/sr/LC_MESSAGES/atk10.mo</Path>
+            <Path fileType="localedata">/usr/share/locale/sr@ije/LC_MESSAGES/atk10.mo</Path>
+            <Path fileType="localedata">/usr/share/locale/sr@latin/LC_MESSAGES/atk10.mo</Path>
+            <Path fileType="localedata">/usr/share/locale/sv/LC_MESSAGES/atk10.mo</Path>
+            <Path fileType="localedata">/usr/share/locale/ta/LC_MESSAGES/atk10.mo</Path>
+            <Path fileType="localedata">/usr/share/locale/te/LC_MESSAGES/atk10.mo</Path>
+            <Path fileType="localedata">/usr/share/locale/tg/LC_MESSAGES/atk10.mo</Path>
+            <Path fileType="localedata">/usr/share/locale/th/LC_MESSAGES/atk10.mo</Path>
+            <Path fileType="localedata">/usr/share/locale/tk/LC_MESSAGES/atk10.mo</Path>
+            <Path fileType="localedata">/usr/share/locale/tr/LC_MESSAGES/atk10.mo</Path>
+            <Path fileType="localedata">/usr/share/locale/tt/LC_MESSAGES/atk10.mo</Path>
+            <Path fileType="localedata">/usr/share/locale/ug/LC_MESSAGES/atk10.mo</Path>
+            <Path fileType="localedata">/usr/share/locale/uk/LC_MESSAGES/atk10.mo</Path>
+            <Path fileType="localedata">/usr/share/locale/vi/LC_MESSAGES/atk10.mo</Path>
+            <Path fileType="localedata">/usr/share/locale/wa/LC_MESSAGES/atk10.mo</Path>
+            <Path fileType="localedata">/usr/share/locale/xh/LC_MESSAGES/atk10.mo</Path>
+            <Path fileType="localedata">/usr/share/locale/yi/LC_MESSAGES/atk10.mo</Path>
+            <Path fileType="localedata">/usr/share/locale/zh_CN/LC_MESSAGES/atk10.mo</Path>
+            <Path fileType="localedata">/usr/share/locale/zh_HK/LC_MESSAGES/atk10.mo</Path>
+            <Path fileType="localedata">/usr/share/locale/zh_TW/LC_MESSAGES/atk10.mo</Path>
+            <Path fileType="localedata">/usr/share/locale/zu/LC_MESSAGES/atk10.mo</Path>
+        </Files>
+        <Replaces>
+            <Package>atk</Package>
+        </Replaces>
+    </Package>
+    <Package>
+        <Name>libatk-32bit</Name>
+        <Summary xml:lang="en">32-bit libraries for libatk</Summary>
+        <Description xml:lang="en">ATK provides the set of accessibility interfaces that are implemented by other toolkits and applications. Using the ATK interfaces, accessibility tools have full access to view and control running applications.
+</Description>
+        <PartOf>emul32</PartOf>
+        <RuntimeDependencies>
+            <Dependency release="26">libatk</Dependency>
+        </RuntimeDependencies>
+        <Files>
+            <Path fileType="library">/usr/lib32/libatk-1.0.so.0</Path>
+            <Path fileType="library">/usr/lib32/libatk-1.0.so.0.23809.1</Path>
+        </Files>
+    </Package>
+    <Package>
+        <Name>libatk-32bit-devel</Name>
+        <Summary xml:lang="en">Development files for 32-bit libatk</Summary>
+        <Description xml:lang="en">ATK provides the set of accessibility interfaces that are implemented by other toolkits and applications. Using the ATK interfaces, accessibility tools have full access to view and control running applications.
+</Description>
+        <PartOf>programming.devel</PartOf>
+        <RuntimeDependencies>
+            <Dependency release="26">libatk-devel</Dependency>
+            <Dependency release="26">libatk-32bit</Dependency>
+        </RuntimeDependencies>
+        <Files>
+            <Path fileType="library">/usr/lib32/libatk-1.0.so</Path>
+            <Path fileType="data">/usr/lib32/pkgconfig/atk.pc</Path>
+        </Files>
+    </Package>
+    <Package>
+        <Name>libatk-devel</Name>
+        <Summary xml:lang="en">Development files for libatk</Summary>
+        <Description xml:lang="en">ATK provides the set of accessibility interfaces that are implemented by other toolkits and applications. Using the ATK interfaces, accessibility tools have full access to view and control running applications.
+</Description>
+        <PartOf>programming.devel</PartOf>
+        <RuntimeDependencies>
+            <Dependency release="26">libatk</Dependency>
+        </RuntimeDependencies>
+        <Files>
+            <Path fileType="header">/usr/include/atk-1.0/atk/atk-autocleanups.h</Path>
+            <Path fileType="header">/usr/include/atk-1.0/atk/atk-enum-types.h</Path>
+            <Path fileType="header">/usr/include/atk-1.0/atk/atk.h</Path>
+            <Path fileType="header">/usr/include/atk-1.0/atk/atkaction.h</Path>
+            <Path fileType="header">/usr/include/atk-1.0/atk/atkcomponent.h</Path>
+            <Path fileType="header">/usr/include/atk-1.0/atk/atkdocument.h</Path>
+            <Path fileType="header">/usr/include/atk-1.0/atk/atkeditabletext.h</Path>
+            <Path fileType="header">/usr/include/atk-1.0/atk/atkgobjectaccessible.h</Path>
+            <Path fileType="header">/usr/include/atk-1.0/atk/atkhyperlink.h</Path>
+            <Path fileType="header">/usr/include/atk-1.0/atk/atkhyperlinkimpl.h</Path>
+            <Path fileType="header">/usr/include/atk-1.0/atk/atkhypertext.h</Path>
+            <Path fileType="header">/usr/include/atk-1.0/atk/atkimage.h</Path>
+            <Path fileType="header">/usr/include/atk-1.0/atk/atkmisc.h</Path>
+            <Path fileType="header">/usr/include/atk-1.0/atk/atknoopobject.h</Path>
+            <Path fileType="header">/usr/include/atk-1.0/atk/atknoopobjectfactory.h</Path>
+            <Path fileType="header">/usr/include/atk-1.0/atk/atkobject.h</Path>
+            <Path fileType="header">/usr/include/atk-1.0/atk/atkobjectfactory.h</Path>
+            <Path fileType="header">/usr/include/atk-1.0/atk/atkplug.h</Path>
+            <Path fileType="header">/usr/include/atk-1.0/atk/atkrange.h</Path>
+            <Path fileType="header">/usr/include/atk-1.0/atk/atkregistry.h</Path>
+            <Path fileType="header">/usr/include/atk-1.0/atk/atkrelation.h</Path>
+            <Path fileType="header">/usr/include/atk-1.0/atk/atkrelationset.h</Path>
+            <Path fileType="header">/usr/include/atk-1.0/atk/atkrelationtype.h</Path>
+            <Path fileType="header">/usr/include/atk-1.0/atk/atkselection.h</Path>
+            <Path fileType="header">/usr/include/atk-1.0/atk/atksocket.h</Path>
+            <Path fileType="header">/usr/include/atk-1.0/atk/atkstate.h</Path>
+            <Path fileType="header">/usr/include/atk-1.0/atk/atkstateset.h</Path>
+            <Path fileType="header">/usr/include/atk-1.0/atk/atkstreamablecontent.h</Path>
+            <Path fileType="header">/usr/include/atk-1.0/atk/atktable.h</Path>
+            <Path fileType="header">/usr/include/atk-1.0/atk/atktablecell.h</Path>
+            <Path fileType="header">/usr/include/atk-1.0/atk/atktext.h</Path>
+            <Path fileType="header">/usr/include/atk-1.0/atk/atkutil.h</Path>
+            <Path fileType="header">/usr/include/atk-1.0/atk/atkvalue.h</Path>
+            <Path fileType="header">/usr/include/atk-1.0/atk/atkversion.h</Path>
+            <Path fileType="header">/usr/include/atk-1.0/atk/atkwindow.h</Path>
+            <Path fileType="library">/usr/lib64/libatk-1.0.so</Path>
+            <Path fileType="data">/usr/lib64/pkgconfig/atk.pc</Path>
+        </Files>
+        <Replaces>
+            <Package>atk-devel</Package>
+        </Replaces>
+    </Package>
+    <History>
+        <Update release="26">
+            <Date>2022-09-22</Date>
+            <Version>2.38.0</Version>
+            <Comment>Packaging update</Comment>
+            <Name>Zach Bacon</Name>
+            <Email>zachbacon@vba-m.com</Email>
+        </Update>
+    </History>
+</PISI>

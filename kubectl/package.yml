@@ -1,0 +1,28 @@
+name       : kubectl
+version    : 1.26.0
+release    : 41
+source     :
+    - https://github.com/kubernetes/kubernetes/archive/v1.26.0.tar.gz : a0de781db6d09d91f39306740420f150c5912606f52e4c9a859649f4313fe508
+license    : Apache-2.0
+component  : network.clients
+summary    : Command line interface for running commands against Kubernetes clusters
+description: |
+    kubectl is a command line interface for running commands against Kubernetes clusters
+builddeps  :
+    - golang
+    - rsync
+build      : |
+    hack/update-generated-docs.sh
+    %make kubectl
+install    : |
+    install -dm00644 $installdir/usr/share/man/man1
+    install -Dm00644 docs/man/man1/kubectl* $installdir/usr/share/man/man1
+    install -Dm00755 _output/bin/kubectl $installdir/usr/bin/kubectl
+
+    # Install completion scripts
+    _output/bin/kubectl completion bash > kubectl-bash-completion
+    _output/bin/kubectl completion fish > kubectl-fish-completion
+    _output/bin/kubectl completion zsh > kubectl-zsh-completion
+    install -Dm00644 kubectl-bash-completion $installdir/usr/share/bash-completion/completions/kubectl
+    install -Dm00644 kubectl-fish-completion $installdir/usr/share/fish/vendor_completions.d/kubectl
+    install -Dm00644 kubectl-zsh-completion $installdir/usr/share/zsh/site-functions/_kubectl

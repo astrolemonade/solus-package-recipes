@@ -1,0 +1,21 @@
+name       : python-slugify
+version    : 7.0.0
+release    : 7
+source     :
+    - https://github.com/un33k/python-slugify/archive/refs/tags/v7.0.0.tar.gz : c0e2278837e8e4b152869df3c32b9163adc9a47fa905fd5a869672954f63829f
+homepage   : https://github.com/un33k/python-slugify
+license    : MIT
+component  : programming.python
+summary    : Returns unicode slugs
+description: |
+    A Python slugify application that handles unicode.
+builddeps  :
+    - python-text-unidecode
+rundeps    :
+    - python-text-unidecode
+build      : |
+    %python3_setup
+install    : |
+    %python3_install
+check      : |
+    %python3_test test.py

@@ -1,0 +1,25 @@
+name       : kcalutils
+version    : 22.12.1
+release    : 63
+source     :
+    - https://cdn.download.kde.org/stable/release-service/22.12.1/src/kcalutils-22.12.1.tar.xz : 1964942e3fce9164992231eb6b4139dda45473403959e23ee7777f7b2f1ff31c
+homepage   : https://kde.org/
+license    : LGPL-2.1-or-later
+component  : desktop.library
+summary    : This library provides a set of utility functions that help applications access and use calendar data via the KCalCore library
+description: |
+    This library provides a set of utility functions that help applications access and use calendar data via the KCalCore library.
+builddeps  :
+    - grantlee-devel
+    - kcalendarcore-devel
+    - kconfigwidgets-devel
+    - kiconthemes-devel
+    - kidentitymanagement-devel
+    - kpimtextedit-devel
+    - libical-devel
+setup      : |
+    %cmake_ninja -DBUILD_TESTING=OFF
+build      : |
+    %ninja_build
+install    : |
+    %ninja_install

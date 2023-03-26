@@ -1,0 +1,26 @@
+name       : networkmanager-openvpn
+version    : 1.10.0
+release    : 27
+source     :
+    - https://download.gnome.org/sources/NetworkManager-openvpn/1.10/NetworkManager-openvpn-1.10.0.tar.xz : 5745d4107f3398a97afbb93f69239b510c9e45eb7fb62d60d9ed0a7297f4d101
+license    : GPL-2.0-or-later
+summary    : OpenVPN plugin for NetworkManager
+description: |
+    OpenVPN plugin for NetworkManager allows you to manage openvpn connections from the network manager applet.
+component  : network.base
+builddeps  :
+    - pkgconfig(dbus-glib-1)
+    - pkgconfig(glib-2.0)
+    - pkgconfig(gtk+-3.0)
+    - pkgconfig(gtk4)
+    - pkgconfig(libnma)
+    - pkgconfig(libsecret-unstable)
+rundeps    :
+    - openvpn
+setup      : |
+    %reconfigure --disable-static --with-gtk4
+build      : |
+    %make
+install    : |
+    %make_install
+    install -D -m 00644 $pkgfiles/nm-openvpn.sysusers $installdir/%libdir%/sysusers.d/nm-openvpn.conf

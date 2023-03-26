@@ -1,0 +1,17 @@
+name       : kakoune
+version    : 2022.10.31
+release    : 11
+source     :
+    - https://github.com/mawww/kakoune/archive/refs/tags/v2022.10.31.tar.gz : f3eab1e663763c62881d553ad6263526940fa3ca357e0183767885415fc80b03
+homepage   : https://kakoune.org
+license    : Unlicense
+component  : editor
+summary    : kakoune, mawww's experiment for a better code editor
+description: |
+    Kakoune is a code editor that implements Vi’s "keystrokes as a text editing language" model. As it’s also a modal editor, it is somewhat similar to the Vim editor (after which Kakoune was originally inspired).
+builddeps  :
+    - asciidoc
+build      : |
+    %make -C src
+install    : |
+    %make_install -C src PREFIX='/usr'

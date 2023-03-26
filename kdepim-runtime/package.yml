@@ -1,0 +1,53 @@
+name       : kdepim-runtime
+version    : 22.12.1
+release    : 68
+source     :
+    - https://cdn.download.kde.org/stable/release-service/22.12.1/src/kdepim-runtime-22.12.1.tar.xz : 5ae010d5393a03ababe12081af4c7878bb854886af06a61a7715504b8bbbf06d
+homepage   : https://community.kde.org/PIM
+license    : GPL-2.0-or-later
+component  : desktop.kde
+summary    : Runtime components for Akonadi
+description: |
+    Contains the Akonadi resources from kdepim which can be used without the applications in kdepim.
+builddeps  :
+    - pkgconfig(Qt5NetworkAuth)
+    - pkgconfig(Qt5TextToSpeech)
+    - pkgconfig(Qt5XmlPatterns)
+    - pkgconfig(Qt5WebEngine)
+    - pkgconfig(libcurl)
+    - pkgconfig(libsasl2)
+    - pkgconfig(qca2-qt5)
+    - akonadi-calendar-devel
+    - akonadi-contacts-devel
+    - akonadi-mime-devel
+    - akonadi-notes-devel
+    - kcalutils-devel
+    - kcmutils-devel
+    - kcontacts-devel
+    - kdav-devel
+    - kdoctools-devel
+    - kholidays-devel
+    - kidentitymanagement-devel
+    - kimap-devel
+    - kio-devel
+    - kldap-devel
+    - kmailtransport-devel
+    - kmbox-devel
+    - knotifyconfig-devel
+    - kpimtextedit-devel
+    - kwallet-devel
+    - libical-devel
+    - libkdepim-devel
+    - libkgapi-devel
+    - libkolabxml-devel
+    - pimcommon-devel
+    - qtkeychain-devel
+setup      : |
+    %cmake_ninja -DBUILD_TESTING=OFF
+build      : |
+    %ninja_build
+install    : |
+    %ninja_install
+
+    # remove docs
+    rm -rf $installdir/usr/share/doc

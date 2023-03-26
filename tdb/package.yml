@@ -1,0 +1,30 @@
+name       : tdb
+version    : 1.4.6
+release    : 20
+source     :
+    - https://www.samba.org/ftp/tdb/tdb-1.4.6.tar.gz : d6892bd8befe04a77642a1dd56e4a879349bf1cf5b2c0bf5fb841061938def0b
+license    : LGPL-3.0-or-later
+component  :
+    - database
+    - utils : database
+summary    : Transactional database
+description: |
+    This is a simple database API. It was inspired by the realisation that in Samba we have several ad-hoc bits of code that essentially implement small databases for sharing structures between parts of Samba.
+builddeps  :
+    - pkgconfig(libtirpc)
+patterns   :
+    - utils : /usr/bin
+setup      : |
+    %patch -p1 < $pkgfiles/Fix-invalid-syntax-in-tdb-header.patch
+    %configure \
+      --bundled-libraries=NONE \
+      --builtin-libraries=replace \
+      --disable-rpath-install \
+      --disable-python
+build      : |
+    %make
+install    : |
+    %make_install
+# check      : |
+# Disable tests until upstream get it together
+#    %make check

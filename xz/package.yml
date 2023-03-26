@@ -1,0 +1,26 @@
+name       : xz
+version    : 5.4.0
+release    : 29
+source     :
+    - https://sourceforge.net/projects/lzmautils/files/xz-5.4.0.tar.gz : 7471ef5991f690268a8f2be019acec2e0564b7b233ca40035f339fe9a07f830b
+homepage   : https://tukaani.org/xz/
+license    : GPL-2.0-or-later
+component  : system.base
+summary    : xz (Data compression software)
+description: |
+    XZ Utils is a free data compression software with high compression ratio. XZ Utils is the successor to LZMA.
+optimize   :
+    - speed
+    - lto
+emul32     : yes
+setup      : |
+    export CFLAGS="${CFLAGS} -D_FILE_OFFSET_BITS=64"
+    %configure
+build      : |
+    %make
+install    : |
+    %make_install
+profile    : |
+    %make check
+check      : |
+    %make check

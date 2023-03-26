@@ -1,0 +1,17 @@
+name       : python-bidict
+version    : 0.22.0
+release    : 3
+source     :
+    - https://pypi.io/packages/source/b/bidict/bidict-0.22.0.tar.gz : 5c826b3e15e97cc6e615de295756847c282a79b79c5430d3bfc909b1ac9f5bd8
+homepage   : https://github.com/jab/bidict
+license    : MPL-2.0
+component  : programming.python
+summary    : The bidirectional mapping library for Python
+description: |
+    Bidirectional mapping library that works out-of-the-box with Python's standard library and native integration with collections.abc.
+builddeps  :
+    - pkgconfig(python3)
+build      : |
+    %python3_setup
+install    : |
+    %python3_install

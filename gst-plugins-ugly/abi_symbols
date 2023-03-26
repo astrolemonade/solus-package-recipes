@@ -1,0 +1,12 @@
+libgstasf.so:gst_plugin_desc
+libgstcdio.so:gst_plugin_desc
+libgstdvdlpcmdec.so:gst_plugin_desc
+libgstdvdsub.so:gst_plugin_desc
+libgstiec958.so:gst_plugin_desc
+libgstlame.so:gst_plugin_desc
+libgstmad.so:gst_plugin_desc
+libgstmpeg2dec.so:gst_plugin_desc
+libgstmpegaudioparse.so:gst_plugin_desc
+libgstmpegstream.so:gst_plugin_desc
+libgstrmdemux.so:gst_plugin_desc
+libgstx264.so:gst_plugin_desc

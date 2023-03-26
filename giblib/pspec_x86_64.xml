@@ -1,0 +1,66 @@
+<PISI>
+    <Source>
+        <Name>giblib</Name>
+        <Homepage>http://freshmeat.sourceforge.net/projects/giblib</Homepage>
+        <Packager>
+            <Name>F. von Gellhorn</Name>
+            <Email>flinux@vongellhorn.ch</Email>
+        </Packager>
+        <License>MIT</License>
+        <PartOf>desktop.library</PartOf>
+        <Summary xml:lang="en">giblib is a simple library which wraps imlib2 and provides a context API for it</Summary>
+        <Description xml:lang="en">giblib is a simple library which wraps imlib2. It provides a wrapper to imlib2&apos;s context API, avoiding all the context_get/set calls, adds fontstyles to the truetype renderer and supplies a generic doubly-linked list and some string functions.
+</Description>
+        <Archive type="binary" sha1sum="79eb0752a961b8e0d15c77d298c97498fbc89c5a">https://getsol.us/sources/README.Solus</Archive>
+    </Source>
+    <Package>
+        <Name>giblib</Name>
+        <Summary xml:lang="en">giblib is a simple library which wraps imlib2 and provides a context API for it</Summary>
+        <Description xml:lang="en">giblib is a simple library which wraps imlib2. It provides a wrapper to imlib2&apos;s context API, avoiding all the context_get/set calls, adds fontstyles to the truetype renderer and supplies a generic doubly-linked list and some string functions.
+</Description>
+        <PartOf>desktop.library</PartOf>
+        <Files>
+            <Path fileType="executable">/usr/bin/giblib-config</Path>
+            <Path fileType="library">/usr/lib64/libgiblib.so.1</Path>
+            <Path fileType="library">/usr/lib64/libgiblib.so.1.0.6</Path>
+            <Path fileType="doc">/usr/share/doc/giblib/AUTHORS</Path>
+            <Path fileType="doc">/usr/share/doc/giblib/ChangeLog</Path>
+            <Path fileType="doc">/usr/share/doc/giblib/README</Path>
+            <Path fileType="doc">/usr/share/doc/giblib/TODO</Path>
+        </Files>
+    </Package>
+    <Package>
+        <Name>giblib-devel</Name>
+        <Summary xml:lang="en">Development files for giblib</Summary>
+        <Description xml:lang="en">giblib is a simple library which wraps imlib2. It provides a wrapper to imlib2&apos;s context API, avoiding all the context_get/set calls, adds fontstyles to the truetype renderer and supplies a generic doubly-linked list and some string functions.
+</Description>
+        <PartOf>programming.devel</PartOf>
+        <RuntimeDependencies>
+            <Dependency release="7">giblib</Dependency>
+        </RuntimeDependencies>
+        <Files>
+            <Path fileType="header">/usr/include/giblib/gib_btree.h</Path>
+            <Path fileType="header">/usr/include/giblib/gib_debug.h</Path>
+            <Path fileType="header">/usr/include/giblib/gib_hash.h</Path>
+            <Path fileType="header">/usr/include/giblib/gib_imlib.h</Path>
+            <Path fileType="header">/usr/include/giblib/gib_list.h</Path>
+            <Path fileType="header">/usr/include/giblib/gib_queue.h</Path>
+            <Path fileType="header">/usr/include/giblib/gib_stack.h</Path>
+            <Path fileType="header">/usr/include/giblib/gib_style.h</Path>
+            <Path fileType="header">/usr/include/giblib/gib_utils.h</Path>
+            <Path fileType="header">/usr/include/giblib/giblib.h</Path>
+            <Path fileType="header">/usr/include/giblib/giblib_config.h</Path>
+            <Path fileType="library">/usr/lib64/libgiblib.so</Path>
+            <Path fileType="data">/usr/lib64/pkgconfig/giblib.pc</Path>
+        </Files>
+    </Package>
+    <History>
+        <Update release="7">
+            <Date>2019-05-20</Date>
+            <Version>1.2.4</Version>
+            <Comment>Packaging update</Comment>
+            <Name>F. von Gellhorn</Name>
+            <Email>flinux@vongellhorn.ch</Email>
+        </Update>
+    </History>
+</PISI>

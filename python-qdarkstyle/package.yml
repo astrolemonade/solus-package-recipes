@@ -1,0 +1,17 @@
+name       : python-qdarkstyle
+version    : 3.0.3
+release    : 8
+source     :
+    - https://files.pythonhosted.org/packages/source/Q/QDarkStyle/QDarkStyle-3.0.3.tar.gz : 936d2d35b552f429803a985dbc17fc879a2f966faa9fbf8983896ccfa33e68f6
+homepage   : https://github.com/ColinDuquesnoy/QDarkStyleSheet
+license    : MIT
+component  : programming.python
+summary    : A dark style sheet for QtWidgets application
+description: |
+    QDarkStyle is a dark stylesheet for Python and Qt applications. This module provides a function to transparently load the stylesheets with the correct rc file.
+rundeps    :
+    - python-qtpy
+build      : |
+    %python3_setup
+install    : |
+    %python3_install

@@ -1,0 +1,35 @@
+<PISI>
+    <Source>
+        <Name>miller</Name>
+        <Packager>
+            <Name>Bryan T. Meyers</Name>
+            <Email>bmeyers@datadrake.com</Email>
+        </Packager>
+        <License>BSD-2-Clause</License>
+        <PartOf>programming.tools</PartOf>
+        <Summary xml:lang="en">Miller is like awk, sed, cut, join, and sort for name-indexed data such as CSV, TSV, and tabular JSON</Summary>
+        <Description xml:lang="en">Miller is like awk, sed, cut, join, and sort for name-indexed data such as CSV, TSV, and tabular JSON
+</Description>
+        <Archive type="binary" sha1sum="79eb0752a961b8e0d15c77d298c97498fbc89c5a">https://solus-project.com/sources/README.Solus</Archive>
+    </Source>
+    <Package>
+        <Name>miller</Name>
+        <Summary xml:lang="en">Miller is like awk, sed, cut, join, and sort for name-indexed data such as CSV, TSV, and tabular JSON</Summary>
+        <Description xml:lang="en">Miller is like awk, sed, cut, join, and sort for name-indexed data such as CSV, TSV, and tabular JSON
+</Description>
+        <PartOf>programming.tools</PartOf>
+        <Files>
+            <Path fileType="executable">/usr/bin/mlr</Path>
+            <Path fileType="man">/usr/share/man/man1/mlr.1</Path>
+        </Files>
+    </Package>
+    <History>
+        <Update release="3">
+            <Date>2018-08-27</Date>
+            <Version>5.3.0</Version>
+            <Comment>Packaging update</Comment>
+            <Name>Bryan T. Meyers</Name>
+            <Email>bmeyers@datadrake.com</Email>
+        </Update>
+    </History>
+</PISI>

@@ -1,0 +1,22 @@
+name       : signon-kwallet-extension
+version    : 22.12.1
+release    : 53
+source     :
+    - https://cdn.download.kde.org/stable/release-service/22.12.1/src/signon-kwallet-extension-22.12.1.tar.xz : 90177286a3e29edfe6163baa48584206ec0d7d29243b97a8a20ddc6a080875df
+homepage   : https://kde.org/
+license    : GPL-2.0-or-later
+component  : programming
+summary    : KWallet integration for signon framework
+description: |
+    KWallet integration for signon framework.
+builddeps  :
+    - pkgconfig(Qt5Core)
+    - pkgconfig(SignOnExtension)
+    - extra-cmake-modules
+    - kwallet-devel
+setup      : |
+    %cmake_ninja
+build      : |
+    %ninja_build
+install    : |
+    %ninja_install

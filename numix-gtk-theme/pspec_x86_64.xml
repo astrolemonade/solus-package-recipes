@@ -1,0 +1,127 @@
+<PISI>
+    <Source>
+        <Name>numix-gtk-theme</Name>
+        <Homepage>https://github.com/numixproject/numix-gtk-theme</Homepage>
+        <Packager>
+            <Name>Algent Albrahimi</Name>
+            <Email>algent@protonmail.com</Email>
+        </Packager>
+        <License>GPL-3.0-or-later</License>
+        <PartOf>desktop.theme</PartOf>
+        <Summary xml:lang="en">Numix GTK Theme</Summary>
+        <Description xml:lang="en">A modern flat theme with a combination of light and dark elements.
+</Description>
+        <Archive type="binary" sha1sum="79eb0752a961b8e0d15c77d298c97498fbc89c5a">https://getsol.us/sources/README.Solus</Archive>
+    </Source>
+    <Package>
+        <Name>numix-gtk-theme</Name>
+        <Summary xml:lang="en">Numix GTK Theme</Summary>
+        <Description xml:lang="en">A modern flat theme with a combination of light and dark elements.
+</Description>
+        <PartOf>desktop.theme</PartOf>
+        <Files>
+            <Path fileType="data">/usr/share/themes/Numix/assets/all-assets.svg</Path>
+            <Path fileType="data">/usr/share/themes/Numix/assets/all-assets.txt</Path>
+            <Path fileType="data">/usr/share/themes/Numix/assets/checkbox-checked-dark.png</Path>
+            <Path fileType="data">/usr/share/themes/Numix/assets/checkbox-checked-dark@2.png</Path>
+            <Path fileType="data">/usr/share/themes/Numix/assets/checkbox-checked-insensitive-dark.png</Path>
+            <Path fileType="data">/usr/share/themes/Numix/assets/checkbox-checked-insensitive-dark@2.png</Path>
+            <Path fileType="data">/usr/share/themes/Numix/assets/checkbox-checked-insensitive.png</Path>
+            <Path fileType="data">/usr/share/themes/Numix/assets/checkbox-checked-insensitive@2.png</Path>
+            <Path fileType="data">/usr/share/themes/Numix/assets/checkbox-checked.png</Path>
+            <Path fileType="data">/usr/share/themes/Numix/assets/checkbox-checked@2.png</Path>
+            <Path fileType="data">/usr/share/themes/Numix/assets/checkbox-mixed-dark.png</Path>
+            <Path fileType="data">/usr/share/themes/Numix/assets/checkbox-mixed-dark@2.png</Path>
+            <Path fileType="data">/usr/share/themes/Numix/assets/checkbox-mixed-insensitive-dark.png</Path>
+            <Path fileType="data">/usr/share/themes/Numix/assets/checkbox-mixed-insensitive-dark@2.png</Path>
+            <Path fileType="data">/usr/share/themes/Numix/assets/checkbox-mixed-insensitive.png</Path>
+            <Path fileType="data">/usr/share/themes/Numix/assets/checkbox-mixed-insensitive@2.png</Path>
+            <Path fileType="data">/usr/share/themes/Numix/assets/checkbox-mixed.png</Path>
+            <Path fileType="data">/usr/share/themes/Numix/assets/checkbox-mixed@2.png</Path>
+            <Path fileType="data">/usr/share/themes/Numix/assets/checkbox-unchecked-dark.png</Path>
+            <Path fileType="data">/usr/share/themes/Numix/assets/checkbox-unchecked-dark@2.png</Path>
+            <Path fileType="data">/usr/share/themes/Numix/assets/checkbox-unchecked-insensitive-dark.png</Path>
+            <Path fileType="data">/usr/share/themes/Numix/assets/checkbox-unchecked-insensitive-dark@2.png</Path>
+            <Path fileType="data">/usr/share/themes/Numix/assets/checkbox-unchecked-insensitive.png</Path>
+            <Path fileType="data">/usr/share/themes/Numix/assets/checkbox-unchecked-insensitive@2.png</Path>
+            <Path fileType="data">/usr/share/themes/Numix/assets/checkbox-unchecked.png</Path>
+            <Path fileType="data">/usr/share/themes/Numix/assets/checkbox-unchecked@2.png</Path>
+            <Path fileType="data">/usr/share/themes/Numix/assets/grid-selection-checked-dark.png</Path>
+            <Path fileType="data">/usr/share/themes/Numix/assets/grid-selection-checked-dark@2.png</Path>
+            <Path fileType="data">/usr/share/themes/Numix/assets/grid-selection-checked.png</Path>
+            <Path fileType="data">/usr/share/themes/Numix/assets/grid-selection-checked@2.png</Path>
+            <Path fileType="data">/usr/share/themes/Numix/assets/grid-selection-unchecked-dark.png</Path>
+            <Path fileType="data">/usr/share/themes/Numix/assets/grid-selection-unchecked-dark@2.png</Path>
+            <Path fileType="data">/usr/share/themes/Numix/assets/grid-selection-unchecked.png</Path>
+            <Path fileType="data">/usr/share/themes/Numix/assets/grid-selection-unchecked@2.png</Path>
+            <Path fileType="data">/usr/share/themes/Numix/assets/menuitem-checkbox-checked-hover.png</Path>
+            <Path fileType="data">/usr/share/themes/Numix/assets/menuitem-checkbox-checked-hover@2.png</Path>
+            <Path fileType="data">/usr/share/themes/Numix/assets/menuitem-checkbox-checked-insensitive.png</Path>
+            <Path fileType="data">/usr/share/themes/Numix/assets/menuitem-checkbox-checked-insensitive@2.png</Path>
+            <Path fileType="data">/usr/share/themes/Numix/assets/menuitem-checkbox-checked.png</Path>
+            <Path fileType="data">/usr/share/themes/Numix/assets/menuitem-checkbox-checked@2.png</Path>
+            <Path fileType="data">/usr/share/themes/Numix/assets/menuitem-checkbox-mixed-hover.png</Path>
+            <Path fileType="data">/usr/share/themes/Numix/assets/menuitem-checkbox-mixed-hover@2.png</Path>
+            <Path fileType="data">/usr/share/themes/Numix/assets/menuitem-checkbox-mixed-insensitive.png</Path>
+            <Path fileType="data">/usr/share/themes/Numix/assets/menuitem-checkbox-mixed-insensitive@2.png</Path>
+            <Path fileType="data">/usr/share/themes/Numix/assets/menuitem-checkbox-mixed.png</Path>
+            <Path fileType="data">/usr/share/themes/Numix/assets/menuitem-checkbox-mixed@2.png</Path>
+            <Path fileType="data">/usr/share/themes/Numix/assets/menuitem-radio-checked-hover.png</Path>
+            <Path fileType="data">/usr/share/themes/Numix/assets/menuitem-radio-checked-hover@2.png</Path>
+            <Path fileType="data">/usr/share/themes/Numix/assets/menuitem-radio-checked-insensitive.png</Path>
+            <Path fileType="data">/usr/share/themes/Numix/assets/menuitem-radio-checked-insensitive@2.png</Path>
+            <Path fileType="data">/usr/share/themes/Numix/assets/menuitem-radio-checked.png</Path>
+            <Path fileType="data">/usr/share/themes/Numix/assets/menuitem-radio-checked@2.png</Path>
+            <Path fileType="data">/usr/share/themes/Numix/assets/pane-handle.png</Path>
+            <Path fileType="data">/usr/share/themes/Numix/assets/pane-handle@2.png</Path>
+            <Path fileType="data">/usr/share/themes/Numix/assets/radio-checked-dark.png</Path>
+            <Path fileType="data">/usr/share/themes/Numix/assets/radio-checked-dark@2.png</Path>
+            <Path fileType="data">/usr/share/themes/Numix/assets/radio-checked-insensitive-dark.png</Path>
+            <Path fileType="data">/usr/share/themes/Numix/assets/radio-checked-insensitive-dark@2.png</Path>
+            <Path fileType="data">/usr/share/themes/Numix/assets/radio-checked-insensitive.png</Path>
+            <Path fileType="data">/usr/share/themes/Numix/assets/radio-checked-insensitive@2.png</Path>
+            <Path fileType="data">/usr/share/themes/Numix/assets/radio-checked.png</Path>
+            <Path fileType="data">/usr/share/themes/Numix/assets/radio-checked@2.png</Path>
+            <Path fileType="data">/usr/share/themes/Numix/assets/radio-mixed-dark.png</Path>
+            <Path fileType="data">/usr/share/themes/Numix/assets/radio-mixed-dark@2.png</Path>
+            <Path fileType="data">/usr/share/themes/Numix/assets/radio-mixed-insensitive-dark.png</Path>
+            <Path fileType="data">/usr/share/themes/Numix/assets/radio-mixed-insensitive-dark@2.png</Path>
+            <Path fileType="data">/usr/share/themes/Numix/assets/radio-mixed-insensitive.png</Path>
+            <Path fileType="data">/usr/share/themes/Numix/assets/radio-mixed-insensitive@2.png</Path>
+            <Path fileType="data">/usr/share/themes/Numix/assets/radio-mixed.png</Path>
+            <Path fileType="data">/usr/share/themes/Numix/assets/radio-mixed@2.png</Path>
+            <Path fileType="data">/usr/share/themes/Numix/assets/radio-unchecked-dark.png</Path>
+            <Path fileType="data">/usr/share/themes/Numix/assets/radio-unchecked-dark@2.png</Path>
+            <Path fileType="data">/usr/share/themes/Numix/assets/radio-unchecked-insensitive-dark.png</Path>
+            <Path fileType="data">/usr/share/themes/Numix/assets/radio-unchecked-insensitive-dark@2.png</Path>
+            <Path fileType="data">/usr/share/themes/Numix/assets/radio-unchecked-insensitive.png</Path>
+            <Path fileType="data">/usr/share/themes/Numix/assets/radio-unchecked-insensitive@2.png</Path>
+            <Path fileType="data">/usr/share/themes/Numix/assets/radio-unchecked.png</Path>
+            <Path fileType="data">/usr/share/themes/Numix/assets/radio-unchecked@2.png</Path>
+            <Path fileType="data">/usr/share/themes/Numix/gtk-2.0/gtkrc</Path>
+            <Path fileType="data">/usr/share/themes/Numix/gtk-3.0/assets</Path>
+            <Path fileType="data">/usr/share/themes/Numix/gtk-3.0/gtk-dark.css</Path>
+            <Path fileType="data">/usr/share/themes/Numix/gtk-3.0/gtk.css</Path>
+            <Path fileType="data">/usr/share/themes/Numix/gtk-3.0/gtk.gresource</Path>
+            <Path fileType="data">/usr/share/themes/Numix/gtk-3.0/thumbnail.png</Path>
+            <Path fileType="data">/usr/share/themes/Numix/gtk-3.20/assets</Path>
+            <Path fileType="data">/usr/share/themes/Numix/gtk-3.20/gtk-dark.css</Path>
+            <Path fileType="data">/usr/share/themes/Numix/gtk-3.20/gtk.css</Path>
+            <Path fileType="data">/usr/share/themes/Numix/gtk-3.20/gtk.gresource</Path>
+            <Path fileType="data">/usr/share/themes/Numix/gtk-3.20/thumbnail.png</Path>
+            <Path fileType="data">/usr/share/themes/Numix/index.theme</Path>
+            <Path fileType="data">/usr/share/themes/Numix/metacity-1/metacity-theme-2.xml</Path>
+            <Path fileType="data">/usr/share/themes/Numix/metacity-1/metacity-theme-3.xml</Path>
+            <Path fileType="data">/usr/share/themes/Numix/metacity-1/thumbnail.png</Path>
+        </Files>
+    </Package>
+    <History>
+        <Update release="8">
+            <Date>2022-10-29</Date>
+            <Version>2.6.7</Version>
+            <Comment>Packaging update</Comment>
+            <Name>Algent Albrahimi</Name>
+            <Email>algent@protonmail.com</Email>
+        </Update>
+    </History>
+</PISI>

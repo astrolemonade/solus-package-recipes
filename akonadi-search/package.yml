@@ -1,0 +1,35 @@
+name       : akonadi-search
+version    : 22.12.1
+release    : 68
+source     :
+    - https://cdn.download.kde.org/stable/release-service/22.12.1/src/akonadi-search-22.12.1.tar.xz : 16350e03a439db59a7fdf8a02f19e83d1816637605d8cbe26c646b35a834ad42
+homepage   : https://kde.org/
+license    :
+    - GPL-2.0-or-later
+    - LGPL-2.1-or-later
+component  : desktop.library
+summary    : Libraries and daemons to implement searching in Akonadi
+description: |
+    Libraries and daemons to implement searching in Akonadi.
+builddeps  :
+    - pkgconfig(xapian-core)
+    - akonadi-mime-devel
+    - kcalendarcore-devel
+    - kcmutils-devel
+    - kcontacts-devel
+    - kcrash-devel
+    - kdbusaddons-devel
+    - kio-devel
+    - kitemmodels-devel
+    - krunner-devel
+    - libboost-devel
+rundeps    :
+    - devel :
+        - akonadi-devel
+        - kcalendarcore-devel
+setup      : |
+    %cmake_ninja -DBUILD_TESTING=OFF
+build      : |
+    %ninja_build
+install    : |
+    %ninja_install

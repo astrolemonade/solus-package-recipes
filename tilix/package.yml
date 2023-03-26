@@ -1,0 +1,30 @@
+name       : tilix
+version    : 1.9.5
+release    : 41
+source     :
+    - https://github.com/gnunn1/tilix/archive/refs/tags/1.9.5.tar.gz : e25335a3f7ab06779b957d08ffaf7698c966c3b5179d002f82ce41c692fc0b89
+license    :
+    - GPL-3.0-or-later
+    - MPL-2.0
+component  : system.utils
+summary    : A tiling terminal emulator for Linux using GTK+ 3
+description: |
+    Tilix is an advanced GTK3 tiling terminal emulator that follows the Gnome Human Interface Guidelines.
+builddeps  :
+    - pkgconfig(gtk+-3.0)
+    - pkgconfig(gtkd-3)
+    - pkgconfig(libsecret-1)
+    - pkgconfig(libunwind)
+    - desktop-file-utils
+    - ldc-devel
+    - po4a
+rundeps    :
+    - libvte
+setup      : |
+    %patch -p1 < $pkgfiles/0001-Remove-appstreamcli-because-we-don-t-have-it-in-Solu.patch
+    %patch -p1 < $pkgfiles/nautilus-43.patch
+    %meson_configure
+build      : |
+    %ninja_build
+install    : |
+    %ninja_install

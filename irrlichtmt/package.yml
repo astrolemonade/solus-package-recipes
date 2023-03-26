@@ -1,0 +1,25 @@
+name       : irrlichtmt
+version    : 1.9.0.8
+release    : 11
+source     :
+    - https://github.com/minetest/irrlicht/archive/refs/tags/1.9.0mt8.tar.gz : 27594242da8c7cc1e5ef45922e1dfdd130c37d77719b5d927359eb47992051e0
+license    : Zlib
+component  : multimedia
+summary    : Realtime 3D Engine
+description: |
+    The Irrlicht Engine is an open source high performance realtime 3D engine written in C++. It is completely cross-platform, using D3D, OpenGL and its own software renderers, and has all of the state-of-the-art features which can be found in commercial 3d engines
+replaces   :
+    - irrlicht
+    - devel :
+        - irrlicht-devel
+builddeps  :
+    - pkgconfig(gl)
+    - pkgconfig(libjpeg)
+    - pkgconfig(libpng)
+    - pkgconfig(xi)
+setup      : |
+    %cmake_ninja
+build      : |
+    %ninja_build
+install    : |
+    %ninja_install

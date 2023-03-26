@@ -1,0 +1,48 @@
+name       : kate
+version    : 22.12.1
+release    : 71
+source     :
+    - https://cdn.download.kde.org/stable/release-service/22.12.1/src/kate-22.12.1.tar.xz : 63f03a999bbd657a297449199c7e99abead03b8aad700142c64e43d7aaabfa64
+homepage   : https://apps.kde.org/en/kate
+license    :
+    - GPL-2.0-or-later
+    - GPL-3.0-only
+    - LGPL-2.0-only
+    - LGPL-2.0-or-later
+    - LGPL-2.1-only
+    - LGPL-3.0-only
+    - MIT
+component  :
+    - desktop.kde.core
+summary    :
+    - KDE advanced text editor
+description:
+    Kate is a multi-document, multi-view text editor by KDE. It features stuff like codefolding, syntaxhighlighting, dynamic word wrap, an embedded console, an extensive plugin interface and some prelimentary
+    scripting support. This package also contains kwrite, a lightweight editor
+optimize   : lto
+builddeps  :
+    - pkgconfig(libgit2)
+    - pkgconfig(Qt5Script)
+    - kactivities-devel
+    - kcrash-devel
+    - kdbusaddons-devel
+    - kdoctools-devel
+    - kguiaddons-devel
+    - kiconthemes-devel
+    - kitemmodels-devel
+    - knewstuff-devel
+    - ktexteditor-devel
+    - kuserfeedback-devel
+    - kwallet-devel
+    - plasma-framework-devel
+    - syntax-highlighting-devel
+setup      : |
+    %cmake_ninja -DBUILD_TESTING=OFF
+build      : |
+    %ninja_build
+install    : |
+    %ninja_install
+    %qml_cache
+
+    # remove docs
+    rm -rf $installdir/usr/share/doc

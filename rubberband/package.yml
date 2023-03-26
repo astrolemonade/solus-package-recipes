@@ -1,0 +1,27 @@
+name       : rubberband
+version    : 3.0.0
+release    : 6
+source     :
+    - https://github.com/breakfastquay/rubberband/archive/refs/tags/v3.0.0.tar.gz : 7852cf36dbb788ab9dca4d56de320e82dfd6189e99051ecd2b395fe2976c0942
+license    : GPL-2.0-or-later
+component  : programming.library
+homepage   : https://breakfastquay.com/rubberband/
+summary    : A high quality software library for audio time-stretching and pitch-shifting.
+description: |
+    A high quality software library for audio time-stretching and pitch-shifting.
+builddeps  :
+    - pkgconfig(fftw3)
+    - pkgconfig(samplerate)
+    - pkgconfig(sndfile)
+    - pkgconfig(vamp)
+    - ladspa-devel
+setup      : |
+    %meson_configure \
+        -Dfft=fftw \
+        -Dresampler=libsamplerate \
+        --buildtype=release
+build      : |
+    %ninja_build
+install    : |
+    %ninja_install
+    rm $installdir/usr/lib64/librubberband.a

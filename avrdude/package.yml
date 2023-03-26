@@ -1,0 +1,30 @@
+name       : avrdude
+version    : 7.0
+release    : 6
+source     :
+    - https://github.com/avrdudes/avrdude/releases/download/v7.0/avrdude-7.0.tar.gz: c0ef65d98d6040ca0b4f2b700d51463c2a1f94665441f39d15d97442dbb79b54
+license    : GPL-2.0-or-later
+component  : programming.tools
+summary    : AVR Downloader Uploader
+description: |
+    AVRDUDE is a utility to download/upload/manipulate the ROM and EEPROM contents of AVR microcontrollers using the in-system programming technique (ISP).
+builddeps  :
+    - pkgconfig(libelf)
+    - pkgconfig(libftdi1)
+    - pkgconfig(libusb)
+    - pkgconfig(hidapi-libusb)
+    - pkgconfig(readline)
+setup      : |
+    %patch -p1 < $pkgfiles/0001-Make-avrdude-stateless.patch
+    %configure --disable-static \
+               --enable-linuxgpio \
+               --enable-linuxspi \
+               --enable-parport
+build      : |
+    %make
+install    : |
+    %make_install
+    # Move files to stateless path
+    install -dm00644 $installdir/usr/share/defaults/avrdude
+    install -Dm00755 $workdir/avrdude.conf $installdir/usr/share/defaults/avrdude/avrdude.conf
+    rm -rf $installdir/etc

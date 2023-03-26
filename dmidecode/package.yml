@@ -1,0 +1,17 @@
+name       : dmidecode
+version    : '3.4'
+release    : 9
+source     :
+    - http://download.savannah.gnu.org/releases/dmidecode/dmidecode-3.4.tar.xz : 43cba851d8467c9979ccdbeab192eb6638c7d3a697eba5ddb779da8837542212
+homepage   : https://www.nongnu.org/dmidecode/
+license    : GPL-2.0-or-later
+component  : system.utils
+summary    : Dmidecode reports information about your system's hardware as described in your system BIOS
+description: |
+    Dmidecode reports information about your system's hardware as described in your system BIOS according to the SMBIOS/DMI standard (see a sample output). This information typically includes system manufacturer, model name, serial number, BIOS version, asset tag as well as a lot of other details of varying level of interest and reliability depending on the manufacturer.
+clang      : no
+build      : |
+    %make prefix=/usr
+install    : |
+    %make_install prefix=/usr
+    rm -rf $installdir/usr/share/doc

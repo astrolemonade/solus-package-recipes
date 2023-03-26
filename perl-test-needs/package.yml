@@ -1,0 +1,19 @@
+name       : perl-test-needs
+version    : '0.002009'
+release    : 6
+source     :
+    - https://cpan.metacpan.org/authors/id/H/HA/HAARG/Test-Needs-0.002009.tar.gz : 571c21193ad16195df58b06b268798796a391b398c443271721d2cc0fb7c4ac3
+homepage   : https://metacpan.org/pod/Test::Needs
+license    : Artistic-1.0
+component  : programming.perl
+summary    : Test::Needs - Skip tests when modules not available
+description: |
+    Skip test scripts if modules are not available. The requested modules will be loaded, and optionally have their versions checked. If the module is missing, the test script will be skipped. Modules that are found but fail to compile will exit with an error rather than skip.
+setup      : |
+    %perl_setup
+build      : |
+    %perl_build
+install    : |
+    %perl_install
+check      : |
+    %make test

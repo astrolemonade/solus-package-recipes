@@ -1,0 +1,24 @@
+name       : perl-gtk2-ex-podviewer
+version    : 0.18
+release    : 5
+source     :
+    - http://search.cpan.org/CPAN/authors/id/G/GB/GBROWN/Gtk2-Ex-PodViewer-0.18.tar.gz : 0bb895cd6f8d0a072f466972dff38743248c68df1dec9398bd944f002dbeeb60
+license    : Artistic-1.0-Perl
+component  : programming.perl
+summary    : A Gtk2 widget for displaying Plain old Documentation (POD)
+description: |
+    A Gtk2 widget for displaying Plain old Documentation (POD).
+builddeps  :
+    - pkgconfig(gtk+-2.0)
+    - perl-gtk2
+    - perl-io-stringy
+    - perl-pod-parser
+    - perl-pod-simple
+setup      : |
+    %perl_setup
+build      : |
+    %perl_build
+install    : |
+    %perl_install
+check      : |
+    %perl_build test

@@ -1,0 +1,19 @@
+name       : libzen
+version    : 0.4.39
+release    : 8
+source     :
+    - https://mediaarea.net/download/source/libzen/0.4.39/libzen_0.4.39.tar.bz2 : bd2772ab1ae4e375cdbbbdd114ad8471ebe67bf78c76e3812d66c7d462ed8ae7
+license    : Zlib
+component  : programming
+summary    : Small C++ derivate classes to have an easier life
+description: |
+    ZenLib is a C++ utility library. It includes classes for handling strings, configuration, bit streams, threading, translation, and cross-platform operating system functions.
+setup      : |
+    pushd Project/GNU/Library
+    %autogen --enable-shared --disable-static
+build      : |
+    pushd Project/GNU/Library
+    %make
+install    : |
+    pushd Project/GNU/Library
+    %make_install

@@ -1,0 +1,58 @@
+From c547db41b1c831c908410c28ead0e50d894c73b0 Mon Sep 17 00:00:00 2001
+From: Joshua Strobl <joshua@streambits.io>
+Date: Thu, 12 Mar 2020 19:04:16 +0200
+Subject: [PATCH 1/1] Make some QoL changes to our shipped version of coin.
+
+- No, I don't want you going below all my other windows.
+- Yes, I do in fact want my theme to apply styling the window.
+---
+ meson.build         | 8 --------
+ src/MainWindow.vala | 6 ------
+ 2 files changed, 14 deletions(-)
+
+diff --git a/meson.build b/meson.build
+index 613e5d1..9b3b6b1 100644
+--- a/meson.build
++++ b/meson.build
+@@ -7,13 +7,6 @@ project('com.github.lainsce.coin', ['vala', 'c'],
+ gnome = import('gnome')
+ i18n = import('i18n')
+ 
+-# Compile the GResources for this project
+-asresources = gnome.compile_resources(
+-    'as-resources', 'data/style.gresource.xml',
+-    source_dir: 'data',
+-    c_name: 'as'
+-)
+-
+ # Set this for convenience
+ conf = configuration_data()
+ 
+@@ -44,7 +37,6 @@ executable(
+     meson.project_name(),
+     'src/Application.vala',
+     'src/MainWindow.vala',
+-    asresources,
+     c_args: c_args,
+     dependencies: [
+         dependency('granite'),
+diff --git a/src/MainWindow.vala b/src/MainWindow.vala
+index 444e483..d3825cf 100644
+--- a/src/MainWindow.vala
++++ b/src/MainWindow.vala
+@@ -45,12 +45,6 @@ namespace Coin {
+         }
+ 
+         construct {
+-            var provider = new Gtk.CssProvider ();
+-            provider.load_from_resource ("/com/github/lainsce/coin/stylesheet.css");
+-            Gtk.StyleContext.add_provider_for_screen (Gdk.Screen.get_default (), provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
+-            set_keep_below (true);
+-            stick ();
+-
+             var titlebar = new Gtk.HeaderBar ();
+             titlebar.has_subtitle = false;
+             titlebar.show_close_button = true;
+-- 
+2.25.1
+

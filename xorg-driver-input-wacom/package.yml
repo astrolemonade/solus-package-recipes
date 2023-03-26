@@ -1,0 +1,29 @@
+name       : xorg-driver-input-wacom
+version    : 1.1.0
+release    : 30
+source     :
+    - https://github.com/linuxwacom/xf86-input-wacom/releases/download/xf86-input-wacom-1.1.0/xf86-input-wacom-1.1.0.tar.bz2 : 23b674067f344de22bcbb4bac885c43df54c5e841f6dade7c9d18ba7ce297a12
+license    : GPL-2.0-or-later
+component  : xorg.driver
+summary    : Input driver for Wacom/Wacom-like tablets
+description: |
+    The Xorg Wacom Driver package contains the X.Org X11 driver for Wacom and Wacom-like tablets. It is not required to use a Wacom tablet, the xf86-input-evdev driver can handle these devices without problems.
+optimize   :
+    - no-bind-now
+    - no-symbolic
+builddeps  :
+    - pkgconfig(pciaccess)
+    - pkgconfig(xorg-macros)
+    - pkgconfig(xorg-server)
+    - pkgconfig(xi)
+    - pkgconfig(xrandr)
+    - pkgconfig(xinerama)
+    - pkgconfig(xproto)
+setup      : |
+    %reconfigure --disable-static
+build      : |
+    %make
+install    : |
+    %make_install
+check      : |
+    %make check

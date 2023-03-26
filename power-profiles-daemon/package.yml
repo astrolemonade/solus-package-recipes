@@ -1,0 +1,19 @@
+name       : power-profiles-daemon
+version    : '0.12'
+release    : 2
+source     :
+    - https://gitlab.freedesktop.org/hadess/power-profiles-daemon/-/archive/0.12/power-profiles-daemon-0.12.tar.bz2 : 8ce5576b2b7dfe24bc646555f1e08256e3023208713e51d18b55c4b84a7c2293
+license    : GPL-3.0-or-later
+component  : programming.library
+summary    : Makes power profiles handling available over D-Bus.
+description: |
+    Makes power profiles handling available over D-Bus.
+builddeps  :
+    - pkgconfig(glib-2.0)
+    - pkgconfig(upower-glib)
+setup      : |
+    %meson_configure --sysconfdir=/usr/share
+build      : |
+    %ninja_build
+install    : |
+    %ninja_install

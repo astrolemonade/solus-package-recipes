@@ -1,0 +1,30 @@
+name       : gimagereader
+version    : 3.4.0
+release    : 28
+source     :
+    - https://github.com/manisandro/gImageReader/releases/download/v3.4.0/gimagereader-3.4.0.tar.xz : b55cfe9212fa16bf2d5a7ca0fc549454812b265ac7d4aa34697947b20eecf425
+homepage   : https://github.com/manisandro/gImageReader
+license    : GPL-3.0-or-later
+component  : office
+summary    : gImageReader is a simple Gtk/Qt front-end to tesseract
+description: |
+    gImageReader is a simple Gtk/Qt front-end to tesseract.
+builddeps  :
+    - pkgconfig(ddjvuapi)
+    - pkgconfig(gtksourceviewmm-3.0)
+    - pkgconfig(gtkspellmm-3.0)
+    - pkgconfig(json-glib-1.0)
+    - pkgconfig(libpodofo)
+    - pkgconfig(libturbojpeg)
+    - pkgconfig(libxml++-2.6)
+    - pkgconfig(libzip)
+    - pkgconfig(poppler)
+    - pkgconfig(pygobject-3.0)
+    - pkgconfig(sane-backends)
+    - pkgconfig(tesseract)
+setup      : |
+    %cmake -DINTERFACE_TYPE=gtk -DENABLE_VERSIONCHECK=OFF .
+build      : |
+    %make
+install    : |
+    %make_install

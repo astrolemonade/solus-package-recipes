@@ -1,0 +1,18 @@
+name       : python3-pyudev
+version    : 0.24.0
+release    : 10
+source     :
+    - https://github.com/pyudev/pyudev/archive/refs/tags/v0.24.0.tar.gz : 91fbc62f3a8425871a943cc424bf93d7d2c9cb3c5df4480f81efe23ef3a64603
+license    : LGPL-2.1-or-later
+component  : programming.python
+summary    : pyudev is a LGPL licensed, pure Python binding for libudev
+description: |
+    pyudev is a LGPL licensed, pure Python binding for libudev
+builddeps  :
+    - pkgconfig(python3)
+rundeps    :
+    - python-six
+build      : |
+    %python3_setup
+install    : |
+    %python3_install

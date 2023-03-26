@@ -1,0 +1,43 @@
+name       : vim
+version    : 9.0.1046
+release    : 132
+source     :
+    - https://github.com/vim/vim/archive/refs/tags/v9.0.1046.tar.gz : 47f8e1bf08994c089093b5ee413b41b6899878b34412c213ea2eb7894065cefb
+homepage   : https://www.vim.org
+license    : Vim
+component  : editor
+summary    : Vi IMproved, an advanced text editor
+description: |
+    Vim, which stands for Vi IMproved, is an open-source, multiplatform text editor extended from vi. It was first released by Bram Moolenaar in 1991. Since then, numerous features have been added to Vim, many of which are helpful in editing program source code.
+builddeps  :
+    - pkgconfig(gtk+-3.0)
+    - pkgconfig(lua-5.3)
+    - pkgconfig(ruby-3.1)
+    - pkgconfig(python3)
+    - pkgconfig(xpm)
+    - pkgconfig(xt)
+    - gpm-devel
+setup      : |
+    %patch -p1 < $pkgfiles/0001-Make-vim-stateless.patch
+    %patch -p1 < $pkgfiles/0001-Read-vimrc-from-etc-vim.patch
+    %configure \
+        --disable-netbeans \
+        --disable-perlinterp \
+        --enable-fail-if-missing \
+        --enable-gui=gtk3 \
+        --enable-luainterp \
+        --enable-luainterp \
+        --enable-multibyte \
+        --enable-python3interp \
+        --enable-pythoninterp \
+        --enable-rubyinterp \
+        --with-compiledby="Solus" \
+        --with-features=huge \
+        --with-lua-prefix=/usr \
+        --with-modified-by="Solus"
+build      : |
+    %make
+install    : |
+    %make_install -j1
+    install -Dm00644 $pkgfiles/vimrc $installdir/usr/share/defaults/vim/vimrc
+    ln -s /usr/bin/vim $installdir/usr/bin/vi

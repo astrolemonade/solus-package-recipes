@@ -1,0 +1,29 @@
+name       : kitemviews
+version    : 5.101.0
+release    : 67
+source     :
+    - https://cdn.download.kde.org/stable/frameworks/5.101/kitemviews-5.101.0.tar.xz : aca259eeff2dde1434cdf3ff3d979e9b17dd55bad15dd7341f92700cf8418fb1
+homepage   : https://community.kde.org/Frameworks
+license    :
+    - GPL-2.0-or-later
+    - LGPL-2.0-only
+    - LGPL-2.0-or-later
+component  : programming.library
+summary    : Set of item views extending the Qt model-view framework.
+description: |
+    Set of item views extending the Qt model-view framework.
+optimize   : lto
+builddeps  :
+    - pkgconfig(Qt5Designer)
+    - extra-cmake-modules
+rundeps    :
+    - devel :
+        - extra-cmake-modules
+        - qt5-tools-devel
+setup      : |
+    %cmake_ninja -DBUILD_QCH=ON \
+                -DBUILD_TESTING=OFF
+build      : |
+    %ninja_build
+install    : |
+    %ninja_install

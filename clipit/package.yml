@@ -1,0 +1,22 @@
+name       : clipit
+version    : 1.4.2
+release    : 8
+homepage   : https://github.com/shantzu/ClipIt
+source     :
+    - https://github.com/CristianHenzel/ClipIt/archive/1.4.2.tar.gz : 0686ba4e5ee054b9cdbdb8e25ce5326e25c2b355f9b9b1794106e9a57eee215a
+license    : GPL-3.0-or-later
+component  : desktop
+summary    : ClipIt is a lightweight GTK+ clipboard manager.
+builddeps  :
+    - pkgconfig(gtk+-2.0)
+description: |
+    ClipIt is a lightweight GTK+ clipboard manager.
+setup      : |
+    sh autogen.sh
+    %configure
+build      : |
+    %make
+install    : |
+    %make_install
+    # Remove global autostart
+    rm %installroot%/etc/xdg/autostart/clipit-startup.desktop

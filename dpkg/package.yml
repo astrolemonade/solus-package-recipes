@@ -1,0 +1,38 @@
+name       : dpkg
+version    : 1.21.9
+release    : 17
+source     :
+    - https://ftp.debian.org/debian/pool/main/d/dpkg/dpkg_1.21.9.tar.xz : a0aba375625459260cbc89933a12b3188a713c840e3aaefc14bf2d9adee19642
+license    : GPL-2.0-or-later
+component  : programming.devel
+homepage   : https://wiki.debian.org/dpkg/
+summary    : DO NOT USE THIS.
+description: |
+    Debian Package Manager - for Cross Distro Purposes. Do NOT use to attempt installation of packages on Solus, it's not compatible!
+builddeps  :
+    - bzip2-devel
+rundeps    :
+    - perl
+setup      : |
+    %configure --disable-start-stop-daemon \
+        --disable-install-info \
+        --disable-static
+build      : |
+    %make
+install    : |
+    %make_install
+
+    # use standard names for man pages
+    for file in $installdir/usr/share/man/man3/*; do
+        newname=$(echo "$file" | sed -Ee 's/3perl/3/')
+        mv "$file" "$newname"
+    done
+
+    # nuke docs
+    rm -rf $installdir/usr/share/doc
+
+    # why is this even here
+    rm -f $installdir/etc/alternatives/README
+
+    # delete empty dirs
+    find $installdir -type d -empty -delete

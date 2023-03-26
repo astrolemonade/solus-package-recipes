@@ -1,0 +1,54 @@
+name       : harfbuzz
+version    : 7.1.0
+release    : 55
+source     :
+    - https://github.com/harfbuzz/harfbuzz/releases/download/7.1.0/harfbuzz-7.1.0.tar.xz : f135a61cd464c9ed6bc9823764c188f276c3850a8dc904628de2a87966b7077b
+license    :
+    - MIT
+    - HPND
+component  : xorg.fonts
+summary    : HarfBuzz is a text shaping library
+description: |
+    HarfBuzz is a software development library for text shaping, which is the process of converting Unicode text to glyph indices and positions.
+emul32     : yes
+optimize   : lto
+autodep    : no
+builddeps  :
+    - pkgconfig32(freetype2)
+    - pkgconfig32(glib-2.0)
+    - pkgconfig32(graphite2)
+    - pkgconfig32(icu-io)
+rundeps    :
+    - glib2
+    - glibc
+    - graphite2
+    - libicu
+    - 32bit :
+        - glib2-32bit
+        - glibc-32bit
+        - graphite2-32bit
+        - harfbuzz
+        - libgcc-32bit
+    - 32bit-devel :
+        - glib2-32bit-devel
+        - graphite2-32bit-devel
+        - harfbuzz-devel
+        - libicu-32bit-devel
+    - devel :
+        - glib2-devel
+        - graphite2-devel
+        - libicu-devel
+setup      : |
+    if [[ ! -z "${EMUL32BUILD}" ]]; then
+        build_gobject="disabled"
+    else
+        build_gobject="enabled"
+    fi
+
+    %meson_configure -Dbenchmark=disabled -Dgraphite=enabled -Dintrospection=$build_gobject
+build      : |
+    %ninja_build
+install    : |
+    %ninja_install
+check      : |
+    %ninja_check || :

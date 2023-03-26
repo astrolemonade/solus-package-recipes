@@ -1,0 +1,41 @@
+name       : hugin
+version    : 2021.0.0
+release    : 32
+source     :
+    - https://sourceforge.net/projects/hugin/files/hugin/hugin-2021.0/hugin-2021.0.0.tar.bz2 : 047aea8a7fa47844b34ef27c19d3b697e84939dcb1fdbbeb2c204621b66eead9
+homepage   : http://hugin.sourceforge.net/
+license    : GPL-2.0-or-later
+component  : multimedia.graphics
+summary    : Hugin - Panorama photo stitcher
+description: |
+    With Hugin you can assemble a mosaic of photographs into a complete immersive panorama, stitch any series of overlapping pictures and much more.
+builddeps  :
+    - pkgconfig(OpenEXR)
+    - pkgconfig(exiv2)
+    - pkgconfig(fftw3)
+    - pkgconfig(glew)
+    - pkgconfig(lcms2)
+    - pkgconfig(libcurl)
+    - pkgconfig(libjpeg)
+    - pkgconfig(libpano13)
+    - pkgconfig(libpng)
+    - pkgconfig(libssh)
+    - pkgconfig(libtiff-4)
+    - pkgconfig(sqlite3)
+    - pkgconfig(xi)
+    - pkgconfig(xmu)
+    - libboost-devel
+    - swig
+    - vigra-devel
+    - wxwidgets-devel
+rundeps    :
+    - enblend-enfuse
+    - lensfun
+    - perl-image-exiftool
+setup      : |
+    %patch -p1 < $pkgfiles/xdg-data.patch
+    %cmake_ninja -DUSE_GDKBACKEND_X11=ON
+build      : |
+    %ninja_build
+install    : |
+    %ninja_install

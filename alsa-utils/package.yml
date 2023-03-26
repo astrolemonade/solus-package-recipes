@@ -1,0 +1,21 @@
+name       : alsa-utils
+version    : 1.2.8
+release    : 23
+source     :
+    - ftp://ftp.alsa-project.org/pub/utils/alsa-utils-1.2.8.tar.bz2 : e140fa604c351f36bd72167c8860c69d81b964ae6ab53992d6434dde38e9333c
+license    : GPL-2.0-or-later
+component  : multimedia.audio
+summary    : Various utilities which are useful for controlling your sound card
+description: |
+    Various utilities which are useful for controlling your sound card
+builddeps  :
+    - pkgconfig(alsa)
+setup      : |
+    %configure --disable-alsaconf \
+               --disable-xmlto \
+               --with-udev-rules-dir=/usr/lib/udev/rules.d
+build      : |
+    %make
+install    : |
+    %make_install
+    rmdir $installdir/usr/share/man/man7

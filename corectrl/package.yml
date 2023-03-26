@@ -1,0 +1,30 @@
+name       : corectrl
+version    : 1.3.1
+release    : 28
+source     :
+    - https://gitlab.com/corectrl/corectrl/-/archive/v1.3.1/corectrl-v1.3.1.tar.gz : 47750bfe447ac8bf5ed055287f1e09989064d89c1744e8910b975fa90ab5ca91
+license    : GPL-3.0-or-later
+component  : system.utils
+summary    : CoreCtrl allows you to control your computer hardware using application profiles.
+description: |
+    CoreCtrl is a Free and Open Source GNU/Linux application that allows you to control with ease your computer hardware using application profiles. It aims to be flexible, comfortable and accessible to regular users.
+libsplit   : false
+builddeps  :
+    - pkgconfig(Qt5Charts)
+    - pkgconfig(Qt5QuickControls2)
+    - pkgconfig(Qt5Svg)
+    - pkgconfig(botan-2)
+    - pkgconfig(quazip)
+    - kcoreaddons-devel
+rundeps    :
+    - qt5-quickcontrols2
+    - qt5-svg
+setup      : |
+    %cmake_ninja
+build      : |
+    %ninja_build
+install    : |
+    %ninja_install
+
+    # Polkit rules
+    install -Dm00644 $pkgfiles/org.corectrl.rules $installdir/usr/share/polkit-1/rules.d/org.corectrl.rules

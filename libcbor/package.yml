@@ -1,0 +1,16 @@
+name       : libcbor
+version    : 0.9.0
+release    : 2
+source     :
+    - https://github.com/PJK/libcbor/archive/v0.9.0.tar.gz : da81e4f9333e0086d4e2745183c7052f04ecc4dbcffcf910029df24f103c15d1
+license    : MIT
+component  : programming.library
+summary    : CBOR protocol implementation for C
+description: |
+    libcbor is a C library for parsing and generating CBOR, the general-purpose schema-less binary data format.
+setup      : |
+    %cmake_ninja -DBUILD_SHARED_LIBS=on
+build      : |
+    %ninja_build
+install    : |
+    %ninja_install

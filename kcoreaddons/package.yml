@@ -1,0 +1,31 @@
+name       : kcoreaddons
+version    : 5.101.0
+release    : 71
+source     :
+    - https://cdn.download.kde.org/stable/frameworks/5.101/kcoreaddons-5.101.0.tar.xz : 77b64fc17f7ebbbd53bbb3614b4c3c73a0a9b21607e96e6abb2823ef1972b72a
+homepage   : https://community.kde.org/Frameworks
+license    :
+    - GPL-2.0-only
+    - LGPL-2.0-only
+    - LGPL-2.0-or-later
+    - LGPL-2.1-only
+component  : programming.library
+summary    : Qt addon library with a collection of non-GUI utilities.
+description: |
+    Qt addon library with a collection of non-GUI utilities.
+optimize   : lto
+builddeps  :
+    - pkgconfig(Qt5Designer)
+    - extra-cmake-modules
+    - shared-mime-info
+rundeps    :
+    - devel :
+        - extra-cmake-modules
+        - qt5-tools-devel
+setup      : |
+    %cmake_ninja -DBUILD_QCH=ON \
+                -DBUILD_TESTING=OFF
+build      : |
+    %ninja_build
+install    : |
+    %ninja_install

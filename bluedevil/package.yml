@@ -1,0 +1,38 @@
+name       : bluedevil
+version    : 5.26.5
+release    : 85
+source     :
+    - https://cdn.download.kde.org/stable/plasma/5.26.5/bluedevil-5.26.5.tar.xz : 3e9de875b0f04a0aea78db174d3d6e60d8b3659bd6b23f4e9bd7ae0f88d53019
+homepage   : https://www.kde.org/workspaces/plasmadesktop/
+license    :
+    - BSD-3-Clause
+    - GPL-2.0-or-later
+    - LGPL-2.0-or-later
+    - LGPL-2.1-only
+component  : desktop.kde.core
+summary    : Bluetooth stack for KDE Plasma
+description: |
+    Bluedevil is a project which intends to integrate the Bluetooth technology within KDE workspace and applications.
+optimize   : lto
+builddeps  :
+    - pkgconfig(Qt5Quick)
+    - bluez-qt-devel
+    - kcmutils-devel
+    - kdoctools-devel
+    - kdbusaddons-devel
+    - kdeclarative-devel
+    - kded-devel
+    - kio-devel
+    - kirigami2-devel
+    - knotifications-devel
+    - plasma-framework-devel
+rundeps    :
+    - kirigami2
+setup      : |
+    %cmake_ninja
+build      : |
+    %ninja_build
+install    : |
+    %ninja_install
+    %qml_cache
+    rm -rf $installdir/usr/share/doc

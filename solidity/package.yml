@@ -1,0 +1,24 @@
+name       : solidity
+version    : 0.8.16
+release    : 4
+homepage   : https://soliditylang.org
+source     :
+    - https://github.com/ethereum/solidity/releases/download/v0.8.16/solidity_0.8.16.tar.gz : ba1a690a3583f17c039e6d480970f687f959d9c0fcb2e77ac72a0a0c7efa2056
+license    : GPL-3.0-or-later
+component  : programming
+summary    : Solidity, the smart contract programming language.
+description: |
+    Solidity is a statically typed, contract-oriented, high-level language for implementing smart contracts on the Ethereum platform.
+networking : yes
+builddeps  :
+    - pkgconfig(z3)
+    - libboost-devel
+setup      : |
+    %cmake -B build -DUSE_CVC4=OFF
+build      : |
+    %make -C build
+install    : |
+    %make_install -C build
+check      : |
+    # Once we have cvc4 or Solidity migrates to cvc5, enable smt testing.
+    ./scripts/soltest.sh --no-semantic-tests --no-smt

@@ -1,0 +1,25 @@
+name       : megazeux
+version    : 2.91b
+release    : 4
+source     :
+    - https://github.com/AliceLR/megazeux/archive/v2.91b.tar.gz : a4c15dc6b3f163935ea62bacf41b30b3ed92144b3a8ec994d723d085d684eb2a
+license    : GPL-2.0-or-later
+component  : games
+summary    : A game creation system (GCS)
+description: |
+    MegaZeux is a game creation system (GCS) created by game developer Alexis Janson in 1994. Originally a DOS program, in 2005 a multi-platform port was released by Exophase and it is still being developed today.
+builddeps  :
+    - pkgconfig(libpng)
+    - pkgconfig(sdl2)
+    - pkgconfig(vorbis)
+    - pkgconfig(x11)
+setup      : |
+    ./config.sh --platform unix \
+        --enable-release \
+        --as-needed-hack \
+        --bindir %libdir%/megazeux \
+        --gamesdir /usr/bin
+build      : |
+    %make
+install    : |
+    %make_install

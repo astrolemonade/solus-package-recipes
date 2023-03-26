@@ -1,0 +1,21 @@
+name       : libssh
+version    : 0.9.4
+release    : 12
+source     :
+    - https://www.libssh.org/files/0.9/libssh-0.9.4.tar.xz : 150897a569852ac05aac831dc417a7ba8e610c86ca2e0154a99c6ade2486226b
+license    : LGPL-2.1-or-later
+component  : programming.library
+summary    : SSH library
+description: |
+    libssh is a multi-platform C library implementing the SSHv2 and SSHv1 protocol on client and server side. With libssh, you can remotely execute programs, transfer files, use a secure and transparent tunnel, manage public keys and much more.
+builddeps  :
+    - pkgconfig(cmocka)     # check
+setup      : |
+    %cmake_ninja -DUNIT_TESTING=ON
+build      : |
+    %ninja_build
+install    : |
+    %ninja_install
+check      : |
+    # torture_misc fails in the sandbox but should work when executed manually
+    %ninja_check || :

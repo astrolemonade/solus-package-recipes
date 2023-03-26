@@ -1,0 +1,19 @@
+name       : libxml++
+version    : 2.42.1
+release    : 4
+source     :
+    - https://download.gnome.org/sources/libxml++/2.42/libxml++-2.42.1.tar.xz : 9b59059abe5545d28ceb388a55e341095f197bd219c73e6623aeb6d801e00be8
+license    : LGPL-2.1-or-later
+component  : programming.library
+summary    : C++ bindings to libxml2
+description: |
+    C++ bindings to libxml2
+builddeps  :
+    - pkgconfig(glibmm-2.4)
+    - pkgconfig(libxml-2.0)
+setup      : |
+    %meson_configure
+build      : |
+    %ninja_build
+install    : |
+    %ninja_install

@@ -1,0 +1,29 @@
+name       : ckb
+version    : 0.4.4
+release    : 14
+source     :
+    - https://github.com/ckb-next/ckb-next/archive/v0.4.4.tar.gz : 6946bd035cdbbbd2f139e543d2ca84ba422176c62c3a3665b544118dc6d618d0
+license    : GPL-2.0-or-later
+component  : system.utils
+homepage   : https://github.com/ckb-next/ckb-next/
+summary    : An open-source driver for Corsair keyboards and mice
+description: |
+    ckb-next is an open-source driver for Corsair keyboards and mice. It aims to bring the features of Corsair's proprietary iCUE software to Linux operating systems.
+builddeps  :
+    - pkgconfig(Qt5Core)
+    - pkgconfig(Qt5UiTools)
+    - pkgconfig(Qt5X11Extras)
+    - pkgconfig(dbusmenu-qt5)
+    - pkgconfig(quazip)
+    - pkgconfig(x11)
+    - pkgconfig(xcb-ewmh)
+setup      : |
+    mkdir build && cd build
+    %cmake -DDISABLE_UPDATER=1 -DFORCE_INIT_SYSTEM="systemd" -DUDEV_RULE_DIRECTORY="%libdir%/udev/rules.d/" ..
+build      : |
+    %make -C build
+install    : |
+    %make_install -C build
+    # Safety symlink
+    ln -s /usr/lib/systemd/systemd/ckb-next-daemon.service $installdir/usr/lib/systemd/system/ckb-daemon.service
+    rm -rf $installdir/etc/

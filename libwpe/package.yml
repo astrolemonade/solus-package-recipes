@@ -1,0 +1,20 @@
+name       : libwpe
+version    : 1.14.0
+release    : 9
+source     :
+    - https://github.com/WebPlatformForEmbedded/libwpe/releases/download/1.14.0/libwpe-1.14.0.tar.xz : c073305bbac5f4402cc1c8a4753bfa3d63a408901f86182051eaa5a75dd89c00
+license    : BSD-2-Clause
+component  : programming.library
+summary    : General-purpose library specifically developed for the WPE-flavored port of WebKit.
+description: |
+    General-purpose library specifically developed for the WPE-flavored port of WebKit.
+builddeps  :
+    - pkgconfig(gbm)
+    - pkgconfig(x11)
+    - pkgconfig(xkbcommon)
+setup      : |
+    %cmake_ninja
+build      : |
+    %ninja_build
+install    : |
+    %ninja_install

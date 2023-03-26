@@ -1,0 +1,27 @@
+name       : wayland
+version    : 1.21.0
+release    : 27
+source     :
+    - https://gitlab.freedesktop.org/wayland/wayland/-/archive/1.21.0/wayland-1.21.0.tar.gz : 53b7fa67142e653820030ec049971bcb5e84ac99e05cba5bcb9cb55f43fae4b3
+license    :
+    - MIT
+component  : desktop.wayland
+emul32     : yes
+summary    : Wayland is intended as a simpler replacement for X, easier to develop and maintain.
+description: |
+    Wayland is a protocol for a compositor to talk to its clients as well as a C library implementation of that protocol. The compositor can be a standalone display server running on Linux kernel modesetting and evdev input devices, an X application, or a wayland client itself. The clients can be traditional applications, X servers (rootless or fullscreen) or other display servers.
+builddeps  :
+    - pkgconfig32(expat)
+    - pkgconfig32(libffi)
+    - pkgconfig32(libxml-2.0)
+patterns   :
+    - devel :
+        - /usr/bin
+        - /usr/share/wayland
+        - /usr/share/aclocal
+setup      : |
+    %meson_configure -Ddocumentation=false
+build      : |
+    %ninja_build
+install    : |
+    %ninja_install

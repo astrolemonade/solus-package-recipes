@@ -1,0 +1,95 @@
+From 48fc81a3e5fc9b66b4a86170edbfbcfa5dec2b6a Mon Sep 17 00:00:00 2001
+From: Joshua Strobl <joshua@streambits.io>
+Date: Wed, 4 Mar 2020 19:20:05 +0200
+Subject: [PATCH 1/1] Fix include references
+
+---
+ common/glib-gen.mak                 | 2 +-
+ common/gst-glib-gen.mak             | 2 +-
+ gst-libs/gst/interfaces/Makefile.in | 2 +-
+ gst/camerabin/Makefile.in           | 2 +-
+ gst/debugutils/Makefile.in          | 2 +-
+ sys/shm/Makefile.in                 | 2 +-
+ 6 files changed, 6 insertions(+), 6 deletions(-)
+
+diff --git a/common/glib-gen.mak b/common/glib-gen.mak
+index ef93a5f..e43e126 100644
+--- a/common/glib-gen.mak
++++ b/common/glib-gen.mak
+@@ -5,7 +5,7 @@
+ #glib_enum_define=GST_COLOR_BALANCE
+ #glib_enum_prefix=gst_color_balance
+ 
+-enum_headers=$(foreach h,$(glib_enum_headers),\n\#include \"$(h)\")
++enum_headers=$(foreach h,$(glib_enum_headers),\n#include \"$(h)\")
+ 
+ # these are all the rules generating the relevant files
+ %-marshal.h: %-marshal.list
+diff --git a/common/gst-glib-gen.mak b/common/gst-glib-gen.mak
+index cc82bbd..a18d284 100644
+--- a/common/gst-glib-gen.mak
++++ b/common/gst-glib-gen.mak
+@@ -6,7 +6,7 @@
+ #glib_gen_prefix=gst_color_balance
+ #glib_gen_basename=colorbalance
+ 
+-enum_headers=$(foreach h,$(glib_enum_headers),\n\#include \"$(h)\")
++enum_headers=$(foreach h,$(glib_enum_headers),\n#include \"$(h)\")
+ 
+ # these are all the rules generating the relevant files
+ $(glib_gen_basename)-marshal.h: $(glib_gen_basename)-marshal.list
+diff --git a/gst-libs/gst/interfaces/Makefile.in b/gst-libs/gst/interfaces/Makefile.in
+index 7df2422..95387c8 100644
+--- a/gst-libs/gst/interfaces/Makefile.in
++++ b/gst-libs/gst/interfaces/Makefile.in
+@@ -617,7 +617,7 @@ BUILT_SOURCES = \
+ 	$(built_headers)
+ 
+ CLEANFILES = $(BUILT_SOURCES)
+-enum_headers = $(foreach h,$(glib_enum_headers),\n\#include \"$(h)\")
++enum_headers = $(foreach h,$(glib_enum_headers),\n#include \"$(h)\")
+ all: $(BUILT_SOURCES)
+ 	$(MAKE) $(AM_MAKEFLAGS) all-am
+ 
+diff --git a/gst/camerabin/Makefile.in b/gst/camerabin/Makefile.in
+index 9461fed..ab511e4 100644
+--- a/gst/camerabin/Makefile.in
++++ b/gst/camerabin/Makefile.in
+@@ -577,7 +577,7 @@ top_builddir = @top_builddir@
+ top_srcdir = @top_srcdir@
+ glib_gen_prefix = __gst_camerabin
+ glib_gen_basename = gstcamerabin
+-enum_headers = $(foreach h,$(glib_enum_headers),\n\#include \"$(h)\")
++enum_headers = $(foreach h,$(glib_enum_headers),\n#include \"$(h)\")
+ built_sources = gstcamerabin-marshal.c
+ built_headers = gstcamerabin-marshal.h
+ BUILT_SOURCES = $(built_sources) $(built_headers)
+diff --git a/gst/debugutils/Makefile.in b/gst/debugutils/Makefile.in
+index a31ed70..490f494 100644
+--- a/gst/debugutils/Makefile.in
++++ b/gst/debugutils/Makefile.in
+@@ -576,7 +576,7 @@ top_builddir = @top_builddir@
+ top_srcdir = @top_srcdir@
+ glib_gen_prefix = __gst_debugutils
+ glib_gen_basename = debugutils
+-enum_headers = $(foreach h,$(glib_enum_headers),\n\#include \"$(h)\")
++enum_headers = $(foreach h,$(glib_enum_headers),\n#include \"$(h)\")
+ built_sources = debugutils-marshal.c
+ built_headers = debugutils-marshal.h
+ BUILT_SOURCES = $(built_sources) $(built_headers)
+diff --git a/sys/shm/Makefile.in b/sys/shm/Makefile.in
+index ed2db49..4b50150 100644
+--- a/sys/shm/Makefile.in
++++ b/sys/shm/Makefile.in
+@@ -562,7 +562,7 @@ top_build_prefix = @top_build_prefix@
+ top_builddir = @top_builddir@
+ top_srcdir = @top_srcdir@
+ glib_enum_prefix = gst_shm
+-enum_headers = $(foreach h,$(glib_enum_headers),\n\#include \"$(h)\")
++enum_headers = $(foreach h,$(glib_enum_headers),\n#include \"$(h)\")
+ plugin_LTLIBRARIES = libgstshm.la
+ libgstshm_la_SOURCES = shmpipe.c shmalloc.c gstshm.c gstshmsrc.c gstshmsink.c
+ libgstshm_la_CFLAGS = $(GST_CFLAGS) -DSHM_PIPE_USE_GLIB
+-- 
+2.25.1
+

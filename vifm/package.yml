@@ -1,0 +1,20 @@
+name       : vifm
+version    : 0.12.1
+release    : 10
+source     :
+    - https://github.com/vifm/vifm/archive/refs/tags/v0.12.1.tar.gz : 410b2f183e9fdefb145cf6811c106e9297c9d8f7ddfe38f8840869c63e089f95
+homepage   : https://vifm.info/
+license    : GPL-2.0-or-later
+component  : system.utils
+summary    : ncurses file manager with vi keybindings
+description: |
+    Vifm is a file manager with curses interface, which provides Vi[m]-like environment for managing objects within file systems, extended with some useful ideas from mutt. If you use vi, Vifm gives you complete keyboard control over your files without having to learn a new set of commands.
+builddeps  :
+    - man-db
+setup      : |
+    %configure
+build      : |
+    %make
+install    : |
+    %make_install
+    rm -rf $installdir/usr/share/doc

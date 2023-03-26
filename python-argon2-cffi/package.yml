@@ -1,0 +1,31 @@
+name       : python-argon2-cffi
+version    : 21.3.0
+release    : 3
+source     :
+    - git|https://github.com/hynek/argon2-cffi.git : 21.3.0
+license    : MIT
+component  : programming.python
+summary    : Secure Password Hashes for Python
+description: |
+    Argon2 won the Password Hashing Competition and argon2-cffi is the simplest way to use it in Python and PyPy.
+builddeps  :
+    - pkgconfig(libargon2)
+    - pkgconfig(python3)
+    - python-argon2-cffi-bindings # check
+    - python-build
+    - python-cffi
+    - python-flit-core
+    - python-hypothesis           # check
+    - python-installer
+    - python-pytest               # check
+rundeps    :
+    - python-cffi
+    - python-argon2-cffi-bindings
+environment: |
+    export ARGON2_CFFI_USE_SSE2=1
+build      : |
+    %python3_setup
+install    : |
+    %python3_install
+check      : |
+    PYTHONPATH=src pytest3

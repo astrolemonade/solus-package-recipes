@@ -1,0 +1,30 @@
+name       : fontforge
+version    : '20220308'
+release    : 18
+source     :
+    - https://github.com/fontforge/fontforge/releases/download/20220308/fontforge-20220308.tar.xz : 01e4017f7a0ccecf436c74b8e1f6b374fc04a5283c1d68967996782e15618e59
+homepage   : https://fontforge.org/
+license    :
+    - BSD-3-Clause
+    - GPL-3.0-or-later
+component  : multimedia.graphics
+summary    : A free (libre) font editor used to create, edit and convert fonts
+description: |
+    FontForge is a free (libre) font editor used to create, edit and convert fonts in OpenType, TrueType, UFO, CID-keyed, Multiple Master, and many other formats.
+builddeps  :
+    - pkgconfig(gtk+-3.0)
+    - pkgconfig(libtiff-4)
+    - pkgconfig(libspiro)
+    - pkgconfig(libturbojpeg)
+    - pkgconfig(libwoff2common)
+    - pkgconfig(libzmq)
+    - pkgconfig(python3)
+    - giflib-devel
+    - libiconv-devel
+libsplit   : no
+setup      : |
+    %cmake_ninja
+build      : |
+    %ninja_build
+install    : |
+    %ninja_install

@@ -1,0 +1,48 @@
+#!/bin/bash
+
+NEW_GIT_BASE="ssh://vcs@getsol.us:2222/source"
+
+API_TOKEN=$(cat bot_token.txt 2>/dev/null)
+
+if [[ ! -z "${API_TOKEN}" ]]; then
+    _CONDUIT_PASS_ARGS="--conduit-token \"${API_TOKEN}\""
+fi
+
+PACKAGE="$1"
+
+if [[ -z "${PACKAGE}" ]]; then
+    echo "Require a package name to create!"
+    exit 1
+fi
+
+# Basic repo name linting check
+if [[ ! "${PACKAGE}" =~ ^[a-z0-9]+(-[a-z0-9]+)*$ ]]; then
+    echo "Package name must only contain lowercase, numbers and dashes."
+    exit 1
+fi
+
+echo "Attempting creation of repository ${PACKAGE}"
+
+cat <<EOF |
+{
+    "transactions": [
+    {
+        "type": "vcs",
+        "value": "git"
+    },
+    {
+        "type": "name",
+        "value": "${PACKAGE}"
+    },
+    {
+        "type": "shortName",
+        "value": "${PACKAGE}"
+    },
+    {
+        "type": "status",
+        "value": "active"
+    }
+    ]
+}
+EOF
+arc call-conduit --conduit-uri "https://dev.getsol.us" ${_CONDUIT_PASS_ARGS} diffusion.repository.edit --

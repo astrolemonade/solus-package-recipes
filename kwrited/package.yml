@@ -1,0 +1,23 @@
+name       : kwrited
+version    : 5.26.5
+release    : 83
+source     :
+    - https://cdn.download.kde.org/stable/plasma/5.26.5/kwrited-5.26.5.tar.xz : a9d66d664baecad2898f624c097f4283dea49dca376ea00f08a54fee17dd4a93
+homepage   : https://www.kde.org/workspaces/plasmadesktop/
+license    : GPL-2.0-or-later
+component  : desktop.kde.core
+summary    : KDE daemon listening for wall and write messages
+description: |
+    KDE daemon listening for wall and write messages.
+optimize   : lto
+builddeps  :
+    - kcoreaddons-devel
+    - ki18n-devel
+    - knotifications-devel
+    - kpty-devel
+setup      : |
+    %cmake_ninja
+build      : |
+    %ninja_build
+install    : |
+    %ninja_install

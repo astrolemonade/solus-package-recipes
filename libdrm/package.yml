@@ -1,0 +1,24 @@
+name       : libdrm
+version    : 2.4.113
+release    : 40
+source     :
+    - https://gitlab.freedesktop.org/mesa/drm/-/archive/libdrm-2.4.113/drm-libdrm-2.4.113.tar.gz : f2969eaca119766485ce7e274ffab73a3d30d74bd98ce7855d7478c6fba765ec
+license    : MIT
+component  : xorg.display
+summary    : Direct Rendering Manager API + Library
+description: |
+    libdrm provides core library routines for the X Window System to directly interface with video hardware using the Linux kernel's Direct Rendering Manager (DRM).
+emul32     : yes
+optimize   : speed
+builddeps  :
+    - pkgconfig32(pciaccess)
+    - pkgconfig(pciaccess)
+    - pkgconfig(xorg-macros)
+setup      : |
+    %meson_configure
+build      : |
+    %ninja_build
+install    : |
+    %ninja_install
+check      : |
+    %ninja_check

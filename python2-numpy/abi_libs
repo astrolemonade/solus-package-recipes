@@ -1,0 +1,11 @@
+_dummy.so
+_multiarray_tests.so
+_multiarray_umath.so
+_operand_flag_tests.so
+_rational_tests.so
+_struct_ufunc_tests.so
+_umath_linalg.so
+_umath_tests.so
+fftpack_lite.so
+lapack_lite.so
+mtrand.so

@@ -1,0 +1,28 @@
+name       : smartmontools
+version    : '7.3'
+release    : 6
+source     :
+    - https://netcologne.dl.sourceforge.net/project/smartmontools/smartmontools/7.3/smartmontools-7.3.tar.gz : a544f8808d0c58cfb0e7424ca1841cb858a974922b035d505d4e4c248be3a22b
+license    : GPL-2.0-or-later
+component  : system.utils
+summary    : Check S.M.A.R.T information on hard and solid-state disks
+description: |
+    The smartmontools package contains two utility programs (smartctl and smartd) to control and monitor storage systems using the Self-Monitoring, Analysis and Reporting Technology System (SMART) built into most modern ATA/SATA, SCSI/SAS and NVMe disks.
+builddeps  :
+    - pkgconfig(libcap-ng)
+setup      : |
+    %configure
+build      : |
+    %make
+install    : |
+    %make_install
+    mv $installdir/etc/smartd_warning.sh $installdir/usr/share/smartmontools
+    rm -rf $installdir/etc
+    find $installdir/usr/share/doc/smartmontools \
+        -maxdepth 1 \
+        -type f -not -name smartd.conf -delete
+
+    install -dm00755 $installdir/usr/include
+    mv $installdir/usr/share/smartmontools/*.h $installdir/usr/include
+check      : |
+    %make check

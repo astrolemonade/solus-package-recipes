@@ -1,0 +1,37 @@
+name       : doomsday-engine
+version    : 2.2.2
+release    : 17
+source     :
+    - https://sourceforge.net/projects/deng/files/Doomsday%20Engine/2.2.2/doomsday-2.2.2.tar.gz/download : b42fbcd2a917765a6823a81497037a8f85915a998736131ea5f0401543962ecf
+license    :
+    - GPL-3.0-or-later
+    - LGPL-3.0-or-later
+component  : games.action
+summary    : A portable and enhanced source port of the Doom I/II engine.
+description: |
+    A portable and enhanced source port of the Doom I/II engine.
+builddeps  :
+    - pkgconfig(Qt5X11Extras)
+    - pkgconfig(SDL2_mixer)
+    - pkgconfig(fluidsynth)
+    - pkgconfig(minizip)
+    - pkgconfig(openal)
+    - pkgconfig(xrandr)
+    - pkgconfig(xxf86vm)
+    - pkgconfig(zziplib)
+rundeps    :
+    - freepats
+    - devel :
+        - assimp-devel
+setup      : |
+    %cmake_ninja
+build      : |
+    %ninja_build
+install    : |
+    %ninja_install
+
+    # Nuke devel files for bundled assimp
+    rm -rv $installdir/usr/include/assimp/*
+    rmdir $installdir/usr/include/assimp
+    rm -v $installdir/%libdir%/doomsday/pkgconfig/assimp.pc
+    rmdir $installdir/%libdir%/doomsday/pkgconfig

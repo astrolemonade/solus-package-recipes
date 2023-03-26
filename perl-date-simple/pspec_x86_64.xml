@@ -1,0 +1,45 @@
+<PISI>
+    <Source>
+        <Name>perl-date-simple</Name>
+        <Packager>
+            <Name>Algent Albrahimi</Name>
+            <Email>algent@protonmail.com</Email>
+        </Packager>
+        <License>GPL-2.0</License>
+        <PartOf>programming.perl</PartOf>
+        <Summary xml:lang="en">Date::Simple - a simple date object</Summary>
+        <Description xml:lang="en">Date::Simple - a simple date object
+</Description>
+        <Archive type="binary" sha1sum="79eb0752a961b8e0d15c77d298c97498fbc89c5a">https://getsol.us/sources/README.Solus</Archive>
+    </Source>
+    <Package>
+        <Name>perl-date-simple</Name>
+        <Summary xml:lang="en">Date::Simple - a simple date object</Summary>
+        <Description xml:lang="en">Date::Simple - a simple date object
+</Description>
+        <PartOf>programming.perl</PartOf>
+        <Files>
+            <Path fileType="library">/usr/lib64/perl5/vendor_perl/5.36/x86_64-linux-thread-multi/Date/Simple.pm</Path>
+            <Path fileType="library">/usr/lib64/perl5/vendor_perl/5.36/x86_64-linux-thread-multi/Date/Simple/D8.pm</Path>
+            <Path fileType="library">/usr/lib64/perl5/vendor_perl/5.36/x86_64-linux-thread-multi/Date/Simple/Fmt.pm</Path>
+            <Path fileType="library">/usr/lib64/perl5/vendor_perl/5.36/x86_64-linux-thread-multi/Date/Simple/ISO.pm</Path>
+            <Path fileType="library">/usr/lib64/perl5/vendor_perl/5.36/x86_64-linux-thread-multi/Date/Simple/NoXS.pm</Path>
+            <Path fileType="library">/usr/lib64/perl5/vendor_perl/5.36/x86_64-linux-thread-multi/auto/Date/Simple/.packlist</Path>
+            <Path fileType="library">/usr/lib64/perl5/vendor_perl/5.36/x86_64-linux-thread-multi/auto/Date/Simple/Simple.so</Path>
+            <Path fileType="man">/usr/share/man/man3/Date::Simple.3</Path>
+            <Path fileType="man">/usr/share/man/man3/Date::Simple::D8.3</Path>
+            <Path fileType="man">/usr/share/man/man3/Date::Simple::Fmt.3</Path>
+            <Path fileType="man">/usr/share/man/man3/Date::Simple::ISO.3</Path>
+            <Path fileType="man">/usr/share/man/man3/Date::Simple::NoXS.3</Path>
+        </Files>
+    </Package>
+    <History>
+        <Update release="8">
+            <Date>2022-09-25</Date>
+            <Version>3.03</Version>
+            <Comment>Packaging update</Comment>
+            <Name>Algent Albrahimi</Name>
+            <Email>algent@protonmail.com</Email>
+        </Update>
+    </History>
+</PISI>

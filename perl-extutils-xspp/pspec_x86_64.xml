@@ -1,0 +1,98 @@
+<PISI>
+    <Source>
+        <Name>perl-extutils-xspp</Name>
+        <Packager>
+            <Name>Algent Albrahimi</Name>
+            <Email>algent@protonmail.com</Email>
+        </Packager>
+        <License>Artistic-1.0-Perl</License>
+        <PartOf>programming.perl</PartOf>
+        <Summary xml:lang="en">ExtUtils::XSpp - XS for C++</Summary>
+        <Description xml:lang="en">ExtUtils::XSpp - XS for C++
+</Description>
+        <Archive type="binary" sha1sum="79eb0752a961b8e0d15c77d298c97498fbc89c5a">https://getsol.us/sources/README.Solus</Archive>
+    </Source>
+    <Package>
+        <Name>perl-extutils-xspp</Name>
+        <Summary xml:lang="en">ExtUtils::XSpp - XS for C++</Summary>
+        <Description xml:lang="en">ExtUtils::XSpp - XS for C++
+</Description>
+        <PartOf>programming.perl</PartOf>
+        <Files>
+            <Path fileType="executable">/usr/bin/xspp</Path>
+            <Path fileType="library">/usr/lib64/perl5/vendor_perl/5.36/ExtUtils/XSpp.pm</Path>
+            <Path fileType="library">/usr/lib64/perl5/vendor_perl/5.36/ExtUtils/XSpp.pod</Path>
+            <Path fileType="library">/usr/lib64/perl5/vendor_perl/5.36/ExtUtils/XSpp/Cmd.pm</Path>
+            <Path fileType="library">/usr/lib64/perl5/vendor_perl/5.36/ExtUtils/XSpp/Driver.pm</Path>
+            <Path fileType="library">/usr/lib64/perl5/vendor_perl/5.36/ExtUtils/XSpp/Exception.pm</Path>
+            <Path fileType="library">/usr/lib64/perl5/vendor_perl/5.36/ExtUtils/XSpp/Exception/code.pm</Path>
+            <Path fileType="library">/usr/lib64/perl5/vendor_perl/5.36/ExtUtils/XSpp/Exception/object.pm</Path>
+            <Path fileType="library">/usr/lib64/perl5/vendor_perl/5.36/ExtUtils/XSpp/Exception/perlcode.pm</Path>
+            <Path fileType="library">/usr/lib64/perl5/vendor_perl/5.36/ExtUtils/XSpp/Exception/simple.pm</Path>
+            <Path fileType="library">/usr/lib64/perl5/vendor_perl/5.36/ExtUtils/XSpp/Exception/stdmessage.pm</Path>
+            <Path fileType="library">/usr/lib64/perl5/vendor_perl/5.36/ExtUtils/XSpp/Exception/unknown.pm</Path>
+            <Path fileType="library">/usr/lib64/perl5/vendor_perl/5.36/ExtUtils/XSpp/Grammar.pm</Path>
+            <Path fileType="library">/usr/lib64/perl5/vendor_perl/5.36/ExtUtils/XSpp/Lexer.pm</Path>
+            <Path fileType="library">/usr/lib64/perl5/vendor_perl/5.36/ExtUtils/XSpp/Node.pm</Path>
+            <Path fileType="library">/usr/lib64/perl5/vendor_perl/5.36/ExtUtils/XSpp/Node/Access.pm</Path>
+            <Path fileType="library">/usr/lib64/perl5/vendor_perl/5.36/ExtUtils/XSpp/Node/Argument.pm</Path>
+            <Path fileType="library">/usr/lib64/perl5/vendor_perl/5.36/ExtUtils/XSpp/Node/Class.pm</Path>
+            <Path fileType="library">/usr/lib64/perl5/vendor_perl/5.36/ExtUtils/XSpp/Node/Comment.pm</Path>
+            <Path fileType="library">/usr/lib64/perl5/vendor_perl/5.36/ExtUtils/XSpp/Node/Constructor.pm</Path>
+            <Path fileType="library">/usr/lib64/perl5/vendor_perl/5.36/ExtUtils/XSpp/Node/Destructor.pm</Path>
+            <Path fileType="library">/usr/lib64/perl5/vendor_perl/5.36/ExtUtils/XSpp/Node/Enum.pm</Path>
+            <Path fileType="library">/usr/lib64/perl5/vendor_perl/5.36/ExtUtils/XSpp/Node/EnumValue.pm</Path>
+            <Path fileType="library">/usr/lib64/perl5/vendor_perl/5.36/ExtUtils/XSpp/Node/File.pm</Path>
+            <Path fileType="library">/usr/lib64/perl5/vendor_perl/5.36/ExtUtils/XSpp/Node/Function.pm</Path>
+            <Path fileType="library">/usr/lib64/perl5/vendor_perl/5.36/ExtUtils/XSpp/Node/Member.pm</Path>
+            <Path fileType="library">/usr/lib64/perl5/vendor_perl/5.36/ExtUtils/XSpp/Node/Method.pm</Path>
+            <Path fileType="library">/usr/lib64/perl5/vendor_perl/5.36/ExtUtils/XSpp/Node/Module.pm</Path>
+            <Path fileType="library">/usr/lib64/perl5/vendor_perl/5.36/ExtUtils/XSpp/Node/Package.pm</Path>
+            <Path fileType="library">/usr/lib64/perl5/vendor_perl/5.36/ExtUtils/XSpp/Node/PercAny.pm</Path>
+            <Path fileType="library">/usr/lib64/perl5/vendor_perl/5.36/ExtUtils/XSpp/Node/Preprocessor.pm</Path>
+            <Path fileType="library">/usr/lib64/perl5/vendor_perl/5.36/ExtUtils/XSpp/Node/Raw.pm</Path>
+            <Path fileType="library">/usr/lib64/perl5/vendor_perl/5.36/ExtUtils/XSpp/Node/Type.pm</Path>
+            <Path fileType="library">/usr/lib64/perl5/vendor_perl/5.36/ExtUtils/XSpp/Parser.pm</Path>
+            <Path fileType="library">/usr/lib64/perl5/vendor_perl/5.36/ExtUtils/XSpp/Plugin.pod</Path>
+            <Path fileType="library">/usr/lib64/perl5/vendor_perl/5.36/ExtUtils/XSpp/Plugin/feature/default_xs_typemap.pm</Path>
+            <Path fileType="library">/usr/lib64/perl5/vendor_perl/5.36/ExtUtils/XSpp/Typemap.pm</Path>
+            <Path fileType="library">/usr/lib64/perl5/vendor_perl/5.36/ExtUtils/XSpp/Typemap/parsed.pm</Path>
+            <Path fileType="library">/usr/lib64/perl5/vendor_perl/5.36/ExtUtils/XSpp/Typemap/reference.pm</Path>
+            <Path fileType="library">/usr/lib64/perl5/vendor_perl/5.36/ExtUtils/XSpp/Typemap/simple.pm</Path>
+            <Path fileType="library">/usr/lib64/perl5/vendor_perl/5.36/ExtUtils/XSpp/Typemap/wrapper.pm</Path>
+            <Path fileType="man">/usr/share/man/man1/xspp.1</Path>
+            <Path fileType="man">/usr/share/man/man3/ExtUtils::XSpp.3</Path>
+            <Path fileType="man">/usr/share/man/man3/ExtUtils::XSpp::Cmd.3</Path>
+            <Path fileType="man">/usr/share/man/man3/ExtUtils::XSpp::Exception.3</Path>
+            <Path fileType="man">/usr/share/man/man3/ExtUtils::XSpp::Node.3</Path>
+            <Path fileType="man">/usr/share/man/man3/ExtUtils::XSpp::Node::Access.3</Path>
+            <Path fileType="man">/usr/share/man/man3/ExtUtils::XSpp::Node::Argument.3</Path>
+            <Path fileType="man">/usr/share/man/man3/ExtUtils::XSpp::Node::Class.3</Path>
+            <Path fileType="man">/usr/share/man/man3/ExtUtils::XSpp::Node::Comment.3</Path>
+            <Path fileType="man">/usr/share/man/man3/ExtUtils::XSpp::Node::Constructor.3</Path>
+            <Path fileType="man">/usr/share/man/man3/ExtUtils::XSpp::Node::Destructor.3</Path>
+            <Path fileType="man">/usr/share/man/man3/ExtUtils::XSpp::Node::Enum.3</Path>
+            <Path fileType="man">/usr/share/man/man3/ExtUtils::XSpp::Node::EnumValue.3</Path>
+            <Path fileType="man">/usr/share/man/man3/ExtUtils::XSpp::Node::File.3</Path>
+            <Path fileType="man">/usr/share/man/man3/ExtUtils::XSpp::Node::Function.3</Path>
+            <Path fileType="man">/usr/share/man/man3/ExtUtils::XSpp::Node::Member.3</Path>
+            <Path fileType="man">/usr/share/man/man3/ExtUtils::XSpp::Node::Method.3</Path>
+            <Path fileType="man">/usr/share/man/man3/ExtUtils::XSpp::Node::Module.3</Path>
+            <Path fileType="man">/usr/share/man/man3/ExtUtils::XSpp::Node::Package.3</Path>
+            <Path fileType="man">/usr/share/man/man3/ExtUtils::XSpp::Node::PercAny.3</Path>
+            <Path fileType="man">/usr/share/man/man3/ExtUtils::XSpp::Node::Raw.3</Path>
+            <Path fileType="man">/usr/share/man/man3/ExtUtils::XSpp::Parser.3</Path>
+            <Path fileType="man">/usr/share/man/man3/ExtUtils::XSpp::Plugin.3</Path>
+            <Path fileType="man">/usr/share/man/man3/ExtUtils::XSpp::Typemap.3</Path>
+        </Files>
+    </Package>
+    <History>
+        <Update release="6">
+            <Date>2022-09-25</Date>
+            <Version>0.18</Version>
+            <Comment>Packaging update</Comment>
+            <Name>Algent Albrahimi</Name>
+            <Email>algent@protonmail.com</Email>
+        </Update>
+    </History>
+</PISI>

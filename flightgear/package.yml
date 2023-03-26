@@ -1,0 +1,47 @@
+name       : flightgear
+version    : 2020.3.17
+release    : 30
+source     :
+    - https://sourceforge.net/projects/flightgear/files/release-2020.3/flightgear-2020.3.17.tar.bz2 : 6670dedeaca2683aca77f9f06bf9d1d8062ae32a2a5459dddc8aa0989c5f1854
+license    : GPL-2.0-or-later
+component  : games
+homepage   : https://www.flightgear.org/
+summary    : A free and highly sophisticated flight simulator
+description: |
+    FlightGear allows you to control over 400 aircraft, small and large in a range of situations, types of weather, seasons, day and night cycle. This includes single-engine propeller aircraft, large 4-engine passenger liners, experimental aircraft, classic and vintage aircraft and helicopters.
+builddeps  :
+    - pkgconfig(Qt5Qml)
+    - pkgconfig(Qt5Svg)
+    - pkgconfig(Qt5UiTools)
+    - pkgconfig(freetype2)
+    - pkgconfig(gdal)
+    - pkgconfig(glew)
+    - pkgconfig(glut)
+    - pkgconfig(libcurl)
+    - pkgconfig(libevent)
+    - pkgconfig(openal)
+    - pkgconfig(openscenegraph)
+    - pkgconfig(speexdsp)
+    - pkgconfig(sqlite3)
+    - pkgconfig(x11)
+    - gsm-devel
+    - libboost-devel
+    - plib-devel
+    - simgear-devel
+rundeps    :
+    - flightgear-data
+optimize   : lto
+setup      : |
+    %cmake . \
+        -BsolusBuildDir \
+        -DENABLE_GDAL=ON \
+        -DENABLE_OPENMP=ON \
+        -DFG_BUILD_TYPE="Release" \
+        -DFG_DATA_DIR="/usr/share/flightgear" \
+        -DSYSTEM_GSM=ON \
+        -DSYSTEM_SPEEX=ON \
+        -DSYSTEM_SQLITE=ON
+build      : |
+    %make -C solusBuildDir
+install    : |
+    %make_install -C solusBuildDir

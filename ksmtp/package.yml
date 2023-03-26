@@ -1,0 +1,20 @@
+name       : ksmtp
+version    : 22.12.1
+release    : 58
+source     :
+    - https://cdn.download.kde.org/stable/release-service/22.12.1/src/ksmtp-22.12.1.tar.xz : 67b6c0704460c6149de562e5dbc0843449895f84774b170aafb33b90b2b87c6d
+homepage   : https://kde.org/
+license    : LGPL-2.1-or-later
+component  : programming.library
+summary    : Job-based library to send email through an SMTP server
+description: |
+    Job-based library to send email through an SMTP server.
+builddeps  :
+    - pkgconfig(libsasl2)
+    - kio-devel
+setup      : |
+    %cmake_ninja -DBUILD_TESTING=OFF
+build      : |
+    %ninja_build
+install    : |
+    %ninja_install

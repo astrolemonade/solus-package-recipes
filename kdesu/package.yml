@@ -1,0 +1,29 @@
+name       : kdesu
+version    : 5.101.0
+release    : 64
+source     :
+    - https://cdn.download.kde.org/stable/frameworks/5.101/kdesu-5.101.0.tar.xz : f1abff4b7e7767216958f061553b73dd4003ef2b560f73e4e5a82f410c02e599
+homepage   : https://community.kde.org/Frameworks
+license    :
+    - GPL-2.0-only
+    - LGPL-2.0-or-later
+    - LGPL-2.1-only
+component  : programming.tools
+summary    : User interface for running shell commands with root privileges
+description: |
+    User interface for running shell commands with root privileges.
+optimize   : lto
+builddeps  :
+    - pkgconfig(x11)
+    - ki18n-devel
+    - kpty-devel
+    - kservice-devel
+rundeps    :
+    - devel :
+        - kpty-devel
+setup      : |
+    %cmake_ninja -DBUILD_QCH=ON -DKDESU_USE_SUDO_DEFAULT=ON
+build      : |
+    %ninja_build
+install    : |
+    %ninja_install

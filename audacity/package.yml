@@ -1,0 +1,42 @@
+name       : audacity
+version    : 2.4.1
+release    : 30
+source     :
+    - https://github.com/audacity/audacity/archive/Audacity-2.4.1.tar.gz : 50240f07471373a7e5c2df65cc26eeeaaced9a0850ad1f95cb795f171ea3009f
+license    :
+    - CC-BY-SA-3.0
+    - GPL-2.0-or-later
+component  : multimedia.audio
+summary    : A Free, Cross-Platform Digital Audio Editor
+description: |
+    Audacity is free, open source, cross-platform audio software for multi-track recording and editing.
+builddeps  :
+    - pkgconfig(alsa)
+    - pkgconfig(expat)
+    - pkgconfig(flac)
+    - pkgconfig(gstreamer-base-1.0)
+    - pkgconfig(gtk+-2.0)
+    - pkgconfig(id3tag)
+    - pkgconfig(libavcodec)
+    - pkgconfig(lilv-0)
+    - pkgconfig(mad)
+    - pkgconfig(portaudio-2.0)
+    - pkgconfig(sndfile)
+    - pkgconfig(soundtouch)
+    - pkgconfig(soxr)
+    - pkgconfig(suil-0)
+    - pkgconfig(twolame)
+    - pkgconfig(vamp)
+    - pkgconfig(vorbis)
+    - lame-devel
+    - portmidi-devel
+    - wxwidgets-devel
+rundeps    :
+    - alsa-plugins
+setup      : |
+    %patch -p1 < $pkgfiles/0001-Add-missing-include.patch
+    %cmake_ninja -Daudacity_use_ffmpeg=linked
+build      : |
+    %ninja_build
+install    : |
+    %ninja_install

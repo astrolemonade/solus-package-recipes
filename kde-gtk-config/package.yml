@@ -1,0 +1,37 @@
+name       : kde-gtk-config
+version    : 5.26.5
+release    : 85
+source     :
+    - https://cdn.download.kde.org/stable/plasma/5.26.5/kde-gtk-config-5.26.5.tar.xz : f674007c0fc60cf99a9e18742d47da6835ce55c942bd987d011012d0ee9b2483
+homepage   : https://www.kde.org/workspaces/plasmadesktop/
+license    :
+    - BSD-2-Clause
+    - BSD-3-Clause
+    - GPL-2.0-only
+    - GPL-2.0-or-later
+component  : desktop.kde.core
+summary    : KDE settings to set GTK look and feel
+description: |
+    KDE system settings to set GTK look and feel.
+optimize   : lto
+builddeps  :
+    - pkgconfig(gtk+-2.0)
+    - pkgconfig(gtk+-3.0)
+    - pkgconfig(Qt5Svg)
+    - gsettings-desktop-schemas
+    - kcmutils-devel
+    - kdecoration-devel
+    - kdbusaddons-devel
+    - kiconthemes-devel
+    - kguiaddons-devel
+    - sassc
+rundeps    :
+    - gsettings-desktop-schemas
+    - xsettingsd
+setup      : |
+    %patch -p1 -i $pkgfiles/0002-Use-explicit-path-of-the-gtk-module.patch
+    %cmake_ninja
+build      : |
+    %ninja_build
+install    : |
+    %ninja_install

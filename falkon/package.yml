@@ -1,0 +1,32 @@
+name       : falkon
+version    : 22.12.1
+release    : 26
+source     :
+    - https://cdn.download.kde.org/stable/release-service/22.12.1/src/falkon-22.12.1.tar.xz : 7dea2defd57d6d6db3a3413cc0e480db8fc9b56f56f40d7a22725308667c9693
+homepage   : https://www.falkon.org/
+license    : GPL-3.0-or-later
+component  : network.web.browser
+summary    : Falkon (formerly QupZilla) is a new and very fast QtWebEngine browser
+description: |
+    Falkon is a KDE web browser using QtWebEngine rendering engine, previously known as QupZilla. It aims to be a lightweight web browser available through all major platforms. This project has been originally started only for educational purposes. But from its start, Falkon has grown into a feature-rich browser.
+replaces   :
+    - qupzilla
+builddeps  :
+    - pkgconfig(Qt5Designer)
+    - pkgconfig(Qt5WebEngine)
+    - pkgconfig(Qt5X11Extras)
+    - pkgconfig(xcb-atom)
+    - karchive-devel
+    - kcrash-devel
+    - ki18n-devel
+    - kio-devel
+    - kwallet-devel
+    - kwindowsystem-devel
+    - purpose-devel
+setup      : |
+    %cmake_ninja
+build      : |
+    %ninja_build
+install    : |
+    %ninja_install
+    install -Dm00644 linux/completion/_falkon $installdir/usr/share/zsh/site-functions/_falkon

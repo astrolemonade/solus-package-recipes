@@ -1,0 +1,77 @@
+name       : thunderbird
+version    : 102.9.0
+release    : 149
+source     :
+    - https://ftp.mozilla.org/pub/thunderbird/releases/102.9.0/source/thunderbird-102.9.0.source.tar.xz : ecb34de765d548ed26ea24d4d617567a7896230d7c8379c1ef76be8ca05d6fef
+license    :
+    - GPL-2.0-or-later
+    - LGPL-2.1-or-later
+    - MPL-2.0
+component  : network.mail
+clang      : yes
+networking : yes
+summary    : Thunderbird Email Client
+description: |
+    Thunderbird is a free email application that’s easy to set up and customize - and it’s loaded with great features!
+builddeps  :
+    - pkgconfig(alsa)
+    - pkgconfig(atk)
+    - pkgconfig(dbus-glib-1)
+    - pkgconfig(gconf-2.0)
+    - pkgconfig(gstreamer-plugins-base-1.0)
+    - pkgconfig(gtk+-2.0)
+    - pkgconfig(gtk+-3.0)
+    - pkgconfig(libevent)
+    - pkgconfig(libnotify)
+    - pkgconfig(libpulse)
+    - pkgconfig(libstartup-notification-1.0)
+    - pkgconfig(nss)
+    - pkgconfig(xt)
+    - autoconf213
+    - cargo
+    - cbindgen
+    - dump_syms
+    - llvm-clang
+    - nodejs-devel
+    - yasm
+environment: |
+    export MACH_BUILD_PYTHON_NATIVE_PACKAGE_SOURCE=system
+    export MOZBUILD_STATE_PATH=$PWD
+    export LDFLAGS="${LDFLAGS/--copy-dt-needed-entries/}" # not supported by lld
+setup      : |
+    cp $pkgfiles/*-api-key .
+    cp $pkgfiles/config mozconfig
+    sed -e 's|##JOBCOUNT##|%JOBS%|' -e 's|##LIBDIR##|%libdir%|' -e 's|##WORKDIR##|%workdir%|' -i mozconfig
+
+    %patch -p1 < $pkgfiles/thunderbird-enable-addons.patch
+    ./mach configure
+    ./mach busted
+build      : |
+    ./mach build
+    ./mach buildsymbols
+install    : |
+    # Install locales first
+    langpackdir="$installdir/%libdir%/thunderbird/extensions"
+    install -dm00755 "${langpackdir}"
+
+    mkdir lang_pack && pushd lang_pack
+    tar xf "$pkgfiles/thunderbird-${version}-langpacks.tar.xz"
+
+    for i in *.xpi; do
+        lname="$(basename ${i})"
+        install -m00644 "${lname}" "${langpackdir}/${lname}"
+    done
+    popd
+
+    DESTDIR=$installdir ./mach install
+
+    install -dm00755 $installdir/usr/share/pixmaps
+    ln -s %libdir%/thunderbird/chrome/icons/default/default256.png $installdir/usr/share/pixmaps/thunderbird.png
+    for i in 16 22 24 32 48 128 256; do
+        install -dm00755 $installdir/usr/share/icons/hicolor/${i}x${i}
+        ln -s %libdir%/thunderbird/chrome/icons/default/default${i}.png $installdir/usr/share/icons/hicolor/${i}x${i}/thunderbird.png
+    done
+    install -Dm00644 $pkgfiles/thunderbird.desktop $installdir/usr/share/applications/thunderbird.desktop
+
+    # set up defaults
+    install -Dm00644 $pkgfiles/prefs.js $installdir/%libdir%/thunderbird/defaults/pref/prefs.js

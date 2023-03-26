@@ -1,0 +1,37 @@
+name       : umbrello
+version    : 22.12.1
+release    : 78
+source     :
+    - https://cdn.download.kde.org/stable/release-service/22.12.1/src/umbrello-22.12.1.tar.xz : 30d8270d703851f897fe4b890e38ea05ccede6e687cf22a7fc5c3e2e1140e2b4
+homepage   : https://kde.org/applications/development/org.kde.umbrello
+license    :
+    - GFDL-1.2-or-later
+    - GPL-2.0-or-later
+component  : programming.tools
+summary    : Umbrello UML Modeller is a UML diagramming tool for KDE
+description: |
+    Umbrello UML Modeller is a UML diagramming tool for KDE
+builddeps  :
+    - pkgconfig(libxslt)
+    - pkgconfig(Qt5Quick)
+    - pkgconfig(Qt5Svg)
+    - pkgconfig(Qt5WebKit)
+    - grantlee-devel
+    - kcmutils-devel
+    - kdelibs4support-devel
+    - kdev-php-devel
+    - kdevelop-devel
+    - kdevelop-pg-qt-devel
+    - ktexteditor-devel
+    - threadweaver-devel
+setup      : |
+    %patch -p1 < $pkgfiles/0001-Disable-building-unshipped-code.patch
+    %cmake_ninja -DBUILD_KF5=ON
+build      : |
+    %ninja_build
+install    : |
+    %ninja_install
+
+    #Remove docs
+    rm -rf $installdir/usr/share/doc
+    rm -rf $installdir/usr/share/umbrello5/apidoc

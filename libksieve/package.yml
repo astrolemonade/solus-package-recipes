@@ -1,0 +1,39 @@
+name       : libksieve
+version    : 22.12.1
+release    : 62
+source     :
+    - https://cdn.download.kde.org/stable/release-service/22.12.1/src/libksieve-22.12.1.tar.xz : 53d310b99b5d7ea7a3f68a481451f7d61a45f1522740ca7adcdc6f7873018571
+homepage   : https://kde.org/
+license    : GPL-2.0-only
+component  : programming.library
+summary    : Sieve Script Library
+description: |
+    Sieve Script Library.
+builddeps  :
+    - pkgconfig(libsasl2)
+    - pkgconfig(Qt5WebEngine)
+    - karchive-devel
+    - kdoctools-devel
+    - kiconthemes-devel
+    - kidentitymanagement-devel
+    - kimap-devel
+    - kio-devel
+    - kmailtransport-devel
+    - kmime-devel
+    - knewstuff-devel
+    - kwallet-devel
+    - libkdepim-devel
+    - pimcommon-devel
+    - syntax-highlighting-devel
+rundeps    :
+    - devel :
+        - syntax-highlighting-devel
+setup      : |
+    %cmake_ninja -DBUILD_TESTING=OFF
+build      : |
+    %ninja_build
+install    : |
+    %ninja_install
+
+    # remove doc
+    rm -rf $installdir/usr/share/doc

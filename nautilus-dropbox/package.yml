@@ -1,0 +1,39 @@
+name       : nautilus-dropbox
+version    : 2022.10.07
+release    : 26
+source     :
+    - git|https://github.com/dropbox/nautilus-dropbox.git : e5dd94738b096c1d7c131365e99b19c9daf0de29
+license    :
+    - CC-BY-ND-3.0
+    - GPL-3.0-or-later
+component  :
+    - desktop.gnome
+    - ^dropbox : network.clients
+summary    :
+    - Dropbox extension for Nautilus
+    - ^dropbox : Dropbox linux client
+description: |
+    - Dropbox allows users to create a special folder on each of their computers, which Dropbox then synchronizes so that it appears to be the same folder (with the same contents) regardless of which computer is used to view it.
+builddeps  :
+    - pkgconfig(gtk4)
+    - pkgconfig(libnautilus-extension-4)
+    - pkgconfig(pygobject-3.0)
+    - python-docutils
+rundeps    :
+    - dropbox
+    - ^dropbox :
+        - python-gpg
+        - python3-cairo
+patterns   :
+    - ^dropbox :
+        - /usr/bin/dropbox
+        - /usr/share/applications
+        - /usr/share/icons/hicolor
+        - /usr/share/man
+setup      : |
+    %patch -p1 < $pkgfiles/nautilus-extension-4.patch
+    %reconfigure --disable-static
+build      : |
+    %make
+install    : |
+    %make_install

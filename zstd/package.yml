@@ -1,0 +1,31 @@
+name       : zstd
+version    : 1.5.2
+release    : 26
+source     :
+    - https://github.com/facebook/zstd/releases/download/v1.5.2/zstd-1.5.2.tar.zst : 3ea06164971edec7caa2045a1932d757c1815858e4c2b68c7ef812647535c23f
+license    :
+    - BSD-3-Clause
+    - GPL-2.0-or-later
+homepage   : https://facebook.github.io/zstd/
+component  : system.base
+summary    : Zstd command line tools
+description: |
+    Zstd, short for Zstandard, is a fast lossless compression algorithm, targeting real-time compression scenarios at zlib-level and better compression ratios.
+clang      : yes
+emul32     : yes
+optimize   :
+    - speed
+environment: |
+    export PREFIX=/usr LIBDIR=%libdir%
+build      : |
+    %make
+    %make manual
+    make zstd-dll -C programs
+    %make -C contrib/pzstd
+profile    : |
+    %make check
+install    : |
+    %make_install
+    rm -v $installdir/%libdir%/*.a
+check      : |
+    %make -C contrib/pzstd test

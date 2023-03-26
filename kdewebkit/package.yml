@@ -1,0 +1,24 @@
+name       : kdewebkit
+version    : 5.101.0
+release    : 65
+source     :
+    - https://cdn.download.kde.org/stable/frameworks/5.101/portingAids/kdewebkit-5.101.0.tar.xz : 65cefc92ba6ca0638c78c443130ec5e80a6e8bfa8f64c34c4bf39c67e4eaa4fc
+homepage   : https://community.kde.org/Frameworks
+license    : LGPL-2.1-or-later
+component  : programming.library
+summary    : Integration of the HTML rendering engine WebKit
+description: |
+    This library provides KDE integration of the QtWebKit library. If you are using QtWebKit in your KDE application, you are encouraged to use this layer instead of using the QtWebKit classes directly.
+optimize   : lto
+builddeps  :
+    - pkgconfig(Qt5WebKit)
+    - kparts-devel
+    - ktextwidgets-devel
+    - kwallet-devel
+    - sonnet-devel
+setup      : |
+    %cmake_ninja
+build      : |
+    %ninja_build
+install    : |
+    %ninja_install

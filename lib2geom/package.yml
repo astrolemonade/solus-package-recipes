@@ -1,0 +1,27 @@
+name       : lib2geom
+version    : 1.2.2
+release    : 2
+source     :
+    - https://gitlab.com/inkscape/lib2geom/-/archive/1.2/lib2geom-1.2.2.tar.gz : 49afa3c954b5578d19ac89c27023a6bfcbd46c0be449016cb537c13cc1be5b10
+license    :
+    - LGPL-2.1-only
+    - MPL-1.1
+component  : programming.library
+summary    : Easy to use 2D geometry library in C++
+description: |
+    Easy to use 2D geometry library in C++
+builddeps  :
+    - pkgconfig(glib-2.0)
+    - pkgconfig(gtk+-3.0)
+    - pkgconfig(gsl)
+    - double-conversion-devel
+    - gtest-devel
+    - libboost-devel
+setup      : |
+    %apply_patches
+    %cmake_ninja -D2GEOM_BUILD_SHARED=yes \
+                -DCMAKE_BUILD_TYPE=Release
+build      : |
+    %ninja_build
+install    : |
+    %ninja_install

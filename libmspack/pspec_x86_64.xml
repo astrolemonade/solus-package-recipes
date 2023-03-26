@@ -1,0 +1,54 @@
+<PISI>
+    <Source>
+        <Name>libmspack</Name>
+        <Packager>
+            <Name>Joey Riches</Name>
+            <Email>josephriches@gmail.com</Email>
+        </Packager>
+        <License>LGPL-2.1-or-later</License>
+        <PartOf>programming.library</PartOf>
+        <Summary xml:lang="en">A library for Microsoft compression formats</Summary>
+        <Description xml:lang="en">libmspack is a portable library for some loosely related Microsoft compression formats
+</Description>
+        <Archive type="binary" sha1sum="79eb0752a961b8e0d15c77d298c97498fbc89c5a">https://getsol.us/sources/README.Solus</Archive>
+    </Source>
+    <Package>
+        <Name>libmspack</Name>
+        <Summary xml:lang="en">A library for Microsoft compression formats</Summary>
+        <Description xml:lang="en">libmspack is a portable library for some loosely related Microsoft compression formats
+</Description>
+        <PartOf>programming.library</PartOf>
+        <Files>
+            <Path fileType="executable">/usr/bin/cabrip</Path>
+            <Path fileType="executable">/usr/bin/chmextract</Path>
+            <Path fileType="executable">/usr/bin/msexpand</Path>
+            <Path fileType="executable">/usr/bin/oabextract</Path>
+            <Path fileType="library">/usr/lib64/libmspack.so.0</Path>
+            <Path fileType="library">/usr/lib64/libmspack.so.0.1.0</Path>
+        </Files>
+    </Package>
+    <Package>
+        <Name>libmspack-devel</Name>
+        <Summary xml:lang="en">Development files for libmspack</Summary>
+        <Description xml:lang="en">libmspack is a portable library for some loosely related Microsoft compression formats
+</Description>
+        <PartOf>programming.devel</PartOf>
+        <RuntimeDependencies>
+            <Dependency release="9">libmspack</Dependency>
+        </RuntimeDependencies>
+        <Files>
+            <Path fileType="header">/usr/include/mspack.h</Path>
+            <Path fileType="library">/usr/lib64/libmspack.so</Path>
+            <Path fileType="data">/usr/lib64/pkgconfig/libmspack.pc</Path>
+        </Files>
+    </Package>
+    <History>
+        <Update release="9">
+            <Date>2021-06-20</Date>
+            <Version>0.8</Version>
+            <Comment>Packaging update</Comment>
+            <Name>Joey Riches</Name>
+            <Email>josephriches@gmail.com</Email>
+        </Update>
+    </History>
+</PISI>

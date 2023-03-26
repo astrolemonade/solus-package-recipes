@@ -1,0 +1,21 @@
+name       : intel-level-zero
+version    : 1.8.1
+release    : 5
+source     :
+    - https://github.com/oneapi-src/level-zero/archive/refs/tags/v1.8.1.tar.gz : de9582ca075dbd207113d432c4d70a2daaf9d6904672c707e340d43cf4e114a5
+license    : MIT
+component  : programming.library
+homepage   : https://github.com/oneapi-src/level-zero/
+summary    : oneAPI Level Zero Specification Headers and Loader
+patterns   :
+    - /*
+description: |
+    The oneAPI Level Zero (Level Zero) provides low-level direct-to-metal interfaces that are tailored to the devices in a oneAPI platform. This package includes the Level Zero headers, loader, and validation layer.
+builddeps  :
+    - opencl-headers
+setup      : |
+    %cmake_ninja
+build      : |
+    %ninja_build
+install    : |
+    %ninja_install

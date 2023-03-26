@@ -1,0 +1,32 @@
+name       : shellcheck
+version    : 0.8.0
+release    : 9
+source     :
+    - https://hackage.haskell.org/package/ShellCheck-0.8.0/ShellCheck-0.8.0.tar.gz : 62080e8a59174b12ecd2d753af3e6b9fed977e6f5f7301cde027a54aee555416
+license    : GPL-3.0-only
+component  : programming.tools
+summary    : ShellCheck is a GPLv3 tool that gives warnings and suggestions for bash/sh shell scripts
+description: |
+    ShellCheck is a GPLv3 tool that gives warnings and suggestions for bash/sh shell scripts
+builddeps  :
+    - haskell-aeson-devel
+    - haskell-cabal-install
+    - haskell-Diff-devel
+    - haskell-QuickCheck-devel
+    - haskell-regex-tdfa-devel
+rundeps    :
+    - devel :
+        - haskell-aeson-devel
+        - haskell-Diff-devel
+        - haskell-QuickCheck-devel
+        - haskell-regex-tdfa-devel
+networking : yes
+setup      : |
+    %cabal_configure --enable-tests
+build      : |
+    %cabal_build
+install    : |
+    %cabal_install
+    %cabal_register
+check      : |
+    cabal test -v %JOBS%

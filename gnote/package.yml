@@ -1,0 +1,25 @@
+name       : gnote
+version    : '43.0'
+release    : 23
+source     :
+    - https://download.gnome.org/sources/gnote/43/gnote-43.0.tar.xz : 2a5bf84490346fbc3e96cc3285ddd19946ae5ce93d465426010c7b6c051fc161
+homepage   : https://wiki.gnome.org/Apps/Gnote
+license    : GPL-3.0-or-later
+component  : office.notes
+summary    : A simple and easy to use desktop note-taking application
+description: |
+    Gnote is a simple note-taking application for GNOME desktop environment. It allows you to capture your ideas, link them together using WikiWiki-style links, group together in notebooks and some extra features for everyday use. 
+builddeps  :
+    - pkgconfig(gspell-1)
+    - pkgconfig(gtkmm-3.0)
+    - pkgconfig(libsecret-1)
+    - pkgconfig(libxslt)
+    - desktop-file-utils
+    - itstool
+    - libboost-devel
+setup      : |
+    %meson_configure
+build      : |
+    %ninja_build
+install    : |
+    %ninja_install

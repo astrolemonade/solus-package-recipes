@@ -1,0 +1,22 @@
+name       : dleyna-renderer
+version    : 0.6.0
+release    : 4
+source     :
+    - https://github.com/intel/dleyna-renderer/archive/0.6.0.tar.gz : f606ac1186e7f3ce792606604fc3fbe2d9ec7001dee98ba77f025918ea89f7e1
+license    : LGPL-2.1-only
+component  : programming.library
+summary    : library for implementing services that allow clients to discover and manipulate Digital Media Renderers.
+description: |
+    Library for implementing services that allow clients to discover and manipulate Digital Media Renderers.
+builddeps  :
+    - pkgconfig(dleyna-core-1.0)
+    - pkgconfig(gssdp-1.0)
+    - pkgconfig(gupnp-1.0)
+    - pkgconfig(gupnp-av-1.0)
+    - pkgconfig(gupnp-dlna-2.0)
+setup      : |
+    %autogen
+build      : |
+    %make
+install    : |
+    %make_install

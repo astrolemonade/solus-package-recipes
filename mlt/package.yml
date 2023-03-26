@@ -1,0 +1,42 @@
+name       : mlt
+version    : 7.10.0
+release    : 35
+source     :
+    - https://github.com/mltframework/mlt/releases/download/v7.10.0/mlt-7.10.0.tar.gz : 8298bb39f1b497dc570a1650208fe9a5bf3c367dcb46c091d38937c4ee67d032
+license    :
+    - GPL-2.0-or-later
+    - GPL-3.0-or-later
+    - LGPL-2.1-or-later
+component  : multimedia.library
+summary    : Multimedia framework designed for television broadcasting.
+description: |
+    Multimedia framework designed for television broadcasting.
+patterns   :
+    - python :
+        - /usr/lib/python3.*/site-packages/*
+builddeps  :
+    - pkgconfig(alsa)
+    - pkgconfig(fftw3)
+    - pkgconfig(frei0r)
+    - pkgconfig(gl)
+    - pkgconfig(libavformat)
+    - pkgconfig(libexif)
+    - pkgconfig(libpulse)
+    - pkgconfig(movit)
+    - pkgconfig(python3)
+    - pkgconfig(Qt5Svg)
+    - pkgconfig(samplerate)
+    - pkgconfig(SDL2_image)
+    - pkgconfig(vidstab)
+    - pkgconfig(x11)
+    - swig
+rundeps    :
+    - frei0r
+setup      : |
+    %cmake_ninja \
+        -DMOD_GDK=OFF \
+        -DSWIG_PYTHON=ON
+build      : |
+    %ninja_build
+install    : |
+    %ninja_install

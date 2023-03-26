@@ -1,0 +1,36 @@
+name       : kleopatra
+version    : 22.12.1
+release    : 60
+source     :
+    - https://cdn.download.kde.org/stable/release-service/22.12.1/src/kleopatra-22.12.1.tar.xz : 492e4176687b592d4ef80704985f2ed8290f9287ce100b96546b2f1c5808e36d
+homepage   : https://kde.org/applications/utilities/org.kde.kleopatra
+license    :
+    - GFDL-1.2-or-later
+    - GPL-2.0-or-later
+component  : desktop.kde
+summary    : Kleopatra is a GUI for GnuPG
+description: |
+    Kleopatra is a GUI for GnuPG so it needs a working GnuPG setup.
+builddeps  :
+    - pkgconfig(libassuan)
+    - gpgme-qt-devel
+    - kcrash-devel
+    - kdbusaddons-devel
+    - kiconthemes-devel
+    - kitemmodels-devel
+    - knotifications-devel
+    - ktextwidgets-devel
+    - kwindowsystem-devel
+    - kxmlgui-devel
+    - kmime-devel
+    - libboost-devel
+    - libkleo-devel
+setup      : |
+    %cmake_ninja -DBUILD_TESTING=OFF
+build      : |
+    %ninja_build
+install    : |
+    %ninja_install
+
+    # remove doc
+    rm -rf $installdir/usr/share/doc

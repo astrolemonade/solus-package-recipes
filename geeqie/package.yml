@@ -1,0 +1,38 @@
+name       : geeqie
+version    : '2.0'
+release    : 11
+source     :
+    - https://github.com/BestImageViewer/geeqie/releases/download/v2.0/geeqie-2.0.tar.xz : 27d803d72518913a75f3a2c65909fdca9f34037fdbfd493bee1a4e63dba9f76d
+homepage   : https://www.geeqie.org/
+license    : GPL-2.0-or-later
+component  : multimedia.graphics
+summary    : Geeqie is a lightweight image viewer
+description: |
+    Geeqie is a lightweight image viewer for Linux, BSDs and compatibles. It can be used as a simple, fast, database-free image viewer, but equally it can be used to manage large collections of images.
+builddeps  :
+    - pkgconfig(champlain-0.12)
+    - pkgconfig(ddjvuapi)
+    - pkgconfig(exiv2)
+    - pkgconfig(gspell-1)
+    - pkgconfig(libarchive)
+    - pkgconfig(libffmpegthumbnailer)
+    - pkgconfig(libheif)
+    - pkgconfig(libjpeg)
+    - pkgconfig(libopenjp2)
+    - pkgconfig(libraw)
+    - pkgconfig(libtiff-4)
+    - pkgconfig(libwebp)
+    - pkgconfig(lua)
+    - pkgconfig(poppler-glib)
+    - vim     # for /usr/bin/xxd
+rundeps    :
+    - gphoto2
+    - perl-image-exiftool
+setup      : |
+    %apply_patches
+    %meson_configure
+build      : |
+    %ninja_build
+install    : |
+    %ninja_install
+    rm -rf $installdir/usr/share/doc

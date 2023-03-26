@@ -1,0 +1,24 @@
+name       : python-bleach
+version    : 5.0.1
+release    : 14
+source     :
+    - https://files.pythonhosted.org/packages/source/b/bleach/bleach-5.0.1.tar.gz : 0d03255c47eb9bd2f26aa9bb7f2107732e7e8fe195ca2f64709fcf3b0a4a085c
+homepage   : https://github.com/mozilla/bleach
+license    : Apache-2.0
+component  : programming.python
+summary    : Bleach is an allowed-list-based HTML sanitizing library that escapes or strips markup and attributes
+description: |
+    Bleach is an allowed-list-based HTML sanitizing library that escapes or strips markup and attributes.
+builddeps  :
+    - python-pytest       # check
+    - python-webencodings # check
+rundeps    :
+    - python-six
+    - python-tinycss2
+    - python-webencodings
+build      : |
+    %python3_setup
+install    : |
+    %python3_install
+check      : |
+    %python3_test pytest3 -v

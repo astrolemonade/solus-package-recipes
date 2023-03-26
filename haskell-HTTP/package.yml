@@ -1,0 +1,26 @@
+name       : haskell-HTTP
+version    : 4000.3.14
+release    : 6
+source     :
+    - https://hackage.haskell.org/package/HTTP-4000.3.14/HTTP-4000.3.14.tar.gz : a602d7f30e917164c6a634f8cb1f5df4849048858db01380a0875e16e5aa687b
+license    : BSD-3-Clause
+component  : programming.haskell
+summary    : The HTTP package supports client-side web programming in Haskell.
+description: |
+    The HTTP package supports client-side web programming in Haskell.
+builddeps  :
+    - haskell-cabal-install
+    - haskell-network-devel
+    - haskell-network-uri-devel
+rundeps    :
+    - devel:
+        - haskell-network-devel
+        - haskell-network-uri-devel
+networking : yes
+setup      : |
+    %cabal_configure
+build      : |
+    %cabal_build
+install    : |
+    %cabal_install
+    %cabal_register

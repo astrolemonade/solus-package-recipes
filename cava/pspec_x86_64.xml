@@ -1,0 +1,35 @@
+<PISI>
+    <Source>
+        <Name>cava</Name>
+        <Packager>
+            <Name>Joey Riches</Name>
+            <Email>josephriches@gmail.com</Email>
+        </Packager>
+        <License>MIT</License>
+        <PartOf>multimedia.audio</PartOf>
+        <Summary xml:lang="en">Console-based Audio Visualizer for Alsa</Summary>
+        <Description xml:lang="en">Console-based Audio Visualizer for Alsa
+</Description>
+        <Archive type="binary" sha1sum="79eb0752a961b8e0d15c77d298c97498fbc89c5a">https://getsol.us/sources/README.Solus</Archive>
+    </Source>
+    <Package>
+        <Name>cava</Name>
+        <Summary xml:lang="en">Console-based Audio Visualizer for Alsa</Summary>
+        <Description xml:lang="en">Console-based Audio Visualizer for Alsa
+</Description>
+        <PartOf>multimedia.audio</PartOf>
+        <Files>
+            <Path fileType="executable">/usr/bin/cava</Path>
+            <Path fileType="data">/usr/share/consolefonts/cava.psf</Path>
+        </Files>
+    </Package>
+    <History>
+        <Update release="10">
+            <Date>2022-03-24</Date>
+            <Version>0.7.3</Version>
+            <Comment>Packaging update</Comment>
+            <Name>Joey Riches</Name>
+            <Email>josephriches@gmail.com</Email>
+        </Update>
+    </History>
+</PISI>

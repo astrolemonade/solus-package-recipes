@@ -1,0 +1,30 @@
+name       : kitemmodels
+version    : 5.101.0
+release    : 67
+source     :
+    - https://cdn.download.kde.org/stable/frameworks/5.101/kitemmodels-5.101.0.tar.xz : 5aaee068a8d0c85dfc50c5ade2c5eb913c5936f68e902c302c36bbc2ac70f426
+homepage   : https://community.kde.org/Frameworks
+license    :
+    - LGPL-2.0-or-later
+    - LGPL-2.1-only
+    - LGPL-2.1-or-later
+component  : programming.library
+summary    : Set of item models extending the Qt model-view framework.
+description: |
+    Set of item models extending the Qt model-view framework.
+optimize   : lto
+builddeps  :
+    - pkgconfig(Qt5Quick)
+    - pkgconfig(Qt5Designer)
+    - extra-cmake-modules
+rundeps    :
+    - devel :
+        - extra-cmake-modules
+        - qt5-tools-devel
+setup      : |
+    %cmake_ninja -DBUILD_QCH=ON \
+                -DBUILD_TESTING=OFF
+build      : |
+    %ninja_build
+install    : |
+    %ninja_install

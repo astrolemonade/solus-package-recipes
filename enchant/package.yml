@@ -1,0 +1,20 @@
+name       : enchant
+version    : 2.3.3
+release    : 24
+source     :
+    - https://github.com/AbiWord/enchant/releases/download/v2.3.3/enchant-2.3.3.tar.gz : 3da12103f11cf49c3cf2fd2ce3017575c5321a489e5b9bfa81dd91ec413f3891
+license    : LGPL-2.1-or-later
+component  : office.spelling
+summary    : Spell check library wrapper program
+description: |
+    Enchant is a library wrapper program that allows the use of mulitple spell checker backends at the same time.
+builddeps  :
+    - pkgconfig(hunspell)
+    - pkgconfig(libvoikko)
+setup      : |
+    %configure --disable-static --with-system-myspell=yes \
+               --with-myspell-dir=/usr/share/hunspell
+build      : |
+    %make
+install    : |
+    %make_install

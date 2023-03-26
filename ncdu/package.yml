@@ -1,0 +1,19 @@
+name       : ncdu
+version    : 2.2.1
+release    : 18
+source     :
+    - https://dev.yorhel.nl/download/ncdu-2.2.1.tar.gz : 5e4af8f6bcd8cf7ad8fd3d7900dab1320745a0453101e9e374f9a77f72aed141
+homepage   : https://dev.yorhel.nl/ncdu
+license    : MIT
+component  : system.utils
+summary    : Disk usage analyzer with ncurses interface
+description: |
+    ncdu is a disk usage analyzer with an ncurses interface, aimed to be run on a remote server over SSH. It is therefore designed to be fast, simple, and easy to use.
+builddeps  :
+    - pkgconfig(ncursesw)
+    - zig
+build      : |
+    %make
+install    : |
+    install -D -m 00755 zig-out/bin/ncdu $installdir/usr/bin/ncdu
+    install -D -m 00644 ncdu.1 $installdir/usr/share/man/man1/ncdu.1

@@ -1,0 +1,24 @@
+name       : pentobi
+version    : '21.0'
+release    : 13
+source     :
+    - https://sourceforge.net/projects/pentobi/files/21.0/pentobi-21.0.tar.xz/download : 04019e7b1ff074bb792f950f91b93e8463303e278897bd56e1073a3e85499e22
+homepage   : https://pentobi.sourceforge.io/
+license    : GPL-3.0-or-later
+component  : games.puzzle
+summary    : Pentobi is a computer opponent for the board game Blokus
+description: |
+    Pentobi is a computer opponent for the board game Blokus. Supported game variants: Classic, Duo, Trigon, Junior, Nexos, GembloQ, Callisto. Strong Blokus engine with 9 different playing levels. Player rating by playing rated games against the computer. Game analysis function. Save and load games in Smart Game Format including comments and move variations.
+builddeps  :
+    - pkgconfig(Qt6QuickControls2)
+    - pkgconfig(Qt6UiTools)
+    - pkgconfig(librsvg-2.0)
+    - itstool
+setup      : |
+    %cmake \
+        -DDOCBOOKXSL_DIR=/usr/share/xml/docbook/xsl-stylesheets-1.79.2/ \
+        -DMETAINFO_ITS=/usr/share/gettext-0.20.2/its
+build      : |
+    %make
+install    : |
+    %make_install

@@ -1,0 +1,22 @@
+name       : libkeduvocdocument
+version    : 22.12.1
+release    : 65
+source     :
+    - https://cdn.download.kde.org/stable/release-service/22.12.1/src/libkeduvocdocument-22.12.1.tar.xz : c44d39fcd0f2c23556203a509181b2df8e3f63ff483ed341579e262e98f95b23
+homepage   : https://kde.org/
+license    : GPL-2.0-or-later
+component  : desktop.library
+summary    : Library to parse, convert, and manipulate KVTML files
+description: |
+    Contains KEduVocDocument and its related class for reading from/writing to the KVTML format (and others too).
+optimize   : lto
+builddeps  :
+    - pkgconfig(Qt5Xml)
+    - karchive-devel
+    - kio-devel
+setup      : |
+    %cmake_ninja -DBUILD_TESTING=OFF
+build      : |
+    %ninja_build
+install    : |
+    %ninja_install

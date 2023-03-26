@@ -1,0 +1,26 @@
+name       : ghc
+version    : 8.6.5
+release    : 7
+source     :
+    - https://downloads.haskell.org/~ghc/8.6.5/ghc-8.6.5-src.tar.xz : 4d4aa1e96f4001b934ac6193ab09af5d6172f41f5a5d39d8e43393b9aafee361
+    - https://downloads.haskell.org/~ghc/8.6.5/ghc-8.6.5-testsuite.tar.xz : 21391cb63a8a6b327f6c9519217a3dad39493e72c48967008ae35af142ca895f
+license    : BSD-3-Clause
+component  : programming.haskell
+summary    : The Glasgow Haskell Compiler
+description: |
+    The Glasgow Haskell Compiler
+builddeps  :
+    - ghc-devel
+    - haskell-cabal-install
+setup      : |
+    cp $pkgfiles/build.mk mk/
+    tar xvf $sources/ghc-$version-testsuite.tar.xz  --strip 1
+    ./boot
+    ./configure --prefix=/usr --libdir=/usr/lib64
+build      : |
+    %make V=0
+install    : |
+    %make_install
+patterns   :
+    - docs :
+        - /usr/lib64/*/html

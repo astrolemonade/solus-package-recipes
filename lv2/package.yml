@@ -1,0 +1,21 @@
+name       : lv2
+version    : 1.18.0
+release    : 4
+source     :
+    - git|https://github.com/lv2/lv2.git : v1.18.0
+license    : ISC
+component  : multimedia.library
+summary    : Open standard for audio plugins
+description: |
+    LV2 is an open standard for audio plugins, used by hundreds of plugins and other project. At its core, LV2 is a simple stable interface, accompanied by extensions which add functionality to support the needs of increasingly powerful audio software.
+builddeps  :
+    - pkgconfig(cairo-gl)
+    - pkgconfig(gtk+-2.0)
+    - pkgconfig(sndfile)
+setup      : |
+    %waf_configure --jobs=%YJOBS% --libdir=%libdir% --lv2dir=%libdir%/lv2
+build      : |
+    %waf_build
+install    : |
+    %waf_install
+    ./waf clean

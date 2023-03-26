@@ -1,0 +1,16 @@
+name       : sof-firmware
+version    : 2.2.4
+release    : 9
+source     :
+    - https://github.com/thesofproject/sof-bin/releases/download/v2.2.4/sof-bin-v2.2.4.tar.gz : ce8aaeba103aa56a82662552b0f33f33a859aa1008d8bfbc2c22f0ccfc8c6b3a
+license    :
+    - BSD-3-Clause
+    - ISC
+component  : kernel
+summary    : Sound Open Firmware
+description: |
+    Sound Open Firmware
+install    : |
+    install -dm00755 $installdir/lib/firmware/intel
+    cp -a sof-v$version "$installdir/lib/firmware/intel/sof"
+    cp -a sof-tplg-v$version "$installdir/lib/firmware/intel/sof-tplg"

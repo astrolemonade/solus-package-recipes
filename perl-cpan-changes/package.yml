@@ -1,0 +1,27 @@
+name       : perl-cpan-changes
+version    : '0.400002'
+release    : 7
+source     :
+    - https://cpan.metacpan.org/authors/id/H/HA/HAARG/CPAN-Changes-0.400002.tar.gz : 01eedea90d07468cb58e4a50bfa3bb1d4eeda9073596add1118fc359153abe8d
+license    : Artistic-1.0-Perl
+component  : programming.perl
+summary    : CPAN::Changes - Read and write Changes files
+description: |
+    It is standard practice to include a Changes file in your distribution.
+    The purpose the Changes file is to help a user figure out what has
+    changed since the last release.
+
+    People have devised many ways to write the Changes file. A preliminary
+    specification has been created (CPAN::Changes::Spec) to encourage module
+    authors to write clear and concise Changes.
+
+    This module will help users programmatically read and write Changes
+    files that conform to the specification.
+setup      : |
+    %perl_setup
+build      : |
+    %perl_build
+install    : |
+    %perl_install
+check      : |
+    %make test

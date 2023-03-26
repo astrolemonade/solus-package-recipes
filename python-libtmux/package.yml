@@ -1,0 +1,14 @@
+name       : python-libtmux
+version    : 0.18.2
+release    : 9
+source     :
+    - https://files.pythonhosted.org/packages/55/3b/81083e63772fbfdcdc42edf0908aa854ed7f9baa4ccb01a1ef73d408ae62/libtmux-0.18.2.tar.gz : 61a8245766ccfeebeeb64a66014f3c9a614b108a2b9527f81b30ecf68a6806b1
+license    : MIT
+component  : programming.python
+summary    : Python API for tmux
+description: |
+    libtmux is the tool behind tmuxp, a tmux workspace manager in Python.
+build      : |
+    %python3_setup
+install    : |
+    %python3_install

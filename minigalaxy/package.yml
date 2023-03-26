@@ -1,0 +1,19 @@
+name       : minigalaxy
+version    : 1.2.2
+release    : 10
+source     :
+    - https://github.com/sharkwouter/minigalaxy/archive/refs/tags/1.2.2.tar.gz : 0ae5fc29560d4e02b193274fbfd1df169d500cdb63bb32dee8bbfb30c11f5855
+license    : GPL-3.0-or-later
+homepage   : https://sharkwouter.github.io/minigalaxy
+component  : games
+summary    : A simple GOG client for Linux that lets you download and play your GOG Linux games
+description: |
+    Log in with your GOG account, download linux games you own on GOG, and launch them. Additionally select what language to download your games in, change where they're installed, search your library, show all or only installed games, view error messages if a game fails to launch, display FPS in games, and use the system's Scummvm or Dosbox installation. Languages supported include English, Dutch, French, German, Polish, Taiwanese Mandarin, and Turkish.
+rundeps    :
+    - libwebkit-gtk
+    - python-gobject
+    - python-requests
+build      : |
+    %python3_setup
+install    : |
+    %python3_install

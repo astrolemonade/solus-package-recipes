@@ -1,0 +1,28 @@
+name       : networkmanager-strongswan
+version    : 1.5.2
+release    : 3
+source     :
+    - https://download.strongswan.org/NetworkManager/NetworkManager-strongswan-1.5.2.tar.bz2 : c8452b952653881dcc2745f0ab460c061086215b297129212a743bd9e9f78169
+license    : GPL-2.0-or-later
+component  : network.base
+summary    : strongSwan support for NetworkManager
+description: |
+    strongSwan IPsec VPN plugin for NetworkManager which provides support for EAP, PSK and certificate authentication.
+builddeps  :
+    - pkgconfig(gtk+-3.0)
+    - pkgconfig(libnma)
+    - pkgconfig(libsecret-1)
+    - pkgconfig(libssl)
+rundeps    :
+    - strongswan
+setup      : |
+    %configure --sysconfdir=/etc \
+               --prefix=/usr \
+               --libexecdir=/usr/lib \
+               --with-charon=/usr/lib64/ipsec/charon-nm \
+               --without-libnm-glib \
+               --disable-static
+build      : |
+    %make
+install    : |
+    %make_install

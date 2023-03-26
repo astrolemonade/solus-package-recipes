@@ -1,0 +1,64 @@
+<PISI>
+    <Source>
+        <Name>perl-cpan-changes</Name>
+        <Packager>
+            <Name>Algent Albrahimi</Name>
+            <Email>algent@protonmail.com</Email>
+        </Packager>
+        <License>Artistic-1.0-Perl</License>
+        <PartOf>programming.perl</PartOf>
+        <Summary xml:lang="en">CPAN::Changes - Read and write Changes files</Summary>
+        <Description xml:lang="en">It is standard practice to include a Changes file in your distribution.
+The purpose the Changes file is to help a user figure out what has
+changed since the last release.
+
+People have devised many ways to write the Changes file. A preliminary
+specification has been created (CPAN::Changes::Spec) to encourage module
+authors to write clear and concise Changes.
+
+This module will help users programmatically read and write Changes
+files that conform to the specification.
+</Description>
+        <Archive type="binary" sha1sum="79eb0752a961b8e0d15c77d298c97498fbc89c5a">https://getsol.us/sources/README.Solus</Archive>
+    </Source>
+    <Package>
+        <Name>perl-cpan-changes</Name>
+        <Summary xml:lang="en">CPAN::Changes - Read and write Changes files</Summary>
+        <Description xml:lang="en">It is standard practice to include a Changes file in your distribution.
+The purpose the Changes file is to help a user figure out what has
+changed since the last release.
+
+People have devised many ways to write the Changes file. A preliminary
+specification has been created (CPAN::Changes::Spec) to encourage module
+authors to write clear and concise Changes.
+
+This module will help users programmatically read and write Changes
+files that conform to the specification.
+</Description>
+        <PartOf>programming.perl</PartOf>
+        <Files>
+            <Path fileType="executable">/usr/bin/tidy_changelog</Path>
+            <Path fileType="library">/usr/lib64/perl5/vendor_perl/5.36/CPAN/Changes.pm</Path>
+            <Path fileType="library">/usr/lib64/perl5/vendor_perl/5.36/CPAN/Changes/Group.pm</Path>
+            <Path fileType="library">/usr/lib64/perl5/vendor_perl/5.36/CPAN/Changes/Release.pm</Path>
+            <Path fileType="library">/usr/lib64/perl5/vendor_perl/5.36/CPAN/Changes/Spec.pod</Path>
+            <Path fileType="library">/usr/lib64/perl5/vendor_perl/5.36/Test/CPAN/Changes.pm</Path>
+            <Path fileType="library">/usr/lib64/perl5/vendor_perl/5.36/x86_64-linux-thread-multi/auto/CPAN/Changes/.packlist</Path>
+            <Path fileType="man">/usr/share/man/man1/tidy_changelog.1</Path>
+            <Path fileType="man">/usr/share/man/man3/CPAN::Changes.3</Path>
+            <Path fileType="man">/usr/share/man/man3/CPAN::Changes::Group.3</Path>
+            <Path fileType="man">/usr/share/man/man3/CPAN::Changes::Release.3</Path>
+            <Path fileType="man">/usr/share/man/man3/CPAN::Changes::Spec.3</Path>
+            <Path fileType="man">/usr/share/man/man3/Test::CPAN::Changes.3</Path>
+        </Files>
+    </Package>
+    <History>
+        <Update release="7">
+            <Date>2022-09-23</Date>
+            <Version>0.400002</Version>
+            <Comment>Packaging update</Comment>
+            <Name>Algent Albrahimi</Name>
+            <Email>algent@protonmail.com</Email>
+        </Update>
+    </History>
+</PISI>

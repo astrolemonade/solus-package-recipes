@@ -1,0 +1,42 @@
+name       : oxygen
+version    : 5.26.5
+release    : 78
+source     :
+    - https://cdn.download.kde.org/stable/plasma/5.26.5/oxygen-5.26.5.tar.xz : f8997511ba31211e7ac24876f21797f32413643828a950a2fcfb5faca2859472
+homepage   : https://www.kde.org/workspaces/plasmadesktop/
+license    :
+    - GPL-2.0-or-later
+    - LGPL-2.1-only
+component  :
+    - desktop.theme
+    - sound-theme : desktop.kde.core
+summary    :
+    - Oxygen visual style for the Plasma desktop
+    - sound-theme : System sounds for the Plasma desktop
+description:
+    - Oxygen visual style for the Plasma desktop.
+    - sound-theme : System sounds for the Plasma desktop.
+optimize   : lto
+builddeps  :
+    - pkgconfig(Qt5Quick)
+    - pkgconfig(Qt5X11Extras)
+    - pkgconfig(xcb)
+    - frameworkintegration-devel
+    - kcmutils-devel
+    - kcompletion-devel
+    - kdecoration-devel
+    - kguiaddons-devel
+    - ki18n-devel
+    - kservice-devel
+    - kwayland-devel
+    - kwindowsystem-devel
+patterns   :
+    - devel : /usr/bin/oxygen-demo5
+    - sound-theme : /usr/share/sounds
+setup      : |
+    %cmake_ninja
+build      : |
+    %ninja_build
+install    : |
+    %ninja_install
+    %qml_cache

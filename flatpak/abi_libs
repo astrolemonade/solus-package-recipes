@@ -1,0 +1,5 @@
+flatpak
+flatpak-oci-authenticator
+flatpak-portal
+flatpak-system-helper
+libflatpak.so.0

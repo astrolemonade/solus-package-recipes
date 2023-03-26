@@ -1,0 +1,33 @@
+name       : kguiaddons
+version    : 5.101.0
+release    : 68
+source     :
+    - https://cdn.download.kde.org/stable/frameworks/5.101/kguiaddons-5.101.0.tar.xz : 9894e4193b3cb7b4ed5e3a591cf12043fb87683b09db77e465aa4453c7c757b7
+homepage   : https://community.kde.org/Frameworks
+license    :
+    - GPL-3.0-only
+    - LGPL-2.0-or-later
+component  : programming.tools
+summary    : Utilities for graphical user interfaces.
+description: |
+    Utilities for graphical user interfaces.
+optimize   : lto
+builddeps  :
+    - pkgconfig(Qt5Designer)
+    - pkgconfig(Qt5WaylandClient)
+    - pkgconfig(Qt5X11Extras)
+    - pkgconfig(wayland-client)
+    - pkgconfig(x11)
+    - extra-cmake-modules
+    - plasma-wayland-protocols-devel
+rundeps    :
+    - devel :
+        - extra-cmake-modules
+        - qt5-tools-devel
+setup      : |
+    %cmake_ninja -DBUILD_QCH=ON \
+                -DBUILD_TESTING=OFF
+build      : |
+    %ninja_build
+install    : |
+    %ninja_install

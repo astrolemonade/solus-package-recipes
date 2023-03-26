@@ -1,0 +1,25 @@
+name       : leptonica
+version    : 1.83.0
+release    : 12
+source     :
+    - https://github.com/DanBloomberg/leptonica/archive/refs/tags/1.83.0.tar.gz : 14cf531c2219a1414e8e3c51a3caa5cf021a52e782c4a6561bf64d0ef2119282
+homepage   : http://www.leptonica.org/
+license    : BSD-2-Clause
+component  : programming.library
+summary    : Leptonica image processing and analysis
+description: |
+    Leptonica is a pedagogically-oriented open source library containing software that is broadly useful for image processing and image analysis applications.
+builddeps  :
+    - pkgconfig(libpng)
+    - pkgconfig(libtiff-4)
+    - pkgconfig(libturbojpeg)
+    - pkgconfig(libwebp)
+    - gnuplot # check
+setup      : |
+    %reconfigure --disable-static
+build      : |
+    %make
+install    : |
+    %make_install
+check      : |
+    %make check ||:

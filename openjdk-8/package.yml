@@ -1,0 +1,85 @@
+name       : openjdk-8
+version    : 8.302
+release    : 24
+source     :
+    - https://getsol.us/sources/jdk8u302-ga-all.tar.gz : f85868a56c0d3b422e1ac99d8c2ea669d88609a28c7cb3fd8786523fed5c7013
+license    : GPL-2.0-with-classpath-exception
+component  : programming.java
+homepage   : https://openjdk.java.net/
+summary    : Open implementation of Oracle's Java Development Kit, major version 8
+description: |
+    Open implementation of Oracle's Java Development Kit, major version 8. This package includes both the JDK and its accompanying JRE, with OpenJFX in a separate package.
+builddeps  :
+    - cups-devel
+    - giflib-devel
+    - openjdk-8-devel
+    - pkgconfig(alsa)
+    - pkgconfig(fontconfig)
+    - pkgconfig(x11)
+    - pkgconfig(xext)
+    - pkgconfig(xrender)
+    - pkgconfig(xt)
+    - pkgconfig(xtst)
+    - p7zip
+patterns   :
+    - devel : /usr/lib64/openjdk-8/include
+setup      : |
+    SANECFLAGS="-Wno-error -fno-delete-null-pointer-checks -fno-lifetime-dse"
+    SANECXXFLAGS="$SANECFLAGS -std=c++98"
+    UPDATE_VERSION=${version:2}
+
+    # Now configure
+    bash ./configure --prefix="$installdir/usr" \
+        --with-boot-jdk="/usr/lib64/openjdk-8/" \
+        --with-native-debug-symbols=internal \
+        --with-update-version=$UPDATE_VERSION \
+        --with-build-number=ga \
+        --with-milestone=solus \
+        --with-zlib=system \
+        --with-giflib=system \
+        --enable-unlimited-crypto \
+        --with-extra-cflags="$CFLAGS $SANECFLAGS" \
+        --with-extra-cxxflags="$CXXFLAGS $SANECXXFLAGS" \
+        --with-extra-ldflags="$LDFLAGS" \
+        --with-cacerts-file=%libdir%/openjdk-8/jre/lib/security/cacerts \
+        --with-jobs=%YJOBS%
+build      : |
+    unset LD_AS_NEEDED
+    make SCTP_WERROR= DISABLE_HOTSPOT_OS_VERSION_CHECK=ok all WARNINGS_ARE_ERRORS=
+install    : |
+    make install
+
+    # Rename the library directory
+    install -dm00755 $installdir/%libdir%
+    mv $installdir/usr/jvm/openjdk-*-solus $installdir/%libdir%/openjdk-8
+    rmdir $installdir/usr/jvm
+
+    # Remove license files
+    find $installdir/%libdir%/openjdk-8 \
+        \( -name ASSEMBLY_EXCEPTION -o  \
+           -name LICENSE -o             \
+           -name THIRD_PARTY_README \) -delete
+
+    # Remove symlinks to binaries
+    rm -rf $installdir/usr/bin
+
+    rmdir $installdir/usr/lib64/openjdk-8/jre/lib/applet
+    rm -rf $installdir/usr/lib64/openjdk-8/{demo,sample}
+
+    # Move header files into the correct path
+    install -dm00755 $installdir/usr/include
+    mv $installdir/usr/lib64/openjdk-8/include $installdir/usr/include/openjdk-8
+
+    # Sort out the manpages (with a "-8" suffix)
+    install -dm00755 $installdir/usr/share
+    mv $installdir/usr/lib64/openjdk-8/man $installdir/usr/share
+    # Remove pre-existent link first
+    rm $installdir/usr/share/man/ja
+    mv -f $installdir/usr/share/man/ja_JP.UTF-8 $installdir/usr/share/man/ja
+    find $installdir/usr/share/man -type f -exec rename -- .1 '-8.1' {} \;
+
+    # Add java-8-jar.desktop into usable apps
+    install -Dm00644 $pkgfiles/java-8-jar.desktop -t $installdir/usr/share/applications
+
+    # Symlink header files (because some apps look for them in $JAVA_HOME)
+    ln -s /usr/include/openjdk-8 $installdir/usr/lib64/openjdk-8/include

@@ -1,0 +1,23 @@
+name       : llvm-bolt
+version    : 15.0.1
+release    : 2
+source     :
+    - https://github.com/llvm/llvm-project/archive/b73d2c8c720a8c8e6e73b11be4e27afa6cb75bdf.tar.gz : c027500bf24052caac30488184a32927515b9dd2304ab591ebed8a6227a968d5
+license    : Apache-2.0
+component  : programming.tools
+summary    : Binary Optimization and Layout Tool.
+description: |
+    Binary Optimization and Layout Tool.
+patterns   :
+    - /usr/lib/libbolt_rt*.a
+clang      : yes
+builddeps  :
+    - git
+setup      : |
+    %cmake_ninja -S llvm -DLLVM_ENABLE_ASSERTIONS=ON \
+        -DLLVM_ENABLE_PROJECTS='bolt;clang;lld' \
+        -DLLVM_TARGETS_TO_BUILD='X86'
+install    : |
+    DESTDIR=$installdir %ninja_build install-llvm-bolt install-perf2bolt llvm-bolt-heatmap install-merge-fdata install-llvm-boltdiff install-bolt_rt
+    # ???
+    rm -fr $installdir/home

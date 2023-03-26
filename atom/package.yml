@@ -1,0 +1,45 @@
+name       : atom
+version    : 1.63.0
+release    : 145
+source     :
+    - https://github.com/atom/atom/releases/download/v1.63.0/atom-amd64.tar.gz : d6c6632b92a4e61f7432880c6fd54af28a241c77b992e477ec3f5edd1e0342f3
+license    : MIT
+component  : programming.ide
+summary    : Atom is a hackable text editor for the 21st century.
+description: |
+    Atom is a hackable text editor for the 21st century.
+builddeps  :
+    - pkgconfig(alsa)
+    - pkgconfig(gbm)
+    - pkgconfig(gconf-2.0)
+    - pkgconfig(gnome-keyring-1)
+    - pkgconfig(gtk+-3.0)
+    - pkgconfig(libsecret-1)
+    - pkgconfig(xcomposite)
+    - pkgconfig(xcursor)
+    - pkgconfig(xdamage)
+    - pkgconfig(xi)
+    - pkgconfig(xkbfile)
+    - pkgconfig(xrandr)
+    - pkgconfig(xscrnsaver)
+    - pkgconfig(xtst)
+    - cups-devel
+    - nodejs-devel
+rundeps    :
+    - curl-gnutls
+    - git
+install    : |
+    # Create the install destinations.
+    install -dm00644 $installdir/usr/bin
+    install -dm00644 $installdir/usr/share/atom/
+
+    # The main install of atom.
+    cp -R * $installdir/usr/share/atom/
+
+    # Linking to the bin directory.
+    ln -s /usr/share/atom/resources/app/apm/bin/apm $installdir/usr/bin/apm
+    ln -s /usr/share/atom/atom $installdir/usr/bin/atom
+
+    # Installation of the desktop file and a missing icon file.
+    install -Dm00644 $pkgfiles/atom.desktop %installroot%/usr/share/applications/atom.desktop
+    install -Dm00644 $pkgfiles/icon-512.png %installroot%/usr/share/pixmaps/atom.png

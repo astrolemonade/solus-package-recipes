@@ -1,0 +1,22 @@
+name       : pysolfc
+version    : 2.20.0
+release    : 11
+source     :
+    - https://download.sourceforge.net/project/pysolfc/PySolFC/PySolFC-2.20.0/PySolFC-2.20.0.tar.xz : 630418c3694bbfbf0246a26d03d5b489cb1134c8ef9d5c30a34131697fb34ad0
+homepage   : https://pysolfc.sourceforge.io/
+license    : GPL-3.0-or-later
+component  : games.card
+summary    : PySol Fan Club edition
+description: |
+    PySol Fan Club Edition (PySolFC) is a collection of more than 1000 solitaire card games.
+rundeps    :
+    - pysolfc-cardsets
+    - python-attrs
+    - python-configobj
+    - python-pillow
+    - python-pysol-cards
+    - python3-tkinter
+build      : |
+    %python3_setup
+install    : |
+    %python3_install

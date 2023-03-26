@@ -1,0 +1,56 @@
+name       : akonadi
+version    : 22.12.1
+release    : 82
+source     :
+    - https://cdn.download.kde.org/stable/release-service/22.12.1/src/akonadi-22.12.1.tar.xz : 6db090334990834878cb8fbdc8caedd6797fa0bb47c972c05e1acb028e8360cd
+license    : LGPL-2.1-or-later
+homepage   : https://kde.org
+summary    :
+    - KDE centralized database to store, index and retrieve the user's personal information
+    - mariadb : MariaDB backend for Akonadi
+description:
+    - The Akonadi framework is responsible for providing applications with a centralized database to store, index and retrieve the user's personal information. This includes the user's emails, contacts, calendars, events, journals, alarms, notes, etc.
+    - mariadb : MariaDB backend for Akonadi, opposed to the default SQlite3. Users wanting to run the MariaDB backend require to change Akonadi settings as well as installing this package.
+optimize   :
+    - lto
+component  :
+    - desktop.library
+    - mariadb : desktop.library
+builddeps  :
+    - pkgconfig(accounts-qt5)
+    - pkgconfig(libxslt)
+    - pkgconfig(mariadb)
+    - pkgconfig(sqlite3)
+    - kaccounts-integration-devel
+    - kcrash-devel
+    - kiconthemes-devel
+    - kio-devel
+    - kitemmodels-devel
+    - libboost-devel
+rundeps    :
+    - akonadi-mariadb # It's temporary.
+    - devel :
+        - kitemmodels-devel
+        - libboost-devel
+    - mariadb :
+        - mariadb-server
+setup      : |
+    %cmake_ninja \
+        -DBUILD_TESTING=OFF \
+        -DDATABASE_BACKEND=SQLITE \
+        -DINSTALL_APPARMOR=ON
+build      : |
+    %ninja_build
+install    : |
+    %ninja_install
+    rm $installdir/etc/apparmor.d/{mysql*,postgres*}
+patterns   :
+    - devel :
+        - /usr/bin/akonadi_knut_resource
+        - /usr/lib64/qt5/plugins/akonadi/akonadi_test_searchplugin.so
+        - /usr/share/akonadi/agents/knutresource.desktop
+        - /usr/share/kf5/akonadi_knut_resource/knut-template.xml
+        - /usr/share/locale/*/LC_MESSAGES/akonadi_knut_resource.mo
+    - mariadb :
+        - /etc/apparmor.d/mariadbd*
+        - /etc/xdg/akonadi/mysql* # TODO: stateless

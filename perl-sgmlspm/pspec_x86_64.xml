@@ -1,0 +1,41 @@
+<PISI>
+    <Source>
+        <Name>perl-sgmlspm</Name>
+        <Packager>
+            <Name>Algent Albrahimi</Name>
+            <Email>algent@protonmail.com</Email>
+        </Packager>
+        <License>GPL-2.0-or-later</License>
+        <PartOf>programming.perl</PartOf>
+        <Summary xml:lang="en">A perl class library for sgmls and nsgmls parsers</Summary>
+        <Description xml:lang="en">A perl class library for sgmls and nsgmls parsers
+</Description>
+        <Archive type="binary" sha1sum="79eb0752a961b8e0d15c77d298c97498fbc89c5a">https://getsol.us/sources/README.Solus</Archive>
+    </Source>
+    <Package>
+        <Name>perl-sgmlspm</Name>
+        <Summary xml:lang="en">A perl class library for sgmls and nsgmls parsers</Summary>
+        <Description xml:lang="en">A perl class library for sgmls and nsgmls parsers
+</Description>
+        <PartOf>programming.perl</PartOf>
+        <Files>
+            <Path fileType="executable">/usr/bin/sgmlspl.pl</Path>
+            <Path fileType="library">/usr/lib64/perl5/vendor_perl/5.36/SGMLS.pm</Path>
+            <Path fileType="library">/usr/lib64/perl5/vendor_perl/5.36/SGMLS/Output.pm</Path>
+            <Path fileType="library">/usr/lib64/perl5/vendor_perl/5.36/SGMLS/Refs.pm</Path>
+            <Path fileType="library">/usr/lib64/perl5/vendor_perl/5.36/sgmlspl-specs/skel.pl</Path>
+            <Path fileType="man">/usr/share/man/man3/SGMLS.3</Path>
+            <Path fileType="man">/usr/share/man/man3/SGMLS::Output.3</Path>
+            <Path fileType="man">/usr/share/man/man3/SGMLS::Refs.3</Path>
+        </Files>
+    </Package>
+    <History>
+        <Update release="6">
+            <Date>2022-09-25</Date>
+            <Version>1.1</Version>
+            <Comment>Packaging update</Comment>
+            <Name>Algent Albrahimi</Name>
+            <Email>algent@protonmail.com</Email>
+        </Update>
+    </History>
+</PISI>

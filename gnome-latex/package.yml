@@ -1,0 +1,31 @@
+name       : gnome-latex
+version    : 3.42.0
+release    : 18
+source     :
+    - https://download.gnome.org/sources/gnome-latex/3.42/gnome-latex-3.42.0.tar.xz : 01231e70413758d1aed6960daa1a2281fa9135a605910ba874ced5327dcb8543
+homepage   : https://gitlab.gnome.org/swilmet/gnome-latex
+license    : GPL-3.0-or-later
+component  : editor
+summary    : LaTeXila is an Integrated LaTeX Environment for the GNOME desktop
+description: |
+    LaTeXila is an Integrated LaTeX Environment for the GNOME desktop
+replaces   :
+    - latexila
+builddeps  :
+    - pkgconfig(dconf)
+    - pkgconfig(gee-0.8)
+    - pkgconfig(gsettings-desktop-schemas)
+    - pkgconfig(gspell-1)
+    - pkgconfig(gtksourceview-4)
+    - pkgconfig(tepl-6)
+    - itstool
+    - vala
+    - yelp-tools
+rundeps    :
+    - texlive
+setup      : |
+    %configure --disable-static
+build      : |
+    %make
+install    : |
+    %make_install

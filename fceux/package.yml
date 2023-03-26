@@ -1,0 +1,28 @@
+name       : fceux
+version    : 2.6.4
+release    : 11
+source     :
+    - https://downloads.sourceforge.net/project/fceultra/Source%20Code/2.6.4%20src/fceux-2.6.4.tar.gz : cc2f153076af0969cec2d8ab33077af98f820ef89bfcea7f72c50cb2c2a22df6
+license    : GPL-2.0-later
+component  : games.emulator
+summary    : NES/Famicom Emulator
+description: |
+    FCEUX is a Nintendo Entertainment System (NES), Famicom, Famicom Disk System (FDS), and Dendy emulator. It supports PAL (European), NTSC (USA/JPN), and Hybrid (PAL) modes.
+builddeps  :
+    - pkgconfig(lua-5.1)
+    - pkgconfig(minizip)
+    - pkgconfig(opengl)
+    - pkgconfig(Qt6Widgets)
+    - pkgconfig(sdl2)
+setup      : |
+    %patch -p1 < $pkgfiles/0001-Allow-defaults-for-native-file-dialog-and-native-men.patch
+    sed -i 's*//#define PUBLIC_RELEASE*#define PUBLIC_RELEASE*' src/version.h
+    %cmake_ninja -DGLVND=true -DUSE_NATIVE_FILE_DIALOG=true -DQT6=true
+build      : |
+    %ninja_build
+install    : |
+    %ninja_install
+
+    # Make fceux work with icon themes
+    mv $installdir/usr/share/pixmaps/fceux1.png $installdir/usr/share/pixmaps/fceux.png
+    install -Dm00644 $pkgfiles/fceux.desktop $installdir/usr/share/applications/fceux.desktop

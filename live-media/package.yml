@@ -1,0 +1,18 @@
+name       : live-media
+version    : 2022.11.19
+release    : 5
+source     :
+    - http://www.live555.com/liveMedia/public/live.2022.11.19.tar.gz : 75c2ec38d85a861890d4d214b88ecfc8572d169bbbe1bcd76cfbfa6718d09699
+homepage   : http://www.live555.com/
+license    : LGPL-3.0-or-later
+component  : multimedia.library
+summary    : A set of C++ libraries for multimedia streaming
+description: |
+    A set of C++ libraries for multimedia streaming, using open standard protocols (RTP/RTCP, RTSP, SIP).
+setup      : |
+    sed -e 's/$(INCLUDES) -I. -O2 -DSOCKLEN_T/$(INCLUDES) -I. -O2 -I. -fPIC -DRTSPCLIENT_SYNCHRONOUS_INTERFACE=1 -DSOCKLEN_T/g' -i config.linux
+    ./genMakefiles linux
+build      : |
+    %make PREFIX=/usr LIBDIR=%libdir%
+install    : |
+    %make_install PREFIX=/usr LIBDIR=%libdir%

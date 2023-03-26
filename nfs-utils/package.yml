@@ -1,0 +1,47 @@
+name       : nfs-utils
+version    : 2.5.4
+release    : 15
+source     :
+    - https://sourceforge.net/projects/nfs/files/nfs-utils/2.5.4/nfs-utils-2.5.4.tar.xz/download : 546ce4b51eeebc66e354b6cc6ca0ce509437efbdef0caaf99389534eef0e598b
+license    : GPL-2.0-or-later
+component  : network.utils
+summary    :
+    - Network File System Utilities
+description: |
+    Network File System Utilities
+replaces   :
+    - libnfsidmap
+    - devel : libnfsidmap-devel
+builddeps  :
+    - pkgconfig(devmapper)
+    - pkgconfig(keyutils)
+    - pkgconfig(krb5)
+    - pkgconfig(libcap)
+    - pkgconfig(libevent)
+    - pkgconfig(libtirpc)
+    - pkgconfig(sqlite3)
+    - rpcsvc-proto-devel
+rundeps    :
+    - rpcbind
+environment: |
+    export CFLAGS="${CFLAGS} -fcommon"
+setup      : |
+    %configure --disable-static \
+      --without-tcp-wrappers \
+      --with-pluginpath=%libdir%/libnfsidmap \
+      --with-systemd \
+      --with-statedir=/run/nfs \
+      --enable-libmount-mount \
+      --enable-ipv6 \
+      --enable-svcgss # Required if gssproxy is not available
+build      : |
+    %make
+install    : |
+    %make_install
+
+    install -Dm00644 utils/nfsidmap/id_resolver.conf $installdir/etc/request-key.d/id_resolver.conf
+    install -m00644 nfs.conf $installdir/etc/nfs.conf
+    install -m00644 support/nfsidmap/idmapd.conf $installdir/etc/idmapd.conf
+    install -m00644 utils/mount/nfsmount.conf $installdir/etc/nfsmount.conf
+
+    install -Dm00644 $pkgfiles/nfs-utils.tmpfiles $installdir/%libdir%/tmpfiles.d/nfs-utils.conf

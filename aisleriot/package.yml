@@ -1,0 +1,38 @@
+name       : aisleriot
+version    : 3.22.28
+release    : 29
+source     :
+    - https://gitlab.gnome.org/GNOME/aisleriot/-/archive/3.22.28/aisleriot-3.22.28.tar.gz : 3a81c92ce51bdb2d7b3d717a0b9497722684431f08a43cb7ea7624b9c188b684
+license    :
+    - LGPL-3.0-or-later
+    - GPL-3.0-or-later
+    - GFDL-1.1
+component  : games.card
+summary    : Gnome Aisleriot Card Game
+description: |
+    Gnome Aisleriot Card Game
+builddeps  :
+    - pkgconfig(bdw-gc)
+    - pkgconfig(gconf-2.0)
+    - pkgconfig(gtk+-3.0)
+    - pkgconfig(guile-2.0)
+    - pkgconfig(libcanberra-gtk3)
+    - pkgconfig(librsvg-2.0)
+    - desktop-file-utils
+    - itstool
+    - pysolfc
+    - pysolfc-cardsets
+rundeps    :
+    - pysolfc
+    - pysolfc-cardsets
+clang      : no
+setup      : |
+    %meson_configure \
+        -Ddefault_theme_format=svg-rsvg \
+        -Dtheme_kde=false \
+        -Dtheme_pysol=true \
+        -Dtheme_pysol_path=/usr/share/PySolFC/
+build      : |
+    %ninja_build
+install    : |
+    %ninja_install

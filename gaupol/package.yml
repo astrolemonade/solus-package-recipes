@@ -1,0 +1,24 @@
+name       : gaupol
+version    : '1.12'
+release    : 19
+source     :
+    - https://github.com/otsaloma/gaupol/archive/refs/tags/1.12.tar.gz : f10b725cd37c3745016c671b18788dd9eb5930d5fa907d098dd290f6933874f5
+license    : GPL-3.0-or-later
+homepage   : https://otsaloma.io/gaupol/
+component  : multimedia.video
+summary    : Editor for text-based subtitle files.
+description: |
+    Gaupol is an editor for text-based subtitle files. It supports multiple subtitle file formats and provides means of creating, editing and translating subtitles and timing subtitles to match video.
+builddeps  :
+    - pkgconfig(python3)
+rundeps    :
+    - gstreamer-1.0-plugins-bad
+    - gstreamer-1.0-plugins-good
+    - gspell
+    - iso-codes
+    - python-chardet
+    - python-gobject
+build      : |
+    %python3_setup
+install    : |
+    %python3_install

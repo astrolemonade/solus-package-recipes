@@ -1,0 +1,43 @@
+name       : geary
+version    : '43.0'
+release    : 36
+source     :
+    - https://download.gnome.org/sources/geary/43/geary-43.0.tar.xz : 489166f87dd9d29011f5e5b79694f2588b473f7e191c59ce9013c8c8e0e363e7
+license    :
+    - BSD-2-Clause # Snowball
+    - CC-BY-SA-3.0 # Icons
+    - LGPL-2.1-or-later # Source
+summary    : Geary is a mail client for GNOME
+description: |
+    Geary is a mail client for GNOME
+component  : network.mail
+clang      : yes
+builddeps  :
+    - pkgconfig(appstream-glib)
+    - pkgconfig(enchant-2)
+    - pkgconfig(folks)
+    - pkgconfig(gcr-3)
+    - pkgconfig(gee-0.8)
+    - pkgconfig(gmime-3.0)
+    - pkgconfig(goa-1.0)
+    - pkgconfig(gsound)
+    - pkgconfig(gspell-1)
+    - pkgconfig(json-glib-1.0)
+    - pkgconfig(libhandy-1)
+    - pkgconfig(libpeas-1.0)
+    - pkgconfig(libsecret-1)
+    - pkgconfig(libunwind)
+    - pkgconfig(libytnef)
+    - pkgconfig(sqlite3)
+    - pkgconfig(webkit2gtk-4.1)
+    - desktop-file-utils
+    - itstool
+    - libstemmer-devel
+    - valadoc
+setup      : |
+    %apply_patches
+    %meson_configure -Dprofile=release
+build      : |
+    %ninja_build
+install    : |
+    %ninja_install

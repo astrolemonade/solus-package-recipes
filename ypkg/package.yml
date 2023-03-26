@@ -1,0 +1,26 @@
+name       : ypkg
+version    : '31'
+release    : 156
+source     :
+    - git|https://github.com/getsolus/ypkg.git : 6dce88063c096b702272c4d4ffb1129cbb4b1d82
+license    : GPL-3.0-or-later
+component  : system.devel
+summary    : Modern, declarative, structured build format
+description: |
+    ypkg is the build tool of choice for Solus. Simply put, it is a tool to convert a build process into a packaging operation.
+mancompress: yes
+builddeps  :
+    - python-setuptools
+rundeps    :
+    - fakeroot
+    - python-configobj
+    - pyyaml
+    - ruamel_yaml
+build      : |
+    %python_setup
+install    : |
+    %python_install
+    # These are going to be replaced by ypkg-tools
+    install -Ddm00755 $installdir/usr/share/ypkg
+    ln -sv ../../bin/yupdate $installdir/usr/share/ypkg/yupdate.py
+    ln -sv ../../bin/ybump $installdir/usr/share/ypkg/ybump.py

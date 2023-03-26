@@ -1,0 +1,23 @@
+name       : python2-importlib-metadata
+version    : 2.1.1
+release    : 1
+source     :
+    - https://pypi.io/packages/source/i/importlib_metadata/importlib_metadata-2.1.1.tar.gz : b8de9eff2b35fb037368f28a7df1df4e6436f578fa74423505b6c6a778d5b5dd
+homepage   : https://github.com/python/importlib_metadata
+license    : GPL-2.0-or-later
+component  : programming.python
+summary    : importlib_metadata is a library to access the metadata for a Python package
+description: |
+    importlib_metadata is a library which provides an API for accessing an installed package’s metadata, such as its entry points or its top-level name.
+builddeps  :
+    - python-setuptools
+    - python2-setuptools-scm
+rundeps    :
+    - python-contextlib2
+    - python-configparser
+    - python-pathlib2
+    - python-zipp
+build      : |
+    %python_setup
+install    : |
+    %python_install

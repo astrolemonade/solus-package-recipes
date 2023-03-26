@@ -1,0 +1,46 @@
+name       : gopass
+version    : 1.15.3
+release    : 28
+source     :
+    - https://github.com/gopasspw/gopass/releases/download/v1.15.3/gopass-1.15.3.tar.gz : 8b7db652c78957fea1a7444286fe535edc0a2f799a873392686ec6a2569b1809
+    - https://github.com/gopasspw/git-credential-gopass/releases/download/v1.15.3/git-credential-gopass-1.15.3.tar.gz : 69f31756ebf26ea6d75bf65227faca911ccdc0eb5ed25cc65a8d56bef8e4e87d
+    - https://github.com/gopasspw/gopass-hibp/releases/download/v1.15.3/gopass-hibp-1.15.3.tar.gz : 83b6ca6ac738a080d9086d750e60cb1b7374cf7efcefba178683ba222c17dba6
+    - https://github.com/gopasspw/gopass-jsonapi/releases/download/v1.15.3/gopass-jsonapi-1.15.3.tar.gz : 15f1d7a80f29f1741d7d37402432c12a0d331b2587c91d17485d284af1b20dcc
+    - https://github.com/gopasspw/gopass-summon-provider/releases/download/v1.15.3/gopass-summon-provider-1.15.3.tar.gz : fc9abd351b2e59e2d8eff389b39039d0a53bd585ae7475d674dbb112235ed5bf
+license    : MIT
+component  : security
+networking : yes
+summary    : The slightly more awesome standard unix password manager for teams
+description: |
+    gopass is a rewrite of the pass password manager in Go with the aim of making it cross-platform and adding additional features.
+builddeps  :
+    - golang
+rundeps    :
+    - git
+    - gnupg
+    - xdotool
+    - xsel
+setup      : |
+    for i in git-credential-gopass gopass-{hibp,jsonapi,summon-provider}; do
+        mkdir -p integrations/$i
+        tar -x -C integrations/$i -f $sources/$i-*.tar.gz
+    done
+
+    # Remove missing install-completion target
+    # See: https://github.com/gopasspw/git-credential-gopass/issues/3
+    sed -i 's/install-completion//' integrations/*/Makefile
+build      : |
+    %make
+    for i in integrations/*; do
+        %make -C $i
+    done
+install    : |
+    %make_install PREFIX=/usr
+    for i in integrations/*; do
+        %make_install -C $i PREFIX=/usr
+    done
+
+    # Set correct permission bits for the shell completion files
+    chmod 644 $installdir/usr/share/zsh/site-functions/_gopass
+    chmod 644 $installdir/usr/share/bash-completion/completions/gopass
+    chmod 644 $installdir/usr/share/fish/vendor_completions.d/gopass.fish

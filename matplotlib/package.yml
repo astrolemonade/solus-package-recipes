@@ -1,0 +1,39 @@
+name       : matplotlib
+version    : 3.6.2
+release    : 33
+source     :
+    - https://github.com/matplotlib/matplotlib/archive/refs/tags/v3.6.2.tar.gz : 5ac5ca25e6ecd1e7711e1f859b4b6f74f290ef517387d1502bf8012bf2b1647e
+homepage   : https://matplotlib.org/
+license    : Python-2.0
+component  : programming.python
+summary    : Python plotting library
+description: |
+    matplotlib strives to produce publication quality 2D graphics for interactive graphing, scientific publishing, user interface development and web application servers targeting multiple user interfaces and hardcopy output formats. There is a ‘pylab’ mode which emulates matlab graphics.
+builddeps  :
+    - pkgconfig(freetype2)
+    - pkgconfig(python3)
+    - pkgconfig(qhull_r)
+    - pkgconfig(tk)
+    - pkgconfig(x11)
+    - numpy
+    - python-certifi
+    - python3-tkinter
+    - python-setuptools-scm-git-archive
+rundeps    :
+    - cycler
+    - pyparsing
+    - python-contourpy
+    - python-dateutil
+    - python-fonttools
+    - python-kiwisolver
+    - python-pillow
+    - python-pytz
+    - python3-tkinter
+setup      : |
+    # Use system freetype
+    sed -e 's|#system_freetype = False|system_freetype = True|' -e 's|#system_qhull = False|system_qhull = True|' mplsetup.cfg.template > mplsetup.cfg
+build      : |
+    export CFLAGS="$CFLAGS -I/usr/include"
+    %python3_setup
+install    : |
+    %python3_install

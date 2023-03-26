@@ -1,0 +1,21 @@
+name       : moolticute
+version    : 0.21.0
+release    : 1
+source     :
+    - https://github.com/mooltipass/moolticute/archive/v0.21.0.tar.gz : 7f96878e00b59fe2b5966bca0a3544279ac2a4ff70e00be5097f96359f188558
+license    : GPL-3.0-or-later
+component  : security.utils
+summary    : Moolticute aims to be an easy companion to your Mooltipass device and extend the power of the device to more platform/tools.
+description: |
+    Moolticute aims to be an easy companion to your Mooltipass device and extend the power of the device to more platform/tools. With it you can manage your Mooltipass with a cross-platform app, as well as provide a daemon service that handle all USB communication with the device.
+    This tool is written with a daemon that runs in background, and a user interface app to control you Mooltipass. Other clients could also connect and talk to the daemon (it uses a websocket connection and simple JSON messages). The official Mooltipass App only works with Chrome as it relies on USB HID library that is only implemented in Chrome. A Firefox (or any other browser) extension could easily be written by using the Moolticute daemon.
+    It is completely cross platform, and runs on Linux (using libusb), OS X (native IOKit API), and Windows (native HID API).
+builddeps  :
+    - pkgconfig(libusb)
+    - pkgconfig(Qt5UiTools)
+    - pkgconfig(Qt5WebSockets)
+build      : |
+    %qmake ./Moolticute.pro PREFIX=/usr
+install    : |
+    %make_install INSTALL_ROOT=$installdir
+    install -Dm00644 $pkgfiles/50-mooltipass.rules $installdir/%libdir%/udev/rules.d/50-mooltipass.rules

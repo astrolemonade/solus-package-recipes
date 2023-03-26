@@ -1,0 +1,30 @@
+name       : qt5-declarative
+version    : 5.15.8
+release    : 41
+source     :
+    - git|https://invent.kde.org/qt/qt/qtdeclarative.git : e53eec414af66f72046960693d5b6ac8060fb384
+homepage   : https://www.qt.io
+license    :
+    - LGPL-3.0-or-later
+    - LGPL-3.0-or-later
+    - GFDL-1.3-or-later
+    - GPL-3.0-or-later
+component  :
+    - desktop.qt
+    - demos : programming.library
+summary    : Qt 5 Declarative Library
+description: |
+    Qt is a set of libraries for developing applications. This package contains base tools, like string, xml, and network handling.
+builddeps  :
+    - pkgconfig(gl)
+    - pkgconfig(Qt5Network)
+    - vulkan-headers
+patterns   :
+    - demos :
+        - /usr/lib64/qt5/examples
+setup      : |
+    %qmake CONFIG+=release qtdeclarative.pro
+build      : |
+    %make
+install    : |
+    %make_install INSTALL_ROOT=$installdir

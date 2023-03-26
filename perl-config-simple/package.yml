@@ -1,0 +1,16 @@
+name       : perl-config-simple
+version    : 4.59
+release    : 8
+source     :
+    - http://search.cpan.org/CPAN/authors/id/S/SH/SHERZODR/Config-Simple-4.59.tar.gz : cb78a975ad8463f992f35f392227aaf188d533c9092373742b3c2bb592781054
+license    : Artistic-2.0
+component  : programming.perl
+summary    : Simple configuration file class
+description: |
+    Simple configuration file class.
+setup      : |
+    %perl_setup
+build      : |
+    %perl_build
+install    : |
+    %perl_install

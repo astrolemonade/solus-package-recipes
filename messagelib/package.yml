@@ -1,0 +1,43 @@
+name       : messagelib
+version    : 22.12.1
+release    : 72
+source     :
+    - https://cdn.download.kde.org/stable/release-service/22.12.1/src/messagelib-22.12.1.tar.xz : fe34c7ea0a353899dabbfd9bde44d419772d5f6c2ee5650b5ecd15bdf9b08227
+homepage   : https://kde.org/
+license    :
+    - GPL-2.0-only
+    - LGPL-2.1-or-later
+component  : desktop.library
+summary    : KDE PIM messaging library
+description: |
+    KDE PIM messaging library.
+builddeps  :
+    - pkgconfig(Qt5WebEngine)
+    - pkgconfig(qca2-qt5)
+    - akonadi-contacts-devel
+    - akonadi-mime-devel
+    - akonadi-search-devel
+    - karchive-devel
+    - kcontacts-devel
+    - kdbusaddons-devel
+    - kguiaddons-devel
+    - kiconthemes-devel
+    - kidentitymanagement-devel
+    - kimap-devel
+    - kio-devel
+    - kldap-devel
+    - kmailtransport-devel
+    - kmbox-devel
+    - knewstuff-devel
+    - knotifications-devel
+    - libgravatar-devel
+    - libkdepim-devel
+    - libkleo-devel
+    - pimcommon-devel
+    - syntax-highlighting-devel
+setup      : |
+    %cmake_ninja -DBUILD_TESTING=OFF
+build      : |
+    %ninja_build
+install    : |
+    %ninja_install

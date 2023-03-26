@@ -1,0 +1,26 @@
+name       : perl-io-socket-ssl
+version    : '2.075'
+release    : 15
+source     :
+    - https://cpan.metacpan.org/authors/id/S/SU/SULLR/IO-Socket-SSL-2.075.tar.gz : c30ee2220b1e181a968ebbc81861d0cadf334b001377a44105ae5a8637ddae8c
+homepage   : https://github.com/noxxi/p5-io-socket-ssl
+license    : Artistic-1.0-Perl
+component  : programming.perl
+summary    : IO::Socket::SSL -- Nearly transparent SSL encapsulation for IO::Socket::INET
+description: |
+    IO::Socket::SSL makes using SSL/TLS much easier by wrapping the necessary functionality into the familiar IO::Socket interface and providing secure defaults whenever possible. This way, existing applications can be made SSL-aware without much effort, at least if you do blocking I/O and don't use select or poll.
+builddeps  :
+    - perl-mozilla-ca
+    - perl-net-ssleay
+rundeps    :
+    - perl-mozilla-ca
+    - perl-net-ssleay
+setup      : |
+    # Stop prompts at build time
+    %perl_setup < /dev/null
+build      : |
+    %perl_build
+install    : |
+    %perl_install
+check      : |
+    %perl_build test

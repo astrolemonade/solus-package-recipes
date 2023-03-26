@@ -1,0 +1,21 @@
+name       : kunitconversion
+version    : 5.101.0
+release    : 64
+source     :
+    - https://cdn.download.kde.org/stable/frameworks/5.101/kunitconversion-5.101.0.tar.xz : 7bb2c342a549b5847b44a852c8ab85e48a5509201980f1ff98961c3096868c48
+homepage   : https://community.kde.org/Frameworks
+license    : LGPL-2.0-or-later
+component  : programming.library
+summary    : Converting physical units
+description: |
+    KUnitConversion provides functions to convert values in different physical units. It supports converting different prefixes (e.g. kilo, mega, giga) as well as converting between different unit systems (e.g. liters, gallons).
+optimize   : lto
+builddeps  :
+    - ki18n-devel
+setup      : |
+    %cmake_ninja -DBUILD_QCH=ON \
+                -DBUILD_TESTING=OFF
+build      : |
+    %ninja_build
+install    : |
+    %ninja_install

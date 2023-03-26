@@ -1,0 +1,29 @@
+name       : extra-cmake-modules
+version    : 5.101.0
+release    : 69
+source     :
+    - https://cdn.download.kde.org/stable/frameworks/5.101/extra-cmake-modules-5.101.0.tar.xz : 8c4c561310db587d390a6c84afc97e1addbaddd73b9d7a4c7309c5da9b9bc8f2
+homepage   : https://community.kde.org/Frameworks
+license    :
+    - BSD-2-Clause
+    - BSD-3-Clause
+    - MIT
+component  : programming.devel
+summary    : Extra cmake modules and scripts for KF5.
+description: |
+    Extra cmake modules and scripts for KF5.
+builddeps  :
+    - pkgconfig(Qt5Designer)
+    - doxygen
+    - python-sphinx
+rundeps    :
+    - doxygen
+setup      : |
+    %apply_patches
+    %cmake_ninja -DBUILD_QTHELP_DOCS=ON \
+                -DBUILD_TESTING=OFF
+build      : |
+    %ninja_build
+install    : |
+    %ninja_install
+    rm -rf $installdir/usr/share/doc/ECM/html

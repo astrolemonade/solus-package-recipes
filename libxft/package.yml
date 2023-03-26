@@ -1,0 +1,28 @@
+name       : libxft
+version    : 2.3.6
+release    : 14
+source     :
+    - http://xorg.freedesktop.org/releases/individual/lib/libXft-2.3.6.tar.gz : b7e59f69e0bbabe9438088775f7e5a7c16a572e58b11f9722519385d38192df5
+license    : MIT
+component  : xorg.library
+summary    : FreeType-based font drawing library for X
+description: |
+    Xft provides a client-side font API for X applications, making the FreeType font rasterizer available to X clients. Fontconfig is used for font specification resolution. Where available, the RENDER extension handles glyph drawing; otherwise, the core X protocol is used.
+emul32     : yes
+optimize   : speed
+builddeps  :
+    - pkgconfig32(fontconfig)
+    - pkgconfig32(freetype2)
+    - pkgconfig32(xrender)
+    - pkgconfig32(x11)
+    - pkgconfig(xproto)
+patterns   :
+    - devel :
+        - /usr/share/man
+setup      : |
+    %configure --prefix=/usr \
+               --disable-static
+build      : |
+    %make
+install    : |
+    %make_install

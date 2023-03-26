@@ -1,0 +1,29 @@
+name       : kactivities
+version    : 5.101.0
+release    : 64
+source     :
+    - https://cdn.download.kde.org/stable/frameworks/5.101/kactivities-5.101.0.tar.xz : f708b04b35adcee7dbbb2a21327417ad2082e3dc610f8527c7875049a5f781ac
+homepage   : https://community.kde.org/Frameworks
+license    :
+    - GPL-2.0-or-later
+    - LGPL-2.0-or-later
+    - LGPL-2.1-only
+    - MIT
+component  : programming.library
+summary    : Core components for the KDE Activity concept
+description: |
+    KActivities provides the infrastructure needed to manage a user's activites, allowing them to switch between tasks, and for applications to update their state to match the user's current activity. This includes a daemon, a library for interacting with that daemon, and plugins for integration with other frameworks.
+optimize   : lto
+builddeps  :
+    - pkgconfig(Qt5Quick)
+    - kconfig-devel
+    - kcoreaddons-devel
+    - kwindowsystem-devel
+    - libboost-devel
+setup      : |
+    %cmake_ninja -DBUILD_QCH=ON \
+                -DBUILD_TESTING=OFF
+build      : |
+    %ninja_build
+install    : |
+    %ninja_install

@@ -1,0 +1,35 @@
+name       : ark
+version    : 22.12.1
+release    : 70
+source     :
+    - https://cdn.download.kde.org/stable/release-service/22.12.1/src/ark-22.12.1.tar.xz : 270c245b3be8fd373704a05889507a6b36ec6de760339b30766beede591b7e0c
+homepage   : https://kde.org/applications/utilities/org.kde.ark
+license    : GPL-2.0-or-later
+component  : desktop.kde.core
+summary    : A graphical file compression/decompression utility
+description: |
+    Ark is a graphical file compression/decompression utility with support for multiple formats, including tar, gzip, bzip2, rar and zip, as well as CD-ROM images.
+optimize   : lto
+builddeps  :
+    - pkgconfig(libarchive)
+    - pkgconfig(libunarr)
+    - pkgconfig(libzip)
+    - bzip2-devel
+    - karchive-devel
+    - kcrash-devel
+    - kdbusaddons-devel
+    - kdoctools-devel
+    - kitemmodels-devel
+    - kparts-devel
+    - kpty-devel
+rundeps    :
+    - unrar
+setup      : |
+    %cmake_ninja -DBUILD_TESTING=OFF
+build      : |
+    %ninja_build
+install    : |
+    %ninja_install
+
+    # remove docs
+    rm -rf $installdir/usr/share/doc

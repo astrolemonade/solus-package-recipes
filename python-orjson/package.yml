@@ -1,0 +1,30 @@
+name       : python-orjson
+version    : 3.8.6
+release    : 22
+source     :
+    - https://github.com/ijl/orjson/archive/3.8.6.tar.gz : 36b584885ed5213e6d842ac17576201f018c90209154c7cdb42762ecc0e97ed3
+license    :
+    - Apache-2.0
+    - MIT
+component  : programming.python
+networking : yes
+summary    : Fast, correct Python JSON library
+description: |
+    Fast, correct Python JSON library supporting dataclasses, datetimes, and numpy
+clang      : yes
+builddeps  :
+    - cargo
+    - numpy #check
+    - python-arrow #check
+    - python-installer
+    - python-maturin
+    - python-psutil #check
+    - python-pytest #check
+    - python-pytz #check
+    - python-tomli
+build      : |
+    maturin build --release --strip --manylinux off
+install    : |
+    python3 -m installer --destdir=$installdir target/wheels/*.whl
+check      : |
+    %python3_test pytest3

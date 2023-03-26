@@ -1,0 +1,48 @@
+name       : kdeconnect
+version    : 22.12.1
+release    : 54
+source     :
+    - https://cdn.download.kde.org/stable/release-service/22.12.1/src/kdeconnect-kde-22.12.1.tar.xz : a7ba7ab0a132dbc3bbc81559551e90e6b0274ae3a722e4778063a9c556c4df9f
+license    : GPL-2.0-or-later
+component  : desktop.kde
+summary    : KDE Connect adds communication between KDE and your smartphone.
+description: |
+    KDE Connect is a multi-platform app that allows your devices to communicate (eg: your phone and your computer).
+builddeps  :
+    - pkgconfig(fuse)
+    - pkgconfig(qca2-qt5)
+    - pkgconfig(Qt5Multimedia)
+    - pkgconfig(Qt5QuickControls2)
+    - pkgconfig(Qt5WaylandClient)
+    - pkgconfig(Qt5X11Extras)
+    - pkgconfig(xtst)
+    - extra-cmake-modules
+    - kcmutils-devel
+    - kdbusaddons-devel
+    - kdoctools-devel
+    - kguiaddons-devel
+    - kiconthemes-devel
+    - kio-devel
+    - kirigami2-devel
+    - knotifications-devel
+    - kpackage-devel
+    - kpeople-devel
+    - kpeoplevcard-devel
+    - kwayland-devel
+    - libfakekey-devel
+    - plasma-wayland-protocols-devel
+    - pulseaudio-qt-devel
+    - qqc2-desktop-style-devel
+rundeps    :
+    - sshfs-fuse
+    - kpeoplevcard
+setup      : |
+    %cmake_ninja -DBUILD_TESTING=OFF
+build      : |
+    %ninja_build
+install    : |
+    %ninja_install
+    %qml_cache
+
+    # remove doc
+    rm -rf $installdir/usr/share/doc

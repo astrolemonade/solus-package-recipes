@@ -1,0 +1,24 @@
+name       : vapoursynth
+version    : '61'
+release    : 40
+source     :
+    - https://github.com/vapoursynth/vapoursynth/archive/refs/tags/R61.tar.gz : a5d4feeb056679dd1204153250d7c1d38e5a639e995d3c4e3a8e2e8fe1425b75
+license    :
+    - LGPL-2.1-or-later
+    - OFL-1.1
+component  : multimedia.library
+summary    : A video processing framework with simplicity in mind
+description: |
+    A video processing framework with simplicity in mind.
+libsplit   : no
+builddeps  :
+    - pkgconfig(python3)
+    - pkgconfig(zimg)
+    - cython
+setup      : |
+    %autogen --disable-static
+build      : |
+    %make
+install    : |
+    %make_install
+    install -Dm00644 $pkgfiles/vapoursynth.xml -t $installdir/usr/share/mime/packages/

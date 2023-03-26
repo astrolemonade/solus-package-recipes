@@ -1,0 +1,18 @@
+name       : exfatprogs
+version    : 1.2.0
+release    : 5
+source     :
+    - https://github.com/exfatprogs/exfatprogs/archive/refs/tags/1.2.0.tar.gz : afeaf10c99f70204941427d9cdc62b0219ff7f7d5eb0f1a179b0d7bf6cfedbad
+license    : GPL-2.0-or-later
+component  : system.utils
+summary    : exFAT filesystem userspace utilities
+description: |
+    exfatprogs are the official userspace utilities that contain all of the standard utilities for creating, fixing and debugging exFAT filesystems in Linux.
+replaces   :
+    - exfat-utils
+setup      : |
+    %autogen
+build      : |
+    %make
+install    : |
+    %make_install

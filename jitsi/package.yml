@@ -1,0 +1,36 @@
+name       : jitsi
+version    : 2.11.5633
+release    : 10
+source     :
+    - https://github.com/jitsi/jitsi/archive/5633.tar.gz : ad2ad72ac0103190f2ecd180861a12370cca1a8ca5c57474eff2967e2ca8c01e
+license    : Apache-2.0
+component  : network.im
+summary    : Jitsi is a free open-source audio/video and chat communicator
+description: |
+    Jitsi is a free open-source audio/video and chat communicator
+builddeps  :
+    - apache-ant
+    - openjdk-8
+rundeps    :
+    - gnome-themes-extra
+    - openjdk-8
+build      : |
+    sed 's|0\.build\.by\.SVN|%version%|' -i src/net/java/sip/communicator/impl/version/NightlyBuildID.java
+    sed -e 's|_APP_NAME_|Jitsi|' -e 's|_PACKAGE_NAME_|jitsi|' -i resources/install/debian/jitsi.desktop.tmpl
+    JAVA_HOME=/usr/lib64/openjdk-8 ant rebuild
+install    : |
+    # Refer to this article: https://desktop.jitsi.org/Documentation/HowToBuildAnInstaller
+
+    find sc-bundles -maxdepth 1 -type f \
+        -name '*.jar' -not -name '*-slick.jar' \
+        -execdir install -Dm00644 -t $installdir/usr/share/jitsi/sc-bundles {} +
+    install -Dm00644 sc-bundles/os-specific/linux/* -t $installdir/usr/share/jitsi/sc-bundles
+
+    install -Dm00644 lib/{*.jar,{felix.client.run,jitsi-defaults,logging}.properties} -t $installdir/usr/share/jitsi/lib
+    cp -a lib/bundle $installdir/usr/share/jitsi/lib
+    install -Dm00644 lib/native/linux-64/* -t $installdir/usr/share/jitsi/lib/native
+
+    install -Dm00755 $pkgfiles/jitsi.sh $installdir/usr/bin/jitsi
+    install -Dm00644 resources/install/debian/jitsi.desktop.tmpl $installdir/usr/share/applications/jitsi.desktop
+    install -Dm00644 resources/install/debian/jitsi.svg -t $installdir/usr/share/pixmaps
+

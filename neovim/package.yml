@@ -1,0 +1,32 @@
+name       : neovim
+version    : 0.8.2
+release    : 31
+source     :
+    - https://github.com/neovim/neovim/archive/refs/tags/v0.8.2.tar.gz : c516c8db73e1b12917a6b2e991b344d0914c057cef8266bce61a2100a28ffcc9
+license    : Apache-2.0
+component  : editor
+summary    : Fork of Vim aiming to improve user experience, plugins, and GUIs
+description: |
+    Fork of Vim aiming to improve user experience, plugins, and GUIs
+builddeps  :
+    - pkgconfig(libluv)
+    - pkgconfig(libuv)
+    - pkgconfig(luajit)
+    - pkgconfig(msgpack)
+    - pkgconfig(termkey)
+    - pkgconfig(tree-sitter)
+    - pkgconfig(unibilium)
+    - pkgconfig(vterm)
+    - gperf
+    - libmpack
+    - libpth-devel
+    - lpeg
+rundeps    :
+    - xclip
+setup      : |
+    %cmake_ninja -DUSE_BUNDLED=OFF
+build      : |
+    %ninja_build
+install    : |
+    %ninja_install
+    ln -s /usr/bin/nvim $installdir/usr/bin/neovim

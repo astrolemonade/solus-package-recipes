@@ -1,0 +1,39 @@
+<PISI>
+    <Source>
+        <Name>networkmanager-strongswan</Name>
+        <Packager>
+            <Name>Joshua Strobl</Name>
+            <Email>joshua@getsol.us</Email>
+        </Packager>
+        <License>GPL-2.0-or-later</License>
+        <PartOf>network.base</PartOf>
+        <Summary xml:lang="en">strongSwan support for NetworkManager</Summary>
+        <Description xml:lang="en">strongSwan IPsec VPN plugin for NetworkManager which provides support for EAP, PSK and certificate authentication.
+</Description>
+        <Archive type="binary" sha1sum="79eb0752a961b8e0d15c77d298c97498fbc89c5a">https://getsol.us/sources/README.Solus</Archive>
+    </Source>
+    <Package>
+        <Name>networkmanager-strongswan</Name>
+        <Summary xml:lang="en">strongSwan support for NetworkManager</Summary>
+        <Description xml:lang="en">strongSwan IPsec VPN plugin for NetworkManager which provides support for EAP, PSK and certificate authentication.
+</Description>
+        <PartOf>network.base</PartOf>
+        <Files>
+            <Path fileType="library">/usr/lib/NetworkManager/VPN/nm-strongswan-service.name</Path>
+            <Path fileType="library">/usr/lib/NetworkManager/nm-strongswan-auth-dialog</Path>
+            <Path fileType="library">/usr/lib64/NetworkManager/libnm-vpn-plugin-strongswan.so</Path>
+            <Path fileType="data">/usr/share/gnome-vpn-properties/strongswan/nm-strongswan-dialog.ui</Path>
+            <Path fileType="localedata">/usr/share/locale/de/LC_MESSAGES/NetworkManager-strongswan.mo</Path>
+            <Path fileType="data">/usr/share/metainfo/NetworkManager-strongswan.metainfo.xml</Path>
+        </Files>
+    </Package>
+    <History>
+        <Update release="3">
+            <Date>2021-06-16</Date>
+            <Version>1.5.2</Version>
+            <Comment>Packaging update</Comment>
+            <Name>Joshua Strobl</Name>
+            <Email>joshua@getsol.us</Email>
+        </Update>
+    </History>
+</PISI>

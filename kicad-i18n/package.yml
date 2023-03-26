@@ -1,0 +1,14 @@
+name       : kicad-i18n
+version    : 5.1.12
+release    : 5
+source     :
+    - https://gitlab.com/kicad/code/kicad-i18n/-/archive/5.1.12/kicad-i18n-5.1.12.tar.bz2 : a17cf2e8be11ef57d7486f5f53ae88e986c142e6ce43d21753dfe24fad9fe92d
+license    : Public-Domain
+component  : office.scientific
+summary    : Translations for KiCad
+description: |
+    po files that is used for the GUI translations for KiCad
+setup      : |
+    %cmake_ninja
+install    : |
+    %ninja_install

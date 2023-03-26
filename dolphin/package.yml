@@ -1,0 +1,41 @@
+name       : dolphin
+version    : 22.12.1
+release    : 75
+source     :
+    - https://cdn.download.kde.org/stable/release-service/22.12.1/src/dolphin-22.12.1.tar.xz : 7f694aa000090ec501f7318fca15c980e57addd4d1532862d2250a8840d88cea
+homepage   : https://kde.org/applications/system/org.kde.dolphin
+license    :
+    - GFDL-1.2-or-later
+    - GPL-2.0-or-later
+component  : desktop.kde.core
+summary    : KDE file manager focusing on usability
+description: |
+    Dolphin is a file manager focusing on usability. Focusing on usability means that features are discoverable and efficient to use.
+patterns   :
+    - /usr/lib64/libkdeinit5*.so
+builddeps  :
+    - pkgconfig(phonon4qt5)
+    - baloo-devel
+    - baloo-widgets-devel
+    - kactivities-devel
+    - kcmutils-devel
+    - kcrash-devel
+    - kdbusaddons-devel
+    - kdoctools-devel
+    - kiconthemes-devel
+    - knewstuff-devel
+    - knotifications-devel
+    - kparts-devel
+rundeps    :
+    - ffmpegthumbs
+    - kdialog
+    - ruby
+setup      : |
+    %cmake_ninja -DBUILD_TESTING=OFF
+build      : |
+    %ninja_build
+install    : |
+    %ninja_install
+
+    # remove doc
+    rm -rf $installdir/usr/share/doc

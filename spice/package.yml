@@ -1,0 +1,33 @@
+name       : spice
+version    : 0.15.1
+release    : 17
+source     :
+    - https://www.spice-space.org/download/releases/spice-server/spice-0.15.1.tar.bz2 : ada9af67ab321916bd7eb59e3d619a4a7796c08a28c732edfc7f02fc80b1a37a
+homepage   : https://www.spice-space.org
+license    : BSD-3-Clause
+summary    : SPICE (Simple Protocol for Independent Computing Environments)
+description: |
+    SPICE (Simple Protocol for Independent Computing Environments) is a remote display system built for virtual environments which allows you to view a computing 'desktop' environment not only on the machine where it is running, but from anywhere on the Internet and from a wide variety of machine architectures.
+component  : desktop.library
+optimize   : speed
+builddeps  :
+    - pkgconfig(glu)
+    - pkgconfig(libcacard)
+    - pkgconfig(libsasl2)
+    - pkgconfig(liblz4)
+    - pkgconfig(opus)
+    - pkgconfig(pixman-1)
+    - pkgconfig(spice-protocol)
+    - glib-networking # check
+    - lz4-devel
+    - libjpeg-turbo-devel
+setup      : |
+    sed -i "/add_dist_script/d" meson.build
+
+    %meson_configure -Dgstreamer=no
+build      : |
+    %ninja_build
+install    : |
+    %ninja_install
+check      : |
+    %ninja_check

@@ -1,0 +1,38 @@
+<PISI>
+    <Source>
+        <Name>perl-getopt-long</Name>
+        <Homepage>https://metacpan.org/pod/Getopt::Long</Homepage>
+        <Packager>
+            <Name>Algent Albrahimi</Name>
+            <Email>algent@protonmail.com</Email>
+        </Packager>
+        <License>Artistic-1.0-Perl</License>
+        <PartOf>programming.perl</PartOf>
+        <Summary xml:lang="en">Getopt::Long - Extended processing of command line options</Summary>
+        <Description xml:lang="en">The Getopt::Long module implements an extended getopt function called GetOptions(). It parses the command line from @ARGV, recognizing and removing specified options and their possible values.
+</Description>
+        <Archive type="binary" sha1sum="79eb0752a961b8e0d15c77d298c97498fbc89c5a">https://getsol.us/sources/README.Solus</Archive>
+    </Source>
+    <Package>
+        <Name>perl-getopt-long</Name>
+        <Summary xml:lang="en">Getopt::Long - Extended processing of command line options</Summary>
+        <Description xml:lang="en">The Getopt::Long module implements an extended getopt function called GetOptions(). It parses the command line from @ARGV, recognizing and removing specified options and their possible values.
+</Description>
+        <PartOf>programming.perl</PartOf>
+        <Files>
+            <Path fileType="library">/usr/lib64/perl5/vendor_perl/5.36/Getopt/Long.pm</Path>
+            <Path fileType="library">/usr/lib64/perl5/vendor_perl/5.36/newgetopt.pl</Path>
+            <Path fileType="library">/usr/lib64/perl5/vendor_perl/5.36/x86_64-linux-thread-multi/auto/Getopt/Long/.packlist</Path>
+            <Path fileType="man">/usr/share/man/man3/Getopt::Long.3</Path>
+        </Files>
+    </Package>
+    <History>
+        <Update release="7">
+            <Date>2022-09-25</Date>
+            <Version>2.52</Version>
+            <Comment>Packaging update</Comment>
+            <Name>Algent Albrahimi</Name>
+            <Email>algent@protonmail.com</Email>
+        </Update>
+    </History>
+</PISI>

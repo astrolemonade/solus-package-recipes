@@ -1,0 +1,301 @@
+<PISI>
+    <Source>
+        <Name>openjdk-8</Name>
+        <Homepage>https://openjdk.java.net/</Homepage>
+        <Packager>
+            <Name>Joey Riches</Name>
+            <Email>josephriches@gmail.com</Email>
+        </Packager>
+        <License>GPL-2.0-with-classpath-exception</License>
+        <PartOf>programming.java</PartOf>
+        <Summary xml:lang="en">Open implementation of Oracle&apos;s Java Development Kit, major version 8</Summary>
+        <Description xml:lang="en">Open implementation of Oracle&apos;s Java Development Kit, major version 8. This package includes both the JDK and its accompanying JRE, with OpenJFX in a separate package.
+</Description>
+        <Archive type="binary" sha1sum="79eb0752a961b8e0d15c77d298c97498fbc89c5a">https://getsol.us/sources/README.Solus</Archive>
+    </Source>
+    <Package>
+        <Name>openjdk-8</Name>
+        <Summary xml:lang="en">Open implementation of Oracle&apos;s Java Development Kit, major version 8</Summary>
+        <Description xml:lang="en">Open implementation of Oracle&apos;s Java Development Kit, major version 8. This package includes both the JDK and its accompanying JRE, with OpenJFX in a separate package.
+</Description>
+        <PartOf>programming.java</PartOf>
+        <Files>
+            <Path fileType="library">/usr/lib64/openjdk-8/bin/appletviewer</Path>
+            <Path fileType="library">/usr/lib64/openjdk-8/bin/clhsdb</Path>
+            <Path fileType="library">/usr/lib64/openjdk-8/bin/extcheck</Path>
+            <Path fileType="library">/usr/lib64/openjdk-8/bin/hsdb</Path>
+            <Path fileType="library">/usr/lib64/openjdk-8/bin/idlj</Path>
+            <Path fileType="library">/usr/lib64/openjdk-8/bin/jar</Path>
+            <Path fileType="library">/usr/lib64/openjdk-8/bin/jarsigner</Path>
+            <Path fileType="library">/usr/lib64/openjdk-8/bin/java</Path>
+            <Path fileType="library">/usr/lib64/openjdk-8/bin/java-rmi.cgi</Path>
+            <Path fileType="library">/usr/lib64/openjdk-8/bin/javac</Path>
+            <Path fileType="library">/usr/lib64/openjdk-8/bin/javadoc</Path>
+            <Path fileType="library">/usr/lib64/openjdk-8/bin/javah</Path>
+            <Path fileType="library">/usr/lib64/openjdk-8/bin/javap</Path>
+            <Path fileType="library">/usr/lib64/openjdk-8/bin/jcmd</Path>
+            <Path fileType="library">/usr/lib64/openjdk-8/bin/jconsole</Path>
+            <Path fileType="library">/usr/lib64/openjdk-8/bin/jdb</Path>
+            <Path fileType="library">/usr/lib64/openjdk-8/bin/jdeps</Path>
+            <Path fileType="library">/usr/lib64/openjdk-8/bin/jfr</Path>
+            <Path fileType="library">/usr/lib64/openjdk-8/bin/jhat</Path>
+            <Path fileType="library">/usr/lib64/openjdk-8/bin/jinfo</Path>
+            <Path fileType="library">/usr/lib64/openjdk-8/bin/jjs</Path>
+            <Path fileType="library">/usr/lib64/openjdk-8/bin/jmap</Path>
+            <Path fileType="library">/usr/lib64/openjdk-8/bin/jps</Path>
+            <Path fileType="library">/usr/lib64/openjdk-8/bin/jrunscript</Path>
+            <Path fileType="library">/usr/lib64/openjdk-8/bin/jsadebugd</Path>
+            <Path fileType="library">/usr/lib64/openjdk-8/bin/jstack</Path>
+            <Path fileType="library">/usr/lib64/openjdk-8/bin/jstat</Path>
+            <Path fileType="library">/usr/lib64/openjdk-8/bin/jstatd</Path>
+            <Path fileType="library">/usr/lib64/openjdk-8/bin/keytool</Path>
+            <Path fileType="library">/usr/lib64/openjdk-8/bin/native2ascii</Path>
+            <Path fileType="library">/usr/lib64/openjdk-8/bin/orbd</Path>
+            <Path fileType="library">/usr/lib64/openjdk-8/bin/pack200</Path>
+            <Path fileType="library">/usr/lib64/openjdk-8/bin/policytool</Path>
+            <Path fileType="library">/usr/lib64/openjdk-8/bin/rmic</Path>
+            <Path fileType="library">/usr/lib64/openjdk-8/bin/rmid</Path>
+            <Path fileType="library">/usr/lib64/openjdk-8/bin/rmiregistry</Path>
+            <Path fileType="library">/usr/lib64/openjdk-8/bin/schemagen</Path>
+            <Path fileType="library">/usr/lib64/openjdk-8/bin/serialver</Path>
+            <Path fileType="library">/usr/lib64/openjdk-8/bin/servertool</Path>
+            <Path fileType="library">/usr/lib64/openjdk-8/bin/tnameserv</Path>
+            <Path fileType="library">/usr/lib64/openjdk-8/bin/unpack200</Path>
+            <Path fileType="library">/usr/lib64/openjdk-8/bin/wsgen</Path>
+            <Path fileType="library">/usr/lib64/openjdk-8/bin/wsimport</Path>
+            <Path fileType="library">/usr/lib64/openjdk-8/bin/xjc</Path>
+            <Path fileType="library">/usr/lib64/openjdk-8/jre/bin/java</Path>
+            <Path fileType="library">/usr/lib64/openjdk-8/jre/bin/jjs</Path>
+            <Path fileType="library">/usr/lib64/openjdk-8/jre/bin/keytool</Path>
+            <Path fileType="library">/usr/lib64/openjdk-8/jre/bin/orbd</Path>
+            <Path fileType="library">/usr/lib64/openjdk-8/jre/bin/pack200</Path>
+            <Path fileType="library">/usr/lib64/openjdk-8/jre/bin/policytool</Path>
+            <Path fileType="library">/usr/lib64/openjdk-8/jre/bin/rmid</Path>
+            <Path fileType="library">/usr/lib64/openjdk-8/jre/bin/rmiregistry</Path>
+            <Path fileType="library">/usr/lib64/openjdk-8/jre/bin/servertool</Path>
+            <Path fileType="library">/usr/lib64/openjdk-8/jre/bin/tnameserv</Path>
+            <Path fileType="library">/usr/lib64/openjdk-8/jre/bin/unpack200</Path>
+            <Path fileType="library">/usr/lib64/openjdk-8/jre/lib/amd64/jli/libjli.so</Path>
+            <Path fileType="library">/usr/lib64/openjdk-8/jre/lib/amd64/jvm.cfg</Path>
+            <Path fileType="library">/usr/lib64/openjdk-8/jre/lib/amd64/libattach.so</Path>
+            <Path fileType="library">/usr/lib64/openjdk-8/jre/lib/amd64/libawt.so</Path>
+            <Path fileType="library">/usr/lib64/openjdk-8/jre/lib/amd64/libawt_headless.so</Path>
+            <Path fileType="library">/usr/lib64/openjdk-8/jre/lib/amd64/libawt_xawt.so</Path>
+            <Path fileType="library">/usr/lib64/openjdk-8/jre/lib/amd64/libdt_socket.so</Path>
+            <Path fileType="library">/usr/lib64/openjdk-8/jre/lib/amd64/libfontmanager.so</Path>
+            <Path fileType="library">/usr/lib64/openjdk-8/jre/lib/amd64/libhprof.so</Path>
+            <Path fileType="library">/usr/lib64/openjdk-8/jre/lib/amd64/libinstrument.so</Path>
+            <Path fileType="library">/usr/lib64/openjdk-8/jre/lib/amd64/libj2gss.so</Path>
+            <Path fileType="library">/usr/lib64/openjdk-8/jre/lib/amd64/libj2pcsc.so</Path>
+            <Path fileType="library">/usr/lib64/openjdk-8/jre/lib/amd64/libj2pkcs11.so</Path>
+            <Path fileType="library">/usr/lib64/openjdk-8/jre/lib/amd64/libjaas_unix.so</Path>
+            <Path fileType="library">/usr/lib64/openjdk-8/jre/lib/amd64/libjava.so</Path>
+            <Path fileType="library">/usr/lib64/openjdk-8/jre/lib/amd64/libjava_crw_demo.so</Path>
+            <Path fileType="library">/usr/lib64/openjdk-8/jre/lib/amd64/libjawt.so</Path>
+            <Path fileType="library">/usr/lib64/openjdk-8/jre/lib/amd64/libjdwp.so</Path>
+            <Path fileType="library">/usr/lib64/openjdk-8/jre/lib/amd64/libjpeg.so</Path>
+            <Path fileType="library">/usr/lib64/openjdk-8/jre/lib/amd64/libjsdt.so</Path>
+            <Path fileType="library">/usr/lib64/openjdk-8/jre/lib/amd64/libjsig.so</Path>
+            <Path fileType="library">/usr/lib64/openjdk-8/jre/lib/amd64/libjsound.so</Path>
+            <Path fileType="library">/usr/lib64/openjdk-8/jre/lib/amd64/libjsoundalsa.so</Path>
+            <Path fileType="library">/usr/lib64/openjdk-8/jre/lib/amd64/liblcms.so</Path>
+            <Path fileType="library">/usr/lib64/openjdk-8/jre/lib/amd64/libmanagement.so</Path>
+            <Path fileType="library">/usr/lib64/openjdk-8/jre/lib/amd64/libmlib_image.so</Path>
+            <Path fileType="library">/usr/lib64/openjdk-8/jre/lib/amd64/libnet.so</Path>
+            <Path fileType="library">/usr/lib64/openjdk-8/jre/lib/amd64/libnio.so</Path>
+            <Path fileType="library">/usr/lib64/openjdk-8/jre/lib/amd64/libnpt.so</Path>
+            <Path fileType="library">/usr/lib64/openjdk-8/jre/lib/amd64/libsaproc.so</Path>
+            <Path fileType="library">/usr/lib64/openjdk-8/jre/lib/amd64/libsctp.so</Path>
+            <Path fileType="library">/usr/lib64/openjdk-8/jre/lib/amd64/libsplashscreen.so</Path>
+            <Path fileType="library">/usr/lib64/openjdk-8/jre/lib/amd64/libsunec.so</Path>
+            <Path fileType="library">/usr/lib64/openjdk-8/jre/lib/amd64/libunpack.so</Path>
+            <Path fileType="library">/usr/lib64/openjdk-8/jre/lib/amd64/libverify.so</Path>
+            <Path fileType="library">/usr/lib64/openjdk-8/jre/lib/amd64/libzip.so</Path>
+            <Path fileType="library">/usr/lib64/openjdk-8/jre/lib/amd64/server/Xusage.txt</Path>
+            <Path fileType="library">/usr/lib64/openjdk-8/jre/lib/amd64/server/libjsig.so</Path>
+            <Path fileType="library">/usr/lib64/openjdk-8/jre/lib/amd64/server/libjvm.so</Path>
+            <Path fileType="library">/usr/lib64/openjdk-8/jre/lib/calendars.properties</Path>
+            <Path fileType="library">/usr/lib64/openjdk-8/jre/lib/charsets.jar</Path>
+            <Path fileType="library">/usr/lib64/openjdk-8/jre/lib/classlist</Path>
+            <Path fileType="library">/usr/lib64/openjdk-8/jre/lib/cmm/CIEXYZ.pf</Path>
+            <Path fileType="library">/usr/lib64/openjdk-8/jre/lib/cmm/GRAY.pf</Path>
+            <Path fileType="library">/usr/lib64/openjdk-8/jre/lib/cmm/LINEAR_RGB.pf</Path>
+            <Path fileType="library">/usr/lib64/openjdk-8/jre/lib/cmm/PYCC.pf</Path>
+            <Path fileType="library">/usr/lib64/openjdk-8/jre/lib/cmm/sRGB.pf</Path>
+            <Path fileType="library">/usr/lib64/openjdk-8/jre/lib/content-types.properties</Path>
+            <Path fileType="library">/usr/lib64/openjdk-8/jre/lib/currency.data</Path>
+            <Path fileType="library">/usr/lib64/openjdk-8/jre/lib/ext/cldrdata.jar</Path>
+            <Path fileType="library">/usr/lib64/openjdk-8/jre/lib/ext/dnsns.jar</Path>
+            <Path fileType="library">/usr/lib64/openjdk-8/jre/lib/ext/jaccess.jar</Path>
+            <Path fileType="library">/usr/lib64/openjdk-8/jre/lib/ext/localedata.jar</Path>
+            <Path fileType="library">/usr/lib64/openjdk-8/jre/lib/ext/meta-index</Path>
+            <Path fileType="library">/usr/lib64/openjdk-8/jre/lib/ext/nashorn.jar</Path>
+            <Path fileType="library">/usr/lib64/openjdk-8/jre/lib/ext/sunec.jar</Path>
+            <Path fileType="library">/usr/lib64/openjdk-8/jre/lib/ext/sunjce_provider.jar</Path>
+            <Path fileType="library">/usr/lib64/openjdk-8/jre/lib/ext/sunpkcs11.jar</Path>
+            <Path fileType="library">/usr/lib64/openjdk-8/jre/lib/ext/zipfs.jar</Path>
+            <Path fileType="library">/usr/lib64/openjdk-8/jre/lib/flavormap.properties</Path>
+            <Path fileType="library">/usr/lib64/openjdk-8/jre/lib/hijrah-config-umalqura.properties</Path>
+            <Path fileType="library">/usr/lib64/openjdk-8/jre/lib/images/cursors/cursors.properties</Path>
+            <Path fileType="library">/usr/lib64/openjdk-8/jre/lib/images/cursors/invalid32x32.gif</Path>
+            <Path fileType="library">/usr/lib64/openjdk-8/jre/lib/images/cursors/motif_CopyDrop32x32.gif</Path>
+            <Path fileType="library">/usr/lib64/openjdk-8/jre/lib/images/cursors/motif_CopyNoDrop32x32.gif</Path>
+            <Path fileType="library">/usr/lib64/openjdk-8/jre/lib/images/cursors/motif_LinkDrop32x32.gif</Path>
+            <Path fileType="library">/usr/lib64/openjdk-8/jre/lib/images/cursors/motif_LinkNoDrop32x32.gif</Path>
+            <Path fileType="library">/usr/lib64/openjdk-8/jre/lib/images/cursors/motif_MoveDrop32x32.gif</Path>
+            <Path fileType="library">/usr/lib64/openjdk-8/jre/lib/images/cursors/motif_MoveNoDrop32x32.gif</Path>
+            <Path fileType="library">/usr/lib64/openjdk-8/jre/lib/jce.jar</Path>
+            <Path fileType="library">/usr/lib64/openjdk-8/jre/lib/jexec</Path>
+            <Path fileType="library">/usr/lib64/openjdk-8/jre/lib/jfr.jar</Path>
+            <Path fileType="library">/usr/lib64/openjdk-8/jre/lib/jfr/default.jfc</Path>
+            <Path fileType="library">/usr/lib64/openjdk-8/jre/lib/jfr/profile.jfc</Path>
+            <Path fileType="library">/usr/lib64/openjdk-8/jre/lib/jsse.jar</Path>
+            <Path fileType="library">/usr/lib64/openjdk-8/jre/lib/jvm.hprof.txt</Path>
+            <Path fileType="library">/usr/lib64/openjdk-8/jre/lib/logging.properties</Path>
+            <Path fileType="library">/usr/lib64/openjdk-8/jre/lib/management-agent.jar</Path>
+            <Path fileType="library">/usr/lib64/openjdk-8/jre/lib/management/jmxremote.access</Path>
+            <Path fileType="library">/usr/lib64/openjdk-8/jre/lib/management/jmxremote.password.template</Path>
+            <Path fileType="library">/usr/lib64/openjdk-8/jre/lib/management/management.properties</Path>
+            <Path fileType="library">/usr/lib64/openjdk-8/jre/lib/management/snmp.acl.template</Path>
+            <Path fileType="library">/usr/lib64/openjdk-8/jre/lib/meta-index</Path>
+            <Path fileType="library">/usr/lib64/openjdk-8/jre/lib/net.properties</Path>
+            <Path fileType="library">/usr/lib64/openjdk-8/jre/lib/psfont.properties.ja</Path>
+            <Path fileType="library">/usr/lib64/openjdk-8/jre/lib/psfontj2d.properties</Path>
+            <Path fileType="library">/usr/lib64/openjdk-8/jre/lib/resources.jar</Path>
+            <Path fileType="library">/usr/lib64/openjdk-8/jre/lib/rt.jar</Path>
+            <Path fileType="library">/usr/lib64/openjdk-8/jre/lib/security/blacklisted.certs</Path>
+            <Path fileType="library">/usr/lib64/openjdk-8/jre/lib/security/cacerts</Path>
+            <Path fileType="library">/usr/lib64/openjdk-8/jre/lib/security/java.policy</Path>
+            <Path fileType="library">/usr/lib64/openjdk-8/jre/lib/security/java.security</Path>
+            <Path fileType="library">/usr/lib64/openjdk-8/jre/lib/security/policy/limited/US_export_policy.jar</Path>
+            <Path fileType="library">/usr/lib64/openjdk-8/jre/lib/security/policy/limited/local_policy.jar</Path>
+            <Path fileType="library">/usr/lib64/openjdk-8/jre/lib/security/policy/unlimited/US_export_policy.jar</Path>
+            <Path fileType="library">/usr/lib64/openjdk-8/jre/lib/security/policy/unlimited/local_policy.jar</Path>
+            <Path fileType="library">/usr/lib64/openjdk-8/jre/lib/sound.properties</Path>
+            <Path fileType="library">/usr/lib64/openjdk-8/jre/lib/tzdb.dat</Path>
+            <Path fileType="library">/usr/lib64/openjdk-8/lib/amd64/jli/libjli.so</Path>
+            <Path fileType="library">/usr/lib64/openjdk-8/lib/amd64/libjawt.so</Path>
+            <Path fileType="library">/usr/lib64/openjdk-8/lib/ct.sym</Path>
+            <Path fileType="library">/usr/lib64/openjdk-8/lib/dt.jar</Path>
+            <Path fileType="library">/usr/lib64/openjdk-8/lib/ir.idl</Path>
+            <Path fileType="library">/usr/lib64/openjdk-8/lib/jconsole.jar</Path>
+            <Path fileType="library">/usr/lib64/openjdk-8/lib/jexec</Path>
+            <Path fileType="library">/usr/lib64/openjdk-8/lib/orb.idl</Path>
+            <Path fileType="library">/usr/lib64/openjdk-8/lib/sa-jdi.jar</Path>
+            <Path fileType="library">/usr/lib64/openjdk-8/lib/tools.jar</Path>
+            <Path fileType="library">/usr/lib64/openjdk-8/release</Path>
+            <Path fileType="library">/usr/lib64/openjdk-8/src.zip</Path>
+            <Path fileType="data">/usr/share/applications/java-8-jar.desktop</Path>
+            <Path fileType="man">/usr/share/man/ja/man1/appletviewer-8.1</Path>
+            <Path fileType="man">/usr/share/man/ja/man1/extcheck-8.1</Path>
+            <Path fileType="man">/usr/share/man/ja/man1/idlj-8.1</Path>
+            <Path fileType="man">/usr/share/man/ja/man1/jar-8.1</Path>
+            <Path fileType="man">/usr/share/man/ja/man1/jarsigner-8.1</Path>
+            <Path fileType="man">/usr/share/man/ja/man1/java-8.1</Path>
+            <Path fileType="man">/usr/share/man/ja/man1/javac-8.1</Path>
+            <Path fileType="man">/usr/share/man/ja/man1/javadoc-8.1</Path>
+            <Path fileType="man">/usr/share/man/ja/man1/javah-8.1</Path>
+            <Path fileType="man">/usr/share/man/ja/man1/javap-8.1</Path>
+            <Path fileType="man">/usr/share/man/ja/man1/jcmd-8.1</Path>
+            <Path fileType="man">/usr/share/man/ja/man1/jconsole-8.1</Path>
+            <Path fileType="man">/usr/share/man/ja/man1/jdb-8.1</Path>
+            <Path fileType="man">/usr/share/man/ja/man1/jdeps-8.1</Path>
+            <Path fileType="man">/usr/share/man/ja/man1/jhat-8.1</Path>
+            <Path fileType="man">/usr/share/man/ja/man1/jinfo-8.1</Path>
+            <Path fileType="man">/usr/share/man/ja/man1/jjs-8.1</Path>
+            <Path fileType="man">/usr/share/man/ja/man1/jmap-8.1</Path>
+            <Path fileType="man">/usr/share/man/ja/man1/jps-8.1</Path>
+            <Path fileType="man">/usr/share/man/ja/man1/jrunscript-8.1</Path>
+            <Path fileType="man">/usr/share/man/ja/man1/jsadebugd-8.1</Path>
+            <Path fileType="man">/usr/share/man/ja/man1/jstack-8.1</Path>
+            <Path fileType="man">/usr/share/man/ja/man1/jstat-8.1</Path>
+            <Path fileType="man">/usr/share/man/ja/man1/jstatd-8.1</Path>
+            <Path fileType="man">/usr/share/man/ja/man1/keytool-8.1</Path>
+            <Path fileType="man">/usr/share/man/ja/man1/native2ascii-8.1</Path>
+            <Path fileType="man">/usr/share/man/ja/man1/orbd-8.1</Path>
+            <Path fileType="man">/usr/share/man/ja/man1/pack200-8.1</Path>
+            <Path fileType="man">/usr/share/man/ja/man1/policytool-8.1</Path>
+            <Path fileType="man">/usr/share/man/ja/man1/rmic-8.1</Path>
+            <Path fileType="man">/usr/share/man/ja/man1/rmid-8.1</Path>
+            <Path fileType="man">/usr/share/man/ja/man1/rmiregistry-8.1</Path>
+            <Path fileType="man">/usr/share/man/ja/man1/schemagen-8.1</Path>
+            <Path fileType="man">/usr/share/man/ja/man1/serialver-8.1</Path>
+            <Path fileType="man">/usr/share/man/ja/man1/servertool-8.1</Path>
+            <Path fileType="man">/usr/share/man/ja/man1/tnameserv-8.1</Path>
+            <Path fileType="man">/usr/share/man/ja/man1/unpack200-8.1</Path>
+            <Path fileType="man">/usr/share/man/ja/man1/wsgen-8.1</Path>
+            <Path fileType="man">/usr/share/man/ja/man1/wsimport-8.1</Path>
+            <Path fileType="man">/usr/share/man/ja/man1/xjc-8.1</Path>
+            <Path fileType="man">/usr/share/man/man1/appletviewer-8.1</Path>
+            <Path fileType="man">/usr/share/man/man1/extcheck-8.1</Path>
+            <Path fileType="man">/usr/share/man/man1/idlj-8.1</Path>
+            <Path fileType="man">/usr/share/man/man1/jar-8.1</Path>
+            <Path fileType="man">/usr/share/man/man1/jarsigner-8.1</Path>
+            <Path fileType="man">/usr/share/man/man1/java-8.1</Path>
+            <Path fileType="man">/usr/share/man/man1/javac-8.1</Path>
+            <Path fileType="man">/usr/share/man/man1/javadoc-8.1</Path>
+            <Path fileType="man">/usr/share/man/man1/javah-8.1</Path>
+            <Path fileType="man">/usr/share/man/man1/javap-8.1</Path>
+            <Path fileType="man">/usr/share/man/man1/jcmd-8.1</Path>
+            <Path fileType="man">/usr/share/man/man1/jconsole-8.1</Path>
+            <Path fileType="man">/usr/share/man/man1/jdb-8.1</Path>
+            <Path fileType="man">/usr/share/man/man1/jdeps-8.1</Path>
+            <Path fileType="man">/usr/share/man/man1/jhat-8.1</Path>
+            <Path fileType="man">/usr/share/man/man1/jinfo-8.1</Path>
+            <Path fileType="man">/usr/share/man/man1/jjs-8.1</Path>
+            <Path fileType="man">/usr/share/man/man1/jmap-8.1</Path>
+            <Path fileType="man">/usr/share/man/man1/jps-8.1</Path>
+            <Path fileType="man">/usr/share/man/man1/jrunscript-8.1</Path>
+            <Path fileType="man">/usr/share/man/man1/jsadebugd-8.1</Path>
+            <Path fileType="man">/usr/share/man/man1/jstack-8.1</Path>
+            <Path fileType="man">/usr/share/man/man1/jstat-8.1</Path>
+            <Path fileType="man">/usr/share/man/man1/jstatd-8.1</Path>
+            <Path fileType="man">/usr/share/man/man1/keytool-8.1</Path>
+            <Path fileType="man">/usr/share/man/man1/native2ascii-8.1</Path>
+            <Path fileType="man">/usr/share/man/man1/orbd-8.1</Path>
+            <Path fileType="man">/usr/share/man/man1/pack200-8.1</Path>
+            <Path fileType="man">/usr/share/man/man1/policytool-8.1</Path>
+            <Path fileType="man">/usr/share/man/man1/rmic-8.1</Path>
+            <Path fileType="man">/usr/share/man/man1/rmid-8.1</Path>
+            <Path fileType="man">/usr/share/man/man1/rmiregistry-8.1</Path>
+            <Path fileType="man">/usr/share/man/man1/schemagen-8.1</Path>
+            <Path fileType="man">/usr/share/man/man1/serialver-8.1</Path>
+            <Path fileType="man">/usr/share/man/man1/servertool-8.1</Path>
+            <Path fileType="man">/usr/share/man/man1/tnameserv-8.1</Path>
+            <Path fileType="man">/usr/share/man/man1/unpack200-8.1</Path>
+            <Path fileType="man">/usr/share/man/man1/wsgen-8.1</Path>
+            <Path fileType="man">/usr/share/man/man1/wsimport-8.1</Path>
+            <Path fileType="man">/usr/share/man/man1/xjc-8.1</Path>
+        </Files>
+    </Package>
+    <Package>
+        <Name>openjdk-8-devel</Name>
+        <Summary xml:lang="en">Development files for openjdk-8</Summary>
+        <Description xml:lang="en">Open implementation of Oracle&apos;s Java Development Kit, major version 8. This package includes both the JDK and its accompanying JRE, with OpenJFX in a separate package.
+</Description>
+        <PartOf>programming.devel</PartOf>
+        <RuntimeDependencies>
+            <Dependency release="24">openjdk-8</Dependency>
+        </RuntimeDependencies>
+        <Files>
+            <Path fileType="header">/usr/include/openjdk-8/classfile_constants.h</Path>
+            <Path fileType="header">/usr/include/openjdk-8/jawt.h</Path>
+            <Path fileType="header">/usr/include/openjdk-8/jdwpTransport.h</Path>
+            <Path fileType="header">/usr/include/openjdk-8/jni.h</Path>
+            <Path fileType="header">/usr/include/openjdk-8/jvmti.h</Path>
+            <Path fileType="header">/usr/include/openjdk-8/jvmticmlr.h</Path>
+            <Path fileType="header">/usr/include/openjdk-8/linux/jawt_md.h</Path>
+            <Path fileType="header">/usr/include/openjdk-8/linux/jni_md.h</Path>
+            <Path fileType="library">/usr/lib64/openjdk-8/include</Path>
+        </Files>
+    </Package>
+    <History>
+        <Update release="24">
+            <Date>2022-03-23</Date>
+            <Version>8.302</Version>
+            <Comment>Packaging update</Comment>
+            <Name>Joey Riches</Name>
+            <Email>josephriches@gmail.com</Email>
+        </Update>
+    </History>
+</PISI>

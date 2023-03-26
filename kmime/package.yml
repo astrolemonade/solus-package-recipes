@@ -1,0 +1,20 @@
+name       : kmime
+version    : 22.12.1
+release    : 62
+source     :
+    - https://cdn.download.kde.org/stable/release-service/22.12.1/src/kmime-22.12.1.tar.xz : 2542b868f981551da7c3ce0c8ee2fba67998cc207e784cd41e9bf0c0f18ddaa4
+homepage   : https://kde.org/
+license    : LGPL-2.1-or-later
+component  : desktop.library
+summary    : KMime is a library for handling mail messages and newsgroup articles
+description: |
+    KMime is a library for handling mail messages and newsgroup articles.
+builddeps  :
+    - kcodecs-devel
+    - ki18n-devel
+setup      : |
+    %cmake_ninja -DBUILD_TESTING=OFF
+build      : |
+    %ninja_build
+install    : |
+    %ninja_install

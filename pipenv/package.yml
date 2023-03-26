@@ -1,0 +1,19 @@
+name       : pipenv
+version    : 2022.12.17
+release    : 14
+source     :
+    - https://github.com/pypa/pipenv/archive/refs/tags/v2022.12.17.tar.gz : b0d8da9d36ca3b4f016b73e390fcd7fec6c7be2bed7ef6be3ae8869312516523
+homepage   : https://pipenv.pypa.io/
+license    : MIT
+component  : programming.python
+summary    : Python Development Workflow for Humans
+description: |
+    Pipenv is a tool that aims to bring the best of all packaging worlds (bundler, composer, npm, cargo, yarn, etc.) to the Python world.
+rundeps    :
+    - python-certifi
+    - virtualenv
+    - virtualenv-clone
+build      : |
+    %python3_setup
+install    : |
+    %python3_install

@@ -1,0 +1,26 @@
+name       : gamemode
+version    : 1.6.1
+release    : 10
+source     :
+    - https://github.com/FeralInteractive/gamemode/releases/download/1.6.1/gamemode-1.6.1.tar.xz : 10c2a3f142eae472f5a09e42616e38c666c05b25ca3e61e562a543bb3fda66c5
+license    : BSD-3-Clause
+component  : games
+libsplit   : no
+emul32     : yes
+summary    : Optimise Linux system performance on demand
+description: |
+    Automatic helper to optimise Linux system performance when gaming
+builddeps  :
+    - pkgconfig32(dbus-1)
+    - pkgconfig32(inih)
+    - pkgconfig32(libgcrypt)
+    - pkgconfig32(liblzma)
+    - pkgconfig32(libsystemd)
+    - pkgconfig32(libzstd)
+setup      : |
+    %meson_configure -Dwith-pam-group=users
+build      : |
+    %ninja_build
+install    : |
+    %ninja_install
+    install -Dm00644 example/gamemode.ini $installdir/usr/share/doc/gamemode/gamemode.ini

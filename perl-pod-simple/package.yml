@@ -1,0 +1,21 @@
+name       : perl-pod-simple
+version    : '3.43'
+release    : 5
+source     :
+    - https://cpan.metacpan.org/authors/id/K/KH/KHW/Pod-Simple-3.43.tar.gz : 65abe3f5363fa4cdc108f5ad9ce5ce91e7a39186a1b297bb7a06fa1b0f45d377
+homepage   : https://metacpan.org/pod/Pod::Simple
+license    : Artistic-1.0-Perl
+component  : programming.perl
+summary    : Pod::Simple - framework for parsing Pod
+description: |
+    Pod::Simple is a Perl library for parsing text in the Pod ("plain old documentation") markup language that is typically used for writing documentation for Perl and for Perl modules.
+builddeps  :
+    - perl-test-deep        # tests
+setup      : |
+    %perl_setup
+build      : |
+    %perl_build
+install    : |
+    %perl_install
+check      : |
+    %perl_build test

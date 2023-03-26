@@ -1,0 +1,25 @@
+name       : marp-cli
+version    : 2.2.2
+release    : 2
+homepage   : https://marp.app/
+source     :
+    - https://github.com/marp-team/marp-cli/archive/refs/tags/v2.2.2.tar.gz : 0066a9e17b6f42a3e3959224ba60d012ccfb7657b5e90a8c5b5a39b223cfa670
+license    : MIT
+component  : office
+networking : yes
+strip      : no
+summary    : A CLI interface for Marp and Marpit based converters
+description: |
+    A CLI interface for Marp and any slide deck converter based on Marpit framework. It can convert Marp / Marpit Markdown files into static HTML / CSS, PDF, PowerPoint document, and image(s) easily.
+builddeps  :
+    - yarn
+setup      : |
+    yarn install
+build      : |
+    yarn build
+    yarn run pkg . \
+        --out-path ./bin \
+        --targets host \
+        --compress Brotli
+install    : |
+    install -Dm0755 bin/marp-cli $installdir/usr/bin/marp

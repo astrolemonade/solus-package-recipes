@@ -1,0 +1,16 @@
+tiers:
+    - name: Tier 0
+      dirs:
+        - ghc
+    - name: Tier 1
+      dirs:
+        - haskell-ObjectName
+        - haskell-alex
+        - haskell-annotated-wl-pprint
+        - haskell-auto-update
+        - haskell-base-compat
+        - haskell-base-orphans
+        - haskell-base-prelude
+        - haskell-base16-bytestring
+        - haskell-base64-bytestring
+        - haskell-basement

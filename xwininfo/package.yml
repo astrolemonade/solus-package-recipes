@@ -1,0 +1,20 @@
+name       : xwininfo
+version    : 1.1.5
+release    : 6
+source     :
+    - https://www.x.org/releases/individual/app/xwininfo-1.1.5.tar.gz : aaa915909bb509320c3c775c79babaccc063fd3edc39e520a3c0352e265e9f58
+license    :
+    - MIT
+component  : xorg.apps
+summary    : X.Org Applications; xwininfo
+builddeps  :
+    - pkgconfig(x11)
+    - pkgconfig(xcb-shape)
+description: |
+    X.Org Applications: xwininfo
+setup      : |
+    %configure
+build      : |
+    %make
+install    : |
+    %make_install

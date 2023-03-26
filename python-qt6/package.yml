@@ -1,0 +1,38 @@
+name       : python-qt6
+version    : 6.3.1
+release    : 7
+source     :
+    - https://files.pythonhosted.org/packages/source/P/PyQt6/PyQt6-6.3.1.tar.gz : 8cc6e21dbaf7047d1fc897e396ccd9710a12f2ef976563dad65f06017d2c9757
+homepage   : https://www.riverbankcomputing.com/software/pyqt/
+license    : GPL-3.0-or-later
+component  : programming.python
+summary    : A set of Python bindings for Qt6
+description: |
+    Python bindings for the Qt6 cross platform application toolkit.
+builddeps  :
+    - pkgconfig(Qt6Quick3D)
+    - pkgconfig(Qt6ShaderTools)
+    - pkgconfig(Qt6Svg)
+    - pkgconfig(Qt6UiTools)
+    - pkgconfig(Qt6WebChannel)
+    - pkgconfig(dbus-python)
+    - pkgconfig(python3)
+    - designer6
+    - pyqt-builder
+    - python-opengl
+    - python-ply
+    - python-pyqt6-sip
+    - python-sip
+rundeps    :
+    - python3-dbus
+    - python-pyqt6-sip
+setup      : |
+    sip-build \
+        --confirm-license \
+        --no-make \
+        --qmake=/usr/bin/qmake6
+build      : |
+    %make -C build
+install    : |
+    %make_install -C build INSTALL_ROOT="$installdir"
+    %python3_compile

@@ -1,0 +1,31 @@
+name       : kiconthemes
+version    : 5.101.0
+release    : 67
+source     :
+    - https://cdn.download.kde.org/stable/frameworks/5.101/kiconthemes-5.101.0.tar.xz : f8577853392481cf8f4a38653ff66422b09f34a9172adaeb337a7387e81b710e
+homepage   : https://community.kde.org/Frameworks
+license    :
+    - GPL-2.0-only
+    - LGPL-2.0-only
+    - LGPL-2.0-or-later
+    - LGPL-2.1-only
+component  : desktop.library
+summary    : Icon GUI utilities.
+description: |
+    Icon GUI utilities.
+optimize   : lto
+builddeps  :
+    - pkgconfig(Qt5Svg)
+    - kconfig-devel
+    - karchive-devel
+    - kconfigwidgets-devel
+    - ki18n-devel
+    - kitemviews-devel
+    - kwidgetsaddons-devel
+setup      : |
+    %cmake_ninja -DBUILD_QCH=ON \
+                -DBUILD_TESTING=OFF
+build      : |
+    %ninja_build
+install    : |
+    %ninja_install

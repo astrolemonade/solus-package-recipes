@@ -1,0 +1,27 @@
+name       : haskell-gio
+version    : 0.13.8.1
+release    : 6
+source     :
+    - https://hackage.haskell.org/package/gio-0.13.8.1/gio-0.13.8.1.tar.gz : 26d77f1c1d5937a73b98f29b91619d9911756819cb2894ace864626bee41b801
+license    : LGPL-2.1-only
+component  : programming.haskell
+summary    : Binding to GIO
+description: |
+    GIO is striving to provide a modern, easy-to-use VFS API that sits at the right level in the library stack. The goal is to overcome the shortcomings of GnomeVFS and provide an API that is so good that developers prefer it over raw POSIX calls. Among other things that means using GObject. It also means not cloning the POSIX API, but providing higher-level, document-centric interfaces.
+builddeps  :
+    - pkgconfig(gobject-introspection-1.0)
+    - haskell-cabal-install
+    - haskell-glib-devel
+rundeps    :
+    - devel:
+        - gobject-introspection-devel
+        - haskell-glib-devel
+optimize   : no-symbols
+networking : yes
+setup      : |
+    %cabal_configure --dynlibdir="\$libdir/\$compiler/\$pkgid"
+build      : |
+    %cabal_build
+install    : |
+    %cabal_install
+    %cabal_register

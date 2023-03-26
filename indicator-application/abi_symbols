@@ -1,0 +1,13 @@
+libapplication.so:__bss_start
+libapplication.so:_application_service_marshal_VOID__BOOLEAN_STRING_OBJECT
+libapplication.so:_application_service_marshal_VOID__INT_STRING
+libapplication.so:_application_service_marshal_VOID__INT_STRING_STRING
+libapplication.so:_application_service_marshal_VOID__STRING_INT_STRING_STRING_STRING_STRING_STRING
+libapplication.so:_application_service_marshal_VOID__STRING_STRING
+libapplication.so:_edata
+libapplication.so:_end
+libapplication.so:_fini
+libapplication.so:_init
+libapplication.so:get_type
+libapplication.so:get_version
+libapplication.so:indicator_application_get_type

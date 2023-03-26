@@ -1,0 +1,21 @@
+name       : mpc-qt
+version    : '22.02'
+release    : 6
+source     :
+    - https://github.com/mpc-qt/mpc-qt/archive/refs/tags/v22.02.tar.gz : fa6cffd6bde1304b6c0ec3aba8e98d03f4d73999fee4e4546026ec159530350d
+license    : GPL-2.0-or-later
+component  : multimedia.video
+summary    : Media Player Classic Qute Theater
+description: |
+    Media Player Classic Qute Theater (mpc-qt) aims to reproduce most of the interface and functionality of mpc-hc while using libmpv to play video instead of DirectShow.
+builddeps  :
+    - pkgconfig(Qt5UiTools)
+    - pkgconfig(Qt5X11Extras)
+    - pkgconfig(mpv)
+    - pkgconfig(xcb)
+setup      : |
+    %qmake MPCQT_VERSION=$version PREFIX=/usr
+build      : |
+    %make
+install    : |
+    %make_install INSTALL_ROOT=$installdir

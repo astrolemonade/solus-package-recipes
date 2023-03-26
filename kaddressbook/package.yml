@@ -1,0 +1,45 @@
+name       : kaddressbook
+version    : 22.12.1
+release    : 60
+source     :
+    - https://cdn.download.kde.org/stable/release-service/22.12.1/src/kaddressbook-22.12.1.tar.xz : 5924efee6c6ff71127a4d9bd2e004f2e60035c6c89f374b9c2e10e83cdca1980
+homepage   : https://kde.org/applications/office/org.kde.kaddressbook
+license    :
+    - GFDL-1.2-or-later
+    - GPL-2.0-or-later
+component  : office
+summary    : KDE Contact Manager
+description: |
+    KAddressBook stores all the personal details of your family, friends and other contacts..
+builddeps  :
+    - pkgconfig(libsasl2)
+    - pkgconfig(Qt5WebEngine)
+    - akonadi-contacts-devel
+    - akonadi-mime-devel
+    - akonadi-search-devel
+    - kcalendarcore-devel
+    - kcmutils-devel
+    - kcontacts-devel
+    - kcrash-devel
+    - kdbusaddons-devel
+    - kdoctools-devel
+    - kimap-devel
+    - kontactinterface-devel
+    - kparts-devel
+    - kpimtextedit-devel
+    - libkdepim-devel
+    - libkleo-devel
+    - gpgme-qt-devel
+    - pimcommon-devel
+    - prison-devel
+rundeps    :
+    - kdepim-runtime
+setup      : |
+    %cmake_ninja
+build      : |
+    %ninja_build
+install    : |
+    %ninja_install
+
+    # remove doc
+    rm -rf $installdir/usr/share/doc

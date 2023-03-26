@@ -1,0 +1,24 @@
+name       : nnn
+version    : '4.7'
+release    : 29
+source     :
+    - https://github.com/jarun/nnn/archive/refs/tags/v4.7.tar.gz : 81ccccc045bfd7ee3f1909cc443158ea0d1833f77d6342fd19c33864a2ab71d1
+license    : BSD-2-Clause
+homepage   : https://github.com/jarun/nnn
+component  : system.utils
+summary    : A simple console file manager forked from Noice.
+description: |
+    A simple console file manager forked from Noice.
+builddeps  :
+    - pkgconfig(ncursesw)
+rundeps    :
+    - atool
+    - libarchive
+    - mediainfo
+    - moreutils
+    - rclone
+    - sshfs-fuse
+build      : |
+    %make
+install    : |
+    %make_install PREFIX=/usr

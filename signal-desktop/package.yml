@@ -1,0 +1,35 @@
+name       : signal-desktop
+version    : 6.1.0
+release    : 128
+source     :
+    - https://updates.signal.org/desktop/apt/pool/main/s/signal-desktop/signal-desktop_6.1.0_amd64.deb : ef4210ff6ca31db7b3f12a59c6a64a6bf5d6204600ddc37b24020cf64823377d
+homepage   : https://signal.org
+license    : GPL-3.0-or-later
+component  : network.im
+summary    : Signal Desktop is an Electron application that links with your Signal Android or Signal iOS app
+description: |
+    Signal Desktop is an Electron application that links with your Signal Android or Signal iOS app.
+builddeps  :
+    - pkgconfig(alsa)
+    - pkgconfig(gbm)
+    - pkgconfig(gtk+-2.0)
+    - pkgconfig(gtk+-3.0)
+    - pkgconfig(libdrm)
+    - pkgconfig(xscrnsaver)
+    - cups-devel
+setup      : |
+    ar xf $sources/signal-desktop_${version}_amd64.deb
+    mkdir root
+    tar xf data.tar.xz -C root
+install    : |
+    # This only excludes /usr/bin link which will be invalid
+    install -Ddm00755 $installdir/usr/bin
+    install -Ddm00644 $installdir/usr/share/{applications,pixmaps,signal-desktop}
+    cp -R root/usr/share/icons $installdir/usr/share/
+
+    # We do not use /opt for binary packages in Solus, so just use /usr/share.
+    cp -R root/opt/Signal/* $installdir/usr/share/signal-desktop/
+    ln -sv /usr/share/signal-desktop/signal-desktop $installdir/usr/bin/signal-desktop
+
+    install -Dm00644 root/usr/share/icons/hicolor/512x512/apps/signal-desktop.png $installdir/usr/share/pixmaps/signal-desktop.png
+    install -Dm00644 $pkgfiles/signal-desktop.desktop $installdir/usr/share/applications/signal-desktop.desktop

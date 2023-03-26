@@ -1,0 +1,55 @@
+name       : mutter
+version    : '43.3'
+release    : 94
+source     :
+    - https://download.gnome.org/sources/mutter/43/mutter-43.3.tar.xz : 67be4820d9b270c9c3c65e38947bf052d2c2ff18ae9e70421d49259efac00a7d
+license    : LGPL-2.0-or-later
+component  : desktop.gnome
+summary    : Gnome Shell Window Manager
+description: |
+    Gnome Shell compositing window manager
+ccache     : no
+builddeps  :
+    - pkgconfig(colord)
+    - pkgconfig(dri)
+    - pkgconfig(gnome-desktop-3.0)
+    - pkgconfig(gnome-settings-daemon)
+    - pkgconfig(gobject-introspection-1.0)
+    - pkgconfig(gsettings-desktop-schemas)
+    - pkgconfig(graphene-1.0)
+    - pkgconfig(gtk+-3.0)
+    - pkgconfig(gudev-1.0)
+    - pkgconfig(json-glib-1.0)
+    - pkgconfig(libcanberra-gtk3)
+    - pkgconfig(libinput)
+    - pkgconfig(lcms2)
+    - pkgconfig(libpipewire-0.3)
+    - pkgconfig(libstartup-notification-1.0)
+    - pkgconfig(libwacom)
+    - pkgconfig(sm)
+    - pkgconfig(upower-glib)
+    - pkgconfig(wayland-eglstream)
+    - pkgconfig(wayland-server)
+    - pkgconfig(wayland-protocols)
+    - pkgconfig(xcursor)
+    - pkgconfig(xkbfile)
+    - pkgconfig(xkeyboard-config)
+    - pkgconfig(xorg-server)
+    - pkgconfig(xtst)
+    - pkgconfig(xwayland)
+    - zenity
+rundeps    :
+    - zenity
+    - devel : mesalib-devel # Internal cogl requires EGL/eglmesaext.h from mesalib-devel
+setup      : |
+    %apply_patches
+    %meson_configure \
+        -Degl_device=true \
+        -Dinstalled_tests=false \
+        -Dprofiler=false \
+        -Dtests=false \
+        -Dwayland_eglstream=true
+build      : |
+    %ninja_build
+install    : |
+    %ninja_install

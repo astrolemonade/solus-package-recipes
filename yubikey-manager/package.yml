@@ -1,0 +1,35 @@
+name       : yubikey-manager
+version    : 4.0.9
+release    : 33
+source     :
+    - https://files.pythonhosted.org/packages/source/y/yubikey-manager/yubikey-manager-4.0.9.tar.gz : 384e3a2a66df4ce417aede734eb8c5d0c1b7981290e9bc940c85cc000ef833b4
+license    : BSD-2-Clause
+component  : security
+summary    : Command line utility for configuring your YubiKey
+description: |
+    Python library and command line tool for configuring any YubiKey over all USB transports.
+networking : yes
+builddeps  :
+    - pkgconfig(python3)
+    - pcsc-lite
+    - python-click
+    - python-fido2
+    - python-openssl
+    - python-pyscard
+    - python-pyusb
+    - python-testpath
+rundeps    :
+    - ccid
+    - python-click
+    - python-cryptography
+    - python-fido2
+    - python-openssl
+    - python-pyscard
+build      : |
+    %python3_setup
+install    : |
+    %python3_install
+
+    # Vendor enable pcscd.socket so this works OOTB.
+    install -dm00755 $installdir/%libdir%/systemd/system/sockets.target.wants
+    ln -sv ../pcscd.socket $installdir/%libdir%/systemd/system/sockets.target.wants/pcscd.socket

@@ -1,0 +1,30 @@
+name       : mate-panel
+version    : 1.27.0
+release    : 35
+source     :
+    - https://github.com/mate-desktop/mate-panel/releases/download/v1.27.0/mate-panel-1.27.0.tar.xz : 82aa0cc7a50a844d686ac3d29ca1866033ba4fb0c03e198838161337301de6d5
+license    :
+    - GPL-2.0-or-later
+    - LGPL-2.0-or-later
+    - GFDL-1.1-or-later
+component  : desktop.mate
+summary    : The panel of the MATE Desktop
+description: |
+    The panel of the MATE Desktop Environment
+builddeps  :
+    - pkgconfig(gtk-doc)
+    - pkgconfig(libcanberra-gtk3)
+    - pkgconfig(libmate-menu)
+    - pkgconfig(librsvg-2.0)
+    - pkgconfig(libwnck-3.0)
+    - pkgconfig(mate-desktop-2.0)
+    - pkgconfig(mateweather)
+    - pkgconfig(sm)
+    - itstool
+setup      : |
+    %configure --disable-static \
+        --enable-gtk-doc
+build      : |
+    %make
+install    : |
+    %make_install

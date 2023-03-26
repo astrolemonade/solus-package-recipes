@@ -1,0 +1,63 @@
+<PISI>
+    <Source>
+        <Name>roxterm</Name>
+        <Homepage>https://realh.github.io/roxterm/en/index.html</Homepage>
+        <Packager>
+            <Name>Algent Albrahimi</Name>
+            <Email>algent@protonmail.com</Email>
+        </Packager>
+        <License>GPL-2.0-or-later</License>
+        <PartOf>system.utils</PartOf>
+        <Summary xml:lang="en">A tabbed, VTE-based terminal emulator</Summary>
+        <Description xml:lang="en">ROXTerm is a terminal emulator intended to provide similar features to gnome-terminal, based on the same VTE library. It was originally designed to have a smaller footprint and quicker start-up time by not using the Gnome libraries and by using a separate applet to provide the configuration GUI, but thanks to all the features it&apos;s acquired over the years ROXTerm can probably now be accused of bloat. However, it is more configurable than gnome-terminal and aimed more at &quot;power&quot; users who make heavy use of terminals.
+</Description>
+        <Archive type="binary" sha1sum="79eb0752a961b8e0d15c77d298c97498fbc89c5a">https://getsol.us/sources/README.Solus</Archive>
+    </Source>
+    <Package>
+        <Name>roxterm</Name>
+        <Summary xml:lang="en">A tabbed, VTE-based terminal emulator</Summary>
+        <Description xml:lang="en">ROXTerm is a terminal emulator intended to provide similar features to gnome-terminal, based on the same VTE library. It was originally designed to have a smaller footprint and quicker start-up time by not using the Gnome libraries and by using a separate applet to provide the configuration GUI, but thanks to all the features it&apos;s acquired over the years ROXTerm can probably now be accused of bloat. However, it is more configurable than gnome-terminal and aimed more at &quot;power&quot; users who make heavy use of terminals.
+</Description>
+        <PartOf>system.utils</PartOf>
+        <Files>
+            <Path fileType="executable">/usr/bin/roxterm</Path>
+            <Path fileType="executable">/usr/bin/roxterm-config</Path>
+            <Path fileType="data">/usr/share/applications/roxterm.desktop</Path>
+            <Path fileType="doc">/usr/share/doc/roxterm/en/guide.html</Path>
+            <Path fileType="doc">/usr/share/doc/roxterm/en/index.html</Path>
+            <Path fileType="doc">/usr/share/doc/roxterm/en/installation.html</Path>
+            <Path fileType="doc">/usr/share/doc/roxterm/en/news.html</Path>
+            <Path fileType="doc">/usr/share/doc/roxterm/index.html</Path>
+            <Path fileType="doc">/usr/share/doc/roxterm/index.php</Path>
+            <Path fileType="doc">/usr/share/doc/roxterm/lib/favicon.ico</Path>
+            <Path fileType="doc">/usr/share/doc/roxterm/lib/header.png</Path>
+            <Path fileType="doc">/usr/share/doc/roxterm/lib/logo_text.png</Path>
+            <Path fileType="doc">/usr/share/doc/roxterm/lib/logo_text.xcf</Path>
+            <Path fileType="doc">/usr/share/doc/roxterm/lib/logo_text_only.png</Path>
+            <Path fileType="doc">/usr/share/doc/roxterm/lib/roxterm.css</Path>
+            <Path fileType="doc">/usr/share/doc/roxterm/lib/roxterm_ie.css</Path>
+            <Path fileType="doc">/usr/share/doc/roxterm/lib/roxterm_logo.png</Path>
+            <Path fileType="doc">/usr/share/doc/roxterm/lib/screenshot1.png</Path>
+            <Path fileType="doc">/usr/share/doc/roxterm/lib/screenshot2.png</Path>
+            <Path fileType="doc">/usr/share/doc/roxterm/lib/sprites.png</Path>
+            <Path fileType="data">/usr/share/icons/hicolor/scalable/apps/roxterm.svg</Path>
+            <Path fileType="man">/usr/share/man/man1/roxterm-config.1</Path>
+            <Path fileType="man">/usr/share/man/man1/roxterm.1</Path>
+            <Path fileType="data">/usr/share/metainfo/roxterm.metainfo.xml</Path>
+            <Path fileType="data">/usr/share/roxterm/Config/Colours/GTK</Path>
+            <Path fileType="data">/usr/share/roxterm/Config/Colours/Nocturne</Path>
+            <Path fileType="data">/usr/share/roxterm/Config/Colours/Tango</Path>
+            <Path fileType="data">/usr/share/roxterm/Config/Shortcuts/Default</Path>
+            <Path fileType="data">/usr/share/roxterm/roxterm-config.ui</Path>
+        </Files>
+    </Package>
+    <History>
+        <Update release="12">
+            <Date>2020-07-09</Date>
+            <Version>3.9.4</Version>
+            <Comment>Packaging update</Comment>
+            <Name>Algent Albrahimi</Name>
+            <Email>algent@protonmail.com</Email>
+        </Update>
+    </History>
+</PISI>

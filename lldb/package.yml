@@ -1,0 +1,27 @@
+name       : lldb
+version    : 14.0.6
+release    : 17
+source     :
+    - https://github.com/llvm/llvm-project/releases/download/llvmorg-14.0.6/lldb-14.0.6.src.tar.xz : 2ac41160b0bdc74bf72d4f9a3702f290f7c09998da6fb73281cc497f4ddbe130
+license    : NCSA
+component  : programming.tools
+summary    : High performance debugger, part of the LLVM project.
+description: |
+    LLDB is a next generation, high-performance debugger. It is built as a set of reusable components which highly leverage existing libraries in the larger LLVM Project, such as the Clang expression parser and LLVM disassembler.
+clang      : yes
+libsplit   : no
+builddeps  :
+    - pkgconfig(libedit)
+    - pkgconfig(python3)
+    - swig
+rundeps    :
+    - python-six
+setup      : |
+    %cmake_ninja \
+        -DLLDB_USE_SYSTEM_SIX=ON \
+        -DLLVM_LINK_LLVM_DYLIB=ON
+build      : |
+    %ninja_build
+install    : |
+    %ninja_install
+    %python3_compile

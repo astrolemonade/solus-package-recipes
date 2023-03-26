@@ -1,0 +1,38 @@
+name       : kscreen
+version    : 5.26.5
+release    : 84
+source     :
+    - https://cdn.download.kde.org/stable/plasma/5.26.5/kscreen-5.26.5.tar.xz : 3df884e30189121203f9aaec4f4e1052d4f545cdd42431b23e7a88fceecf1e71
+homepage   : https://www.kde.org/workspaces/plasmadesktop/
+license    :
+    - GPL-2.0-or-later
+    - LGPL-2.1-only
+component  : desktop.kde.core
+summary    : KDE Plasma screen management
+description: |
+    KDE Plasma screen management.
+optimize   : lto
+builddeps  :
+    - pkgconfig(xi)
+    - pkgconfig(xcb-atom)
+    - pkgconfig(kscreen2)
+    - pkgconfig(Qt5Sensors)
+    - pkgconfig(Qt5X11Extras)
+    - kcmutils-devel
+    - kdbusaddons-devel
+    - kdeclarative-devel
+    - kglobalaccel-devel
+    - ki18n-devel
+    - kiconthemes-devel
+    - kxmlgui-devel
+    - layer-shell-qt-devel
+    - plasma-framework-devel
+rundeps    :
+    - qt5-graphicaleffects
+setup      : |
+    %cmake_ninja -DBUILD_TESTING=OFF
+build      : |
+    %ninja_build
+install    : |
+    %ninja_install
+    %qml_cache

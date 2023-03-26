@@ -1,0 +1,24 @@
+name       : kidentitymanagement
+version    : 22.12.1
+release    : 64
+source     :
+    - https://cdn.download.kde.org/stable/release-service/22.12.1/src/kidentitymanagement-22.12.1.tar.xz : 60ed88b6c31943d9408ebb8d480a8af8996292043406c0a57bb5a657a728777f
+homepage   : https://kde.org/
+license    : LGPL-2.1-or-later
+component  : desktop.library
+summary    : Manage PIM identity
+description: |
+    Manage PIM identity.
+builddeps  :
+    - kiconthemes-devel
+    - kio-devel
+    - kpimtextedit-devel
+rundeps    :
+    - devel :
+        - kpimtextedit-devel
+setup      : |
+    %cmake_ninja -DBUILD_TESTING=OFF
+build      : |
+    %ninja_build
+install    : |
+    %ninja_install

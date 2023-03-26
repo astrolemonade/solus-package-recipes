@@ -1,0 +1,17 @@
+name       : pv
+version    : 1.6.20
+release    : 4
+homepage   : http://www.ivarch.com/programs/pv.shtml
+source     :
+    - http://www.ivarch.com/programs/sources/pv-1.6.20.tar.gz : b5f1ee79a370c5287e092b6e8f1084f026521fe0aecf25c44b9460b870319a9e
+license    : Artistic License 2.0
+summary    : A terminal-based tool for monitoring the progress of data through a pipeline.
+component  : system.utils
+description: |
+    Pipe Viewer - is a terminal-based tool for monitoring the progress of data through a pipeline.
+setup      : |
+    %configure
+build      : |
+    %make
+install    : |
+    %make_install

@@ -1,0 +1,59 @@
+name       : kdelibs4support
+version    : 5.101.0
+release    : 69
+source     :
+    - https://cdn.download.kde.org/stable/frameworks/5.101/portingAids/kdelibs4support-5.101.0.tar.xz : 75b22a61e5341c91dfb59d1a601a6f7b989be0185a707dcfb489910940ee4aaa
+homepage   : https://community.kde.org/Frameworks
+license    :
+    - GPL-2.0-or-later
+    - LGPL-2.1-or-later
+component  : programming.library
+summary    : Legacy support for kdelibs 4 compatibility
+description: |
+    This framework provides code and utilities to ease the transition from kdelibs 4 to KDE Frameworks 5. This includes CMake macros and C++ classes whose functionality has been replaced by code in CMake, Qt and other frameworks.
+optimize   : lto
+builddeps  :
+    - pkgconfig(Qt5Svg)
+    - pkgconfig(Qt5X11Extras)
+    - pkgconfig(libnm)
+    - pkgconfig(sm)
+    - pkgconfig(x11)
+    - kcrash-devel
+    - kdbusaddons-devel
+    - kded-devel
+    - kdesignerplugin-devel
+    - kdoctools-devel
+    - kemoticons-devel
+    - kglobalaccel-devel
+    - kguiaddons-devel
+    - kiconthemes-devel
+    - knotifications-devel
+    - kparts-devel
+    - kunitconversion-devel
+    - perl-uri
+rundeps    :
+    - kdesignerplugin
+    - kemoticons
+    - devel :
+        - karchive-devel
+        - kcrash-devel
+        - kdbusaddons-devel
+        - kdesignerplugin-devel
+        - kdoctools-devel
+        - kemoticons-devel
+        - kguiaddons-devel
+        - kiconthemes-devel
+        - kinit-devel
+        - kio-devel
+        - kitemmodels-devel
+        - knotifications-devel
+        - kparts-devel
+        - ktextwidgets-devel
+        - kunitconversion-devel
+setup      : |
+    %cmake_ninja -DBUILD_TESTING=OFF
+build      : |
+    %ninja_build
+install    : |-
+    %ninja_install
+    rm -rf $installdir/usr/share/doc

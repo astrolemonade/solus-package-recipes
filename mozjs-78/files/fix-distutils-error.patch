@@ -1,0 +1,12 @@
+--- a/build/moz.configure/init.configure
++++ b/build/moz.configure/init.configure
+@@ -375,9 +375,6 @@
+         sys.exit(subprocess.call([python] + sys.argv))
+ 
+     # We are now in the virtualenv
+-    if not distutils.sysconfig.get_python_lib():
+-        die('Could not determine python site packages directory')
+-
+     str_version = '.'.join(str(v) for v in version)
+ 
+     return namespace(

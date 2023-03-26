@@ -1,0 +1,20 @@
+name       : gnome-user-docs
+version    : '43.0'
+release    : 22
+source     :
+    - https://download.gnome.org/sources/gnome-user-docs/43/gnome-user-docs-43.0.tar.xz : 3607160effd6f91e25a8798b57defb2099dd70b8fee4e7e2f20f2637ac28caee
+license    : CC-BY-3.0
+component  : desktop.gnome.doc
+summary    : GNOME core documentation
+description: |
+    This package contains documents which will be packaged together and shipped as gnome-user-docs in the core GNOME distribution. They should be documents targeted for end-users of GNOME and have general GNOME applicability.
+builddeps  :
+    - pkgconfig(yelp-xsl)
+    - yelp-tools
+    - itstool
+setup      : |
+    %configure
+build      : |
+    %make
+install    : |
+    %make_install

@@ -1,0 +1,47 @@
+name       : zanshin
+version    : 22.12.1
+release    : 18
+source     :
+    - https://cdn.download.kde.org/stable/release-service/22.12.1/src/zanshin-22.12.1.tar.xz : 3c0143bf85c1ae5ea1e1545ee72b9c634ac98198683e2b18d18e947c0aab5a00
+license    :
+    - GPL-3.0-or-alter
+    - LGPL-2.1-only
+component  : office.notes
+summary    : To-do management application for KDE.
+description: |
+    A powerful yet simple application to manage your day to day actions.
+builddeps  :
+    - pkgconfig(glu)
+    - pkgconfig(libsasl2)
+    - pkgconfig(Qt5Qml)
+    - akonadi-calendar-devel
+    - akonadi-contacts-devel
+    - akonadi-devel
+    - akonadi-mime-devel
+    - akonadi-search-devel
+    - extra-cmake-modules
+    - kcalendarcore-devel
+    - kcmutils-devel
+    - kcodecs-devel
+    - kcontacts-devel
+    - kdeclarative-devel
+    - kdelibs4support-devel
+    - kidentitymanagement-devel
+    - kldap-devel
+    - kmbox-devel
+    - kontactinterface-devel
+    - kpimtextedit-devel
+    - krunner-devel
+    - kwallet-devel
+    - libboost-devel
+    - libical-devel
+    - openldap-devel
+rundeps    :
+    - kded
+    - kdepim-runtime
+setup      : |
+    %cmake_ninja -DBUILD_TESTING=OFF
+build      : |
+    %ninja_build
+install    : |
+    %ninja_install

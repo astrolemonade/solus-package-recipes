@@ -1,0 +1,27 @@
+name       : kactivitymanagerd
+version    : 5.26.5
+release    : 84
+source     :
+    - https://cdn.download.kde.org/stable/plasma/5.26.5/kactivitymanagerd-5.26.5.tar.xz : 0a0aceb612694098cd4a067535b4e955690649d6885913df43dcb14b07b4f67a
+homepage   : https://www.kde.org/workspaces/plasmadesktop/
+license    :
+    - GPL-2.0-or-later
+    - GPL-3.0-or-later
+component  : desktop.kde.core
+summary    : Core components for the KDE Activity concept
+description: |
+    Core components for the KDE Activity concept.
+libsplit   : no
+optimize   : lto
+builddeps  :
+    - kcrash-devel
+    - kdbusaddons-devel
+    - kio-devel
+    - kglobalaccel-devel
+    - libboost-devel
+setup      : |
+    %cmake_ninja
+build      : |
+    %ninja_build
+install    : |
+    %ninja_install

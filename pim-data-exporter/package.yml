@@ -1,0 +1,38 @@
+name       : pim-data-exporter
+version    : 22.12.1
+release    : 59
+source     :
+    - https://cdn.download.kde.org/stable/release-service/22.12.1/src/pim-data-exporter-22.12.1.tar.xz : 4635dd0b88a23f55a44eff94b9aa5194ecdde661adc6abd9bdf0318d4df332b2
+homepage   : https://kde.org/
+license    :
+    - GFDL-1.2-or-later
+    - GPL-2.0-or-later
+component  : office
+summary    : Application to archive PIM data
+description: |
+    Application to assist you with backing up and archiving PIM data, including the necessary configuration, for archival or transfer to another computer.
+builddeps  :
+    - pkgconfig(Qt5WebEngineWidgets)
+    - akonadi-notes-devel
+    - kcalendarcore-devel
+    - karchive-devel
+    - kcontacts-devel
+    - kcrash-devel
+    - kdbusaddons-devel
+    - kdoctools-devel
+    - kidentitymanagement-devel
+    - kio-devel
+    - kmailtransport-devel
+    - knotifications-devel
+    - kuserfeedback-devel
+    - mailcommon-devel
+    - pimcommon-devel
+setup      : |
+    %cmake_ninja -DBUILD_TESTING=OFF
+build      : |
+    %ninja_build
+install    : |-
+    %ninja_install
+
+    # remove doc
+    rm -rf $installdir/usr/share/doc

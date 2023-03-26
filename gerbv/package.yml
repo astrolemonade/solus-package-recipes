@@ -1,0 +1,25 @@
+name       : gerbv
+version    : 2.9.5
+release    : 7
+source     :
+    - https://github.com/gerbv/gerbv/archive/refs/tags/v2.9.5.tar.gz : a90b3e50941bed90eaf45e9b0d19b2d074eec1f433dcf3a1b3cbf14d8dc7c1ec
+homepage   : https://gerbv.github.io/
+license    : GPL-2.0-or-later
+component  : office.scientific
+summary    : A Free/Open Source Gerber Viewer
+description: |
+    This is a maintained fork of gerbv, carrying mostly bugfixes. Gerbv is a viewer for Gerber RS-274X files, Excellon drill files, and CSV pick-and-place files.
+builddeps  :
+    - pkgconfig(ImageMagick)
+    - pkgconfig(gtk+-2.0)
+environment: |
+    export CFLAGS="${CFLAGS} -fcommon"
+setup      : |
+    sed -i "21 i VERSION=%version%" src/Makefile.am
+    sed -i "64 i #define VERSION \"%version%\"" src/gerbv.h
+
+    %autogen --disable-static --disable-update-desktop-database
+build      : |
+    %make
+install    : |
+    %make_install

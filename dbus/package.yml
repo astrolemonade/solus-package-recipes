@@ -1,0 +1,63 @@
+name       : dbus
+version    : 1.14.4
+release    : 34
+source     :
+    - https://dbus.freedesktop.org/releases/dbus/dbus-1.14.4.tar.xz : 7c0f9b8e5ec0ff2479383e62c0084a3a29af99edf1514e9f659b81b30d4e353e
+license    :
+    - GPL-2.0-or-later
+    - LGPL-2.1-or-later
+summary    :
+    - System Message Daemon
+    - launch : X11 dbus-launch helper
+description: |
+    D-Bus is a message bus system, a simple way for applications to talk to oneg another. D-Bus supplies both a system daemon (for events such as "new hardware device added" or "printer queue changed") and a per-user login-session daemon (for general IPC needs among user applications). Also, the message bus is built on top of a general one-to-one message passing framework, which can be used by any two applications to communicate directly (without going through the message bus daemon).
+component  :
+    - system.base
+    - devel : system.devel
+    - launch : desktop.core
+emul32     : yes
+optimize   :
+    - size
+    - lto
+patterns   :
+    - devel : /usr/lib64/dbus-1.0/include/
+    - 32bit-devel : /usr/lib32/dbus-1.0/include/
+    - launch :
+        - /usr/bin/dbus-launch
+        - /usr/share/man/man1/dbus-launch.1
+builddeps  :
+    - pkgconfig32(expat)
+    - pkgconfig32(glib-2.0)
+    - pkgconfig32(gudev-1.0)
+    - pkgconfig32(liblzma)
+    - pkgconfig32(libudev)
+    - pkgconfig32(libzstd)
+    - pkgconfig32(x11)
+    - docbook-xml
+    - libgcrypt-32bit-devel
+    - xmlto
+setup      : |
+    %patch -p1 < $pkgfiles/0001-dbus-Teach-it-a-new-trick-Shutting-up.patch
+    %patch -p1 < $pkgfiles/0001-Add-run-dbus-tmpfiles.patch
+
+    %configure --disable-static \
+               --enable-epoll \
+               --enable-user-session \
+               --libexecdir=%libdir%/dbus-1.0 \
+               --with-console-auth-dir=/run/console/ \
+               --with-systemdsystemunitdir=/usr/lib64/systemd/system \
+               --with-systemduserunitdir=/usr/lib64/systemd/user \
+               --with-system-pid-file=/run/dbus/pid \
+               --with-system-socket=/run/dbus/system_bus_socket
+build      : |
+    %make
+install    : |
+    %make_install
+    # Per dbus documentation, behavior is now determined by /usr/share/dbus-1/* and /etc contents can be safely deleted.
+    # /var was already previously being deleted since it shouldn't be shipped.
+    rm -rf $installdir/{etc,var}
+    if [[ ! -z "${EMUL32BUILD}" ]]; then
+        rm -v $installdir/%libdir%/dbus-1.0/dbus-daemon-launch-helper
+    else
+        chmod o+x $installdir/%libdir%/dbus-1.0/dbus-daemon-launch-helper
+    fi

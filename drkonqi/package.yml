@@ -1,0 +1,33 @@
+name       : drkonqi
+version    : 5.26.5
+release    : 82
+source     :
+    - https://cdn.download.kde.org/stable/plasma/5.26.5/drkonqi-5.26.5.tar.xz : 07f0c9fe9d03f3b6c6b86930f01f57ec04a0143596d237ca6af2f343353ad4eb
+homepage   : https://www.kde.org/workspaces/plasmadesktop/
+license    :
+    - GPL-2.0-or-later
+    - LGPL-2.1-or-later
+component  : desktop.kde.core
+summary    : KDE Crash Handler
+description: |
+    The KDE Crash Handler.
+optimize   : lto
+builddeps  :
+    - pkgconfig(Qt5Quick)
+    - pkgconfig(Qt5X11Extras)
+    - kcrash-devel
+    - kdeclarative-devel
+    - kidletime-devel
+    - kio-devel
+    - knotifications-devel
+    - kuserfeedback-devel
+    - kwallet-devel
+    - syntax-highlighting-devel
+rundep     :
+    - gdb
+setup      : |
+    %cmake_ninja -DBUILD_TESTING=OFF
+build      : |
+    %ninja_build
+install    : |
+    %ninja_install

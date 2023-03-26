@@ -1,0 +1,33 @@
+name       : libtiff
+version    : 4.5.0
+release    : 39
+source     :
+    - https://download.osgeo.org/libtiff/tiff-4.5.0.tar.gz : c7a1d9296649233979fa3eacffef3fa024d73d05d589cb622727b5b08c423464
+license    : libtiff
+component  :
+    - desktop.library
+    - utils : multimedia.graphics
+summary    : Library for accessing TIFF files
+description: |
+    The LibTIFF package contains the TIFF libraries and associated utilities. The libraries are used by many programs for reading and writing TIFF files and the utilities are used for general work with TIFF files.
+emul32     : yes
+optimize   : speed
+builddeps  :
+    - pkgconfig32(liblzma)
+    - pkgconfig32(libturbojpeg)
+    - pkgconfig32(libzstd)
+    - pkgconfig32(zlib)
+patterns   :
+    - devel : /usr/share/man/man3
+    - docs : /usr/share/doc
+    - utils :
+        - /usr/bin
+        - /usr/share/man/man1
+setup      : |
+    %configure --disable-static
+build      : |
+    %make
+install    : |
+    %make_install
+check      : |
+    %make check || :

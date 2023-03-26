@@ -1,0 +1,15 @@
+name       : opencl-clhpp
+version    : 2.0.17
+release    : 2
+source     :
+    - https://github.com/KhronosGroup/OpenCL-CLHPP/archive/refs/tags/v2022.05.18.tar.gz : d29affd740c5037b4499790613f5af0718ffc88c325e793b73cb35b7592fc0f7
+license    : Apache-2.0
+component  : programming.devel
+homepage   : https://github.com/KhronosGroup/OpenCL-CLHPP/
+summary    : OpenCL C++ header files
+description: |
+    OpenCL (Open Computing Language) header files for the C++ programming language.
+patterns   :
+    - /usr/include/CL/*
+install    : |
+    install -Dm00644 include/CL/*.hpp -t $installdir/usr/include/CL

@@ -1,0 +1,39 @@
+name       : openbazaar
+version    : 2.2.1
+release    : 4
+source     :
+    - https://github.com/OpenBazaar/openbazaar-desktop/archive/v2.2.1.tar.gz : 743ff372c7620e97029662e0ce4700e31a0603899d0f3839728fd9c2fe22ddc3
+license    : MIT
+component  : network.web
+summary    : Decentralized marketplace for trading with anyone
+description: |
+    OpenBazaar is an open source project to create a decentralized network for commerce online that has no fees and cannot be censored.
+networking : yes
+builddeps  :
+    - pkgconfig(alsa)
+    - pkgconfig(gconf-2.0)
+    - pkgconfig(gtk+-2.0)
+    - pkgconfig(xscrnsaver)
+    - pkgconfig(xtst)
+    - cups-devel
+    - nodejs
+rundeps    :
+    - openbazaard
+    - nodejs
+setup      : |
+    npm install
+build      : |
+    npm run build
+    cp -rf prod/* js/
+    npm install electron-packager
+    export PATH=$PATH:$workdir/node_modules/.bin
+    electron-packager . openbazaar --platform=linux --arch=x64 --prune --out=dist
+install    : |
+    install -Dm00644 $pkgfiles/openbazaar.desktop $installdir/usr/share/applications/openbazaar.desktop
+    install -Dm00644 imgs/icon.png $installdir/usr/share/pixmaps/openbazaar.png
+    install -dm00644 $installdir/usr/share/openbazaar
+    install -dm00644 $installdir/usr/share/openbazaar/resources/openbazaar-go
+    install -dm00755 $installdir/usr/bin
+    cp -R dist/openbazaar-linux-x64/* $installdir/usr/share/openbazaar/
+    ln -s /usr/share/openbazaar/openbazaar $installdir/usr/bin/openbazaar
+    ln -s /usr/bin/openbazaard $installdir/usr/share/openbazaar/resources/openbazaar-go/openbazaard

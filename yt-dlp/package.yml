@@ -1,0 +1,33 @@
+name       : yt-dlp
+version    : 2023.03.04
+release    : 202
+source     :
+    - https://github.com/yt-dlp/yt-dlp/archive/refs/tags/2023.03.04.tar.gz : 5e5abfe78b8f92f8b8307231d1e7ed0e462407f4cd861b48a0278559612de9aa
+license    : Unlicense
+component  : network.download
+homepage   : https://github.com/yt-dlp/yt-dlp
+summary    : yt-dlp is a small command-line program for downloading videos from YouTube and other platforms
+description: |
+    yt-dlp, a fork of youtube-dl, is a small command-line program for downloading videos from YouTube and other platforms
+replaces   :
+    - youtube-dl
+    - yt-dlc
+builddeps  :
+    - pkgconfig(python3)
+    - pandoc
+rundeps    :
+    - mutagen
+    - python3
+    - python-certifi
+    - python-websockets
+    - python3-pycryptodome
+setup      : |
+    # Adjust requirement for pycryptodome and optional dependencies
+    sed -ri requirements.txt -e "s/^(pycryptodome)x/\1/" -e "/^(brotli.*)/d"
+    %make pypi-files
+    %python3_setup
+install    : |
+    %python3_install
+    rm -rf $installdir/usr/share/doc
+    ln -s /usr/bin/yt-dlp $installdir/usr/bin/youtube-dl
+    ln -s /usr/bin/yt-dlp $installdir/usr/bin/yt-dlc

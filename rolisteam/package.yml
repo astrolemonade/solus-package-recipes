@@ -1,0 +1,27 @@
+name       : rolisteam
+version    : 1.9.2
+release    : 2
+source     :
+    - git|https://github.com/Rolisteam/rolisteam.git : v1.9.2
+license    : GPL-2.0-or-later
+component  : games.rpg
+summary    : Rolisteam is a virtual tabletop.
+description: |
+    Rolisteam helps you to manage a tabletop role playing game with remote friends/players.
+    It provides many features to share maps, pictures and it also includes tool to communicate with your friends/players.
+builddeps  :
+    - pkgconfig(Qt5Gui)
+    - pkgconfig(Qt5Multimedia)
+    - pkgconfig(Qt5UiTools)
+    - pkgconfig(Qt5Svg)
+    - pkgconfig(Qt5WebChannel)
+    - pkgconfig(Qt5WebEngine)
+setup      : |
+    lrelease rolisteam.pro
+    %qmake PREFIX=$installdir/usr/bin
+build      : |
+    %make
+install    : |
+    %make_install
+    install -Dm644 $pkgfiles/rolisteam.desktop $installdir/usr/share/applications/rolisteam.desktop
+    install -Dm644 resources/logo/256-icone.png $installdir/usr/share/icons/hicolor/256x256/apps/rolisteam.png

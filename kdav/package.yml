@@ -1,0 +1,21 @@
+name       : kdav
+version    : 5.101.0
+release    : 61
+source     :
+    - https://cdn.download.kde.org/stable/frameworks/5.101/kdav-5.101.0.tar.xz : 3c084a69a913d2bb34eaed2fdeeefb1c671fab82999dfb5e13d387c36301013f
+homepage   : https://community.kde.org/PIM
+license    :
+    - GPL-2.0-or-later
+    - LGPL-2.0-or-later
+component  : desktop.library
+summary    : A DAV protocol implemention with KJobs
+description: |
+    A DAV protocol implemention with KJobs. Calendars and todos are supported, using either GroupDAV or CalDAV, and contacts are supported using GroupDAV or CardDAV.
+builddeps  :
+    - kio-devel
+setup      : |
+    %cmake_ninja -DBUILD_TESTING=OFF
+build      : |
+    %ninja_build
+install    : |
+    %ninja_install

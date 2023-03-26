@@ -1,0 +1,23 @@
+name       : raylib
+version    : 4.0.0
+release    : 8
+source     :
+    - https://github.com/raysan5/raylib/archive/refs/tags/4.0.0.tar.gz : 11f6087dc7bedf9efb3f69c0c872f637e421d914e5ecea99bbe7781f173dc38c
+license    : zlib-acknowledgement
+component  : programming.library
+summary    : A simple and easy-to-use library to enjoy videogames programming
+description: |
+    raylib is highly inspired by Borland BGI graphics lib and by XNA framework and it's specially well suited for prototyping, tooling, graphical applications, embedded systems and education.
+builddeps  :
+    - pkgconfig(gl)
+    - pkgconfig(glfw3)
+setup      : |
+    %cmake_ninja \
+        -DWITH_PIC=ON \
+        -DBUILD_SHARED_LIBS=ON \
+        -DUSE_EXTERNAL_GLFW=ON \
+        -DINCLUDE_EVERYTHING=ON
+build      : |
+    %ninja_build
+install    : |
+    %ninja_install

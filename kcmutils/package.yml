@@ -1,0 +1,33 @@
+name       : kcmutils
+version    : 5.101.0
+release    : 66
+source     :
+    - https://cdn.download.kde.org/stable/frameworks/5.101/kcmutils-5.101.0.tar.xz : ab4f18a5616d2ebd4c4ea14fb82c74cfa8adb0e904dd5602eca48ad7a143c54b
+homepage   : https://community.kde.org/Frameworks
+license    :
+    - LGPL-2.0-only
+    - LGPL-2.0-or-later
+component  : programming.tools
+summary    : Utilities for KDE System Settings modules
+description: |
+    KCMUtils provides various classes to work with KCModules. KCModules can be created with the KConfigWidgets framework.KCMUtils provides various classes to work with KCModules. KCModules can be created with the KConfigWidgets framework.KCMUtils provides various classes to work with KCModules. KCModules can be created with the KConfigWidgets framework.KCMUtils provides various classes to work with KCModules. KCModules can be created with the KConfigWidgets framework.
+optimize   : lto
+builddeps  :
+    - pkgconfig(Qt5Quick)
+    - kdeclarative-devel
+    - kguiaddons-devel
+    - ki18n-devel
+    - kitemviews-devel
+    - kservice-devel
+    - kpackage-devel
+    - kxmlgui-devel
+rundeps    :
+    - devel :
+        - kservice-devel
+        - kconfigwidgets-devel
+setup      : |
+    %cmake_ninja -DBUILD_QCH=ON
+build      : |
+    %ninja_build
+install    : |
+    %ninja_install

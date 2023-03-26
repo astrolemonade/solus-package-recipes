@@ -1,0 +1,26 @@
+name       : solaar
+version    : 1.1.8
+release    : 22
+source     :
+    - https://github.com/pwr-Solaar/Solaar/archive/refs/tags/1.1.8.tar.gz : 616c8056e7fe1f836e9d26e57430388d35c7f8d3b6d33ce0b2682d89e46714c1
+license    : GPL-2.0-or-later
+homepage   : https://pwr-solaar.github.io/Solaar/
+component  : system.utils
+summary    : Solaar is a Linux device manager for Logitech's Unifying Receiver peripherals.
+description: |
+    Solaar is a Linux device manager for Logitech's Unifying Receiver peripherals.
+builddeps  :
+    - pkgconfig(python3)
+rundeps    :
+    - python-evdev
+    - python-gobject
+    - python-psutil
+    - python-xlib
+    - python3-pyudev
+    - pyyaml
+build      : |
+    %python3_setup
+install    : |
+    %python3_install
+    install -D -m 00644 rules.d/42-logitech-unify-permissions.rules $installdir/etc/udev/rules.d/42-logitech-unify-permissions.rules
+    install -D -m 00644 share/autostart/solaar.desktop $installdir/usr/share/xdg/autostart/solaar.desktop

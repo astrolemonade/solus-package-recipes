@@ -1,0 +1,22 @@
+name       : gst-rtsp-server
+version    : 1.20.3
+release    : 7
+source     :
+    - https://gstreamer.freedesktop.org/src/gst-rtsp-server/gst-rtsp-server-1.20.3.tar.xz : ee402718be9b127f0e5e66ca4c1b4f42e4926ec93ba307b7ccca5dc6cc9794ca
+license    :
+    - GPL-2.0-or-later
+    - LGPL-2.0-or-later
+component  : multimedia.gstreamer
+summary    : GStreamer RTSP server library
+description: |
+    GStreamer's RTSP server (gst-rtsp-server) is a featureful and easy-to-use library that allows applications to implement a complete RTSP server with just a couple of lines of code.
+builddeps  :
+    - pkgconfig(gstreamer-plugins-bad-1.0)
+setup      : |
+    %meson_configure \
+        -Dpackage-name="GStreamer ${version} Solus" \
+        -Dpackage-origin="https://getsol.us"
+build      : |
+    %ninja_build
+install    : |
+    %ninja_install

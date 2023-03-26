@@ -1,0 +1,22 @@
+name       : qt5-datavis3d
+version    : 5.15.8
+release    : 11
+source     :
+    - git|https://invent.kde.org/qt/qt/qtdatavis3d.git : 9f0f50ebef04d5ac5ed0ee2a3a71e7748fce3005
+license    : GPL-3.0-only
+component  :
+    - desktop.qt
+    - demos : programming.library
+summary    : Qt Data Visualization module
+description: |
+    Qt Data Visualization module
+builddeps  :
+    - pkgconfig(Qt5Quick)
+patterns   :
+    - demo : /usr/lib64/qt5/examples
+setup      : |
+    %qmake CONFIG+=release qtdatavis3d.pro
+build      : |
+    %make
+install    : |
+    %make_install INSTALL_ROOT=$installdir

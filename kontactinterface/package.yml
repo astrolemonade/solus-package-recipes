@@ -1,0 +1,21 @@
+name       : kontactinterface
+version    : 22.12.1
+release    : 63
+source     :
+    - https://cdn.download.kde.org/stable/release-service/22.12.1/src/kontactinterface-22.12.1.tar.xz : 143d219949de197c0b6678a4145d9cafba178bb0d27e52d70636ba0caa24848e
+homepage   : https://kde.org/
+license    : LGPL-2.1-or-later
+component  : desktop.library
+summary    : Kontact Plugin Interface Library
+description: |
+    Kontact Plugin Interface Library.
+builddeps  :
+    - pkgconfig(Qt5DBus)
+    - pkgconfig(x11)
+    - kparts-devel
+setup      : |
+    %cmake_ninja
+build      : |
+    %ninja_build
+install    : |
+    %ninja_install

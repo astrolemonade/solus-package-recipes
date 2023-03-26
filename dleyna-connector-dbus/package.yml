@@ -1,0 +1,21 @@
+name       : dleyna-connector-dbus
+version    : 0.3.0
+release    : 2
+source     :
+    - https://github.com/intel/dleyna-connector-dbus/archive/0.3.0.tar.gz : 1c34f2618ff1d510729e24deed4d7e5832dba06328afd5c8c788a727e76be37a
+license    : LGPL-2.1-or-later
+component  : programming.library
+summary    : D-Bus API for the dLeyna services
+description: |
+    D-Bus API for the dLeyna services
+builddeps  :
+    - pkgconfig(dbus-1)
+    - pkgconfig(dleyna-core-1.0)
+    - pkgconfig(gio-2.0)
+    - pkgconfig(glib-2.0)
+setup      : |
+    %reconfigure --disable-static
+build      : |
+    %make
+install    : |
+    %make_install

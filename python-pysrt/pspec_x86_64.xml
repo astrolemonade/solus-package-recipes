@@ -1,0 +1,59 @@
+<PISI>
+    <Source>
+        <Name>python-pysrt</Name>
+        <Homepage>https://github.com/byroot/pysrt</Homepage>
+        <Packager>
+            <Name>Joey Riches</Name>
+            <Email>josephriches@gmail.com</Email>
+        </Packager>
+        <License>GPL-3.0-or-later</License>
+        <PartOf>programming.python</PartOf>
+        <Summary xml:lang="en">Python parser for SubRip (srt) files</Summary>
+        <Description xml:lang="en">pysrt is a Python library used to edit or create SubRip files.
+</Description>
+        <Archive type="binary" sha1sum="79eb0752a961b8e0d15c77d298c97498fbc89c5a">https://getsol.us/sources/README.Solus</Archive>
+    </Source>
+    <Package>
+        <Name>python-pysrt</Name>
+        <Summary xml:lang="en">Python parser for SubRip (srt) files</Summary>
+        <Description xml:lang="en">pysrt is a Python library used to edit or create SubRip files.
+</Description>
+        <PartOf>programming.python</PartOf>
+        <Files>
+            <Path fileType="executable">/usr/bin/srt</Path>
+            <Path fileType="library">/usr/lib/python3.10/site-packages/pysrt-1.1.2-py3.10.egg-info/PKG-INFO</Path>
+            <Path fileType="library">/usr/lib/python3.10/site-packages/pysrt-1.1.2-py3.10.egg-info/SOURCES.txt</Path>
+            <Path fileType="library">/usr/lib/python3.10/site-packages/pysrt-1.1.2-py3.10.egg-info/dependency_links.txt</Path>
+            <Path fileType="library">/usr/lib/python3.10/site-packages/pysrt-1.1.2-py3.10.egg-info/entry_points.txt</Path>
+            <Path fileType="library">/usr/lib/python3.10/site-packages/pysrt-1.1.2-py3.10.egg-info/requires.txt</Path>
+            <Path fileType="library">/usr/lib/python3.10/site-packages/pysrt-1.1.2-py3.10.egg-info/top_level.txt</Path>
+            <Path fileType="library">/usr/lib/python3.10/site-packages/pysrt/__init__.py</Path>
+            <Path fileType="library">/usr/lib/python3.10/site-packages/pysrt/__pycache__/__init__.cpython-310.pyc</Path>
+            <Path fileType="library">/usr/lib/python3.10/site-packages/pysrt/__pycache__/commands.cpython-310.pyc</Path>
+            <Path fileType="library">/usr/lib/python3.10/site-packages/pysrt/__pycache__/comparablemixin.cpython-310.pyc</Path>
+            <Path fileType="library">/usr/lib/python3.10/site-packages/pysrt/__pycache__/compat.cpython-310.pyc</Path>
+            <Path fileType="library">/usr/lib/python3.10/site-packages/pysrt/__pycache__/srtexc.cpython-310.pyc</Path>
+            <Path fileType="library">/usr/lib/python3.10/site-packages/pysrt/__pycache__/srtfile.cpython-310.pyc</Path>
+            <Path fileType="library">/usr/lib/python3.10/site-packages/pysrt/__pycache__/srtitem.cpython-310.pyc</Path>
+            <Path fileType="library">/usr/lib/python3.10/site-packages/pysrt/__pycache__/srttime.cpython-310.pyc</Path>
+            <Path fileType="library">/usr/lib/python3.10/site-packages/pysrt/__pycache__/version.cpython-310.pyc</Path>
+            <Path fileType="library">/usr/lib/python3.10/site-packages/pysrt/commands.py</Path>
+            <Path fileType="library">/usr/lib/python3.10/site-packages/pysrt/comparablemixin.py</Path>
+            <Path fileType="library">/usr/lib/python3.10/site-packages/pysrt/compat.py</Path>
+            <Path fileType="library">/usr/lib/python3.10/site-packages/pysrt/srtexc.py</Path>
+            <Path fileType="library">/usr/lib/python3.10/site-packages/pysrt/srtfile.py</Path>
+            <Path fileType="library">/usr/lib/python3.10/site-packages/pysrt/srtitem.py</Path>
+            <Path fileType="library">/usr/lib/python3.10/site-packages/pysrt/srttime.py</Path>
+            <Path fileType="library">/usr/lib/python3.10/site-packages/pysrt/version.py</Path>
+        </Files>
+    </Package>
+    <History>
+        <Update release="6">
+            <Date>2022-04-08</Date>
+            <Version>1.1.2</Version>
+            <Comment>Packaging update</Comment>
+            <Name>Joey Riches</Name>
+            <Email>josephriches@gmail.com</Email>
+        </Update>
+    </History>
+</PISI>

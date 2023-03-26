@@ -1,0 +1,25 @@
+name       : perl-business-ismn
+version    : '1.202'
+release    : 8
+source     :
+    - https://github.com/briandfoy/business-ismn/archive/refs/tags/release-1.202.tar.gz : fced5f15b84807c3533e7974f9d99c8868225866e6d3dd68c3751d6befcb48d7
+license    : Artistic-2.0
+component  : programming.perl
+homepage   : https://github.com/briandfoy/business-ismn
+summary    : Business::ISMN - work with International Standard Music Numbers
+description: |
+    Business::ISMN - work with International Standard Music Numbers
+builddeps  :
+    - perl-test-pod
+    - perl-test-pod-coverage
+    - perl-tie-cycle
+rundeps    :
+    - perl-tie-cycle
+setup      : |
+    %perl_setup
+build      : |
+    %perl_build
+install    : |
+    %perl_install
+check      : |
+    %perl_build test

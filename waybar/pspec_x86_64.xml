@@ -1,0 +1,37 @@
+<PISI>
+    <Source>
+        <Name>waybar</Name>
+        <Packager>
+            <Name>Thomas Staudinger</Name>
+            <Email>Staudi.Kaos@gmail.com</Email>
+        </Packager>
+        <License>MIT</License>
+        <PartOf>system.utils</PartOf>
+        <Summary xml:lang="en">Highly customizable Wayland bar for Sway and Wlroots based compositors</Summary>
+        <Description xml:lang="en">Highly customizable Wayland bar for Sway and Wlroots based compositors
+</Description>
+        <Archive type="binary" sha1sum="79eb0752a961b8e0d15c77d298c97498fbc89c5a">https://getsol.us/sources/README.Solus</Archive>
+    </Source>
+    <Package>
+        <Name>waybar</Name>
+        <Summary xml:lang="en">Highly customizable Wayland bar for Sway and Wlroots based compositors</Summary>
+        <Description xml:lang="en">Highly customizable Wayland bar for Sway and Wlroots based compositors
+</Description>
+        <PartOf>system.utils</PartOf>
+        <Files>
+            <Path fileType="executable">/usr/bin/waybar</Path>
+            <Path fileType="library">/usr/lib/systemd/user/waybar.service</Path>
+            <Path fileType="data">/usr/share/defaults/waybar/config</Path>
+            <Path fileType="data">/usr/share/defaults/waybar/style.css</Path>
+        </Files>
+    </Package>
+    <History>
+        <Update release="5">
+            <Date>2023-01-05</Date>
+            <Version>0.9.16</Version>
+            <Comment>Packaging update</Comment>
+            <Name>Thomas Staudinger</Name>
+            <Email>Staudi.Kaos@gmail.com</Email>
+        </Update>
+    </History>
+</PISI>

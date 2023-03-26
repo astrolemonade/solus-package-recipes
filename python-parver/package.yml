@@ -1,0 +1,29 @@
+name       : python-parver
+version    : '0.4'
+release    : 8
+source     :
+    - https://github.com/RazerM/parver/archive/refs/tags/0.4.tar.gz : ffc75ffb4a80a91c6d1dc74d00e593f81d1dceda4b523a62683f2d93f15d0cfe
+homepage   : https://github.com/RazerM/parver
+license    : MIT
+component  : programming.python
+summary    : Parse and manipulate version numbers
+description: |
+    python-parver allows parsing and manipulation of PEP 440 version numbers
+builddeps  :
+    - python-arpeggio   # check
+    - python-build
+    - python-hypothesis # check
+    - python-installer
+    - python-packaging
+    - python-pretend    # check
+    - python-pytest     # check
+    - python-wheel
+rundeps    :
+    - python-arpeggio
+    - python-attrs
+build      : |
+    %python3_setup
+install    : |
+    %python3_install
+check      : |
+    %python3_test pytest3

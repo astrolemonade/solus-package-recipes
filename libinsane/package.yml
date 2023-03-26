@@ -1,0 +1,22 @@
+name       : libinsane
+version    : 1.0.9
+release    : 7
+source     :
+    - https://gitlab.gnome.org/World/OpenPaperwork/libinsane/-/archive/1.0.9/libinsane-1.0.9.tar.gz : cbc70ed0ebee92472f0d3655f8635e4a9c6ce3c57322fb1637fe732389937dc5
+license    : LGPL-3.0-or-later
+component  : programming.library
+summary    : Library to access scanners
+description: |
+    Library to access scanners
+builddeps  :
+    - pkgconfig(sane-backends)
+    - gtk-doc
+    - vala
+setup      : |
+    %meson_configure
+build      : |
+    %ninja_build
+install    : |
+    %ninja_install
+    # Option to disable not configurable with meson currently.
+    rm -fr $installdir/usr/share/gtk-doc/

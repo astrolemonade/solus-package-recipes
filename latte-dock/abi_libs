@@ -1,0 +1,5 @@
+latte_packagestructure_indicator.so
+liblattecontainmentplugin.so
+liblattecoreplugin.so
+liblattetasksplugin.so
+plasma_containmentactions_lattecontextmenu.so

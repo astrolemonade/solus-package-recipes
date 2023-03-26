@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=OpenBazaar
+Comment=Decentralized marketplace
+Exec=openbazaar
+Icon=openbazaar
+Terminal=false
+Type=Application
+Categories=Network;

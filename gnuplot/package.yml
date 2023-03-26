@@ -1,0 +1,22 @@
+name       : gnuplot
+version    : 5.4.5
+release    : 16
+source     :
+    - https://jztkft.dl.sourceforge.net/project/gnuplot/gnuplot/5.4.5/gnuplot-5.4.5.tar.gz : 66f679115dd30559e110498fc94d926949d4d370b4999a042e724b8e910ee478
+license    : gnuplot
+component  : programming
+summary    : Gnuplot is a portable command-line driven graphing utility
+description: |
+    Gnuplot is a portable command-line driven graphing utility
+builddeps  :
+    - pkgconfig(cairo)
+    - pkgconfig(pangocairo)
+    - pkgconfig(x11)
+    - wxwidgets-devel
+setup      : |
+    %configure --with-readline=gnu
+build      : |
+    %make
+install    : |
+    %make_install
+    rm -rf $installdir/%libdir%

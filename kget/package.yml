@@ -1,0 +1,38 @@
+name       : kget
+version    : 22.12.1
+release    : 60
+source     :
+    - https://cdn.download.kde.org/stable/release-service/22.12.1/src/kget-22.12.1.tar.xz : 5f2799f0c8fa8e7cd4b23f0defd7be0c38db370cbb4912974f8dd403b2b6e2a3
+homepage   : https://kde.org/applications/internet/org.kde.kget
+license    :
+    - GFDL-1.2-or-later
+    - GPL-2.0-or-later
+component  : network.download
+summary    : Download manager by KDE
+description: |
+    KGet is a versatile and user-friendly download manager.
+builddeps  :
+    - pkgconfig(libgcrypt)
+    - pkgconfig(libmms)
+    - pkgconfig(qca2-qt5)
+    - gpgme-qt-devel
+    - kcmutils-devel
+    - kcrash-devel
+    - kdbusaddons-devel
+    - kdoctools-devel
+    - kiconthemes-devel
+    - knotifyconfig-devel
+    - kparts-devel
+    - kwallet-devel
+    - libboost-devel
+    - libktorrent-devel
+    - plasma-workspace-devel
+setup      : |
+    %cmake_ninja -DBUILD_TESTING=OFF
+build      : |
+    %ninja_build
+install    : |
+    %ninja_install
+
+    # remove docs
+    rm -rf $installdir/usr/share/doc

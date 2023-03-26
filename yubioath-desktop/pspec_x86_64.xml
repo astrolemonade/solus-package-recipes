@@ -1,0 +1,39 @@
+<PISI>
+    <Source>
+        <Name>yubioath-desktop</Name>
+        <Packager>
+            <Name>Joey Riches</Name>
+            <Email>josephriches@gmail.com</Email>
+        </Packager>
+        <License>BSD-2-Clause</License>
+        <PartOf>security</PartOf>
+        <Summary xml:lang="en">Yubico Authenticator for Desktop</Summary>
+        <Description xml:lang="en">Cross-platform application for generating Open Authentication (OATH) time-based TOTP and event-based HOTP one-time password codes, with the help of a YubiKey that protects the shared secrets.
+</Description>
+        <Archive type="binary" sha1sum="79eb0752a961b8e0d15c77d298c97498fbc89c5a">https://getsol.us/sources/README.Solus</Archive>
+    </Source>
+    <Package>
+        <Name>yubioath-desktop</Name>
+        <Summary xml:lang="en">Yubico Authenticator for Desktop</Summary>
+        <Description xml:lang="en">Cross-platform application for generating Open Authentication (OATH) time-based TOTP and event-based HOTP one-time password codes, with the help of a YubiKey that protects the shared secrets.
+</Description>
+        <PartOf>security</PartOf>
+        <Files>
+            <Path fileType="executable">/usr/bin/yubioath-desktop</Path>
+            <Path fileType="header">/usr/include/QZXing.h</Path>
+            <Path fileType="header">/usr/include/QZXing_global.h</Path>
+            <Path fileType="data">/usr/share/applications/yubioath-desktop.desktop</Path>
+            <Path fileType="data">/usr/share/metainfo/com.yubico.yubioath.appdata.xml</Path>
+            <Path fileType="data">/usr/share/pixmaps/com.yubico.yubioath.svg</Path>
+        </Files>
+    </Package>
+    <History>
+        <Update release="24">
+            <Date>2022-03-28</Date>
+            <Version>5.1.0</Version>
+            <Comment>Packaging update</Comment>
+            <Name>Joey Riches</Name>
+            <Email>josephriches@gmail.com</Email>
+        </Update>
+    </History>
+</PISI>

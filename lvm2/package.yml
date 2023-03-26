@@ -1,0 +1,42 @@
+name       : lvm2
+version    : 2.02.177
+release    : 23
+source     :
+    - http://mirrors.kernel.org/sourceware/lvm2/LVM2.2.02.177.tgz : 4025a23ec9b15c2cb7486d151c29dc953b75efc4d452cfe9dbbc7c0fac8e80f2
+license    : GPL-3.0-or-later
+component  : system.base
+summary    : The LVM2 package is a package that manages logical partitions.
+description: |
+    The LVM2 package is a package that manages logical partitions. It allows spanning of file systems across multiple physical disks and disk partitions and provides for dynamic growing or shrinking of logical partitions.
+optimize   :
+    - size
+    - lto
+setup      : |
+    sed -i 's|use_lvmetad = 0|use_lvmetad = 1|' conf/example.conf.in
+    %configure --exec-prefix=      \
+               --with-confdir=/etc \
+               --enable-applib     \
+               --enable-cmdlib     \
+               --enable-pkgconfig  \
+               --enable-dmeventd   \
+               --sbindir=/sbin     \
+               --enable-udev_sync \
+               --with-udevdir=%libdir%/udev/rules.d \
+               --enable-udev_rules \
+               --with-default-run-dir=/run/lvm  \
+               --with-default-locking-dir=/run/lock/lvm \
+               --enable-lvmpolld \
+               --enable-lvm1_fallback \
+               --enable-fsadm \
+               --with-pool=internal \
+               --enable-write_install \
+               --enable-lvmetad \
+               --with-systemdsystemunitdir=/usr/lib/systemd/system
+build      : |
+    %make
+install    : |
+    %make_install
+    %make_install install_system_dirs install_systemd_units
+    %make_install install_tmpfiles_configuration install_systemd_generators
+    rm -rf $installdir/var/
+    rm -rf $installdir/run

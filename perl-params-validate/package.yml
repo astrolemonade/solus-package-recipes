@@ -1,0 +1,19 @@
+name       : perl-params-validate
+version    : '1.30'
+release    : 7
+source     :
+    - https://cpan.metacpan.org/authors/id/D/DR/DROLSKY/Params-Validate-1.30.tar.gz : 9a3a35583d3125d07e8c802c1f92f5be7d526e76dd496e944da270b1e273d812
+homepage   : https://metacpan.org/pod/Params::Validate
+license    : Artistic-2.0
+component  : programming.perl
+summary    : Params::Validate - Validate method/function parameters
+description: |
+    This module allows you to validate method or function call parameters to an arbitrary level of specificity. At the simplest level, it is capable of validating the required parameters were given and that no unspecified additional parameters were passed in.
+builddeps  :
+    - perl-module-build
+setup      : |
+    %perl_setup
+build      : |
+    %perl_build
+install    : |
+    %perl_install

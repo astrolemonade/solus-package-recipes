@@ -1,0 +1,36 @@
+name       : akonadi-import-wizard
+version    : 22.12.1
+release    : 59
+source     :
+    - https://cdn.download.kde.org/stable/release-service/22.12.1/src/akonadi-import-wizard-22.12.1.tar.xz : 5635c3e318ae5edb0728080c6b4e600c7f9851b086ac03a256c5892da0d597c2
+homepage   : https://kde.org/
+license    :
+    - GFDL-1.2-or-later
+    - GPL-2.0-or-later
+component  : office
+summary    : Assistant to import PIM data from other applications into Akonadi
+description: |
+    Assistant to import PIM data from other applications into Akonadi for use in KDE PIM applications.
+builddeps  :
+    - pkgconfig(Qt5WebEngine)
+    - akonadi-contacts-devel
+    - kcontacts-devel
+    - kcrash-devel
+    - kdbusaddons-devel
+    - kdoctools-devel
+    - kidentitymanagement-devel
+    - kio-devel
+    - kmailtransport-devel
+    - mailcommon-devel
+    - mailimporter-devel
+    - pimcommon-devel
+    - qtkeychain-devel
+setup      : |
+    %cmake_ninja
+build      : |
+    %ninja_build
+install    : |
+    %ninja_install
+
+    # remove doc
+    rm -rf $installdir/usr/share/doc

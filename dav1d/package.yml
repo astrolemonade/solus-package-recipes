@@ -1,0 +1,20 @@
+name       : dav1d
+version    : 1.1.0
+release    : 21
+source     :
+    - https://code.videolan.org/videolan/dav1d/-/archive/1.1.0/dav1d-1.1.0.tar.bz2 : ec5f2dae9b1a7e1da44a7fc9c8fcee476e345df290c50935344bde57543a4cd6
+license    : BSD-2-Clause
+component  : multimedia.codecs
+summary    : AV1 decoder targeted to be small and fast
+description: |
+    dav1d is a new AV1 cross-platform Decoder, open-source, and focused on speed and correctness.
+builddeps  :
+    - pkgconfig(libxxhash)
+setup      : |
+    %meson_configure --buildtype=release
+build      : |
+    %ninja_build
+install    : |
+    %ninja_install
+check      : |
+    %ninja_check

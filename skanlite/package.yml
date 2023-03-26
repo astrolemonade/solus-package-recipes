@@ -1,0 +1,23 @@
+name       : skanlite
+version    : 22.12.1
+release    : 17
+source     :
+    - https://cdn.download.kde.org/stable/release-service/22.12.1/src/skanlite-22.12.1.tar.xz : 086b0c5d9db1ce29223d5a9479f1745adec22dbf07afa67130124b55d0f900c8
+license    : GPL-2.0-or-later
+component  : desktop.kde
+summary    : Image Scanning Application for KDE
+description: |
+    Skanlite is a simple image scanning application that does nothing more than scan and save images, based on the KSane backend.
+builddeps  :
+    - pkgconfig(Qt5Script)
+    - kdoctools-devel
+    - kio-devel
+    - ksanecore-devel
+    - libksane-devel
+setup      : |
+    %cmake_ninja
+build      : |
+    %ninja_build
+install    : |
+    %ninja_install
+    rm -rf $installdir/usr/share/doc

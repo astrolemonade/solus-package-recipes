@@ -1,0 +1,29 @@
+name       : ulauncher
+version    : 5.15.0
+release    : 12
+source     :
+    - https://github.com/Ulauncher/Ulauncher/releases/download/5.15.0/ulauncher_5.15.0.tar.gz : d50a3a7df32d551b590cf087bc7125ed3d1d3dd0d4c4fe133f686449549d429a
+homepage   : https://ulauncher.io/
+license    : GPL-3.0-or-later
+component  : desktop
+summary    : Linux Application Launcher
+description: |
+    Ulauncher is a fast application launcher for Linux. It's is written in Python, using GTK+.
+builddeps  :
+    - python-distutils-extra
+rundeps    :
+    - keybinder
+    - python-gobject
+    - python-inotify
+    - python-levenshtein
+    - python-pygithub
+    - python-websocket-client
+    - python3-dbus
+    - pyxdg
+setup      : |
+    %patch -p1 < $pkgfiles/shutup-distutils.patch
+build      : |
+    %python3_setup
+install    : |
+    %python3_install
+    rm -r $installdir/usr/share/doc

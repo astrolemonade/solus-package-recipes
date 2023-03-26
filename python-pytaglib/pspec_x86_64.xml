@@ -1,0 +1,42 @@
+<PISI>
+    <Source>
+        <Name>python-pytaglib</Name>
+        <Packager>
+            <Name>Joey Riches</Name>
+            <Email>josephriches@gmail.com</Email>
+        </Packager>
+        <License>GPL-3.0-or-later</License>
+        <PartOf>programming.python</PartOf>
+        <Summary xml:lang="en">Audio tagging library</Summary>
+        <Description xml:lang="en">pytaglib is a tiny wrapper around the taglib library.
+</Description>
+        <Archive type="binary" sha1sum="79eb0752a961b8e0d15c77d298c97498fbc89c5a">https://getsol.us/sources/README.Solus</Archive>
+    </Source>
+    <Package>
+        <Name>python-pytaglib</Name>
+        <Summary xml:lang="en">Audio tagging library</Summary>
+        <Description xml:lang="en">pytaglib is a tiny wrapper around the taglib library.
+</Description>
+        <PartOf>programming.python</PartOf>
+        <Files>
+            <Path fileType="executable">/usr/bin/pyprinttags</Path>
+            <Path fileType="library">/usr/lib/python3.10/site-packages/__pycache__/pyprinttags.cpython-310.pyc</Path>
+            <Path fileType="library">/usr/lib/python3.10/site-packages/pyprinttags.py</Path>
+            <Path fileType="library">/usr/lib/python3.10/site-packages/pytaglib-1.5.0-py3.10.egg-info/PKG-INFO</Path>
+            <Path fileType="library">/usr/lib/python3.10/site-packages/pytaglib-1.5.0-py3.10.egg-info/SOURCES.txt</Path>
+            <Path fileType="library">/usr/lib/python3.10/site-packages/pytaglib-1.5.0-py3.10.egg-info/dependency_links.txt</Path>
+            <Path fileType="library">/usr/lib/python3.10/site-packages/pytaglib-1.5.0-py3.10.egg-info/entry_points.txt</Path>
+            <Path fileType="library">/usr/lib/python3.10/site-packages/pytaglib-1.5.0-py3.10.egg-info/top_level.txt</Path>
+            <Path fileType="library">/usr/lib/python3.10/site-packages/taglib.cpython-310-x86_64-linux-gnu.so</Path>
+        </Files>
+    </Package>
+    <History>
+        <Update release="4">
+            <Date>2022-04-15</Date>
+            <Version>1.5.0</Version>
+            <Comment>Packaging update</Comment>
+            <Name>Joey Riches</Name>
+            <Email>josephriches@gmail.com</Email>
+        </Update>
+    </History>
+</PISI>

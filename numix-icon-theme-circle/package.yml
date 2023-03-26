@@ -1,0 +1,17 @@
+name       : numix-icon-theme-circle
+version    : 22.10.17
+release    : 36
+source     :
+    - https://github.com/numixproject/numix-icon-theme-circle/archive/refs/tags/22.10.17.tar.gz : 056da96d8d6937e5ec0278f9cbc56c39dbda78f20bce8c5436c5f61b24ced7fd
+homepage   : https://numixproject.github.io/
+license    : GPL-3.0-or-later
+component  : desktop.theme
+summary    : Numix Circle Icon Theme
+description: |
+    Numix Circle is an icon theme from the Numix project
+rundeps    :
+    - numix-icon-theme
+install    : |
+    install -dm00644 $installdir/usr/share/icons/
+    cp -r {Numix-Circle,Numix-Circle-Light} $installdir/usr/share/icons/
+    chmod -R 00644 $installdir/usr/share/icons/*

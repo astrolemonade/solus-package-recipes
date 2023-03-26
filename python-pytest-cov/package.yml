@@ -1,0 +1,18 @@
+name       : python-pytest-cov
+version    : 4.0.0
+release    : 11
+source     :
+    - https://pypi.io/packages/source/p/pytest-cov/pytest-cov-4.0.0.tar.gz : 996b79efde6433cdbd0088872dbc5fb3ed7fe1578b68cdbba634f14bb8dd0470
+homepage   : https://github.com/pytest-dev/pytest-cov/
+license    : MIT
+component  : programming.python
+summary    : Coverage plugin for pytest
+description: |
+    Py.test plugin for coverage reporting with support for both centralised and distributed testing, including subprocesses and multiprocessing for Python.
+rundeps    :
+    - python-coverage
+    - python-pytest
+build      : |
+    %python3_setup
+install    : |
+    %python3_install

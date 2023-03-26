@@ -1,0 +1,53 @@
+name       : perl-datetime
+version    : '1.58'
+release    : 12
+source     :
+    - https://cpan.metacpan.org/authors/id/D/DR/DROLSKY/DateTime-1.58.tar.gz : 00ee2a99d1cf1ae022eaf06b2cde600313d92a069e7ef9258a455a932a5fd90b
+homepage   : https://github.com/houseabsolute/DateTime.pm
+license    : Artistic-2.0
+component  : programming.perl
+summary    : DateTime - A date and time object for Perl
+description: |
+    DateTime is a class for the representation of date/time combinations, and is part of the Perl DateTime project.
+builddeps  :
+    - perl-b-hooks-endofscope
+    - perl-class-data-inheritable
+    - perl-class-singleton
+    - perl-cpan-meta-check
+    - perl-datetime-locale
+    - perl-datetime-timezone
+    - perl-devel-stacktrace
+    - perl-dist-checkconflicts
+    - perl-eval-closure
+    - perl-exception-class
+    - perl-file-sharedir
+    - perl-module-implementation
+    - perl-mro-compat
+    - perl-namespace-autoclean
+    - perl-namespace-clean
+    - perl-package-stash
+    - perl-params-validationcompiler
+    - perl-role-tiny
+    - perl-specio-exporter
+    - perl-sub-exporter-progressive
+    - perl-sub-identify
+    - perl-test-fatal
+    - perl-test-warnings
+    - perl-test-without-module
+    - perl-try-tiny
+rundeps    :
+    - perl-datetime-locale
+    - perl-datetime-timezone
+    - perl-dist-checkconflicts
+    - perl-namespace-autoclean
+    - perl-params-validationcompiler
+    - perl-specio-exporter
+    - perl-try-tiny
+setup      : |
+    %perl_setup
+build      : |
+    %perl_build
+install    : |
+    %perl_install
+check      : |
+    %perl_build test

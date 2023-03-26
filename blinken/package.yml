@@ -1,0 +1,30 @@
+name       : blinken
+version    : 22.12.1
+release    : 64
+source     :
+    - https://cdn.download.kde.org/stable/release-service/22.12.1/src/blinken-22.12.1.tar.xz : ea52b98fb48a52ec2ee0becba8b8f3a8edb2ca63f82da8347e83cc46c04bd6d7
+homepage   : https://kde.org/applications/education/org.kde.blinken
+license    : GPL-2.0-or-later
+component  : games.action
+summary    : Blinken is based on an electronic game released in 1978, which challenges players to remember sequences of increasing length
+description: |
+    Blinken is based on an electronic game released in 1978, which challenges players to remember sequences of increasing length
+builddeps  :
+    - pkgconfig(phonon4qt5)
+    - pkgconfig(Qt5Svg)
+    - pkgconfig(Qt5Widgets)
+    - kcrash-devel
+    - kdbusaddons-devel
+    - kdoctools-devel
+    - kguiaddons-devel
+    - ki18n-devel
+    - kxmlgui-devel
+setup      : |
+    %cmake_ninja
+build      : |
+    %ninja_build
+install    : |
+    %ninja_install
+
+    #remove docs
+    rm -rf $installdir/usr/share/doc

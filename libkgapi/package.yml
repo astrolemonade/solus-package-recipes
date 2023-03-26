@@ -1,0 +1,23 @@
+name       : libkgapi
+version    : 22.12.1
+release    : 65
+source     :
+    - https://cdn.download.kde.org/stable/release-service/22.12.1/src/libkgapi-22.12.1.tar.xz : 11182798b3af24fdef3cf7015c9610263a6fbcf55064598fe8dfed97f7b9d144
+homepage   : https://kde.org/
+license    : LGPL-2.1-or-later
+component  : desktop.library
+summary    : Libkgapi is a KDE-based library for accessing various Google services via their public API
+description: |
+    Libkgapi is a KDE-based library for accessing various Google services via their public API.
+builddeps  :
+    - pkgconfig(libsasl2)
+    - kcalendarcore-devel
+    - kconfig-devel
+    - kcontacts-devel
+    - kwallet-devel
+setup      : |
+    %cmake_ninja -DBUILD_TESTING=OFF
+build      : |
+    %ninja_build
+install    : |
+    %ninja_install

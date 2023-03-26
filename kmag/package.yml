@@ -1,0 +1,25 @@
+name       : kmag
+version    : 22.12.1
+release    : 59
+source     :
+    - https://cdn.download.kde.org/stable/release-service/22.12.1/src/kmag-22.12.1.tar.xz : 7319e48bdf559cfddbcbb6bc78e9dbc686304089e32fe550481ba2a5e4487827
+homepage   : https://kde.org/applications/utilities/org.kde.kmag
+license    :
+    - GFDL-1.2-or-later
+    - GPL-2.0-or-later
+component  : desktop.kde
+summary    : KMag is a screen magnifier
+description: |
+    KMag is a screen magnifier.
+builddeps  :
+    - kdoctools-devel
+    - kio-devel
+setup      : |
+    %cmake_ninja
+build      : |
+    %ninja_build
+install    : |
+    %ninja_install
+
+    # remove docs
+    rm -rf $installdir/usr/share/doc

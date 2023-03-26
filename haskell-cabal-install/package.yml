@@ -1,0 +1,39 @@
+name       : haskell-cabal-install
+version    : 2.4.0.0
+release    : 6
+source     :
+    - https://hackage.haskell.org/package/cabal-install-2.4.0.0/cabal-install-2.4.0.0.tar.gz : 1329e9564b736b0cfba76d396204d95569f080e7c54fe355b6d9618e3aa0bef6
+license    : BSD-3-Clause
+component  : programming.haskell
+summary    : cabal-install is a library management tool for the Haskell Language
+description: |
+    cabal-install is a library management tool for the Haskell Language
+builddeps  :
+    - haskell-async-devel
+    - haskell-cabal-install
+    - haskell-echo-devel
+    - haskell-edit-distance-devel
+    - haskell-hackage-security-devel
+    - haskell-HTTP-devel
+    - haskell-resolv-devel
+    - haskell-zip-archive-devel
+networking : yes
+setup      : |
+    export GHCV=$(ghc --numeric-version)
+    mkdir -p ~/.ghc/%ARCH%-linux-$GHCV/package.conf.d
+    cp /usr/lib%LIBSUFFIX%/ghc-$GHCV/package.conf.d/* ~/.ghc/%ARCH%-linux-$GHCV/package.conf.d
+    ghc-pkg recache --user
+
+    sed -i "s|< 2.8|< 3.2|g" cabal-install.cabal # network
+    sed -i "s|< 2.7|< 2.8|g" cabal-install.cabal # network-uri
+    sed -i "s|< 0.4|< 0.5|g" cabal-install.cabal # zip-archive
+    sed -i "s|< 0.6|< 0.7|g" cabal-install.cabal # hackage-security
+    cabal configure --prefix=%PREFIX% \
+                    --libdir=%libdir% \
+                    --libsubdir="\$compiler/\$pkgid" \
+                    --sysconfdir=/etc \
+                    --enable-shared
+build      : |
+    %cabal_build
+install    : |
+    %cabal_install

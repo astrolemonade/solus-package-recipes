@@ -1,0 +1,24 @@
+name       : qt5-speech
+version    : 5.15.8
+release    : 19
+source     :
+    - git|https://invent.kde.org/qt/qt/qtspeech.git : 255845e2b2e605363762be25932d92fc10d32749
+homepage   : https://www.qt.io
+license    :
+    - GFDL-1.3-only
+    - LGPL-3.0-only
+component  :
+    - desktop.qt
+    - demos : programming.library
+summary    : Qt Text-To-Speech library
+description: |
+    The module enables a Qt application to support accessibility features such as text-to-speech, which is useful for end-users who are visually challenged or cannot access the application for whatever reason.
+builddeps  :
+    - pkgconfig(Qt5Multimedia)
+    - pkgconfig(speech-dispatcher)
+setup      : |
+    %qmake CONFIG+=release qtspeech.pro
+build      : |
+    %make
+install    : |
+    %make_install INSTALL_ROOT=$installdir

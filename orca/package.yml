@@ -1,0 +1,32 @@
+name       : orca
+version    : '43.0'
+release    : 24
+source     :
+    - https://gitlab.gnome.org/GNOME/orca/-/archive/ORCA_43_0/orca-ORCA_43_0.tar.gz : 0e73515fe649843338128548ece63ec0c142301fd0b1213e9a0b5305e8ffa0fb
+homepage   : https://gitlab.gnome.org/GNOME/orca
+license    : LGPL-2.1-or-later
+component  : desktop.gnome
+summary    : Orca Screen Reader
+description: |
+    Orca is a free, open source, flexible, and extensible screen reader that provides access to the graphical desktop via user-customizable combinations of speech and/or braille.
+builddeps  :
+    - pkgconfig(gstreamer-1.0)
+    - pkgconfig(libwnck-3.0)
+    - pkgconfig(pygobject-3.0)
+    - pkgconfig(python3)
+    - pkgconfig(speech-dispatcher)
+    - itstool
+    - yelp-tools
+rundeps    :
+    - pyatspi2
+    - speech-dispatcher
+setup      : |
+    %patch -p1 < $pkgfiles/0001-Tweak-configure.ac.patch
+    %reconfigure
+build      : |
+    %make
+install    : |
+    %make_install
+    # Stateless XDG
+    mv $installdir/etc/xdg $installdir/usr/share/.
+    rmdir $installdir/etc

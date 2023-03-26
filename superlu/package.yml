@@ -1,0 +1,21 @@
+name       : superlu
+version    : 5.3.0
+release    : 5
+source     :
+    - https://github.com/xiaoyeli/superlu/archive/refs/tags/v5.3.0.tar.gz : 3e464afa77335de200aeb739074a11e96d9bef6d0b519950cfa6684c4be1f350
+license    : BSD-3-Clause
+component  : programming.library
+homepage   : https://portal.nersc.gov/project/sparse/superlu/
+summary    : SuperLU is a general purpose library for the direct solution of large, sparse, nonsymmetric systems of linear equations
+description: |
+    SuperLU is a general purpose library for the direct solution of large, sparse, nonsymmetric systems of linear equations. The library is written in C and is callable from either C or Fortran program. It supports both real and complex datatypes, both single and double precision, and 64-bit integer indexing.
+builddeps  :
+    - pkgconfig(openblas)
+setup      : |
+    %cmake_ninja -DBUILD_SHARED_LIBS=1 -DUSE_XSDK_DEFAULTS=1
+build      : |
+    %ninja_build
+install    : |
+    %ninja_install
+check      : |
+    %ninja_check

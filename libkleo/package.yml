@@ -1,0 +1,31 @@
+name       : libkleo
+version    : 22.12.1
+release    : 62
+source     :
+    - https://cdn.download.kde.org/stable/release-service/22.12.1/src/libkleo-22.12.1.tar.xz : 3e9db2bcccd43214fbbdf9b19858ad354fc141c3c942499c2a42d237375dd48d
+homepage   : https://kde.org/
+license    : GPL-2.0-or-later
+component  : desktop.library
+summary    : KDE PIM cryptographic library
+description: |
+    KDE PIM cryptographic library.
+builddeps  :
+    - gpgme-qt-devel
+    - kcodecs-devel
+    - kcompletion-devel
+    - kconfig-devel
+    - kconfigwidgets-devel
+    - kcoreaddons-devel
+    - kitemmodels-devel
+    - kpimtextedit-devel
+    - kwidgetsaddons-devel
+    - libboost-devel
+rundeps    :
+    - devel :
+        - gpgme-qt-devel
+setup      : |
+    %cmake_ninja -DBUILD_TESTING=OFF
+build      : |
+    %ninja_build
+install    : |
+    %ninja_install

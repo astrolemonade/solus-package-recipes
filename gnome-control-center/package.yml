@@ -1,0 +1,78 @@
+name       : gnome-control-center
+version    : '43.2'
+release    : 141
+source     :
+    - https://download.gnome.org/sources/gnome-control-center/43/gnome-control-center-43.2.tar.xz : d7f256aba80a92c727b329fd01c8602da4b78f0fddaec93fcd91096964700563
+license    : GPL-2.0-only
+component  : desktop.gnome
+summary    : The GNOME Control Center
+description: |
+    The GNOME Control Center
+networking : yes
+builddeps  :
+    - pkgconfig(accountsservice)
+    - pkgconfig(clutter-1.0)
+    - pkgconfig(clutter-gtk-1.0)
+    - pkgconfig(colord-gtk4)
+    - pkgconfig(com_err)
+    - pkgconfig(dbus-glib-1)
+    - pkgconfig(ibus-1.0)
+    - pkgconfig(gcr-3)
+    - pkgconfig(gnome-bluetooth-3.0)
+    - pkgconfig(gnome-desktop-3.0)
+    - pkgconfig(gnome-settings-daemon)
+    - pkgconfig(goa-backend-1.0)
+    - pkgconfig(gsettings-desktop-schemas)
+    - pkgconfig(gsound)
+    - pkgconfig(libadwaita-1)
+    - pkgconfig(libgnome-menu-3.0)
+    - pkgconfig(libgtop-2.0)
+    - pkgconfig(libnma-gtk4)
+    - pkgconfig(libpulse-mainloop-glib)
+    - pkgconfig(rest-0.7)
+    - pkgconfig(libsecret-1)
+    - pkgconfig(libsoup-2.4)
+    - pkgconfig(libwacom)
+    - pkgconfig(ModemManager)
+    - pkgconfig(pwquality)
+    - pkgconfig(smbclient)
+    - pkgconfig(udisks2)
+    - pkgconfig(upower-glib)
+    - bluez
+    - cups-devel
+    - docbook-xml
+    - gnome-common
+    - kerberos-devel
+    - libnma-devel
+patterns   :
+    - devel :
+        - /usr/share/pkgconfig/gnome-keybindings.pc
+rundeps    :
+    - bolt # Thunderbolt support
+    - cups-pk-helper
+    - glib-networking
+    - gnome-color-manager
+    - gnome-keyring
+    - gvfs-goa
+    - libgnomekbd
+    - power-profiles-daemon
+    - sound-theme-freedesktop
+setup      : |
+    %patch -p1 < $pkgfiles/0001-Add-acceleration-profile-setting-to-Mouse-section.patch
+    %patch -p1 < $pkgfiles/0001-Fix-binary-location-of-passwd.patch
+    %patch -p1 < $pkgfiles/0001-use-solus-sc-instead-of-gnome-software.patch
+    %patch -p1 < $pkgfiles/0001-Dont-show-the-control-center-in-Budgie-Desktop.patch
+    %patch -p1 < $pkgfiles/firmware-security-disable.patch
+    #%patch -p1 < $pkgfiles/display-Allow-fractional-scaling-to-be-enabled.patch
+    %patch -p1 < $pkgfiles/sound-Allow-volume-to-be-set-above-100.patch
+    %patch -p1 < $pkgfiles/sound-Add-a-button-to-select-the-default-theme.patch
+    cp $pkgfiles/start-here-solus.svg panels/info-overview/gnome-logo-text.svg
+    cp $pkgfiles/start-here-solus.svg panels/info-overview/gnome-logo-text-dark.svg
+    %meson_configure -Ddocumentation=true -Dprivileged_group=sudo
+build      : |
+    %ninja_build
+install    : |
+    %ninja_install
+
+    # Consistent polkit rules naming
+    mv $installdir/usr/share/polkit-1/rules.d/gnome-control-center.rules $installdir/usr/share/polkit-1/rules.d/org.gnome.controlcenter.rules

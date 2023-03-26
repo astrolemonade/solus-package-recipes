@@ -1,0 +1,16 @@
+name       : perl-text-charwidth
+version    : 0.04
+release    : 7
+source     :
+    - https://cpan.metacpan.org/authors/id/K/KU/KUBOTA/Text-CharWidth-0.04.tar.gz : abded5f4fdd9338e89fd2f1d8271c44989dae5bf50aece41b6179d8e230704f8
+license    : Artistic-1.0-Perl
+component  : programming.perl
+summary    : Text::CharWidth - Get number of occupied columns of a string on terminal
+description: |
+    This module supplies features similar as wcwidth(3) and wcswidth(3) in C language.Characters have its own width on terminal depending on locale. For example, ASCII characters occupy one colu mn per character, east Asian fullwidth characters (like Hiragana or Han Ideograph) occupy two columns per character, and combining characters (apperaring in ISO-8859-11 Thai, Unicode, and so on) occupy zero columns per character. mbwidth() gives the width of the first character of the given string and mbswidth() gives the width of the whole given string.
+setup      : |
+    %perl_setup
+build      : |
+    %perl_build
+install    : |
+    %perl_install

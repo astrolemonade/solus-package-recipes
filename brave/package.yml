@@ -1,0 +1,46 @@
+name       : brave
+version    : 1.46.153
+release    : 139
+source     :
+    - https://github.com/brave/brave-browser/releases/download/v1.46.153/brave-browser_1.46.153_amd64.deb : 0e35b9b4fef1b8eec5cda76c43aa1e6f53f5cbb1400c31f758c9c35098372322
+homepage   : https://brave.com
+license    :
+    - GPL-2.0-or-later # Privacy Badger
+    - GPL-3.0-or-later # Https Everywhere
+    - MPL-2.0
+component  : network.web.browser
+summary    : A browser focused on privacy that blocks ads and trackers by default
+description: |
+    Brave is a free and open-source web browser developed by Brave Software, Inc. based on the Chromium web browser. It blocks ads and website trackers, and provides a way for users to send cryptocurrency contributions in the form of Basic Attention Tokens (BAT) to websites and content creators along with the ability to keep the cryptocurrency they earned.
+patterns   : /*
+builddeps  :
+    - pkgconfig(Qt5Core)
+    - pkgconfig(alsa)
+    - pkgconfig(atk-bridge-2.0)
+    - pkgconfig(gconf-2.0)
+    - pkgconfig(libsecret-1)
+    - pkgconfig(pango)
+    - pkgconfig(xcomposite)
+    - pkgconfig(xdamage)
+    - pkgconfig(xkbcommon)
+    - pkgconfig(xkbfile)
+    - pkgconfig(xscrnsaver)
+    - pkgconfig(xrandr)
+    - cups-devel
+rundeps    :
+    - libgnome-keyring
+setup      : |
+    ar x $sources/brave-browser_${version}_amd64.deb
+    tar xf data.tar.*
+    mv usr/share/man/man1/brave-browser-stable.1.gz usr/share/man/man1/brave-browser.1.gz
+install    : |
+    mkdir -p $installdir
+    cp -r usr $installdir/
+    cp -r opt/brave.com/brave $installdir/usr/share/
+    ln -sfn /usr/share/brave/brave $installdir/usr/bin/brave-browser
+    install -Dm00644 opt/brave.com/brave/product_logo_128.png $installdir/usr/share/pixmaps/brave-browser.png
+
+    # Remove stuff that aren't necessary on Solus
+    sed -i 's/brave-browser-stable/brave-browser/g' $installdir/usr/share/applications/brave-browser.desktop
+    rm -f $installdir/usr/bin/brave-browser-stable
+    rm -f $installdir/usr/share/brave/LICENSE

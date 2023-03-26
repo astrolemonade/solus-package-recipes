@@ -1,0 +1,19 @@
+name       : xcb-proto
+version    : 1.15.1
+release    : 15
+source     :
+    - https://xorg.freedesktop.org/archive/individual/proto/xcb-proto-1.15.1.tar.gz : 49ab1068379ec5cd74555e147e5373a52be004092d10380c8790b2e175cf5fc0
+license    : MIT
+component  : xorg.proto
+summary    : XML-XCB Protocol
+description: |
+    The xcb-proto package provides the XML-XCB protocol descriptions that libxcb uses to generate the majority of its code and API.
+patterns   : /
+environment: |
+    export PYTHON="python3"
+setup      : |
+    %configure
+build      : |
+    %make
+install    : |
+    %make_install

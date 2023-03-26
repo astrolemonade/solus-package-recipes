@@ -1,0 +1,38 @@
+name       : bind-utils
+version    : 9.18.7
+release    : 26
+source     :
+    - https://gitlab.isc.org/isc-projects/bind9/-/archive/v9_18_7/bind9-v9_18_7.tar.gz : a4afd81dbb2f41258e9aa330ac90a8dc4ea32442d413b139dee1e62c9e6dea25
+homepage   : https://www.isc.org/bind/
+license    : MPL-2.0-or-later
+component  : network.util
+summary    : Client side programs nslookup, dig and host.
+networking : yes
+description: |
+    BIND (Berkeley Internet Name Domain) is a complete, highly portable implementation of the Domain Name System (DNS) protocol.
+libsplit   : no
+builddeps  :
+    - pkgconfig(json-c)
+    - pkgconfig(krb5)
+    - pkgconfig(libedit)
+    - pkgconfig(libidn2)
+    - pkgconfig(libnghttp2)
+    - pkgconfig(libmaxminddb)
+    - pkgconfig(libuv)
+setup      : |
+    %reconfigure --disable-static --disable-linux-caps --with-readline=libedit --with-libidn2
+build      : |
+    %make -C lib
+    %make bind.keys.h
+    %make -C bin/delv
+    %make -C bin/dig
+    %make -C bin/nsupdate
+    %make -C doc/man
+install    : |
+    %make_install -C lib
+    %make_install -C bin/delv
+    %make_install -C bin/dig
+    %make_install -C bin/nsupdate
+    rm -rf $installdir/usr/include
+    install -dm00755 $installdir/usr/share/man/man1
+    install -Dm00644 doc/man/delv.1 doc/man/dig.1 doc/man/host.1 doc/man/nslookup.1 doc/man/nsupdate.1 -t $installdir/usr/share/man/man1

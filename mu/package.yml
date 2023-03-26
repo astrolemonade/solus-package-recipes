@@ -1,0 +1,27 @@
+name       : mu
+version    : 1.8.13
+release    : 13
+source     :
+    - https://github.com/djcb/mu/releases/download/v1.8.13/mu-1.8.13.tar.xz : 20d69c1a918c1e48e6dbf5375d87ef3ed358bb6b3b7d0a120e93a88b16d5a026
+license    : GPL-3.0-only
+component  : editor
+summary    : maildir indexer/searcher + emacs mail client + guile bindings
+description: |
+    mu is a tool for dealing with e-mail messages stored in the Maildir-format. mu’s purpose in life is to help you to quickly find the messages you need; in addition, it allows you to view messages, extract attachments, create new maildirs, and so on. See the mu cheatsheet for some examples. mu is fully documented.
+builddeps  :
+    - pkgconfig(glib-2.0)
+    - pkgconfig(gmime-3.0)
+    - pkgconfig(gtk+-3.0)
+    - pkgconfig(guile-2.0)
+    - pkgconfig(webkit2gtk-4.0)
+    - pkgconfig(xapian-core)
+    - emacs
+setup      : |
+    %meson_configure
+build      : |
+    %ninja_build
+    emacs --batch --eval '(byte-recompile-directory "mu4e")'
+install    : |
+    %ninja_install
+    # remove mu-docs
+    rm -rf $installdir/usr/share/doc

@@ -1,0 +1,77 @@
+<PISI>
+    <Source>
+        <Name>haskell-dbus</Name>
+        <Packager>
+            <Name>Bryan T. Meyers</Name>
+            <Email>bmeyers@datadrake.com</Email>
+        </Packager>
+        <License>Apacke-2.0</License>
+        <PartOf>programming.haskell</PartOf>
+        <Summary xml:lang="en">This library is an implementation of the D-Bus protocol in Haskell. It can be used to add D-Bus support to Haskell applications, without the awkward interfaces common to foreign bindings.</Summary>
+        <Description xml:lang="en">This library is an implementation of the D-Bus protocol in Haskell. It can be used to add D-Bus support to Haskell applications, without the awkward interfaces common to foreign bindings.
+</Description>
+        <Archive type="binary" sha1sum="79eb0752a961b8e0d15c77d298c97498fbc89c5a">https://getsol.us/sources/README.Solus</Archive>
+    </Source>
+    <Package>
+        <Name>haskell-dbus</Name>
+        <Summary xml:lang="en">This library is an implementation of the D-Bus protocol in Haskell. It can be used to add D-Bus support to Haskell applications, without the awkward interfaces common to foreign bindings.</Summary>
+        <Description xml:lang="en">This library is an implementation of the D-Bus protocol in Haskell. It can be used to add D-Bus support to Haskell applications, without the awkward interfaces common to foreign bindings.
+</Description>
+        <PartOf>programming.haskell</PartOf>
+        <Files>
+            <Path fileType="library">/usr/lib64/ghc-8.6.5/dbus-1.2.7/DBus.dyn_hi</Path>
+            <Path fileType="library">/usr/lib64/ghc-8.6.5/dbus-1.2.7/DBus.hi</Path>
+            <Path fileType="library">/usr/lib64/ghc-8.6.5/dbus-1.2.7/DBus/Client.dyn_hi</Path>
+            <Path fileType="library">/usr/lib64/ghc-8.6.5/dbus-1.2.7/DBus/Client.hi</Path>
+            <Path fileType="library">/usr/lib64/ghc-8.6.5/dbus-1.2.7/DBus/Generation.dyn_hi</Path>
+            <Path fileType="library">/usr/lib64/ghc-8.6.5/dbus-1.2.7/DBus/Generation.hi</Path>
+            <Path fileType="library">/usr/lib64/ghc-8.6.5/dbus-1.2.7/DBus/Internal/Address.dyn_hi</Path>
+            <Path fileType="library">/usr/lib64/ghc-8.6.5/dbus-1.2.7/DBus/Internal/Address.hi</Path>
+            <Path fileType="library">/usr/lib64/ghc-8.6.5/dbus-1.2.7/DBus/Internal/Message.dyn_hi</Path>
+            <Path fileType="library">/usr/lib64/ghc-8.6.5/dbus-1.2.7/DBus/Internal/Message.hi</Path>
+            <Path fileType="library">/usr/lib64/ghc-8.6.5/dbus-1.2.7/DBus/Internal/Types.dyn_hi</Path>
+            <Path fileType="library">/usr/lib64/ghc-8.6.5/dbus-1.2.7/DBus/Internal/Types.hi</Path>
+            <Path fileType="library">/usr/lib64/ghc-8.6.5/dbus-1.2.7/DBus/Internal/Wire.dyn_hi</Path>
+            <Path fileType="library">/usr/lib64/ghc-8.6.5/dbus-1.2.7/DBus/Internal/Wire.hi</Path>
+            <Path fileType="library">/usr/lib64/ghc-8.6.5/dbus-1.2.7/DBus/Introspection.dyn_hi</Path>
+            <Path fileType="library">/usr/lib64/ghc-8.6.5/dbus-1.2.7/DBus/Introspection.hi</Path>
+            <Path fileType="library">/usr/lib64/ghc-8.6.5/dbus-1.2.7/DBus/Introspection/Parse.dyn_hi</Path>
+            <Path fileType="library">/usr/lib64/ghc-8.6.5/dbus-1.2.7/DBus/Introspection/Parse.hi</Path>
+            <Path fileType="library">/usr/lib64/ghc-8.6.5/dbus-1.2.7/DBus/Introspection/Render.dyn_hi</Path>
+            <Path fileType="library">/usr/lib64/ghc-8.6.5/dbus-1.2.7/DBus/Introspection/Render.hi</Path>
+            <Path fileType="library">/usr/lib64/ghc-8.6.5/dbus-1.2.7/DBus/Introspection/Types.dyn_hi</Path>
+            <Path fileType="library">/usr/lib64/ghc-8.6.5/dbus-1.2.7/DBus/Introspection/Types.hi</Path>
+            <Path fileType="library">/usr/lib64/ghc-8.6.5/dbus-1.2.7/DBus/Socket.dyn_hi</Path>
+            <Path fileType="library">/usr/lib64/ghc-8.6.5/dbus-1.2.7/DBus/Socket.hi</Path>
+            <Path fileType="library">/usr/lib64/ghc-8.6.5/dbus-1.2.7/DBus/TH.dyn_hi</Path>
+            <Path fileType="library">/usr/lib64/ghc-8.6.5/dbus-1.2.7/DBus/TH.hi</Path>
+            <Path fileType="library">/usr/lib64/ghc-8.6.5/dbus-1.2.7/DBus/Transport.dyn_hi</Path>
+            <Path fileType="library">/usr/lib64/ghc-8.6.5/dbus-1.2.7/DBus/Transport.hi</Path>
+            <Path fileType="library">/usr/lib64/x86_64-linux-ghc-8.6.5/libHSdbus-1.2.7-3Nr3QFWRBDYBz0rS5wAMgn-ghc8.6.5.so</Path>
+            <Path fileType="doc">/usr/share/doc/x86_64-linux-ghc-8.6.5/dbus-1.2.7/license.txt</Path>
+        </Files>
+    </Package>
+    <Package>
+        <Name>haskell-dbus-devel</Name>
+        <Summary xml:lang="en">Development files for haskell-dbus</Summary>
+        <Description xml:lang="en">This library is an implementation of the D-Bus protocol in Haskell. It can be used to add D-Bus support to Haskell applications, without the awkward interfaces common to foreign bindings.
+</Description>
+        <PartOf>programming.devel</PartOf>
+        <RuntimeDependencies>
+            <Dependency release="3">haskell-dbus</Dependency>
+        </RuntimeDependencies>
+        <Files>
+            <Path fileType="library">/usr/lib64/ghc-8.6.5/dbus-1.2.7/libHSdbus-1.2.7-3Nr3QFWRBDYBz0rS5wAMgn.a</Path>
+            <Path fileType="library">/usr/lib64/ghc-8.6.5/package.conf.d/haskell-dbus-1.2.7.conf</Path>
+        </Files>
+    </Package>
+    <History>
+        <Update release="3">
+            <Date>2020-12-24</Date>
+            <Version>1.2.7</Version>
+            <Comment>Packaging update</Comment>
+            <Name>Bryan T. Meyers</Name>
+            <Email>bmeyers@datadrake.com</Email>
+        </Update>
+    </History>
+</PISI>

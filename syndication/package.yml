@@ -1,0 +1,24 @@
+name       : syndication
+version    : 5.101.0
+release    : 58
+source     :
+    - https://cdn.download.kde.org/stable/frameworks/5.101/syndication-5.101.0.tar.xz : c005c3393f17a89f2a467ad7c38cd06e8beb4c67a281e9344a7a909bdd84e2c1
+homepage   : https://community.kde.org/Frameworks
+license    :
+    - BSD-2-Clause
+    - GPL-2.0-or-later
+    - LGPL-2.0-or-later
+component  : programming.library
+summary    : An RSS/Atom parser library
+description: |
+    syndication is a parser library for RSS and Atom feeds. syndication offers a unified, format-agnostic view on the parsed feed, so that the using application does not need to distinguish between feed formats.
+optimize   : lto
+builddeps  :
+    - kcodecs-devel
+setup      : |
+    %cmake_ninja -DBUILD_QCH=ON \
+                -DBUILD_TESTING=OFF
+build      : |
+    %ninja_build
+install    : |
+    %ninja_install

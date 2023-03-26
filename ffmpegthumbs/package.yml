@@ -1,0 +1,22 @@
+name       : ffmpegthumbs
+version    : 22.12.1
+release    : 63
+source     :
+    - https://cdn.download.kde.org/stable/release-service/22.12.1/src/ffmpegthumbs-22.12.1.tar.xz : 483876dc31f32057688c793a5f9fee769c30c44ddfac8ac05744b4ac7e26c575
+homepage   : https://kde.org/applications/multimedia/org.kde.ffmpegthumbs
+license    : GPL-2.0-or-later
+component  : desktop.kde
+summary    : Video thumbnail generator
+description: |
+    FFMpegThumbs is a video thumbnail generator for KDE file managers.
+optimize   : lto
+builddeps  :
+    - pkgconfig(libavcodec)
+    - pkgconfig(taglib)
+    - kio-devel
+setup      : |
+    %cmake_ninja -DBUILD_TESTING=OFF
+build      : |
+    %ninja_build
+install    : |
+    %ninja_install

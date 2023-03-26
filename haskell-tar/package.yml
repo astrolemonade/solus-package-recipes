@@ -1,0 +1,24 @@
+name       : haskell-tar
+version    : 0.5.1.1
+release    : 6
+source     :
+    - https://hackage.haskell.org/package/tar-0.5.1.1/tar-0.5.1.1.tar.gz : b384449f62b2b0aa3e6d2cb1004b8060b01f21ec93e7b63e7af6d8fad8a9f1de
+license    : BSD-3-Clause
+component  : programming.haskell
+summary    : This library is for working with ".tar" archive files.
+description: |
+    This library is for working with ".tar" archive files.
+builddeps  :
+    - ghc-devel
+    - haskell-cabal-install
+rundeps    :
+    - devel:
+        - ghc-devel
+networking : yes
+setup      : |
+    %cabal_configure
+build      : |
+    %cabal_build
+install    : |
+    %cabal_install
+    %cabal_register

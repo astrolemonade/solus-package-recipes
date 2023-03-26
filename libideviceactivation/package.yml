@@ -1,0 +1,25 @@
+name       : libideviceactivation
+version    : 1.0.0
+release    : 6
+source     :
+    - git|https://github.com/libimobiledevice/libideviceactivation.git : 7f618a50bc3ddafbe38559b39d10e7af96765872
+license    : GPL-3.0-or-later
+component  : multimedia.library
+summary    : A library to manage the activation process of Apple iOS devices.
+description: |
+    A library to manage the activation process of Apple iOS devices.
+libsplit   : no
+builddeps  :
+    - pkgconfig(libcurl)
+    - pkgconfig(libimobiledevice-1.0)
+    - usbmuxd
+rundeps    :
+    - ifuse
+    - usbmuxd
+setup      : |
+    %autogen --disable-static
+build      : |
+    %make
+install    : |
+    %make_install
+    install -Dm00755 $pkgfiles/imount $installdir/usr/bin/imount

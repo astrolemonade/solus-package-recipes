@@ -1,0 +1,30 @@
+name       : kcalc
+version    : 22.12.1
+release    : 61
+source     :
+    - https://cdn.download.kde.org/stable/release-service/22.12.1/src/kcalc-22.12.1.tar.xz : 948bd2f0020ae4043eea6e2f09dfc088d1fb9aed735c421d25384aff6577ba9e
+homepage   : https://kde.org/applications/utilities/org.kde.kcalc
+license    : GPL-2.0-or-later
+component  : desktop.kde.core
+summary    : Scientific calculator by KDE
+description: |
+    KCalc is a calculator which offers many more mathematical functions than meet the eye on a first glance.
+optimize   : lto
+libsplit   : no
+builddeps  :
+    - gmp-devel
+    - kcrash-devel
+    - kdoctools-devel
+    - kguiaddons-devel
+    - ki18n-devel
+    - knotifications-devel
+    - kxmlgui-devel
+setup      : |
+    %cmake_ninja -DBUILD_TESTING=OFF
+build      : |
+    %ninja_build
+install    : |
+    %ninja_install
+
+    # remove docs
+    rm -rf $installdir/usr/share/doc

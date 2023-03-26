@@ -1,0 +1,30 @@
+name       : kglobalaccel
+version    : 5.101.0
+release    : 69
+source     :
+    - https://cdn.download.kde.org/stable/frameworks/5.101/kglobalaccel-5.101.0.tar.xz : 3203222ca86b15e73f9da1fde572a1374c3a8353ed2608c2160e1973c57a6062
+homepage   : https://community.kde.org/Frameworks
+license    :
+    - LGPL-2.0-only
+    - LGPL-2.0-or-later
+    - LGPL-2.1-only
+component  : desktop.library
+summary    : Global desktop keyboard shortcuts
+description: |
+    KGlobalAccel allows you to have global accelerators that are independent of the focused window. Unlike regular shortcuts, the application's window does not need focus for them to be activated.
+optimize   : lto
+builddeps  :
+    - pkgconfig(Qt5X11Extras)
+    - pkgconfig(xcb-keysyms)
+    - kconfig-devel
+    - kcoreaddons-devel
+    - kcrash-devel
+    - kdbusaddons-devel
+    - kwindowsystem-devel
+setup      : |
+    %cmake_ninja -DBUILD_QCH=ON \
+                 -DBUILD_TESTING=OFF
+build      : |
+    %ninja_build
+install    : |
+    %ninja_install

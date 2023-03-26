@@ -1,0 +1,35 @@
+name       : appstream-glib
+version    : 0.7.18
+release    : 10
+source     :
+    - https://people.freedesktop.org/~hughsient/appstream-glib/releases/appstream-glib-0.7.18.tar.xz : ca1ed22e3bde3912cb903aaa7de085d55771da454f1c0573fd9608e1de9c4002
+license    : LGPL-2.1
+component  : desktop.core
+summary    : This library provides objects and helper methods to help reading and writing AppStream metadata.
+description: |
+    This library provides objects and helper methods to help reading and writing AppStream metadata.
+builddeps  :
+    - pkgconfig(glib-2.0)
+    - pkgconfig(libarchive)
+    - pkgconfig(libsoup-2.4)
+    - pkgconfig(gdk-pixbuf-2.0)
+    - pkgconfig(gtk+-3.0)
+    - pkgconfig(sqlite3)
+    - pkgconfig(freetype2)
+    - pkgconfig(fontconfig)
+    - pkgconfig(libgcab-1.0)
+    - pkgconfig(json-glib-1.0)
+    - gperf
+rundeps    :
+    - gcab
+patterns   :
+    - devel : /usr/share/aclocal
+setup      : |
+    # Solus support.
+    %patch -p1 < $pkgfiles/0001-builder-Implement-support-for-Solus-.eopkg-format.patch
+    %patch -p1 < $pkgfiles/0002-eopkg-Enable-comparison-by-release-field-highest-win.patch
+    %meson_configure -Deopkg=true -Drpm=false -Ddep11=false -Dstemmer=false -Dman=false
+build      : |
+    %ninja_build
+install    : |
+    %ninja_install

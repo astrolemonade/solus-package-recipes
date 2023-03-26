@@ -1,0 +1,44 @@
+name       : opentoonz
+version    : 1.6.0
+release    : 17
+homepage   : https://opentoonz.github.io/
+source     :
+    - https://github.com/opentoonz/opentoonz/archive/refs/tags/v1.6.0.tar.gz : 9a6c28cb3933756dbebb45e849bdafc9e6d93d0328c4fd4d7bc8ec3ae481f684
+license    :
+    - BSD-3-Clause
+    - CC0-1.0
+component  : multimedia.video
+summary    : An open-source full-featured 2D animation creation software
+description: |
+    OpenToonz is a 2D animation software published by DWANGO. It is based on Toonz Studio Ghibli Version, originally developed in Italy by Digital Video, Inc., and customized by Studio Ghibli over many years of production.
+builddeps  :
+    - pkgconfig(Qt5Multimedia)
+    - pkgconfig(Qt5Script)
+    - pkgconfig(Qt5SerialPort)
+    - pkgconfig(Qt5Svg)
+    - pkgconfig(Qt5UiTools)
+    - pkgconfig(freetype2)
+    - pkgconfig(glew)
+    - pkgconfig(glut)
+    - pkgconfig(liblz4)
+    - pkgconfig(libmypaint)
+    - pkgconfig(libturbojpeg)
+    - pkgconfig(libusb)
+    - pkgconfig(lzo2)
+    - pkgconfig(openblas)
+    - pkgconfig(opencv4)
+    - pkgconfig(superlu)
+    - pkgconfig(x11)
+    - libboost-devel
+setup      : |
+    # currently opentoonz needs its own modified version of libtiff
+    pushd thirdparty/tiff-4.0.3
+      %configure --with-pic --disable-jbig
+      %make
+    popd
+
+    %cmake -S toonz/sources
+build      : |
+    %make
+install    : |
+    %make_install

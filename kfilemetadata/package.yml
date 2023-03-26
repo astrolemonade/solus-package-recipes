@@ -1,0 +1,33 @@
+name       : kfilemetadata
+version    : 5.101.0
+release    : 78
+source     :
+    - https://cdn.download.kde.org/stable/frameworks/5.101/kfilemetadata-5.101.0.tar.xz : 53d8ec9b98814384e1c8f0ab2d158e41e5f228fa4bc3a288eef1d9a557e2e88b
+homepage   : https://community.kde.org/Frameworks
+license    :
+    - BSD-3-Clause
+    - LGPL-2.1-only
+    - LGPL-2.1-or-later
+component  : programming.library
+summary    : Simple library for extracting the text and metadata
+description: |
+    Simple library for extracting the text and metadata.
+optimize   : lto
+builddeps  :
+    - pkgconfig(exiv2)
+    - pkgconfig(libattr)
+    - pkgconfig(libavformat)
+    - pkgconfig(poppler-qt5)
+    - pkgconfig(taglib)
+    - ebook-tools-devel
+    - karchive-devel
+    - kcoreaddons-devel
+    - ki18n-devel
+    - kconfig-devel
+setup      : |
+    %cmake_ninja -DBUILD_QCH=ON \
+                -DBUILD_TESTING=OFF
+build      : |
+    %ninja_build
+install    : |
+    %ninja_install

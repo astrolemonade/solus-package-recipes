@@ -1,0 +1,23 @@
+name       : libktorrent
+version    : 22.12.1
+release    : 28
+source     :
+    - https://cdn.download.kde.org/stable/release-service/22.12.1/src/libktorrent-22.12.1.tar.xz : 4deee1265c646d062a91170882ec939d25049546d7488a65d49a9b7d4c467392
+license    : GPL-2.0-or-later
+component  : programming.library
+summary    : BitTorrent protocol implementation
+description: |
+    libkTorrent is a BitTorrent protocol implementation for KDE.
+builddeps  :
+    - pkgconfig(qca2-qt5)
+    - karchive-devel
+    - kcrash-devel
+    - kio-devel
+    - libboost-devel
+    - libgcrypt-devel
+setup      : |
+    %cmake_ninja
+build      : |
+    %ninja_build
+install    : |
+    %ninja_install

@@ -1,0 +1,13 @@
+diff --git a/fs/etc/xpra/conf.d/55_server_x11.conf.in b/fs/etc/xpra/conf.d/55_server_x11.conf.in
+index aabf81d73..40f13a2be 100644
+--- a/fs/etc/xpra/conf.d/55_server_x11.conf.in
++++ b/fs/etc/xpra/conf.d/55_server_x11.conf.in
+@@ -48,4 +48,7 @@ fake-xinerama = %(fake_xinerama)s
+ #xvfb = %(xdummy_command)s
+ #
+ # Selecting virtual X server:
+-xvfb = %(xvfb_command)s
++xvfb = Xvfb -nolisten tcp -noreset \
++        +extension GLX +extension Composite \
++        -auth $XAUTHORITY \
++        -screen 0 8192x4096x24+32

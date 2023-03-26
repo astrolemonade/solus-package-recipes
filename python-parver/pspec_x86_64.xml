@@ -1,0 +1,58 @@
+<PISI>
+    <Source>
+        <Name>python-parver</Name>
+        <Homepage>https://github.com/RazerM/parver</Homepage>
+        <Packager>
+            <Name>Algent Albrahimi</Name>
+            <Email>algent@protonmail.com</Email>
+        </Packager>
+        <License>MIT</License>
+        <PartOf>programming.python</PartOf>
+        <Summary xml:lang="en">Parse and manipulate version numbers</Summary>
+        <Description xml:lang="en">python-parver allows parsing and manipulation of PEP 440 version numbers
+</Description>
+        <Archive type="binary" sha1sum="79eb0752a961b8e0d15c77d298c97498fbc89c5a">https://getsol.us/sources/README.Solus</Archive>
+    </Source>
+    <Package>
+        <Name>python-parver</Name>
+        <Summary xml:lang="en">Parse and manipulate version numbers</Summary>
+        <Description xml:lang="en">python-parver allows parsing and manipulation of PEP 440 version numbers
+</Description>
+        <PartOf>programming.python</PartOf>
+        <Files>
+            <Path fileType="library">/usr/lib/python3.10/site-packages/parver-0.4.dist-info/LICENSE</Path>
+            <Path fileType="library">/usr/lib/python3.10/site-packages/parver-0.4.dist-info/METADATA</Path>
+            <Path fileType="library">/usr/lib/python3.10/site-packages/parver-0.4.dist-info/RECORD</Path>
+            <Path fileType="library">/usr/lib/python3.10/site-packages/parver-0.4.dist-info/WHEEL</Path>
+            <Path fileType="library">/usr/lib/python3.10/site-packages/parver-0.4.dist-info/top_level.txt</Path>
+            <Path fileType="library">/usr/lib/python3.10/site-packages/parver/__init__.py</Path>
+            <Path fileType="library">/usr/lib/python3.10/site-packages/parver/__pycache__/__init__.cpython-310.opt-1.pyc</Path>
+            <Path fileType="library">/usr/lib/python3.10/site-packages/parver/__pycache__/__init__.cpython-310.pyc</Path>
+            <Path fileType="library">/usr/lib/python3.10/site-packages/parver/__pycache__/_helpers.cpython-310.opt-1.pyc</Path>
+            <Path fileType="library">/usr/lib/python3.10/site-packages/parver/__pycache__/_helpers.cpython-310.pyc</Path>
+            <Path fileType="library">/usr/lib/python3.10/site-packages/parver/__pycache__/_parse.cpython-310.opt-1.pyc</Path>
+            <Path fileType="library">/usr/lib/python3.10/site-packages/parver/__pycache__/_parse.cpython-310.pyc</Path>
+            <Path fileType="library">/usr/lib/python3.10/site-packages/parver/__pycache__/_segments.cpython-310.opt-1.pyc</Path>
+            <Path fileType="library">/usr/lib/python3.10/site-packages/parver/__pycache__/_segments.cpython-310.pyc</Path>
+            <Path fileType="library">/usr/lib/python3.10/site-packages/parver/__pycache__/_typing.cpython-310.opt-1.pyc</Path>
+            <Path fileType="library">/usr/lib/python3.10/site-packages/parver/__pycache__/_typing.cpython-310.pyc</Path>
+            <Path fileType="library">/usr/lib/python3.10/site-packages/parver/__pycache__/_version.cpython-310.opt-1.pyc</Path>
+            <Path fileType="library">/usr/lib/python3.10/site-packages/parver/__pycache__/_version.cpython-310.pyc</Path>
+            <Path fileType="library">/usr/lib/python3.10/site-packages/parver/_helpers.py</Path>
+            <Path fileType="library">/usr/lib/python3.10/site-packages/parver/_parse.py</Path>
+            <Path fileType="library">/usr/lib/python3.10/site-packages/parver/_segments.py</Path>
+            <Path fileType="library">/usr/lib/python3.10/site-packages/parver/_typing.py</Path>
+            <Path fileType="library">/usr/lib/python3.10/site-packages/parver/_version.py</Path>
+            <Path fileType="library">/usr/lib/python3.10/site-packages/parver/py.typed</Path>
+        </Files>
+    </Package>
+    <History>
+        <Update release="8">
+            <Date>2022-12-15</Date>
+            <Version>0.4</Version>
+            <Comment>Packaging update</Comment>
+            <Name>Algent Albrahimi</Name>
+            <Email>algent@protonmail.com</Email>
+        </Update>
+    </History>
+</PISI>

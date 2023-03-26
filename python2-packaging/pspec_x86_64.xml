@@ -1,0 +1,62 @@
+<PISI>
+    <Source>
+        <Name>python2-packaging</Name>
+        <Homepage>https://github.com/pypa/packaging</Homepage>
+        <Packager>
+            <Name>Algent Albrahimi</Name>
+            <Email>algent@protonmail.com</Email>
+        </Packager>
+        <License>Apache-2.0</License>
+        <PartOf>programming.python</PartOf>
+        <Summary xml:lang="en">Core utilities for Python packages</Summary>
+        <Description xml:lang="en">CReusable core utilities for various Python Packaging interoperability specifications. This library provides utilities that implement the interoperability specifications which have clearly one correct behaviour (eg: PEP 440) or benefit greatly from having a single shared implementation (eg: PEP 425).
+</Description>
+        <Archive type="binary" sha1sum="79eb0752a961b8e0d15c77d298c97498fbc89c5a">https://getsol.us/sources/README.Solus</Archive>
+    </Source>
+    <Package>
+        <Name>python2-packaging</Name>
+        <Summary xml:lang="en">Core utilities for Python packages</Summary>
+        <Description xml:lang="en">CReusable core utilities for various Python Packaging interoperability specifications. This library provides utilities that implement the interoperability specifications which have clearly one correct behaviour (eg: PEP 440) or benefit greatly from having a single shared implementation (eg: PEP 425).
+</Description>
+        <PartOf>programming.python</PartOf>
+        <Files>
+            <Path fileType="library">/usr/lib/python2.7/site-packages/packaging-20.9-py2.7.egg-info/PKG-INFO</Path>
+            <Path fileType="library">/usr/lib/python2.7/site-packages/packaging-20.9-py2.7.egg-info/SOURCES.txt</Path>
+            <Path fileType="library">/usr/lib/python2.7/site-packages/packaging-20.9-py2.7.egg-info/dependency_links.txt</Path>
+            <Path fileType="library">/usr/lib/python2.7/site-packages/packaging-20.9-py2.7.egg-info/requires.txt</Path>
+            <Path fileType="library">/usr/lib/python2.7/site-packages/packaging-20.9-py2.7.egg-info/top_level.txt</Path>
+            <Path fileType="library">/usr/lib/python2.7/site-packages/packaging/__about__.py</Path>
+            <Path fileType="library">/usr/lib/python2.7/site-packages/packaging/__about__.pyc</Path>
+            <Path fileType="library">/usr/lib/python2.7/site-packages/packaging/__init__.py</Path>
+            <Path fileType="library">/usr/lib/python2.7/site-packages/packaging/__init__.pyc</Path>
+            <Path fileType="library">/usr/lib/python2.7/site-packages/packaging/_compat.py</Path>
+            <Path fileType="library">/usr/lib/python2.7/site-packages/packaging/_compat.pyc</Path>
+            <Path fileType="library">/usr/lib/python2.7/site-packages/packaging/_structures.py</Path>
+            <Path fileType="library">/usr/lib/python2.7/site-packages/packaging/_structures.pyc</Path>
+            <Path fileType="library">/usr/lib/python2.7/site-packages/packaging/_typing.py</Path>
+            <Path fileType="library">/usr/lib/python2.7/site-packages/packaging/_typing.pyc</Path>
+            <Path fileType="library">/usr/lib/python2.7/site-packages/packaging/markers.py</Path>
+            <Path fileType="library">/usr/lib/python2.7/site-packages/packaging/markers.pyc</Path>
+            <Path fileType="library">/usr/lib/python2.7/site-packages/packaging/py.typed</Path>
+            <Path fileType="library">/usr/lib/python2.7/site-packages/packaging/requirements.py</Path>
+            <Path fileType="library">/usr/lib/python2.7/site-packages/packaging/requirements.pyc</Path>
+            <Path fileType="library">/usr/lib/python2.7/site-packages/packaging/specifiers.py</Path>
+            <Path fileType="library">/usr/lib/python2.7/site-packages/packaging/specifiers.pyc</Path>
+            <Path fileType="library">/usr/lib/python2.7/site-packages/packaging/tags.py</Path>
+            <Path fileType="library">/usr/lib/python2.7/site-packages/packaging/tags.pyc</Path>
+            <Path fileType="library">/usr/lib/python2.7/site-packages/packaging/utils.py</Path>
+            <Path fileType="library">/usr/lib/python2.7/site-packages/packaging/utils.pyc</Path>
+            <Path fileType="library">/usr/lib/python2.7/site-packages/packaging/version.py</Path>
+            <Path fileType="library">/usr/lib/python2.7/site-packages/packaging/version.pyc</Path>
+        </Files>
+    </Package>
+    <History>
+        <Update release="1">
+            <Date>2022-07-21</Date>
+            <Version>20.9</Version>
+            <Comment>Packaging update</Comment>
+            <Name>Algent Albrahimi</Name>
+            <Email>algent@protonmail.com</Email>
+        </Update>
+    </History>
+</PISI>

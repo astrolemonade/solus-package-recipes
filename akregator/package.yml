@@ -1,0 +1,43 @@
+name       : akregator
+version    : 22.12.1
+release    : 62
+source     :
+    - https://cdn.download.kde.org/stable/release-service/22.12.1/src/akregator-22.12.1.tar.xz : 07838ddf9586824108fd9f2ee1b9aceba03874ba360c3635e48a1fc41816d591
+homepage   : https://kde.org/applications/internet/org.kde.akregator
+license    :
+    - GFDL-1.2-or-later
+    - GPL-2.0-or-later
+component  : network.news
+summary    : RSS Feed Reader
+description: |
+    Akregator is a news feed reader for the KDE desktop. It enables you to follow news sites, blogs and other RSS/Atom-enabled websites without the need to manually check for updates using a web browser. Akregator is designed to be both easy to use and to be powerful enough to read hundreds of news sources conveniently.
+builddeps  :
+    - pkgconfig(Qt5WebEngine)
+    - akonadi-contacts-devel
+    - akonadi-mime-devel
+    - kcmutils-devel
+    - kcontacts-devel
+    - kcrash-devel
+    - kdbusaddons-devel
+    - kdoctools-devel
+    - kimap-devel
+    - knotifyconfig-devel
+    - kontactinterface-devel
+    - kpimtextedit-devel
+    - ktexteditor-devel
+    - kuserfeedback-devel
+    - libkdepim-devel
+    - libkleo-devel
+    - mailimporter-devel
+    - messagelib-devel
+    - pimcommon-devel
+    - syndication-devel
+setup      : |
+    %cmake_ninja
+build      : |
+    %ninja_build
+install    : |
+    %ninja_install
+
+    # remvove doc
+    rm -rf $installdir/usr/share/doc

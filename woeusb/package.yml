@@ -1,0 +1,25 @@
+name       : woeusb
+version    : 3.3.1
+release    : 16
+source     :
+    - git|https://github.com/slacka/WoeUSB.git : v3.3.1
+license    : GPL-3.0-or-later
+component  : system.utils
+summary    : A tool to create a bootable Windows USB drive from an ISO
+description: |
+    WoeUSB is a simple tool that enable you to create your own usb stick windows installer from an iso image or a real DVD. It is a fork of Congelli501's WinUSB.
+builddeps  :
+    - wxwidgets-devel
+rundeps    :
+    - grub2
+    - parted
+setup      : |
+    # No words for this idiocy, script fails but at least
+    # version is set correctly which is all we want
+    ./setup-development-environment.bash || :
+
+    %reconfigure
+build      : |
+    %make
+install    : |
+    %make_install

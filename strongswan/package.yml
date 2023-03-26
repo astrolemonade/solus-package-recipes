@@ -1,0 +1,36 @@
+name       : strongswan
+version    : 5.9.2
+release    : 7
+source     :
+    - https://download.strongswan.org/strongswan-5.9.2.tar.gz : ea4b657189db322e3130132c2f49a7adf4211d8f94d731c84d278bd9445d517d
+license    : GPL-2.0-or-later
+component  : network.clients
+summary    : An Open Source IPsec-based VPN solution for Linux
+description: |
+    strongSwan is an Open Source IPsec-based VPN solution for Linux
+builddeps  :
+    - pkgconfig(libcurl)
+    - pkgconfig(libnm)
+    - iproute2
+rundeps    :
+    - iproute2
+conflicts  :
+    - libreswan
+setup      : |
+    %configure --sysconfdir=/etc \
+               --prefix=/usr \
+               --libexecdir=/usr/lib \
+               --enable-openssl \
+               --enable-curl \
+               --enable-nm \
+               --enable-bliss \
+               --enable-agent \
+               --enable-eap-gtc \
+               --enable-eap-peap \
+               --enable-eap-md5 \
+               --enable-eap-mschapv2 \
+               --enable-eap-identity
+build      : |
+    %make
+install    : |
+    %make_install

@@ -1,0 +1,34 @@
+name       : ibus
+version    : 1.5.27
+release    : 21
+source     :
+    - https://github.com/ibus/ibus/releases/download/1.5.27/ibus-1.5.27.tar.gz : 6efbda5adb96f607cf7108d1e270962c0729a59c9ea6d58eea2dde0e3cbb97df
+license    : LGPL-2.0-only
+component  : desktop.core
+summary    : Intelligent Input Bus
+description: |
+    IBus is an Intelligent Input Bus. It is a new input framework for Linux OS. It provides full featured and user friendly input method user interface.
+builddeps  :
+    - pkgconfig(dconf)
+    - pkgconfig(gconf-2.0)
+    - pkgconfig(gtk+-2.0)
+    - pkgconfig(gtk+-3.0)
+    - pkgconfig(gtk4)
+    - pkgconfig(json-glib-1.0)
+    - pkgconfig(libnotify)
+    - gnome-common
+    - gtk-doc
+    - unicode-character-database
+    - vala
+rundeps    :
+    - unicode-character-database
+setup      : |
+    %patch -p1 < $pkgfiles/0001-Do-not-check-for-dbus-launch.patch
+    %configure --disable-static \
+        --enable-gtk4 \
+        --enable-gtk-doc \
+        --enable-wayland
+build      : |
+    %make
+install    : |
+    %make_install

@@ -1,0 +1,25 @@
+name       : libxfixes
+version    : 6.0.0
+release    : 14
+source     :
+    - https://www.x.org/releases/individual/lib/libXfixes-6.0.0.tar.gz : 82045da5625350838390c9440598b90d69c882c324ca92f73af9f0e992cb57c7
+license    : MIT
+summary    : X11 miscellaneous 'fixes' extension library
+component  : xorg.library
+description: |
+    libXfixes provides an X Window System client interface to the 'XFIXES' extension to the X protocol.
+emul32     : yes
+optimize   : speed
+builddeps  :
+    - pkgconfig32(x11)
+    - pkgconfig(xproto)
+patterns   :
+    - devel :
+        - /usr/share/man
+setup      : |
+    %configure --prefix=/usr \
+               --disable-static
+build      : |
+    %make
+install    : |
+    %make_install

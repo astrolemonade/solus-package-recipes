@@ -1,0 +1,24 @@
+name       : haskell-setlocale
+version    : 1.0.0.9
+release    : 4
+source     :
+    - https://hackage.haskell.org/package/setlocale-1.0.0.9/setlocale-1.0.0.9.tar.gz : 3bb386f705fc918615b288f55422ce6c14f087ff36e554cbafb9ffab9dea66a1
+license    : BSD-3-Clause
+component  : programming.haskell
+summary    : Haskell bindings to setlocale
+description: |
+    Haskell bindings to setlocale
+builddeps  :
+    - ghc-devel
+    - haskell-cabal-install
+rundeps    :
+    - devel:
+        - ghc-devel
+networking : yes
+setup      : |
+    %cabal_configure
+build      : |
+    %cabal_build
+install    : |
+    %cabal_install
+    %cabal_register

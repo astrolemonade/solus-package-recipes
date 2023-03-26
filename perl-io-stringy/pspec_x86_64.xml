@@ -1,0 +1,50 @@
+<PISI>
+    <Source>
+        <Name>perl-io-stringy</Name>
+        <Packager>
+            <Name>Algent Albrahimi</Name>
+            <Email>algent@protonmail.com</Email>
+        </Packager>
+        <License>Artistic-1.0-Perl</License>
+        <PartOf>programming.perl</PartOf>
+        <Summary xml:lang="en">IO-stringy - I/O on in-core objects like strings and arrays</Summary>
+        <Description xml:lang="en">This toolkit primarily provides modules for performing both traditional and object-oriented i/o) on things *other* than normal filehandles; in particular, IO::Scalar, IO::ScalarArray, and IO::Lines. In the more-traditional IO::Handle front, we have IO::AtomicFile which may be used to painlessly create files which are updated atomically. And in the &quot;this-may-prove-useful&quot; corner, we have IO::Wrap, whose exported wraphandle() function will clothe anything that&apos;s not a blessed object in an IO::Handle-like wrapper... so you can just use OO syntax and stop worrying about whether your function&apos;s caller handed you a string, a globref, or a FileHandle.
+</Description>
+        <Archive type="binary" sha1sum="79eb0752a961b8e0d15c77d298c97498fbc89c5a">https://getsol.us/sources/README.Solus</Archive>
+    </Source>
+    <Package>
+        <Name>perl-io-stringy</Name>
+        <Summary xml:lang="en">IO-stringy - I/O on in-core objects like strings and arrays</Summary>
+        <Description xml:lang="en">This toolkit primarily provides modules for performing both traditional and object-oriented i/o) on things *other* than normal filehandles; in particular, IO::Scalar, IO::ScalarArray, and IO::Lines. In the more-traditional IO::Handle front, we have IO::AtomicFile which may be used to painlessly create files which are updated atomically. And in the &quot;this-may-prove-useful&quot; corner, we have IO::Wrap, whose exported wraphandle() function will clothe anything that&apos;s not a blessed object in an IO::Handle-like wrapper... so you can just use OO syntax and stop worrying about whether your function&apos;s caller handed you a string, a globref, or a FileHandle.
+</Description>
+        <PartOf>programming.perl</PartOf>
+        <Files>
+            <Path fileType="library">/usr/lib64/perl5/vendor_perl/5.36/IO/AtomicFile.pm</Path>
+            <Path fileType="library">/usr/lib64/perl5/vendor_perl/5.36/IO/InnerFile.pm</Path>
+            <Path fileType="library">/usr/lib64/perl5/vendor_perl/5.36/IO/Lines.pm</Path>
+            <Path fileType="library">/usr/lib64/perl5/vendor_perl/5.36/IO/Scalar.pm</Path>
+            <Path fileType="library">/usr/lib64/perl5/vendor_perl/5.36/IO/ScalarArray.pm</Path>
+            <Path fileType="library">/usr/lib64/perl5/vendor_perl/5.36/IO/Stringy.pm</Path>
+            <Path fileType="library">/usr/lib64/perl5/vendor_perl/5.36/IO/Wrap.pm</Path>
+            <Path fileType="library">/usr/lib64/perl5/vendor_perl/5.36/IO/WrapTie.pm</Path>
+            <Path fileType="library">/usr/lib64/perl5/vendor_perl/5.36/x86_64-linux-thread-multi/auto/IO/Stringy/.packlist</Path>
+            <Path fileType="man">/usr/share/man/man3/IO::AtomicFile.3</Path>
+            <Path fileType="man">/usr/share/man/man3/IO::InnerFile.3</Path>
+            <Path fileType="man">/usr/share/man/man3/IO::Lines.3</Path>
+            <Path fileType="man">/usr/share/man/man3/IO::Scalar.3</Path>
+            <Path fileType="man">/usr/share/man/man3/IO::ScalarArray.3</Path>
+            <Path fileType="man">/usr/share/man/man3/IO::Stringy.3</Path>
+            <Path fileType="man">/usr/share/man/man3/IO::Wrap.3</Path>
+            <Path fileType="man">/usr/share/man/man3/IO::WrapTie.3</Path>
+        </Files>
+    </Package>
+    <History>
+        <Update release="6">
+            <Date>2022-09-23</Date>
+            <Version>2.113</Version>
+            <Comment>Packaging update</Comment>
+            <Name>Algent Albrahimi</Name>
+            <Email>algent@protonmail.com</Email>
+        </Update>
+    </History>
+</PISI>

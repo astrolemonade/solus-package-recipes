@@ -1,0 +1,4 @@
+_scandir.so:PyStructSequence_UnnamedField
+_scandir.so:_PyLong_FromGid
+_scandir.so:_PyLong_FromUid
+_scandir.so:init_scandir

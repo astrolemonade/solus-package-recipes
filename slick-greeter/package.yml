@@ -1,0 +1,28 @@
+name       : slick-greeter
+version    : 1.6.1
+release    : 24
+source     :
+    - https://github.com/linuxmint/slick-greeter/archive/refs/tags/1.6.1.tar.gz : 4a64b71d5bfeb57f87116a349792910e97cb20cc0bf48b28f80afc0bb4feeb88
+homepage   : https://github.com/linuxmint/slick-greeter
+license    : GPL-3.0-or-later
+component  : desktop.lightdm
+summary    : A stylish LightDM greeter
+description: |
+    A fork of the Unity Greeter, provides a stylish login greeter for LightDM
+builddeps  :
+    - pkgconfig(libcanberra)
+    - pkgconfig(liblightdm-gobject-1)
+    - pkgconfig(xext)
+    - gnome-common
+    - vala
+rundeps    :
+    - breeze-cursor-theme
+conflicts  : gdm
+setup      : |
+    %apply_patches
+    %autogen
+build      : |
+    %make
+install    : |
+    %make_install
+    install -Dm00644 $pkgfiles/60-slick-greeter.conf $installdir/usr/share/lightdm/lightdm.conf.d/60-slick-greeter.conf

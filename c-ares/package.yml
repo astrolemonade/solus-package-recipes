@@ -1,0 +1,19 @@
+name       : c-ares
+version    : 1.18.1
+release    : 6
+source     :
+    - https://github.com/c-ares/c-ares/archive/refs/tags/cares-1_18_1.tar.gz : 414872549eec4e221b576693fdc9c9bce44ff794d0f1f06f2515b56a7f6ec9c9
+license    : MIT
+component  : programming.library
+summary    : C library that performs DNS requests and name resolves asynchronously
+description: |
+    This is c-ares, an asynchronous resolver library. It is intended for applications which need to perform DNS queries without blocking, or need to perform multiple DNS queries in parallel. The primary examples of such applications are servers which communicate with multiple clients and programs with graphical user interfaces.
+setup      : |
+    %patch -p1 < $pkgfiles/Remove-live-tests.patch
+    %cmake_ninja -DCARES_BUILD_TESTS=ON
+build      : |
+    %ninja_build
+install    : |
+    %ninja_install
+check      : |
+    %ninja_check

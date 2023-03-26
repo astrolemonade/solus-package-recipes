@@ -1,0 +1,38 @@
+name       : syncthing
+version    : 1.23.0
+release    : 80
+homepage   : https://syncthing.net
+source     :
+    - https://github.com/syncthing/syncthing/releases/download/v1.23.0/syncthing-source-v1.23.0.tar.gz : 0f66d3dd2a7915a6f3ca6773c1dc02345444b2644a533211ce1ee57b371ae458
+license    : MPL-2.0
+component  : network.util
+networking : yes
+summary    : Syncthing is an open-source file synchronization client/server application
+description: |
+    Syncthing is an open-source file synchronization client/server application, written in Go, implementing its own, equally free Block Exchange Protocol. All transit communications between syncthing nodes are encrypted, and all nodes are uniquely identified with cryptographic certificates.
+builddeps  :
+    - git
+    - golang
+build      : |
+    go run build.go -no-upgrade -version v${version} build
+install    : |
+    # Install binaries and other stuff
+    install -Dm00755 syncthing $installdir/usr/bin/syncthing
+    install -Dm00644 etc/linux-systemd/system/syncthing@.service $installdir/%libdir%/systemd/system/syncthing@.service
+    install -Dm00644 etc/linux-systemd/user/syncthing.service $installdir/%libdir%/systemd/user/syncthing.service
+    install -Dm00644 etc/linux-desktop/syncthing-ui.desktop $installdir/usr/share/applications/syncthing-ui.desktop
+    install -Dm00644 etc/linux-desktop/syncthing-start.desktop $installdir/usr/share/applications/syncthing-start.desktop
+    install -Dm00644 assets/logo-only.svg $installdir/usr/share/icons/hicolor/scalable/apps/syncthing.svg
+    for sz in 32 64 128 256 512; do
+        install -Dm00644 assets/logo-${sz}.png $installdir/usr/share/icons/hicolor/${sz}x${sz}/apps/syncthing.png
+    done
+    install -Dm00644 etc/firewall-ufw/syncthing $installdir/etc/ufw/applications.d/syncthing
+    # Install man pages
+    cd man
+    install -Dm00644 syncthing.1 $installdir/usr/share/man/man1/syncthing.1
+    for file in $(find . -name '*.5' -print); do
+        install -Dm00644 $file $installdir/usr/share/man/man5/$file
+    done
+    for file in $(find . -name '*.7' -print); do
+        install -Dm00644 $file $installdir/usr/share/man/man7/$file
+    done

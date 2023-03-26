@@ -1,0 +1,58 @@
+<PISI>
+    <Source>
+        <Name>perl-pathtools</Name>
+        <Homepage>https://metacpan.org/dist/PathTools</Homepage>
+        <Packager>
+            <Name>Algent Albrahimi</Name>
+            <Email>algent@protonmail.com</Email>
+        </Packager>
+        <License>Artistic-1.0-Perl</License>
+        <PartOf>programming.perl</PartOf>
+        <Summary xml:lang="en">This is the combined distribution for the File::Spec and Cwd modules</Summary>
+        <Description xml:lang="en">This is the combined distribution for the File::Spec and Cwd modules. Please see their respective documentation for details.
+</Description>
+        <Archive type="binary" sha1sum="79eb0752a961b8e0d15c77d298c97498fbc89c5a">https://getsol.us/sources/README.Solus</Archive>
+    </Source>
+    <Package>
+        <Name>perl-pathtools</Name>
+        <Summary xml:lang="en">This is the combined distribution for the File::Spec and Cwd modules</Summary>
+        <Description xml:lang="en">This is the combined distribution for the File::Spec and Cwd modules. Please see their respective documentation for details.
+</Description>
+        <PartOf>programming.perl</PartOf>
+        <Files>
+            <Path fileType="library">/usr/lib64/perl5/vendor_perl/5.36/x86_64-linux-thread-multi/Cwd.pm</Path>
+            <Path fileType="library">/usr/lib64/perl5/vendor_perl/5.36/x86_64-linux-thread-multi/File/Spec.pm</Path>
+            <Path fileType="library">/usr/lib64/perl5/vendor_perl/5.36/x86_64-linux-thread-multi/File/Spec/AmigaOS.pm</Path>
+            <Path fileType="library">/usr/lib64/perl5/vendor_perl/5.36/x86_64-linux-thread-multi/File/Spec/Cygwin.pm</Path>
+            <Path fileType="library">/usr/lib64/perl5/vendor_perl/5.36/x86_64-linux-thread-multi/File/Spec/Epoc.pm</Path>
+            <Path fileType="library">/usr/lib64/perl5/vendor_perl/5.36/x86_64-linux-thread-multi/File/Spec/Functions.pm</Path>
+            <Path fileType="library">/usr/lib64/perl5/vendor_perl/5.36/x86_64-linux-thread-multi/File/Spec/Mac.pm</Path>
+            <Path fileType="library">/usr/lib64/perl5/vendor_perl/5.36/x86_64-linux-thread-multi/File/Spec/OS2.pm</Path>
+            <Path fileType="library">/usr/lib64/perl5/vendor_perl/5.36/x86_64-linux-thread-multi/File/Spec/Unix.pm</Path>
+            <Path fileType="library">/usr/lib64/perl5/vendor_perl/5.36/x86_64-linux-thread-multi/File/Spec/VMS.pm</Path>
+            <Path fileType="library">/usr/lib64/perl5/vendor_perl/5.36/x86_64-linux-thread-multi/File/Spec/Win32.pm</Path>
+            <Path fileType="library">/usr/lib64/perl5/vendor_perl/5.36/x86_64-linux-thread-multi/auto/Cwd/.packlist</Path>
+            <Path fileType="library">/usr/lib64/perl5/vendor_perl/5.36/x86_64-linux-thread-multi/auto/Cwd/Cwd.so</Path>
+            <Path fileType="man">/usr/share/man/man3/Cwd.3</Path>
+            <Path fileType="man">/usr/share/man/man3/File::Spec.3</Path>
+            <Path fileType="man">/usr/share/man/man3/File::Spec::AmigaOS.3</Path>
+            <Path fileType="man">/usr/share/man/man3/File::Spec::Cygwin.3</Path>
+            <Path fileType="man">/usr/share/man/man3/File::Spec::Epoc.3</Path>
+            <Path fileType="man">/usr/share/man/man3/File::Spec::Functions.3</Path>
+            <Path fileType="man">/usr/share/man/man3/File::Spec::Mac.3</Path>
+            <Path fileType="man">/usr/share/man/man3/File::Spec::OS2.3</Path>
+            <Path fileType="man">/usr/share/man/man3/File::Spec::Unix.3</Path>
+            <Path fileType="man">/usr/share/man/man3/File::Spec::VMS.3</Path>
+            <Path fileType="man">/usr/share/man/man3/File::Spec::Win32.3</Path>
+        </Files>
+    </Package>
+    <History>
+        <Update release="9">
+            <Date>2022-09-25</Date>
+            <Version>3.75</Version>
+            <Comment>Packaging update</Comment>
+            <Name>Algent Albrahimi</Name>
+            <Email>algent@protonmail.com</Email>
+        </Update>
+    </History>
+</PISI>

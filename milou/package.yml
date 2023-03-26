@@ -1,0 +1,27 @@
+name       : milou
+version    : 5.26.5
+release    : 84
+source     :
+    - https://cdn.download.kde.org/stable/plasma/5.26.5/milou-5.26.5.tar.xz : 68ffe39bd59f8ba0c0d4a74c92f969d321ad4a2e86ede91fac60691f8825bfde
+homepage   : https://www.kde.org/workspaces/plasmadesktop/
+license    :
+    - GPL-2.0-or-later
+    - LGPL-2.1-only
+component  : desktop.kde.core
+summary    : A dedicated search application built on top of Baloo
+description: |
+    A dedicated search application built on top of Baloo.
+builddeps  :
+    - pkgconfig(Qt5Script)
+    - kdeclarative-devel
+    - ki18n-devel
+    - kitemmodels-devel
+    - kpackage-devel
+    - krunner-devel
+setup      : |
+    %cmake_ninja -DBUILD_TESTING=OFF
+build      : |
+    %ninja_build
+install    : |
+    %ninja_install
+    %qml_cache

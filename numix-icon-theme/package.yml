@@ -1,0 +1,15 @@
+name       : numix-icon-theme
+version    : 22.11.17
+release    : 22
+source     :
+    - https://github.com/numixproject/numix-icon-theme/archive/refs/tags/22.11.17.tar.gz : 214b0abf4395fcb219c97b32c2a8ba34a16e39e12d6a6ca00b05a5fba8b85132
+homepage   : https://numixproject.github.io/
+license    : GPL-3.0-or-later
+component  : desktop.theme
+summary    : The Numix Icon Theme
+description: |
+    Designed to look fresh, swishy and modern using white symbols on vividly coloured background for applications and simplistic devices, toolbars and status icons.
+install    : |
+    install -dm00644 $installdir/usr/share/icons/
+    cp -r {Numix,Numix-Light} $installdir/usr/share/icons/
+    chmod -R 00644 $installdir/usr/share/icons/*

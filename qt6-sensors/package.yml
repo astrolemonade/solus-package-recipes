@@ -1,0 +1,30 @@
+name       : qt6-sensors
+version    : 6.3.0
+release    : 4
+source     :
+    - https://download.qt.io/official_releases/qt/6.3/6.3.0/submodules/qtsensors-everywhere-src-6.3.0.tar.xz : c757c733b5ee847abd44c531cfb22287e4cbab03e8d6fc337690808a2cbe9748
+license    :
+    - GFDL-1.3-or-later
+    - GPL-3.0-or-later
+    - LGPL-3.0-or-later
+component  :
+    - desktop.qt
+    - demos : programming.library
+summary    : Qt6 Sensors Module
+description: |
+    The Qt Sensors API provides access to sensor hardware via QML and C++ interfaces. The Qt Sensors API also provides a motion gesture recognition API for devices.
+builddeps  :
+    - pkgconfig(Qt6Bluetooth)
+    - pkgconfig(Qt6Qml)
+    - pkgconfig(Qt6Svg)
+setup      : |
+    %cmake_ninja
+build      : |
+    %ninja_build
+install    : |
+    %ninja_install
+patterns   :
+    - devel :
+        - /usr/lib64/qt6/mkspecs
+    - demos :
+        - /usr/lib64/qt6/examples

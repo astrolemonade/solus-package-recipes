@@ -1,0 +1,47 @@
+<PISI>
+    <Source>
+        <Name>woeusb</Name>
+        <Packager>
+            <Name>Alexander Koskovich</Name>
+            <Email>zvnexus@outlook.com</Email>
+        </Packager>
+        <License>GPL-3.0-or-later</License>
+        <PartOf>system.utils</PartOf>
+        <Summary xml:lang="en">A tool to create a bootable Windows USB drive from an ISO</Summary>
+        <Description xml:lang="en">WoeUSB is a simple tool that enable you to create your own usb stick windows installer from an iso image or a real DVD. It is a fork of Congelli501&apos;s WinUSB.
+</Description>
+        <Archive type="binary" sha1sum="79eb0752a961b8e0d15c77d298c97498fbc89c5a">https://getsol.us/sources/README.Solus</Archive>
+    </Source>
+    <Package>
+        <Name>woeusb</Name>
+        <Summary xml:lang="en">A tool to create a bootable Windows USB drive from an ISO</Summary>
+        <Description xml:lang="en">WoeUSB is a simple tool that enable you to create your own usb stick windows installer from an iso image or a real DVD. It is a fork of Congelli501&apos;s WinUSB.
+</Description>
+        <PartOf>system.utils</PartOf>
+        <Files>
+            <Path fileType="executable">/usr/bin/woeusb</Path>
+            <Path fileType="executable">/usr/bin/woeusbgui</Path>
+            <Path fileType="data">/usr/share/applications/woeusbgui.desktop</Path>
+            <Path fileType="man">/usr/share/man/man1/woeusb.1</Path>
+            <Path fileType="man">/usr/share/man/man1/woeusbgui.1</Path>
+            <Path fileType="data">/usr/share/pixmaps/woeusbgui-icon.png</Path>
+            <Path fileType="data">/usr/share/woeusb/data/c501-logo.png</Path>
+            <Path fileType="data">/usr/share/woeusb/data/icon.png</Path>
+            <Path fileType="data">/usr/share/woeusb/data/listDvdDrive</Path>
+            <Path fileType="data">/usr/share/woeusb/data/listUsb</Path>
+            <Path fileType="data">/usr/share/woeusb/data/woeusb-logo.png</Path>
+            <Path fileType="data">/usr/share/woeusb/locale/fr/LC_MESSAGES/woeusb.mo</Path>
+            <Path fileType="data">/usr/share/woeusb/locale/fr/LC_MESSAGES/wxstd.mo</Path>
+            <Path fileType="data">/usr/share/woeusb/locale/zh_TW/LC_MESSAGES/woeusb.mo</Path>
+        </Files>
+    </Package>
+    <History>
+        <Update release="16">
+            <Date>2020-02-08</Date>
+            <Version>3.3.1</Version>
+            <Comment>Packaging update</Comment>
+            <Name>Alexander Koskovich</Name>
+            <Email>zvnexus@outlook.com</Email>
+        </Update>
+    </History>
+</PISI>

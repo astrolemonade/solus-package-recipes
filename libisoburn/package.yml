@@ -1,0 +1,20 @@
+name       : libisoburn
+version    : 1.5.4
+release    : 5
+source     :
+    - https://files.libburnia-project.org/releases/libisoburn-1.5.4.tar.gz : 2d89846d43880f17fa591c53b3bea42ffb803628e4e630c680fc2c9184f79132
+homepage   : https://dev.lovelyhq.com/libburnia/libisoburn
+license    : GPL-2.0-or-later
+component  : programming.library
+summary    : libisoburn is a frontend for libraries libburn and libisofs
+description: |
+    libisoburn is a frontend for libraries libburn and libisofs which enables creation and expansion of ISO-9660 filesystems on all CD/DVD/BD media supported by libburn. This includes media like DVD+RW, which do not support multi-session management on media level and even plain disk files or block devices.
+builddeps  :
+    - pkgconfig(libburn-1)
+    - pkgconfig(libisofs-1)
+setup      : |
+    %configure --disable-static
+build      : |
+    %make
+install    : |
+    %make_install

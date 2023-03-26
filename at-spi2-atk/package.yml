@@ -1,0 +1,29 @@
+name       : at-spi2-atk
+version    : 2.38.0
+release    : 24
+source     :
+    - https://download.gnome.org/sources/at-spi2-atk/2.38/at-spi2-atk-2.38.0.tar.xz : cfa008a5af822b36ae6287f18182c40c91dd699c55faa38605881ed175ca464f
+license    : LGPL-2.1-or-later
+component  : desktop.gtk
+summary    : Accessibility toolkit - ATK D-Bus Bridge
+description: |
+    The At-Spi2 Atk package contains a library that bridges ATK to At-Spi2 D-Bus service.
+builddeps  :
+    - pkgconfig32(atk)
+    - pkgconfig32(atspi-2)
+    - pkgconfig32(dbus-1)
+    - pkgconfig32(glib-2.0)
+    - pkgconfig32(liblzma)
+    - pkgconfig32(libxml-2.0)
+    - pkgconfig32(libzstd)
+    - libgcrypt-32bit-devel
+emul32     : yes
+setup      : |
+    %meson_configure
+build      : |
+    %ninja_build
+install    : |
+    %ninja_install
+    if [[ ! -z "${EMUL32BUILD}" ]]; then
+        rm -rf $installdir/%libdir%/gnome-settings-daemon-3.0/
+    fi

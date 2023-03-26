@@ -1,0 +1,26 @@
+name       : btrfs-progs
+version    : 6.1.2
+release    : 46
+source     :
+    - https://mirrors.edge.kernel.org/pub/linux/kernel/people/kdave/btrfs-progs/btrfs-progs-v6.1.2.tar.xz : 6be667d97f3d65c0ba57c331c98b0bd3b13cf60d8d31fa8ad25882aad9d79d7a
+license    : GPL-2.0-only
+homepage   : https://btrfs.wiki.kernel.org/index.php/Main_Page
+summary    : Utilities and library for managing btrfs filesystems
+component  : system.utils
+description: |
+    Utilities and library for managing btrfs filesystems
+builddeps  :
+    - pkgconfig(ext2fs)
+    - pkgconfig(libzstd)
+    - pkgconfig(python3)
+    - pkgconfig(reiserfscore)
+    - asciidoc
+    - lzo-devel
+    - python-sphinx
+    - xmlto
+setup      : |
+    %configure --disable-static
+build      : |
+    %make
+install    : |
+    %make_install

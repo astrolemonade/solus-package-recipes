@@ -1,0 +1,33 @@
+name       : kidletime
+version    : 5.101.0
+release    : 65
+source     :
+    - https://cdn.download.kde.org/stable/frameworks/5.101/kidletime-5.101.0.tar.xz : ddda3dc864e0e9b18f30f1bcaf79ceb7d4148391215556e26f4177882b9f1283
+homepage   : https://community.kde.org/Frameworks
+license    :
+    - GPL-2.0-or-later
+    - LGPL-2.0-only
+    - MIT
+component  : programming.library
+summary    : Reporting of idle time of user and system
+description: |
+    Reporting of idle time of user and system
+optimize   : lto
+builddeps  :
+    - pkgconfig(Qt5DBus)
+    - pkgconfig(Qt5Designer)
+    - pkgconfig(Qt5Widgets)
+    - pkgconfig(Qt5X11Extras)
+    - pkgconfig(xscrnsaver)
+    - extra-cmake-modules
+rundeps    :
+    - devel :
+        - extra-cmake-modules
+        - qt5-tools-devel
+setup      : |
+    %cmake_ninja -DBUILD_QCH=ON \
+                -DBUILD_TESTING=OFF
+build      : |
+    %ninja_build
+install    : |
+    %ninja_install

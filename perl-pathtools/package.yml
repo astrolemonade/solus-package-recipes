@@ -1,0 +1,19 @@
+name       : perl-pathtools
+version    : '3.75'
+release    : 9
+source     :
+    - https://cpan.metacpan.org/authors/id/X/XS/XSAWYERX/PathTools-3.75.tar.gz : a558503aa6b1f8c727c0073339081a77888606aa701ada1ad62dd9d8c3f945a2
+homepage   : https://metacpan.org/dist/PathTools
+license    : Artistic-1.0-Perl
+component  : programming.perl
+summary    : This is the combined distribution for the File::Spec and Cwd modules
+description: |
+    This is the combined distribution for the File::Spec and Cwd modules. Please see their respective documentation for details.
+setup      : |
+    %perl_setup
+build      : |
+    %perl_build
+install    : |
+    %perl_install
+check      : |
+    %perl_build test

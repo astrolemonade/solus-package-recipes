@@ -1,0 +1,213 @@
+<PISI>
+    <Source>
+        <Name>python2-pytest</Name>
+        <Packager>
+            <Name>Algent Albrahimi</Name>
+            <Email>algent@protonmail.com</Email>
+        </Packager>
+        <License>MIT</License>
+        <PartOf>programming.python</PartOf>
+        <Summary xml:lang="en">python testing framework</Summary>
+        <Description xml:lang="en">The pytest framework makes it easy to write small tests, yet scales to support complex functional testing for applications and libraries.
+</Description>
+        <Archive type="binary" sha1sum="79eb0752a961b8e0d15c77d298c97498fbc89c5a">https://getsol.us/sources/README.Solus</Archive>
+    </Source>
+    <Package>
+        <Name>python2-pytest</Name>
+        <Summary xml:lang="en">python testing framework</Summary>
+        <Description xml:lang="en">The pytest framework makes it easy to write small tests, yet scales to support complex functional testing for applications and libraries.
+</Description>
+        <PartOf>programming.python</PartOf>
+        <Files>
+            <Path fileType="executable">/usr/bin/py.test</Path>
+            <Path fileType="executable">/usr/bin/pytest</Path>
+            <Path fileType="library">/usr/lib/python2.7/site-packages/_pytest/__init__.py</Path>
+            <Path fileType="library">/usr/lib/python2.7/site-packages/_pytest/__init__.pyc</Path>
+            <Path fileType="library">/usr/lib/python2.7/site-packages/_pytest/__init__.pyo</Path>
+            <Path fileType="library">/usr/lib/python2.7/site-packages/_pytest/__pycache__/pytester.cpython-27-PYTEST.pyc</Path>
+            <Path fileType="library">/usr/lib/python2.7/site-packages/_pytest/_argcomplete.py</Path>
+            <Path fileType="library">/usr/lib/python2.7/site-packages/_pytest/_argcomplete.pyc</Path>
+            <Path fileType="library">/usr/lib/python2.7/site-packages/_pytest/_argcomplete.pyo</Path>
+            <Path fileType="library">/usr/lib/python2.7/site-packages/_pytest/_code/__init__.py</Path>
+            <Path fileType="library">/usr/lib/python2.7/site-packages/_pytest/_code/__init__.pyc</Path>
+            <Path fileType="library">/usr/lib/python2.7/site-packages/_pytest/_code/__init__.pyo</Path>
+            <Path fileType="library">/usr/lib/python2.7/site-packages/_pytest/_code/_py2traceback.py</Path>
+            <Path fileType="library">/usr/lib/python2.7/site-packages/_pytest/_code/_py2traceback.pyc</Path>
+            <Path fileType="library">/usr/lib/python2.7/site-packages/_pytest/_code/_py2traceback.pyo</Path>
+            <Path fileType="library">/usr/lib/python2.7/site-packages/_pytest/_code/code.py</Path>
+            <Path fileType="library">/usr/lib/python2.7/site-packages/_pytest/_code/code.pyc</Path>
+            <Path fileType="library">/usr/lib/python2.7/site-packages/_pytest/_code/code.pyo</Path>
+            <Path fileType="library">/usr/lib/python2.7/site-packages/_pytest/_code/source.py</Path>
+            <Path fileType="library">/usr/lib/python2.7/site-packages/_pytest/_code/source.pyc</Path>
+            <Path fileType="library">/usr/lib/python2.7/site-packages/_pytest/_code/source.pyo</Path>
+            <Path fileType="library">/usr/lib/python2.7/site-packages/_pytest/_io/__init__.py</Path>
+            <Path fileType="library">/usr/lib/python2.7/site-packages/_pytest/_io/__init__.pyc</Path>
+            <Path fileType="library">/usr/lib/python2.7/site-packages/_pytest/_io/__init__.pyo</Path>
+            <Path fileType="library">/usr/lib/python2.7/site-packages/_pytest/_io/saferepr.py</Path>
+            <Path fileType="library">/usr/lib/python2.7/site-packages/_pytest/_io/saferepr.pyc</Path>
+            <Path fileType="library">/usr/lib/python2.7/site-packages/_pytest/_io/saferepr.pyo</Path>
+            <Path fileType="library">/usr/lib/python2.7/site-packages/_pytest/_version.py</Path>
+            <Path fileType="library">/usr/lib/python2.7/site-packages/_pytest/_version.pyc</Path>
+            <Path fileType="library">/usr/lib/python2.7/site-packages/_pytest/_version.pyo</Path>
+            <Path fileType="library">/usr/lib/python2.7/site-packages/_pytest/assertion/__init__.py</Path>
+            <Path fileType="library">/usr/lib/python2.7/site-packages/_pytest/assertion/__init__.pyc</Path>
+            <Path fileType="library">/usr/lib/python2.7/site-packages/_pytest/assertion/__init__.pyo</Path>
+            <Path fileType="library">/usr/lib/python2.7/site-packages/_pytest/assertion/rewrite.py</Path>
+            <Path fileType="library">/usr/lib/python2.7/site-packages/_pytest/assertion/rewrite.pyc</Path>
+            <Path fileType="library">/usr/lib/python2.7/site-packages/_pytest/assertion/rewrite.pyo</Path>
+            <Path fileType="library">/usr/lib/python2.7/site-packages/_pytest/assertion/truncate.py</Path>
+            <Path fileType="library">/usr/lib/python2.7/site-packages/_pytest/assertion/truncate.pyc</Path>
+            <Path fileType="library">/usr/lib/python2.7/site-packages/_pytest/assertion/truncate.pyo</Path>
+            <Path fileType="library">/usr/lib/python2.7/site-packages/_pytest/assertion/util.py</Path>
+            <Path fileType="library">/usr/lib/python2.7/site-packages/_pytest/assertion/util.pyc</Path>
+            <Path fileType="library">/usr/lib/python2.7/site-packages/_pytest/assertion/util.pyo</Path>
+            <Path fileType="library">/usr/lib/python2.7/site-packages/_pytest/cacheprovider.py</Path>
+            <Path fileType="library">/usr/lib/python2.7/site-packages/_pytest/cacheprovider.pyc</Path>
+            <Path fileType="library">/usr/lib/python2.7/site-packages/_pytest/cacheprovider.pyo</Path>
+            <Path fileType="library">/usr/lib/python2.7/site-packages/_pytest/capture.py</Path>
+            <Path fileType="library">/usr/lib/python2.7/site-packages/_pytest/capture.pyc</Path>
+            <Path fileType="library">/usr/lib/python2.7/site-packages/_pytest/capture.pyo</Path>
+            <Path fileType="library">/usr/lib/python2.7/site-packages/_pytest/compat.py</Path>
+            <Path fileType="library">/usr/lib/python2.7/site-packages/_pytest/compat.pyc</Path>
+            <Path fileType="library">/usr/lib/python2.7/site-packages/_pytest/compat.pyo</Path>
+            <Path fileType="library">/usr/lib/python2.7/site-packages/_pytest/config/__init__.py</Path>
+            <Path fileType="library">/usr/lib/python2.7/site-packages/_pytest/config/__init__.pyc</Path>
+            <Path fileType="library">/usr/lib/python2.7/site-packages/_pytest/config/__init__.pyo</Path>
+            <Path fileType="library">/usr/lib/python2.7/site-packages/_pytest/config/argparsing.py</Path>
+            <Path fileType="library">/usr/lib/python2.7/site-packages/_pytest/config/argparsing.pyc</Path>
+            <Path fileType="library">/usr/lib/python2.7/site-packages/_pytest/config/argparsing.pyo</Path>
+            <Path fileType="library">/usr/lib/python2.7/site-packages/_pytest/config/exceptions.py</Path>
+            <Path fileType="library">/usr/lib/python2.7/site-packages/_pytest/config/exceptions.pyc</Path>
+            <Path fileType="library">/usr/lib/python2.7/site-packages/_pytest/config/exceptions.pyo</Path>
+            <Path fileType="library">/usr/lib/python2.7/site-packages/_pytest/config/findpaths.py</Path>
+            <Path fileType="library">/usr/lib/python2.7/site-packages/_pytest/config/findpaths.pyc</Path>
+            <Path fileType="library">/usr/lib/python2.7/site-packages/_pytest/config/findpaths.pyo</Path>
+            <Path fileType="library">/usr/lib/python2.7/site-packages/_pytest/debugging.py</Path>
+            <Path fileType="library">/usr/lib/python2.7/site-packages/_pytest/debugging.pyc</Path>
+            <Path fileType="library">/usr/lib/python2.7/site-packages/_pytest/debugging.pyo</Path>
+            <Path fileType="library">/usr/lib/python2.7/site-packages/_pytest/deprecated.py</Path>
+            <Path fileType="library">/usr/lib/python2.7/site-packages/_pytest/deprecated.pyc</Path>
+            <Path fileType="library">/usr/lib/python2.7/site-packages/_pytest/deprecated.pyo</Path>
+            <Path fileType="library">/usr/lib/python2.7/site-packages/_pytest/doctest.py</Path>
+            <Path fileType="library">/usr/lib/python2.7/site-packages/_pytest/doctest.pyc</Path>
+            <Path fileType="library">/usr/lib/python2.7/site-packages/_pytest/doctest.pyo</Path>
+            <Path fileType="library">/usr/lib/python2.7/site-packages/_pytest/fixtures.py</Path>
+            <Path fileType="library">/usr/lib/python2.7/site-packages/_pytest/fixtures.pyc</Path>
+            <Path fileType="library">/usr/lib/python2.7/site-packages/_pytest/fixtures.pyo</Path>
+            <Path fileType="library">/usr/lib/python2.7/site-packages/_pytest/freeze_support.py</Path>
+            <Path fileType="library">/usr/lib/python2.7/site-packages/_pytest/freeze_support.pyc</Path>
+            <Path fileType="library">/usr/lib/python2.7/site-packages/_pytest/freeze_support.pyo</Path>
+            <Path fileType="library">/usr/lib/python2.7/site-packages/_pytest/helpconfig.py</Path>
+            <Path fileType="library">/usr/lib/python2.7/site-packages/_pytest/helpconfig.pyc</Path>
+            <Path fileType="library">/usr/lib/python2.7/site-packages/_pytest/helpconfig.pyo</Path>
+            <Path fileType="library">/usr/lib/python2.7/site-packages/_pytest/hookspec.py</Path>
+            <Path fileType="library">/usr/lib/python2.7/site-packages/_pytest/hookspec.pyc</Path>
+            <Path fileType="library">/usr/lib/python2.7/site-packages/_pytest/hookspec.pyo</Path>
+            <Path fileType="library">/usr/lib/python2.7/site-packages/_pytest/junitxml.py</Path>
+            <Path fileType="library">/usr/lib/python2.7/site-packages/_pytest/junitxml.pyc</Path>
+            <Path fileType="library">/usr/lib/python2.7/site-packages/_pytest/junitxml.pyo</Path>
+            <Path fileType="library">/usr/lib/python2.7/site-packages/_pytest/logging.py</Path>
+            <Path fileType="library">/usr/lib/python2.7/site-packages/_pytest/logging.pyc</Path>
+            <Path fileType="library">/usr/lib/python2.7/site-packages/_pytest/logging.pyo</Path>
+            <Path fileType="library">/usr/lib/python2.7/site-packages/_pytest/main.py</Path>
+            <Path fileType="library">/usr/lib/python2.7/site-packages/_pytest/main.pyc</Path>
+            <Path fileType="library">/usr/lib/python2.7/site-packages/_pytest/main.pyo</Path>
+            <Path fileType="library">/usr/lib/python2.7/site-packages/_pytest/mark/__init__.py</Path>
+            <Path fileType="library">/usr/lib/python2.7/site-packages/_pytest/mark/__init__.pyc</Path>
+            <Path fileType="library">/usr/lib/python2.7/site-packages/_pytest/mark/__init__.pyo</Path>
+            <Path fileType="library">/usr/lib/python2.7/site-packages/_pytest/mark/evaluate.py</Path>
+            <Path fileType="library">/usr/lib/python2.7/site-packages/_pytest/mark/evaluate.pyc</Path>
+            <Path fileType="library">/usr/lib/python2.7/site-packages/_pytest/mark/evaluate.pyo</Path>
+            <Path fileType="library">/usr/lib/python2.7/site-packages/_pytest/mark/legacy.py</Path>
+            <Path fileType="library">/usr/lib/python2.7/site-packages/_pytest/mark/legacy.pyc</Path>
+            <Path fileType="library">/usr/lib/python2.7/site-packages/_pytest/mark/legacy.pyo</Path>
+            <Path fileType="library">/usr/lib/python2.7/site-packages/_pytest/mark/structures.py</Path>
+            <Path fileType="library">/usr/lib/python2.7/site-packages/_pytest/mark/structures.pyc</Path>
+            <Path fileType="library">/usr/lib/python2.7/site-packages/_pytest/mark/structures.pyo</Path>
+            <Path fileType="library">/usr/lib/python2.7/site-packages/_pytest/monkeypatch.py</Path>
+            <Path fileType="library">/usr/lib/python2.7/site-packages/_pytest/monkeypatch.pyc</Path>
+            <Path fileType="library">/usr/lib/python2.7/site-packages/_pytest/monkeypatch.pyo</Path>
+            <Path fileType="library">/usr/lib/python2.7/site-packages/_pytest/nodes.py</Path>
+            <Path fileType="library">/usr/lib/python2.7/site-packages/_pytest/nodes.pyc</Path>
+            <Path fileType="library">/usr/lib/python2.7/site-packages/_pytest/nodes.pyo</Path>
+            <Path fileType="library">/usr/lib/python2.7/site-packages/_pytest/nose.py</Path>
+            <Path fileType="library">/usr/lib/python2.7/site-packages/_pytest/nose.pyc</Path>
+            <Path fileType="library">/usr/lib/python2.7/site-packages/_pytest/nose.pyo</Path>
+            <Path fileType="library">/usr/lib/python2.7/site-packages/_pytest/outcomes.py</Path>
+            <Path fileType="library">/usr/lib/python2.7/site-packages/_pytest/outcomes.pyc</Path>
+            <Path fileType="library">/usr/lib/python2.7/site-packages/_pytest/outcomes.pyo</Path>
+            <Path fileType="library">/usr/lib/python2.7/site-packages/_pytest/pastebin.py</Path>
+            <Path fileType="library">/usr/lib/python2.7/site-packages/_pytest/pastebin.pyc</Path>
+            <Path fileType="library">/usr/lib/python2.7/site-packages/_pytest/pastebin.pyo</Path>
+            <Path fileType="library">/usr/lib/python2.7/site-packages/_pytest/pathlib.py</Path>
+            <Path fileType="library">/usr/lib/python2.7/site-packages/_pytest/pathlib.pyc</Path>
+            <Path fileType="library">/usr/lib/python2.7/site-packages/_pytest/pathlib.pyo</Path>
+            <Path fileType="library">/usr/lib/python2.7/site-packages/_pytest/pytester.py</Path>
+            <Path fileType="library">/usr/lib/python2.7/site-packages/_pytest/pytester.pyc</Path>
+            <Path fileType="library">/usr/lib/python2.7/site-packages/_pytest/python.py</Path>
+            <Path fileType="library">/usr/lib/python2.7/site-packages/_pytest/python.pyc</Path>
+            <Path fileType="library">/usr/lib/python2.7/site-packages/_pytest/python.pyo</Path>
+            <Path fileType="library">/usr/lib/python2.7/site-packages/_pytest/python_api.py</Path>
+            <Path fileType="library">/usr/lib/python2.7/site-packages/_pytest/python_api.pyc</Path>
+            <Path fileType="library">/usr/lib/python2.7/site-packages/_pytest/python_api.pyo</Path>
+            <Path fileType="library">/usr/lib/python2.7/site-packages/_pytest/recwarn.py</Path>
+            <Path fileType="library">/usr/lib/python2.7/site-packages/_pytest/recwarn.pyc</Path>
+            <Path fileType="library">/usr/lib/python2.7/site-packages/_pytest/recwarn.pyo</Path>
+            <Path fileType="library">/usr/lib/python2.7/site-packages/_pytest/reports.py</Path>
+            <Path fileType="library">/usr/lib/python2.7/site-packages/_pytest/reports.pyc</Path>
+            <Path fileType="library">/usr/lib/python2.7/site-packages/_pytest/reports.pyo</Path>
+            <Path fileType="library">/usr/lib/python2.7/site-packages/_pytest/resultlog.py</Path>
+            <Path fileType="library">/usr/lib/python2.7/site-packages/_pytest/resultlog.pyc</Path>
+            <Path fileType="library">/usr/lib/python2.7/site-packages/_pytest/resultlog.pyo</Path>
+            <Path fileType="library">/usr/lib/python2.7/site-packages/_pytest/runner.py</Path>
+            <Path fileType="library">/usr/lib/python2.7/site-packages/_pytest/runner.pyc</Path>
+            <Path fileType="library">/usr/lib/python2.7/site-packages/_pytest/runner.pyo</Path>
+            <Path fileType="library">/usr/lib/python2.7/site-packages/_pytest/setuponly.py</Path>
+            <Path fileType="library">/usr/lib/python2.7/site-packages/_pytest/setuponly.pyc</Path>
+            <Path fileType="library">/usr/lib/python2.7/site-packages/_pytest/setuponly.pyo</Path>
+            <Path fileType="library">/usr/lib/python2.7/site-packages/_pytest/setupplan.py</Path>
+            <Path fileType="library">/usr/lib/python2.7/site-packages/_pytest/setupplan.pyc</Path>
+            <Path fileType="library">/usr/lib/python2.7/site-packages/_pytest/setupplan.pyo</Path>
+            <Path fileType="library">/usr/lib/python2.7/site-packages/_pytest/skipping.py</Path>
+            <Path fileType="library">/usr/lib/python2.7/site-packages/_pytest/skipping.pyc</Path>
+            <Path fileType="library">/usr/lib/python2.7/site-packages/_pytest/skipping.pyo</Path>
+            <Path fileType="library">/usr/lib/python2.7/site-packages/_pytest/stepwise.py</Path>
+            <Path fileType="library">/usr/lib/python2.7/site-packages/_pytest/stepwise.pyc</Path>
+            <Path fileType="library">/usr/lib/python2.7/site-packages/_pytest/stepwise.pyo</Path>
+            <Path fileType="library">/usr/lib/python2.7/site-packages/_pytest/terminal.py</Path>
+            <Path fileType="library">/usr/lib/python2.7/site-packages/_pytest/terminal.pyc</Path>
+            <Path fileType="library">/usr/lib/python2.7/site-packages/_pytest/terminal.pyo</Path>
+            <Path fileType="library">/usr/lib/python2.7/site-packages/_pytest/tmpdir.py</Path>
+            <Path fileType="library">/usr/lib/python2.7/site-packages/_pytest/tmpdir.pyc</Path>
+            <Path fileType="library">/usr/lib/python2.7/site-packages/_pytest/tmpdir.pyo</Path>
+            <Path fileType="library">/usr/lib/python2.7/site-packages/_pytest/unittest.py</Path>
+            <Path fileType="library">/usr/lib/python2.7/site-packages/_pytest/unittest.pyc</Path>
+            <Path fileType="library">/usr/lib/python2.7/site-packages/_pytest/unittest.pyo</Path>
+            <Path fileType="library">/usr/lib/python2.7/site-packages/_pytest/warning_types.py</Path>
+            <Path fileType="library">/usr/lib/python2.7/site-packages/_pytest/warning_types.pyc</Path>
+            <Path fileType="library">/usr/lib/python2.7/site-packages/_pytest/warning_types.pyo</Path>
+            <Path fileType="library">/usr/lib/python2.7/site-packages/_pytest/warnings.py</Path>
+            <Path fileType="library">/usr/lib/python2.7/site-packages/_pytest/warnings.pyc</Path>
+            <Path fileType="library">/usr/lib/python2.7/site-packages/_pytest/warnings.pyo</Path>
+            <Path fileType="library">/usr/lib/python2.7/site-packages/pytest-4.6.11-py2.7.egg-info/PKG-INFO</Path>
+            <Path fileType="library">/usr/lib/python2.7/site-packages/pytest-4.6.11-py2.7.egg-info/SOURCES.txt</Path>
+            <Path fileType="library">/usr/lib/python2.7/site-packages/pytest-4.6.11-py2.7.egg-info/dependency_links.txt</Path>
+            <Path fileType="library">/usr/lib/python2.7/site-packages/pytest-4.6.11-py2.7.egg-info/entry_points.txt</Path>
+            <Path fileType="library">/usr/lib/python2.7/site-packages/pytest-4.6.11-py2.7.egg-info/not-zip-safe</Path>
+            <Path fileType="library">/usr/lib/python2.7/site-packages/pytest-4.6.11-py2.7.egg-info/requires.txt</Path>
+            <Path fileType="library">/usr/lib/python2.7/site-packages/pytest-4.6.11-py2.7.egg-info/top_level.txt</Path>
+            <Path fileType="library">/usr/lib/python2.7/site-packages/pytest.py</Path>
+            <Path fileType="library">/usr/lib/python2.7/site-packages/pytest.pyc</Path>
+            <Path fileType="library">/usr/lib/python2.7/site-packages/pytest.pyo</Path>
+        </Files>
+    </Package>
+    <History>
+        <Update release="2">
+            <Date>2022-04-16</Date>
+            <Version>4.6.11</Version>
+            <Comment>Packaging update</Comment>
+            <Name>Algent Albrahimi</Name>
+            <Email>algent@protonmail.com</Email>
+        </Update>
+    </History>
+</PISI>

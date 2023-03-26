@@ -1,0 +1,27 @@
+name       : polkit-kde-agent
+version    : 5.26.5
+release    : 84
+source     :
+    - https://cdn.download.kde.org/stable/plasma/5.26.5/polkit-kde-agent-1-5.26.5.tar.xz : 71244256cbeef3859f104030eb3b1c00adea405d2b9e593087e6a10a489759a6
+homepage   : https://www.kde.org/workspaces/plasmadesktop/
+license    : GPL-2.0-or-later
+component  : desktop.kde.core
+summary    : Daemon providing a polkit authentication for KDE
+description: |
+    Daemon providing a polkit authentication for KDE.
+optimize   : lto
+builddeps  :
+    - pkgconfig(polkit-qt5-1)
+    - kcoreaddons-devel
+    - kcrash-devel
+    - kdbusaddons-devel
+    - ki18n-devel
+    - kiconthemes-devel
+    - kwidgetsaddons-devel
+    - kwindowsystem-devel
+setup      : |
+    %cmake_ninja
+build      : |
+    %ninja_build
+install    : |
+    %ninja_install

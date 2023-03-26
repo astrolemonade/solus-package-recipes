@@ -1,0 +1,24 @@
+name       : amule
+version    : 2.3.3
+release    : 22
+source     :
+    - git|https://github.com/amule-project/amule : 2.3.3
+license    : GPL-2.0-or-later
+component  : network.util
+summary    : aMule is a multi-platform ed2k client, fork of the eMule client
+description: |
+    aMule is a multi-platform ed2k client, fork of the eMule client
+builddeps  :
+    - pkgconfig(gdlib)
+    - pkgconfig(libpng)
+    - pkgconfig(libupnp)
+    - cryptopp-devel
+    - wxwidgets-devel
+setup      : |
+    %patch -p1 < $pkgfiles/0001-Add-missing-includes-for-gcc-11.patch
+    %patch -p1 < $pkgfiles/allow-autconf-2.71.patch
+    %autogen --with-wx-config=wx-config
+build      : |
+    %make
+install    : |
+    %make_install

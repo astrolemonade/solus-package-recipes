@@ -1,0 +1,34 @@
+name       : xdg-desktop-portal-kde
+version    : 5.26.5
+release    : 71
+source     :
+    - https://cdn.download.kde.org/stable/plasma/5.26.5/xdg-desktop-portal-kde-5.26.5.tar.xz : 52ff8564201b7693cc3ea0fc93e7bfe307fe55c98661a2a5e5ba8f0612f5f6c3
+homepage   : https://www.kde.org/workspaces/plasmadesktop/
+license    : LGPL-2.1-or-later
+component  : desktop.kde
+summary    : Qt/KDE for xdg-desktop-portal
+description: |
+    A backend implementation for xdg-desktop-portal that is using Qt/KDE.
+builddeps  :
+    - pkgconfig(Qt5WaylandClient)
+    - pkgconfig(epoxy)
+    - pkgconfig(dri)
+    - pkgconfig(wayland-server)
+    - cups-devel
+    - kdeclarative-devel
+    - kiconthemes-devel
+    - kio-devel
+    - kirigami2-devel
+    - knotifications-devel
+    - kwayland-devel
+    - plasma-framework-devel
+    - plasma-wayland-protocols-devel
+rundeps    :
+    - xdg-desktop-portal
+setup      : |
+    %cmake_ninja
+build      : |
+    %ninja_build
+install    : |
+    %ninja_install
+    %qml_cache

@@ -1,0 +1,81 @@
+<PISI>
+    <Source>
+        <Name>ckb</Name>
+        <Homepage>https://github.com/ckb-next/ckb-next/</Homepage>
+        <Packager>
+            <Name>Algent Albrahimi</Name>
+            <Email>algent@protonmail.com</Email>
+        </Packager>
+        <License>GPL-2.0-or-later</License>
+        <PartOf>system.utils</PartOf>
+        <Summary xml:lang="en">An open-source driver for Corsair keyboards and mice</Summary>
+        <Description xml:lang="en">ckb-next is an open-source driver for Corsair keyboards and mice. It aims to bring the features of Corsair&apos;s proprietary iCUE software to Linux operating systems.
+</Description>
+        <Archive type="binary" sha1sum="79eb0752a961b8e0d15c77d298c97498fbc89c5a">https://getsol.us/sources/README.Solus</Archive>
+    </Source>
+    <Package>
+        <Name>ckb</Name>
+        <Summary xml:lang="en">An open-source driver for Corsair keyboards and mice</Summary>
+        <Description xml:lang="en">ckb-next is an open-source driver for Corsair keyboards and mice. It aims to bring the features of Corsair&apos;s proprietary iCUE software to Linux operating systems.
+</Description>
+        <PartOf>system.utils</PartOf>
+        <Files>
+            <Path fileType="executable">/usr/bin/ckb-next</Path>
+            <Path fileType="executable">/usr/bin/ckb-next-daemon</Path>
+            <Path fileType="executable">/usr/bin/ckb-next-dev-detect</Path>
+            <Path fileType="library">/usr/lib/systemd/system/ckb-daemon.service</Path>
+            <Path fileType="library">/usr/lib/systemd/system/ckb-next-daemon.service</Path>
+            <Path fileType="library">/usr/lib64/udev/rules.d/99-ckb-next-daemon.rules</Path>
+            <Path fileType="executable">/usr/libexec/ckb-next-animations/gradient</Path>
+            <Path fileType="executable">/usr/libexec/ckb-next-animations/heat</Path>
+            <Path fileType="executable">/usr/libexec/ckb-next-animations/invaders</Path>
+            <Path fileType="executable">/usr/libexec/ckb-next-animations/life</Path>
+            <Path fileType="executable">/usr/libexec/ckb-next-animations/pinwheel</Path>
+            <Path fileType="executable">/usr/libexec/ckb-next-animations/pipe</Path>
+            <Path fileType="executable">/usr/libexec/ckb-next-animations/rain</Path>
+            <Path fileType="executable">/usr/libexec/ckb-next-animations/random</Path>
+            <Path fileType="executable">/usr/libexec/ckb-next-animations/ripple</Path>
+            <Path fileType="executable">/usr/libexec/ckb-next-animations/snake</Path>
+            <Path fileType="executable">/usr/libexec/ckb-next-animations/wave</Path>
+            <Path fileType="data">/usr/share/applications/ckb-next.desktop</Path>
+            <Path fileType="data">/usr/share/icons/hicolor/128x128/apps/ckb-next-monochrome.png</Path>
+            <Path fileType="data">/usr/share/icons/hicolor/128x128/apps/ckb-next.png</Path>
+            <Path fileType="data">/usr/share/icons/hicolor/16x16/apps/ckb-next-monochrome.png</Path>
+            <Path fileType="data">/usr/share/icons/hicolor/16x16/apps/ckb-next.png</Path>
+            <Path fileType="data">/usr/share/icons/hicolor/22x22/apps/ckb-next-monochrome.png</Path>
+            <Path fileType="data">/usr/share/icons/hicolor/22x22/apps/ckb-next.png</Path>
+            <Path fileType="data">/usr/share/icons/hicolor/256x256/apps/ckb-next-monochrome.png</Path>
+            <Path fileType="data">/usr/share/icons/hicolor/256x256/apps/ckb-next.png</Path>
+            <Path fileType="data">/usr/share/icons/hicolor/32x32/apps/ckb-next-monochrome.png</Path>
+            <Path fileType="data">/usr/share/icons/hicolor/32x32/apps/ckb-next.png</Path>
+            <Path fileType="data">/usr/share/icons/hicolor/48x48/apps/ckb-next-monochrome.png</Path>
+            <Path fileType="data">/usr/share/icons/hicolor/48x48/apps/ckb-next.png</Path>
+            <Path fileType="data">/usr/share/icons/hicolor/512x512/apps/ckb-next-monochrome.png</Path>
+            <Path fileType="data">/usr/share/icons/hicolor/512x512/apps/ckb-next.png</Path>
+        </Files>
+    </Package>
+    <Package>
+        <Name>ckb-devel</Name>
+        <Summary xml:lang="en">Development files for ckb</Summary>
+        <Description xml:lang="en">ckb-next is an open-source driver for Corsair keyboards and mice. It aims to bring the features of Corsair&apos;s proprietary iCUE software to Linux operating systems.
+</Description>
+        <PartOf>programming.devel</PartOf>
+        <RuntimeDependencies>
+            <Dependency release="14">ckb</Dependency>
+        </RuntimeDependencies>
+        <Files>
+            <Path fileType="library">/usr/lib64/cmake/ckb-next/Animation/AnimationConfig.cmake</Path>
+            <Path fileType="library">/usr/lib64/cmake/ckb-next/Animation/AnimationConfigVersion.cmake</Path>
+            <Path fileType="library">/usr/lib64/cmake/ckb-next/Animation/AnimationTargets.cmake</Path>
+        </Files>
+    </Package>
+    <History>
+        <Update release="14">
+            <Date>2022-03-24</Date>
+            <Version>0.4.4</Version>
+            <Comment>Packaging update</Comment>
+            <Name>Algent Albrahimi</Name>
+            <Email>algent@protonmail.com</Email>
+        </Update>
+    </History>
+</PISI>

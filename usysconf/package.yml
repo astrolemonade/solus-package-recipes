@@ -1,0 +1,31 @@
+name       : usysconf
+version    : 0.5.4
+release    : 31
+source     :
+    - git|https://github.com/getsolus/usysconf.git : 8303f4e8f7cf50ff926ede9e2b7381441c10ab4f
+license    : GPL-2.0-only
+component  : system.base
+summary    : System configuration component
+description: |
+    usysconf is the configuration component of the Solus update architecture.
+    It is responsible for maintaining system consistency and health over time,
+    and can be directly interacted with via the CLI interface.
+
+    usysconf is used by the package manager to finish up configuration of all
+    aspects of the system in an incremental fashion.
+
+    usysconf is a Solus project.
+builddeps  :
+    - musl-devel
+optimize   :
+    - size
+    - lto
+setup      : |
+    export CC=musl-gcc
+    %meson_configure -Dwith-static-binary=true \
+                     -Dwith-systemd-reexec=true \
+                     -Dwith-vbox-restart=true
+build      : |
+    %ninja_build
+install    : |
+    %ninja_install

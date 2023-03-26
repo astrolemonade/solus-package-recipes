@@ -1,0 +1,36 @@
+<PISI>
+    <Source>
+        <Name>perl-net-smtp-ssl</Name>
+        <Packager>
+            <Name>Algent Albrahimi</Name>
+            <Email>algent@protonmail.com</Email>
+        </Packager>
+        <License>Artistic-1.0-Perl</License>
+        <PartOf>programming.perl</PartOf>
+        <Summary xml:lang="en">Net::SMTP::SSL - SSL support for Net::SMTP</Summary>
+        <Description xml:lang="en">Net::SMTP::SSL - SSL support for Net::SMTP
+</Description>
+        <Archive type="binary" sha1sum="79eb0752a961b8e0d15c77d298c97498fbc89c5a">https://getsol.us/sources/README.Solus</Archive>
+    </Source>
+    <Package>
+        <Name>perl-net-smtp-ssl</Name>
+        <Summary xml:lang="en">Net::SMTP::SSL - SSL support for Net::SMTP</Summary>
+        <Description xml:lang="en">Net::SMTP::SSL - SSL support for Net::SMTP
+</Description>
+        <PartOf>programming.perl</PartOf>
+        <Files>
+            <Path fileType="library">/usr/lib64/perl5/vendor_perl/5.36/Net/SMTP/SSL.pm</Path>
+            <Path fileType="library">/usr/lib64/perl5/vendor_perl/5.36/x86_64-linux-thread-multi/auto/Net/SMTP/SSL/.packlist</Path>
+            <Path fileType="man">/usr/share/man/man3/Net::SMTP::SSL.3</Path>
+        </Files>
+    </Package>
+    <History>
+        <Update release="13">
+            <Date>2022-09-26</Date>
+            <Version>1.04</Version>
+            <Comment>Packaging update</Comment>
+            <Name>Algent Albrahimi</Name>
+            <Email>algent@protonmail.com</Email>
+        </Update>
+    </History>
+</PISI>

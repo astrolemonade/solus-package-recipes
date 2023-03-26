@@ -1,0 +1,28 @@
+name       : khotkeys
+version    : 5.26.5
+release    : 86
+source     :
+    - https://cdn.download.kde.org/stable/plasma/5.26.5/khotkeys-5.26.5.tar.xz : 88533dfe85fc1cf1212e4daa64e8c447a476fe0f735a4d6a6fb94e736c817552
+homepage   : https://www.kde.org/workspaces/plasmadesktop/
+license    :
+    - GPL-2.0-or-later
+    - LGPL-2.1-only
+component  : desktop.kde.core
+summary    : KDE Plasma hotkey module
+description: |
+    KDE Plasma hotkey module.
+optimize   : lto
+builddeps  :
+    - pkgconfig(Qt5X11Extras)
+    - pkgconfig(xtst)
+    - kcmutils-devel
+    - kdelibs4support-devel
+    - kglobalaccel-devel
+    - plasma-workspace-devel
+setup      : |
+    %cmake_ninja -DBUILD_TESTING=OFF
+build      : |
+    %ninja_build
+install    : |
+    %ninja_install
+    rm -rf $installdir/usr/share/doc

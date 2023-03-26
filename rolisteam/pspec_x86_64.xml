@@ -1,0 +1,39 @@
+<PISI>
+    <Source>
+        <Name>rolisteam</Name>
+        <Packager>
+            <Name>Campbell Jones</Name>
+            <Email>dev@serebit.com</Email>
+        </Packager>
+        <License>GPL-2.0-or-later</License>
+        <PartOf>games.rpg</PartOf>
+        <Summary xml:lang="en">Rolisteam is a virtual tabletop.</Summary>
+        <Description xml:lang="en">Rolisteam helps you to manage a tabletop role playing game with remote friends/players.
+It provides many features to share maps, pictures and it also includes tool to communicate with your friends/players.
+</Description>
+        <Archive type="binary" sha1sum="79eb0752a961b8e0d15c77d298c97498fbc89c5a">https://getsol.us/sources/README.Solus</Archive>
+    </Source>
+    <Package>
+        <Name>rolisteam</Name>
+        <Summary xml:lang="en">Rolisteam is a virtual tabletop.</Summary>
+        <Description xml:lang="en">Rolisteam helps you to manage a tabletop role playing game with remote friends/players.
+It provides many features to share maps, pictures and it also includes tool to communicate with your friends/players.
+</Description>
+        <PartOf>games.rpg</PartOf>
+        <Files>
+            <Path fileType="executable">/usr/bin/roliserver</Path>
+            <Path fileType="executable">/usr/bin/rolisteam</Path>
+            <Path fileType="data">/usr/share/applications/rolisteam.desktop</Path>
+            <Path fileType="data">/usr/share/icons/hicolor/256x256/apps/rolisteam.png</Path>
+        </Files>
+    </Package>
+    <History>
+        <Update release="2">
+            <Date>2020-09-11</Date>
+            <Version>1.9.2</Version>
+            <Comment>Packaging update</Comment>
+            <Name>Campbell Jones</Name>
+            <Email>dev@serebit.com</Email>
+        </Update>
+    </History>
+</PISI>

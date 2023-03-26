@@ -1,0 +1,38 @@
+<PISI>
+    <Source>
+        <Name>perl-gtk2-ex-simple-list</Name>
+        <Packager>
+            <Name>Algent Albrahimi</Name>
+            <Email>algent@protonmail.com</Email>
+        </Packager>
+        <License>GPL-2.0+</License>
+        <PartOf>programming.perl</PartOf>
+        <Summary xml:lang="en">A simple interface to the powerful but complex Gtk2::TreeView and Gtk2::ListStore combination.</Summary>
+        <Description xml:lang="en">Gtk2 has a powerful, but complex MVC (Model, View, Controller) system used to implement list and tree widgets. Gtk2::Ex::Simple::List automates the complex setup work and allows you to treat the list model as a more natural list of lists structure.
+</Description>
+        <Archive type="binary" sha1sum="79eb0752a961b8e0d15c77d298c97498fbc89c5a">https://getsol.us/sources/README.Solus</Archive>
+    </Source>
+    <Package>
+        <Name>perl-gtk2-ex-simple-list</Name>
+        <Summary xml:lang="en">A simple interface to the powerful but complex Gtk2::TreeView and Gtk2::ListStore combination.</Summary>
+        <Description xml:lang="en">Gtk2 has a powerful, but complex MVC (Model, View, Controller) system used to implement list and tree widgets. Gtk2::Ex::Simple::List automates the complex setup work and allows you to treat the list model as a more natural list of lists structure.
+</Description>
+        <PartOf>programming.perl</PartOf>
+        <Files>
+            <Path fileType="library">/usr/lib64/perl5/vendor_perl/5.36/Gtk2/Ex/Simple/List.pm</Path>
+            <Path fileType="library">/usr/lib64/perl5/vendor_perl/5.36/Gtk2/Ex/Simple/TiedCommon.pm</Path>
+            <Path fileType="library">/usr/lib64/perl5/vendor_perl/5.36/Gtk2/Ex/Simple/TiedList.pm</Path>
+            <Path fileType="library">/usr/lib64/perl5/vendor_perl/5.36/x86_64-linux-thread-multi/auto/Gtk2/Ex/Simple/List/.packlist</Path>
+            <Path fileType="man">/usr/share/man/man3/Gtk2::Ex::Simple::List.3</Path>
+        </Files>
+    </Package>
+    <History>
+        <Update release="5">
+            <Date>2022-09-26</Date>
+            <Version>0.50</Version>
+            <Comment>Packaging update</Comment>
+            <Name>Algent Albrahimi</Name>
+            <Email>algent@protonmail.com</Email>
+        </Update>
+    </History>
+</PISI>

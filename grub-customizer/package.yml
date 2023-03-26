@@ -1,0 +1,25 @@
+name       : grub-customizer
+version    : 5.2.2
+release    : 11
+source     :
+    - https://launchpad.net/grub-customizer/5.2/5.2.2/+download/grub-customizer_5.2.2.tar.gz : 39d4b3dda81c3804566f0cc9d2ab1f41e1ffa923656b651c1488220ed2046793
+homepage   : https://launchpad.net/grub-customizer
+license    : GPL-3.0-or-later
+component  : system.utils
+summary    : Grub Customizer is a graphical interface to configure the GRUB2/BURG settings and menuentries
+description: |
+    Grub Customizer is a graphical interface to configure the GRUB2/BURG settings and menuentries
+builddeps  :
+    - pkgconfig(atkmm-1.6)
+    - pkgconfig(glibmm-2.4)
+    - pkgconfig(gtkmm-3.0)
+    - pkgconfig(libarchive)
+    - pkgconfig(openssl)
+setup      : |
+    mkdir build
+    cd build
+    %cmake -DCMAKE_INSTALL_PREFIX=/usr ..
+build      : |
+    %make -C build
+install    : |
+    %make_install -C build

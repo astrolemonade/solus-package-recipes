@@ -1,0 +1,25 @@
+name       : tig
+version    : 2.5.7
+release    : 14
+source     :
+    - https://github.com/jonas/tig/releases/download/tig-2.5.7/tig-2.5.7.tar.gz : dbc7bac86b29098adaa005a76161e200f0734dda36de9f6bd35a861c7c29ca76
+homepage   : https://jonas.github.io/tig/
+license    : GPL-2.0-or-later
+component  : programming.tools
+summary    : Text-mode interface for git
+description: |
+    Tig is an ncurses-based text-mode interface for git. It functions mainly as a Git repository browser, but can also assist in staging changes for commit at chunk level and act as a pager for output from various Git commands.
+builddeps  :
+    - pkgconfig(ncursesw)
+    - asciidoc
+    - xmlto
+rundeps    :
+    - git
+setup      : |
+    %configure
+build      : |
+    %make
+install    : |
+    %make_install install-doc-man
+    install -Dm00644 contrib/tig-completion.bash $installdir/usr/share/bash-completion/completions/tig
+    install -Dm00644 contrib/tig-completion.zsh  $installdir/usr/share/zsh/site-functions/_tig

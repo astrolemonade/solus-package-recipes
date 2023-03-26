@@ -1,0 +1,34 @@
+name       : incidenceeditor
+version    : 22.12.1
+release    : 67
+source     :
+    - https://cdn.download.kde.org/stable/release-service/22.12.1/src/incidenceeditor-22.12.1.tar.xz : 3d8172cd5331f1ed3d36afff400d7b0efad6b497f1de459548c9613d199ef8a9
+homepage   : https://kde.org/
+license    :
+    - GPL-2.0-or-later
+    - LGPL-2.1-or-later
+component  : desktop.library
+summary    : KDE PIM incidence editor
+description: |
+    KDE PIM incidence editor.
+builddeps  :
+    - akonadi-calendar-devel
+    - akonadi-contacts-devel
+    - akonadi-mime-devel
+    - calendarsupport-devel
+    - eventviews-devel
+    - kcontacts-devel
+    - kdiagram-devel
+    - kiconthemes-devel
+    - kidentitymanagement-devel
+    - kio-devel
+    - kldap-devel
+    - kmailtransport-devel
+    - libkdepim-devel
+    - pimcommon-devel
+setup      : |
+    %cmake_ninja -DBUILD_TESTING=OFF
+build      : |
+    %ninja_build
+install    : |
+    %ninja_install

@@ -1,0 +1,19 @@
+name       : perl-getopt-long
+version    : '2.52'
+release    : 7
+source     :
+    - https://cpan.metacpan.org/authors/id/J/JV/JV/Getopt-Long-2.52.tar.gz : 9dc7a7c373353d5c05efae548e7b123aa8a31d1f506eb8dbbec8f0dca77705fa
+homepage   : https://metacpan.org/pod/Getopt::Long
+license    : Artistic-1.0-Perl
+component  : programming.perl
+summary    : Getopt::Long - Extended processing of command line options
+description: |
+    The Getopt::Long module implements an extended getopt function called GetOptions(). It parses the command line from @ARGV, recognizing and removing specified options and their possible values.
+rundeps    :
+    - perl-pod-usage
+setup      : |
+    %perl_setup
+build      : |
+    %perl_build
+install    : |
+    %perl_install

@@ -1,0 +1,6 @@
+mateweather-applet:__bss_start
+mateweather-applet:_edata
+mateweather-applet:_end
+stickynotes-applet:__bss_start
+stickynotes-applet:_edata
+stickynotes-applet:_end

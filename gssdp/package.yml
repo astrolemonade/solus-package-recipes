@@ -1,0 +1,20 @@
+name       : gssdp
+version    : 1.6.0
+release    : 15
+source     :
+    - https://download.gnome.org/sources/gssdp/1.6/gssdp-1.6.0.tar.xz : 148ed41628c8f17336a2c8fa4b14ab0fbae98b6026be2dacfddea7bf43866689
+license    : LGPL-2.0-only
+component  : network.util
+summary    : A GObject-based API for handling resource discovery and announcement over SSDP.
+description: |
+    A GObject-based API for handling resource discovery and announcement over SSDP.
+builddeps  :
+    - pkgconfig(gtk4)
+    - pkgconfig(libsoup-3.0)
+    - vala
+setup      : |
+    %meson_configure
+build      : |
+    %ninja_build
+install    : |
+    %ninja_install

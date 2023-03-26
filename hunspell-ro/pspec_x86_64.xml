@@ -1,0 +1,35 @@
+<PISI>
+    <Source>
+        <Name>hunspell-ro</Name>
+        <Packager>
+            <Name>Bryan T. Meyers</Name>
+            <Email>bmeyers@datadrake.com</Email>
+        </Packager>
+        <License>CC-BY-3.0</License>
+        <PartOf>spelling</PartOf>
+        <Summary xml:lang="en">Romanian hunspell dictionaries</Summary>
+        <Description xml:lang="en">Romanian hunspell dictionaries
+</Description>
+        <Archive type="binary" sha1sum="79eb0752a961b8e0d15c77d298c97498fbc89c5a">https://solus-project.com/sources/README.Solus</Archive>
+    </Source>
+    <Package>
+        <Name>hunspell-ro</Name>
+        <Summary xml:lang="en">Romanian hunspell dictionaries</Summary>
+        <Description xml:lang="en">Romanian hunspell dictionaries
+</Description>
+        <PartOf>spelling</PartOf>
+        <Files>
+            <Path fileType="data">/usr/share/hunspell/ro_RO.aff</Path>
+            <Path fileType="data">/usr/share/hunspell/ro_RO.dic</Path>
+        </Files>
+    </Package>
+    <History>
+        <Update release="3">
+            <Date>2018-12-12</Date>
+            <Version>3.3.10</Version>
+            <Comment>Packaging update</Comment>
+            <Name>Bryan T. Meyers</Name>
+            <Email>bmeyers@datadrake.com</Email>
+        </Update>
+    </History>
+</PISI>

@@ -1,0 +1,29 @@
+From d9cbea1c6bc2b7f2c11964da0d437130bed82279 Mon Sep 17 00:00:00 2001
+From: Alan Coopersmith <alan.coopersmith@oracle.com>
+Date: Tue, 17 Jan 2023 18:41:32 -0800
+Subject: [PATCH] test: skip compressed file tests when --disable-open-zfile is
+ used
+
+Reported-by: T.J. Townsend
+Signed-off-by: Alan Coopersmith <alan.coopersmith@oracle.com>
+---
+ test/TestAllFiles.h | 4 ++++
+ 1 file changed, 4 insertions(+)
+
+diff --git a/test/TestAllFiles.h b/test/TestAllFiles.h
+index d07436a..505b2a3 100644
+--- a/test/TestAllFiles.h
++++ b/test/TestAllFiles.h
+@@ -156,5 +156,9 @@ TestAllNormalFiles(const char *subdir, int expected, testfilefunc testfunc)
+ static void
+ TestAllCompressedFiles(const char *subdir, int expected, testfilefunc testfunc)
+ {
++#ifdef NO_ZPIPE
++    g_test_message("compression disabled, skipping compressed file tests");
++#else
+     TestAllFilesByType(G_TEST_BUILT, TRUE, subdir, expected, testfunc);
++#endif
+ }
+-- 
+GitLab
+

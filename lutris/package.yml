@@ -1,0 +1,32 @@
+name       : lutris
+version    : 0.5.12
+release    : 71
+source     :
+    - https://github.com/lutris/lutris/archive/refs/tags/v0.5.12.tar.gz : 092f56729ca558188f7adcdbb75945a2e9bbf573f3e09323b7cb8f0db11d664a
+license    : GPL-3.0-or-later
+component  : games
+summary    : Install and play any video game easily
+description: |
+    Lutris is a gaming platform for GNU/Linux. Its goal is to make gaming on Linux as easy as possible by taking care of installing and setting up the game for the user. The only thing you have to do is play the game. It aims to support every game that is playable on Linux.
+rundeps    :
+    - cabextract
+    - gamemode-32bit
+    - libgnome-desktop
+    - libgnome-keyring
+    - libwebkit-gtk
+    - mangohud
+    - python-distro
+    - python-evdev
+    - python-gobject
+    - python-lxml
+    - python-magic
+    - python-pillow
+    - python-requests
+    - pyyaml
+    - wine-32bit
+setup      : |
+    %meson_configure
+build      : |
+    %ninja_build
+install    : |
+    %ninja_install

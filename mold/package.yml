@@ -1,0 +1,25 @@
+name       : mold
+version    : 1.8.0
+release    : 5
+source     :
+    - https://github.com/rui314/mold/archive/refs/tags/v1.8.0.tar.gz : 7210225478796c2528aae30320232a5a3b93a640292575a8c55aa2b140041b5c
+license    : AGPL-3.0-or-later
+component  : programming.tools
+summary    : A modern linker
+description: |
+    mold is a faster drop-in replacement for existing Unix linkers. mold is created for increasing developer productivity by reducing build time especially in rapid debug-edit-rebuild cycles.
+clang      : yes
+builddeps  :
+    - pkgconfig(libzstd)
+    - pkgconfig(tbb)
+    - mimalloc-devel
+setup      : |
+    %cmake_ninja -DMOLD_LTO=ON \
+                 -DMOLD_MOSTLY_STATIC=OFF \
+                 -DMOLD_USE_MIMALLOC=ON \
+                 -DMOLD_USE_SYSTEM_MIMALLOC=ON \
+                 -DMOLD_USE_SYSTEM_TBB=ON
+build      : |
+    %ninja_build
+install    : |
+    %ninja_install

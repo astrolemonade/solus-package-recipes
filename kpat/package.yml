@@ -1,0 +1,35 @@
+name       : kpat
+version    : 22.12.1
+release    : 50
+source     :
+    - https://cdn.download.kde.org/stable/release-service/22.12.1/src/kpat-22.12.1.tar.xz : 749c5cd1b38f62c1d3ef961ad6676865917b390c9d2c09b3df184eed29c81a30
+license    :
+    - GFDL-1.2-or-later
+    - GPL-2.0-or-later
+homepage   : https://kde.org/applications/games/org.kde.kpat
+component  : games.card
+summary    : KDE patience game
+description: |
+    KDE patience game.
+libsplit   : no
+builddeps  :
+    - pkgconfig(libblack-hole-solver)
+    - pkgconfig(libfreecell-solver)
+    - pkgconfig(Qt5Quick)
+    - pkgconfig(Qt5Svg)
+    - kcrash-devel
+    - kdbusaddons-devel
+    - kdoctools-devel
+    - kguiaddons-devel
+    - kio-devel
+    - knewstuff-devel
+    - libkdegames-devel
+setup      : |
+    %cmake_ninja
+build      : |
+    %ninja_build
+install    : |
+    %ninja_install
+
+    #remove doc
+    rm -rf $installdir/usr/share/doc

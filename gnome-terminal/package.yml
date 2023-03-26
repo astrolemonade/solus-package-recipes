@@ -1,0 +1,28 @@
+name       : gnome-terminal
+version    : 3.45.90
+release    : 54
+source     :
+    - https://gitlab.gnome.org/GNOME/gnome-terminal/-/archive/3.45.90/gnome-terminal-3.45.90.tar.gz : 0b240f1e3ccad2cd51398a2bc2dcf33c1d14fdbd89fa725ff052c4434f1e6605
+license    : GPL-2.0-only
+component  : desktop.gnome
+summary    : GNOME Terminal Emulator
+description: |
+    GNOME Terminal Emulator
+builddeps  :
+    - pkgconfig(dconf)
+    - pkgconfig(gsettings-desktop-schemas)
+    - pkgconfig(gtk+-3.0)
+    - pkgconfig(libnautilus-extension-4)
+    - pkgconfig(libpcre2-8)
+    - pkgconfig(vte-2.91)
+    - pkgconfig(yelp-xsl)
+    - itstool
+    - yelp-tools
+setup      : |
+    %apply_patches
+    %meson_configure -Dsearch_provider=false
+build      : |
+    %ninja_build
+install    : |
+    %ninja_install
+    ln -sv gnome-terminal $installdir/usr/bin/x-terminal-emulator

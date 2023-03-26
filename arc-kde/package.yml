@@ -1,0 +1,14 @@
+name       : arc-kde
+version    : 20180614
+release    : 1
+source     :
+    - https://github.com/PapirusDevelopmentTeam/arc-kde/archive/20180614.tar.gz : 44267738b2bee20f62cc3f1c150b4eb0aa7ce79f4f5d302102f11d15ffa6de15
+license    : GPL-3.0-or-later
+component  : desktop.theme
+summary    : Arc KDE customization
+rundeps    :
+    - kvantum
+description: |
+    This is a port of the popular GTK theme Arc for Plasma 5 desktop with a few additions and extras.
+install    : |
+    %make_install

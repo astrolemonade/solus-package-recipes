@@ -1,0 +1,37 @@
+name       : kmix
+version    : 22.12.1
+release    : 61
+source     :
+    - https://cdn.download.kde.org/stable/release-service/22.12.1/src/kmix-22.12.1.tar.xz : a9de19037c2e1f6ed7206c163ede0e9d23b5158063af22abe7a21068f621d802
+homepage   : https://kde.org/applications/multimedia/org.kde.kmix
+license    :
+    - GFDL-1.2-or-later
+    - GPL-2.0-or-later
+component  : desktkop.kde
+summary    : KDE volume control program
+description: |
+    KDE volume control program.
+builddeps  :
+    - pkgconfig(alsa)
+    - pkgconfig(libcanberra)
+    - pkgconfig(libpulse)
+    - kcrash-devel
+    - kcompletion-devel
+    - kdbusaddons-devel
+    - kdoctools-devel
+    - kglobalaccel-devel
+    - ki18n-devel
+    - kiconthemes-devel
+    - knotifications-devel
+    - solid-devel
+    - kwindowsystem-devel
+    - kxmlgui-devel
+setup      : |
+    %cmake_ninja
+build      : |
+    %ninja_build
+install    : |
+    %ninja_install
+
+    # remove docs
+    rm -rf $installdir/usr/share/doc

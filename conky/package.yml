@@ -1,0 +1,44 @@
+name       : conky
+version    : 1.17.0
+release    : 33
+source     :
+    - https://github.com/brndnmtthws/conky/archive/refs/tags/v1.17.0.tar.gz : c3558bc028bcfc583d8e7775aed20a0f264ff47dbf0debdf70a95b3a180069dc
+homepage   : https://github.com/brndnmtthws/conky
+license    :
+    - BSD-3-Clause
+    - GPL-3.0-or-later
+component  : system.utils
+summary    : Lightweight system monitor for X
+description: |
+    Conky is a free, light-weight system monitor for X, that displays any kind of information on your desktop.
+builddeps  :
+    - pkgconfig(imlib2)
+    - pkgconfig(libcurl)
+    - pkgconfig(libical)
+    - pkgconfig(libpulse)
+    - pkgconfig(librsvg-2.0)
+    - pkgconfig(libxml-2.0)
+    - pkgconfig(lua)
+    - pkgconfig(xdamage)
+    - pkgconfig(xft)
+    - pkgconfig(xinerama)
+    - git
+    - toluapp-devel
+    - wireless-tools-devel
+setup      : |
+    export CXXFLAGS="$CXXFLAGS -I/usr/include/lua5.1"
+    %cmake_ninja -DBUILD_CURL=1 \
+           -DBUILD_ICAL=1 \
+           -DBUILD_ICONV=1 \
+           -DBUILD_JOURNAL=1 \
+           -DBUILD_LUA_CAIRO=1 \
+           -DBUILD_LUA_IMLIB2=1 \
+           -DBUILD_LUA_RSVG=1 \
+           -DBUILD_PULSEAUDIO=1 \
+           -DBUILD_RSS=1 \
+           -DBUILD_WLAN=1 .
+build      : |
+    %ninja_build
+install    : |
+    %ninja_install
+    rm -r $installdir/usr/lib/libtcp-portmon.a

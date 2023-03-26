@@ -1,0 +1,29 @@
+name       : syntax-highlighting
+version    : 5.101.0
+release    : 64
+source     :
+    - https://cdn.download.kde.org/stable/frameworks/5.101/syntax-highlighting-5.101.0.tar.xz : 31cddb233f79ce596f81bf66f4526a9b8ddb06e3224f200596e56bb0dc1f1d3b
+homepage   : https://community.kde.org/Frameworks
+license    :
+    - LGPL-2.0-or-later
+    - MIT
+component  : programming.library
+summary    : Syntax highlighting engine for Kate syntax definitions
+description: |
+    This is a stand-alone implementation of the Kate syntax highlighting engine. It's meant as a building block for text editors as well as for simple highlighted text rendering (e.g. as HTML), supporting both integration with a custom editor as well as a ready-to-use QSyntaxHighlighter sub-class.
+optimize   : lto
+builddeps  :
+    - pkgconfig(Qt5Designer)
+    - pkgconfig(Qt5XmlPatterns)
+    - extra-cmake-modules
+rundeps    :
+    - devel :
+        - extra-cmake-modules
+        - qt5-tools-devel
+setup      : |
+    %cmake_ninja -DBUILD_QCH=ON \
+                -DBUILD_TESTING=OFF
+build      : |
+    %ninja_build
+install    : |
+    %ninja_install

@@ -1,0 +1,31 @@
+name       : kaccounts-integration
+version    : 22.12.1
+release    : 55
+source     :
+    - https://cdn.download.kde.org/stable/release-service/22.12.1/src/kaccounts-integration-22.12.1.tar.xz : 537e23e9deb94ee87b5dc2dca3ee59ffa8d349c98aa2d3ece9ba7c711a0d7e2b
+homepage   : https://kde.org/
+license    : GPL-2.0-or-later
+component  : programming.library
+summary    : System to administer web accounts - shared library
+description: |
+    Small system to administer web accounts for the sites and services across the KDE desktop, including: Google, Facebook, Owncloud, IMAP, Jabber and others
+builddeps  :
+    - pkgconfig(accounts-qt5)
+    - pkgconfig(signond)
+    - kcmutils-devel
+    - kdbusaddons-devel
+    - kdeclarative-devel
+    - kio-devel
+    - kwallet-devel
+rundeps    :
+    - signon-kwallet-extension
+    - signon-plugin-oauth2
+    - devel :
+        - signond-devel
+setup      : |
+    %cmake_ninja
+build      : |
+    %ninja_build
+install    : |
+    %ninja_install
+    %qml_cache

@@ -1,0 +1,47 @@
+name       : graalvm
+version    : 22.3.0
+release    : 4
+source     :
+    - git|https://github.com/oracle/graal.git : vm-ce-22.3.0
+    - git|https://github.com/graalvm/mx.git : 6.10.0
+    - https://github.com/graalvm/labs-openjdk-11/releases/download/jvmci-22.3-b08/labsjdk-ce-11.0.17+8-jvmci-22.3-b08-linux-amd64.tar.gz : d2f4d9f7033be0f83a355d1fe66db162e3c4d69f23001ef8d2330e10087d8165
+license    : GPL-2.0-or-later
+component  : programming.tools
+networking : yes
+clang      : yes
+summary    : High-performance JDK distribution
+description: |
+    GraalVM is a high-performance JDK distribution designed to accelerate the execution of applications written in Java and other JVM languages along with support for JavaScript, Ruby, Python, and a number of other popular languages
+builddeps  :
+    - pkgconfig(alsa)
+    - pkgconfig(xtst)
+build      : |
+    unset CFLAGS
+    unset LDFLAGS
+
+    # Setup the custom jdk required to build graal
+    # we need a special version of java to build which includes some needed headers
+    cp $sources/labsjdk-ce-11.0.17+8-jvmci-22.3-b08-linux-amd64.tar.gz $workdir
+    tar xvf labsjdk-ce-11.0.17+8-jvmci-22.3-b08-linux-amd64.tar.gz
+    export JAVA_HOME=$workdir/labsjdk-ce-11.0.17-jvmci-22.3-b08/
+
+    # Setup MX build tool
+    mkdir -p $workdir/mx-build-tool
+    cp -r $sources/mx.git $workdir
+    export PATH=$workdir/mx.git:$PATH
+
+    # Finally Build Graal
+    cd $workdir/vm
+    mx --env ce build
+
+    cd $workdir/substratevm
+    mx graalvm-show
+    mx build
+    mx graalvm-home
+install    : |
+    install -dm00755 $installdir/usr/share/graalvm
+    cp -r $workdir/sdk/latest_graalvm_home/* -t $installdir/usr/share/graalvm/
+
+    # empty folder if it exists creates a devel eopkg package
+    rm -Rf $installdir/usr/include/graalvm
+    chown -R root:root $installdir/usr/share/graalvm/

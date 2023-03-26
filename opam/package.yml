@@ -1,0 +1,23 @@
+name       : opam
+version    : 2.0.10
+release    : 6
+source     :
+    - https://github.com/ocaml/opam/releases/download/2.0.10/opam-full-2.0.10.tar.gz : 3b5740b8e1c1bc65dcf8aa21c4e8cd81cd6abfe1bf52ea2cc4367c3f89d5be40
+homepage   : https://opam.ocaml.org/
+license    : LGPL-2.1-only WITH OCaml-LGPL-linking-exception
+component  : programming.tools
+summary    : Source-based package manager for OCaml
+description: |
+    opam is a source-based package manager for OCaml. It supports multiple simultaneous compiler installations, flexible package constraints, and a Git-friendly development workflow.
+builddeps  :
+    - ocaml
+rundeps    :
+    - bubblewrap
+    - ocaml
+setup      : |
+    %configure
+build      : |
+    %make lib-ext -j1 OCAMLC="ocamlc -unsafe-string" OCAMLOPT="ocamlopt -unsafe-string"
+    %make -j1 OCAMLC="ocamlc -unsafe-string" OCAMLOPT="ocamlopt -unsafe-string"
+install    : |
+    %make_install

@@ -1,0 +1,32 @@
+name       : plasma-thunderbolt
+version    : 5.26.5
+release    : 45
+source     :
+    - https://cdn.download.kde.org/stable/plasma/5.26.5/plasma-thunderbolt-5.26.5.tar.xz : c59b08303b17586afeeeccb28336614b03ac5e2c79fa81d976a39231451df2d3
+homepage   : https://www.kde.org/workspaces/plasmadesktop/
+license    :
+    - GFDL-2.0-or-later
+    - GPL-2.0-or-later
+    - LGPL-2.0-or-later
+    - LGPL-2.1-or-later
+component  : desktop.kde.core
+summary    : Plasma integration for controlling Thunderbolt devices
+description: |
+    Plasma integration for controlling Thunderbolt devices
+optimize   : lto
+libsplit   : no
+builddeps  :
+    - kcmutils-devel
+    - kdbusaddons-devel
+    - kdeclarative-devel
+    - ki18n-devel
+    - knotifications-devel
+rundeps    :
+    - bolt
+setup      : |
+    %cmake_ninja -DBUILD_TESTING=OFF
+build      : |
+    %ninja_build
+install    : |
+    %ninja_install
+    %qml_cache

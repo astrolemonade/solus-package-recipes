@@ -1,0 +1,31 @@
+name       : libcap2
+version    : '2.50'
+release    : 12
+source     :
+    - https://mirrors.edge.kernel.org/pub/linux/libs/security/linux-privs/libcap2/libcap-2.50.tar.xz : 47a57b8bd238b84c93c921a9b4ff82337551dbcb0cca071316aadf3e23b19261
+license    : GPL-2.0-or-later
+component  : system.base
+summary    : User-space interfaces to the POSIX 1003.1e capabilities available in Linux kernels
+description: |
+    user-space interfaces to the POSIX 1003.1e capabilities available in Linux kernels
+emul32     : yes
+builddeps  :
+    - pkgconfig32(libattr)
+    - pam-32bit-devel
+build      : |
+    %make CC="$CC"
+install    : |
+    %make_install RAISE_SETFCAP=no lib=lib%LIBSUFFIX% prefix=/usr CC="$CC"
+
+    if [[ ! -z "${EMUL32BUILD}" ]]; then
+        rm $installdir/%libdir%/security -rf
+    else
+        install -d -m 00644 $installdir/lib
+        mv $installdir/%libdir%/security $installdir/lib/.
+        install -d -m 00644 $installdir/usr/bin/
+        ln -s /usr/sbin/getcap $installdir/usr/bin/getcap
+        ln -s /usr/sbin/setcap $installdir/usr/bin/setcap
+    fi
+
+    # no static, thanks.
+    rm $installdir/%libdir%/*.a -v

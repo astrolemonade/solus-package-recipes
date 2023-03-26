@@ -1,0 +1,53 @@
+name       : vivaldi-snapshot
+version    : 5.8.2955.3
+release    : 369
+source     :
+    - https://downloads.vivaldi.com/snapshot/vivaldi-snapshot_5.8.2955.3-1_amd64.deb : b7a96fb54ae706d90f9e6f12ef17fc2ed814890ba9d6655df763dafcfc44d5fd
+license    : Distributable
+homepage   : https://vivaldi.com
+component  : network.web.browser
+summary    : Vivaldi Web Browser (Snapshot)
+description: |
+    An advanced browser made with the power user in mind.
+strip      : no
+extract    : no
+builddeps  :
+    - pkgconfig(Qt5Core)
+    - pkgconfig(alsa)
+    - pkgconfig(atk)
+    - pkgconfig(gbm)
+    - pkgconfig(gconf-2.0)
+    - pkgconfig(gtk+-3.0)
+    - pkgconfig(x11)
+    - pkgconfig(xcomposite)
+    - pkgconfig(xcursor)
+    - pkgconfig(xdamage)
+    - pkgconfig(xi)
+    - pkgconfig(xrandr)
+    - pkgconfig(xscrnsaver)
+    - pkgconfig(xtst)
+    - ffmpeg-chromium
+rundeps    :
+    - ffmpeg-chromium
+setup      : |
+    ar xf $sources/vivaldi-snapshot_${version}-1_amd64.deb
+    mkdir root
+    tar xf data.tar.xz -C root
+install    : |
+    # This only excludes /usr/bin link which will be invalid
+    install -D -d -m 00755 $installdir/usr/bin
+    install -D -d -m 00644 $installdir/usr/share
+    cp -R root/usr/share/applications $installdir/usr/share/
+
+    # We do not use /opt for binary packages in Solus, so just use /usr/share.
+    cp -R root/opt/* $installdir/usr/share/.
+    ln -sv /usr/share/vivaldi-snapshot/vivaldi-snapshot $installdir/usr/bin/vivaldi-snapshot
+
+    # Ensure we symlink to expected directory as expected file.
+    # See https://gist.github.com/ruario/55a6671b155fe1da35a8d8a5b2352008
+    majMin=$(echo '%version%' | cut -c-3)
+    ln -s /usr/share/vivaldi-snapshot/libffmpeg.so $installdir/usr/share/vivaldi-snapshot/libffmpeg.so.${majMin}
+
+    for icon_size in 16 22 24 32 48 64 128 256; do
+        install -D -m 00644 root/opt/vivaldi-snapshot/product_logo_${icon_size}.png $installdir/usr/share/icons/hicolor/${icon_size}x${icon_size}/apps/vivaldi-snapshot.png
+    done

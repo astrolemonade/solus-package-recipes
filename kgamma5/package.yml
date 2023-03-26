@@ -1,0 +1,24 @@
+name       : kgamma5
+version    : 5.26.5
+release    : 83
+source     :
+    - https://cdn.download.kde.org/stable/plasma/5.26.5/kgamma5-5.26.5.tar.xz : a841d4470cb4ebc8a3819582f0a0622ad0c6d62cc2c28c73e0616cad44bd996c
+homepage   : https://www.kde.org/workspaces/plasmadesktop/
+license    : GPL-2.0-or-later
+component  : desktop.kde.core
+summary    : Adjust your monitor's gamma settings
+description: |
+    Adjust your monitor's gamma settings.
+optimize   : lto
+builddeps  :
+    - pkgconfig(xxf86vm)
+    - kconfigwidgets-devel
+    - kdoctools-devel
+    - ki18n-devel
+setup      : |
+    %cmake_ninja
+build      : |
+    %ninja_build
+install    : |
+    %ninja_install
+    rm -rf $installdir/usr/share/doc

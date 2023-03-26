@@ -1,0 +1,29 @@
+name       : swipl
+version    : 8.2.0
+release    : 10
+source     :
+    - git|https://github.com/SWI-Prolog/swipl : V8.2.0
+license    : BSD-3-Clause
+component  : programming
+summary    : SWI-Prolog offers a comprehensive free Prolog environment
+description: |
+    SWI-Prolog is a versatile implementation of the Prolog language. Its robust multi-threading, extended data types, unbounded arithmetic and Unicode representation of text allow for natural representation of documents (e.g., XML, JSON, RDF) and exchange of data with other programming paradigms.
+builddeps  :
+    - pkgconfig(libarchive)
+    - pkgconfig(libedit)
+    - pkgconfig(libjpeg)
+    - pkgconfig(libpcre2-posix)
+    - pkgconfig(libunwind)
+    - pkgconfig(libxcrypt)
+    - pkgconfig(xext)
+    - pkgconfig(xft)
+    - pkgconfig(xinerama)
+    - pkgconfig(xpm)
+    - pkgconfig(xt)
+    - unixodbc-devel
+setup      : |
+    %cmake_ninja
+build      : |
+    %ninja_build
+install    : |
+    %ninja_install

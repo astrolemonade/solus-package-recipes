@@ -1,0 +1,33 @@
+name       : solid
+version    : 5.101.0
+release    : 70
+source     :
+    - https://cdn.download.kde.org/stable/frameworks/5.101/solid-5.101.0.tar.xz : 7057825d5de721858af9be698a7114cd45e33bee7c06006a8ec68c05bf141a7a
+homepage   : https://community.kde.org/Frameworks
+license    :
+    - BSD-3-Clause
+    - LGPL-2.1-only
+    - LGPL-2.1-or-later
+component  : desktop.library
+summary    : Desktop hardware abstraction.
+description: |
+    Desktop hardware abstraction.
+optimize   : lto
+builddeps  :
+    - pkgconfig(Qt5Designer)
+    - pkgconfig(Qt5Multimedia)
+    - pkgconfig(Qt5Quick)
+    - extra-cmake-modules
+    - media-player-info
+rundeps    :
+    - media-player-info
+    - devel :
+        - extra-cmake-modules
+        - qt5-tools-devel
+setup      : |
+    %cmake_ninja -DBUILD_QCH=ON \
+                -DBUILD_TESTING=OFF
+build      : |
+    %ninja_build
+install    : |
+    %ninja_install

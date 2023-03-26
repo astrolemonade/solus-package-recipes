@@ -1,0 +1,121 @@
+<PISI>
+    <Source>
+        <Name>haskell-gio</Name>
+        <Packager>
+            <Name>Bryan T. Meyers</Name>
+            <Email>bmeyers@datadrake.com</Email>
+        </Packager>
+        <License>LGPL-2.1-only</License>
+        <PartOf>programming.haskell</PartOf>
+        <Summary xml:lang="en">Binding to GIO</Summary>
+        <Description xml:lang="en">GIO is striving to provide a modern, easy-to-use VFS API that sits at the right level in the library stack. The goal is to overcome the shortcomings of GnomeVFS and provide an API that is so good that developers prefer it over raw POSIX calls. Among other things that means using GObject. It also means not cloning the POSIX API, but providing higher-level, document-centric interfaces.
+</Description>
+        <Archive type="binary" sha1sum="79eb0752a961b8e0d15c77d298c97498fbc89c5a">https://getsol.us/sources/README.Solus</Archive>
+    </Source>
+    <Package>
+        <Name>haskell-gio</Name>
+        <Summary xml:lang="en">Binding to GIO</Summary>
+        <Description xml:lang="en">GIO is striving to provide a modern, easy-to-use VFS API that sits at the right level in the library stack. The goal is to overcome the shortcomings of GnomeVFS and provide an API that is so good that developers prefer it over raw POSIX calls. Among other things that means using GObject. It also means not cloning the POSIX API, but providing higher-level, document-centric interfaces.
+</Description>
+        <PartOf>programming.haskell</PartOf>
+        <Files>
+            <Path fileType="library">/usr/lib64/ghc-8.6.5/gio-0.13.8.1/System/GIO.dyn_hi</Path>
+            <Path fileType="library">/usr/lib64/ghc-8.6.5/gio-0.13.8.1/System/GIO.hi</Path>
+            <Path fileType="library">/usr/lib64/ghc-8.6.5/gio-0.13.8.1/System/GIO/Async/AsyncResult.chi</Path>
+            <Path fileType="library">/usr/lib64/ghc-8.6.5/gio-0.13.8.1/System/GIO/Async/AsyncResult.dyn_hi</Path>
+            <Path fileType="library">/usr/lib64/ghc-8.6.5/gio-0.13.8.1/System/GIO/Async/AsyncResult.hi</Path>
+            <Path fileType="library">/usr/lib64/ghc-8.6.5/gio-0.13.8.1/System/GIO/Async/Cancellable.chi</Path>
+            <Path fileType="library">/usr/lib64/ghc-8.6.5/gio-0.13.8.1/System/GIO/Async/Cancellable.dyn_hi</Path>
+            <Path fileType="library">/usr/lib64/ghc-8.6.5/gio-0.13.8.1/System/GIO/Async/Cancellable.hi</Path>
+            <Path fileType="library">/usr/lib64/ghc-8.6.5/gio-0.13.8.1/System/GIO/Enums.chi</Path>
+            <Path fileType="library">/usr/lib64/ghc-8.6.5/gio-0.13.8.1/System/GIO/Enums.dyn_hi</Path>
+            <Path fileType="library">/usr/lib64/ghc-8.6.5/gio-0.13.8.1/System/GIO/Enums.hi</Path>
+            <Path fileType="library">/usr/lib64/ghc-8.6.5/gio-0.13.8.1/System/GIO/File/AppInfo.chi</Path>
+            <Path fileType="library">/usr/lib64/ghc-8.6.5/gio-0.13.8.1/System/GIO/File/AppInfo.dyn_hi</Path>
+            <Path fileType="library">/usr/lib64/ghc-8.6.5/gio-0.13.8.1/System/GIO/File/AppInfo.hi</Path>
+            <Path fileType="library">/usr/lib64/ghc-8.6.5/gio-0.13.8.1/System/GIO/File/ContentType.chi</Path>
+            <Path fileType="library">/usr/lib64/ghc-8.6.5/gio-0.13.8.1/System/GIO/File/ContentType.dyn_hi</Path>
+            <Path fileType="library">/usr/lib64/ghc-8.6.5/gio-0.13.8.1/System/GIO/File/ContentType.hi</Path>
+            <Path fileType="library">/usr/lib64/ghc-8.6.5/gio-0.13.8.1/System/GIO/File/File.chi</Path>
+            <Path fileType="library">/usr/lib64/ghc-8.6.5/gio-0.13.8.1/System/GIO/File/File.dyn_hi</Path>
+            <Path fileType="library">/usr/lib64/ghc-8.6.5/gio-0.13.8.1/System/GIO/File/File.hi</Path>
+            <Path fileType="library">/usr/lib64/ghc-8.6.5/gio-0.13.8.1/System/GIO/File/FileAttribute.dyn_hi</Path>
+            <Path fileType="library">/usr/lib64/ghc-8.6.5/gio-0.13.8.1/System/GIO/File/FileAttribute.hi</Path>
+            <Path fileType="library">/usr/lib64/ghc-8.6.5/gio-0.13.8.1/System/GIO/File/FileEnumerator.chi</Path>
+            <Path fileType="library">/usr/lib64/ghc-8.6.5/gio-0.13.8.1/System/GIO/File/FileEnumerator.dyn_hi</Path>
+            <Path fileType="library">/usr/lib64/ghc-8.6.5/gio-0.13.8.1/System/GIO/File/FileEnumerator.hi</Path>
+            <Path fileType="library">/usr/lib64/ghc-8.6.5/gio-0.13.8.1/System/GIO/File/FileInfo.chi</Path>
+            <Path fileType="library">/usr/lib64/ghc-8.6.5/gio-0.13.8.1/System/GIO/File/FileInfo.dyn_hi</Path>
+            <Path fileType="library">/usr/lib64/ghc-8.6.5/gio-0.13.8.1/System/GIO/File/FileInfo.hi</Path>
+            <Path fileType="library">/usr/lib64/ghc-8.6.5/gio-0.13.8.1/System/GIO/File/FileMonitor.chi</Path>
+            <Path fileType="library">/usr/lib64/ghc-8.6.5/gio-0.13.8.1/System/GIO/File/FileMonitor.dyn_hi</Path>
+            <Path fileType="library">/usr/lib64/ghc-8.6.5/gio-0.13.8.1/System/GIO/File/FileMonitor.hi</Path>
+            <Path fileType="library">/usr/lib64/ghc-8.6.5/gio-0.13.8.1/System/GIO/File/IOError.chi</Path>
+            <Path fileType="library">/usr/lib64/ghc-8.6.5/gio-0.13.8.1/System/GIO/File/IOError.dyn_hi</Path>
+            <Path fileType="library">/usr/lib64/ghc-8.6.5/gio-0.13.8.1/System/GIO/File/IOError.hi</Path>
+            <Path fileType="library">/usr/lib64/ghc-8.6.5/gio-0.13.8.1/System/GIO/File/MountOperation.chi</Path>
+            <Path fileType="library">/usr/lib64/ghc-8.6.5/gio-0.13.8.1/System/GIO/File/MountOperation.dyn_hi</Path>
+            <Path fileType="library">/usr/lib64/ghc-8.6.5/gio-0.13.8.1/System/GIO/File/MountOperation.hi</Path>
+            <Path fileType="library">/usr/lib64/ghc-8.6.5/gio-0.13.8.1/System/GIO/Icons/Emblem.chi</Path>
+            <Path fileType="library">/usr/lib64/ghc-8.6.5/gio-0.13.8.1/System/GIO/Icons/Emblem.dyn_hi</Path>
+            <Path fileType="library">/usr/lib64/ghc-8.6.5/gio-0.13.8.1/System/GIO/Icons/Emblem.hi</Path>
+            <Path fileType="library">/usr/lib64/ghc-8.6.5/gio-0.13.8.1/System/GIO/Icons/EmblemedIcon.chi</Path>
+            <Path fileType="library">/usr/lib64/ghc-8.6.5/gio-0.13.8.1/System/GIO/Icons/EmblemedIcon.dyn_hi</Path>
+            <Path fileType="library">/usr/lib64/ghc-8.6.5/gio-0.13.8.1/System/GIO/Icons/EmblemedIcon.hi</Path>
+            <Path fileType="library">/usr/lib64/ghc-8.6.5/gio-0.13.8.1/System/GIO/Icons/FileIcon.chi</Path>
+            <Path fileType="library">/usr/lib64/ghc-8.6.5/gio-0.13.8.1/System/GIO/Icons/FileIcon.dyn_hi</Path>
+            <Path fileType="library">/usr/lib64/ghc-8.6.5/gio-0.13.8.1/System/GIO/Icons/FileIcon.hi</Path>
+            <Path fileType="library">/usr/lib64/ghc-8.6.5/gio-0.13.8.1/System/GIO/Icons/Icon.chi</Path>
+            <Path fileType="library">/usr/lib64/ghc-8.6.5/gio-0.13.8.1/System/GIO/Icons/Icon.dyn_hi</Path>
+            <Path fileType="library">/usr/lib64/ghc-8.6.5/gio-0.13.8.1/System/GIO/Icons/Icon.hi</Path>
+            <Path fileType="library">/usr/lib64/ghc-8.6.5/gio-0.13.8.1/System/GIO/Icons/ThemedIcon.chi</Path>
+            <Path fileType="library">/usr/lib64/ghc-8.6.5/gio-0.13.8.1/System/GIO/Icons/ThemedIcon.dyn_hi</Path>
+            <Path fileType="library">/usr/lib64/ghc-8.6.5/gio-0.13.8.1/System/GIO/Icons/ThemedIcon.hi</Path>
+            <Path fileType="library">/usr/lib64/ghc-8.6.5/gio-0.13.8.1/System/GIO/Signals.chi</Path>
+            <Path fileType="library">/usr/lib64/ghc-8.6.5/gio-0.13.8.1/System/GIO/Signals.dyn_hi</Path>
+            <Path fileType="library">/usr/lib64/ghc-8.6.5/gio-0.13.8.1/System/GIO/Signals.hi</Path>
+            <Path fileType="library">/usr/lib64/ghc-8.6.5/gio-0.13.8.1/System/GIO/Types.chi</Path>
+            <Path fileType="library">/usr/lib64/ghc-8.6.5/gio-0.13.8.1/System/GIO/Types.dyn_hi</Path>
+            <Path fileType="library">/usr/lib64/ghc-8.6.5/gio-0.13.8.1/System/GIO/Types.hi</Path>
+            <Path fileType="library">/usr/lib64/ghc-8.6.5/gio-0.13.8.1/System/GIO/Volumes/Drive.chi</Path>
+            <Path fileType="library">/usr/lib64/ghc-8.6.5/gio-0.13.8.1/System/GIO/Volumes/Drive.dyn_hi</Path>
+            <Path fileType="library">/usr/lib64/ghc-8.6.5/gio-0.13.8.1/System/GIO/Volumes/Drive.hi</Path>
+            <Path fileType="library">/usr/lib64/ghc-8.6.5/gio-0.13.8.1/System/GIO/Volumes/Mount.chi</Path>
+            <Path fileType="library">/usr/lib64/ghc-8.6.5/gio-0.13.8.1/System/GIO/Volumes/Mount.dyn_hi</Path>
+            <Path fileType="library">/usr/lib64/ghc-8.6.5/gio-0.13.8.1/System/GIO/Volumes/Mount.hi</Path>
+            <Path fileType="library">/usr/lib64/ghc-8.6.5/gio-0.13.8.1/System/GIO/Volumes/Volume.chi</Path>
+            <Path fileType="library">/usr/lib64/ghc-8.6.5/gio-0.13.8.1/System/GIO/Volumes/Volume.dyn_hi</Path>
+            <Path fileType="library">/usr/lib64/ghc-8.6.5/gio-0.13.8.1/System/GIO/Volumes/Volume.hi</Path>
+            <Path fileType="library">/usr/lib64/ghc-8.6.5/gio-0.13.8.1/System/GIO/Volumes/VolumeMonitor.chi</Path>
+            <Path fileType="library">/usr/lib64/ghc-8.6.5/gio-0.13.8.1/System/GIO/Volumes/VolumeMonitor.dyn_hi</Path>
+            <Path fileType="library">/usr/lib64/ghc-8.6.5/gio-0.13.8.1/System/GIO/Volumes/VolumeMonitor.hi</Path>
+            <Path fileType="library">/usr/lib64/ghc-8.6.5/gio-0.13.8.1/libHSgio-0.13.8.1-EM0drSpniCALCw3Cf3tfMH-ghc8.6.5.so</Path>
+            <Path fileType="doc">/usr/share/doc/x86_64-linux-ghc-8.6.5/gio-0.13.8.1/COPYING</Path>
+            <Path fileType="data">/usr/share/x86_64-linux-ghc-8.6.5/gio-0.13.8.1/FileManager.hs</Path>
+            <Path fileType="data">/usr/share/x86_64-linux-ghc-8.6.5/gio-0.13.8.1/Makefile</Path>
+        </Files>
+    </Package>
+    <Package>
+        <Name>haskell-gio-devel</Name>
+        <Summary xml:lang="en">Development files for haskell-gio</Summary>
+        <Description xml:lang="en">GIO is striving to provide a modern, easy-to-use VFS API that sits at the right level in the library stack. The goal is to overcome the shortcomings of GnomeVFS and provide an API that is so good that developers prefer it over raw POSIX calls. Among other things that means using GObject. It also means not cloning the POSIX API, but providing higher-level, document-centric interfaces.
+</Description>
+        <PartOf>programming.devel</PartOf>
+        <RuntimeDependencies>
+            <Dependency release="6">haskell-gio</Dependency>
+        </RuntimeDependencies>
+        <Files>
+            <Path fileType="library">/usr/lib64/ghc-8.6.5/gio-0.13.8.1/libHSgio-0.13.8.1-EM0drSpniCALCw3Cf3tfMH.a</Path>
+            <Path fileType="library">/usr/lib64/ghc-8.6.5/package.conf.d/haskell-gio-0.13.8.1.conf</Path>
+        </Files>
+    </Package>
+    <History>
+        <Update release="6">
+            <Date>2020-12-23</Date>
+            <Version>0.13.8.1</Version>
+            <Comment>Packaging update</Comment>
+            <Name>Bryan T. Meyers</Name>
+            <Email>bmeyers@datadrake.com</Email>
+        </Update>
+    </History>
+</PISI>

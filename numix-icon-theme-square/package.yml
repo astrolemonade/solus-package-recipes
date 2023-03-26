@@ -1,0 +1,17 @@
+name       : numix-icon-theme-square
+version    : 22.10.17
+release    : 28
+source     :
+    - https://github.com/numixproject/numix-icon-theme-square/archive/refs/tags/22.10.17.tar.gz : 086f36351a580162c82ce3c94535915ceef8e10a54cb8aefed75460af1be862e
+homepage   : https://numixproject.github.io/
+license    : GPL-3.0-or-later
+component  : desktop.theme
+summary    : Numix Square Icon Theme
+description: |
+    Numix Square is an icon theme from the Numix project
+rundeps    :
+    - numix-icon-theme
+install    : |
+    install -dm00644 $installdir/usr/share/icons/
+    cp -r {Numix-Square,Numix-Square-Light} $installdir/usr/share/icons/
+    chmod -R 00644 $installdir/usr/share/icons/*

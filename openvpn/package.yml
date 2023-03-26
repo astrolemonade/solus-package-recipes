@@ -1,0 +1,37 @@
+name       : openvpn
+version    : 2.5.8
+release    : 24
+source     :
+    - https://github.com/OpenVPN/openvpn/archive/v2.5.8.tar.gz : c216a66c967181b38002c1fd06fb5cad4a8c21865af76cb22b3bf4786070d315
+license    :
+    - GPL-2.0-only
+    - BSD-4-Clause
+    - OpenSSL
+    - Zlib
+component  : network.clients
+homepage   : https://openvpn.net/community/
+summary    : OpenVPN Client
+description: |
+    An easy-to-use, robust, and highly configurable VPN (Virtual Private Network)
+builddeps  :
+    - pkgconfig(liblz4)
+    - pkgconfig(libpkcs11-helper-1)
+    - pkgconfig(lzo2)
+    - python-docutils
+setup      : |
+    %reconfigure --enable-async-push \
+                 --enable-pkcs11 \
+                 --enable-systemd \
+                 --with-crypto-library=openssl
+build      : |
+    %make
+install    : |
+    %make_install
+
+    rm -rf $installdir/usr/share/doc
+check      : |
+    %make check
+
+    # OpenVPN self-test (crypto)
+    ./src/openvpn/openvpn --genkey --secret key
+    ./src/openvpn/openvpn --test-crypto --secret key

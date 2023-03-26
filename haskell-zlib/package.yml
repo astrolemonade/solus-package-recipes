@@ -1,0 +1,24 @@
+name       : haskell-zlib
+version    : 0.6.2.1
+release    : 7
+source     :
+    - https://hackage.haskell.org/package/zlib-0.6.2.1/zlib-0.6.2.1.tar.gz : f0f810ff173560b60392db448455c0513b3239f48e43cb494b3733aa559621d0
+license    : BSD-3-Clause
+component  : programming.haskell
+summary    : This package provides a pure interface for compressing and decompressing streams of data
+description: |
+    This package provides a pure interface for compressing and decompressing streams of data
+builddeps  :
+    - ghc-devel
+    - haskell-cabal-install
+rundeps    :
+    - devel:
+        - ghc-devel
+networking : yes
+setup      : |
+    %cabal_configure
+build      : |
+    %cabal_build
+install    : |
+    %cabal_install
+    %cabal_register

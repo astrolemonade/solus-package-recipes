@@ -1,0 +1,16 @@
+name       : cglm
+version    : 0.8.8
+release    : 7
+source     :
+    - https://github.com/recp/cglm/archive/refs/tags/v0.8.8.tar.gz : 8e3fd955eb7e961e9cf737743009437c29648dcc618bdabaa65db1047445f542
+license    : MIT
+component  : programming.library
+summary    : Highly Optimized Graphics Math (GLM) for C
+description: |
+    cglm is optimized 3D math library written in C99 (compatible with C89). It is similar to original GLM library except this is mainly for C.
+setup      : |
+    %cmake_ninja
+build      : |
+    %ninja_build
+install    : |
+    %ninja_install

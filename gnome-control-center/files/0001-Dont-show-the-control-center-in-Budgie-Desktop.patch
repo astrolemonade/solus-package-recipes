@@ -1,0 +1,12 @@
+diff --git a/shell/org.gnome.Settings.desktop.in.in b/shell/org.gnome.Settings.desktop.in.in
+index 1cb049c..0391860 100644
+--- a/shell/org.gnome.Settings.desktop.in.in
++++ b/shell/org.gnome.Settings.desktop.in.in
+@@ -8,6 +8,7 @@ Type=Application
+ StartupNotify=true
+ Categories=GNOME;GTK;Settings;
+ OnlyShowIn=GNOME;Unity;
++NotShowIn=Budgie;
+ X-GNOME-Bugzilla-Bugzilla=GNOME
+ X-GNOME-Bugzilla-Product=gnome-control-center
+ X-GNOME-Bugzilla-Component=shell

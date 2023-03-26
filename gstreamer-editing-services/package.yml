@@ -1,0 +1,22 @@
+name       : gstreamer-editing-services
+version    : 1.20.3
+release    : 24
+source     :
+    - https://gstreamer.freedesktop.org/src/gst-editing-services/gst-editing-services-1.20.3.tar.xz : 5fd896de69fbe24421eb6b0ff8d2f8b4c3cba3f3025ceacd302172f39a8abaa2
+license    :
+    - GPL-2.0-or-later
+    - LGPL-2.1-or-later
+component  : multimedia.gstreamer
+summary    : Library for creating audio/video editors
+description: |
+    The "GStreamer Editing Services" is a library to simplify the creation of multimedia editing applications. Based on the GStreamer multimedia framework and the GNonLin set of plugins, its goals are to suit all types of editing-related applications.
+builddeps  :
+    - pkgconfig(gstreamer-plugins-bad-1.0)
+    - pkgconfig(gst-validate-1.0)
+    - pkgconfig(pygobject-3.0)
+setup      : |
+    %meson_configure
+build      : |
+    %ninja_build
+install    : |
+    %ninja_install

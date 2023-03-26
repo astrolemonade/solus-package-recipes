@@ -1,0 +1,27 @@
+name       : indicator-application
+version    : 17.04.20161201
+release    : 1
+source     :
+    - https://launchpad.net/ubuntu/+archive/primary/+files/indicator-application_12.10.1+17.04.20161201.orig.tar.gz : 40728c37a04c09dfa9e23346f1b8ecb4dc4a53b8c171c3347970dcda370285d5
+license    : GPL-3.0
+component  : desktop.mate
+summary    : Indicator Application service for MATE
+description: |
+    Indicator Application service for MATE
+builddeps  :
+    - pkgconfig(appindicator3-0.1)
+    - pkgconfig(dbus-glib-1)
+    - pkgconfig(dbusmenu-gtk3-0.4)
+    - pkgconfig(gtk+-3.0)
+    - pkgconfig(indicator3-0.4)
+    - pkgconfig(json-glib-1.0)
+    - gnome-common
+setup      : |
+    %autogen
+build      : |
+    %make
+install    : |
+    %make_install
+    mv $installdir/etc/xdg $installdir/usr/share/.
+    rmdir $installdir/etc
+    rm -rf $installdir/usr/share/upstart

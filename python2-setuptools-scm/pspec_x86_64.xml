@@ -1,0 +1,69 @@
+<PISI>
+    <Source>
+        <Name>python2-setuptools-scm</Name>
+        <Homepage>https://github.com/pypa/setuptools_scm/</Homepage>
+        <Packager>
+            <Name>Algent Albrahimi</Name>
+            <Email>algent@protonmail.com</Email>
+        </Packager>
+        <License>MIT</License>
+        <PartOf>programming.python</PartOf>
+        <Summary xml:lang="en">Manage your Python package versions using scm metadata</Summary>
+        <Description xml:lang="en">setuptools_scm handles managing your Python package versions in scm metadata instead of declaring them as the version argument or in a scm managed file. It also handles file finders for the supported scm.
+</Description>
+        <Archive type="binary" sha1sum="79eb0752a961b8e0d15c77d298c97498fbc89c5a">https://getsol.us/sources/README.Solus</Archive>
+    </Source>
+    <Package>
+        <Name>python2-setuptools-scm</Name>
+        <Summary xml:lang="en">Manage your Python package versions using scm metadata</Summary>
+        <Description xml:lang="en">setuptools_scm handles managing your Python package versions in scm metadata instead of declaring them as the version argument or in a scm managed file. It also handles file finders for the supported scm.
+</Description>
+        <PartOf>programming.python</PartOf>
+        <Files>
+            <Path fileType="library">/usr/lib/python2.7/site-packages/setuptools_scm-5.0.2-py2.7.egg-info/PKG-INFO</Path>
+            <Path fileType="library">/usr/lib/python2.7/site-packages/setuptools_scm-5.0.2-py2.7.egg-info/SOURCES.txt</Path>
+            <Path fileType="library">/usr/lib/python2.7/site-packages/setuptools_scm-5.0.2-py2.7.egg-info/dependency_links.txt</Path>
+            <Path fileType="library">/usr/lib/python2.7/site-packages/setuptools_scm-5.0.2-py2.7.egg-info/entry_points.txt</Path>
+            <Path fileType="library">/usr/lib/python2.7/site-packages/setuptools_scm-5.0.2-py2.7.egg-info/requires.txt</Path>
+            <Path fileType="library">/usr/lib/python2.7/site-packages/setuptools_scm-5.0.2-py2.7.egg-info/top_level.txt</Path>
+            <Path fileType="library">/usr/lib/python2.7/site-packages/setuptools_scm-5.0.2-py2.7.egg-info/zip-safe</Path>
+            <Path fileType="library">/usr/lib/python2.7/site-packages/setuptools_scm/__init__.py</Path>
+            <Path fileType="library">/usr/lib/python2.7/site-packages/setuptools_scm/__init__.pyc</Path>
+            <Path fileType="library">/usr/lib/python2.7/site-packages/setuptools_scm/__main__.py</Path>
+            <Path fileType="library">/usr/lib/python2.7/site-packages/setuptools_scm/__main__.pyc</Path>
+            <Path fileType="library">/usr/lib/python2.7/site-packages/setuptools_scm/config.py</Path>
+            <Path fileType="library">/usr/lib/python2.7/site-packages/setuptools_scm/config.pyc</Path>
+            <Path fileType="library">/usr/lib/python2.7/site-packages/setuptools_scm/discover.py</Path>
+            <Path fileType="library">/usr/lib/python2.7/site-packages/setuptools_scm/discover.pyc</Path>
+            <Path fileType="library">/usr/lib/python2.7/site-packages/setuptools_scm/file_finder.py</Path>
+            <Path fileType="library">/usr/lib/python2.7/site-packages/setuptools_scm/file_finder.pyc</Path>
+            <Path fileType="library">/usr/lib/python2.7/site-packages/setuptools_scm/file_finder_git.py</Path>
+            <Path fileType="library">/usr/lib/python2.7/site-packages/setuptools_scm/file_finder_git.pyc</Path>
+            <Path fileType="library">/usr/lib/python2.7/site-packages/setuptools_scm/file_finder_hg.py</Path>
+            <Path fileType="library">/usr/lib/python2.7/site-packages/setuptools_scm/file_finder_hg.pyc</Path>
+            <Path fileType="library">/usr/lib/python2.7/site-packages/setuptools_scm/git.py</Path>
+            <Path fileType="library">/usr/lib/python2.7/site-packages/setuptools_scm/git.pyc</Path>
+            <Path fileType="library">/usr/lib/python2.7/site-packages/setuptools_scm/hacks.py</Path>
+            <Path fileType="library">/usr/lib/python2.7/site-packages/setuptools_scm/hacks.pyc</Path>
+            <Path fileType="library">/usr/lib/python2.7/site-packages/setuptools_scm/hg.py</Path>
+            <Path fileType="library">/usr/lib/python2.7/site-packages/setuptools_scm/hg.pyc</Path>
+            <Path fileType="library">/usr/lib/python2.7/site-packages/setuptools_scm/integration.py</Path>
+            <Path fileType="library">/usr/lib/python2.7/site-packages/setuptools_scm/integration.pyc</Path>
+            <Path fileType="library">/usr/lib/python2.7/site-packages/setuptools_scm/utils.py</Path>
+            <Path fileType="library">/usr/lib/python2.7/site-packages/setuptools_scm/utils.pyc</Path>
+            <Path fileType="library">/usr/lib/python2.7/site-packages/setuptools_scm/version.py</Path>
+            <Path fileType="library">/usr/lib/python2.7/site-packages/setuptools_scm/version.pyc</Path>
+            <Path fileType="library">/usr/lib/python2.7/site-packages/setuptools_scm/win_py31_compat.py</Path>
+            <Path fileType="library">/usr/lib/python2.7/site-packages/setuptools_scm/win_py31_compat.pyc</Path>
+        </Files>
+    </Package>
+    <History>
+        <Update release="2">
+            <Date>2022-08-26</Date>
+            <Version>5.0.2</Version>
+            <Comment>Packaging update</Comment>
+            <Name>Algent Albrahimi</Name>
+            <Email>algent@protonmail.com</Email>
+        </Update>
+    </History>
+</PISI>

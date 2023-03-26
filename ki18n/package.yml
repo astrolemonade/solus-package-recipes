@@ -1,0 +1,30 @@
+name       : ki18n
+version    : 5.101.0
+release    : 69
+source     :
+    - https://cdn.download.kde.org/stable/frameworks/5.101/ki18n-5.101.0.tar.xz : bf1530be9279d476c0531988eeb1c032e208f6010c8f00880bb5d694229fef65
+homepage   : https://community.kde.org/Frameworks
+license    :
+    - BSD-3-Clause
+    - LGPL-2.0-only
+    - LGPL-2.0-or-later
+    - LGPL-2.1-only
+component  : programming.tools
+summary    : KDE Gettext-based UI text internationalization.
+description: |
+    KDE Gettext-based UI text internationalization.
+optimize   : lto
+builddeps  :
+    - pkgconfig(Qt5Designer)
+    - pkgconfig(Qt5Quick)
+    - extra-cmake-modules
+rundeps    :
+    - devel :
+        - extra-cmake-modules
+        - qt5-tools-devel
+setup      : |
+    %cmake_ninja -DBUILD_QCH=ON
+build      : |
+    %ninja_build
+install    : |
+    %ninja_install

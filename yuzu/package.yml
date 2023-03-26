@@ -1,0 +1,40 @@
+name       : yuzu
+version    : 1293
+release    : 19
+source     :
+    - git|https://github.com/yuzu-emu/yuzu-mainline.git : mainline-0-1293
+license    : GPL-3.0-or-later
+summary    : The world's most popular, open-source, Nintendo Switch emulator.
+description: |
+    The world's most popular, open-source, Nintendo Switch emulator - started by the creators of Citra.
+component  : games.emulator
+builddeps  :
+    - pkgconfig(Qt5Multimedia)
+    - pkgconfig(fmt)
+    - pkgconfig(glu)
+    - pkgconfig(inih)
+    - pkgconfig(libavcodec)
+    - pkgconfig(libenet)
+    - pkgconfig(liblz4)
+    - pkgconfig(libusb-1.0)
+    - pkgconfig(libva)
+    - pkgconfig(libzstd)
+    - pkgconfig(opus)
+    - pkgconfig(sdl2)
+    - pkgconfig(x11)
+    - glslang
+    - libboost-devel
+    - nlohmann-json
+    - robin-map
+setup      : |
+    %cmake_ninja \
+        -DDYNARMIC_NO_BUNDLED_ROBIN_MAP=TRUE \
+        -DYUZU_USE_BUNDLED_QT=OFF \
+        -DYUZU_USE_BUNDLED_SDL2=OFF \
+        -DYUZU_USE_EXTERNAL_SDL2=OFF \
+        -DYUZU_USE_BUNDLED_OPUS=OFF \
+        -DYUZU_TESTS=OFF
+build      : |
+    %ninja_build
+install    : |
+    %ninja_install

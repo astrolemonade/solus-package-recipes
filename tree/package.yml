@@ -1,0 +1,16 @@
+name       : tree
+version    : 2.0.4
+release    : 6
+source     :
+    - https://gitlab.com/OldManProgrammer/unix-tree/-/archive/2.0.4/unix-tree-2.0.4.tar.gz : c51b3a758fcbc25c7f88316491db5ac6926d032f45af96687297a95a3b7b15de
+homepage   : https://gitlab.com/OldManProgrammer/unix-tree
+license    : GPL-2.0-or-later
+component  : system.utils
+summary    : list contents of directories in a tree-like format.
+description: |
+    Tree is a recursive directory listing command that produces a depth indented listing of files, which is colorized ala dircolors if the LS_COLORS environment variable is set and output is to tty
+build      : |
+    %make
+install    : |
+    install -Dm00664 $workdir/doc/tree.1 $installdir/usr/share/man/man1/tree.1
+    install -Dm00755 $workdir/tree $installdir/usr/bin/tree

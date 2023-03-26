@@ -1,0 +1,43 @@
+name       : residualvm
+version    : 0.3.1
+release    : 2
+source     :
+    - https://github.com/residualvm/residualvm/archive/0.3.1.tar.gz : 515b02129dd374bc9c0b732ddeaaaa3a342cc25ea0ea3c4ccf19141b5d362e1d
+license    :
+    - BSD-3-Clause
+    - GPL-2.0-or-later
+    - GPL-3.0-or-later WITH Font-exception-2.0
+    - ISC
+    - LGPL-2.1-or-later
+    - MIT
+    - OFL-1.1
+component  : games.emulator
+homepage   : https://www.residualvm.org/
+summary    : Cross-platform 3D game interpreter which allows you to play LucasArts' Lua-based 3D adventures
+description: |
+    ResidualVM is a game engine reimplementation that allows you to play 3D adventure games such as Grim Fandango and Myst III.
+    ResidualVM utilizes OpenGL for 3D graphics hardware acceleration. A software renderer is also included for machines without hardware OpenGL.
+builddeps  :
+    - pkgconfig(alsa)
+    - pkgconfig(freetype2)
+    - pkgconfig(glew)
+    - pkgconfig(libjpeg)
+    - pkgconfig(libmpeg2)
+    - pkgconfig(sdl2)
+    - pkgconfig(theora)
+    - pkgconfig(vorbis)
+    - pkgconfig(x11)
+    - libmad-devel
+setup      : |
+    ./configure \
+        --datarootdir=/usr/share/ \
+        --enable-c++11 \
+        --enable-release \
+        --libdir=%libdir% \
+        --mandir=/usr/share/man/ \
+        --prefix=/usr/
+build      : |
+    %make
+install    : |
+    %make_install
+    rm -rv $installdir/usr/share/{appdata,doc}/

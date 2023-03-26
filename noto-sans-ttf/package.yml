@@ -1,0 +1,45 @@
+name       : noto-sans-ttf
+version    : 23.2.1
+release    : 22
+source     :
+    - https://github.com/notofonts/notofonts.github.io/archive/refs/tags/noto-monthly-release-23.3.1.tar.gz : 6c299a6658ea750126da2cdc71b8214bce0acbea9f4f1ba9949a391889641236
+    - https://github.com/googlefonts/noto-emoji/archive/refs/tags/v2.038.tar.gz : 47d8b39733a1e82efced7dee96e30cb31d205b150dc3ca44d59abbb22d027195
+homepage   : https://fonts.google.com/noto
+extract    : no
+license    : OFL-1.1
+component  :
+    - desktop.font
+    - ^noto-serif-ttf : desktop.font
+summary    :
+    - Noto Sans Fonts (Multi-lingual and Emoji)
+    - ^noto-serif-ttf : Noto Serif Fonts (Multi-lingual)
+description: |
+    Noto's goal is to provide a beautiful reading experience for all languages. It is a free, professionally-designed, open-source collection of fonts with a harmonious look and feel in multiple weights and styles.
+install    : |
+    #extract it
+    for i in $sources/*.tar.gz; do
+        tar xf ${i}
+    done
+
+    install -Ddm00755 $installdir/usr/share/fonts/truetype/noto-sans-ttf
+
+    # Install emoji
+    install -Dm00644 noto-emoji*/fonts/NotoColorEmoji.ttf $installdir/usr/share/fonts/truetype/noto-sans-ttf
+
+    # Install fonts
+    pushd notofonts*/fonts
+    for tff in Noto*/hinted/ttf; do
+        pushd $tff
+            rm -f *-{Black,Extra}*.ttf *.ttc
+            install -m00644 * $installdir/usr/share/fonts/truetype/noto-sans-ttf
+        popd
+    done
+    popd
+
+    # Install fontconfig
+    install -Dm00644 $pkgfiles/66-noto-color-emoji.conf -t $installdir/usr/share/fontconfig/conf.avail
+
+    install -dm00755 $installdir/usr/share/fonts/conf.d
+    ln -sv /usr/share/fontconfig/conf.avail/66-noto-color-emoji.conf $installdir/usr/share/fonts/conf.d/66-noto-color-emoji.conf
+patterns   :
+    - ^noto-serif-ttf : /usr/share/fonts/truetype/noto-sans-ttf/NotoSerif*

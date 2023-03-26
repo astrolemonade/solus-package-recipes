@@ -1,0 +1,29 @@
+name       : sudo
+version    : 1.9.12_p1
+release    : 45
+source     :
+    - https://www.sudo.ws/dist/sudo-1.9.12p1.tar.gz : 475a18a8eb3da8b2917ceab063a6baf51ea09128c3c47e3e0e33ab7497bab7d8
+homepage   : https://www.sudo.ws/
+license    : ISC
+summary    : Run commands as a privileged user
+component  : system.base
+description: |
+    The Sudo package allows a system administrator to give certain users (or groups of users) the ability to run some (or all) commands as root or another user while logging the commands and arguments.
+setup      : |
+    %patch -p1 < $pkgfiles/do-not-install-sample-sudoers-etc-sudoers.dist.patch
+    %configure --with-all-insults \
+               --with-env-editor \
+               --with-editor=/usr/bin/nano \
+               --with-tty-tickets \
+               --without-sendmail
+build      : |
+    %make
+install    : |
+    %make_install
+    rm -rf $installdir/{var,run}
+    # sysusers group it
+    install -Dm00644 $pkgfiles/sudo.sysusers $installdir/%libdir%/sysusers.d/sudo.conf
+    # sudoers file
+    install -Dm00400 $pkgfiles/sudoers $installdir/etc/sudoers
+    # sudo pam
+    install -Dm00644 $pkgfiles/pam.d/sudo $installdir/usr/share/defaults/etc/pam.d/sudo

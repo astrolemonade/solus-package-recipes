@@ -1,0 +1,69 @@
+#!/bin/bash
+
+ASSETS=$(realpath $(dirname $0))
+if [[ ! -x $ASSETS/create-repo ]]; then
+    echo "Unable to find create-repo"
+    exit 1
+fi
+
+if [[ ! -x $ASSETS/init-repo ]]; then
+    echo "Unable to find create-repo"
+    exit 1
+fi
+
+PKG="$1"
+DIFF="$2"
+
+# Need a package name too.
+if [[ -z "${PKG}" ]]; then
+    echo "Please provide a package name!"
+    exit 1
+fi
+
+# Basic repo name linting check
+if [[ ! "${PKG}" =~ ^[a-z0-9]+(-[a-z0-9]+)*$ ]]; then
+    echo "Package name must only contain lowercase, numbers and dashes."
+    exit 1
+fi
+
+# Need a diff ID
+if [[ -z "${DIFF}" ]]; then
+    echo "Please provide the differential ID"
+    exit 1
+fi
+
+# Attempt to create the repository
+$ASSETS/create-repo $PKG
+if [[ $? -ne 0 ]]; then
+    echo "Failed to create the repository"
+    exit 1
+fi
+
+# Async might bugger us.
+echo "Sleeping to see if repo construction worked.."
+sleep 4
+
+# Clone new repo
+git clone ssh://vcs@dev.getsol.us:2222/source/${PKG}.git
+if [[ $? -ne 0 ]]; then
+    echo "Failed to clone the repository"
+    exit 1
+fi
+
+# Change to the new repo
+pushd ${PKG}
+if [[ $? -ne 0 ]]; then
+    echo "Failed to cd to the repository"
+    exit 1
+fi
+
+# Ensure we init the repo
+$ASSETS/init-repo
+
+if [[ $? -ne 0 ]]; then
+    echo "Failed to initialise the repository"
+    exit 1
+fi
+
+# Apply the given patch
+arc patch ${DIFF} --

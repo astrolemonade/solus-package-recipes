@@ -1,0 +1,21 @@
+name       : libgtksourceview5
+version    : 5.6.1
+release    : 2
+source     :
+    - https://download.gnome.org/sources/gtksourceview/5.6/gtksourceview-5.6.1.tar.xz : 659d9cc9d034a114f07e7e134ee80d77dec0497cb1516ae5369119c2fcb9da16
+license    : LGPL-2.1
+component  : desktop.gnome.core
+summary    : A text widget adding syntax highlighting and more to GNOME
+description: |
+    A text widget adding syntax highlighting and more to GNOME
+builddeps  :
+    - pkgconfig(gtk4)
+    - pkgconfig(libxml-2.0)
+    - pkgconfig(libpcre2-posix)
+    - valadoc
+setup      : |
+    %meson_configure
+build      : |
+    %ninja_build
+install    : |
+    %ninja_install

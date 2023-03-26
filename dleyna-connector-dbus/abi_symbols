@@ -1,0 +1,6 @@
+libdleyna-connector-dbus.so:__bss_start
+libdleyna-connector-dbus.so:_edata
+libdleyna-connector-dbus.so:_end
+libdleyna-connector-dbus.so:_fini
+libdleyna-connector-dbus.so:_init
+libdleyna-connector-dbus.so:dleyna_connector_get_interface

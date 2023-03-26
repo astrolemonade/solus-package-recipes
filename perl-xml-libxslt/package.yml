@@ -1,0 +1,26 @@
+name       : perl-xml-libxslt
+version    : '2.002000'
+release    : 8
+source     :
+    - https://cpan.metacpan.org/authors/id/S/SH/SHLOMIF/XML-LibXSLT-2.002000.tar.gz : 4fd131c5a15f2f79e706810a70f3a5d08a6d1c946dcb39523f2c2ac948118a17
+homepage   : https://metacpan.org/pod/XML::LibXSLT
+license    : Artistic-1.0-Perl
+component  : programming.perl
+summary    : XML::LibXSLT - Interface to the GNOME libxslt library
+description: |
+    This module is an interface to the GNOME project's libxslt. This is an extremely good XSLT engine, highly compliant and also very fast. I have tests showing this to be more than twice as fast as Sablotron.
+builddeps  :
+    - pkgconfig(libxslt)
+    - libgcrypt-devel
+    - perl-xml-libxml
+    - perl-test-pod
+rundeps    :
+    - perl-xml-libxml
+setup      : |
+    %perl_setup
+build      : |
+    %perl_build
+install    : |
+    %perl_install
+check      : |
+    %perl_build test

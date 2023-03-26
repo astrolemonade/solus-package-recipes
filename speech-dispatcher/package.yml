@@ -1,0 +1,31 @@
+name       : speech-dispatcher
+version    : 0.11.4
+release    : 21
+source     :
+    - https://github.com/brailcom/speechd/releases/download/0.11.4/speech-dispatcher-0.11.4.tar.gz : 8c09221bb72d9db5c89cfd7b919771832b86c3a3772d645601696494edf566b9
+homepage   : https://freebsoft.org/speechd
+license    :
+    - GPL-2.0-or-later
+    - LGPL-2.1-or-later
+component  : desktop.library
+summary    : Common high-level interface to speech synthesis
+description: |
+    Speech Dispatcher Project provides a high-level device independent layer for access to speech synthesis through a simple, stable and well documented interface.
+builddeps  :
+    - pkgconfig(alsa)
+    - pkgconfig(ao)
+    - pkgconfig(dotconf)
+    - pkgconfig(espeak-ng)
+    - pkgconfig(glib-2.0)
+    - pkgconfig(libpulse-simple)
+    - pkgconfig(python3)
+    - pkgconfig(sndfile)
+setup      : |
+    %apply_patches
+    %reconfigure --disable-static  --with-kali=no --with-baratinoo=no --with-ibmtts=no --with-voxin=no
+build      : |
+    %make
+install    : |
+    %make_install
+check      : |
+    %make check

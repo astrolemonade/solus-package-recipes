@@ -1,0 +1,21 @@
+name       : matcha-gtk-theme
+version    : 2022.11.15
+release    : 25
+source     :
+    - https://github.com/vinceliuice/Matcha-gtk-theme/archive/refs/tags/2022-11-15.tar.gz : bd6f46607fc5c7ff97a7b5ee8cb061bc4dfc45978c86181247da163c0a3d3968
+homepage   : https://github.com/vinceliuice/Matcha-gtk-theme
+license    : GPL-3.0-or-later
+component  : desktop.theme
+summary    : Matcha is a flat Design theme for GTK 4, GTK 3, GTK 2 and Gnome-Shell
+description: |
+    Matcha is a flat Design theme for GTK 4, GTK 3, GTK 2 and Gnome-Shell based on Arc gtk theme.
+rundeps    :
+    - gtk-engines
+    - gtk2-engine-murrine
+install    : |
+    install -dm00644 $installdir/usr/share/themes
+    ./install.sh --dest $installdir/usr/share/themes
+    rm -rf $installdir/usr/share/themes/*/{cinnamon,unity}
+
+    # Remove hdpi and xhdpi xfwm4 theme support
+    rm -rf $installdir/usr/share/themes/*hdpi*

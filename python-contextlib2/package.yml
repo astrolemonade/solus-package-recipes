@@ -1,0 +1,16 @@
+name       : python-contextlib2
+version    : 0.6.0
+release    : 1
+source     :
+    - https://files.pythonhosted.org/packages/02/54/669207eb72e3d8ae8b38aa1f0703ee87a0e9f88f30d3c0a47bebdb6de242/contextlib2-0.6.0.post1.tar.gz : 01f490098c18b19d2bd5bb5dc445b2054d2fa97f09a4280ba2c5f3c394c8162e
+license    : Python-2.0
+component  : programming.python
+summary    : Backport of pathlib aiming to support the full stdlib Python API. 
+description: |
+    Backport of pathlib aiming to support the full stdlib Python API. 
+builddeps  :
+    - python-setuptools 
+build      : |
+    %python_setup
+install    : |
+    %python_install

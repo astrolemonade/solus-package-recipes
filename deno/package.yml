@@ -1,0 +1,17 @@
+name       : deno
+version    : 1.29.1
+release    : 16
+source     :
+    - https://github.com/denoland/deno/archive/v1.29.1.tar.gz : c340f24515620ee8920f930206184c2c83d34c0809024d69592e6f2e38461a80
+license    : MIT
+component  : programming.tools
+summary    : A secure JavaScript and TypeScript runtime.
+description: |
+    Deno is a simple, modern and secure runtime for JavaScript and TypeScript that uses V8 and is built in Rust.
+networking : yes
+builddeps  :
+    - cargo
+build      : |
+    cargo build --release
+install    : |
+    install -Dm00755 target/release/deno $installdir/usr/bin/deno

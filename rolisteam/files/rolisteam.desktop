@@ -1,0 +1,7 @@
+[Desktop Entry]
+Name=Rolisteam
+Comment=Rolisteam helps you to manage a tabletop role playing game with remote friends/players.
+Type=Application
+Exec=rolisteam
+Icon=rolisteam
+Categories=Game

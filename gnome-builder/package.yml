@@ -1,0 +1,56 @@
+name       : gnome-builder
+version    : '43.4'
+release    : 80
+homepage   : https://wiki.gnome.org/Apps/Builder
+source     :
+    - https://download.gnome.org/sources/gnome-builder/43/gnome-builder-43.4.tar.xz : 1e0d6d67845c19bec9e3add59695f9a531d72a0e542b203acc90fb381227c2bc
+license    : GPL-2.0-or-later
+component  : programming.ide
+summary    : Gnome Builder
+description: |
+    Builder is a new IDE for GNOME that is focused on bringing the power of our platform to more developers than ever before.
+builddeps  :
+    - pkgconfig(flatpak)
+    - pkgconfig(gjs-1.0)
+    - pkgconfig(dspy-1)
+    - pkgconfig(editorconfig)
+    - pkgconfig(enchant-2)
+    - pkgconfig(gtksourceview-5)
+    - pkgconfig(jsonrpc-glib-1.0)
+    - pkgconfig(libadwaita-1)
+    - pkgconfig(libcmark)
+    - pkgconfig(libgit2-glib-1.0)
+    - pkgconfig(libpanel-1)
+    - pkgconfig(libpeas-1.0)
+    - pkgconfig(libportal)
+    - pkgconfig(mm-common-util)
+    - pkgconfig(sysprof-4)
+    - pkgconfig(template-glib-1.0)
+    - pkgconfig(vte-2.91)
+    - pkgconfig(webkit2gtk-5.0)
+    - ctags
+    - desktop-file-utils
+    - itstool
+    - llvm-clang-devel
+    - vala
+rundeps    :
+    - ctags
+    - flatpak
+    - python-jedi
+    - python-lxml
+    - valgrind # Ensure the "run with valgrind" support works OOTB
+setup      : |
+    %meson_configure \
+        -Dplugin_autotools=true \
+        -Dplugin_cargo=true \
+        -Dplugin_ctags=true \
+        -Dplugin_flatpak=true \
+        -Dplugin_make=true \
+        -Dplugin_meson=true \
+        -Dplugin_spellcheck=true \
+        -Dplugin_sysprof=true \
+        -Dplugin_update_manager=false
+build      : |
+    %ninja_build
+install    : |
+    %ninja_install

@@ -1,0 +1,32 @@
+name       : python-jupyter_core
+version    : 4.11.2
+release    : 13
+source     :
+    - https://files.pythonhosted.org/packages/source/j/jupyter_core/jupyter_core-4.11.2.tar.gz : c2909b9bc7dca75560a6c5ae78c34fd305ede31cd864da3c0d0bb2ed89aa9337
+homepage   : https://github.com/jupyter/jupyter_core
+license    : BSD-3-Clause
+component  : programming.python
+summary    : Core Jupyter functionality
+description: |
+    Jupyter core package. A base package on which Jupyter projects rely.
+builddeps  :
+    - python-build
+    - python-hatchling
+    - python-installer
+    - python-ipykernel  # check
+    - python-pytest     # check
+    - python-traitlets  # check
+rundeps    :
+    - python-traitlets
+setup      : |
+    %python3_setup
+install    : |
+    %python3_install
+    install -Dm00644 examples/jupyter-completion.bash $installdir/usr/share/bash-completion/completions/jupyter
+    install -Dm00644 examples/completions-zsh $installdir/usr/share/zsh/site-functions/_jupyter
+check      : |
+    # Failed test reported upstream https://github.com/jupyter/jupyter_core/issues/231
+    %python3_test pytest3 -v \
+        --deselect jupyter_core/tests/test_paths.py::test_jupyter_path_user_site \
+        --deselect jupyter_core/tests/test_paths.py::test_jupyter_path_no_user_site \
+        --deselect jupyter_core/tests/test_paths.py::test_jupyter_path_prefer_env

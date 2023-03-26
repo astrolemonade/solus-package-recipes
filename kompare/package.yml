@@ -1,0 +1,28 @@
+name       : kompare
+version    : 22.12.1
+release    : 50
+source     :
+    - https://cdn.download.kde.org/stable/release-service/22.12.1/src/kompare-22.12.1.tar.xz : 567f5243e91305798d91379c6850c10deb138989560b9792cce1ac27d5e0d83c
+homepage   : https://kde.org/applications/development/org.kde.kompare
+license    :
+    - GFDL-1.2-or-later
+    - GPL-2.0-or-later
+component  : programming.tools
+summary    : File Comparator
+description: |
+    Tool to visualize changes between two versions of a file.
+builddeps  :
+    - kdoctools-devel
+    - kiconthemes-devel
+    - kparts-devel
+    - ktexteditor-devel
+    - libkomparediff2-devel
+setup      : |
+    %cmake_ninja
+build      : |
+    %ninja_build
+install    : |
+    %ninja_install
+
+    # remove doc
+    rm -rf $installdir/usr/share/doc

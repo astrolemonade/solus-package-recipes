@@ -1,0 +1,30 @@
+name       : intel-media-driver
+version    : 22.6.6
+release    : 4
+source     :
+    - https://github.com/intel/media-driver/archive/refs/tags/intel-media-22.6.6.tar.gz : b553290e829dfd824eb62295c9f07dbe8062ce7998f7c527cc92856d0792562d
+license    :
+    - BSD-3-Clause
+    - MIT
+component  : xorg.display
+homepage   : https://github.com/intel/media-driver
+summary    : VA-API driver for Intel Gen graphics
+description: |
+    The Intel Media Driver is a VA-API (Video Acceleration API) user mode driver supporting hardware accelerated decoding, encoding, and video post processing for Intel Gen based graphics hardware.
+builddeps  :
+    - pkgconfig(igdgmm)
+    - pkgconfig(libva)
+    - pkgconfig(pciaccess)
+setup      : |
+    %patch -Np1 < "$pkgfiles/0001-Set-BUILD_TYPE-to-CMAKE_BUILD_TYPE-if-undefined.patch"
+    rm -f Tools/MediaDriverTools/UMDPerfProfiler/MediaPerfParser
+
+    export CXXFLAGS="$(echo "$CXXFLAGS" | sed -e 's/-Wall //')"
+    %cmake_ninja -Wno-dev \
+        -DCMAKE_INSTALL_LIBDIR="%libdir%" \
+        -DBUILD_CMRTLIB:BOOL=False \
+        -DMEDIA_RUN_TEST_SUITE:BOOL=False
+build      : |
+    %ninja_build
+install    : |
+    %ninja_install

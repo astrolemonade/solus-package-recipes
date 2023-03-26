@@ -1,0 +1,24 @@
+name       : libkdcraw
+version    : 22.12.1
+release    : 65
+source     :
+    - https://cdn.download.kde.org/stable/release-service/22.12.1/src/libkdcraw-22.12.1.tar.xz : 8b0a71937f7ed4926c2c047e0bd36001e5e98f52b1cf633d8bfbe4e4eeac65eb
+homepage   : https://kde.org/
+license    :
+    - GPL-2.0-or-later
+    - LGPL-2.1-or-later
+component  : multimedia.library
+summary    : C++ interface to LibRaw
+description: |
+    Libkdcraw is a C++ interface around LibRaw library used to decode RAW picture files.
+optimize   : lto
+builddeps  :
+    - pkgconfig(libraw)
+    - pkgconfig(Qt5Core)
+    - extra-cmake-modules
+setup      : |
+    %cmake_ninja -DBUILD_TESTING=OFF
+build      : |
+    %ninja_build
+install    : |
+    %ninja_install

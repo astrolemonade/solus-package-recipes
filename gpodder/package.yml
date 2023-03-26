@@ -1,0 +1,30 @@
+name       : gpodder
+version    : 3.11.1
+release    : 22
+source     :
+    - https://github.com/gpodder/gpodder/archive/refs/tags/3.11.1.tar.gz : c24fb3ef70b5acf43c07e6dd4e78c309e1cbacff621eb59f73c137b9597c6e87
+homepage   : https://gpodder.github.io/
+license    : GPL-3.0-or-later
+component  : multimedia.audio
+summary    : The gPodder podcast client
+description: |
+    gPodder is a simple, open source podcast client written in Python using GTK+. In development since 2005 with a proven, mature codebase.
+builddeps  :
+    - python-html5lib
+    - python-mygpoclient
+    - python-podcastparser
+    - python-pytest
+    - python-pytest-httpserver
+    - python-requests
+rundeps    :
+    - python-gobject
+    - python-html5lib
+    - python-mygpoclient
+    - python-podcastparser
+    - python-requests
+    - python3-dbus
+    - yt-dlp
+install    : |
+    %make_install
+check      : |
+    %python3_test pytest3 -v

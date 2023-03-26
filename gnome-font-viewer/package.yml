@@ -1,0 +1,22 @@
+name       : gnome-font-viewer
+version    : '43.0'
+release    : 19
+source     :
+    - https://download.gnome.org/sources/gnome-font-viewer/43/gnome-font-viewer-43.0.tar.xz : 81c6bffb06d5332346e00eaecaec1bdcfd617c51dfd95bcd058d6c76c76dd2b9
+homepage   : https://gitlab.gnome.org/GNOME/gnome-font-viewer/
+license    : GPL-2.0-or-later
+component  : desktop.gnome
+summary    : A font viewer utility for GNOME
+description: |
+    Shows a preview of fonts and an overview of all installed fonts.
+builddeps  :
+    - pkgconfig(gnome-desktop-3.0)
+    - pkgconfig(gtk4)
+    - pkgconfig(harfbuzz)
+    - pkgconfig(libadwaita-1)
+setup      : |
+    %meson_configure
+build      : |
+    %ninja_build
+install    : |
+    %ninja_install

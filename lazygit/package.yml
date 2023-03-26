@@ -1,0 +1,19 @@
+name       : lazygit
+version    : 0.36.0
+release    : 21
+source     :
+    - https://github.com/jesseduffield/lazygit/archive/refs/tags/v0.36.0.tar.gz : 0b8630b09e28dc478fb2545c6fbe52e679b9a2e5dbe569982c9649655ab969c3
+license    : MIT
+homepage   : https://github.com/jesseduffield/lazygit
+component  : programming.tools
+summary    : A simple terminal UI for git commands, written in Go with the gocui library.
+description: |
+    A simple terminal UI for git commands, written in Go with the gocui library.
+networking : yes
+builddeps  :
+    - golang
+build      : |
+    go build -ldflags "-X main.version=$version" -o lazygit
+
+install    : |
+    install -Dm00755 $workdir/lazygit $installdir/usr/bin/lazygit

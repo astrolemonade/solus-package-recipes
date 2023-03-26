@@ -1,0 +1,92 @@
+<PISI>
+    <Source>
+        <Name>haskell-pango</Name>
+        <Packager>
+            <Name>Bryan T. Meyers</Name>
+            <Email>bmeyers@datadrake.com</Email>
+        </Packager>
+        <License>LGPL-2.1-only</License>
+        <PartOf>programming.haskell</PartOf>
+        <Summary xml:lang="en">Binding to the Pango text rendering engine.</Summary>
+        <Description xml:lang="en">This package provides a wrapper around the Pango C library that allows high-quality rendering of Unicode text. It can be used either with Cairo to output text in PDF, PS or other documents or with Gtk+ to display text on-screen.
+</Description>
+        <Archive type="binary" sha1sum="79eb0752a961b8e0d15c77d298c97498fbc89c5a">https://getsol.us/sources/README.Solus</Archive>
+    </Source>
+    <Package>
+        <Name>haskell-pango</Name>
+        <Summary xml:lang="en">Binding to the Pango text rendering engine.</Summary>
+        <Description xml:lang="en">This package provides a wrapper around the Pango C library that allows high-quality rendering of Unicode text. It can be used either with Cairo to output text in PDF, PS or other documents or with Gtk+ to display text on-screen.
+</Description>
+        <PartOf>programming.haskell</PartOf>
+        <Files>
+            <Path fileType="library">/usr/lib64/ghc-8.6.5/pango-0.13.8.1/Graphics/Rendering/Pango.chi</Path>
+            <Path fileType="library">/usr/lib64/ghc-8.6.5/pango-0.13.8.1/Graphics/Rendering/Pango.dyn_hi</Path>
+            <Path fileType="library">/usr/lib64/ghc-8.6.5/pango-0.13.8.1/Graphics/Rendering/Pango.hi</Path>
+            <Path fileType="library">/usr/lib64/ghc-8.6.5/pango-0.13.8.1/Graphics/Rendering/Pango/Attributes.chi</Path>
+            <Path fileType="library">/usr/lib64/ghc-8.6.5/pango-0.13.8.1/Graphics/Rendering/Pango/Attributes.dyn_hi</Path>
+            <Path fileType="library">/usr/lib64/ghc-8.6.5/pango-0.13.8.1/Graphics/Rendering/Pango/Attributes.hi</Path>
+            <Path fileType="library">/usr/lib64/ghc-8.6.5/pango-0.13.8.1/Graphics/Rendering/Pango/BasicTypes.chi</Path>
+            <Path fileType="library">/usr/lib64/ghc-8.6.5/pango-0.13.8.1/Graphics/Rendering/Pango/BasicTypes.dyn_hi</Path>
+            <Path fileType="library">/usr/lib64/ghc-8.6.5/pango-0.13.8.1/Graphics/Rendering/Pango/BasicTypes.hi</Path>
+            <Path fileType="library">/usr/lib64/ghc-8.6.5/pango-0.13.8.1/Graphics/Rendering/Pango/Cairo.chi</Path>
+            <Path fileType="library">/usr/lib64/ghc-8.6.5/pango-0.13.8.1/Graphics/Rendering/Pango/Cairo.dyn_hi</Path>
+            <Path fileType="library">/usr/lib64/ghc-8.6.5/pango-0.13.8.1/Graphics/Rendering/Pango/Cairo.hi</Path>
+            <Path fileType="library">/usr/lib64/ghc-8.6.5/pango-0.13.8.1/Graphics/Rendering/Pango/Context.chi</Path>
+            <Path fileType="library">/usr/lib64/ghc-8.6.5/pango-0.13.8.1/Graphics/Rendering/Pango/Context.dyn_hi</Path>
+            <Path fileType="library">/usr/lib64/ghc-8.6.5/pango-0.13.8.1/Graphics/Rendering/Pango/Context.hi</Path>
+            <Path fileType="library">/usr/lib64/ghc-8.6.5/pango-0.13.8.1/Graphics/Rendering/Pango/Description.chi</Path>
+            <Path fileType="library">/usr/lib64/ghc-8.6.5/pango-0.13.8.1/Graphics/Rendering/Pango/Description.dyn_hi</Path>
+            <Path fileType="library">/usr/lib64/ghc-8.6.5/pango-0.13.8.1/Graphics/Rendering/Pango/Description.hi</Path>
+            <Path fileType="library">/usr/lib64/ghc-8.6.5/pango-0.13.8.1/Graphics/Rendering/Pango/Enums.chi</Path>
+            <Path fileType="library">/usr/lib64/ghc-8.6.5/pango-0.13.8.1/Graphics/Rendering/Pango/Enums.dyn_hi</Path>
+            <Path fileType="library">/usr/lib64/ghc-8.6.5/pango-0.13.8.1/Graphics/Rendering/Pango/Enums.hi</Path>
+            <Path fileType="library">/usr/lib64/ghc-8.6.5/pango-0.13.8.1/Graphics/Rendering/Pango/Font.chi</Path>
+            <Path fileType="library">/usr/lib64/ghc-8.6.5/pango-0.13.8.1/Graphics/Rendering/Pango/Font.dyn_hi</Path>
+            <Path fileType="library">/usr/lib64/ghc-8.6.5/pango-0.13.8.1/Graphics/Rendering/Pango/Font.hi</Path>
+            <Path fileType="library">/usr/lib64/ghc-8.6.5/pango-0.13.8.1/Graphics/Rendering/Pango/GlyphStorage.chi</Path>
+            <Path fileType="library">/usr/lib64/ghc-8.6.5/pango-0.13.8.1/Graphics/Rendering/Pango/GlyphStorage.dyn_hi</Path>
+            <Path fileType="library">/usr/lib64/ghc-8.6.5/pango-0.13.8.1/Graphics/Rendering/Pango/GlyphStorage.hi</Path>
+            <Path fileType="library">/usr/lib64/ghc-8.6.5/pango-0.13.8.1/Graphics/Rendering/Pango/Layout.chi</Path>
+            <Path fileType="library">/usr/lib64/ghc-8.6.5/pango-0.13.8.1/Graphics/Rendering/Pango/Layout.dyn_hi</Path>
+            <Path fileType="library">/usr/lib64/ghc-8.6.5/pango-0.13.8.1/Graphics/Rendering/Pango/Layout.hi</Path>
+            <Path fileType="library">/usr/lib64/ghc-8.6.5/pango-0.13.8.1/Graphics/Rendering/Pango/Markup.chi</Path>
+            <Path fileType="library">/usr/lib64/ghc-8.6.5/pango-0.13.8.1/Graphics/Rendering/Pango/Markup.dyn_hi</Path>
+            <Path fileType="library">/usr/lib64/ghc-8.6.5/pango-0.13.8.1/Graphics/Rendering/Pango/Markup.hi</Path>
+            <Path fileType="library">/usr/lib64/ghc-8.6.5/pango-0.13.8.1/Graphics/Rendering/Pango/Rendering.chi</Path>
+            <Path fileType="library">/usr/lib64/ghc-8.6.5/pango-0.13.8.1/Graphics/Rendering/Pango/Rendering.dyn_hi</Path>
+            <Path fileType="library">/usr/lib64/ghc-8.6.5/pango-0.13.8.1/Graphics/Rendering/Pango/Rendering.hi</Path>
+            <Path fileType="library">/usr/lib64/ghc-8.6.5/pango-0.13.8.1/Graphics/Rendering/Pango/Structs.dyn_hi</Path>
+            <Path fileType="library">/usr/lib64/ghc-8.6.5/pango-0.13.8.1/Graphics/Rendering/Pango/Structs.hi</Path>
+            <Path fileType="library">/usr/lib64/ghc-8.6.5/pango-0.13.8.1/Graphics/Rendering/Pango/Types.chi</Path>
+            <Path fileType="library">/usr/lib64/ghc-8.6.5/pango-0.13.8.1/Graphics/Rendering/Pango/Types.dyn_hi</Path>
+            <Path fileType="library">/usr/lib64/ghc-8.6.5/pango-0.13.8.1/Graphics/Rendering/Pango/Types.hi</Path>
+            <Path fileType="library">/usr/lib64/ghc-8.6.5/pango-0.13.8.1/libHSpango-0.13.8.1-59mtyMTs4N715VJ6jzUFj3-ghc8.6.5.so</Path>
+            <Path fileType="doc">/usr/share/doc/x86_64-linux-ghc-8.6.5/pango-0.13.8.1/COPYING</Path>
+            <Path fileType="data">/usr/share/x86_64-linux-ghc-8.6.5/pango-0.13.8.1/Layout.hs</Path>
+            <Path fileType="data">/usr/share/x86_64-linux-ghc-8.6.5/pango-0.13.8.1/Makefile</Path>
+        </Files>
+    </Package>
+    <Package>
+        <Name>haskell-pango-devel</Name>
+        <Summary xml:lang="en">Development files for haskell-pango</Summary>
+        <Description xml:lang="en">This package provides a wrapper around the Pango C library that allows high-quality rendering of Unicode text. It can be used either with Cairo to output text in PDF, PS or other documents or with Gtk+ to display text on-screen.
+</Description>
+        <PartOf>programming.devel</PartOf>
+        <RuntimeDependencies>
+            <Dependency release="6">haskell-pango</Dependency>
+        </RuntimeDependencies>
+        <Files>
+            <Path fileType="library">/usr/lib64/ghc-8.6.5/package.conf.d/haskell-pango-0.13.8.1.conf</Path>
+            <Path fileType="library">/usr/lib64/ghc-8.6.5/pango-0.13.8.1/libHSpango-0.13.8.1-59mtyMTs4N715VJ6jzUFj3.a</Path>
+        </Files>
+    </Package>
+    <History>
+        <Update release="6">
+            <Date>2020-12-23</Date>
+            <Version>0.13.8.1</Version>
+            <Comment>Packaging update</Comment>
+            <Name>Bryan T. Meyers</Name>
+            <Email>bmeyers@datadrake.com</Email>
+        </Update>
+    </History>
+</PISI>

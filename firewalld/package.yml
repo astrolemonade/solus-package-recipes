@@ -1,0 +1,48 @@
+name       : firewalld
+version    : 0.9.3
+release    : 12
+source     :
+    - https://github.com/firewalld/firewalld/releases/download/v0.9.3/firewalld-0.9.3.tar.gz : 5998894db976d77996ca0a6b700a2f4125b9f283465fb255da9bddfb1640cb27
+license    : GPL-2.0-or-later
+component  :
+    - security
+    - applet : security
+homepage   : https://firewalld.org/
+summary    :
+    - Firewall daemon with D-Bus interface
+    - applet : The firewall Qt panel applet provides a status information of firewalld and also the firewalld settings
+description: |
+    firewalld provides a dynamically managed firewall with support for network or firewall zones to define the trust level of network connections or interfaces. It has support for IPv4, IPv6 firewall settings and for ethernet bridges and a separation of runtime and permanent configuration options. It also provides an interface for services or applications to add ip*tables and ebtables rules directly.
+patterns   :
+    - applet :
+        - /etc/firewall/applet.conf
+        - /etc/xdg/autostart/firewall-applet.desktop
+        - /usr/bin/firewall-applet
+        - /usr/share/icons/hicolor/*/apps/*applet*.*
+        - /usr/share/icons/hicolor/scalable/apps/*applet*.*
+        - /usr/share/man/man1/firewall-applet.1
+builddeps  :
+    - pkgconfig(libipset)
+    - pkgconfig(libnftnl)
+    - docbook-xml
+    - ebtables
+    - iptables
+    - nftables
+rundeps    :
+    - ebtables
+    - ipset
+    - iptables
+    - nftables
+    - python-slip
+    - applet :
+        - firewalld
+        - python3-qt5
+setup      : |
+    sed -i "s/AM_PATH_PYTHON/&(3)/" configure.ac
+
+    %autogen
+build      : |
+    %make
+install    : |
+    %make_install
+    find $installdir/etc/ -type d -empty -delete

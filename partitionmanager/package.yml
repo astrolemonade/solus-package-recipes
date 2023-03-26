@@ -1,0 +1,31 @@
+name       : partitionmanager
+version    : 22.12.1
+release    : 33
+source     :
+    - https://cdn.download.kde.org/stable/release-service/22.12.1/src/partitionmanager-22.12.1.tar.xz : f2e23bad69235002d901d7221b03a99a35731837dfc0cf3a048f41dd2d1e4a1a
+license    : GPL-3.0-or-later
+component  : system.utils
+summary    : KDE utility to help you manage disk devices
+description: |
+    KDE Partition Manager is a utility program to help you manage the disk devices, partitions and file systems on your computer. It allows you to easily create, copy, move, delete, resize without losing data, backup and restore partitions.
+builddeps  :
+    - pkgconfig(blkid)
+    - pkgconfig(libatasmart)
+    - pkgconfig(polkit-qt5-1)
+    - kcrash-devel
+    - kdbusaddons-devel
+    - kdoctools-devel
+    - kiconthemes-devel
+    - kio-devel
+    - kpmcore-devel
+rundeps    :
+    - smartmontools
+setup      : |
+    %cmake_ninja
+build      : |
+    %ninja_build
+install    : |
+    %ninja_install
+
+    # remove HTML docs
+    rm -rf $installdir/usr/share/doc

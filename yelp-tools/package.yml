@@ -1,0 +1,28 @@
+name       : yelp-tools
+version    : '42.0'
+release    : 14
+source     :
+    - https://download.gnome.org/sources/yelp-tools/42/yelp-tools-42.0.tar.xz : 2cd43063ffa7262df15dd8d379aa3ea3999d42661f07563f4802daa1149f7df4
+license    : GPL-2.0-or-later
+component  : desktop.gnome.doc
+summary    : Tools to create Yelp documentation
+description: |
+    Yelp-tools is a collection of scripts and build utilities to help create, manage, and publish documentation for Yelp and the web. Most of the heavy lifting is done by packages like yelp-xsl and itstool. This package just wraps things up in a developer-friendly way.
+patterns   : /
+replaces   :
+    - yelp-tools-devel
+builddeps  :
+    - pkgconfig(yelp-xsl)
+    - docbook-xml
+    - itstool
+    - python-configparser
+    - python-lxml
+rundeps    :
+    - python-configparser
+    - python-lxml
+setup      : |
+    %meson_configure
+build      : |
+    %ninja_build
+install    : |
+    %ninja_install

@@ -1,0 +1,22 @@
+name       : xrdb
+version    : 1.2.1
+release    : 9
+source     :
+    - https://www.x.org/releases/individual/app/xrdb-1.2.1.tar.gz : e674f5fb081a023e54878c0aac728dc30feb821207c989cff17a60f0c4a80ced
+license    : MIT
+component  : xorg.apps
+summary    : |
+    X server resource database utility
+description: |
+    xrdb (X resource database manager) is a program used for accessing the X resources of a server.
+builddeps  :
+    - pkgconfig(x11)
+    - pkgconfig(xmuu)
+    - pkgconfig(xorg-macros)
+    - pkgconfig(xproto)
+setup      : |
+    %configure
+build      : |
+    %make
+install    : |
+    %make_install

@@ -1,0 +1,26 @@
+name       : kpty
+version    : 5.101.0
+release    : 65
+source     :
+    - https://cdn.download.kde.org/stable/frameworks/5.101/kpty-5.101.0.tar.xz : 4eed2f2e0df3f5c50640483c29c1ae6c4998ac0058faebb996d2d1a25a60c860
+homepage   : https://community.kde.org/Frameworks
+license    :
+    - BSd-3-Clause
+    - GPL-2.0-or-later
+    - LGPL-2.0-or-later
+component  : programming.library
+summary    : Interfacing with pseudo terminal devices
+description: |
+    This library provides primitives to interface with pseudo terminal devices as well as a KProcess derived class for running child processes and communicating with them using a pty.
+optimize   : lto
+builddeps  :
+    - kcoreaddons-devel
+    - ki18n-devel
+    - libutempter-devel
+setup      : |
+    %cmake_ninja -DBUILD_QCH=ON \
+                -DBUILD_TESTING=OFF
+build      : |
+    %ninja_build
+install    : |
+    %ninja_install

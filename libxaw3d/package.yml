@@ -1,0 +1,25 @@
+name       : libxaw3d
+version    : 1.6.4
+release    : 9
+source     :
+    - http://xorg.freedesktop.org/archive/individual/lib/libXaw3d-1.6.4.tar.gz : 09fecfdab9d7d5953567883e2074eb231bc7a122a06e5055f9c119090f1f76a7
+homepage   : http://www.x.org
+license    : MIT
+component  : xorg.library
+summary    : General-purpose replacement for the Athena toolkit.
+description: |
+    Xaw3d is a general-purpose replacement for the Athena toolkit which adds a 3D appearance and support for XPM images.
+emul32     : yes
+builddeps  :
+    - pkgconfig32(xext)
+    - pkgconfig32(xmu)
+    - pkgconfig32(xt)
+    - pkgconfig32(x11)
+    - pkgconfig(xproto)
+setup      : |
+    %configure --prefix=/usr \
+               --disable-static
+build      : |
+    %make
+install    : |
+    %make_install

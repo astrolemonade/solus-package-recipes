@@ -1,0 +1,30 @@
+name       : kmailtransport
+version    : 22.12.1
+release    : 66
+source     :
+    - https://cdn.download.kde.org/stable/release-service/22.12.1/src/kmailtransport-22.12.1.tar.xz : 82c3ab9c050a26a3fe9cb3875eeb5654901301333f1beacb1e02dadd1e8466a5
+homepage   : https://kde.org/
+license    : LGPL-2.1-or-later
+component  : desktop.library
+summary    : Mail Transport Service
+description: |
+    Mail Transport Service.
+builddeps  :
+    - akonadi-mime-devel
+    - kcmutils-devel
+    - kcalendarcore-devel
+    - kcontacts-devel
+    - kio-devel
+    - ksmtp-devel
+    - kwallet-devel
+    - libkgapi-devel
+    - qtkeychain-devel
+rundeps    :
+    - devel :
+        - kwallet-devel
+setup      : |
+    %cmake_ninja -DBUILD_TESTING=OFF
+build      : |
+    %ninja_build
+install    : |
+    %ninja_install

@@ -1,0 +1,24 @@
+name       : ksshaskpass
+version    : 5.26.5
+release    : 83
+source     :
+    - https://cdn.download.kde.org/stable/plasma/5.26.5/ksshaskpass-5.26.5.tar.xz : a0438ca0dd28bb2187a35106a599f3cf3c3ef4f8be7f056d892584ade6ea124c
+homepage   : https://www.kde.org/workspaces/plasmadesktop/
+license    : GPL-2.0-or-later
+component  : desktop.kde.core
+summary    : Front-end for ssh-add which stores the password of the ssh key in KWallet
+description: |
+    Front-end for ssh-add which stores the password of the ssh key in KWallet.
+optimize   : lto
+builddeps  :
+    - kcoreaddons-devel
+    - kdoctools-devel
+    - ki18n-devel
+    - kwallet-devel
+    - kwidgetsaddons-devel
+setup      : |
+    %cmake_ninja
+build      : |
+    %ninja_build
+install    : |
+    %ninja_install

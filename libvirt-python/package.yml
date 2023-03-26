@@ -1,0 +1,19 @@
+name       : libvirt-python
+version    : 9.1.0
+release    : 37
+source     :
+    - https://libvirt.org/sources/python/libvirt-python-9.1.0.tar.gz : 6f98d235db975a33ff5e6fc09be566a00d22398039d411f34220384c05590ba4
+license    : LGPL-2.1-or-later
+component  : programming.python
+summary    : The libvirt virtualization API python binding
+description: |
+    The libvirt-python package provides a module that permits applications written in the Python programming language to call the interface supplied by the libvirt library, to manage the virtualization capabilities of recent versions of Linux.
+builddeps  :
+    - pkgconfig(libvirt)
+    - pkgconfig(python3)
+    - python-lxml
+    - python-nose
+build      : |
+    %python3_setup
+install    : |
+    %python3_install

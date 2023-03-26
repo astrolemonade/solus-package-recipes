@@ -1,0 +1,28 @@
+name       : qqc2-desktop-style
+version    : 5.101.0
+release    : 61
+source     :
+    - https://cdn.download.kde.org/stable/frameworks/5.101/qqc2-desktop-style-5.101.0.tar.xz : a19ceb8a7e86290a5891145a043c2dfbeb2cda2404d93559ff2b6c98bb9adf06
+homepage   : https://community.kde.org/Frameworks
+license    :
+    - LGPL-2.0-or-later
+    - LGPL-3.0-only
+component  : desktop.theme
+summary    : QtQuickControls 2 style that integrates with the desktop
+description: |
+    This is a style for QtQuickControls 2 that uses QWidget's QStyle for painting, making possible to achieve an higher deree of consistency between QWidget-based and QML-based apps.
+optimize   : lto
+builddeps  :
+    - pkgconfig(Qt5QuickControls2)
+    - pkgconfig(Qt5X11Extras)
+    - pkgconfig(x11)
+    - kconfigwidgets-devel
+    - kiconthemes-devel
+    - kirigami2-devel
+setup      : |
+    %cmake_ninja
+build      : |
+    %ninja_build
+install    : |
+    %ninja_install
+    %qml_cache

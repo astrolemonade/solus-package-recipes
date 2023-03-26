@@ -1,0 +1,40 @@
+<PISI>
+    <Source>
+        <Name>budgie-trash-applet</Name>
+        <Homepage>https://github.com/EbonJaeger/budgie-trash-applet</Homepage>
+        <Packager>
+            <Name>Evan Maddock</Name>
+            <Email>maddock.evan@vivaldi.net</Email>
+        </Packager>
+        <License>Apache-2.0</License>
+        <PartOf>desktop.budgie</PartOf>
+        <Summary xml:lang="en">Manage items in your trash bin right from the Budgie panel.</Summary>
+        <Description xml:lang="en">Allows the managing of the user trash bin from the Budgie panel.
+Gives you the option to view, restore, and permanently delete items in the trash bin.
+</Description>
+        <Archive type="binary" sha1sum="79eb0752a961b8e0d15c77d298c97498fbc89c5a">https://getsol.us/sources/README.Solus</Archive>
+    </Source>
+    <Package>
+        <Name>budgie-trash-applet</Name>
+        <Summary xml:lang="en">Manage items in your trash bin right from the Budgie panel.</Summary>
+        <Description xml:lang="en">Allows the managing of the user trash bin from the Budgie panel.
+Gives you the option to view, restore, and permanently delete items in the trash bin.
+</Description>
+        <PartOf>desktop.budgie</PartOf>
+        <Files>
+            <Path fileType="library">/usr/lib64/budgie-desktop/plugins/com.github.EbonJaeger.budgie-trash-applet/TrashApplet.plugin</Path>
+            <Path fileType="library">/usr/lib64/budgie-desktop/plugins/com.github.EbonJaeger.budgie-trash-applet/libtrashapplet.so</Path>
+            <Path fileType="data">/usr/share/glib-2.0/schemas/com.github.ebonjaeger.budgie-trash-applet.gschema.xml</Path>
+            <Path fileType="data">/usr/share/metainfo/com.github.ebonjaeger.budgie-trash-applet.appdata.xml</Path>
+        </Files>
+    </Package>
+    <History>
+        <Update release="11">
+            <Date>2022-11-25</Date>
+            <Version>2.1.2</Version>
+            <Comment>Packaging update</Comment>
+            <Name>Evan Maddock</Name>
+            <Email>maddock.evan@vivaldi.net</Email>
+        </Update>
+    </History>
+</PISI>

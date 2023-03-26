@@ -1,0 +1,266 @@
+<PISI>
+    <Source>
+        <Name>gst-plugins-bad</Name>
+        <Packager>
+            <Name>F. von Gellhorn</Name>
+            <Email>flinux@vongellhorn.ch</Email>
+        </Packager>
+        <License>GPL-2.0-or-alter</License>
+        <License>LGPL-2.0-or-later</License>
+        <PartOf>multimedia.gstreamer</PartOf>
+        <Summary xml:lang="en">Streaming media framework</Summary>
+        <Description xml:lang="en">GStreamer is a streaming media framework that enables applications to share a common set of plugins for things like video encoding and decoding, audio encoding and decoding, audio and video filters, audio visualisation, web streaming and anything else that streams in real-time or otherwise. This package only provides base functionality and libraries.
+</Description>
+        <Archive type="binary" sha1sum="79eb0752a961b8e0d15c77d298c97498fbc89c5a">https://getsol.us/sources/README.Solus</Archive>
+    </Source>
+    <Package>
+        <Name>gst-plugins-bad</Name>
+        <Summary xml:lang="en">Streaming media framework</Summary>
+        <Description xml:lang="en">GStreamer is a streaming media framework that enables applications to share a common set of plugins for things like video encoding and decoding, audio encoding and decoding, audio and video filters, audio visualisation, web streaming and anything else that streams in real-time or otherwise. This package only provides base functionality and libraries.
+</Description>
+        <PartOf>multimedia.gstreamer</PartOf>
+        <Files>
+            <Path fileType="library">/usr/lib64/gstreamer-0.10/libgstadpcmdec.so</Path>
+            <Path fileType="library">/usr/lib64/gstreamer-0.10/libgstadpcmenc.so</Path>
+            <Path fileType="library">/usr/lib64/gstreamer-0.10/libgstaiff.so</Path>
+            <Path fileType="library">/usr/lib64/gstreamer-0.10/libgstasfmux.so</Path>
+            <Path fileType="library">/usr/lib64/gstreamer-0.10/libgstassrender.so</Path>
+            <Path fileType="library">/usr/lib64/gstreamer-0.10/libgstaudiovisualizers.so</Path>
+            <Path fileType="library">/usr/lib64/gstreamer-0.10/libgstautoconvert.so</Path>
+            <Path fileType="library">/usr/lib64/gstreamer-0.10/libgstbayer.so</Path>
+            <Path fileType="library">/usr/lib64/gstreamer-0.10/libgstbz2.so</Path>
+            <Path fileType="library">/usr/lib64/gstreamer-0.10/libgstcamerabin.so</Path>
+            <Path fileType="library">/usr/lib64/gstreamer-0.10/libgstcamerabin2.so</Path>
+            <Path fileType="library">/usr/lib64/gstreamer-0.10/libgstcdxaparse.so</Path>
+            <Path fileType="library">/usr/lib64/gstreamer-0.10/libgstcelt.so</Path>
+            <Path fileType="library">/usr/lib64/gstreamer-0.10/libgstcog.so</Path>
+            <Path fileType="library">/usr/lib64/gstreamer-0.10/libgstcoloreffects.so</Path>
+            <Path fileType="library">/usr/lib64/gstreamer-0.10/libgstcolorspace.so</Path>
+            <Path fileType="library">/usr/lib64/gstreamer-0.10/libgstcurl.so</Path>
+            <Path fileType="library">/usr/lib64/gstreamer-0.10/libgstdataurisrc.so</Path>
+            <Path fileType="library">/usr/lib64/gstreamer-0.10/libgstdc1394.so</Path>
+            <Path fileType="library">/usr/lib64/gstreamer-0.10/libgstdccp.so</Path>
+            <Path fileType="library">/usr/lib64/gstreamer-0.10/libgstdebugutilsbad.so</Path>
+            <Path fileType="library">/usr/lib64/gstreamer-0.10/libgstdecklink.so</Path>
+            <Path fileType="library">/usr/lib64/gstreamer-0.10/libgstdtmf.so</Path>
+            <Path fileType="library">/usr/lib64/gstreamer-0.10/libgstdvb.so</Path>
+            <Path fileType="library">/usr/lib64/gstreamer-0.10/libgstdvbsuboverlay.so</Path>
+            <Path fileType="library">/usr/lib64/gstreamer-0.10/libgstdvdspu.so</Path>
+            <Path fileType="library">/usr/lib64/gstreamer-0.10/libgstfaceoverlay.so</Path>
+            <Path fileType="library">/usr/lib64/gstreamer-0.10/libgstfbdevsink.so</Path>
+            <Path fileType="library">/usr/lib64/gstreamer-0.10/libgstfestival.so</Path>
+            <Path fileType="library">/usr/lib64/gstreamer-0.10/libgstfieldanalysis.so</Path>
+            <Path fileType="library">/usr/lib64/gstreamer-0.10/libgstfragmented.so</Path>
+            <Path fileType="library">/usr/lib64/gstreamer-0.10/libgstfreeverb.so</Path>
+            <Path fileType="library">/usr/lib64/gstreamer-0.10/libgstfreeze.so</Path>
+            <Path fileType="library">/usr/lib64/gstreamer-0.10/libgstfrei0r.so</Path>
+            <Path fileType="library">/usr/lib64/gstreamer-0.10/libgstgaudieffects.so</Path>
+            <Path fileType="library">/usr/lib64/gstreamer-0.10/libgstgeometrictransform.so</Path>
+            <Path fileType="library">/usr/lib64/gstreamer-0.10/libgstgsettingselements.so</Path>
+            <Path fileType="library">/usr/lib64/gstreamer-0.10/libgsth264parse.so</Path>
+            <Path fileType="library">/usr/lib64/gstreamer-0.10/libgsthdvparse.so</Path>
+            <Path fileType="library">/usr/lib64/gstreamer-0.10/libgstid3tag.so</Path>
+            <Path fileType="library">/usr/lib64/gstreamer-0.10/libgstinter.so</Path>
+            <Path fileType="library">/usr/lib64/gstreamer-0.10/libgstinterlace.so</Path>
+            <Path fileType="library">/usr/lib64/gstreamer-0.10/libgstivfparse.so</Path>
+            <Path fileType="library">/usr/lib64/gstreamer-0.10/libgstjp2kdecimator.so</Path>
+            <Path fileType="library">/usr/lib64/gstreamer-0.10/libgstjpegformat.so</Path>
+            <Path fileType="library">/usr/lib64/gstreamer-0.10/libgstkate.so</Path>
+            <Path fileType="library">/usr/lib64/gstreamer-0.10/libgstlegacyresample.so</Path>
+            <Path fileType="library">/usr/lib64/gstreamer-0.10/libgstlinsys.so</Path>
+            <Path fileType="library">/usr/lib64/gstreamer-0.10/libgstliveadder.so</Path>
+            <Path fileType="library">/usr/lib64/gstreamer-0.10/libgstmodplug.so</Path>
+            <Path fileType="library">/usr/lib64/gstreamer-0.10/libgstmpegdemux.so</Path>
+            <Path fileType="library">/usr/lib64/gstreamer-0.10/libgstmpegpsmux.so</Path>
+            <Path fileType="library">/usr/lib64/gstreamer-0.10/libgstmpegtsdemux.so</Path>
+            <Path fileType="library">/usr/lib64/gstreamer-0.10/libgstmpegtsmux.so</Path>
+            <Path fileType="library">/usr/lib64/gstreamer-0.10/libgstmpegvideoparse.so</Path>
+            <Path fileType="library">/usr/lib64/gstreamer-0.10/libgstmve.so</Path>
+            <Path fileType="library">/usr/lib64/gstreamer-0.10/libgstmxf.so</Path>
+            <Path fileType="library">/usr/lib64/gstreamer-0.10/libgstnuvdemux.so</Path>
+            <Path fileType="library">/usr/lib64/gstreamer-0.10/libgstopenal.so</Path>
+            <Path fileType="library">/usr/lib64/gstreamer-0.10/libgstopus.so</Path>
+            <Path fileType="library">/usr/lib64/gstreamer-0.10/libgstpatchdetect.so</Path>
+            <Path fileType="library">/usr/lib64/gstreamer-0.10/libgstpcapparse.so</Path>
+            <Path fileType="library">/usr/lib64/gstreamer-0.10/libgstpnm.so</Path>
+            <Path fileType="library">/usr/lib64/gstreamer-0.10/libgstrawparse.so</Path>
+            <Path fileType="library">/usr/lib64/gstreamer-0.10/libgstreal.so</Path>
+            <Path fileType="library">/usr/lib64/gstreamer-0.10/libgstremovesilence.so</Path>
+            <Path fileType="library">/usr/lib64/gstreamer-0.10/libgstrfbsrc.so</Path>
+            <Path fileType="library">/usr/lib64/gstreamer-0.10/libgstrsvg.so</Path>
+            <Path fileType="library">/usr/lib64/gstreamer-0.10/libgstrtmp.so</Path>
+            <Path fileType="library">/usr/lib64/gstreamer-0.10/libgstrtpmux.so</Path>
+            <Path fileType="library">/usr/lib64/gstreamer-0.10/libgstrtpvp8.so</Path>
+            <Path fileType="library">/usr/lib64/gstreamer-0.10/libgstscaletempoplugin.so</Path>
+            <Path fileType="library">/usr/lib64/gstreamer-0.10/libgstsdi.so</Path>
+            <Path fileType="library">/usr/lib64/gstreamer-0.10/libgstsdpelem.so</Path>
+            <Path fileType="library">/usr/lib64/gstreamer-0.10/libgstsegmentclip.so</Path>
+            <Path fileType="library">/usr/lib64/gstreamer-0.10/libgstshm.so</Path>
+            <Path fileType="library">/usr/lib64/gstreamer-0.10/libgstsiren.so</Path>
+            <Path fileType="library">/usr/lib64/gstreamer-0.10/libgstsmooth.so</Path>
+            <Path fileType="library">/usr/lib64/gstreamer-0.10/libgstsndfile.so</Path>
+            <Path fileType="library">/usr/lib64/gstreamer-0.10/libgstspeed.so</Path>
+            <Path fileType="library">/usr/lib64/gstreamer-0.10/libgststereo.so</Path>
+            <Path fileType="library">/usr/lib64/gstreamer-0.10/libgstsubenc.so</Path>
+            <Path fileType="library">/usr/lib64/gstreamer-0.10/libgsttta.so</Path>
+            <Path fileType="library">/usr/lib64/gstreamer-0.10/libgstvcdsrc.so</Path>
+            <Path fileType="library">/usr/lib64/gstreamer-0.10/libgstvdpau.so</Path>
+            <Path fileType="library">/usr/lib64/gstreamer-0.10/libgstvideofiltersbad.so</Path>
+            <Path fileType="library">/usr/lib64/gstreamer-0.10/libgstvideomaxrate.so</Path>
+            <Path fileType="library">/usr/lib64/gstreamer-0.10/libgstvideomeasure.so</Path>
+            <Path fileType="library">/usr/lib64/gstreamer-0.10/libgstvideoparsersbad.so</Path>
+            <Path fileType="library">/usr/lib64/gstreamer-0.10/libgstvideosignal.so</Path>
+            <Path fileType="library">/usr/lib64/gstreamer-0.10/libgstvmnc.so</Path>
+            <Path fileType="library">/usr/lib64/gstreamer-0.10/libgstvoaacenc.so</Path>
+            <Path fileType="library">/usr/lib64/gstreamer-0.10/libgsty4mdec.so</Path>
+            <Path fileType="library">/usr/lib64/gstreamer-0.10/libresindvd.so</Path>
+            <Path fileType="library">/usr/lib64/libgstbasecamerabinsrc-0.10.so.23</Path>
+            <Path fileType="library">/usr/lib64/libgstbasecamerabinsrc-0.10.so.23.0.0</Path>
+            <Path fileType="library">/usr/lib64/libgstbasevideo-0.10.so.23</Path>
+            <Path fileType="library">/usr/lib64/libgstbasevideo-0.10.so.23.0.0</Path>
+            <Path fileType="library">/usr/lib64/libgstcodecparsers-0.10.so.23</Path>
+            <Path fileType="library">/usr/lib64/libgstcodecparsers-0.10.so.23.0.0</Path>
+            <Path fileType="library">/usr/lib64/libgstphotography-0.10.so.23</Path>
+            <Path fileType="library">/usr/lib64/libgstphotography-0.10.so.23.0.0</Path>
+            <Path fileType="library">/usr/lib64/libgstsignalprocessor-0.10.so.23</Path>
+            <Path fileType="library">/usr/lib64/libgstsignalprocessor-0.10.so.23.0.0</Path>
+            <Path fileType="library">/usr/lib64/libgstvdp-0.10.so.23</Path>
+            <Path fileType="library">/usr/lib64/libgstvdp-0.10.so.23.0.0</Path>
+            <Path fileType="data">/usr/share/glib-2.0/schemas/org.freedesktop.gstreamer-0.10.default-elements.gschema.xml</Path>
+            <Path fileType="localedata">/usr/share/locale/af/LC_MESSAGES/gst-plugins-bad-0.10.mo</Path>
+            <Path fileType="localedata">/usr/share/locale/az/LC_MESSAGES/gst-plugins-bad-0.10.mo</Path>
+            <Path fileType="localedata">/usr/share/locale/bg/LC_MESSAGES/gst-plugins-bad-0.10.mo</Path>
+            <Path fileType="localedata">/usr/share/locale/ca/LC_MESSAGES/gst-plugins-bad-0.10.mo</Path>
+            <Path fileType="localedata">/usr/share/locale/cs/LC_MESSAGES/gst-plugins-bad-0.10.mo</Path>
+            <Path fileType="localedata">/usr/share/locale/da/LC_MESSAGES/gst-plugins-bad-0.10.mo</Path>
+            <Path fileType="localedata">/usr/share/locale/de/LC_MESSAGES/gst-plugins-bad-0.10.mo</Path>
+            <Path fileType="localedata">/usr/share/locale/el/LC_MESSAGES/gst-plugins-bad-0.10.mo</Path>
+            <Path fileType="localedata">/usr/share/locale/en_GB/LC_MESSAGES/gst-plugins-bad-0.10.mo</Path>
+            <Path fileType="localedata">/usr/share/locale/eo/LC_MESSAGES/gst-plugins-bad-0.10.mo</Path>
+            <Path fileType="localedata">/usr/share/locale/es/LC_MESSAGES/gst-plugins-bad-0.10.mo</Path>
+            <Path fileType="localedata">/usr/share/locale/eu/LC_MESSAGES/gst-plugins-bad-0.10.mo</Path>
+            <Path fileType="localedata">/usr/share/locale/fi/LC_MESSAGES/gst-plugins-bad-0.10.mo</Path>
+            <Path fileType="localedata">/usr/share/locale/fr/LC_MESSAGES/gst-plugins-bad-0.10.mo</Path>
+            <Path fileType="localedata">/usr/share/locale/gl/LC_MESSAGES/gst-plugins-bad-0.10.mo</Path>
+            <Path fileType="localedata">/usr/share/locale/hu/LC_MESSAGES/gst-plugins-bad-0.10.mo</Path>
+            <Path fileType="localedata">/usr/share/locale/id/LC_MESSAGES/gst-plugins-bad-0.10.mo</Path>
+            <Path fileType="localedata">/usr/share/locale/it/LC_MESSAGES/gst-plugins-bad-0.10.mo</Path>
+            <Path fileType="localedata">/usr/share/locale/ja/LC_MESSAGES/gst-plugins-bad-0.10.mo</Path>
+            <Path fileType="localedata">/usr/share/locale/ky/LC_MESSAGES/gst-plugins-bad-0.10.mo</Path>
+            <Path fileType="localedata">/usr/share/locale/lt/LC_MESSAGES/gst-plugins-bad-0.10.mo</Path>
+            <Path fileType="localedata">/usr/share/locale/lv/LC_MESSAGES/gst-plugins-bad-0.10.mo</Path>
+            <Path fileType="localedata">/usr/share/locale/mt/LC_MESSAGES/gst-plugins-bad-0.10.mo</Path>
+            <Path fileType="localedata">/usr/share/locale/nb/LC_MESSAGES/gst-plugins-bad-0.10.mo</Path>
+            <Path fileType="localedata">/usr/share/locale/nl/LC_MESSAGES/gst-plugins-bad-0.10.mo</Path>
+            <Path fileType="localedata">/usr/share/locale/or/LC_MESSAGES/gst-plugins-bad-0.10.mo</Path>
+            <Path fileType="localedata">/usr/share/locale/pl/LC_MESSAGES/gst-plugins-bad-0.10.mo</Path>
+            <Path fileType="localedata">/usr/share/locale/pt_BR/LC_MESSAGES/gst-plugins-bad-0.10.mo</Path>
+            <Path fileType="localedata">/usr/share/locale/ro/LC_MESSAGES/gst-plugins-bad-0.10.mo</Path>
+            <Path fileType="localedata">/usr/share/locale/ru/LC_MESSAGES/gst-plugins-bad-0.10.mo</Path>
+            <Path fileType="localedata">/usr/share/locale/sk/LC_MESSAGES/gst-plugins-bad-0.10.mo</Path>
+            <Path fileType="localedata">/usr/share/locale/sl/LC_MESSAGES/gst-plugins-bad-0.10.mo</Path>
+            <Path fileType="localedata">/usr/share/locale/sq/LC_MESSAGES/gst-plugins-bad-0.10.mo</Path>
+            <Path fileType="localedata">/usr/share/locale/sr/LC_MESSAGES/gst-plugins-bad-0.10.mo</Path>
+            <Path fileType="localedata">/usr/share/locale/sv/LC_MESSAGES/gst-plugins-bad-0.10.mo</Path>
+            <Path fileType="localedata">/usr/share/locale/tr/LC_MESSAGES/gst-plugins-bad-0.10.mo</Path>
+            <Path fileType="localedata">/usr/share/locale/uk/LC_MESSAGES/gst-plugins-bad-0.10.mo</Path>
+            <Path fileType="localedata">/usr/share/locale/vi/LC_MESSAGES/gst-plugins-bad-0.10.mo</Path>
+            <Path fileType="localedata">/usr/share/locale/zh_CN/LC_MESSAGES/gst-plugins-bad-0.10.mo</Path>
+        </Files>
+    </Package>
+    <Package>
+        <Name>gst-plugins-bad-devel</Name>
+        <Summary xml:lang="en">Development files for gst-plugins-bad</Summary>
+        <Description xml:lang="en">GStreamer is a streaming media framework that enables applications to share a common set of plugins for things like video encoding and decoding, audio encoding and decoding, audio and video filters, audio visualisation, web streaming and anything else that streams in real-time or otherwise. This package only provides base functionality and libraries.
+</Description>
+        <PartOf>programming.devel</PartOf>
+        <RuntimeDependencies>
+            <Dependency release="15">gst-plugins-bad</Dependency>
+        </RuntimeDependencies>
+        <Files>
+            <Path fileType="header">/usr/include/gstreamer-0.10/gst/basecamerabinsrc/gstbasecamerasrc.h</Path>
+            <Path fileType="header">/usr/include/gstreamer-0.10/gst/basecamerabinsrc/gstcamerabin-enum.h</Path>
+            <Path fileType="header">/usr/include/gstreamer-0.10/gst/basecamerabinsrc/gstcamerabinpreview.h</Path>
+            <Path fileType="header">/usr/include/gstreamer-0.10/gst/codecparsers/gsth264parser.h</Path>
+            <Path fileType="header">/usr/include/gstreamer-0.10/gst/codecparsers/gstmpeg4parser.h</Path>
+            <Path fileType="header">/usr/include/gstreamer-0.10/gst/codecparsers/gstmpegvideoparser.h</Path>
+            <Path fileType="header">/usr/include/gstreamer-0.10/gst/codecparsers/gstvc1parser.h</Path>
+            <Path fileType="header">/usr/include/gstreamer-0.10/gst/interfaces/photography-enumtypes.h</Path>
+            <Path fileType="header">/usr/include/gstreamer-0.10/gst/interfaces/photography.h</Path>
+            <Path fileType="header">/usr/include/gstreamer-0.10/gst/signalprocessor/gstsignalprocessor.h</Path>
+            <Path fileType="header">/usr/include/gstreamer-0.10/gst/vdpau/gstvdp.h</Path>
+            <Path fileType="header">/usr/include/gstreamer-0.10/gst/vdpau/gstvdpbuffer.h</Path>
+            <Path fileType="header">/usr/include/gstreamer-0.10/gst/vdpau/gstvdpbufferpool.h</Path>
+            <Path fileType="header">/usr/include/gstreamer-0.10/gst/vdpau/gstvdpdecoder.h</Path>
+            <Path fileType="header">/usr/include/gstreamer-0.10/gst/vdpau/gstvdpdevice.h</Path>
+            <Path fileType="header">/usr/include/gstreamer-0.10/gst/vdpau/gstvdpoutputbuffer.h</Path>
+            <Path fileType="header">/usr/include/gstreamer-0.10/gst/vdpau/gstvdpoutputbufferpool.h</Path>
+            <Path fileType="header">/usr/include/gstreamer-0.10/gst/vdpau/gstvdpoutputsrcpad.h</Path>
+            <Path fileType="header">/usr/include/gstreamer-0.10/gst/vdpau/gstvdputils.h</Path>
+            <Path fileType="header">/usr/include/gstreamer-0.10/gst/vdpau/gstvdpvideobuffer.h</Path>
+            <Path fileType="header">/usr/include/gstreamer-0.10/gst/vdpau/gstvdpvideobufferpool.h</Path>
+            <Path fileType="header">/usr/include/gstreamer-0.10/gst/vdpau/gstvdpvideosrcpad.h</Path>
+            <Path fileType="header">/usr/include/gstreamer-0.10/gst/video/gstbasevideocodec.h</Path>
+            <Path fileType="header">/usr/include/gstreamer-0.10/gst/video/gstbasevideodecoder.h</Path>
+            <Path fileType="header">/usr/include/gstreamer-0.10/gst/video/gstbasevideoencoder.h</Path>
+            <Path fileType="header">/usr/include/gstreamer-0.10/gst/video/gstbasevideoutils.h</Path>
+            <Path fileType="header">/usr/include/gstreamer-0.10/gst/video/gstsurfacebuffer.h</Path>
+            <Path fileType="header">/usr/include/gstreamer-0.10/gst/video/gstsurfaceconverter.h</Path>
+            <Path fileType="header">/usr/include/gstreamer-0.10/gst/video/videocontext.h</Path>
+            <Path fileType="library">/usr/lib64/libgstbasecamerabinsrc-0.10.so</Path>
+            <Path fileType="library">/usr/lib64/libgstbasevideo-0.10.so</Path>
+            <Path fileType="library">/usr/lib64/libgstcodecparsers-0.10.so</Path>
+            <Path fileType="library">/usr/lib64/libgstphotography-0.10.so</Path>
+            <Path fileType="library">/usr/lib64/libgstsignalprocessor-0.10.so</Path>
+            <Path fileType="library">/usr/lib64/libgstvdp-0.10.so</Path>
+            <Path fileType="data">/usr/lib64/pkgconfig/gstreamer-basevideo-0.10.pc</Path>
+            <Path fileType="data">/usr/lib64/pkgconfig/gstreamer-codecparsers-0.10.pc</Path>
+            <Path fileType="data">/usr/lib64/pkgconfig/gstreamer-plugins-bad-0.10.pc</Path>
+        </Files>
+    </Package>
+    <Package>
+        <Name>gst-plugins-bad-docs</Name>
+        <Summary xml:lang="en">Documentation for gst-plugins-bad</Summary>
+        <Description xml:lang="en">GStreamer is a streaming media framework that enables applications to share a common set of plugins for things like video encoding and decoding, audio encoding and decoding, audio and video filters, audio visualisation, web streaming and anything else that streams in real-time or otherwise. This package only provides base functionality and libraries.
+</Description>
+        <PartOf>programming.docs</PartOf>
+        <Files>
+            <Path fileType="doc">/usr/share/gtk-doc/html/gst-plugins-bad-libs-0.10/annotation-glossary.html</Path>
+            <Path fileType="doc">/usr/share/gtk-doc/html/gst-plugins-bad-libs-0.10/api-index-deprecated.html</Path>
+            <Path fileType="doc">/usr/share/gtk-doc/html/gst-plugins-bad-libs-0.10/api-index-full.html</Path>
+            <Path fileType="doc">/usr/share/gtk-doc/html/gst-plugins-bad-libs-0.10/codecparsers.html</Path>
+            <Path fileType="doc">/usr/share/gtk-doc/html/gst-plugins-bad-libs-0.10/compiling.html</Path>
+            <Path fileType="doc">/usr/share/gtk-doc/html/gst-plugins-bad-libs-0.10/gst-plugins-bad-libs-0.10.devhelp2</Path>
+            <Path fileType="doc">/usr/share/gtk-doc/html/gst-plugins-bad-libs-0.10/gst-plugins-bad-libs-GstBaseVideoCodec.html</Path>
+            <Path fileType="doc">/usr/share/gtk-doc/html/gst-plugins-bad-libs-0.10/gst-plugins-bad-libs-GstBaseVideoDecoder.html</Path>
+            <Path fileType="doc">/usr/share/gtk-doc/html/gst-plugins-bad-libs-0.10/gst-plugins-bad-libs-GstBaseVideoEncoder.html</Path>
+            <Path fileType="doc">/usr/share/gtk-doc/html/gst-plugins-bad-libs-0.10/gst-plugins-bad-libs-GstSurfaceBuffer.html</Path>
+            <Path fileType="doc">/usr/share/gtk-doc/html/gst-plugins-bad-libs-0.10/gst-plugins-bad-libs-GstSurfaceConverter.html</Path>
+            <Path fileType="doc">/usr/share/gtk-doc/html/gst-plugins-bad-libs-0.10/gst-plugins-bad-libs-GstVideoContextInterface.html</Path>
+            <Path fileType="doc">/usr/share/gtk-doc/html/gst-plugins-bad-libs-0.10/gst-plugins-bad-libs-gstbasevideoutils.html</Path>
+            <Path fileType="doc">/usr/share/gtk-doc/html/gst-plugins-bad-libs-0.10/gst-plugins-bad-libs-h264parser.html</Path>
+            <Path fileType="doc">/usr/share/gtk-doc/html/gst-plugins-bad-libs-0.10/gst-plugins-bad-libs-mpeg4parser.html</Path>
+            <Path fileType="doc">/usr/share/gtk-doc/html/gst-plugins-bad-libs-0.10/gst-plugins-bad-libs-mpegvideoparser.html</Path>
+            <Path fileType="doc">/usr/share/gtk-doc/html/gst-plugins-bad-libs-0.10/gst-plugins-bad-libs-vc1parser.html</Path>
+            <Path fileType="doc">/usr/share/gtk-doc/html/gst-plugins-bad-libs-0.10/gstreamer-libs-hierarchy.html</Path>
+            <Path fileType="doc">/usr/share/gtk-doc/html/gst-plugins-bad-libs-0.10/gstreamer-plugins-bad.html</Path>
+            <Path fileType="doc">/usr/share/gtk-doc/html/gst-plugins-bad-libs-0.10/home.png</Path>
+            <Path fileType="doc">/usr/share/gtk-doc/html/gst-plugins-bad-libs-0.10/index.html</Path>
+            <Path fileType="doc">/usr/share/gtk-doc/html/gst-plugins-bad-libs-0.10/index.sgml</Path>
+            <Path fileType="doc">/usr/share/gtk-doc/html/gst-plugins-bad-libs-0.10/left.png</Path>
+            <Path fileType="doc">/usr/share/gtk-doc/html/gst-plugins-bad-libs-0.10/right.png</Path>
+            <Path fileType="doc">/usr/share/gtk-doc/html/gst-plugins-bad-libs-0.10/style.css</Path>
+            <Path fileType="doc">/usr/share/gtk-doc/html/gst-plugins-bad-libs-0.10/up.png</Path>
+            <Path fileType="doc">/usr/share/gtk-doc/html/gst-plugins-bad-libs-0.10/video.html</Path>
+        </Files>
+    </Package>
+    <History>
+        <Update release="15">
+            <Date>2021-06-20</Date>
+            <Version>0.10.23</Version>
+            <Comment>Packaging update</Comment>
+            <Name>F. von Gellhorn</Name>
+            <Email>flinux@vongellhorn.ch</Email>
+        </Update>
+    </History>
+</PISI>

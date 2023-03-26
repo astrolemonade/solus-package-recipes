@@ -1,0 +1,24 @@
+name       : pulseaudio-qt
+version    : '1.2'
+release    : 2
+source     :
+    - https://cdn.download.kde.org/stable/pulseaudio-qt/pulseaudio-qt-1.2.tar.xz : 2901121a27eb9b701727d299829d70a34509e5d1a3e94c84ee32ed3e91a118c4
+license    : GPL-2.0-or-later
+component  : desktop.kde
+summary    : Qt framework C++ bindings library for the PulseAudio sound system
+description: |
+    Qt framework C++ bindings library for the PulseAudio sound system
+builddeps  :
+    - pkgconfig(libpulse)
+    - pkgconfig(Qt5Quick)
+    - pkgconfig(Qt5UiTools)
+    - extra-cmake-modules
+    - kcoreaddons-devel
+    - kdoctools-devel
+    - ki18n-devel
+setup      : |
+    %cmake_ninja -DBUILD_QCH=ON
+build      : |
+    %ninja_build
+install    : |
+    %ninja_install

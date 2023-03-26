@@ -1,0 +1,25 @@
+name       : qca
+version    : 2.3.1
+release    : 8
+source     :
+    - https://download.kde.org/stable/qca/2.3.1/qca-2.3.1.tar.xz : c13851109abefc4623370989fae3a745bf6b1acb3c2a13a8958539823e974e4b
+license    : LGPL-2.1-only
+component  : security.crypto
+summary    : QCA is a library that provides an easy API for a range of cryptographic features
+description: |
+    QCA is a library that provides an easy API for a range of cryptographic features, including SSL/TLS, X.509 certificates, SASL, OpenPGP, smartcards, and much more.
+builddeps  :
+    - pkgconfig(Qt5Core)
+replaces   :
+    - devel : qca-qt5-devel
+    - qca-qt5
+setup      : |
+    %cmake_ninja -DQCA_FEATURE_INSTALL_DIR=/usr/share/qt5/mkspecs/features \
+                 -DQCA_LIBRARY_INSTALL_DIR=%libdir% \
+                 -DQCA_PLUGINS_INSTALL_DIR=%libdir%/qca .
+build      : |
+    %ninja_build
+install    : |
+    %ninja_install
+check      : |
+    %ninja_check

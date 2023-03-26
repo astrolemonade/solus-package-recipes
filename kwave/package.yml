@@ -1,0 +1,40 @@
+name       : kwave
+version    : 22.12.1
+release    : 36
+source     :
+    - https://cdn.download.kde.org/stable/release-service/22.12.1/src/kwave-22.12.1.tar.xz : e3fddf477a0b5d1736f0edf939a0204ca6c10c8b2cf922182aac1eee60f67433
+homepage   : https://kde.org/applications/multimedia/org.kde.kwave
+license    : GPL-2.0-or-later
+component  : multimedia.audio
+summary    : A sound editor for KDE
+description: |
+    A sound editor for KDE
+builddeps  :
+    - pkgconfig(alsa)
+    - pkgconfig(audiofile)
+    - pkgconfig(flac)
+    - pkgconfig(fftw3)
+    - pkgconfig(libpulse)
+    - pkgconfig(librsvg-2.0)
+    - pkgconfig(mad)
+    - pkgconfig(opus)
+    - pkgconfig(Qt5Multimedia)
+    - pkgconfig(samplerate)
+    - pkgconfig(vorbis)
+    - id3lib-devel
+    - karchive-devel
+    - kcrash-devel
+    - kdbusaddons-devel
+    - kdoctools-devel
+    - kiconthemes-devel
+    - kio-devel
+    - ktextwidgets-devel
+setup      : |
+    %cmake_ninja -DBUILD_TESTING=OFF
+build      : |
+    %ninja_build
+install    : |
+    %ninja_install
+
+    #remove docs
+    rm -rf $installdir/usr/share/doc

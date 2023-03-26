@@ -1,0 +1,30 @@
+name       : plasma-browser-integration
+version    : 5.26.5
+release    : 68
+source     :
+    - https://cdn.download.kde.org/stable/plasma/5.26.5/plasma-browser-integration-5.26.5.tar.xz : 9478549b87e1021d8b7d4ea42f637dc891e857340f2c548e8c12a2b68b82dfad
+homepage   : https://www.kde.org/workspaces/plasmadesktop/
+license    : GPL-3.0-or-later
+component  : desktop.kde.core
+summary    : Integrate browsers into the Plasma Desktop
+description: |
+    Components necessary to integrate browsers into the Plasma Desktop.
+builddeps  :
+    - pkgconfig(Qt5Quick)
+    - kactivities-devel
+    - kcrash-devel
+    - kdbusaddons-devel
+    - kfilemetadata-devel
+    - kio-devel
+    - kitemmodels-devel
+    - knotifications-devel
+    - krunner-devel
+    - plasma-workspace-devel
+    - purpose-devel
+setup      : |
+    %cmake_ninja -DINSTALL_CHROME_MANIFEST=ON \
+                -DMOZILLA_DIR=%libdir%/mozilla
+build      : |
+    %ninja_build
+install    : |
+    %ninja_install

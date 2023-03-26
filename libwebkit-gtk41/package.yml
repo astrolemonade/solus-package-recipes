@@ -1,0 +1,56 @@
+name       : libwebkit-gtk41
+version    : 2.38.3
+release    : 6
+source     :
+    - https://webkitgtk.org/releases/webkitgtk-2.38.3.tar.xz : 41f001d1ed448c6936b394a9f20e4640eebf83a7f08262df28504f7410604a5a
+homepage   : https://webkitgtk.org
+license    : LGPL-2.1-only
+component  : desktop.web
+summary    : Web rendering engine
+description: |
+    The WebKitGTK+ package is the port of the portable web rendering engine WebKit to the GTK+ platform.
+clang      : no
+optimize   :
+    - no-symbolic
+    - speed
+builddeps  :
+    - pkgconfig(enchant-2)
+    - pkgconfig(geoclue-2.0)
+    - pkgconfig(gbm)
+    - pkgconfig(gnutls)
+    - pkgconfig(gstreamer-gl-1.0)
+    - pkgconfig(gstreamer-video-1.0)
+    - pkgconfig(gtk+-2.0)
+    - pkgconfig(gtk+-3.0)
+    - pkgconfig(icu-uc)
+    - pkgconfig(lcms2)
+    - pkgconfig(libjpeg)
+    - pkgconfig(libnotify)
+    - pkgconfig(libopenjp2)
+    - pkgconfig(libseccomp)
+    - pkgconfig(libsecret-1)
+    - pkgconfig(libsoup-3.0)
+    - pkgconfig(libwebp)
+    - pkgconfig(libwoff2dec)
+    - pkgconfig(libxslt)
+    - pkgconfig(ruby-3.1)
+    - pkgconfig(wayland-protocols)
+    - pkgconfig(wpebackend-fdo-1.0)
+    - pkgconfig(xt)
+    - bubblewrap
+    - gperf
+    - hyphen-devel
+    - libgcrypt-devel
+    - xdg-dbus-proxy
+rundeps    :
+    - bubblewrap
+    - xdg-dbus-proxy
+setup      : |
+    %cmake_ninja -DENABLE_GAMEPAD=OFF -DPORT=GTK -DUSE_SOUP2=OFF -DENABLE_DOCUMENTATION=OFF
+build      : |
+    # Warning: uses 24G at -j8 with gcc toolchain
+    %ninja_build
+install    : |
+    %ninja_install
+    # Provided by webkit 5.0
+    rm -fr $installdir/usr/bin

@@ -1,0 +1,21 @@
+name       : restic
+version    : 0.14.0
+release    : 20
+source     :
+    - https://github.com/restic/restic/archive/refs/tags/v0.14.0.tar.gz : 78cdd8994908ebe7923188395734bb3cdc9101477e4163c67e7cc3b8fd3b4bd6
+license    : BSD-2-Clause
+component  : system.utils
+summary    : Fast, secure, efficient backup program
+description: |
+    restic is a CLI backup program that is fast, efficient and secure.
+networking : yes
+builddeps  :
+    - golang
+build      : |
+    %make
+install    : |
+    install -Dm00755 restic -t $installdir/usr/bin
+
+    install -Dm00644 doc/man/*.1 -t $installdir/usr/share/man/man1
+    install -Dm00644 doc/bash-completion.sh $installdir/usr/share/bash-completion/completions/restic
+    install -Dm00644 doc/zsh-completion.zsh $installdir/usr/share/zsh/site-functions/_restic

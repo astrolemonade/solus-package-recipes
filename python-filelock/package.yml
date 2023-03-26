@@ -1,0 +1,20 @@
+name       : python-filelock
+version    : 3.8.0
+release    : 14
+source     :
+    - https://pypi.io/packages/source/f/filelock/filelock-3.8.0.tar.gz : 55447caa666f2198c5b6b13a26d2084d26fa5b115c00d065664b2124680c4edc
+homepage   : https://github.com/tox-dev/py-filelock/
+license    : Unlicense
+component  : programming.python
+summary    : A platform independent file lock for Python
+description: |
+    This package contains a single module, which implements a platform independent file lock in Python, which provides a simple way of inter-process communication.
+builddeps  :
+    - python-pytest-cov
+    - python-setuptools-scm
+build      : |
+    %python3_setup
+install    : |
+    %python3_install
+check      : |
+    %python3_test pytest3 -v -k 'not test_ro'

@@ -1,0 +1,24 @@
+name       : p7zip
+version    : '17.04'
+release    : 12
+source     :
+    - https://github.com/jinfeihan57/p7zip/archive/refs/tags/v17.04.tar.gz : ea029a2e21d2d6ad0a156f6679bd66836204aa78148a4c5e498fe682e77127ef
+license    : LGPL-2.1-or-later
+component  : system.utils
+summary    : p7zip is a port of 7za for POSIX systems like Unix
+description: |
+    p7zip is a port of 7za for POSIX systems like Unix
+optimize   : speed
+builddeps  :
+    - yasm
+setup      : |
+    %patch -p1 < $pkgfiles/0001-Revert-Use-system-locale-to-select-OEM-code-page-for.patch
+build      : |
+    %make OPTFLAGS="$CPPFLAGS $CFLAGS" 7z 7zr 7za
+install    : |
+    %make_install DEST_DIR="$installdir" DEST_HOME=/usr DEST_MAN=/usr/share/man DEST_SHARE="%libdir%/p7zip"
+    rm -rf $installdir/usr/share/doc
+profile    : |
+    %make test
+check      : |
+    %make test

@@ -1,0 +1,58 @@
+name       : perl-datetime-locale
+version    : '1.36'
+release    : 11
+source     :
+    - https://cpan.metacpan.org/authors/id/D/DR/DROLSKY/DateTime-Locale-1.36.tar.gz : 90a8243f2b2d4068019c65178600e76e03f5b478cb41d18c8c81cdf0d481f0a4
+homepage   : https://github.com/houseabsolute/DateTime-Locale
+license    : Artistic-1.0-Perl
+component  : programming.perl
+summary    : DateTime::Locale - Localization support for DateTime.pm
+description: |
+    DateTime::Locale is primarily a factory for the various locale subclasses. It also provides some functions for getting information on all the available locales.
+patterns   :
+    - docs : [/usr/share/man]
+builddeps  :
+    - perl-b-hooks-endofscope
+    - perl-class-data-inheritable
+    - perl-class-tiny
+    - perl-cpan-meta-check
+    - perl-devel-stacktrace
+    - perl-dist-checkconflicts
+    - perl-eval-closure
+    - perl-exception-class
+    - perl-file-copy-recursive
+    - perl-file-sharedir-install
+    - perl-ipc-system-simple
+    - perl-module-implementation
+    - perl-mro-compat
+    - perl-namespace-autoclean
+    - perl-namespace-clean
+    - perl-package-stash
+    - perl-params-validationcompiler
+    - perl-path-tiny
+    - perl-role-tiny
+    - perl-scalar-list-utils
+    - perl-specio-exporter
+    - perl-sub-exporter-progressive
+    - perl-sub-identify
+    - perl-test-fatal
+    - perl-test-file-sharedir
+    - perl-test-requires
+    - perl-test-warnings
+    - perl-test2-plugin-nowarnings
+    - perl-test2-suite
+    - perl-try-tiny
+rundeps    :
+    - perl-namespace-autoclean
+    - perl-specio-exporter
+    - perl-params-validationcompiler
+    - perl-file-sharedir
+    - perl-dist-checkconflicts
+setup      : |
+    %perl_setup
+build      : |
+    %perl_build
+install    : |
+    %perl_install
+check      : |
+    %perl_build test

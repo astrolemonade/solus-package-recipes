@@ -1,0 +1,21 @@
+name       : intel-metee
+version    : 3.1.3
+release    : 2
+source     :
+    - https://github.com/intel/metee/archive/refs/tags/3.1.3.tar.gz : 90f4fc0732f6496e27781d14f979194b7efab744e3b7200f71fbdf878d559dc0
+license    :
+    - Apache-2.0
+    - BSD-3-Clause
+component  : programming.tools
+homepage   : https://github.com/intel/metee/
+summary    : Cross-platform access library for Intel CSME HECI interface
+description: |
+    Cross-platform access library for the Intel CSME HECI interface.
+clang      : yes
+setup      : |
+    %cmake_ninja \
+        -DBUILD_SHARED_LIBS='ON'
+build      : |
+    %ninja_build
+install    : |
+    %ninja_install

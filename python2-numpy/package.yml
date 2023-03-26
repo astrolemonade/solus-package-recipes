@@ -1,0 +1,25 @@
+name       : python2-numpy
+version    : 1.16.6
+release    : 3
+source     :
+    - https://github.com/numpy/numpy/releases/download/v1.16.6/numpy-1.16.6.tar.gz : 61562ddac78765969959500b0da9c6f9ba7d77eeb12ec3927afae5303df08777
+license    : BSD-3-Clause
+component  : programming.python
+optimize   : speed
+summary    : Array processing for numbers, strings, records, and objects in Python
+description: |
+    NumPy is an array-processing package for Python designed to efficiently manipulate large multi-dimensional arrays of arbitrary records without the sacrifice of speed. It is built on the Numeric code base.
+builddeps  :
+    - pkgconfig(lapack)
+    - pkgconfig(openblas)
+    - pkgconfig(x11)
+    - cython
+    - python2-pytest
+setup      : |
+    %python_setup --fcompiler=gnu95
+install    : |
+    %python_install
+    # Conflicts with numpy (py3)
+    rm $installdir/usr/bin/f2py
+#check      : |
+#    %python_test --force

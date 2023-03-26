@@ -1,0 +1,22 @@
+name       : perl-pod-usage
+version    : '2.03'
+release    : 6
+source     :
+    - https://cpan.metacpan.org/authors/id/M/MA/MAREKR/Pod-Usage-2.03.tar.gz : 7d8fdc7dce60087b6cf9e493b8d6ae84a5ab4c0608a806a6d395cc6557460744
+homepage   : https://metacpan.org/pod/Pod::Usage
+license    : Artistic-1.0-Perl
+component  : programming.perl
+summary    : Pod::Usage - extracts POD documentation and shows usage information
+description: |
+    Extracts POD documentation and shows usage information. pod2usage should be given either a single argument, or a list of arguments corresponding to an associative array (a "hash").
+setup      : |
+    %perl_setup
+build      : |
+    %perl_build
+install    : |
+    %perl_install
+
+    # Fix file conflicts with perl parckage
+    mv -v $installdir/usr/bin/{pod2usage,pod2usage-%version%}
+    mv -v $installdir/usr/share/man/man1/{pod2usage.1,pod2usage-%version%.1}
+    mv -v $installdir/usr/share/man/man3/{Pod::Usage.3pm,Pod::Usage-%version%.3pm}

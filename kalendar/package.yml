@@ -1,0 +1,49 @@
+name       : kalendar
+version    : 22.12.1
+release    : 7
+source     :
+    - https://cdn.download.kde.org/stable/release-service/22.12.1/src/kalendar-22.12.1.tar.xz : 5c894bcdda1b5ab0271667d19208693d901974f62ff0cdf60e25815bd41599e4
+homepage   : https://apps.kde.org/kalendar/
+license    :
+    - BSD-2-Clause
+    - BSD-3-Clause
+    - CC0-1.0
+    - LGPL-2.0-or-later
+    - LGPL-2.1-or-later
+    - LGPL-3.0-or-later
+    - GPL-2.0-or-later
+    - GPL-3.0-or-later
+component  : desktop.kde
+summary    : A calendar application using Akonadi to sync with external services
+description: |
+    A calendar application using Akonadi to sync with external services
+builddeps  :
+    - pkgconfig(Qt5Qml)
+    - pkgconfig(Qt5Location)
+    - pkgconfig(Qt5QuickControls2)
+    - pkgconfig(Qt5Svg)
+    - pkgconfig(Qt5WebEngineWidgets)
+    - akonadi-contacts-devel
+    - akonadi-calendar-devel
+    - calendarsupport-devel
+    - eventviews-devel
+    - gpgme-qt-devel
+    - kcontacts-devel
+    - kdbusaddons-devel
+    - kdepim-runtime
+    - kidentitymanagement-devel
+    - kmime-devel
+    - kiconthemes-devel
+    - kio-devel
+    - kirigami2-devel
+    - mailcommon-devel
+    - pimcommon-devel
+    - qqc2-desktop-style-devel
+rundeps    :
+    - kdepim-runtime
+setup      : |
+    %cmake_ninja
+build      : |
+    %ninja_build
+install    : |
+    %ninja_install

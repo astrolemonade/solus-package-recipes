@@ -1,0 +1,40 @@
+<PISI>
+    <Source>
+        <Name>perl-mime-base64</Name>
+        <Homepage>https://metacpan.org/pod/MIME::Base64</Homepage>
+        <Packager>
+            <Name>Algent Albrahimi</Name>
+            <Email>algent@protonmail.com</Email>
+        </Packager>
+        <License>GPL-2.0-or-later</License>
+        <PartOf>programming.perl</PartOf>
+        <Summary xml:lang="en">MIME::Base64 - Encoding and decoding of base64 strings</Summary>
+        <Description xml:lang="en">This module provides functions to encode and decode strings into and from the base64 encoding specified in RFC 2045 - MIME (Multipurpose Internet Mail Extensions). The base64 encoding is designed to represent arbitrary sequences of octets in a form that need not be humanly readable. A 65-character subset ([A-Za-z0-9+/=]) of US-ASCII is used, enabling 6 bits to be represented per printable character.
+</Description>
+        <Archive type="binary" sha1sum="79eb0752a961b8e0d15c77d298c97498fbc89c5a">https://getsol.us/sources/README.Solus</Archive>
+    </Source>
+    <Package>
+        <Name>perl-mime-base64</Name>
+        <Summary xml:lang="en">MIME::Base64 - Encoding and decoding of base64 strings</Summary>
+        <Description xml:lang="en">This module provides functions to encode and decode strings into and from the base64 encoding specified in RFC 2045 - MIME (Multipurpose Internet Mail Extensions). The base64 encoding is designed to represent arbitrary sequences of octets in a form that need not be humanly readable. A 65-character subset ([A-Za-z0-9+/=]) of US-ASCII is used, enabling 6 bits to be represented per printable character.
+</Description>
+        <PartOf>programming.perl</PartOf>
+        <Files>
+            <Path fileType="library">/usr/lib64/perl5/vendor_perl/5.36/x86_64-linux-thread-multi/MIME/Base64.pm</Path>
+            <Path fileType="library">/usr/lib64/perl5/vendor_perl/5.36/x86_64-linux-thread-multi/MIME/QuotedPrint.pm</Path>
+            <Path fileType="library">/usr/lib64/perl5/vendor_perl/5.36/x86_64-linux-thread-multi/auto/MIME/Base64/.packlist</Path>
+            <Path fileType="library">/usr/lib64/perl5/vendor_perl/5.36/x86_64-linux-thread-multi/auto/MIME/Base64/Base64.so</Path>
+            <Path fileType="man">/usr/share/man/man3/MIME::Base64.3</Path>
+            <Path fileType="man">/usr/share/man/man3/MIME::QuotedPrint.3</Path>
+        </Files>
+    </Package>
+    <History>
+        <Update release="11">
+            <Date>2022-09-25</Date>
+            <Version>3.16</Version>
+            <Comment>Packaging update</Comment>
+            <Name>Algent Albrahimi</Name>
+            <Email>algent@protonmail.com</Email>
+        </Update>
+    </History>
+</PISI>

@@ -1,0 +1,14 @@
+name       : kicad-symbols
+version    : 5.1.12
+release    : 5
+source     :
+    - https://gitlab.com/kicad/libraries/kicad-symbols/-/archive/5.1.12/kicad-symbols-5.1.12.tar.bz2 : ab2b42de0ca82c193df141e4883a19b1a16e5335f15964f9006b101eaa4c8f91
+license    : CC-BY-SA-4.0
+component  : office.scientific
+summary    : Official KiCad schematic symbol libraries
+description: |
+    Official KiCad schematic symbol libraries.
+setup      : |
+    %cmake
+install    : |
+    %make_install

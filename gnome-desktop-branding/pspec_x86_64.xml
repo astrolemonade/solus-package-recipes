@@ -1,0 +1,90 @@
+<PISI>
+    <Source>
+        <Name>gnome-desktop-branding</Name>
+        <Packager>
+            <Name>Beatrice T. Meyers</Name>
+            <Email>beatrice@getsol.us</Email>
+        </Packager>
+        <License>GPL-2.0-only</License>
+        <PartOf>desktop.gnome</PartOf>
+        <Summary xml:lang="en">Defaults for the GNOME Desktop</Summary>
+        <Description xml:lang="en">Defaults for the GNOME Desktop</Description>
+        <Archive type="binary" sha1sum="79eb0752a961b8e0d15c77d298c97498fbc89c5a">https://getsol.us/sources/README.Solus</Archive>
+    </Source>
+    <Package>
+        <Name>gnome-desktop-branding-fortitude</Name>
+        <Summary xml:lang="en">Solus 4.0 Fortitude defaults for our GNOME experience</Summary>
+        <Description xml:lang="en">Solus 4.0 Fortitude defaults for our GNOME experience.</Description>
+        <PartOf>desktop.gnome</PartOf>
+        <RuntimeDependencies>
+            <Dependency releaseFrom="34">gnome-desktop-branding-shared</Dependency>
+        </RuntimeDependencies>
+        <Files>
+            <Path fileType="data">/usr/share/glib-2.0/schemas/30_gnome_fortitude_settings.gschema.override</Path>
+        </Files>
+    </Package>
+    <Package>
+        <Name>gnome-desktop-branding-legacy</Name>
+        <Summary xml:lang="en">Legacy Solus GNOME desktop branding</Summary>
+        <Description xml:lang="en">Legacy Solus GNOME desktop branding.</Description>
+        <PartOf>desktop.gnome</PartOf>
+        <RuntimeDependencies>
+            <Dependency releaseFrom="34">gnome-desktop-branding-shared</Dependency>
+        </RuntimeDependencies>
+        <Files>
+            <Path fileType="data">/usr/share/glib-2.0/schemas/10_gnome_settings.gschema.override</Path>
+        </Files>
+        <Replaces>
+            <Package>gnome-desktop-branding</Package>
+        </Replaces>
+    </Package>
+    <Package>
+        <Name>gnome-desktop-branding-livecd</Name>
+        <Summary xml:lang="en">Solus 4.0 GNOME LiveCD configuration</Summary>
+        <Description xml:lang="en">Solus 4.0 LiveCD configuration.</Description>
+        <PartOf>desktop.gnome</PartOf>
+        <Files>
+            <Path fileType="data">/usr/share/glib-2.0/schemas/50_gnome_livecd.gschema.override</Path>
+        </Files>
+    </Package>
+    <Package>
+        <Name>gnome-desktop-branding-material</Name>
+        <Summary xml:lang="en">Material Design inspired GNOME experience</Summary>
+        <Description xml:lang="en">Material Design inspired GNOME experience.</Description>
+        <PartOf>desktop.gnome</PartOf>
+        <RuntimeDependencies>
+            <Dependency releaseFrom="34">gnome-desktop-branding-legacy</Dependency>
+        </RuntimeDependencies>
+        <Files>
+            <Path fileType="data">/usr/share/glib-2.0/schemas/20_gnome_material_settings.gschema.override</Path>
+        </Files>
+    </Package>
+    <Package>
+        <Name>gnome-desktop-branding-minimal</Name>
+        <Summary xml:lang="en">Minimal GNOME experience changes. For Solus 4.4 and beyond</Summary>
+        <Description xml:lang="en">Minimal GNOME experience changes (no font, extensions, iconography, theming changes). For Solus 4.4 and beyond.</Description>
+        <PartOf>desktop.gnome</PartOf>
+        <Files>
+            <Path fileType="data">/usr/share/glib-2.0/schemas/40_gnome_minimal_settings.gschema.override</Path>
+        </Files>
+    </Package>
+    <Package>
+        <Name>gnome-desktop-branding-shared</Name>
+        <Summary xml:lang="en">Shared dependencies of various branding packages</Summary>
+        <Description xml:lang="en">Shared dependencies of various branding packages.</Description>
+        <PartOf>desktop.gnome</PartOf>
+        <Files>
+            <Path fileType="data">/usr/share/defaults/etc/profile.d/60-gnome-gl.sh</Path>
+            <Path fileType="data">/usr/share/gnome-desktop-branding/shared</Path>
+        </Files>
+    </Package>
+    <History>
+        <Update release="34">
+            <Date>2022-09-10</Date>
+            <Version>16.0</Version>
+            <Comment>Packaging update</Comment>
+            <Name>Beatrice T. Meyers</Name>
+            <Email>beatrice@getsol.us</Email>
+        </Update>
+    </History>
+</PISI>

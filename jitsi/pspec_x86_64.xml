@@ -1,0 +1,221 @@
+<PISI>
+    <Source>
+        <Name>jitsi</Name>
+        <Packager>
+            <Name>Joey Riches</Name>
+            <Email>josephriches@gmail.com</Email>
+        </Packager>
+        <License>Apache-2.0</License>
+        <PartOf>network.im</PartOf>
+        <Summary xml:lang="en">Jitsi is a free open-source audio/video and chat communicator</Summary>
+        <Description xml:lang="en">Jitsi is a free open-source audio/video and chat communicator
+</Description>
+        <Archive type="binary" sha1sum="79eb0752a961b8e0d15c77d298c97498fbc89c5a">https://getsol.us/sources/README.Solus</Archive>
+    </Source>
+    <Package>
+        <Name>jitsi</Name>
+        <Summary xml:lang="en">Jitsi is a free open-source audio/video and chat communicator</Summary>
+        <Description xml:lang="en">Jitsi is a free open-source audio/video and chat communicator
+</Description>
+        <PartOf>network.im</PartOf>
+        <Files>
+            <Path fileType="executable">/usr/bin/jitsi</Path>
+            <Path fileType="data">/usr/share/applications/jitsi.desktop</Path>
+            <Path fileType="data">/usr/share/jitsi/lib/bundle/commons-logging.jar</Path>
+            <Path fileType="data">/usr/share/jitsi/lib/bundle/junit.jar</Path>
+            <Path fileType="data">/usr/share/jitsi/lib/bundle/log4j.jar</Path>
+            <Path fileType="data">/usr/share/jitsi/lib/felix.client.run.properties</Path>
+            <Path fileType="data">/usr/share/jitsi/lib/felix.jar</Path>
+            <Path fileType="data">/usr/share/jitsi/lib/jitsi-defaults.properties</Path>
+            <Path fileType="data">/usr/share/jitsi/lib/logging.properties</Path>
+            <Path fileType="data">/usr/share/jitsi/lib/native/libgalagonotification.so</Path>
+            <Path fileType="data">/usr/share/jitsi/lib/native/libglobalshortcut.so</Path>
+            <Path fileType="data">/usr/share/jitsi/lib/native/libhid.so</Path>
+            <Path fileType="data">/usr/share/jitsi/lib/native/libhwaddressretriever.so</Path>
+            <Path fileType="data">/usr/share/jitsi/lib/native/libjdic_misc.so</Path>
+            <Path fileType="data">/usr/share/jitsi/lib/native/libsysactivitynotifications.so</Path>
+            <Path fileType="data">/usr/share/jitsi/lib/native/libunix-java.so</Path>
+            <Path fileType="data">/usr/share/jitsi/sc-bundles/accountinfo.jar</Path>
+            <Path fileType="data">/usr/share/jitsi/sc-bundles/addrbook.jar</Path>
+            <Path fileType="data">/usr/share/jitsi/sc-bundles/advancedconfig.jar</Path>
+            <Path fileType="data">/usr/share/jitsi/sc-bundles/aimaccregwizz.jar</Path>
+            <Path fileType="data">/usr/share/jitsi/sc-bundles/argdelegation-service.jar</Path>
+            <Path fileType="data">/usr/share/jitsi/sc-bundles/argdelegation.jar</Path>
+            <Path fileType="data">/usr/share/jitsi/sc-bundles/bccontrib.jar</Path>
+            <Path fileType="data">/usr/share/jitsi/sc-bundles/bcpkix.jar</Path>
+            <Path fileType="data">/usr/share/jitsi/sc-bundles/bouncycastle.jar</Path>
+            <Path fileType="data">/usr/share/jitsi/sc-bundles/branding.jar</Path>
+            <Path fileType="data">/usr/share/jitsi/sc-bundles/browserlauncher.jar</Path>
+            <Path fileType="data">/usr/share/jitsi/sc-bundles/callhistory.jar</Path>
+            <Path fileType="data">/usr/share/jitsi/sc-bundles/certificate.jar</Path>
+            <Path fileType="data">/usr/share/jitsi/sc-bundles/chatalerter.jar</Path>
+            <Path fileType="data">/usr/share/jitsi/sc-bundles/chatconfig.jar</Path>
+            <Path fileType="data">/usr/share/jitsi/sc-bundles/commons-codec.jar</Path>
+            <Path fileType="data">/usr/share/jitsi/sc-bundles/commons-compress.jar</Path>
+            <Path fileType="data">/usr/share/jitsi/sc-bundles/commons-lang.jar</Path>
+            <Path fileType="data">/usr/share/jitsi/sc-bundles/configuration.jar</Path>
+            <Path fileType="data">/usr/share/jitsi/sc-bundles/connectioninfo.jar</Path>
+            <Path fileType="data">/usr/share/jitsi/sc-bundles/contacteventhandler.jar</Path>
+            <Path fileType="data">/usr/share/jitsi/sc-bundles/contactinfo.jar</Path>
+            <Path fileType="data">/usr/share/jitsi/sc-bundles/contactlist.jar</Path>
+            <Path fileType="data">/usr/share/jitsi/sc-bundles/contactsource.jar</Path>
+            <Path fileType="data">/usr/share/jitsi/sc-bundles/credentialsstorage.jar</Path>
+            <Path fileType="data">/usr/share/jitsi/sc-bundles/customavatar-service.jar</Path>
+            <Path fileType="data">/usr/share/jitsi/sc-bundles/customcontactactions.jar</Path>
+            <Path fileType="data">/usr/share/jitsi/sc-bundles/defaultresources.jar</Path>
+            <Path fileType="data">/usr/share/jitsi/sc-bundles/demuxcontactsource.jar</Path>
+            <Path fileType="data">/usr/share/jitsi/sc-bundles/desktoputil.jar</Path>
+            <Path fileType="data">/usr/share/jitsi/sc-bundles/dns.jar</Path>
+            <Path fileType="data">/usr/share/jitsi/sc-bundles/dnsconfig.jar</Path>
+            <Path fileType="data">/usr/share/jitsi/sc-bundles/dnsjava.jar</Path>
+            <Path fileType="data">/usr/share/jitsi/sc-bundles/dnssecjava.jar</Path>
+            <Path fileType="data">/usr/share/jitsi/sc-bundles/dnsservice.jar</Path>
+            <Path fileType="data">/usr/share/jitsi/sc-bundles/fileaccess.jar</Path>
+            <Path fileType="data">/usr/share/jitsi/sc-bundles/filehistory.jar</Path>
+            <Path fileType="data">/usr/share/jitsi/sc-bundles/fmj.jar</Path>
+            <Path fileType="data">/usr/share/jitsi/sc-bundles/galagonotification.jar</Path>
+            <Path fileType="data">/usr/share/jitsi/sc-bundles/generalconfig.jar</Path>
+            <Path fileType="data">/usr/share/jitsi/sc-bundles/globaldisplaydetails.jar</Path>
+            <Path fileType="data">/usr/share/jitsi/sc-bundles/globalproxyconfig.jar</Path>
+            <Path fileType="data">/usr/share/jitsi/sc-bundles/globalshortcut.jar</Path>
+            <Path fileType="data">/usr/share/jitsi/sc-bundles/googlecontacts-service.jar</Path>
+            <Path fileType="data">/usr/share/jitsi/sc-bundles/googlecontacts.jar</Path>
+            <Path fileType="data">/usr/share/jitsi/sc-bundles/googletalkaccregwizz.jar</Path>
+            <Path fileType="data">/usr/share/jitsi/sc-bundles/guava.jar</Path>
+            <Path fileType="data">/usr/share/jitsi/sc-bundles/hid-service.jar</Path>
+            <Path fileType="data">/usr/share/jitsi/sc-bundles/hid.jar</Path>
+            <Path fileType="data">/usr/share/jitsi/sc-bundles/history.jar</Path>
+            <Path fileType="data">/usr/share/jitsi/sc-bundles/hsqldb.jar</Path>
+            <Path fileType="data">/usr/share/jitsi/sc-bundles/httpclient.jar</Path>
+            <Path fileType="data">/usr/share/jitsi/sc-bundles/httpcore.jar</Path>
+            <Path fileType="data">/usr/share/jitsi/sc-bundles/httputil.jar</Path>
+            <Path fileType="data">/usr/share/jitsi/sc-bundles/ice4j.jar</Path>
+            <Path fileType="data">/usr/share/jitsi/sc-bundles/icqaccregwizz.jar</Path>
+            <Path fileType="data">/usr/share/jitsi/sc-bundles/ippiaccregwizz.jar</Path>
+            <Path fileType="data">/usr/share/jitsi/sc-bundles/iptelaccregwizz.jar</Path>
+            <Path fileType="data">/usr/share/jitsi/sc-bundles/irc-api-1.0.jar</Path>
+            <Path fileType="data">/usr/share/jitsi/sc-bundles/irc-commands.jar</Path>
+            <Path fileType="data">/usr/share/jitsi/sc-bundles/ircaccregwizz.jar</Path>
+            <Path fileType="data">/usr/share/jitsi/sc-bundles/jabberaccregwizz.jar</Path>
+            <Path fileType="data">/usr/share/jitsi/sc-bundles/jain-sip-ri.jar</Path>
+            <Path fileType="data">/usr/share/jitsi/sc-bundles/java-sdp-nist-bridge.jar</Path>
+            <Path fileType="data">/usr/share/jitsi/sc-bundles/jbosh.jar</Path>
+            <Path fileType="data">/usr/share/jitsi/sc-bundles/jitsi-lgpl-dependencies.jar</Path>
+            <Path fileType="data">/usr/share/jitsi/sc-bundles/jitsi-utils.jar</Path>
+            <Path fileType="data">/usr/share/jitsi/sc-bundles/jitsi-xmpp-extensions.jar</Path>
+            <Path fileType="data">/usr/share/jitsi/sc-bundles/jmdnslib.jar</Path>
+            <Path fileType="data">/usr/share/jitsi/sc-bundles/jmork.jar</Path>
+            <Path fileType="data">/usr/share/jitsi/sc-bundles/jna-platform.jar</Path>
+            <Path fileType="data">/usr/share/jitsi/sc-bundles/jna.jar</Path>
+            <Path fileType="data">/usr/share/jitsi/sc-bundles/jnsapi.jar</Path>
+            <Path fileType="data">/usr/share/jitsi/sc-bundles/json.jar</Path>
+            <Path fileType="data">/usr/share/jitsi/sc-bundles/jxmpp-core.jar</Path>
+            <Path fileType="data">/usr/share/jitsi/sc-bundles/jxmpp-jid.jar</Path>
+            <Path fileType="data">/usr/share/jitsi/sc-bundles/jxmpp-util-cache.jar</Path>
+            <Path fileType="data">/usr/share/jitsi/sc-bundles/keybindingChooser.jar</Path>
+            <Path fileType="data">/usr/share/jitsi/sc-bundles/keybindings.jar</Path>
+            <Path fileType="data">/usr/share/jitsi/sc-bundles/ldap.jar</Path>
+            <Path fileType="data">/usr/share/jitsi/sc-bundles/libjitsi.jar</Path>
+            <Path fileType="data">/usr/share/jitsi/sc-bundles/meta-cl.jar</Path>
+            <Path fileType="data">/usr/share/jitsi/sc-bundles/metahistory.jar</Path>
+            <Path fileType="data">/usr/share/jitsi/sc-bundles/msghistory.jar</Path>
+            <Path fileType="data">/usr/share/jitsi/sc-bundles/muc.jar</Path>
+            <Path fileType="data">/usr/share/jitsi/sc-bundles/neomedia.jar</Path>
+            <Path fileType="data">/usr/share/jitsi/sc-bundles/netaddr.jar</Path>
+            <Path fileType="data">/usr/share/jitsi/sc-bundles/notification-handlers.jar</Path>
+            <Path fileType="data">/usr/share/jitsi/sc-bundles/notification-service.jar</Path>
+            <Path fileType="data">/usr/share/jitsi/sc-bundles/notification-wiring.jar</Path>
+            <Path fileType="data">/usr/share/jitsi/sc-bundles/notificationconfig.jar</Path>
+            <Path fileType="data">/usr/share/jitsi/sc-bundles/org.apache.servicemix.bundles.xpp3.jar</Path>
+            <Path fileType="data">/usr/share/jitsi/sc-bundles/osdependent.jar</Path>
+            <Path fileType="data">/usr/share/jitsi/sc-bundles/otr.jar</Path>
+            <Path fileType="data">/usr/share/jitsi/sc-bundles/packetlogging.jar</Path>
+            <Path fileType="data">/usr/share/jitsi/sc-bundles/phonenumbercontactsource.jar</Path>
+            <Path fileType="data">/usr/share/jitsi/sc-bundles/phonenumbers.jar</Path>
+            <Path fileType="data">/usr/share/jitsi/sc-bundles/plugin-blf.jar</Path>
+            <Path fileType="data">/usr/share/jitsi/sc-bundles/plugin-certconfig.jar</Path>
+            <Path fileType="data">/usr/share/jitsi/sc-bundles/plugin-contactsourceconfig.jar</Path>
+            <Path fileType="data">/usr/share/jitsi/sc-bundles/plugin-ldap.jar</Path>
+            <Path fileType="data">/usr/share/jitsi/sc-bundles/plugin-loggingutils.jar</Path>
+            <Path fileType="data">/usr/share/jitsi/sc-bundles/plugin-msofficecomm.jar</Path>
+            <Path fileType="data">/usr/share/jitsi/sc-bundles/plugin-nimbuzzavatars.jar</Path>
+            <Path fileType="data">/usr/share/jitsi/sc-bundles/pluginmanager.jar</Path>
+            <Path fileType="data">/usr/share/jitsi/sc-bundles/propertieseditor.jar</Path>
+            <Path fileType="data">/usr/share/jitsi/sc-bundles/protocol-icq.jar</Path>
+            <Path fileType="data">/usr/share/jitsi/sc-bundles/protocol-irc.jar</Path>
+            <Path fileType="data">/usr/share/jitsi/sc-bundles/protocol-jabber.jar</Path>
+            <Path fileType="data">/usr/share/jitsi/sc-bundles/protocol-media.jar</Path>
+            <Path fileType="data">/usr/share/jitsi/sc-bundles/protocol-mock.jar</Path>
+            <Path fileType="data">/usr/share/jitsi/sc-bundles/protocol-sip.jar</Path>
+            <Path fileType="data">/usr/share/jitsi/sc-bundles/protocol.jar</Path>
+            <Path fileType="data">/usr/share/jitsi/sc-bundles/provdisc-dhcp.jar</Path>
+            <Path fileType="data">/usr/share/jitsi/sc-bundles/provdisc-mdns.jar</Path>
+            <Path fileType="data">/usr/share/jitsi/sc-bundles/provdisc.jar</Path>
+            <Path fileType="data">/usr/share/jitsi/sc-bundles/provisioning.jar</Path>
+            <Path fileType="data">/usr/share/jitsi/sc-bundles/reconnectplugin.jar</Path>
+            <Path fileType="data">/usr/share/jitsi/sc-bundles/replacement-bliptv.jar</Path>
+            <Path fileType="data">/usr/share/jitsi/sc-bundles/replacement-dailymotion.jar</Path>
+            <Path fileType="data">/usr/share/jitsi/sc-bundles/replacement-directimage.jar</Path>
+            <Path fileType="data">/usr/share/jitsi/sc-bundles/replacement-flickr.jar</Path>
+            <Path fileType="data">/usr/share/jitsi/sc-bundles/replacement-hulu.jar</Path>
+            <Path fileType="data">/usr/share/jitsi/sc-bundles/replacement-metacafe.jar</Path>
+            <Path fileType="data">/usr/share/jitsi/sc-bundles/replacement-smiley.jar</Path>
+            <Path fileType="data">/usr/share/jitsi/sc-bundles/replacement-twitpic.jar</Path>
+            <Path fileType="data">/usr/share/jitsi/sc-bundles/replacement-vbox7.jar</Path>
+            <Path fileType="data">/usr/share/jitsi/sc-bundles/replacement-viddler.jar</Path>
+            <Path fileType="data">/usr/share/jitsi/sc-bundles/replacement-vimeo.jar</Path>
+            <Path fileType="data">/usr/share/jitsi/sc-bundles/replacement-youtube.jar</Path>
+            <Path fileType="data">/usr/share/jitsi/sc-bundles/replacement.jar</Path>
+            <Path fileType="data">/usr/share/jitsi/sc-bundles/resourcemanager.jar</Path>
+            <Path fileType="data">/usr/share/jitsi/sc-bundles/sc-launcher.jar</Path>
+            <Path fileType="data">/usr/share/jitsi/sc-bundles/sdes4j.jar</Path>
+            <Path fileType="data">/usr/share/jitsi/sc-bundles/sdp-api.jar</Path>
+            <Path fileType="data">/usr/share/jitsi/sc-bundles/securityconfig.jar</Path>
+            <Path fileType="data">/usr/share/jitsi/sc-bundles/shutdown-timeout.jar</Path>
+            <Path fileType="data">/usr/share/jitsi/sc-bundles/simpleaccreg.jar</Path>
+            <Path fileType="data">/usr/share/jitsi/sc-bundles/sip-api.jar</Path>
+            <Path fileType="data">/usr/share/jitsi/sc-bundles/sipaccregwizz.jar</Path>
+            <Path fileType="data">/usr/share/jitsi/sc-bundles/skinmanager.jar</Path>
+            <Path fileType="data">/usr/share/jitsi/sc-bundles/slf4j-api.jar</Path>
+            <Path fileType="data">/usr/share/jitsi/sc-bundles/slf4j-jdk14.jar</Path>
+            <Path fileType="data">/usr/share/jitsi/sc-bundles/slick-runner.jar</Path>
+            <Path fileType="data">/usr/share/jitsi/sc-bundles/slickless.jar</Path>
+            <Path fileType="data">/usr/share/jitsi/sc-bundles/smack-bosh.jar</Path>
+            <Path fileType="data">/usr/share/jitsi/sc-bundles/smack-core.jar</Path>
+            <Path fileType="data">/usr/share/jitsi/sc-bundles/smack-debug.jar</Path>
+            <Path fileType="data">/usr/share/jitsi/sc-bundles/smack-experimental.jar</Path>
+            <Path fileType="data">/usr/share/jitsi/sc-bundles/smack-extensions.jar</Path>
+            <Path fileType="data">/usr/share/jitsi/sc-bundles/smack-im.jar</Path>
+            <Path fileType="data">/usr/share/jitsi/sc-bundles/smack-java7.jar</Path>
+            <Path fileType="data">/usr/share/jitsi/sc-bundles/smack-legacy.jar</Path>
+            <Path fileType="data">/usr/share/jitsi/sc-bundles/smack-resolver-javax.jar</Path>
+            <Path fileType="data">/usr/share/jitsi/sc-bundles/smack-sasl-javax.jar</Path>
+            <Path fileType="data">/usr/share/jitsi/sc-bundles/smack-tcp.jar</Path>
+            <Path fileType="data">/usr/share/jitsi/sc-bundles/spellChecker.jar</Path>
+            <Path fileType="data">/usr/share/jitsi/sc-bundles/splash-screen.jar</Path>
+            <Path fileType="data">/usr/share/jitsi/sc-bundles/swing-ui.jar</Path>
+            <Path fileType="data">/usr/share/jitsi/sc-bundles/swingnotification.jar</Path>
+            <Path fileType="data">/usr/share/jitsi/sc-bundles/sysactivitynotifications.jar</Path>
+            <Path fileType="data">/usr/share/jitsi/sc-bundles/systray-service.jar</Path>
+            <Path fileType="data">/usr/share/jitsi/sc-bundles/thunderbook.jar</Path>
+            <Path fileType="data">/usr/share/jitsi/sc-bundles/ui-service.jar</Path>
+            <Path fileType="data">/usr/share/jitsi/sc-bundles/update.jar</Path>
+            <Path fileType="data">/usr/share/jitsi/sc-bundles/updateservice.jar</Path>
+            <Path fileType="data">/usr/share/jitsi/sc-bundles/usersearch.jar</Path>
+            <Path fileType="data">/usr/share/jitsi/sc-bundles/util.jar</Path>
+            <Path fileType="data">/usr/share/jitsi/sc-bundles/version-impl.jar</Path>
+            <Path fileType="data">/usr/share/jitsi/sc-bundles/weupnp.jar</Path>
+            <Path fileType="data">/usr/share/jitsi/sc-bundles/zrtp4j.jar</Path>
+            <Path fileType="data">/usr/share/pixmaps/jitsi.svg</Path>
+        </Files>
+    </Package>
+    <History>
+        <Update release="10">
+            <Date>2022-03-30</Date>
+            <Version>2.11.5633</Version>
+            <Comment>Packaging update</Comment>
+            <Name>Joey Riches</Name>
+            <Email>josephriches@gmail.com</Email>
+        </Update>
+    </History>
+</PISI>

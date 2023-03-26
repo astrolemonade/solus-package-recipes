@@ -1,0 +1,19 @@
+name       : unison
+version    : 2.51.3
+release    : 4
+source     :
+    - https://github.com/bcpierce00/unison/archive/refs/tags/v2.51.3.zip : 25e2bf8b9ae337924818bebadc87b6b94aea0bf29cc1b33cc9edd4b5628e207a
+license    : GPL-3.0-or-later
+component  : network.util
+summary    : Unison is a file-synchronization tool for Unix and Windows.
+description: |
+    Unison is a file-synchronization tool for Unix and Windows. It allows two replicas of a collection of files and directories to be stored on different hosts (or different disks on the same host), modified separately, and then brought up to date by propagating the changes in each replica to the other.
+builddeps  :
+    - ocaml
+build      : |
+    CFLAGS=""
+    make -j1
+install    : |
+    install -d $installdir/usr/bin/
+    install -m 00755 src/unison $installdir/usr/bin/unison
+    install -m 00755 src/unison-fsmonitor $installdir/usr/bin/unison-fsmonitor

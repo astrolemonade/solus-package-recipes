@@ -1,0 +1,33 @@
+name       : kwidgetsaddons
+version    : 5.101.0
+release    : 67
+source     :
+    - https://cdn.download.kde.org/stable/frameworks/5.101/kwidgetsaddons-5.101.0.tar.xz : 78913d3303e94329db964bf072b9e565bd582fbbd026310dce6e994c8d083823
+homepage   : https://community.kde.org/Frameworks
+license    :
+    - BSD-3-Clause
+    - GPL-2.0-or-later
+    - LGPL-2.0-only
+    - LGPL-2.0-or-later
+    - LGPL-2.1-only
+    - LGPL-2.1-or-later
+    - LGPL-3.0-or-later
+component  : desktop.library
+summary    : Large set of desktop widgets.
+description: |
+    Large set of desktop widgets.
+optimize   : lto
+builddeps  :
+    - pkgconfig(Qt5Designer)
+    - extra-cmake-modules
+rundeps    :
+    - devel :
+        - extra-cmake-modules
+        - qt5-tools-devel
+setup      : |
+    %cmake_ninja -DBUILD_QCH=ON \
+                -DBUILD_TESTING=OFF
+build      : |
+    %ninja_build
+install    : |
+    %ninja_install

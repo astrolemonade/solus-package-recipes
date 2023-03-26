@@ -1,0 +1,30 @@
+name       : haskell-gtk3
+version    : 0.15.5
+release    : 2
+source     :
+    - https://hackage.haskell.org/package/gtk3-0.15.5/gtk3-0.15.5.tar.gz : c03876dc79436aa467c93db580405f0e8eb7ca44c48d48af0fdcc17d7bafbcf8
+license    : LGPL-2.1-only
+component  : programming.haskell
+summary    : This is the core library of the Gtk2Hs suite of libraries for Haskell based on Gtk+.
+description: |
+    This is the core library of the Gtk2Hs suite of libraries for Haskell based on Gtk+. Gtk+ is an extensive and mature multi-platform toolkit for creating graphical user interfaces.
+builddeps  :
+    - pkgconfig(gtk+-3.0)
+    - haskell-cabal-install
+    - haskell-gio-devel
+    - haskell-pango-devel
+rundeps    :
+    - devel:
+        - haskell-gio-devel
+        - haskell-pango-devel
+        - libgtk-3-devel
+networking : yes
+setup      : |
+    sed -i "s|@G_SEARCHPATH_SEPARATOR_S@||" Graphics/UI/Gtk/General/RcStyle.chs
+    %patch -p1 < $pkgfiles/levelbar.patch
+    %cabal_configure
+build      : |
+    %cabal_build
+install    : |
+    %cabal_install
+    %cabal_register

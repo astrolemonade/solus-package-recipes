@@ -1,0 +1,20 @@
+name       : less
+version    : '608'
+release    : 18
+source     :
+    - http://www.greenwoodsoftware.com/less/less-608.tar.gz : a69abe2e0a126777e021d3b73aa3222e1b261f10e64624d41ec079685a6ac209
+license    :
+    - GPL-3.0-only
+    - BSD-2-Clause
+homepage   : http://www.greenwoodsoftware.com/less/
+component  : system.base
+summary    : less (file pager)
+description: |
+    less is a free open-source file pager. It is used to read files, but not modify them.
+setup      : |
+    %configure
+build      : |
+    %make
+install    : |
+    %make_install
+

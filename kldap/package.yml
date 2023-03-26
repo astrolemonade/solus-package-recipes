@@ -1,0 +1,26 @@
+name       : kldap
+version    : 22.12.1
+release    : 63
+source     :
+    - https://cdn.download.kde.org/stable/release-service/22.12.1/src/kldap-22.12.1.tar.xz : c88fe3b857ecd1a92185d425fb95ebdbb488104b283568698bb840da6500d6b7
+homepage   : https://kde.org/
+license    : LGPL-2.1-or-later
+component  : desktop.library
+summary    : Allows LDAP accessing with a convenient Qt style C++ API
+description: |
+    Allows LDAP accessing with a convenient Qt style C++ API.
+builddeps  :
+    - pkgconfig(libsasl2)
+    - kdoctools-devel
+    - kio-devel
+    - openldap-devel
+    - qtkeychain-devel
+setup      : |
+    %cmake_ninja -DBUILD_TESTING=OFF
+build      : |
+    %ninja_build
+install    : |
+    %ninja_install
+
+    # remove doc
+    rm -rf $installdir/usr/share/doc

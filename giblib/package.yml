@@ -1,0 +1,24 @@
+name       : giblib
+version    : 1.2.4
+release    : 7
+source     :
+    - https://getsol.us/sources/giblib-1.2.4.tar.gz : 176611c4d88d742ea4013991ad54c2f9d2feefbc97a28434c0f48922ebaa8bac
+homepage   : http://freshmeat.sourceforge.net/projects/giblib
+license    : MIT
+component  : desktop.library
+summary    : giblib is a simple library which wraps imlib2 and provides a context API for it
+description: |
+    giblib is a simple library which wraps imlib2. It provides a wrapper to imlib2's context API, avoiding all the context_get/set calls, adds fontstyles to the truetype renderer and supplies a generic doubly-linked list and some string functions.
+builddeps  :
+    - pkgconfig(imlib2)
+    - pkgconfig(xext)
+setup      : |
+    ./configure --prefix=/usr \
+                --libdir=%libdir% \
+                --disable-static
+build      : |
+    %make
+install    : |
+    %make_install
+    mkdir -p $installdir/usr/share/
+    mv $installdir/usr/doc $installdir/usr/share/

@@ -1,0 +1,34 @@
+name       : kolourpaint
+version    : 22.12.1
+release    : 68
+source     :
+    - https://cdn.download.kde.org/stable/release-service/22.12.1/src/kolourpaint-22.12.1.tar.xz : 48d695a57c35624bbaec94ecd617f9cfaef07fb3d8d787adfaa82b145b0f3754
+homepage   : https://kde.org/applications/graphics/org.kde.kolourpaint
+license    :
+    - BSD-2-Clause
+    - GPL-2.0-or-later
+    - LGPL-2.0-or-later
+component  : multimedia.graphics
+summary    : KolourPaint is a free, easy-to-use paint program for KDE
+description: |
+    KolourPaint is a free, easy-to-use paint program for KDE
+builddeps  :
+    - pkgconfig(Qt5Widgets)
+    - kdoctools-devel
+    - kguiaddons-devel
+    - kio-devel
+    - ktextwidgets-devel
+    - libksane-devel
+rundeps    :
+    - breeze
+    - breeze-icons
+    - kimageformats
+setup      : |
+    %cmake_ninja
+build      : |
+    %ninja_build
+install    : |
+    %ninja_install
+
+    # remove docs
+    rm -rf $installdir/usr/share/doc

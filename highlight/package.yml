@@ -1,0 +1,20 @@
+name       : highlight
+version    : '4.2'
+release    : 13
+source     :
+    - https://gitlab.com/saalen/highlight/-/archive/v4.2/highlight-v4.2.tar.gz : 6cf9b44c9848d073e042b5eb54be4098655a7aba68084f50aa5fcb8ee415c5d9
+license    : GPL-3.0-or-later
+component  : programming.tools
+summary    : Convert source code to formatted text with syntax highlighting
+description: |
+    Highlight converts source code to HTML, XHTML, RTF, LaTex, TeX, SVG, BBCode and terminal escape sequences with coloured syntax highlighting. Language definitions and colour themes are customizable.
+builddeps  :
+    - pkgconfig(lua-5.3)
+    - libboost-devel
+build      : |
+    %make
+install    : |
+    %make_install
+
+    # remove necessary documentation files
+    rm -r $installdir/usr/share/doc

@@ -1,0 +1,23 @@
+name       : kdev-php
+version    : 22.12.1
+release    : 24
+source     :
+    - https://cdn.download.kde.org/stable/release-service/22.12.1/src/kdev-php-22.12.1.tar.xz : 00f6b91e73d7c6900e4c4975bf174cb72e03c55f6bc72884e92947c2d22aca4a
+license    : GPL-2.0-or-later
+component  : programming.tools
+summary    : PHP support for KDevelop
+description: |
+    KDevelop plugin which provides PHP language support.
+libsplit   : no
+builddeps  :
+    - pkgconfig(Qt5Core)
+    - kcmutils-devel
+    - kdevelop-devel
+    - kdevelop-pg-qt-devel
+    - ktexteditor-devel
+setup      : |
+    %cmake_ninja -DBUILD_TESTING=OFF
+build      : |
+    %ninja_build
+install    : |
+    %ninja_install

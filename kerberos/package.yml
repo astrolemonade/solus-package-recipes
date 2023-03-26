@@ -1,0 +1,33 @@
+name       : kerberos
+version    : 1.18.2
+release    : 19
+source     :
+    - https://github.com/krb5/krb5/archive/krb5-1.18.2-final.tar.gz : 3a92fb44d06a60a79c71a031a528246bf4cf3badad150a2b91dfa7c4702c6c19
+homepage   : http://web.mit.edu/kerberos/
+license    : MIT
+component  : system.base
+summary    : Kerberos 5 network authentication protocol
+description: |
+    MIT Kerberos V5 is a free implementation of Kerberos 5. Kerberos is a network authentication protocol. It centralizes the authentication database and uses kerberized applications to work with servers or services that support Kerberos allowing single logins and encrypted communication over internal networks or the Internet.
+emul32     : yes
+patterns   :
+    - devel : [/usr/share/examples, /usr/share/man/man8]
+builddeps  :
+    - pkgconfig32(com_err)
+    - openssl-11-32bit-devel # Use until transition is complete
+rundeps    :
+    - devel :
+        - e2fsprogs-devel
+    - 32bit-devel :
+        - e2fsprogs-32bit-devel
+setup      : |
+    cd src
+    %reconfigure --disable-rpath \
+        --enable-dns-for-realm \
+        --with-system-es \
+        --with-system-et
+build      : |
+    make -j1 -C src
+install    : |
+    %make_install -C src
+    chmod 0755 $installdir/%libdir%/lib*.so*

@@ -1,0 +1,38 @@
+name       : cef-minimal
+version    : 109.0.5414.120
+release    : 12
+source     :
+    - https://cef-builds.spotifycdn.com/cef_binary_109.1.18+gf1c41e4+chromium-109.0.5414.120_linux64_minimal.tar.bz2 : ba4b9ca37cb777b256fdf5e18c9bdbc66ebf060367e8542398676b42bbbc0e59
+license    : BSD-3-Clause
+component  : programming.library
+summary    : Minimal build of Chromium Embedded Framework
+description: |
+    Minimal build of Chromium Embedded Framework
+builddeps  :
+    - pkgconfig(alsa)
+    - pkgconfig(gbm)
+    - pkgconfig(gtk+-3.0)
+    - cups-devel
+patterns   :
+    - devel :
+        - /usr/share/**/CMake*
+        - /usr/share/**/Make*
+        - /usr/share/**/cmake*
+        - /usr/share/**/include*
+        - /usr/share/**/*.h
+        - /usr/share/**/*.cc
+        - /usr/share/**/*.cmake
+        - /usr/share/cef-minimal/libcef_dll
+        - /usr/share/cef-minimal/libcef_dll_wrapper/CMakeFiles
+        - /usr/share/cef-minimal/libcef_dll_wrapper/Makefile
+        - /usr/share/cef-minimal/libcef_dll_wrapper/cmake_install.cmake
+setup      : |
+    rm -rf $workdir/tests
+    %cmake .
+build      : |
+    make clean
+    %make libcef_dll_wrapper
+install    : |
+    install -dm00644 $installdir/usr/share/cef-minimal
+    mv $workdir/* $installdir/usr/share/cef-minimal/
+    ln -s /usr/share/cef-minimal/libcef_dll_wrapper/libcef_dll_wrapper.a $installdir/usr/share/cef-minimal/Release/libcef_dll_wrapper.a

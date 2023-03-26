@@ -1,0 +1,35 @@
+name       : ktexteditor
+version    : 5.101.0
+release    : 73
+source     :
+    - https://cdn.download.kde.org/stable/frameworks/5.101/ktexteditor-5.101.0.tar.xz : 107cd3035f41538eb1d5add58ee1a27cc9fa9c7b69f9db18232419498ac55dc4
+homepage   : https://community.kde.org/Frameworks
+license    :
+    - BSD-2-Clause
+    - LGPL-2.0-or-later
+    - LGPL-2.1-only
+    - LGPL-2.1-or-later
+component  : desktop.library
+summary    : Full text editor component
+description: |
+    Full text editor component.
+optimize   : lto
+builddeps  :
+    - pkgconfig(Qt5Script)
+    - pkgconfig(Qt5Quick)
+    - pkgconfig(editorconfig)
+    - karchive-devel
+    - kguiaddons-devel
+    - kparts-devel
+    - syntax-highlighting-devel
+rundeps    :
+    - devel :
+        - kparts-devel
+        - syntax-highlighting-devel
+setup      : |
+    %cmake_ninja -DBUILD_QCH=ON \
+                -DBUILD_TESTING=OFF
+build      : |
+    %ninja_build
+install    : |
+    %ninja_install

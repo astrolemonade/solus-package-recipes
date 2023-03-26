@@ -1,0 +1,21 @@
+name       : baloo-widgets
+version    : 22.12.1
+release    : 64
+source     :
+    - https://cdn.download.kde.org/stable/release-service/22.12.1/src/baloo-widgets-22.12.1.tar.xz : dce6ecb55ea654cbccd187cefc332e24366410d82b91cbc005bf7853753e4ae8
+homepage   : https://community.kde.org/Baloo
+license    : LGPL-2.1-only
+component  : desktop.kde
+summary    : Widgets for the Baloo search engine
+description: |
+    Widgets for the Baloo search engine.
+optimize   : lto
+builddeps  :
+    - baloo-devel
+    - kio-devel
+setup      : |
+    %cmake_ninja -DBUILD_TESTING=OFF
+build      : |
+    %ninja_build
+install    : |
+    %ninja_install

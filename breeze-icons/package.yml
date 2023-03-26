@@ -1,0 +1,29 @@
+name       : breeze-icons
+version    : 5.101.0
+release    : 68
+source     :
+    - https://cdn.download.kde.org/stable/frameworks/5.101/breeze-icons-5.101.0.tar.xz : f9745944a04860d002f3b95df21fe560b6fbd7d515b8a06ec60da63644a018ef
+homepage   : https://community.kde.org/Frameworks
+license    : LGPL-3.0-or-later
+component  : desktop.theme
+summary    : Breeze icon theme
+description: |
+    Breeze-icons is a freedesktop.org compatible icon theme.
+builddeps  :
+    - pkgconfig(Qt5Core)
+    - extra-cmake-modules
+    - python-lxml
+setup      : |
+    %cmake_ninja -DBUILD_TESTING=OFF
+build      : |
+    %ninja_build
+install    : |
+    %ninja_install
+
+    # Re-use icon for Doflicky
+    ln -s /usr/share/icons/breeze/devices/64/cpu.svg $installdir/usr/share/icons/breeze/apps/48/jockey.svg
+    ln -s /usr/share/icons/breeze-dark/devices/64/cpu.svg $installdir/usr/share/icons/breeze-dark/apps/48/jockey.svg
+
+    # Required for Solus-SC
+    ln -s /usr/share/icons/breeze/status/22/update-none.svg $installdir/usr/share/icons/breeze/status/symbolic/software-update-available-symbolic.svg
+    ln -s /usr/share/icons/breeze-dark/status/22/update-none.svg $installdir/usr/share/icons/breeze-dark/status/symbolic/software-update-available-symbolic.svg

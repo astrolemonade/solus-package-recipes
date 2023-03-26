@@ -1,0 +1,54 @@
+name       : kmail
+version    : 22.12.1
+release    : 68
+source     :
+    - https://cdn.download.kde.org/stable/release-service/22.12.1/src/kmail-22.12.1.tar.xz : 11fe749108e6be60a755f5050c977b87121a48e98271de85cf6778a2bbd70f0b
+homepage   : https://apps.kde.org/kmail2/
+license    :
+    - GFDL-1.2-or-later
+    - GPL-2.0-only
+component  : network.mail
+summary    : Email client, supporting POP3 and IMAP mailboxes
+description: |
+    KMail is the email component of Kontact, the integrated personal information manager from KDE.
+builddeps  :
+    - pkgconfig(Qt5WebEngine)
+    - akonadi-search-devel
+    - kcalendarcore-devel
+    - kcalutils-devel
+    - kcmutils-devel
+    - kcontacts-devel
+    - kcrash-devel
+    - kdbusaddons-devel
+    - kdoctools-devel
+    - kguiaddons-devel
+    - kiconthemes-devel
+    - kidentitymanagement-devel
+    - kldap-devel
+    - kmailtransport-devel
+    - knotifyconfig-devel
+    - kontactinterface-devel
+    - kparts-devel
+    - ktnef-devel
+    - kuserfeedback-devel
+    - libgravatar-devel
+    - libksieve-devel
+    - mailcommon-devel
+    - openldap-devel
+    - pimcommon-devel
+    - qtkeychain-devel
+rundeps    :
+    - akonadi-import-wizard
+    - kdepim-runtime
+    - kleopatra
+    - kmail-account-wizard
+    - pim-data-exporter
+setup      : |
+    %cmake_ninja -DBUILD_TESTING=OFF
+build      : |
+    %ninja_build
+install    : |-
+    %ninja_install
+
+    # remove docs
+    rm -rf $installdir/usr/share/doc

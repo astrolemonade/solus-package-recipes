@@ -1,0 +1,56 @@
+<PISI>
+    <Source>
+        <Name>perl-config-simple</Name>
+        <Packager>
+            <Name>Algent Albrahimi</Name>
+            <Email>algent@protonmail.com</Email>
+        </Packager>
+        <License>Artistic-2.0</License>
+        <PartOf>programming.perl</PartOf>
+        <Summary xml:lang="en">Simple configuration file class</Summary>
+        <Description xml:lang="en">Simple configuration file class.
+</Description>
+        <Archive type="binary" sha1sum="79eb0752a961b8e0d15c77d298c97498fbc89c5a">https://getsol.us/sources/README.Solus</Archive>
+    </Source>
+    <Package>
+        <Name>perl-config-simple</Name>
+        <Summary xml:lang="en">Simple configuration file class</Summary>
+        <Description xml:lang="en">Simple configuration file class.
+</Description>
+        <PartOf>programming.perl</PartOf>
+        <Files>
+            <Path fileType="library">/usr/lib64/perl5/vendor_perl/5.36/Config/Simple.pm</Path>
+            <Path fileType="library">/usr/lib64/perl5/vendor_perl/5.36/auto/Config/Simple/CLEAR.al</Path>
+            <Path fileType="library">/usr/lib64/perl5/vendor_perl/5.36/auto/Config/Simple/DELETE.al</Path>
+            <Path fileType="library">/usr/lib64/perl5/vendor_perl/5.36/auto/Config/Simple/EXISTS.al</Path>
+            <Path fileType="library">/usr/lib64/perl5/vendor_perl/5.36/auto/Config/Simple/FETCH.al</Path>
+            <Path fileType="library">/usr/lib64/perl5/vendor_perl/5.36/auto/Config/Simple/FIRSTKEY.al</Path>
+            <Path fileType="library">/usr/lib64/perl5/vendor_perl/5.36/auto/Config/Simple/NEXTKEY.al</Path>
+            <Path fileType="library">/usr/lib64/perl5/vendor_perl/5.36/auto/Config/Simple/STORE.al</Path>
+            <Path fileType="library">/usr/lib64/perl5/vendor_perl/5.36/auto/Config/Simple/TIEHASH.al</Path>
+            <Path fileType="library">/usr/lib64/perl5/vendor_perl/5.36/auto/Config/Simple/autosplit.ix</Path>
+            <Path fileType="library">/usr/lib64/perl5/vendor_perl/5.36/auto/Config/Simple/block.al</Path>
+            <Path fileType="library">/usr/lib64/perl5/vendor_perl/5.36/auto/Config/Simple/dump.al</Path>
+            <Path fileType="library">/usr/lib64/perl5/vendor_perl/5.36/auto/Config/Simple/error.al</Path>
+            <Path fileType="library">/usr/lib64/perl5/vendor_perl/5.36/auto/Config/Simple/errstr.al</Path>
+            <Path fileType="library">/usr/lib64/perl5/vendor_perl/5.36/auto/Config/Simple/hashref.al</Path>
+            <Path fileType="library">/usr/lib64/perl5/vendor_perl/5.36/auto/Config/Simple/import_from.al</Path>
+            <Path fileType="library">/usr/lib64/perl5/vendor_perl/5.36/auto/Config/Simple/import_names.al</Path>
+            <Path fileType="library">/usr/lib64/perl5/vendor_perl/5.36/auto/Config/Simple/param_hash.al</Path>
+            <Path fileType="library">/usr/lib64/perl5/vendor_perl/5.36/auto/Config/Simple/vars.al</Path>
+            <Path fileType="library">/usr/lib64/perl5/vendor_perl/5.36/auto/Config/Simple/verbose.al</Path>
+            <Path fileType="library">/usr/lib64/perl5/vendor_perl/5.36/auto/Config/Simple/write_string.al</Path>
+            <Path fileType="library">/usr/lib64/perl5/vendor_perl/5.36/x86_64-linux-thread-multi/auto/Config/Simple/.packlist</Path>
+            <Path fileType="man">/usr/share/man/man3/Config::Simple.3</Path>
+        </Files>
+    </Package>
+    <History>
+        <Update release="8">
+            <Date>2022-09-23</Date>
+            <Version>4.59</Version>
+            <Comment>Packaging update</Comment>
+            <Name>Algent Albrahimi</Name>
+            <Email>algent@protonmail.com</Email>
+        </Update>
+    </History>
+</PISI>

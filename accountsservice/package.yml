@@ -1,0 +1,26 @@
+name       : accountsservice
+version    : 22.08.8
+release    : 29
+source     :
+    - https://www.freedesktop.org/software/accountsservice/accountsservice-22.08.8.tar.xz : 909997a76919fe7dc138a9a01cea70bd622d5a932dbc9fb13010113023a7a391
+homepage   : http://www.freedesktop.org/wiki/Software/AccountsService
+license    : GPL-3.0-or-later
+component  : desktop.core
+summary    : D-Bus service for accessing user accounts and information
+description: |
+    AccountsService is a D-Bus service for accessing the list of user accounts and information attached to those accounts.
+builddeps  :
+    - pkgconfig(gtk-doc)
+    - pkgconfig(libxcrypt)
+    - vala
+setup      : |
+    %patch -p1 < $pkgfiles/0001-Support-automatic-login-for-LightDM-in-a-stateless-c.patch
+    %patch -p1 < $pkgfiles/0001-Change-passwd-path-to-bin-since-that-is-where-our-bi.patch
+    %meson_configure --sysconfdir=/usr/share \
+        -Dadmin_group=sudo \
+        -Dextra_admin_groups="adm,lpadmin" \
+        -Dgtk_doc=true
+build      : |
+    %ninja_build
+install    : |
+    %ninja_install

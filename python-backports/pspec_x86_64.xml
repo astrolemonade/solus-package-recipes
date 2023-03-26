@@ -1,0 +1,44 @@
+<PISI>
+    <Source>
+        <Name>python-backports</Name>
+        <Homepage>https://pypi.python.org/pypi/backports</Homepage>
+        <Packager>
+            <Name>F. von Gellhorn</Name>
+            <Email>flinux@vongellhorn.ch</Email>
+        </Packager>
+        <License>Public-Domain</License>
+        <PartOf>programming.python</PartOf>
+        <Summary xml:lang="en">Namespace for backported Python features</Summary>
+        <Description xml:lang="en">The backports namespace is a namespace reserved for features backported
+from the Python standard library to older versions of Python 2.
+
+Packages that exist in the backports namespace should not provide their
+own backports/__init__.py, but instead require this package.
+</Description>
+        <Archive type="binary" sha1sum="79eb0752a961b8e0d15c77d298c97498fbc89c5a">https://getsol.us/sources/README.Solus</Archive>
+    </Source>
+    <Package>
+        <Name>python-backports</Name>
+        <Summary xml:lang="en">Namespace for backported Python features</Summary>
+        <Description xml:lang="en">The backports namespace is a namespace reserved for features backported
+from the Python standard library to older versions of Python 2.
+
+Packages that exist in the backports namespace should not provide their
+own backports/__init__.py, but instead require this package.
+</Description>
+        <PartOf>programming.python</PartOf>
+        <Files>
+            <Path fileType="library">/usr/lib/python2.7/site-packages/backports/__init__.py</Path>
+            <Path fileType="library">/usr/lib/python2.7/site-packages/backports/__init__.pyc</Path>
+        </Files>
+    </Package>
+    <History>
+        <Update release="2">
+            <Date>2019-05-20</Date>
+            <Version>1.0</Version>
+            <Comment>Packaging update</Comment>
+            <Name>F. von Gellhorn</Name>
+            <Email>flinux@vongellhorn.ch</Email>
+        </Update>
+    </History>
+</PISI>

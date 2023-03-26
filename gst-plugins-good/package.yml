@@ -1,0 +1,39 @@
+name       : gst-plugins-good
+version    : 0.10.31
+release    : 3
+source     :
+    - http://gstreamer.freedesktop.org/src/gst-plugins-good/gst-plugins-good-0.10.31.tar.xz : 77a8436a7c0a15f876bad29616835046890df2bcaf72da02151bd91e3d292b64
+license    :
+    - GPL-2.0
+    - LGPL-2.0
+component  : multimedia.gstreamer
+summary    : Streaming media framework
+description: |
+    GStreamer is a streaming media framework that enables applications to share a common set of plugins for things like video encoding and decoding, audio encoding and decoding, audio and video filters, audio visualisation, web streaming and anything else that streams in real-time or otherwise. This package only provides base functionality and libraries.
+builddeps  :
+    - pkgconfig(cairo)
+    - pkgconfig(flac)
+    - pkgconfig(gconf-2.0)
+    - pkgconfig(gdk-pixbuf-2.0)
+    - pkgconfig(gio-2.0)
+    - pkgconfig(gstreamer-plugins-base-0.10)
+    - pkgconfig(gudev-1.0)
+    - pkgconfig(libdv)
+    - pkgconfig(libiec61883)
+    - pkgconfig(libpng)
+    - pkgconfig(libpulse)
+    - pkgconfig(libraw1394)
+    - pkgconfig(libsoup-gnome-2.4)
+    - pkgconfig(shout)
+    - pkgconfig(speex)
+    - pkgconfig(taglib)
+    - pkgconfig(wavpack)
+    - pkgconfig(xdamage)
+    - pkgconfig(xfixes)
+    - bzip2-devel
+setup      : |
+    %configure --disable-gst_v4l2
+build      : |
+    %make -j1
+install    : |
+    %make_install

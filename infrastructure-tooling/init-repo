@@ -1,0 +1,22 @@
+#!/bin/bash
+
+if [[ ! -e .git ]]; then
+    echo "Not a valid repository"
+    exit 1
+fi
+
+GITOBJCOUNT=`find .git/objects -type f 2>/dev/null | wc -l`
+if [[ $GITOBJCOUNT -ne 0 ]]; then
+    echo "This is not an empty repository"
+    exit 1
+fi
+
+git log >/dev/null 2>/dev/null
+if [[ $? -eq 0 ]]; then
+    echo "This repository has some git commits already"
+    exit 1
+fi
+
+git commit -s -m "Initial repository construction" --allow-empty           
+
+git push -u origin master

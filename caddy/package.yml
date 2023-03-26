@@ -1,0 +1,30 @@
+name       : caddy
+version    : 2.5.2
+release    : 10
+source     :
+    - https://github.com/caddyserver/caddy/archive/refs/tags/v2.5.2.tar.gz : 6a3e03774658af8009c0ece287301d73c1ea961d01e6ef7c6f44962e4349f5e5
+    - git|https://github.com/caddyserver/dist : 2831baf7660fd84ad36789fc0ead6fd33118115b
+license    : Apache-2.0
+component  : programming
+summary    : Fast, multi-platform web server with automatic HTTPS
+description: |
+    Caddy is a powerful, open source web server with automatic HTTPS written in Go
+networking : yes
+builddeps  :
+    - golang
+setup      : |
+    %patch -p1 < $pkgfiles/0001-Remove-update-command-functionality.patch
+    cp -r $sources/dist* dist
+build      : |
+    go build -o caddy cmd/caddy/main.go
+install    : |
+    install -Dm00755 caddy $installdir/usr/bin/caddy
+
+    install -Dm00644 $pkgfiles/caddy.sysusers $installdir/%libdir%/sysusers.d/caddy.conf
+    install -Dm00644 $pkgfiles/caddy.tmpfiles $installdir/%libdir%/tmpfiles.d/caddy.conf
+    install -Dm00644 $pkgfiles/caddy.service dist/init/caddy-api.service -t $installdir/%libdir%/systemd/system
+    install -Dm00644 $pkgfiles/Caddyfile $installdir/usr/share/caddy/Caddyfile
+
+    install -Dm00644 dist/welcome/index.html $installdir/usr/share/caddy/index.html
+    install -Dm00644 dist/scripts/completions/bash-completion $installdir/usr/share/bash-completion/completions/caddy
+    install -Dm00644 dist/scripts/completions/_caddy $installdir/usr/share/zsh/site-functions/_caddy

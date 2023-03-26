@@ -1,0 +1,51 @@
+name       : kdenlive
+version    : 22.12.1
+release    : 87
+source     :
+    - https://cdn.download.kde.org/stable/release-service/22.12.1/src/kdenlive-22.12.1.tar.xz : af1e6ef56733c986c5993f48d19fbb3e8a1b14354819e9d029b5f63d1f00d7dd
+homepage   : https://kde.org/applications/multimedia/org.kde.kdenlive
+license    : GPL-2.0-or-later
+component  : multimedia.video
+summary    : Video editing application, based on MLT Framework and KF5
+description: |
+    Video editing application, based on MLT Framework and KDE Frameworks 5.
+optimize   : lto
+builddeps  :
+    - pkgconfig(libv4l2)
+    - pkgconfig(mlt-framework-7)
+    - pkgconfig(Qt5MultimediaWidgets)
+    - pkgconfig(Qt5NetworkAuth)
+    - pkgconfig(Qt5QuickControls2)
+    - pkgconfig(Qt5Script)
+    - pkgconfig(Qt5Svg)
+    - karchive-devel
+    - kcrash-devel
+    - kdeclarative-devel
+    - kdbusaddons-devel
+    - kdoctools-devel
+    - kfilemetadata-devel
+    - kguiaddons-devel
+    - kiconthemes-devel
+    - kio-devel
+    - knewstuff-devel
+    - knotifyconfig-devel
+    - ktextwidgets-devel
+    - purpose-devel
+rundeps    :
+    - breeze
+    - breeze-icons
+    - dvgrab
+    - frei0r
+    - qt5-quickcontrols
+    - qt5-quickcontrols2
+setup      : |
+    %patch -p1 < $pkgfiles/0001-Unset-QPA_PLATFORMTHEME-to-prevent-starting-with-gtk.patch
+    %patch -p1 < $pkgfiles/0001-Add-StartupWMClass-to-desktop-file.patch
+    %cmake_ninja -DBUILD_TESTING=OFF
+build      : |
+    %ninja_build
+install    : |
+    %ninja_install
+
+    # Remove doc
+    rm -rf $installdir/usr/share/doc

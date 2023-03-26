@@ -1,0 +1,21 @@
+name       : openbazaard
+version    : 0.12.0
+release    : 1
+source     :
+    - https://github.com/OpenBazaar/openbazaar-go/archive/v0.12.0.tar.gz : 64a73b9cc4260984b6daa838e10251d9554ddcfc46e0ef7e88ca9dce0ec31b7f
+license    : MIT
+component  : network.clients
+summary    : OpenBazaar Server Daemon
+description: |
+    OpenBazaar Server Daemon
+extract    : no
+builddeps  :
+    - golang
+build      : |
+    export GOPATH=$workdir
+    mkdir -p src/github.com/OpenBazaar/openbazaar-go
+    tar -xf $sources/v${version}.tar.gz -C src/github.com/OpenBazaar/openbazaar-go --strip-components=1
+    cd src/github.com/OpenBazaar/openbazaar-go
+    go install
+install    : |
+    install -Dm755 bin/openbazaar-go $installdir/usr/bin/openbazaard

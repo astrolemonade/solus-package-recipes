@@ -1,0 +1,32 @@
+name       : veusz
+version    : 3.5.3
+release    : 21
+source     :
+    - https://github.com/veusz/veusz/releases/download/veusz-3.5.3/veusz-3.5.3.tar.gz : d4c3c29a4d314a97d7ec25cf154e381df3c8f5910a94e1bd993e7ba1c4d69473
+homepage   : https://veusz.github.io/
+license    : GPL-2.0-or-later
+component  : office.scientific
+summary    : A Scientific Plotting and Graphing Program
+description: |
+    Veusz is a scientific plotting and graphing program with a graphical user interface, designed to produce publication-ready 2D plots.
+builddeps  :
+    - pkgconfig(Qt5Gui)
+    - pkgconfig(python3)
+    - ghostscript-devel
+    - numpy
+    - python-sip
+    - python-tomli
+    - python3-qt5
+rundeps    :
+    - numpy
+    - python3-qt5
+build      : |
+    %python3_setup
+install    : |
+    %python3_install
+
+    install -Dm00644 support/veusz.desktop $installdir/usr/share/applications/veusz.desktop
+    install -Dm00644 icons/veusz.svg $installdir/usr/share/icons/hicolor/scalable/apps/veusz.svg
+    for i in 16 32 48 64 128; do
+        install -Dm00644 icons/veusz_${i}.png $installdir/usr/share/icons/hicolor/${i}x${i}/apps/veusz.png
+    done

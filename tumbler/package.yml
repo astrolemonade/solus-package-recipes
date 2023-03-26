@@ -1,0 +1,28 @@
+name       : tumbler
+version    : 4.17.0
+release    : 18
+source     :
+    - https://archive.xfce.org/src/xfce/tumbler/4.17/tumbler-4.17.0.tar.bz2 : bb34efefd8263396b8f1306528ba8fb1df5e51ccb7e974f05f509e487a435fa5
+license    :
+    - GPL-2.0-or-later
+    - LGPL-2.0-or-later
+component  : multimedia.library
+summary    : D-Bus service for applications to request thumbnails
+description: |
+    The Tumbler package contains a D-Bus thumbnailing service based on the thumbnail management D-Bus specification. This is useful for generating thumbnail images of files.
+builddeps  :
+    - pkgconfig(gdk-pixbuf-2.0)
+    - pkgconfig(libffmpegthumbnailer)
+    - pkgconfig(libgsf-1)
+    - pkgconfig(libturbojpeg)
+    - pkgconfig(libxfce4util-1.0)
+    - pkgconfig(poppler-glib)
+setup      : |
+    %configure \
+        --disable-static \
+        --disable-debug \
+        --disable-gstreamer-thumbnailer
+build      : |
+    %make
+install    : |
+    %make_install

@@ -1,0 +1,29 @@
+name       : haskell-pango
+version    : 0.13.8.1
+release    : 6
+source     :
+    - https://hackage.haskell.org/package/pango-0.13.8.1/pango-0.13.8.1.tar.gz : 40a67a56687969cee9dd4cc94a8a3d0beb5ea687c8a2f3da552feb915453c82f
+license    : LGPL-2.1-only
+component  : programming.haskell
+summary    : Binding to the Pango text rendering engine.
+description: |
+    This package provides a wrapper around the Pango C library that allows high-quality rendering of Unicode text. It can be used either with Cairo to output text in PDF, PS or other documents or with Gtk+ to display text on-screen.
+builddeps  :
+    - pkgconfig(pango)
+    - haskell-cabal-install
+    - haskell-cairo-devel
+    - haskell-glib-devel
+rundeps    :
+    - devel:
+        - pango-devel
+        - haskell-cairo-devel
+        - haskell-glib-devel
+optimize   : no-symbols
+networking : yes
+setup      : |
+    %cabal_configure --dynlibdir="\$libdir/\$compiler/\$pkgid"
+build      : |
+    %cabal_build
+install    : |
+    %cabal_install
+    %cabal_register

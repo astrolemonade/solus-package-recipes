@@ -1,0 +1,28 @@
+name       : filelight
+version    : 22.12.1
+release    : 54
+source     :
+    - https://cdn.download.kde.org/stable/release-service/22.12.1/src/filelight-22.12.1.tar.xz : 5f0b4231f87c83b71cccad9f167f88706d93f992868a8a5456f0260f2e8086f3
+homepage   : https://kde.org/applications/utilities/org.kde.filelight
+license    :
+    - GFDL-1.2-or-later
+    - GPL-2.0-or-later
+component  : desktop.kde
+summary    : Graphical representation of your filesystem
+description: |
+    Filelight allows you to quickly understand exactly where your diskspace is being used by graphically representing your file system.
+builddeps  :
+    - pkgconfig(Qt5QuickControls2)
+    - pkgconfig(Qt5Svg)
+    - kdeclarative-devel
+    - kdoctools-devel
+    - kio-devel
+setup      : |
+    %cmake_ninja
+build      : |
+    %ninja_build
+install    : |
+    %ninja_install
+
+    # remove docs
+    rm -rf $installdir/usr/share/doc

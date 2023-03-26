@@ -1,0 +1,19 @@
+name       : btrbk
+version    : 0.32.5
+release    : 6
+source     :
+    - https://github.com/digint/btrbk/archive/refs/tags/v0.32.5.tar.gz : 7f578c71af10f0b083afa51394f526fa3e8381fbc4e8894933aa40db94618cd3
+license    : GPL-3.0-or-later
+component  : system.utils
+summary    : Tool for creating snapshots and remote backups of btrfs subvolumes
+description: |
+    btrbk is a backup tool for btrfs subvolumes, taking advantage of btrfs specific capabilities to create atomic snapshots and transfer them incrementally to your backup locations.
+builddeps  :
+    - asciidoctor
+rundeps    :
+    - perl
+build      : |
+    %make
+install    : |
+    %make_install CONFDIR=/usr/share
+    rm -rf $installdir/usr/share/doc

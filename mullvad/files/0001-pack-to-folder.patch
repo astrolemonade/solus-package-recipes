@@ -1,0 +1,36 @@
+From 0eda52d003e6cd22766c43a4e1ff16e3b6642d97 Mon Sep 17 00:00:00 2001
+From: Cory Forsstrom <cforsstrom18@gmail.com>
+Date: Tue, 18 Oct 2022 14:24:01 -0700
+Subject: [PATCH 1/2] pack to folder
+
+---
+ gui/tasks/distribution.js | 13 ++-----------
+ 1 file changed, 2 insertions(+), 11 deletions(-)
+
+diff --git a/gui/tasks/distribution.js b/gui/tasks/distribution.js
+index b778a57b8..65518a097 100644
+--- a/gui/tasks/distribution.js
++++ b/gui/tasks/distribution.js
+@@ -157,17 +157,8 @@ const config = {
+   },
+ 
+   linux: {
+-    target: [
+-      {
+-        target: 'deb',
+-        arch: getLinuxTargetArch(),
+-      },
+-      {
+-        target: 'rpm',
+-        arch: getLinuxTargetArch(),
+-      },
+-    ],
+-    artifactName: 'MullvadVPN-${version}_${arch}.${ext}',
++    target: ['dir'],
++    //artifactName: 'MullvadVPN-${version}_${arch}.${ext}',
+     category: 'Network',
+     icon: distAssets('icon.icns'),
+     extraFiles: [{ from: distAssets('linux/mullvad-gui-launcher.sh'), to: '.' }],
+-- 
+2.35.4
+

@@ -1,0 +1,16 @@
+name       : help2man
+version    : 1.47.15
+release    : 12
+source     :
+    - https://ftp.gnu.org/gnu/help2man/help2man-1.47.15.tar.xz : c25a35b30eceb315361484b0ff1f81c924e8ee5c8881576f1ee762f001dbcd1c
+license    : GPL-3.0-or-later
+component  : programming.tools
+summary    : help2man
+description: |
+    help2man produces simple manual pages from the ‘--help’ and ‘--version’ output of other commands.
+setup      : |
+    %configure
+build      : |
+    %make
+install    : |
+    %make_install

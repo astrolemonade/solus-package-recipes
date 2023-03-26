@@ -1,0 +1,24 @@
+name       : gprename
+version    : '20220807'
+release    : 6
+source     :
+    - https://sourceforge.net/projects/gprename/files/gprename/20220807/gprename-20220807.tar.bz2/download : c51e7021e57a6bfda3c6feab379132793fa4b304a7750a65f4d2e44a97dd661a
+homepage   : https://gprename.sourceforge.net
+license    : GPL-3.0-or-later
+component  : system.utils
+summary    : GPRename is a complete batch renamer for files and directories
+description: |
+    GPRename is a complete batch renamer for files and directories.
+rundeps    :
+    - perl-gettext
+    - perl-glib
+    - perl-gtk3
+    - perl-libintl
+    - perl-pango
+setup      : |
+    %patch -p1 < $pkgfiles/0001-Fix-gprename-Makefile.patch
+    sed 's#/usr/share/icons/gprename.png#/usr/share/pixmaps/gprename.png#' -i bin/gprename
+install    : |
+    %make_install PREFIX=/usr
+    sed -i 's|/usr/local|/usr|' $installdir/usr/bin/gprename
+

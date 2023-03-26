@@ -1,0 +1,72 @@
+<PISI>
+    <Source>
+        <Name>megazeux</Name>
+        <Packager>
+            <Name>F. von Gellhorn</Name>
+            <Email>flinux@vongellhorn.ch</Email>
+        </Packager>
+        <License>GPL-2.0-or-later</License>
+        <PartOf>games</PartOf>
+        <Summary xml:lang="en">A game creation system (GCS)</Summary>
+        <Description xml:lang="en">MegaZeux is a game creation system (GCS) created by game developer Alexis Janson in 1994. Originally a DOS program, in 2005 a multi-platform port was released by Exophase and it is still being developed today.
+</Description>
+        <Archive type="binary" sha1sum="79eb0752a961b8e0d15c77d298c97498fbc89c5a">https://getsol.us/sources/README.Solus</Archive>
+    </Source>
+    <Package>
+        <Name>megazeux</Name>
+        <Summary xml:lang="en">A game creation system (GCS)</Summary>
+        <Description xml:lang="en">MegaZeux is a game creation system (GCS) created by game developer Alexis Janson in 1994. Originally a DOS program, in 2005 a multi-platform port was released by Exophase and it is still being developed today.
+</Description>
+        <PartOf>games</PartOf>
+        <Files>
+            <Path fileType="config">/etc/megazeux-config</Path>
+            <Path fileType="executable">/usr/bin/megazeux</Path>
+            <Path fileType="executable">/usr/bin/mzxrun</Path>
+            <Path fileType="library">/usr/lib64/megazeux/ccv</Path>
+            <Path fileType="library">/usr/lib64/megazeux/checkres</Path>
+            <Path fileType="library">/usr/lib64/megazeux/downver</Path>
+            <Path fileType="library">/usr/lib64/megazeux/hlp2txt</Path>
+            <Path fileType="library">/usr/lib64/megazeux/libcore.so</Path>
+            <Path fileType="library">/usr/lib64/megazeux/libeditor.so</Path>
+            <Path fileType="library">/usr/lib64/megazeux/txt2hlp</Path>
+            <Path fileType="data">/usr/share/applications/megazeux.desktop</Path>
+            <Path fileType="data">/usr/share/applications/mzxrun.desktop</Path>
+            <Path fileType="data">/usr/share/icons/megazeux.png</Path>
+            <Path fileType="data">/usr/share/megazeux/assets/ascii.chr</Path>
+            <Path fileType="data">/usr/share/megazeux/assets/blank.chr</Path>
+            <Path fileType="data">/usr/share/megazeux/assets/default.chr</Path>
+            <Path fileType="data">/usr/share/megazeux/assets/edit.chr</Path>
+            <Path fileType="data">/usr/share/megazeux/assets/help.fil</Path>
+            <Path fileType="data">/usr/share/megazeux/assets/shaders/cursor.frag</Path>
+            <Path fileType="data">/usr/share/megazeux/assets/shaders/cursor.vert</Path>
+            <Path fileType="data">/usr/share/megazeux/assets/shaders/mouse.frag</Path>
+            <Path fileType="data">/usr/share/megazeux/assets/shaders/mouse.vert</Path>
+            <Path fileType="data">/usr/share/megazeux/assets/shaders/scaler.vert</Path>
+            <Path fileType="data">/usr/share/megazeux/assets/shaders/scalers/README.txt</Path>
+            <Path fileType="data">/usr/share/megazeux/assets/shaders/scalers/crt.frag</Path>
+            <Path fileType="data">/usr/share/megazeux/assets/shaders/scalers/emboss.frag</Path>
+            <Path fileType="data">/usr/share/megazeux/assets/shaders/scalers/epx.frag</Path>
+            <Path fileType="data">/usr/share/megazeux/assets/shaders/scalers/greyscale.frag</Path>
+            <Path fileType="data">/usr/share/megazeux/assets/shaders/scalers/hqscale.frag</Path>
+            <Path fileType="data">/usr/share/megazeux/assets/shaders/scalers/hqscale.vert</Path>
+            <Path fileType="data">/usr/share/megazeux/assets/shaders/scalers/nearest.frag</Path>
+            <Path fileType="data">/usr/share/megazeux/assets/shaders/scalers/semisoft.frag</Path>
+            <Path fileType="data">/usr/share/megazeux/assets/shaders/scalers/sepia.frag</Path>
+            <Path fileType="data">/usr/share/megazeux/assets/shaders/scalers/simple.frag</Path>
+            <Path fileType="data">/usr/share/megazeux/assets/shaders/tilemap.frag</Path>
+            <Path fileType="data">/usr/share/megazeux/assets/shaders/tilemap.smzx.frag</Path>
+            <Path fileType="data">/usr/share/megazeux/assets/shaders/tilemap.vert</Path>
+            <Path fileType="data">/usr/share/megazeux/assets/smzx.chr</Path>
+            <Path fileType="data">/usr/share/megazeux/assets/smzx.pal</Path>
+        </Files>
+    </Package>
+    <History>
+        <Update release="4">
+            <Date>2020-03-12</Date>
+            <Version>2.91b</Version>
+            <Comment>Packaging update</Comment>
+            <Name>F. von Gellhorn</Name>
+            <Email>flinux@vongellhorn.ch</Email>
+        </Update>
+    </History>
+</PISI>

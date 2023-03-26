@@ -1,0 +1,25 @@
+name       : python-attrs
+version    : 21.4.0
+release    : 16
+source     :
+    - https://github.com/python-attrs/attrs/archive/refs/tags/21.4.0.tar.gz : 5bd6d2938b7e8019e319b7f451f4ec3a5ef6293b228146387d002311ae9b920d
+license    : MIT
+component  : programming.python
+summary    : Python attributes without boilerplate.
+description: |
+    Python attributes without boilerplate.
+builddeps  :
+    - python-hypothesis
+    - python2-pytest
+    - python-pytest
+    - python-setuptools
+    - python-zope.interface
+build      : |
+    %python_setup
+    %python3_setup
+install    : |
+    %python_install
+    %python3_install
+check      : |
+    %python_test pytest
+    %python3_test pytest3

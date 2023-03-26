@@ -1,0 +1,27 @@
+name       : kactivities-stats
+version    : 5.101.0
+release    : 63
+source     :
+    - https://cdn.download.kde.org/stable/frameworks/5.101/kactivities-stats-5.101.0.tar.xz : 77b18099a03114e8a8a3057585bd252a6d85fc0bf826acfbbcdeaf37fe173085
+homepage   : https://community.kde.org/Frameworks
+license    :
+    - GPL-2.0-or-later
+    - LGPL-2.0-or-later
+    - LGPL-2.1-only
+component  : programming.library
+summary    : Library to access statistics collected by the KDE activity manager
+description: |
+    The KActivitiesStats library provides a querying mechanism for the data that the activitiy manager collects - which documents hae been opened by which applications, and what documents have been linked to which activity. The activity manager also keeps the score for each document which gets higher when a particular document has been often accessed or kept open for longer periods of time. This score is also available through the querying mechanism.
+optimize   : lto
+builddeps  :
+    - pkgconfig(Qt5Quick)
+    - kactivities-devel
+    - kconfig-devel
+    - libboost-devel
+setup      : |
+    %cmake_ninja -DBUILD_QCH=ON \
+                -DBUILD_TESTING=OFF
+build      : |
+    %ninja_build
+install    : |
+    %ninja_install

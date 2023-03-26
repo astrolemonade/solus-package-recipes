@@ -1,0 +1,23 @@
+name       : raft
+version    : 0.16.0
+release    : 5
+source     :
+    - https://github.com/canonical/raft/archive/refs/tags/v0.16.0.tar.gz : ab5480c051bfbf482074f62c9c306d08ca68b8f0ad0c2db2ebf0488cfe692336
+license    : LGPL-3.0-only
+homepage   : https://github.com/canonical/raft
+component  : programming.library
+summary    : C implementation of the Raft consensus protocol
+description: |
+    C implementation of the Raft consensus protocol
+builddeps  :
+    - pkgconfig(liblz4)
+    - pkgconfig(libuv)
+setup      : |
+    %reconfigure --disable-static
+build      : |
+    %make
+install    : |
+    %make_install
+    # We only need the library files, but these could be included in the future
+    # if there is ever an additional consumer or need for them
+    rm -rf ${installdir}/usr/bin

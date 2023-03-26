@@ -1,0 +1,33 @@
+name       : exa
+version    : 0.10.1
+release    : 9
+source     :
+    - https://github.com/ogham/exa/archive/refs/tags/v0.10.1.tar.gz : ff0fa0bfc4edef8bdbbb3cabe6fdbd5481a71abbbcc2159f402dea515353ae7c
+license    : MIT
+component  : system.utils
+networking : yes
+summary    : A modern replacement for ls
+description: |
+    exa is a modern replacement for ls. It uses colours for information by default, helping you distinguish between many types of files, such as whether you are the owner, or in the owning group. It also has extra features not present in the original ls, such as viewing the Git status for a directory, or recursing into directories with a tree view. exa is written in Rust, so it’s small, fast, and portable.
+builddeps  :
+    - cargo
+    - pandoc
+build      : |
+    cargo build --release
+
+    # Compile the man pages
+    mkdir -p target/release/man
+    pandoc --standalone -f markdown -t man man/exa.1.md > target/release/man/exa.1
+    pandoc --standalone -f markdown -t man man/exa_colors.5.md > target/release/man/exa_colors.5
+install    : |
+    install -Dm00755 target/release/exa -t $installdir/usr/bin
+
+    install -Dm00644 completions/completions.bash $installdir/usr/share/bash-completion/completions/exa
+    install -Dm00644 completions/completions.zsh $installdir/usr/share/zsh/site-functions/_exa
+    install -Dm00644 completions/completions.fish $installdir/usr/share/fish/vendor_completions.d/exa.fish
+
+    install -Dm00644 target/release/man/exa.1 $installdir/usr/share/man/man1/exa.1
+    install -Dm00644 target/release/man/exa_colors.5 $installdir/usr/share/man/man5/exa_colors.5
+check      : |
+    # Disabled because some tests failed on the server (but they all succeeded locally)
+    # cargo test

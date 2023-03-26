@@ -1,0 +1,26 @@
+name       : kdialog
+version    : 22.12.1
+release    : 58
+source     :
+    - https://cdn.download.kde.org/stable/release-service/22.12.1/src/kdialog-22.12.1.tar.xz : ea5e41adfaabfc1b44a19b375d489ac19b92fdaa921bb1271d3ca3a302c095f2
+homepage   : https://kde.org/applications/utilities/org.kde.kdialog
+license    : GPL-2.0-or-later
+component  : desktop.kde
+summary    : KDialog can be used to show nice dialog boxes from shell scripts
+description: |
+    KDialog allows you to display dialog boxes from shell scripts. The syntax is very much inspired from the "dialog" command (which shows text mode dialogs).
+optimize   : lto
+builddeps  :
+    - pkgconfig(x11)
+    - kdbusaddons-devel
+    - kguiaddons-devel
+    - kiconthemes-devel
+    - kio-devel
+    - knotifications-devel
+    - ktextwidgets-devel
+setup      : |
+    %cmake_ninja
+build      : |
+    %ninja_build
+install    : |
+    %ninja_install

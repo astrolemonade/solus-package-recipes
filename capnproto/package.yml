@@ -1,0 +1,16 @@
+name       : capnproto
+version    : 0.9.1
+release    : 4
+source     :
+    - https://github.com/capnproto/capnproto/archive/refs/tags/v0.9.1.tar.gz : daf49f794560f715e2f4651c842aaece2d065d4216834c5c3d3254962e35b535
+license    : MIT
+component  : programming
+summary    : Cap’n Proto is an insanely fast data interchange format and capability-based RPC system
+description: |
+    Cap’n Proto is an insanely fast data interchange format and capability-based RPC system
+setup      : |
+    %cmake
+build      : |
+    %make
+install    : |
+    %make_install

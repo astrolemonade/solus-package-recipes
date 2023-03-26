@@ -1,0 +1,45 @@
+<PISI>
+    <Source>
+        <Name>python-configparser</Name>
+        <Homepage>https://github.com/jaraco/configparser/</Homepage>
+        <Packager>
+            <Name>Algent Albrahimi</Name>
+            <Email>algent@protonmail.com</Email>
+        </Packager>
+        <License>MIT</License>
+        <PartOf>programming.python</PartOf>
+        <Summary xml:lang="en">This library brings the updated configparser from Python 3.5 to Python 2.6-3.5.</Summary>
+        <Description xml:lang="en">This library brings the updated configparser from Python 3.5 to Python 2.6-3.5.
+</Description>
+        <Archive type="binary" sha1sum="79eb0752a961b8e0d15c77d298c97498fbc89c5a">https://getsol.us/sources/README.Solus</Archive>
+    </Source>
+    <Package>
+        <Name>python-configparser</Name>
+        <Summary xml:lang="en">This library brings the updated configparser from Python 3.5 to Python 2.6-3.5.</Summary>
+        <Description xml:lang="en">This library brings the updated configparser from Python 3.5 to Python 2.6-3.5.
+</Description>
+        <PartOf>programming.python</PartOf>
+        <Files>
+            <Path fileType="library">/usr/lib/python2.7/site-packages/backports/configparser/__init__.py</Path>
+            <Path fileType="library">/usr/lib/python2.7/site-packages/backports/configparser/__init__.pyc</Path>
+            <Path fileType="library">/usr/lib/python2.7/site-packages/backports/configparser/helpers.py</Path>
+            <Path fileType="library">/usr/lib/python2.7/site-packages/backports/configparser/helpers.pyc</Path>
+            <Path fileType="library">/usr/lib/python2.7/site-packages/configparser-4.0.2-py2.7.egg-info/PKG-INFO</Path>
+            <Path fileType="library">/usr/lib/python2.7/site-packages/configparser-4.0.2-py2.7.egg-info/SOURCES.txt</Path>
+            <Path fileType="library">/usr/lib/python2.7/site-packages/configparser-4.0.2-py2.7.egg-info/dependency_links.txt</Path>
+            <Path fileType="library">/usr/lib/python2.7/site-packages/configparser-4.0.2-py2.7.egg-info/requires.txt</Path>
+            <Path fileType="library">/usr/lib/python2.7/site-packages/configparser-4.0.2-py2.7.egg-info/top_level.txt</Path>
+            <Path fileType="library">/usr/lib/python2.7/site-packages/configparser.py</Path>
+            <Path fileType="library">/usr/lib/python2.7/site-packages/configparser.pyc</Path>
+        </Files>
+    </Package>
+    <History>
+        <Update release="5">
+            <Date>2022-04-15</Date>
+            <Version>4.0.2</Version>
+            <Comment>Packaging update</Comment>
+            <Name>Algent Albrahimi</Name>
+            <Email>algent@protonmail.com</Email>
+        </Update>
+    </History>
+</PISI>

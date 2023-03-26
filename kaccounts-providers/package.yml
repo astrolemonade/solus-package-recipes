@@ -1,0 +1,25 @@
+name       : kaccounts-providers
+version    : 22.12.1
+release    : 56
+source     :
+    - https://cdn.download.kde.org/stable/release-service/22.12.1/src/kaccounts-providers-22.12.1.tar.xz : cab667733cae4d6e47cb30d07a21c71ce827d05a3d75e5f525220e80d45a4c99
+homepage   : https://kde.org/
+license    : GPL-2.0-or-later
+component  : programming.library
+summary    : KDE Providers
+description: |
+    KDE providers for accounts sign-on Provides additional configuration files for libaccounts and libsignon to recognize online services such as Facebook and Google.
+builddeps  :
+    - pkgconfig(accounts-qt5)
+    - pkgconfig(Qt5WebEngine)
+    - pkgconfig(signond)
+    - kaccounts-integration-devel
+    - kdeclarative-devel
+    - kio-devel
+setup      : |
+    %cmake_ninja
+build      : |
+    %ninja_build
+install    : |
+    %ninja_install
+    %qml_cache

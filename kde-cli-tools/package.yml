@@ -1,0 +1,36 @@
+name       : kde-cli-tools
+version    : 5.26.5
+release    : 84
+source     :
+    - https://cdn.download.kde.org/stable/plasma/5.26.5/kde-cli-tools-5.26.5.tar.xz : 79660c20973616eb7a13dd6a9730e1a3eb61cd35939af95edd9ac0385bc75d36
+homepage   : https://www.kde.org/workspaces/plasmadesktop/
+license    :
+    - GPL-2.0-or-later
+    - LGPL-2.1-only
+component  : desktop.kde.core
+summary    : Tools to better interact with the system
+description: |
+    Tools based on KDE Frameworks 5 to better interact with the system.
+optimize   : lto
+builddeps  :
+    - pkgconfig(Qt5Svg)
+    - pkgconfig(Qt5X11Extras)
+    - pkgconfig(x11)
+    - kactivities-devel
+    - kcmutils-devel
+    - kdeclarative-devel
+    - kdoctools-devel
+    - kdesu-devel
+    - kiconthemes-devel
+    - kinit-devel
+    - kparts-devel
+    - plasma-workspace-devel
+patterns   :
+    - /usr/lib64/libkdeinit5*
+setup      : |
+    %cmake_ninja -DBUILD_TESTING=OFF
+build      : |
+    %ninja_build
+install    : |
+    %ninja_install
+    rm -rf $installdir/usr/share/doc

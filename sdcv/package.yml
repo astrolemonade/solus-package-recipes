@@ -1,0 +1,17 @@
+name       : sdcv
+version    : 0.5.4
+release    : 6
+source     :
+    - https://github.com/Dushistov/sdcv/archive/refs/tags/v0.5.4.tar.gz : 9fddec393f5dd6b208991d8225f90cb14d50fa9e7735f2414035d8a2ca065f28
+license    : GPL-2.0-or-later
+component  : office
+summary    : sdcv - console version of StarDict
+description: |
+    sdcv is simple, cross-platform text-base utility for work with dictionaries in StarDict's format. The word from "list of words" may be string with leading '/' for using Fuzzy search algorithm, with leading '|' for using full-text search, string may contain '?' and '*' for using regexp search. It work in interactive and not interactive mode.
+setup      : |
+    %cmake .
+build      : |
+    %make
+    %make lang
+install    : |
+    %make_install

@@ -1,0 +1,29 @@
+name       : libinput
+version    : 1.22.1
+release    : 42
+source     :
+    - https://gitlab.freedesktop.org/libinput/libinput/-/archive/1.22.1/libinput-1.22.1.tar.gz : 45d9e03c16c3c343b7537aa7f744ae9339b1a0dae446ecbe6f5ed9d49be11e87
+license    : MIT
+component  : desktop.library
+summary    : Generic input library
+description: |
+    libinput is a library to handle input devices in Wayland compositors and to provide a generic X.Org input driver. It provides device detection, device handling, input device event processing and abstraction so minimize the amount of custom input code compositors need to provide the common set of functionality that users expect.
+builddeps  :
+    - pkgconfig(libevdev)
+    - pkgconfig(libudev)
+    - pkgconfig(libwacom)
+    - pkgconfig(mtdev)
+    - pyparsing
+setup      : |
+    %meson_configure -Ddebug-gui=false \
+        -Ddocumentation=false \
+        -Dtests=false \
+        -Dudev-dir=%libdir%/udev
+build      : |
+    %ninja_build
+install    : |
+    %ninja_install
+    # Empty
+    rm -fr $installdir/etc/
+check      : |
+    %ninja_check

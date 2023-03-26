@@ -1,0 +1,35 @@
+name       : pybind11
+version    : 2.10.1
+release    : 7
+source     :
+    - https://github.com/pybind/pybind11/archive/refs/tags/v2.10.1.tar.gz : 111014b516b625083bef701df7880f78c2243835abdb263065b6b59b960b6bad
+homepage   : https://github.com/pybind/pybind11
+license    : BSD-3-Clause
+component  : programming.python
+summary    : Seamless operability between C++11 and Python
+description: |
+    pybind11 is a lightweight header-only library that exposes C++ types in Python and vice versa, mainly to create Python bindings of existing C++ code.
+patterns   :
+    - /usr/include
+    - /usr/share
+builddeps  :
+    - pkgconfig(eigen3)  # check
+    - pkgconfig(python3)
+    - libboost-devel
+    - python-pytest      # check
+    - scipy              # check
+setup      : |
+    mkdir -p build && pushd build
+    %cmake ..
+    popd
+build      : |
+    %python3_setup
+    %make -C build
+install    : |
+    %python3_install
+    %make_install -C build
+    rm -rfv $installdir/usr/include/python3.*
+check      : |
+    pushd pybind11-%version%/build
+    %make check
+    popd

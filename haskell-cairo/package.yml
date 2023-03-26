@@ -1,0 +1,31 @@
+name       : haskell-cairo
+version    : 0.13.8.1
+release    : 7
+source     :
+    - https://hackage.haskell.org/package/cairo-0.13.8.1/cairo-0.13.8.1.tar.gz : 1316412d51556205cfc097a354eddf0e51f4d319cde0498626a2854733f4f3c2
+license    : BSD-3-Clause
+component  : programming.haskell
+summary    : Cairo is a library to render high quality vector graphics. There exist various backends that allows rendering to Gtk windows, PDF, PS, PNG and SVG documents, amongst others.
+description: |
+    Cairo is a library to render high quality vector graphics. There exist various backends that allows rendering to Gtk windows, PDF, PS, PNG and SVG documents, amongst others.
+builddeps  :
+    - pkgconfig(cairo)
+    - gtk2hs-buildtools-devel
+    - haskell-cabal-install
+    - haskell-random-devel
+    - haskell-utf8-string-devel
+rundeps    :
+    - devel:
+        - gtk2hs-buildtools-devel
+        - haskell-random-devel
+        - haskell-utf8-string-devel
+        - libcairo-devel
+optimize   : no-symbols
+networking : yes
+setup      : |
+    %cabal_configure --dynlibdir="\$libdir/\$compiler/\$pkgid"
+build      : |
+    %cabal_build
+install    : |
+    %cabal_install
+    %cabal_register

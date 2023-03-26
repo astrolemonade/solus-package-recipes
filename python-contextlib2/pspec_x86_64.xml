@@ -1,0 +1,39 @@
+<PISI>
+    <Source>
+        <Name>python-contextlib2</Name>
+        <Packager>
+            <Name>Joey Riches</Name>
+            <Email>josephriches@gmail.com</Email>
+        </Packager>
+        <License>Python-2.0</License>
+        <PartOf>programming.python</PartOf>
+        <Summary xml:lang="en">Backport of pathlib aiming to support the full stdlib Python API.</Summary>
+        <Description xml:lang="en">Backport of pathlib aiming to support the full stdlib Python API. 
+</Description>
+        <Archive type="binary" sha1sum="79eb0752a961b8e0d15c77d298c97498fbc89c5a">https://getsol.us/sources/README.Solus</Archive>
+    </Source>
+    <Package>
+        <Name>python-contextlib2</Name>
+        <Summary xml:lang="en">Backport of pathlib aiming to support the full stdlib Python API.</Summary>
+        <Description xml:lang="en">Backport of pathlib aiming to support the full stdlib Python API. 
+</Description>
+        <PartOf>programming.python</PartOf>
+        <Files>
+            <Path fileType="library">/usr/lib/python2.7/site-packages/contextlib2-0.6.0.post1-py2.7.egg-info/PKG-INFO</Path>
+            <Path fileType="library">/usr/lib/python2.7/site-packages/contextlib2-0.6.0.post1-py2.7.egg-info/SOURCES.txt</Path>
+            <Path fileType="library">/usr/lib/python2.7/site-packages/contextlib2-0.6.0.post1-py2.7.egg-info/dependency_links.txt</Path>
+            <Path fileType="library">/usr/lib/python2.7/site-packages/contextlib2-0.6.0.post1-py2.7.egg-info/top_level.txt</Path>
+            <Path fileType="library">/usr/lib/python2.7/site-packages/contextlib2.py</Path>
+            <Path fileType="library">/usr/lib/python2.7/site-packages/contextlib2.pyc</Path>
+        </Files>
+    </Package>
+    <History>
+        <Update release="1">
+            <Date>2019-10-15</Date>
+            <Version>0.6.0</Version>
+            <Comment>Packaging update</Comment>
+            <Name>Joey Riches</Name>
+            <Email>josephriches@gmail.com</Email>
+        </Update>
+    </History>
+</PISI>

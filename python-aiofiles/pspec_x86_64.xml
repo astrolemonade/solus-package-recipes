@@ -1,0 +1,58 @@
+<PISI>
+    <Source>
+        <Name>python-aiofiles</Name>
+        <Homepage>https://github.com/Tinche/aiofiles</Homepage>
+        <Packager>
+            <Name>Algent Albrahimi</Name>
+            <Email>algent@protonmail.com</Email>
+        </Packager>
+        <License>Apache-2.0</License>
+        <PartOf>programming.python</PartOf>
+        <Summary xml:lang="en">File support for asyncio</Summary>
+        <Description xml:lang="en">aiofiles is a library, for handling local disk files in asyncio applications.
+</Description>
+        <Archive type="binary" sha1sum="79eb0752a961b8e0d15c77d298c97498fbc89c5a">https://getsol.us/sources/README.Solus</Archive>
+    </Source>
+    <Package>
+        <Name>python-aiofiles</Name>
+        <Summary xml:lang="en">File support for asyncio</Summary>
+        <Description xml:lang="en">aiofiles is a library, for handling local disk files in asyncio applications.
+</Description>
+        <PartOf>programming.python</PartOf>
+        <Files>
+            <Path fileType="library">/usr/lib/python3.10/site-packages/aiofiles-22.1.0-py3.10.egg-info/PKG-INFO</Path>
+            <Path fileType="library">/usr/lib/python3.10/site-packages/aiofiles-22.1.0-py3.10.egg-info/SOURCES.txt</Path>
+            <Path fileType="library">/usr/lib/python3.10/site-packages/aiofiles-22.1.0-py3.10.egg-info/dependency_links.txt</Path>
+            <Path fileType="library">/usr/lib/python3.10/site-packages/aiofiles-22.1.0-py3.10.egg-info/top_level.txt</Path>
+            <Path fileType="library">/usr/lib/python3.10/site-packages/aiofiles/__init__.py</Path>
+            <Path fileType="library">/usr/lib/python3.10/site-packages/aiofiles/__pycache__/__init__.cpython-310.pyc</Path>
+            <Path fileType="library">/usr/lib/python3.10/site-packages/aiofiles/__pycache__/base.cpython-310.pyc</Path>
+            <Path fileType="library">/usr/lib/python3.10/site-packages/aiofiles/__pycache__/os.cpython-310.pyc</Path>
+            <Path fileType="library">/usr/lib/python3.10/site-packages/aiofiles/__pycache__/ospath.cpython-310.pyc</Path>
+            <Path fileType="library">/usr/lib/python3.10/site-packages/aiofiles/base.py</Path>
+            <Path fileType="library">/usr/lib/python3.10/site-packages/aiofiles/os.py</Path>
+            <Path fileType="library">/usr/lib/python3.10/site-packages/aiofiles/ospath.py</Path>
+            <Path fileType="library">/usr/lib/python3.10/site-packages/aiofiles/tempfile/__init__.py</Path>
+            <Path fileType="library">/usr/lib/python3.10/site-packages/aiofiles/tempfile/__pycache__/__init__.cpython-310.pyc</Path>
+            <Path fileType="library">/usr/lib/python3.10/site-packages/aiofiles/tempfile/__pycache__/temptypes.cpython-310.pyc</Path>
+            <Path fileType="library">/usr/lib/python3.10/site-packages/aiofiles/tempfile/temptypes.py</Path>
+            <Path fileType="library">/usr/lib/python3.10/site-packages/aiofiles/threadpool/__init__.py</Path>
+            <Path fileType="library">/usr/lib/python3.10/site-packages/aiofiles/threadpool/__pycache__/__init__.cpython-310.pyc</Path>
+            <Path fileType="library">/usr/lib/python3.10/site-packages/aiofiles/threadpool/__pycache__/binary.cpython-310.pyc</Path>
+            <Path fileType="library">/usr/lib/python3.10/site-packages/aiofiles/threadpool/__pycache__/text.cpython-310.pyc</Path>
+            <Path fileType="library">/usr/lib/python3.10/site-packages/aiofiles/threadpool/__pycache__/utils.cpython-310.pyc</Path>
+            <Path fileType="library">/usr/lib/python3.10/site-packages/aiofiles/threadpool/binary.py</Path>
+            <Path fileType="library">/usr/lib/python3.10/site-packages/aiofiles/threadpool/text.py</Path>
+            <Path fileType="library">/usr/lib/python3.10/site-packages/aiofiles/threadpool/utils.py</Path>
+        </Files>
+    </Package>
+    <History>
+        <Update release="2">
+            <Date>2022-11-13</Date>
+            <Version>22.1.0</Version>
+            <Comment>Packaging update</Comment>
+            <Name>Algent Albrahimi</Name>
+            <Email>algent@protonmail.com</Email>
+        </Update>
+    </History>
+</PISI>

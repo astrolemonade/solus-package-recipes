@@ -1,0 +1,94 @@
+name       : firefox
+version    : 111.0.1
+release    : 270
+source     :
+    - https://ftp.mozilla.org/pub/firefox/releases/111.0.1/source/firefox-111.0.1.source.tar.xz : 84a4f3aba62df6e0451cdd28f8f1e59840d77c4062311947b0e59325c2ebdce8
+license    :
+    - GPL-2.0-or-later
+    - MPL-2.0
+component  : network.web.browser
+summary    : Firefox web browser
+description: |
+    Mozilla Firefox is an open-source web browser, designed for standards compliance, performance and portability. Its functionality can be enhanced via a plethora of extensions.
+clang      : yes
+builddeps  :
+    - pkgconfig(alsa)
+    - pkgconfig(bzip2)
+    - pkgconfig(dbus-glib-1)
+    - pkgconfig(gbm)
+    - pkgconfig(gconf-2.0)
+    - pkgconfig(gtk+-2.0)
+    - pkgconfig(gtk+-3.0)
+    - pkgconfig(libevent)
+    - pkgconfig(libpulse)
+    - pkgconfig(libturbojpeg)
+    - pkgconfig(libva)
+    - pkgconfig(libpci)
+    - pkgconfig(xcomposite)
+    - pkgconfig(xt)
+    - autoconf213
+    - cargo
+    - cbindgen
+    - dump_syms
+    - llvm-clang
+    - nodejs-devel
+    - noto-sans-ttf
+    - xorg-server-xvfb
+    - yasm
+rundeps    :
+    - ffmpeg
+environment: |
+    export MOZ_NOSPAM=1
+    export MACH_BUILD_PYTHON_NATIVE_PACKAGE_SOURCE=system
+    export MOZBUILD_STATE_PATH=$PWD
+    # Should be enabled by default but autotools check fails...
+    export LDFLAGS="${LDFLAGS} -Wl,--icf=safe"
+setup      : |
+    cp $pkgfiles/{google-safebrowsing,mozilla}-api-key .
+    cp $pkgfiles/config .mozconfig
+    sed 's@\#\#JOBCOUNT\#\#@%JOBS%@' -i .mozconfig
+    echo "ac_add_options --with-mozilla-api-keyfile=${workdir}/mozilla-api-key" >> .mozconfig
+    echo "ac_add_options --with-google-safebrowsing-api-keyfile=${workdir}/google-safebrowsing-api-key" >> .mozconfig
+    ./mach configure
+build      : |
+    # Instrument build
+    echo "ac_add_options --enable-profile-generate=cross" >> .mozconfig
+    ./mach build
+
+    # Package and run automated benchmarks for profiling
+    ./mach package
+    LLVM_PROFDATA=llvm-profdata JARLOG_FILE="$PWD/jarlog" xvfb-run -s "-screen 0 1920x1080x24 -ac +extension GLX +render -noreset" \
+    ./mach python build/pgo/profileserver.py
+
+    # Clean for rebuild
+    ./mach clobber
+
+    # Profile use build and enable lto
+    sed -i '/--enable-profile-generate=cross/d' .mozconfig
+    echo "ac_add_options --enable-profile-use=cross" >> .mozconfig
+    echo "ac_add_options --with-pgo-profile-path=${PWD@Q}/merged.profdata" >> .mozconfig
+    echo "ac_add_options --with-pgo-jarlog=${PWD@Q}/jarlog" >> .mozconfig
+    ./mach build
+    ./mach buildsymbols
+install    : |
+    # Install locales first
+    langpackdir="$installdir/%libdir%/firefox/browser/extensions"
+    install -D -d -m 00755 "${langpackdir}"
+
+    tar xf "$pkgfiles/firefox-${version}-langpacks.tar.xz"
+    for i in ff_lang_pack/*.xpi; do
+        lname="$(basename ${i})"
+        install -Dm00644 "ff_lang_pack/${lname}" "${langpackdir}"/$lname
+    done
+
+    DESTDIR=$installdir ./mach install
+
+    mkdir -p $installdir/usr/share/pixmaps
+    ln -sv %libdir%/firefox/browser/chrome/icons/default/default128.png $installdir/usr/share/pixmaps/firefox.png
+
+    install -Dm00644 $pkgfiles/firefox.desktop $installdir/usr/share/applications/firefox.desktop
+
+    # set up defaults
+    mkdir -p $installdir/%libdir%/firefox/browser/defaults/preferences
+    install -m00644 $pkgfiles/prefs.js $installdir/%libdir%/firefox/browser/defaults/preferences/prefs.js
+    install -m00644 $pkgfiles/firefox-l10n.js $installdir/%libdir%/firefox/browser/defaults/preferences/firefox-l10n.js

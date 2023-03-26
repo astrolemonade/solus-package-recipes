@@ -1,0 +1,22 @@
+name       : semantik
+version    : 1.2.9
+release    : 11
+source     :
+    - https://waf.io/semantik-1.2.9.tar.bz2 : 50fcee530fefd956b0056dde9e04c87b811c8d85052bd42e37328c3eaa53d831
+license    : GPL-3.0-or-later
+component  : desktop.kde
+summary    : A mind-mapping application for KDE
+description: |
+    Semantik (formerly kdissert) is a mind-mapping application for KDE that helps creating documents such as reports or presentations.
+builddeps  :
+    - pkgconfig(python3)
+    - pkgconfig(Qt5Svg)
+    - pkgconfig(Qt5UiTools)
+    - pkgconfig(Qt5WebEngine)
+    - kdelibs4support-devel
+setup      : |
+    %waf_configure
+build      : |
+    %waf_build
+install    : |
+    %waf_install --noldconfig --nomimes --nogtkicons

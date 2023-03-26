@@ -1,0 +1,21 @@
+name       : perl-path-iter
+version    : 0.2
+release    : 6
+source     :
+    - https://cpan.metacpan.org/authors/id/D/DM/DMUEY/Path-Iter-0.2.tar.gz : 70883c387e224b7d07d1fea88dbd430bac3a94f5bf6f8e98beb718d1d6b4c0dd
+license    : Artistic-1.0-Perl
+component  : programming.perl
+summary    : Path::Iter - Simple Efficient Path Iteration
+description: |
+    Iterate through the contents of a given path without having to build the entire list first.
+builddeps  :
+    - perl-test-pod
+    - perl-test-pod-coverage
+setup      : |
+    %perl_setup
+build      : |
+    %perl_build
+install    : |
+    %perl_install
+check      : |
+    %perl_build test

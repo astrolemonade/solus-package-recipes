@@ -1,0 +1,23 @@
+name       : keyutils
+version    : '1.6.3'
+release    : 4
+source     :
+    - git|https://kernel.googlesource.com/pub/scm/linux/kernel/git/dhowells/keyutils.git : v1.6.3
+license    :
+    - GPL-2.0-or-later
+    - LGPL-2.1-or-later
+component  : system.utils
+summary    : In-kernel key management utilities
+description: |
+    The keyutils package is a library and a set of utilities for accessing the kernel keyrings facility.
+patterns   :
+    - devel :
+        - /usr/share/man/man3
+builddeps  :
+    - pkgconfig(krb5)
+build      : |
+    %make
+install    : |
+    %make_install NO_ARLIB=1 SBINDIR=%PREFIX%/sbin BINDIR=%PREFIX%/bin LIBDIR=%libdir%
+
+    install -Dm00644 $pkgfiles/keyutils.pc $installdir/usr/lib64/pkgconfig/keyutils.pc

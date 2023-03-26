@@ -1,0 +1,24 @@
+name       : python2-pluggy
+version    : 0.13.1
+release    : 2
+source     :
+    - https://github.com/pytest-dev/pluggy/archive/0.13.1.tar.gz : 25d8e53a6eee6939f13b79dc9053b3edd6f705e5a7ba042ae528a1b5fdd9615c
+homepage   : https://github.com/pytest-dev/pluggy
+license    : MIT
+component  : programming.python
+summary    : Plugin management and hook calling for Python
+description: |
+    Plugin management and hook calling for Python
+builddeps  :
+    - python2-pytest         # check
+    - python2-setuptools-scm # check
+rundeps    :
+    - python2-importlib-metadata
+environment: |
+    export SETUPTOOLS_SCM_PRETEND_VERSION=$version
+build      : |
+    %python_setup
+install    : |
+    %python_install
+check      : |
+    %python_test pytest

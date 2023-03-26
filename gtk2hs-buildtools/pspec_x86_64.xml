@@ -1,0 +1,147 @@
+<PISI>
+    <Source>
+        <Name>gtk2hs-buildtools</Name>
+        <Packager>
+            <Name>Bryan T. Meyers</Name>
+            <Email>bmeyers@datadrake.com</Email>
+        </Packager>
+        <License>GPL-2.0-only</License>
+        <PartOf>programming.haskell</PartOf>
+        <Summary xml:lang="en">This package provides a set of helper programs necessary to build the Gtk2Hs suite of libraries.</Summary>
+        <Description xml:lang="en">This package provides a set of helper programs necessary to build the Gtk2Hs suite of libraries.
+</Description>
+        <Archive type="binary" sha1sum="79eb0752a961b8e0d15c77d298c97498fbc89c5a">https://getsol.us/sources/README.Solus</Archive>
+    </Source>
+    <Package>
+        <Name>gtk2hs-buildtools</Name>
+        <Summary xml:lang="en">This package provides a set of helper programs necessary to build the Gtk2Hs suite of libraries.</Summary>
+        <Description xml:lang="en">This package provides a set of helper programs necessary to build the Gtk2Hs suite of libraries.
+</Description>
+        <PartOf>programming.haskell</PartOf>
+        <Files>
+            <Path fileType="executable">/usr/bin/gtk2hsC2hs</Path>
+            <Path fileType="executable">/usr/bin/gtk2hsHookGenerator</Path>
+            <Path fileType="executable">/usr/bin/gtk2hsTypeGen</Path>
+            <Path fileType="library">/usr/lib64/ghc-8.6.5/gtk2hs-buildtools-0.13.8.0/Attributes.dyn_hi</Path>
+            <Path fileType="library">/usr/lib64/ghc-8.6.5/gtk2hs-buildtools-0.13.8.0/Attributes.hi</Path>
+            <Path fileType="library">/usr/lib64/ghc-8.6.5/gtk2hs-buildtools-0.13.8.0/BaseVersion.dyn_hi</Path>
+            <Path fileType="library">/usr/lib64/ghc-8.6.5/gtk2hs-buildtools-0.13.8.0/BaseVersion.hi</Path>
+            <Path fileType="library">/usr/lib64/ghc-8.6.5/gtk2hs-buildtools-0.13.8.0/Binary.dyn_hi</Path>
+            <Path fileType="library">/usr/lib64/ghc-8.6.5/gtk2hs-buildtools-0.13.8.0/Binary.hi</Path>
+            <Path fileType="library">/usr/lib64/ghc-8.6.5/gtk2hs-buildtools-0.13.8.0/C.dyn_hi</Path>
+            <Path fileType="library">/usr/lib64/ghc-8.6.5/gtk2hs-buildtools-0.13.8.0/C.hi</Path>
+            <Path fileType="library">/usr/lib64/ghc-8.6.5/gtk2hs-buildtools-0.13.8.0/C2HSConfig.dyn_hi</Path>
+            <Path fileType="library">/usr/lib64/ghc-8.6.5/gtk2hs-buildtools-0.13.8.0/C2HSConfig.hi</Path>
+            <Path fileType="library">/usr/lib64/ghc-8.6.5/gtk2hs-buildtools-0.13.8.0/C2HSState.dyn_hi</Path>
+            <Path fileType="library">/usr/lib64/ghc-8.6.5/gtk2hs-buildtools-0.13.8.0/C2HSState.hi</Path>
+            <Path fileType="library">/usr/lib64/ghc-8.6.5/gtk2hs-buildtools-0.13.8.0/CAST.dyn_hi</Path>
+            <Path fileType="library">/usr/lib64/ghc-8.6.5/gtk2hs-buildtools-0.13.8.0/CAST.hi</Path>
+            <Path fileType="library">/usr/lib64/ghc-8.6.5/gtk2hs-buildtools-0.13.8.0/CAttrs.dyn_hi</Path>
+            <Path fileType="library">/usr/lib64/ghc-8.6.5/gtk2hs-buildtools-0.13.8.0/CAttrs.hi</Path>
+            <Path fileType="library">/usr/lib64/ghc-8.6.5/gtk2hs-buildtools-0.13.8.0/CBuiltin.dyn_hi</Path>
+            <Path fileType="library">/usr/lib64/ghc-8.6.5/gtk2hs-buildtools-0.13.8.0/CBuiltin.hi</Path>
+            <Path fileType="library">/usr/lib64/ghc-8.6.5/gtk2hs-buildtools-0.13.8.0/CHS.dyn_hi</Path>
+            <Path fileType="library">/usr/lib64/ghc-8.6.5/gtk2hs-buildtools-0.13.8.0/CHS.hi</Path>
+            <Path fileType="library">/usr/lib64/ghc-8.6.5/gtk2hs-buildtools-0.13.8.0/CHSLexer.dyn_hi</Path>
+            <Path fileType="library">/usr/lib64/ghc-8.6.5/gtk2hs-buildtools-0.13.8.0/CHSLexer.hi</Path>
+            <Path fileType="library">/usr/lib64/ghc-8.6.5/gtk2hs-buildtools-0.13.8.0/CIO.dyn_hi</Path>
+            <Path fileType="library">/usr/lib64/ghc-8.6.5/gtk2hs-buildtools-0.13.8.0/CIO.hi</Path>
+            <Path fileType="library">/usr/lib64/ghc-8.6.5/gtk2hs-buildtools-0.13.8.0/CInfo.dyn_hi</Path>
+            <Path fileType="library">/usr/lib64/ghc-8.6.5/gtk2hs-buildtools-0.13.8.0/CInfo.hi</Path>
+            <Path fileType="library">/usr/lib64/ghc-8.6.5/gtk2hs-buildtools-0.13.8.0/CLexer.dyn_hi</Path>
+            <Path fileType="library">/usr/lib64/ghc-8.6.5/gtk2hs-buildtools-0.13.8.0/CLexer.hi</Path>
+            <Path fileType="library">/usr/lib64/ghc-8.6.5/gtk2hs-buildtools-0.13.8.0/CNames.dyn_hi</Path>
+            <Path fileType="library">/usr/lib64/ghc-8.6.5/gtk2hs-buildtools-0.13.8.0/CNames.hi</Path>
+            <Path fileType="library">/usr/lib64/ghc-8.6.5/gtk2hs-buildtools-0.13.8.0/CParser.dyn_hi</Path>
+            <Path fileType="library">/usr/lib64/ghc-8.6.5/gtk2hs-buildtools-0.13.8.0/CParser.hi</Path>
+            <Path fileType="library">/usr/lib64/ghc-8.6.5/gtk2hs-buildtools-0.13.8.0/CParserMonad.dyn_hi</Path>
+            <Path fileType="library">/usr/lib64/ghc-8.6.5/gtk2hs-buildtools-0.13.8.0/CParserMonad.hi</Path>
+            <Path fileType="library">/usr/lib64/ghc-8.6.5/gtk2hs-buildtools-0.13.8.0/CPretty.dyn_hi</Path>
+            <Path fileType="library">/usr/lib64/ghc-8.6.5/gtk2hs-buildtools-0.13.8.0/CPretty.hi</Path>
+            <Path fileType="library">/usr/lib64/ghc-8.6.5/gtk2hs-buildtools-0.13.8.0/CTokens.dyn_hi</Path>
+            <Path fileType="library">/usr/lib64/ghc-8.6.5/gtk2hs-buildtools-0.13.8.0/CTokens.hi</Path>
+            <Path fileType="library">/usr/lib64/ghc-8.6.5/gtk2hs-buildtools-0.13.8.0/CTrav.dyn_hi</Path>
+            <Path fileType="library">/usr/lib64/ghc-8.6.5/gtk2hs-buildtools-0.13.8.0/CTrav.hi</Path>
+            <Path fileType="library">/usr/lib64/ghc-8.6.5/gtk2hs-buildtools-0.13.8.0/Config.dyn_hi</Path>
+            <Path fileType="library">/usr/lib64/ghc-8.6.5/gtk2hs-buildtools-0.13.8.0/Config.hi</Path>
+            <Path fileType="library">/usr/lib64/ghc-8.6.5/gtk2hs-buildtools-0.13.8.0/DLists.dyn_hi</Path>
+            <Path fileType="library">/usr/lib64/ghc-8.6.5/gtk2hs-buildtools-0.13.8.0/DLists.hi</Path>
+            <Path fileType="library">/usr/lib64/ghc-8.6.5/gtk2hs-buildtools-0.13.8.0/Errors.dyn_hi</Path>
+            <Path fileType="library">/usr/lib64/ghc-8.6.5/gtk2hs-buildtools-0.13.8.0/Errors.hi</Path>
+            <Path fileType="library">/usr/lib64/ghc-8.6.5/gtk2hs-buildtools-0.13.8.0/FNameOps.dyn_hi</Path>
+            <Path fileType="library">/usr/lib64/ghc-8.6.5/gtk2hs-buildtools-0.13.8.0/FNameOps.hi</Path>
+            <Path fileType="library">/usr/lib64/ghc-8.6.5/gtk2hs-buildtools-0.13.8.0/FastMutInt.dyn_hi</Path>
+            <Path fileType="library">/usr/lib64/ghc-8.6.5/gtk2hs-buildtools-0.13.8.0/FastMutInt.hi</Path>
+            <Path fileType="library">/usr/lib64/ghc-8.6.5/gtk2hs-buildtools-0.13.8.0/FileOps.dyn_hi</Path>
+            <Path fileType="library">/usr/lib64/ghc-8.6.5/gtk2hs-buildtools-0.13.8.0/FileOps.hi</Path>
+            <Path fileType="library">/usr/lib64/ghc-8.6.5/gtk2hs-buildtools-0.13.8.0/GBMonad.dyn_hi</Path>
+            <Path fileType="library">/usr/lib64/ghc-8.6.5/gtk2hs-buildtools-0.13.8.0/GBMonad.hi</Path>
+            <Path fileType="library">/usr/lib64/ghc-8.6.5/gtk2hs-buildtools-0.13.8.0/GenBind.dyn_hi</Path>
+            <Path fileType="library">/usr/lib64/ghc-8.6.5/gtk2hs-buildtools-0.13.8.0/GenBind.hi</Path>
+            <Path fileType="library">/usr/lib64/ghc-8.6.5/gtk2hs-buildtools-0.13.8.0/GenHeader.dyn_hi</Path>
+            <Path fileType="library">/usr/lib64/ghc-8.6.5/gtk2hs-buildtools-0.13.8.0/GenHeader.hi</Path>
+            <Path fileType="library">/usr/lib64/ghc-8.6.5/gtk2hs-buildtools-0.13.8.0/Gtk2HsC2Hs.dyn_hi</Path>
+            <Path fileType="library">/usr/lib64/ghc-8.6.5/gtk2hs-buildtools-0.13.8.0/Gtk2HsC2Hs.hi</Path>
+            <Path fileType="library">/usr/lib64/ghc-8.6.5/gtk2hs-buildtools-0.13.8.0/Gtk2HsSetup.dyn_hi</Path>
+            <Path fileType="library">/usr/lib64/ghc-8.6.5/gtk2hs-buildtools-0.13.8.0/Gtk2HsSetup.hi</Path>
+            <Path fileType="library">/usr/lib64/ghc-8.6.5/gtk2hs-buildtools-0.13.8.0/HookGenerator.dyn_hi</Path>
+            <Path fileType="library">/usr/lib64/ghc-8.6.5/gtk2hs-buildtools-0.13.8.0/HookGenerator.hi</Path>
+            <Path fileType="library">/usr/lib64/ghc-8.6.5/gtk2hs-buildtools-0.13.8.0/Idents.dyn_hi</Path>
+            <Path fileType="library">/usr/lib64/ghc-8.6.5/gtk2hs-buildtools-0.13.8.0/Idents.hi</Path>
+            <Path fileType="library">/usr/lib64/ghc-8.6.5/gtk2hs-buildtools-0.13.8.0/Lexers.dyn_hi</Path>
+            <Path fileType="library">/usr/lib64/ghc-8.6.5/gtk2hs-buildtools-0.13.8.0/Lexers.hi</Path>
+            <Path fileType="library">/usr/lib64/ghc-8.6.5/gtk2hs-buildtools-0.13.8.0/Map.dyn_hi</Path>
+            <Path fileType="library">/usr/lib64/ghc-8.6.5/gtk2hs-buildtools-0.13.8.0/Map.hi</Path>
+            <Path fileType="library">/usr/lib64/ghc-8.6.5/gtk2hs-buildtools-0.13.8.0/NameSpaces.dyn_hi</Path>
+            <Path fileType="library">/usr/lib64/ghc-8.6.5/gtk2hs-buildtools-0.13.8.0/NameSpaces.hi</Path>
+            <Path fileType="library">/usr/lib64/ghc-8.6.5/gtk2hs-buildtools-0.13.8.0/Paths_gtk2hs_buildtools.dyn_hi</Path>
+            <Path fileType="library">/usr/lib64/ghc-8.6.5/gtk2hs-buildtools-0.13.8.0/Paths_gtk2hs_buildtools.hi</Path>
+            <Path fileType="library">/usr/lib64/ghc-8.6.5/gtk2hs-buildtools-0.13.8.0/Position.dyn_hi</Path>
+            <Path fileType="library">/usr/lib64/ghc-8.6.5/gtk2hs-buildtools-0.13.8.0/Position.hi</Path>
+            <Path fileType="library">/usr/lib64/ghc-8.6.5/gtk2hs-buildtools-0.13.8.0/Set.dyn_hi</Path>
+            <Path fileType="library">/usr/lib64/ghc-8.6.5/gtk2hs-buildtools-0.13.8.0/Set.hi</Path>
+            <Path fileType="library">/usr/lib64/ghc-8.6.5/gtk2hs-buildtools-0.13.8.0/State.dyn_hi</Path>
+            <Path fileType="library">/usr/lib64/ghc-8.6.5/gtk2hs-buildtools-0.13.8.0/State.hi</Path>
+            <Path fileType="library">/usr/lib64/ghc-8.6.5/gtk2hs-buildtools-0.13.8.0/StateBase.dyn_hi</Path>
+            <Path fileType="library">/usr/lib64/ghc-8.6.5/gtk2hs-buildtools-0.13.8.0/StateBase.hi</Path>
+            <Path fileType="library">/usr/lib64/ghc-8.6.5/gtk2hs-buildtools-0.13.8.0/StateTrans.dyn_hi</Path>
+            <Path fileType="library">/usr/lib64/ghc-8.6.5/gtk2hs-buildtools-0.13.8.0/StateTrans.hi</Path>
+            <Path fileType="library">/usr/lib64/ghc-8.6.5/gtk2hs-buildtools-0.13.8.0/Switches.dyn_hi</Path>
+            <Path fileType="library">/usr/lib64/ghc-8.6.5/gtk2hs-buildtools-0.13.8.0/Switches.hi</Path>
+            <Path fileType="library">/usr/lib64/ghc-8.6.5/gtk2hs-buildtools-0.13.8.0/TypeGen.dyn_hi</Path>
+            <Path fileType="library">/usr/lib64/ghc-8.6.5/gtk2hs-buildtools-0.13.8.0/TypeGen.hi</Path>
+            <Path fileType="library">/usr/lib64/ghc-8.6.5/gtk2hs-buildtools-0.13.8.0/UNames.dyn_hi</Path>
+            <Path fileType="library">/usr/lib64/ghc-8.6.5/gtk2hs-buildtools-0.13.8.0/UNames.hi</Path>
+            <Path fileType="library">/usr/lib64/ghc-8.6.5/gtk2hs-buildtools-0.13.8.0/Version.dyn_hi</Path>
+            <Path fileType="library">/usr/lib64/ghc-8.6.5/gtk2hs-buildtools-0.13.8.0/Version.hi</Path>
+            <Path fileType="library">/usr/lib64/x86_64-linux-ghc-8.6.5/libHSgtk2hs-buildtools-0.13.8.0-6X184Jnn3iu1uaaUvRwmbc-ghc8.6.5.so</Path>
+            <Path fileType="doc">/usr/share/doc/x86_64-linux-ghc-8.6.5/gtk2hs-buildtools-0.13.8.0/COPYING</Path>
+            <Path fileType="data">/usr/share/x86_64-linux-ghc-8.6.5/gtk2hs-buildtools-0.13.8.0/callbackGen/Signal.chs.template</Path>
+            <Path fileType="data">/usr/share/x86_64-linux-ghc-8.6.5/gtk2hs-buildtools-0.13.8.0/hierarchyGen/Hierarchy.chs.template</Path>
+            <Path fileType="data">/usr/share/x86_64-linux-ghc-8.6.5/gtk2hs-buildtools-0.13.8.0/hierarchyGen/hierarchy.list</Path>
+        </Files>
+    </Package>
+    <Package>
+        <Name>gtk2hs-buildtools-devel</Name>
+        <Summary xml:lang="en">Development files for gtk2hs-buildtools</Summary>
+        <Description xml:lang="en">This package provides a set of helper programs necessary to build the Gtk2Hs suite of libraries.
+</Description>
+        <PartOf>programming.devel</PartOf>
+        <RuntimeDependencies>
+            <Dependency release="7">gtk2hs-buildtools</Dependency>
+        </RuntimeDependencies>
+        <Files>
+            <Path fileType="library">/usr/lib64/ghc-8.6.5/gtk2hs-buildtools-0.13.8.0/libHSgtk2hs-buildtools-0.13.8.0-6X184Jnn3iu1uaaUvRwmbc.a</Path>
+            <Path fileType="library">/usr/lib64/ghc-8.6.5/package.conf.d/gtk2hs-buildtools-0.13.8.0.conf</Path>
+        </Files>
+    </Package>
+    <History>
+        <Update release="7">
+            <Date>2020-12-23</Date>
+            <Version>0.13.8.0</Version>
+            <Comment>Packaging update</Comment>
+            <Name>Bryan T. Meyers</Name>
+            <Email>bmeyers@datadrake.com</Email>
+        </Update>
+    </History>
+</PISI>

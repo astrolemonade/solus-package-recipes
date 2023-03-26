@@ -1,0 +1,46 @@
+name       : akonadiconsole
+version    : 22.12.1
+release    : 17
+source     :
+    - https://cdn.download.kde.org/stable/release-service/22.12.1/src/akonadiconsole-22.12.1.tar.xz : f46d3710ffbf07e3d693530ea47d7ae5b6dbacb7e9658b3be3901c8f876ef5c9
+license    :
+    - GPL-2.0-or-later
+    - GPL-3.0-only
+    - LGPL-2.0-or-later
+component  : desktop.library
+summary    : Akonadi management and debugging console
+description: |
+    Akonadi management and debugging console
+builddeps  :
+    - pkgconfig(Qt5WebEngineWidgets)
+    - pkgconfig(xapian-core)
+    - akonadi-devel
+    - akonadi-calendar-devel
+    - akonadi-contacts-devel
+    - akonadi-mime-devel
+    - akonadi-search-devel
+    - calendarsupport-devel
+    - grantleetheme-devel
+    - kcalendarcore-devel
+    - kcompletion-devel
+    - kcontacts-devel
+    - kcrash-devel
+    - kdbusaddons-devel
+    - kdoctools-devel
+    - kidentitymanagement-devel
+    - kio-devel
+    - kitemmodels-devel
+    - kmime-devel
+    - ktextwidgets-devel
+    - libkdepim-devel
+    - libkleo-devel
+    - messagelib-devel
+    - pimcommon-devel
+rundeps    :
+    - kdepim-runtime
+setup      : |
+    %cmake_ninja
+build      : |
+    %ninja_build
+install    : |
+    %ninja_install

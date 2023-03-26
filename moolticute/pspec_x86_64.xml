@@ -1,0 +1,45 @@
+<PISI>
+    <Source>
+        <Name>moolticute</Name>
+        <Packager>
+            <Name>Stefan Weiberg</Name>
+            <Email>sweiberg@suse.com</Email>
+        </Packager>
+        <License>GPL-3.0-or-later</License>
+        <PartOf>security.utils</PartOf>
+        <Summary xml:lang="en">Moolticute aims to be an easy companion to your Mooltipass device and extend the power of the device to more platform/tools.</Summary>
+        <Description xml:lang="en">Moolticute aims to be an easy companion to your Mooltipass device and extend the power of the device to more platform/tools. With it you can manage your Mooltipass with a cross-platform app, as well as provide a daemon service that handle all USB communication with the device.
+This tool is written with a daemon that runs in background, and a user interface app to control you Mooltipass. Other clients could also connect and talk to the daemon (it uses a websocket connection and simple JSON messages). The official Mooltipass App only works with Chrome as it relies on USB HID library that is only implemented in Chrome. A Firefox (or any other browser) extension could easily be written by using the Moolticute daemon.
+It is completely cross platform, and runs on Linux (using libusb), OS X (native IOKit API), and Windows (native HID API).
+</Description>
+        <Archive type="binary" sha1sum="79eb0752a961b8e0d15c77d298c97498fbc89c5a">https://solus-project.com/sources/README.Solus</Archive>
+    </Source>
+    <Package>
+        <Name>moolticute</Name>
+        <Summary xml:lang="en">Moolticute aims to be an easy companion to your Mooltipass device and extend the power of the device to more platform/tools.</Summary>
+        <Description xml:lang="en">Moolticute aims to be an easy companion to your Mooltipass device and extend the power of the device to more platform/tools. With it you can manage your Mooltipass with a cross-platform app, as well as provide a daemon service that handle all USB communication with the device.
+This tool is written with a daemon that runs in background, and a user interface app to control you Mooltipass. Other clients could also connect and talk to the daemon (it uses a websocket connection and simple JSON messages). The official Mooltipass App only works with Chrome as it relies on USB HID library that is only implemented in Chrome. A Firefox (or any other browser) extension could easily be written by using the Moolticute daemon.
+It is completely cross platform, and runs on Linux (using libusb), OS X (native IOKit API), and Windows (native HID API).
+</Description>
+        <PartOf>security.utils</PartOf>
+        <Files>
+            <Path fileType="executable">/usr/bin/moolticute</Path>
+            <Path fileType="executable">/usr/bin/moolticuted</Path>
+            <Path fileType="library">/usr/lib/systemd/system/moolticuted.service</Path>
+            <Path fileType="library">/usr/lib64/udev/rules.d/50-mooltipass.rules</Path>
+            <Path fileType="data">/usr/share/applications/moolticute.desktop</Path>
+            <Path fileType="data">/usr/share/icons/hicolor/128x128/apps/moolticute.png</Path>
+            <Path fileType="data">/usr/share/icons/hicolor/32x32/apps/moolticute.png</Path>
+            <Path fileType="data">/usr/share/icons/hicolor/scalable/apps/moolticute.svg</Path>
+        </Files>
+    </Package>
+    <History>
+        <Update release="1">
+            <Date>2018-10-01</Date>
+            <Version>0.21.0</Version>
+            <Comment>Packaging update</Comment>
+            <Name>Stefan Weiberg</Name>
+            <Email>sweiberg@suse.com</Email>
+        </Update>
+    </History>
+</PISI>

@@ -1,0 +1,21 @@
+name       : zenity
+version    : 3.43.0
+release    : 19
+source     :
+    - https://download.gnome.org/sources/zenity/3.43/zenity-3.43.0.tar.xz : b0d7ca1e0c1868fa18f05c210260d8a7be1f08ee13b7f5cfdbab9b61fa16f833
+homepage   : https://live.gnome.org/Zenity
+license    : LGPL-2.0-or-later
+component  : desktop.gnome
+summary    : A tool that allows you to display GTK dialog boxes in commandline and shell scripts
+description: |
+    A tool that allows you to display GTK dialog boxes in commandline and shell scripts.
+builddeps  :
+    - pkgconfig(gtk+-3.0)
+    - pkgconfig(libnotify)
+    - itstool
+setup      : |
+    %meson_configure
+build      : |
+    %ninja_build
+install    : |
+    %ninja_install

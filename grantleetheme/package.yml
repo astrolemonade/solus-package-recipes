@@ -1,0 +1,27 @@
+name       : grantleetheme
+version    : 22.12.1
+release    : 62
+source     :
+    - https://cdn.download.kde.org/stable/release-service/22.12.1/src/grantleetheme-22.12.1.tar.xz : 17c66f07dd23beee5d4325b730330a1b1bd2fb9edcc0ad09b29c99d7954ca0f7
+homepage   : https://kde.org/
+license    : LGPL-2.1-or-later
+component  : desktop.library
+summary    : GrantleeTheme library provides a class for loading theme packages containing sets of templates
+description: |
+    GrantleeTheme library provides a class for loading theme packages containing sets of templates.
+builddeps  :
+    - grantlee-devel
+    - kguiaddons-devel
+    - ki18n-devel
+    - kiconthemes-devel
+    - knewstuff-devel
+    - kservice-devel
+rundeps    :
+    - devel :
+        - grantlee-devel
+setup      : |
+    %cmake_ninja -DBUILD_TESTING=OFF
+build      : |
+    %ninja_build
+install    : |
+    %ninja_install

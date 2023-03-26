@@ -1,0 +1,21 @@
+name       : kcolorchooser
+version    : 22.12.1
+release    : 49
+source     :
+    - https://cdn.download.kde.org/stable/release-service/22.12.1/src/kcolorchooser-22.12.1.tar.xz : a4a9ca4a0adffef7fdb33c9252157492973916e0aa1a97f19d9ac964eab970ce
+homepage   : https://kde.org/applications/graphics/org.kde.kcolorchooser
+license    : MIT
+component  : multimedia.graphics
+summary    : Color chooser and palette editor
+description: |
+    KColorChooser is a color palette tool, used to mix colors and create custom color palettes.
+    Using the dropper, it can obtain the color of any pixel on the screen.
+builddeps  :
+    - ki18n-devel
+    - kxmlgui-devel
+setup      : |
+    %cmake_ninja
+build      : |
+    %ninja_build
+install    : |
+    %ninja_install

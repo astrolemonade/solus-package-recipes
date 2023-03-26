@@ -1,0 +1,21 @@
+name       : gnome-mahjongg
+version    : 3.38.3
+release    : 8
+source     :
+    - https://download.gnome.org/sources/gnome-mahjongg/3.38/gnome-mahjongg-3.38.3.tar.xz : d2b1e47d85852048b35d89e3ddaba1daeb06aaf97acfb67a501ce664ff509190
+license    : GPL-2.0-or-later
+component  : games.card
+summary    : Mahjongg is a solitaire (one player) version of the classic Eastern tile game, Mahjongg.
+description: |
+    Mahjongg is a solitaire (one player) version of the classic Eastern tile game, Mahjongg.
+builddeps  :
+    - pkgconfig(gtk+-3.0)
+    - pkgconfig(librsvg-2.0)
+    - itstool
+    - vala
+setup      : |
+    %meson_configure -Dcompile-schemas="disabled" -Dupdate-icon-cache="disabled"
+build      : |
+    %ninja_build
+install    : |
+    %ninja_install

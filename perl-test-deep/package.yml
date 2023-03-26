@@ -1,0 +1,18 @@
+name       : perl-test-deep
+version    : '1.130'
+release    : 6
+source     :
+    - https://cpan.metacpan.org/authors/id/R/RJ/RJBS/Test-Deep-1.130.tar.gz : 4064f494f5f62587d0ae501ca439105821ee5846c687dc6503233f55300a7c56
+license    : Artistic-1.0-Perl
+component  : programming.perl
+summary    : This module gives you lots of flexibility when testing deep structres
+description: |
+    This module gives you lots of flexibility when testing deep structres.
+setup      : |
+    %perl_setup
+build      : |
+    %perl_build
+install    : |
+    %perl_install
+check      : |
+    %perl_build test

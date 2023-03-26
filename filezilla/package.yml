@@ -1,0 +1,37 @@
+name       : filezilla
+version    : 3.60.2
+release    : 70
+source     :
+    - https://download.filezilla-project.org/client/FileZilla_3.60.2_src.tar.bz2 : e407dbad169953ff951452bcbf138d953a3a30235f8abb03d271c712cc7e5792
+license    : GPL-2.0-or-later
+component  : network.clients
+summary    : The Free FTP Solution
+description: |
+    FileZilla is a FTP, FTPS, SFTP and SSH client with a lot of features.
+libsplit   : no
+builddeps  :
+    - pkgconfig(cppunit) # check
+    - pkgconfig(dbus-1)
+    - pkgconfig(gnutls)
+    - pkgconfig(gtk+-2.0)
+    - pkgconfig(gtk+-3.0)
+    - pkgconfig(libfilezilla)
+    - pkgconfig(libidn)
+    - pkgconfig(pugixml)
+    - pkgconfig(sqlite3)
+    - wxwidgets-devel
+    - xdg-utils
+setup      : |
+    %patch -p1 < $pkgfiles/filezilla-3.47.2.1-interface_Mainfrm_h_include_list.patch
+
+    %configure \
+        --disable-static \
+        --disable-autoupdatecheck \
+        --disable-manualupdatecheck \
+        --with-tinyxml=builtin
+build      : |
+    %make
+install    : |
+    %make_install
+check      : |
+    %make check

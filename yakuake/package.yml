@@ -1,0 +1,33 @@
+name       : yakuake
+version    : 22.12.1
+release    : 45
+source     :
+    - https://cdn.download.kde.org/stable/release-service/22.12.1/src/yakuake-22.12.1.tar.xz : 34813bc61fd55656578f4c1ad544e05e33a247d2c5398f29b09d1e2985470462
+homepage   : https://kde.org/applications/system/org.kde.yakuake
+license    : GPL-2.0
+component  : desktop.kde
+summary    : A quake style dropdown terminal.
+description: |
+    A quake-inspired dropdown terminal window.  Qt-based, robust, and highly configurable.
+builddeps  :
+    - pkgconfig(Qt5Svg)
+    - pkgconfig(Qt5Widgets)
+    - pkgconfig(Qt5X11Extras)
+    - pkgconfig(x11)
+    - karchive-devel
+    - kcrash-devel
+    - kdbusaddons-devel
+    - kglobalaccel-devel
+    - kiconthemes-devel
+    - knewstuff-devel
+    - knotifyconfig-devel
+    - kparts-devel
+    - kwayland-devel
+rundeps    :
+    - konsole
+setup      : |
+    %cmake_ninja
+build      : |
+    %ninja_build
+install    : |
+    %ninja_install

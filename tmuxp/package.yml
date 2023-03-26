@@ -1,0 +1,20 @@
+name       : tmuxp
+version    : 1.24.0
+release    : 12
+source     :
+    - https://files.pythonhosted.org/packages/9e/ca/83628559a0ac7ba038187ddd82cf684b986cac5070b3eea1ad7e684cbca3/tmuxp-1.24.0.tar.gz : 190b46a4a3e185f994156e3621eb483eaee535764bb0efa14d704e297ffcf725
+license    : MIT
+component  : system.utils
+summary    : tmux session manager
+description: |
+    tmux session manager, built on libtmux.
+homepage   : http://tmuxp.git-pull.com/
+rundeps    :
+    - python-colorama
+    - python-libtmux
+    - python-kaptan
+    - tmux
+build      : |
+    %python3_setup
+install    : |
+    %python3_install

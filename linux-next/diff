@@ -1,0 +1,73 @@
+diff --git a/pspec_x86_64.xml b/pspec_x86_64.xml
+index 4349465..9e74a86 100644
+--- a/pspec_x86_64.xml
++++ b/pspec_x86_64.xml
+@@ -2,8 +2,8 @@
+     <Source>
+         <Name>linux-next</Name>
+         <Packager>
+-            <Name>Reilly Brogan</Name>
+-            <Email>solus@reillybrogan.com</Email>
++            <Name>Thomas Staudinger</Name>
++            <Email>Staudi.Kaos@gmail.com</Email>
+         </Packager>
+         <License>GPL-2.0-only</License>
+         <PartOf>kernel.image</PartOf>
+@@ -23,6 +23,7 @@
+             <Path fileType="data">/lib/modules/6.1.0-22.next/kernel/arch/x86/crypto/blowfish-x86_64.ko.zst</Path>
+             <Path fileType="data">/lib/modules/6.1.0-22.next/kernel/arch/x86/crypto/chacha-x86_64.ko.zst</Path>
+             <Path fileType="data">/lib/modules/6.1.0-22.next/kernel/arch/x86/crypto/curve25519-x86_64.ko.zst</Path>
++            <Path fileType="data">/lib/modules/6.1.0-22.next/kernel/arch/x86/crypto/des3_ede-x86_64.ko.zst</Path>
+             <Path fileType="data">/lib/modules/6.1.0-22.next/kernel/arch/x86/crypto/poly1305-x86_64.ko.zst</Path>
+             <Path fileType="data">/lib/modules/6.1.0-22.next/kernel/arch/x86/crypto/polyval-clmulni.ko.zst</Path>
+             <Path fileType="data">/lib/modules/6.1.0-22.next/kernel/arch/x86/crypto/serpent-avx-x86_64.ko.zst</Path>
+@@ -59,13 +60,13 @@
+             <Path fileType="data">/lib/modules/6.1.0-22.next/kernel/crypto/cast_common.ko.zst</Path>
+             <Path fileType="data">/lib/modules/6.1.0-22.next/kernel/crypto/ccm.ko.zst</Path>
+             <Path fileType="data">/lib/modules/6.1.0-22.next/kernel/crypto/cfb.ko.zst</Path>
+-            <Path fileType="data">/lib/modules/6.1.0-22.next/kernel/crypto/cmac.ko.zst</Path>
+             <Path fileType="data">/lib/modules/6.1.0-22.next/kernel/crypto/crc32_generic.ko.zst</Path>
+             <Path fileType="data">/lib/modules/6.1.0-22.next/kernel/crypto/crypto_engine.ko.zst</Path>
+             <Path fileType="data">/lib/modules/6.1.0-22.next/kernel/crypto/cts.ko.zst</Path>
++            <Path fileType="data">/lib/modules/6.1.0-22.next/kernel/crypto/curve25519-generic.ko.zst</Path>
+             <Path fileType="data">/lib/modules/6.1.0-22.next/kernel/crypto/deflate.ko.zst</Path>
+-            <Path fileType="data">/lib/modules/6.1.0-22.next/kernel/crypto/des_generic.ko.zst</Path>
+             <Path fileType="data">/lib/modules/6.1.0-22.next/kernel/crypto/ecb.ko.zst</Path>
++            <Path fileType="data">/lib/modules/6.1.0-22.next/kernel/crypto/ecdh_generic.ko.zst</Path>
+             <Path fileType="data">/lib/modules/6.1.0-22.next/kernel/crypto/echainiv.ko.zst</Path>
+             <Path fileType="data">/lib/modules/6.1.0-22.next/kernel/crypto/fcrypt.ko.zst</Path>
+             <Path fileType="data">/lib/modules/6.1.0-22.next/kernel/crypto/hctr2.ko.zst</Path>
+@@ -2171,8 +2172,8 @@
+             <Path fileType="data">/lib/modules/6.1.0-22.next/kernel/lib/crc8.ko.zst</Path>
+             <Path fileType="data">/lib/modules/6.1.0-22.next/kernel/lib/crypto/libarc4.ko.zst</Path>
+             <Path fileType="data">/lib/modules/6.1.0-22.next/kernel/lib/crypto/libchacha20poly1305.ko.zst</Path>
++            <Path fileType="data">/lib/modules/6.1.0-22.next/kernel/lib/crypto/libcurve25519-generic.ko.zst</Path>
+             <Path fileType="data">/lib/modules/6.1.0-22.next/kernel/lib/crypto/libcurve25519.ko.zst</Path>
+-            <Path fileType="data">/lib/modules/6.1.0-22.next/kernel/lib/crypto/libdes.ko.zst</Path>
+             <Path fileType="data">/lib/modules/6.1.0-22.next/kernel/lib/lru_cache.ko.zst</Path>
+             <Path fileType="data">/lib/modules/6.1.0-22.next/kernel/lib/lz4/lz4_compress.ko.zst</Path>
+             <Path fileType="data">/lib/modules/6.1.0-22.next/kernel/lib/lz4/lz4hc_compress.ko.zst</Path>
+@@ -21169,6 +21170,7 @@
+             <Path fileType="data">/usr/src/linux-headers-6.1.0-22.next/include/config/CRYPTO_CURVE25519_X86</Path>
+             <Path fileType="data">/usr/src/linux-headers-6.1.0-22.next/include/config/CRYPTO_DEFLATE</Path>
+             <Path fileType="data">/usr/src/linux-headers-6.1.0-22.next/include/config/CRYPTO_DES</Path>
++            <Path fileType="data">/usr/src/linux-headers-6.1.0-22.next/include/config/CRYPTO_DES3_EDE_X86_64</Path>
+             <Path fileType="data">/usr/src/linux-headers-6.1.0-22.next/include/config/CRYPTO_DEV_PADLOCK</Path>
+             <Path fileType="data">/usr/src/linux-headers-6.1.0-22.next/include/config/CRYPTO_DEV_PADLOCK_AES</Path>
+             <Path fileType="data">/usr/src/linux-headers-6.1.0-22.next/include/config/CRYPTO_DEV_PADLOCK_SHA</Path>
+@@ -33083,11 +33085,11 @@
+     </Package>
+     <History>
+         <Update release="22">
+-            <Date>2022-12-05</Date>
++            <Date>2022-12-07</Date>
+             <Version>6.1.0</Version>
+             <Comment>Packaging update</Comment>
+-            <Name>Reilly Brogan</Name>
+-            <Email>solus@reillybrogan.com</Email>
++            <Name>Thomas Staudinger</Name>
++            <Email>Staudi.Kaos@gmail.com</Email>
+         </Update>
+     </History>
+ </PISI>
+\ No newline at end of file

@@ -1,0 +1,32 @@
+name       : platformio
+version    : 6.1.5
+release    : 13
+source     :
+    - https://github.com/platformio/platformio-core/archive/refs/tags/v6.1.5.tar.gz : a0a69354fb5f773e31a23b029bee21923296b8292dda97ee85229bfaade4ce28
+homepage   : https://platformio.org/
+license    : Apache-2.0
+component  : programming.python
+summary    : PlatformIO is an open source ecosystem for IoT development
+description: |
+    PlatformIO is an open source ecosystem for IoT development. Cross-platform build system and library manager. Continuous and IDE integration. Arduino and MBED compatible. Ready for Cloud compiling.
+rundeps    :
+    - python-aiofiles
+    - python-ajsonrpc
+    - python-bottle
+    - python-colorama
+    - python-lockfile
+    - python-marshmallow
+    - python-pyserial
+    - python-pyelftools
+    - python-requests
+    - python-semanticversion
+    - python-starlette
+    - python-tabulate
+    - python-uvicorn
+    - python-wsproto
+    - python-zeroconf
+build      : |
+    %python3_setup
+install    : |
+    %python3_install
+    install -Dm00644 scripts/99-platformio-udev.rules $installdir/usr/lib/udev/rules.d/99-platformio-udev.rules

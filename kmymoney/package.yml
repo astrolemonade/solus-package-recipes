@@ -1,0 +1,49 @@
+name       : kmymoney
+version    : 5.1.2
+release    : 25
+source     :
+    - https://cdn.download.kde.org/stable/kmymoney/5.1.2/src/kmymoney-5.1.2.tar.xz : 37bdc4e763a2849b9f739f73e38b389c02bde1c1b1844edcfa7e3ab1d5bf7b3b
+license    : GPL-2.0-or-later
+component  : office.finance
+libsplit   : no
+summary    : The best Personal Finance Manager
+description: |
+    The best Personal Finance Manager for FREE Users, full stop.
+builddeps  :
+    - pkgconfig(aqbanking)
+    - pkgconfig(gpgme)
+    - pkgconfig(gwengui-qt5)
+    - pkgconfig(libalkimia5)
+    - pkgconfig(libassuan)
+    - pkgconfig(libical)
+    - pkgconfig(libKActivities)
+    - pkgconfig(libofx)
+    - pkgconfig(Qt5QuickWidgets)
+    - pkgconfig(Qt5Svg)
+    - pkgconfig(Qt5WebKit)
+    - akonadi-devel
+    - karchive-devel
+    - kcmutils-devel
+    - kcontacts-devel
+    - kdewebkit-devel
+    - kdiagram-devel
+    - kdoctools-devel
+    - kholidays-devel
+    - kidentitymanagement-devel
+    - kitemmodels-devel
+    - knotifications-devel
+    - kpimtextedit-devel
+    - kross-devel
+    - kwallet-devel
+    - kwindowsystem-devel
+    - libboost-devel
+setup      : |
+    %cmake_ninja -DBUILD_TESTING=OFF
+build      : |
+    %ninja_build
+install    : |
+    %ninja_install
+    %qml_cache
+
+    # Remove HTML docs
+    rm -r $installdir/usr/share/doc

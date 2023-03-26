@@ -1,0 +1,25 @@
+name       : kitinerary
+version    : 22.12.1
+release    : 66
+source     :
+    - https://cdn.download.kde.org/stable/release-service/22.12.1/src/kitinerary-22.12.1.tar.xz : f0c5cacf38b9892a49c4aa6151c96e19163019390414991353f01457aa5b3545
+homepage   : https://kde.org/
+license    : LGPL-2.1-or-later
+component  : programming.library
+summary    : Data Model and Extraction System for Travel Reservation information
+description: |
+    A library containing itinerary data model and itinerary extraction code.
+builddeps  :
+    - pkgconfig(poppler)
+    - pkgconfig(Qt5Quick)
+    - karchive-devel
+    - kcalendarcore-devel
+    - kcontacts-devel
+    - kmime-devel
+    - kpkpass-devel
+setup      : |
+    %cmake_ninja -DBUILD_TESTING=OFF
+build      : |
+    %ninja_build
+install    : |
+    %ninja_install

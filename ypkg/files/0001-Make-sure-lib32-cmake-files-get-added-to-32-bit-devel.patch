@@ -1,0 +1,27 @@
+From 74add11e5706b8f813f528ed18ba5db875617484 Mon Sep 17 00:00:00 2001
+From: Thomas Staudinger <Staudi.Kaos@gmail.com>
+Date: Wed, 11 Jan 2023 22:31:20 +0100
+Subject: [PATCH] Make sure lib32/cmake files get added to 32-bit-devel
+ packages
+
+---
+ ypkg2/packages.py | 3 ++-
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+
+diff --git a/ypkg2/packages.py b/ypkg2/packages.py
+index 73def86..fe015cf 100644
+--- a/ypkg2/packages.py
++++ b/ypkg2/packages.py
+@@ -204,7 +204,8 @@ class PackageGenerator:
+         self.add_pattern("/usr/share/cmake/", "devel")
+         self.add_pattern("/usr/lib64/cmake/", "devel")
+         self.add_pattern("/usr/lib/cmake/", "devel")
+-        self.add_pattern("/usr/lib32/cmake/", "32bit-devel")
++        self.add_pattern("/usr/lib32/cmake/", "32bit-devel",
++                         priority=PRIORITY_DEFAULT+1)
+ 
+         # Haskell
+         self.add_pattern("/usr/lib64/ghc-*/*/*.a", "devel")
+-- 
+2.39.0
+

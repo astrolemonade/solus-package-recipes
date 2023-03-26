@@ -1,0 +1,23 @@
+name       : python2-packaging
+version    : '20.9'
+release    : 1
+source     :
+    - https://pypi.io/packages/source/p/packaging/packaging-20.9.tar.gz : 5b327ac1320dc863dca72f4514ecc086f31186744b84a230374cc1fd776feae5
+homepage   : https://github.com/pypa/packaging
+license    : Apache-2.0
+component  : programming.python
+summary    : Core utilities for Python packages
+description: |
+    CReusable core utilities for various Python Packaging interoperability specifications. This library provides utilities that implement the interoperability specifications which have clearly one correct behaviour (eg: PEP 440) or benefit greatly from having a single shared implementation (eg: PEP 425).
+builddeps  :
+    - python-pretend
+    - python-setuptools
+    - python2-pytest
+rundeps    :
+    - pyparsing
+build      : |
+    %python_setup
+install    : |
+    %python_install
+check      : |
+    %python_test py.test -v

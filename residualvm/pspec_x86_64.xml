@@ -1,0 +1,79 @@
+<PISI>
+    <Source>
+        <Name>residualvm</Name>
+        <Homepage>https://www.residualvm.org/</Homepage>
+        <Packager>
+            <Name>Joshua Strobl</Name>
+            <Email>joshua@getsol.us</Email>
+        </Packager>
+        <License>BSD-3-Clause</License>
+        <License>GPL-2.0-or-later</License>
+        <License>GPL-3.0-or-later WITH Font-exception-2.0</License>
+        <License>ISC</License>
+        <License>LGPL-2.1-or-later</License>
+        <License>MIT</License>
+        <License>OFL-1.1</License>
+        <PartOf>games.emulator</PartOf>
+        <Summary xml:lang="en">Cross-platform 3D game interpreter which allows you to play LucasArts&apos; Lua-based 3D adventures</Summary>
+        <Description xml:lang="en">ResidualVM is a game engine reimplementation that allows you to play 3D adventure games such as Grim Fandango and Myst III.
+ResidualVM utilizes OpenGL for 3D graphics hardware acceleration. A software renderer is also included for machines without hardware OpenGL.
+</Description>
+        <Archive type="binary" sha1sum="79eb0752a961b8e0d15c77d298c97498fbc89c5a">https://getsol.us/sources/README.Solus</Archive>
+    </Source>
+    <Package>
+        <Name>residualvm</Name>
+        <Summary xml:lang="en">Cross-platform 3D game interpreter which allows you to play LucasArts&apos; Lua-based 3D adventures</Summary>
+        <Description xml:lang="en">ResidualVM is a game engine reimplementation that allows you to play 3D adventure games such as Grim Fandango and Myst III.
+ResidualVM utilizes OpenGL for 3D graphics hardware acceleration. A software renderer is also included for machines without hardware OpenGL.
+</Description>
+        <PartOf>games.emulator</PartOf>
+        <Files>
+            <Path fileType="executable">/usr/bin/residualvm</Path>
+            <Path fileType="data">/usr/share/applications/residualvm.desktop</Path>
+            <Path fileType="data">/usr/share/icons/hicolor/scalable/apps/residualvm.svg</Path>
+            <Path fileType="man">/usr/share/man/man6/residualvm.6</Path>
+            <Path fileType="data">/usr/share/pixmaps/residualvm.xpm</Path>
+            <Path fileType="data">/usr/share/residualvm/modern.zip</Path>
+            <Path fileType="data">/usr/share/residualvm/myst3.dat</Path>
+            <Path fileType="data">/usr/share/residualvm/residualvm-grim-patch.lab</Path>
+            <Path fileType="data">/usr/share/residualvm/shaders/dim.fragment</Path>
+            <Path fileType="data">/usr/share/residualvm/shaders/dim.vertex</Path>
+            <Path fileType="data">/usr/share/residualvm/shaders/emerg.fragment</Path>
+            <Path fileType="data">/usr/share/residualvm/shaders/emerg.vertex</Path>
+            <Path fileType="data">/usr/share/residualvm/shaders/emi_actor.fragment</Path>
+            <Path fileType="data">/usr/share/residualvm/shaders/emi_actor.vertex</Path>
+            <Path fileType="data">/usr/share/residualvm/shaders/emi_background.fragment</Path>
+            <Path fileType="data">/usr/share/residualvm/shaders/emi_background.vertex</Path>
+            <Path fileType="data">/usr/share/residualvm/shaders/emi_dimplane.fragment</Path>
+            <Path fileType="data">/usr/share/residualvm/shaders/emi_dimplane.vertex</Path>
+            <Path fileType="data">/usr/share/residualvm/shaders/grim_actor.fragment</Path>
+            <Path fileType="data">/usr/share/residualvm/shaders/grim_actor.vertex</Path>
+            <Path fileType="data">/usr/share/residualvm/shaders/grim_background.fragment</Path>
+            <Path fileType="data">/usr/share/residualvm/shaders/grim_background.vertex</Path>
+            <Path fileType="data">/usr/share/residualvm/shaders/grim_primitive.fragment</Path>
+            <Path fileType="data">/usr/share/residualvm/shaders/grim_primitive.vertex</Path>
+            <Path fileType="data">/usr/share/residualvm/shaders/myst3_box.fragment</Path>
+            <Path fileType="data">/usr/share/residualvm/shaders/myst3_box.vertex</Path>
+            <Path fileType="data">/usr/share/residualvm/shaders/myst3_cube.fragment</Path>
+            <Path fileType="data">/usr/share/residualvm/shaders/myst3_cube.vertex</Path>
+            <Path fileType="data">/usr/share/residualvm/shaders/myst3_text.fragment</Path>
+            <Path fileType="data">/usr/share/residualvm/shaders/myst3_text.vertex</Path>
+            <Path fileType="data">/usr/share/residualvm/shaders/shadowplane.fragment</Path>
+            <Path fileType="data">/usr/share/residualvm/shaders/shadowplane.vertex</Path>
+            <Path fileType="data">/usr/share/residualvm/shaders/smush.fragment</Path>
+            <Path fileType="data">/usr/share/residualvm/shaders/smush.vertex</Path>
+            <Path fileType="data">/usr/share/residualvm/shaders/text.fragment</Path>
+            <Path fileType="data">/usr/share/residualvm/shaders/text.vertex</Path>
+            <Path fileType="data">/usr/share/residualvm/translations.dat</Path>
+        </Files>
+    </Package>
+    <History>
+        <Update release="2">
+            <Date>2021-06-30</Date>
+            <Version>0.3.1</Version>
+            <Comment>Packaging update</Comment>
+            <Name>Joshua Strobl</Name>
+            <Email>joshua@getsol.us</Email>
+        </Update>
+    </History>
+</PISI>

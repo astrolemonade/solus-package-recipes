@@ -1,0 +1,25 @@
+name       : ca-certs
+version    : '20201207'
+release    : 41
+source     :
+    - https://hg.mozilla.org/releases/mozilla-release/raw-file/default/security/nss/lib/ckfw/builtins/certdata.txt : a831d3bc63ba1f65478afe28038742b7150c0c2efd243ac342b64792a75d2038
+    - https://raw.githubusercontent.com/agl/extract-nss-root-certs/492d8c9/convert_mozilla_certdata.go : 30afd0ca1df9b7788b830485645c4a2f72b07c1c9eb5c66941ae3d0b87e9e623
+license    :
+    - Apache-2.0 # Conversion script
+    - MPL-2.0    # Actual cert file
+component  : system.base
+summary    : Certificate Authority Files
+description: |
+    The Public Key Inrastructure is used for many security issues in a Linux system. In order for a certificate to be trusted, it must be signed by a trusted agent called a Certificate Authority (CA).
+extract    : no
+builddeps  :
+    - golang
+setup      : |
+    ln -s $sources/* $workdir
+build      : |
+    go run convert_mozilla_certdata.go --to-files
+
+    # The bundle generation could be a usysconf trigger in future.
+    cat *.pem > ca-certificates.crt
+install    : |
+    install -Dm00644 *.pem ca-certificates.crt -t $installdir/etc/ssl/certs
